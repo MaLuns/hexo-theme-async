@@ -1,0 +1,24 @@
+<footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+    <div class="trm-label">
+        © 2019 - 2022 ·
+        <span class="trm-accent-color">
+            <%- theme.user.name %>
+        </span>
+    </div>
+    <div class="trm-label">
+        <%-__('footer.tips')%>:
+        <span id="since" class="trm-accent-color"></span>
+        <%-__('footer.day')%>
+    </div>
+</footer>
+<script>
+    function show_date_time () {
+        BirthDay = new Date("<%- theme.user.birthDay %>");
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        msPerDay = 24 * 60 * 60 * 1000
+        day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>

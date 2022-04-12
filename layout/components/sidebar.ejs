@@ -1,0 +1,54 @@
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" data-scroll-offset="60">
+        <!-- card header -->
+        <div class="trm-mc-header">
+            <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/img/avatar.jpg" alt="Avatar"> </div>
+            <h5 class="trm-name trm-mb-15">
+                <%= theme.user.name %>
+            </h5>
+            <div class="trm-label">
+                <%= theme.sidebar.typedTextPrefix %>
+                <span class="trm-typed-text">
+                    <!-- Words for theme.user.typedText -->
+                </span>
+            </div>
+        </div>
+        <!-- card header end -->
+        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+        <!-- sidebar social -->
+        <div class="trm-social">
+            <% theme.sidebar.social.forEach(item=>{ %>
+                <a href="<%- url_for(item.url) %>" rel="nofollow" target="_blank">
+                    <i class="<%- item.icon %>"></i>
+                </a>
+            <%})%>
+        </div>
+        <!-- sidebar social end -->
+        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+        <!-- info -->
+        <ul class="trm-table trm-mb-20">
+            <% theme.sidebar.info.forEach(item=>{ %>
+                <li>
+                    <div class="trm-label">
+                        <%- __(item.key) %>:
+                    </div>
+                    <div class="trm-label trm-label-light">
+                        <%- item.val %>
+                    </div>
+                </li>
+            <%})%>
+        </ul>
+        <% if(theme.user.email){ %>
+        <!-- info end -->
+        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+        <!-- action button -->
+        <div class="text-center">
+            <a href="mailto:<%- theme.user.email %>" class="trm-btn">
+                <%- __('sidebar.contact') %>
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+        <!-- action button end -->
+        <% } %>
+    </div>
+</div>

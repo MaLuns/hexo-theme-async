@@ -1,0 +1,46 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="keywords" content="<%= !!page.keywords ? page.keywords : config.keywords %>">
+<%- open_graph() %>
+<% if(page.description){%>
+    <meta name="description" content="<%= page.description %>">
+<%}else if(config.description){%>
+    <meta name="description" content="<%= config.description %>">
+<%}%>
+<title>
+    <%= (!!page.title ? page.title : config.title) %>
+</title>
+<link rel="icon" type="image/png" sizes="16x16" href="<%= url_for('/img/favicon-16x16.png') %>?v=<%= theme.version %>">
+<link rel="icon" type="image/png" sizes="32x32" href="<%= url_for('/img/favicon-32x32.png') %>?v=<%= theme.version %>">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.css">
+<!-- bootstrap css -->
+<link rel="stylesheet" href="/css/plugins/bootstrap.min.css">
+<!-- locomotive scroll css -->
+<link rel="stylesheet" href="/css/plugins/locomotive-scroll.css">
+<!-- swiper css -->
+<link rel="stylesheet" href="/css/plugins/swiper.min.css">
+<!-- fancybox css -->
+<link rel="stylesheet" href="/css/plugins/fancybox.min.css">
+<!-- font awesome css -->
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<!-- trueman dark mode css <link rel="stylesheet" href="css/style-dark.css?v=<%= theme.version %>">-->
+<!-- trueman light mode css -->
+<link rel="stylesheet" href="/css/style-light.css?v=<%= theme.version %>" id="trm-switch-style">
+<% if(config.hmkey){ %>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?<%- config.hmkey %>";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<% } %> 
