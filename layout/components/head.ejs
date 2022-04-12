@@ -34,11 +34,10 @@
     'css/plugins/swiper.min.css',
     'css/plugins/fancybox.min.css',
     'css/plugins/font-awesome.min.css',
-    'css/highlight.css?v='+theme.version
+    'css/highlight.css'
 ]) %>
 
-<%- css('css/style-light.css?v='+theme.version, { id:"trm-switch-style" }) %>
-
+<link rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
 <% if(config.hmkey){ %>
     <script>
         var _hmt = _hmt || [];
