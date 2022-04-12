@@ -20,14 +20,14 @@ $(function () {
       document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
           $('[rel="icon"]').attr('href', window.FAVICON.hidden);
-          document.title = window.FAVICON.hide_text;
+          document.title = window.FAVICON.hideText;
           clearTimeout(titleTime);
         }
         else {
           Array.from($('[rel="icon"]')).map((item, index) => {
             item.href = icons[index]
           })
-          document.title = window.FAVICON.show_text + window.originTitle;
+          document.title = window.FAVICON.showText + window.originTitle;
           titleTime = setTimeout(function () {
             document.title = window.originTitle;
           }, 2000);

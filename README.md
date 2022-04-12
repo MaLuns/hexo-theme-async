@@ -47,6 +47,10 @@ user:
 
 # logo
 favicon:
+  icon16: favicon 
+  icon32: favicon
+  appleTouchIcon: Apple touch icon
+  webmanifest: Web App Manifest
   visibilitychange: false
   hidden: The logo link
   show_text: (/≧▽≦/)Yi! Good again!
