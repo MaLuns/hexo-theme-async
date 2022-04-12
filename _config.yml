@@ -15,10 +15,14 @@ user:
 
 # logo
 favicon:
+  icon16:
+  icon32:
+  appleTouchIcon:
+  webmanifest:
   visibilitychange: false
   hidden: 
-  show_text: (/≧▽≦/)咦！又好了！
-  hide_text: (●—●)喔哟，崩溃啦！
+  showText: (/≧▽≦/)咦！又好了！
+  hideText: (●—●)喔哟，崩溃啦！
 
 # menu
 top_bars:
