@@ -1,7 +1,11 @@
 <div class="trm-content-start">
 
-     <!-- banner -->
-     <%- partial('./components/banner', theme.banner.archive ) %>
+    <!-- banner -->
+    <%- partial('./_partial/banner', {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...theme.banner.archive 
+    }) %>
     <!-- banner end -->
 
     <div class="container">
@@ -9,7 +13,7 @@
             <div class="col-lg-4">
 
                 <!-- main card -->
-                <%- partial('./components/sidebar') %>
+                <%- partial('./_partial/sidebar') %>
                 <!-- main card end -->
                 
             </div>
@@ -48,7 +52,7 @@
                             <!-- title -->
                             <h5 class="trm-mb-40 trm-title-with-divider">
                                 <% if(page.archive){ %>
-                                    <%- page.year ? page.year : 'All Archives' %>
+                                    <%- page.year ? page.year : __('title.all_archives') %>
                                 <% } else if (is_category()){ %>
                                     <%- page.category %>
                                 <% } %>
@@ -98,7 +102,7 @@
                     <div class="trm-divider trm-mb-40"></div>
 
                     <!-- footer -->
-                    <%- partial('./components/footer') %>
+                    <%- partial('./_partial/footer') %>
                     <!-- footer end -->
 
                 </div>

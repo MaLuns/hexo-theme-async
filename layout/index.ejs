@@ -1,7 +1,11 @@
 <div class="trm-content-start">
 
     <!-- banner -->
-    <%- partial('./components/banner', theme.banner.index ) %>
+    <%- partial('./_partial/banner',  {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...theme.banner.index 
+    }) %>
     <!-- banner end -->
 
     <div class="container">
@@ -9,7 +13,7 @@
             <div class="col-lg-4">
 
                 <!-- main card -->
-                <%- partial('./components/sidebar') %>
+                <%- partial('./_partial/sidebar') %>
                 <!-- main card end -->
 
             </div>
@@ -55,7 +59,7 @@
                             </h5>
                         </div>
                         <% page.posts.each(function(post,postIndex){ %>
-                            <%- partial('./components/post-card',{ post }) %>
+                            <%- partial('./_partial/post-card',{ post }) %>
                         <% }) %>
                     </div>
                     <!-- newest publications end -->
@@ -68,7 +72,7 @@
                     <div class="trm-divider trm-mb-40"></div>
 
                     <!-- footer -->
-                    <%- partial('./components/footer') %>
+                    <%- partial('./_partial/footer') %>
                     <!-- footer end -->
 
                 </div>

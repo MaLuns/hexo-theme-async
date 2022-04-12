@@ -1,0 +1,32 @@
+site:
+  title: Site Information
+  webmaster: Webmaster
+  domain: Domain
+  avatar: Avatar
+  describe: Describe
+  ruleText: Friend chain requirements
+
+sidebar:
+  residence: Residence
+  city: City
+  age: Age
+  contact: Contact Me
+
+footer:
+  tips: The blog has been lovely to run
+  day: day
+  hour: hour
+  minute: minute
+  seconds: seconds
+
+title:
+  links: Friendly Link
+  new_publish: Newest Publications
+  comment: Message
+  author: Author
+  blog: Blog Application
+  privacy: Privacy and Comments
+  more: Read More
+  all_archives: All Archives
+
+ieTips: For a better experience, use a browser other than Internet Explorer
