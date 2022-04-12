@@ -1,10 +1,24 @@
+<h1 align="center">hexo-theme-async</h1>
 
-# hexo-theme-async
+<p align="center">
+  <a title="Github Version" target="_blank" href="https://github.com/MaLuns/hexo-theme-async">
+    <img src="https://img.shields.io/github/package-json/v/MaLuns/hexo-theme-async/master?color=%231ab1ad&amp;label=master" alt="master version">
+  </a>
+  <a title="Npm Version" target="_blank" href="https://www.npmjs.com/package/hexo-theme-async">
+    <img src="https://img.shields.io/npm/v/hexo-theme-async?color=%09%23bf00ff" alt="https://img.shields.io/npm/v/hexo-theme-async?color=%09%23bf00ff">
+  </a>
+  <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/">
+    <img src="https://img.shields.io/badge/hexo-5.0+-0e83c" alt="hexo version">
+  </a>
+  <a title="license" target="_blank" href="https://github.com/MaLuns/hexo-theme-async/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/MaLuns/hexo-theme-async?color=FF5531" alt="license">
+  </a>
+</p>
 
-![master version](https://img.shields.io/github/package-json/v/MaLuns/hexo-theme-async/master?color=%231ab1ad&label=master)
-![https://img.shields.io/npm/v/hexo-theme-async?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-async?color=%09%23bf00ff)
-![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
-![license](https://img.shields.io/github/license/MaLuns/hexo-theme-async?color=FF5531)
+<p align="center">
+  🇬🇧 English | 
+ <a title="Chinese" href="README_zh-CN.md"> 🇨🇳 中文简体 </a> 
+</p>
 
 ## Installation
 
@@ -115,6 +129,33 @@ about:
   introduction: 
   blog: 
   privacy: 
+
+# Friend's website
+links:
+  - name:  # site name
+    url:   # site url
+    image: # avatar
+    desc: 
+
+# Page Visit Statistics
+webAnalytics:  
+  enable: false 
+  baidu:   # Baidu key
+  google:  # Tracking ID for Google statistics
+  tencent: # Tencent statistics
+    sid:
+    cid:
+
+# Comment on the plug-in
+comment:
+  enable: false
+  bComments:
+    v: 0.0.12
+    env: 
+  twikoo:
+    envId:
+    region: 
+    path: window.location.pathname
 
 # Service Worker
 sw: false

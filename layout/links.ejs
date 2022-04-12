@@ -2,14 +2,18 @@
 <div class="trm-content-start">
 
     <!-- banner -->
-    <%- partial('../components/banner', theme.banner.links ) %>
+    <%- partial('./_partial/banner',  {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...theme.banner.links 
+    }) %>
     <!-- banner end -->
 
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <!-- main card -->
-                <%- partial('../components/sidebar') %>
+                <%- partial('./_partial/sidebar') %>
                 <!-- main card end -->
             </div>
             <div class="col-lg-8">
@@ -70,12 +74,12 @@
                         <%})%>
                     </div>
 
-                    <%- partial('../components/comment',{ titleHide: false }) %>
+                    <%- partial('./_partial/comment',{ titleHide: false }) %>
 
                     <div class="trm-divider trm-mb-40"></div>
 
                     <!-- footer -->
-                    <%- partial('../components/footer') %>
+                    <%- partial('./_partial/footer') %>
                     <!-- footer end -->
 
                 </div>
