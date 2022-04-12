@@ -14,7 +14,7 @@
     <%= (!!page.title ? page.title : config.title) %>
 </title>
 <% if(theme.favicon.icon16){%>
-    <link rel="icon" type="image/png" sizes="16x16" href="<%= url_for(theme.favicon.icon16') %>?v=<%= theme.version %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= url_for(theme.favicon.icon16) %>?v=<%= theme.version %>">
 <%}%>
 <% if(theme.favicon.icon32){%>
     <link rel="icon" type="image/png" sizes="32x32" href="<%= url_for(theme.favicon.icon32) %>?v=<%= theme.version %>">
