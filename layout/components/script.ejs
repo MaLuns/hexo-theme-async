@@ -2,18 +2,16 @@
 <%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
 <%- variable('FAVICON',theme.favicon) %>
 <%- variable('HTMEM_VERSION',theme.version) %>
-<!-- jquery js -->
-<script src="/js/plugins/jquery.min.js"></script>
-<!-- swup js -->
-<script src="/js/plugins/swup.min.js"></script>
-<!-- locomotive scroll js -->
-<script src="/js/plugins/locomotive-scroll.js"></script>
-<!-- typing js -->
-<script src="/js/plugins/typing.js"></script>
-<!-- fancybox js -->
-<script src="/js/plugins/fancybox.min.js"></script>
-<!-- swiper js -->
-<script src="/js/plugins/swiper.min.js"></script>
+
+<%- js([
+    'js/plugins/jquery.min',
+    'js/plugins/swup.min.js',
+    'js/plugins/locomotive-scroll.js',
+    'js/plugins/typing.js?v='+theme.version,
+    'js/plugins/fancybox.min.js',
+    'js/plugins/swiper.min.js'
+]) %>
+
 <% if(theme.cloudbase.enable) {%>
     <script type="text/javascript" src="//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js"></script>
     <script type="text/javascript" src="//unpkg.com/b-comments@<%= theme.cloudbase.v %>/dist/index.all.min.js"></script>
@@ -29,5 +27,6 @@
         }) : console.log("Service workers are not supported in the current browser.")
     </script>
 <% } %>
-<!-- trueman js -->
-<script src="/js/main.js?v=<%= theme.version %>"></script>
+<%- js([
+    'js/main.js?v='+theme.version
+]) %>

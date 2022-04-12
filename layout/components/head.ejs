@@ -27,20 +27,18 @@
 <%}%>
 <link rel="preload" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.css">
-<!-- bootstrap css -->
-<link rel="stylesheet" href="/css/plugins/bootstrap.min.css">
-<!-- locomotive scroll css -->
-<link rel="stylesheet" href="/css/plugins/locomotive-scroll.css">
-<!-- swiper css -->
-<link rel="stylesheet" href="/css/plugins/swiper.min.css">
-<!-- fancybox css -->
-<link rel="stylesheet" href="/css/plugins/fancybox.min.css">
-<!-- font awesome css -->
-<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
-<link rel="stylesheet" href="/css/highlight.css">
-<!-- trueman dark mode css <link rel="stylesheet" href="css/style-dark.css?v=<%= theme.version %>">-->
-<!-- trueman light mode css -->
-<link rel="stylesheet" href="/css/style-light.css?v=<%= theme.version %>" id="trm-switch-style">
+
+<%- css([
+    'css/plugins/bootstrap.min.css',
+    'css/plugins/locomotive-scroll.css',
+    'css/plugins/swiper.min.css',
+    'css/plugins/fancybox.min.css',
+    'css/plugins/font-awesome.min.css',
+    'css/highlight.css?v='+theme.version
+]) %>
+
+<%- css('css/style-light.css?v='+theme.version, { id:"trm-switch-style" }) %>
+
 <% if(config.hmkey){ %>
     <script>
         var _hmt = _hmt || [];
