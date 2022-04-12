@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="<%- theme.language %>">
+
+<head>
+  <%- partial('./components/head') %>
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <%- partial('./components/page-preloader') %>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <%- partial('./components/change-mode-preloader') %>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+            <!-- top bar -->
+            <%- partial('./components/top-bar') %>
+            <!-- top bar end -->
+
+            <!-- body -->
+            <%- body %>
+            <!-- body end -->
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+      <!-- mode switcher -->
+      <div class="trm-hidden-switcher">
+        <div class="trm-mode-switcher"><i class="far fa-sun"></i>
+          <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+          <label class="trm-swich" for="trm-swich"></label>
+          <i class="far fa-moon"></i>
+        </div>
+      </div>
+      <!-- mode switcher end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  <%- partial('./components/script') %>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<%# 其他页 %>
+<%  if (page.type == 'links'){%>
+    <%- partial('./pages/links') %>
+<%} else if (['message','comment'].includes(page.type)){%>
+    <%- partial('./pages/comment') %>
+<%} else if (page.type=='about'){%>
+    <%- partial('./pages/about',{post: page }) %>
+<%}%>

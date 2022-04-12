@@ -1,0 +1,72 @@
+<div class="trm-content-start">
+
+    <!-- banner -->
+    <%- partial('./components/banner', { 
+        bgurl: 'https://images.unsplash.com/photo-1621266309424-52f5a2e6d7f6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80' , 
+        bannerTitle: page.title,
+        bannerText: 'NEWSLETTER'
+    }) %>
+    <!-- banner end -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- main card -->
+                <%- partial('./components/sidebar') %>
+                <!-- main card end -->
+            </div>
+            <div class="col-lg-8">
+                <!-- content -->
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+                    
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-calendar-alt trm-icon"></i><br>
+                                <%= date(page.date,'MM/DD') %>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-clock trm-icon"></i><br>
+                                <%= date(page.date,'hh:mm') %>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-user trm-icon"></i><br>
+                                <%= theme.user.name %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="trm-card trm-publication">
+                        <%- page.content %>
+                    </article>
+
+                    <!-- blog -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- title -->
+                            <h5 class="trm-mb-40 trm-title-with-divider">Similar Publications <span data-number="02"></span></h5>
+                        </div>
+                        <% if(page.prev){ %>
+                            <%- partial('./components/post-card',{ post: page.prev }) %>
+                        <%}%>
+                        <% if(page.next){ %>
+                            <%- partial('./components/post-card',{ post: page.next }) %>
+                        <%}%>
+                    </div>
+                    <!-- blog end -->
+
+                    <%- partial('./components/comment',{ titleHide: false }) %>
+
+                    <div class="trm-divider trm-mb-40"></div>
+
+                    <!-- footer -->
+                    <%- partial('./components/footer') %>
+                    <!-- footer end -->
+                </div>
+                <!-- content end -->
+            </div>
+        </div>
+    </div>
+</div>

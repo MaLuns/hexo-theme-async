@@ -1,0 +1,181 @@
+/* Code, Pre [landscape](http://goo.gl/hnwXeD) */
+/* highlight */
+pre,
+.highlight {
+    position     : relative;
+    background   : #272822 !important;
+    margin       : 20px 0;
+    padding      : 40px 10px 10px;
+    overflow     : auto;
+    color        : #ccc !important;
+    font-size    : 12px !important;
+    text-shadow  : none;
+    border-radius: 4px;
+    line-height  : 1;
+}
+
+.highlight {
+    &::after {
+        content           : " ";
+        position          : absolute;
+        border-radius     : 50%;
+        background        : #ff5f56;
+        width             : 12px;
+        height            : 12px;
+        top               : 0;
+        left              : 12px;
+        margin-top        : 12px;
+        -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+        box-shadow        : 20px 0 #ffbd2e, 40px 0 #27c93f;
+    }
+
+    .gutter {
+        pre {
+            text-align   : left;
+            padding-right: 20px;
+            width        : 100%;
+            color        : #666;
+        }
+    }
+
+    pre {
+        border     : none;
+        margin     : 0;
+        padding    : 0;
+        white-space: pre;
+    }
+
+    table {
+        margin: 0;
+        width : auto;
+    }
+
+    td {
+        border : none;
+        padding: 0;
+    }
+
+
+    figcaption {
+        zoom         : 1;
+        font-size    : 0.85em;
+        color        : #999;
+        line-height  : 1em;
+        margin-bottom: 1em;
+
+        &:after {
+            clear: both;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        a {
+            float: right;
+        }
+    }
+}
+
+code {
+    background : #eee;
+    border     : 1px solid #d6d6d6;
+    padding    : 0 5px;
+    margin     : 0 2px;
+    font-size  : 90%;
+    text-shadow: 0 1px #fff;
+    word-break : break-all;
+    word-wrap  : break-word;
+    white-space: normal;
+}
+
+pre {
+    overflow   : initial;
+    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+
+    code {
+        font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+        background : none;
+        text-shadow: none;
+        padding    : 0;
+    }
+
+    .css {
+        .hexcolor {
+            color: #6cc !important;
+        }
+    }
+
+    .comment,
+    .title {
+        color: #999;
+    }
+
+    .variable,
+    .attribute,
+
+    .regexp,
+    .ruby .constant,
+    .xml .tag .title,
+    .xml .pi,
+    .xml .doctype,
+    .html .doctype,
+    .css .id,
+    .css .class,
+    .css .pseudo {
+        color: #f2777a !important;
+    }
+
+    .tag {
+        color: #f9d926;
+
+        .attr,
+        .name {
+            color: #f92672 !important;
+        }
+    }
+
+    .number,
+    .preprocessor,
+    .built_in,
+    .literal,
+    .params,
+    .constant {
+        color: #f99157 !important;
+    }
+
+
+    .class,
+    .ruby .class .title,
+    .css .rules .attribute {
+        color: #9c9 !important;
+    }
+
+
+    .string,
+    .value,
+    .inheritance,
+    .header,
+    .ruby .symbol,
+    .xml .cdata {
+        color: #9c9 !important;
+    }
+
+    .function,
+    .python .decorator,
+    .python .title,
+    .ruby .function .title,
+    .ruby .title .keyword,
+    .perl .sub,
+    .javascript .title,
+    .coffeescript .title {
+        color: #a6e22e !important;
+    }
+
+    .keyword,
+    .javascript .function {
+        color: #f92672 !important;
+    }
+}
