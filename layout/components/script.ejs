@@ -7,7 +7,7 @@
     'js/plugins/jquery.min',
     'js/plugins/swup.min.js',
     'js/plugins/locomotive-scroll.js',
-    'js/plugins/typing.js?v='+theme.version,
+    'js/plugins/typing.js',
     'js/plugins/fancybox.min.js',
     'js/plugins/swiper.min.js'
 ]) %>
@@ -27,6 +27,4 @@
         }) : console.log("Service workers are not supported in the current browser.")
     </script>
 <% } %>
-<%- js([
-    'js/main.js?v='+theme.version
-]) %>
+<script src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>
