@@ -1,5 +1,5 @@
 <% if(theme.comment && theme.comment.enable) {%> 
-    <% if(theme.comment.bComments.env  && page.hash){ %>
+    <% if(theme.comment.bComments && theme.comment.bComments.env  && page.hash){ %>
         <!-- bComments -->
         <% if(titleHide){ %>
             <div class="trm-card trm-p-10 trm-scroll-animation" data-scroll data-scroll-offset="50">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         <% } %>
-    <% } else if (theme.comment.twikoo.envId){ %>
+    <% } else if (theme.comment.twikoo && theme.comment.twikoo.envId){ %>
         <!-- twikoo -->
         <% if(titleHide){ %>
             <div class="trm-card trm-p-10 trm-scroll-animation" data-scroll data-scroll-offset="50">
