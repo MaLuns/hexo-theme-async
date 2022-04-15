@@ -1,0 +1,36 @@
+footer {
+    border-radius   : 10px;
+    height          : 90px;
+    background-color: @theme-bg-color;
+    width           : 100%;
+    box-shadow      : @box-shadow;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    padding         : 40px;
+
+    .trm-label {
+        color    : @body-color;
+        font-size: 10px;
+
+        a {
+            color     : #afb42b;
+            transition: .4s ease-in-out;
+
+            &:hover {
+                color: #c0ca33;
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    footer {
+        flex-direction : column;
+        justify-content: center
+    }
+
+    footer .trm-label:first-child {
+        margin-bottom: 10px
+    }
+}

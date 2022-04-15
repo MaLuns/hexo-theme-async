@@ -1,0 +1,104 @@
+.trm-top-bar {
+    position        : fixed;
+    left            : 0;
+    right           : 0;
+    border-radius   : 10px;
+    box-shadow      : @top-bar-box-shadow;
+    z-index         : 9;
+    background-color: @theme-bg-color;
+    width           : 100%;
+    height          : 80px;
+
+    &:after {
+        content         : '';
+        position        : absolute;
+        left            : 30px;
+        height          : 8px;
+        width           : calc(100% - 60px);
+        background-color: @theme-bg-color;
+        border-radius   : 0 0 5px 5px;
+        opacity         : .3;
+    }
+
+    .container {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        .trm-left-side {
+            height     : 100%;
+            display    : flex;
+            align-items: center;
+            width      : 30%;
+
+            .trm-logo-frame {
+                display    : flex;
+                align-items: center;
+                height     : 80px;
+
+                .trm-logo-text {
+                    position      : relative;
+                    font-weight   : 900;
+                    font-size     : 22px;
+                    color         : @theme-color;
+                    letter-spacing: 0;
+
+                    span {
+                        color: #afb42b;
+                    }
+                }
+
+                img {
+                    width       : 32px !important;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .trm-right-side {
+            height         : 100%;
+            display        : flex;
+            align-items    : center;
+            width          : 70%;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media(max-width:1200px) {
+    .trm-top-bar {
+        border-radius: 0;
+
+        .trm-logo-text {
+            display: none;
+        }
+
+        .container {
+            .trm-right-side {
+                border-radius   : 0 0 10px 10px;
+                padding         : 0 0 40px;
+                display         : flex;
+                flex-direction  : column;
+                background-color: @theme-bg-color;
+                position        : absolute;
+                z-index         : -1;
+                top             : 80px;
+                left            : 0;
+                height          : auto;
+                width           : 100%;
+                opacity         : 0;
+                pointer-events  : none;
+                box-shadow      : @top-bar-box-shadow;
+                transform       : translateY(20px);
+                transition      : .4s ease-in-out;
+
+                &.trm-active {
+                    opacity       : 1;
+                    pointer-events: all;
+                    transform     : translateY(0);
+                }
+            }
+        }
+    }
+
+}

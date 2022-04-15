@@ -1,0 +1,38 @@
+blockquote {
+    box-shadow      : @box-shadow;
+    padding         : 0;
+    margin          : 0;
+    display         : block;
+    position        : relative;
+    background-color: @theme-bg-color;
+    color           : @theme-color;
+    padding         : 40px;
+    border-radius   : 10px;
+    font-style      : italic;
+    font-size       : 16px;
+    font-weight     : 500;
+
+    &:before {
+        margin     : 0;
+        color      : #afb42b;
+        width      : 50px;
+        line-height: 55px;
+        content    : '"';
+        position   : absolute;
+        top        : 10px;
+        left       : 10px;
+        font-size  : 54px;
+    }
+
+    &:after {
+        margin     : 0;
+        width      : 50px;
+        color      : #afb42b;
+        line-height: 55px;
+        content    : '"';
+        position   : absolute;
+        bottom     : -20px;
+        right      : 2px;
+        font-size  : 54px;
+    }
+}
