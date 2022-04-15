@@ -1,0 +1,39 @@
+.trm-pagination {
+    padding        : 0;
+    margin         : 0;
+    display        : flex;
+    justify-content: center;
+    margin-bottom  : 40px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    a,
+    span {
+        display      : inline-block;
+        height       : 40px;
+        width        : 40px;
+        line-height  : 40px;
+        font-weight  : 700;
+        text-align   : center;
+        border-radius: 50%;
+        transition   : .4s ease-in-out;
+    }
+
+    a {
+        &:hover {
+            opacity: 1;
+            color  : #afb42b;
+        }
+    }
+
+    span {
+        color           : #fcfcfe;
+        background-color: #afb42b;
+    }
+}

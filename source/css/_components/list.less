@@ -1,0 +1,26 @@
+.trm-list {
+    padding: 0;
+    margin : 0;
+
+    li {
+        position       : relative;
+        list-style-type: none;
+        padding-left   : 25px;
+        color          : @theme-color;
+
+        &:before {
+            content      : '';
+            position     : absolute;
+            top          : 6px;
+            left         : 0;
+            height       : 10px;
+            width        : 10px;
+            border       : solid 3px #afb42b;
+            border-radius: 50%;
+        }
+
+        +li {
+            margin-top: 15px;
+        }
+    }
+}

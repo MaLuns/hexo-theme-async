@@ -1,0 +1,179 @@
+.trm-mode-switcher-place {
+    .trm-mode-switcher {
+        margin-right   : 30px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        i {
+            margin   : 0 7px;
+            font-size: 12px;
+        }
+
+        .tgl {
+            display: none;
+        }
+    }
+
+    .trm-mode-switcher {
+
+        .tgl,
+        .tgl *,
+        .tgl *:after,
+        .tgl *:before,
+        .tgl+.trm-swich,
+        .tgl:after,
+        .tgl:before {
+            box-sizing: border-box
+        }
+
+        .tgl::selection,
+        .tgl *::selection,
+        .tgl *:after::selection,
+        .tgl *:before::selection,
+        .tgl+.trm-swich::selection,
+        .tgl:after::selection,
+        .tgl:before::selection {
+            background: 0
+        }
+
+        .tgl+.trm-swich {
+            outline    : 0;
+            display    : block;
+            width      : 45px;
+            height     : 23px;
+            position   : relative;
+            cursor     : pointer;
+            user-select: none
+        }
+
+        .tgl+.trm-swich:after,
+        .tgl+.trm-swich:before {
+            position: relative;
+            display : block;
+            content : "";
+            width   : 50%;
+            height  : 100%
+        }
+
+        .tgl {
+            &+.trm-swich {
+                &:after {
+                    left: 0;
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+
+            &:checked {
+                &+.trm-swich {
+                    &:after {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+
+        .tgl-light {
+            &+.trm-swich {
+                margin-bottom: 0;
+                box-shadow   : @box-shadow2;
+                background   : @theme-bg2-color;
+                border-radius: 2em;
+                padding      : 2px;
+                transition   : .4s ease-in-out;
+
+                &:after {
+                    width        : 47%;
+                    border       : solid 3px #afb42b;
+                    border-radius: 50%;
+                    background   : @theme-bg-color;
+                    transition   : all .2s ease;
+                }
+            }
+        }
+    }
+}
+
+.trm-mode-swich-animation-frame {
+    position       : fixed;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    opacity        : 0;
+    pointer-events : none;
+    transition     : .4s ease-in-out;
+
+    &.trm-active {
+        opacity: 1;
+    }
+
+    .trm-mode-swich-animation {
+        margin-bottom: 40px;
+        width        : 80px;
+        height       : 55px;
+        position     : relative;
+        overflow     : hidden;
+        text-align   : center;
+
+        &:before {
+            content      : '';
+            height       : 1px;
+            width        : 120%;
+            border-bottom: dotted 5px @theme-color;
+            position     : absolute;
+            z-index      : 9;
+            bottom       : 0;
+            left         : -10%;
+        }
+
+        .fa-sun {
+            position   : absolute;
+            z-index    : 0;
+            top        : 0;
+            font-size  : 32px;
+            margin-left: -15px;
+            opacity    : 1;
+            color      : @theme-color;
+            transition : .6s ease-in-out;
+        }
+
+        .fa-moon {
+            position   : absolute;
+            z-index    : 0;
+            top        : 0;
+            font-size  : 32px;
+            margin-left: -15px;
+            color      : @theme-color;
+            opacity    : 0;
+            transform  : translateY(70px) rotate(0);
+            transition : .6s ease-in-out;
+        }
+
+        &.trm-active {
+            .fa-sun {
+                transform: translateY(70px) rotate(360deg);
+                opacity  : 0;
+            }
+
+            .fa-moon {
+                transform: translateY(0) rotate(360deg);
+                opacity  : 1;
+            }
+        }
+    }
+}
+
+@media(max-width:1200px) {
+    .trm-mode-switcher {
+        margin: 0 0 40px 0 !important
+    }
+}
+
+.portfolio {
+    transition: .4s ease-in-out
+}

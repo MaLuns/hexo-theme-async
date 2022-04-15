@@ -46,7 +46,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <!-- title -->
-                            <h5 class="trm-mb-40 trm-title-with-divider">Similar Publications <span data-number="02"></span></h5>
+                            <h5 class="trm-mb-40 trm-title-with-divider">
+                                <%- __('title.other_articles') %>
+                                <span data-number="02"></span>
+                            </h5>
                         </div>
                         <% if(page.prev){ %>
                             <%- partial('./_partial/post-card',{ post: page.prev }) %>
