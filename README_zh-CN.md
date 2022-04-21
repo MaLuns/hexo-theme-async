@@ -26,7 +26,7 @@
 
 ``` bash
 cd hexo
-npm install --save hexo-renderer-less hexo-renderer-ejs
+npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
 git clone git@github.com:MaLuns/hexo-theme-async.git
 ```
@@ -36,7 +36,7 @@ git clone git@github.com:MaLuns/hexo-theme-async.git
 
 ``` bash
 cd hexo
-npm install --save hexo-theme-async
+npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 ```
 您可以覆盖 theme._config.yml 中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
@@ -59,6 +59,7 @@ user:
   describe: 描述
   ruleText: 友链交换规则
   birthDay: 站点运行起始时间 # 用于底部计算时长
+  copyrightYear: 2022
 
 # logo
 favicon:
@@ -92,6 +93,7 @@ banner:
     bgurl:  # 背景图地址，如果 type 是 slideshow，需要为数组
     bannerTitle:  # 横幅上标题
     bannerText: Hi my new friend! # 横幅描述
+    videoUrl: 
   # 归档页
   archive: 
     type: img

@@ -24,7 +24,7 @@
 
 ``` bash
 cd hexo
-npm install --save hexo-renderer-less hexo-renderer-ejs
+npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
 git clone git@github.com:MaLuns/hexo-theme-async.git
 ```
@@ -36,7 +36,7 @@ You can also use the NPM package.
 
 ``` bash
 cd hexo
-npm install --save hexo-theme-async
+npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 ```
 
 You can override the theme._config.yml configuration in _config.yml.
@@ -58,6 +58,7 @@ user:
   describe: A short description
   ruleText: Your friend chain rules
   birthDay: 04/10/2022 17:00:00 
+  copyrightYear: 2022
 
 # logo
 favicon:
@@ -88,6 +89,7 @@ banner:
     bgurl: 
     bannerTitle: 
     bannerText: Hi my new friend!
+    videoUrl: 
   archive:
     type: img
     bgurl: 

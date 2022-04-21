@@ -12,6 +12,7 @@ user:
   describe: 网站简介。
   ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
   birthDay: 04/10/2022 17:00:00 #计时开始时间
+  copyrightYear: 2022
 
 # logo
 favicon:
@@ -46,6 +47,7 @@ banner:
     bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
     bannerTitle: 树深时见鹿，<br>溪午不闻钟。
     bannerText: Hi my new friend!
+    videoUrl: 
   archive:
     type: img
     bgurl: https://w.wallhaven.cc/full/j5/wallhaven-j5we85.jpg

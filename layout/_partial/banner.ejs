@@ -40,10 +40,10 @@
                             <%- bannerTitle %>
                         </h1>
 
-                        <% if(is_home()){ %>
-                            <a data-fancybox href="https://www.bilibili.com/video/BV18o4y1Z7Gb?t=6.2" class="trm-btn trm-btn-border">
-                                Video Resume <i class="fas fa-play"></i>
-                            </a>
+                        <% if(is_home() && videoUrl){ %>
+                            <a data-fancybox href="<%- videoUrl %>" class="trm-btn trm-btn-border">
+                                Video <i class="fas fa-play"></i>
+                            </>
                         <% } else { %>
                             <ul class="trm-breadcrumbs trm-label">
                                 <li>
