@@ -85,6 +85,8 @@ $(function () {
   mode switch
 
   ***************************/
+  let checked = localStorage.getItem('theme-mode') == 'style-dark';
+  $('#trm-swich').attr('checked',checked)
   $('.trm-mode-switcher').clone().appendTo('.trm-mode-switcher-place');
   $('#trm-swich').change(function () {
     if (this.checked) {
@@ -122,6 +124,7 @@ $(function () {
         }, 1000);
       });
     }
+    localStorage.setItem('theme-mode', this.checked ? 'style-dark' : 'style-light')
   });
   /***************************
 
@@ -150,11 +153,12 @@ $(function () {
     lerp: .1
   });
 
-  const comComment = $('com-comment')
+  const comComment = $('.comment-container')
   if (comComment.length) {
-    setTimeout(() => {
-      scroll.update()
-    }, 1000);
+    const ro = new ResizeObserver( entries => {
+      scroll.update();
+    });
+    ro.observe(comComment[0]);
   }
 
   document.addEventListener('swup:contentReplaced', (event) => {
@@ -242,6 +246,13 @@ $(function () {
   ------------------------------------------------------------
   ----------------------------------------------------------*/
   document.addEventListener("swup:contentReplaced", function () {
+    /***************************
+
+    底部倒计时
+
+    ***************************/
+   
+    show_date_time && show_date_time();
 
     /***************************
 
@@ -315,6 +326,7 @@ $(function () {
           }, 1000);
         });
       }
+      localStorage.setItem('theme-mode', this.checked ? 'style-dark' : 'style-light')
     });
     /***************************
 
@@ -343,11 +355,12 @@ $(function () {
       lerp: .1
     });
 
-    const comComment = $('com-comment')
+    const comComment = $('.comment-container')
     if (comComment.length) {
-      setTimeout(() => {
-        scroll.update()
-      }, 1000);
+      const ro = new ResizeObserver( entries => {
+        scroll.update();
+      });
+      ro.observe(comComment[0]);
     }
 
     document.addEventListener('swup:contentReplaced', (event) => {

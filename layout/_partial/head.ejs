@@ -83,3 +83,14 @@
         </script>
       <% } %>
 <% } %> 
+
+<!-- variable -->
+<%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
+<%- variable('FAVICON',theme.favicon) %>
+<%- variable('HTMEM_VERSION',theme.version) %>
+
+<script>
+    let themeMode =localStorage.getItem('theme-mode') || 'style-light';
+    let stylexxxxxx = document.getElementById('trm-switch-style');
+    stylexxxxxx.href = "<%= url_for('css') %>/"+themeMode+".css?v=" + window.HTMEM_VERSION;
+</script>
