@@ -17,7 +17,11 @@
 
 <p align="center">
   🇬🇧 English | 
- <a title="Chinese" href="README_zh-CN.md"> 🇨🇳 中文简体 </a> 
+  <a title="Chinese" href="README_zh-CN.md"> 🇨🇳 中文简体 </a> 
+</p>
+
+<p align="center">
+  <img width="80%" src="https://s1.328888.xyz/2022/04/25/8dRAS.png" alt="8dRAS.png" border="0" />
 </p>
 
 ## Installation
@@ -26,7 +30,7 @@
 cd hexo
 npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
-git clone git@github.com:MaLuns/hexo-theme-async.git
+git clone https://github.com/MaLuns/hexo-theme-async.git
 ```
 Then change your setting in .theme_config.yml.
 
