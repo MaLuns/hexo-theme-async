@@ -20,6 +20,10 @@
   <a title="English" href="README.md">🇬🇧 English</a>
 </p>
 
+<p align="center">
+  <img width="80%" src="https://s1.328888.xyz/2022/04/25/8dRAS.png" alt="8dRAS.png" border="0" />
+</p>
+
 ## 安装
 
 克隆仓库在 themes 目录下
@@ -28,7 +32,7 @@
 cd hexo
 npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
-git clone git@github.com:MaLuns/hexo-theme-async.git
+git clone https://gitee.com/ml13/hexo-theme-async.git
 ```
 然后在 theme 中 _config.yml 中更改设置。
 
