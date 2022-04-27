@@ -36,8 +36,19 @@
     'css/plugins/font-awesome.min.css'
 ]) %>
 
+<!-- variable -->
+<%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
+<%- variable('FAVICON',theme.favicon) %>
+<%- variable('HTMEM_VERSION',theme.version) %>
+<link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+<link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+
 <!-- theme css -->
-<link rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+<script>
+    let themeMode = localStorage.getItem('theme-mode') === 'style-dark' ? 'style-light' : 'style-dark';
+    let linkdom = document.querySelector('[data-theme-type='+themeMode+']');
+    if(linkdom) linkdom.remove();
+</script>
 
 <!-- Site Analytics -->
 <% if(theme.webAnalytics.enable){ %>
@@ -83,14 +94,3 @@
         </script>
       <% } %>
 <% } %> 
-
-<!-- variable -->
-<%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
-<%- variable('FAVICON',theme.favicon) %>
-<%- variable('HTMEM_VERSION',theme.version) %>
-
-<script>
-    let themeMode =localStorage.getItem('theme-mode') || 'style-light';
-    let stylexxxxxx = document.getElementById('trm-switch-style');
-    stylexxxxxx.href = "<%= url_for('css') %>/"+themeMode+".css?v=" + window.HTMEM_VERSION;
-</script>
