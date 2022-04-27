@@ -90,4 +90,66 @@
             display: none;
         }
     }
+
+    h4:before,
+    h5:before,
+    h6:before {
+        display: inline-block;
+        width  : 1em;
+        content: '#';
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size     : 1.7em;
+        position      : relative;
+        padding-bottom: 10px;
+
+        &::before {
+            content      : '';
+            width        : 100%;
+            padding      : 0px 20px;
+            border-bottom: 1px solid @theme-bg2-color;
+            position     : absolute;
+            bottom       : -1px;
+            left         : -20px;
+            box-sizing   : unset;
+        }
+
+        &::after {
+            transition      : all 0.35s ease-out;
+            content         : '';
+            position        : absolute;
+            background-color: #AFB42B;
+            width           : 1em;
+            height          : 5px;
+            bottom          : -3px;
+            left            : 0;
+            border-radius   : 10px;
+        }
+
+        &:hover::after {
+            width: 2em;
+        }
+    }
+
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.15em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        font-size: 0.9em;
+    }
 }
