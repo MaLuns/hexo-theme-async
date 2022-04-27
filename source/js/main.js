@@ -86,7 +86,14 @@ $(function () {
 
   ***************************/
   let checked = localStorage.getItem('theme-mode') == 'style-dark';
-  $('#trm-swich').attr('checked',checked)
+  $('#trm-swich').attr('checked', checked)
+  if(checked){
+    $('.trm-mode-swich-animation').addClass('trm-active');
+    $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+  }else{
+    $('.trm-mode-swich-animation').removeClass('trm-active');
+    $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+  }
   $('.trm-mode-switcher').clone().appendTo('.trm-mode-switcher-place');
   $('#trm-swich').change(function () {
     if (this.checked) {
@@ -155,7 +162,7 @@ $(function () {
 
   const comComment = $('.comment-container')
   if (comComment.length) {
-    const ro = new ResizeObserver( entries => {
+    const ro = new ResizeObserver(entries => {
       scroll.update();
     });
     ro.observe(comComment[0]);
@@ -251,7 +258,7 @@ $(function () {
     底部倒计时
 
     ***************************/
-   
+
     show_date_time && show_date_time();
 
     /***************************
@@ -357,7 +364,7 @@ $(function () {
 
     const comComment = $('.comment-container')
     if (comComment.length) {
-      const ro = new ResizeObserver( entries => {
+      const ro = new ResizeObserver(entries => {
         scroll.update();
       });
       ro.observe(comComment[0]);
