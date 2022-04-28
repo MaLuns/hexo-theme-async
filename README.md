@@ -166,3 +166,9 @@ comment:
 # Service Worker
 sw: false
 ```
+
+## Contribute
+Your contribution is very welcome. You can build it together in the following ways :smiley:
+
+- Use Issue to report bugs or consult.
+- Submit Pull Request to improve hexo-theme-async code.

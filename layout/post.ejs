@@ -73,3 +73,12 @@
         </div>
     </div>
 </div>
+
+<% if(is_post()){ %>
+    <% if(theme.is_toc){ %>
+      <div id="post-toc" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" class="post-toc single">
+          <%- toc(page.content) %>
+      </div>
+    <% } %>
+  <% } %>
+  
