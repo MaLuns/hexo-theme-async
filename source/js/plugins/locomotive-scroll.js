@@ -1920,7 +1920,7 @@
     var translate = {};
     if (!window.getComputedStyle) return;
     var style = getComputedStyle(el);
-    var transform = style.transform || style.webkitTransform || style.mozTransform;
+    var transform = style.webkitTransform || style.mozTransform || style.transform;
     var mat = transform.match(/^matrix3d\((.+)\)$/);
 
     if (mat) {

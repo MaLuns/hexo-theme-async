@@ -1,0 +1,65 @@
+/* 文章导航 */
+.post-toc {
+    display   : none;
+    position  : fixed;
+    top       : 200px;
+    right     : 0px;
+    width     : 4em;
+    height    : fit-content;
+    max-height: calc(100vh - 200px);
+    text-align: initial;
+
+
+    ol {
+        list-style : none;
+        user-select: none;
+        margin     : 0 0 0 1em;
+        padding    : 0;
+
+        &.toc {
+            margin: 0;
+        }
+
+        .toc-item {
+
+            .toc-link {
+                position        : relative;
+                display         : flex;
+                height          : 16px;
+                margin          : 0 0 10px 0;
+                background-color: @theme-bg-color;
+                border-radius   : 16px 0 0 16px;
+
+                &.current {
+                    background-color: #afb42b;
+                }
+
+                .toc-tips {
+                    position        : absolute;
+                    right           : calc(100% + .5em);
+                    width           : max-content;
+                    top             : -4px;
+                    font-size       : 14px;
+                    background-color: @theme-bg-color;
+                    border-radius   : 6px;
+                    padding         : 0 .5em;
+                    line-height     : 24px;
+                    display         : none;
+                    box-shadow      : 8px -5px 12px 0 #00000036;
+                }
+
+                &:hover {
+                    .toc-tips {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .post-toc {
+        display: none !important;
+    }
+}

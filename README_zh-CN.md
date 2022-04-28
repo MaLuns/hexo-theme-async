@@ -173,3 +173,9 @@ comment:
 # 开启 Service Worker
 sw: false
 ```
+
+## 参与贡献
+非常欢迎你的贡献，你可以通过以下方式一起共建 :smiley:：
+
+- 通过 Issue 报告 bug 或进行咨询。
+- 提交 Pull Request 改进 hexo-theme-async 的代码。

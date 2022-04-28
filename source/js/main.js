@@ -87,10 +87,10 @@ $(function () {
   ***************************/
   let checked = localStorage.getItem('theme-mode') == 'style-dark';
   $('#trm-swich').attr('checked', checked)
-  if(checked){
+  if (checked) {
     $('.trm-mode-swich-animation').addClass('trm-active');
     $('.trm-mode-swich-animation-frame').removeClass('trm-active');
-  }else{
+  } else {
     $('.trm-mode-swich-animation').removeClass('trm-active');
     $('.trm-mode-swich-animation-frame').removeClass('trm-active');
   }
@@ -157,16 +157,29 @@ $(function () {
   const scroll = new LocomotiveScroll({
     el: document.querySelector('#trm-scroll-container'),
     smooth: true,
-    lerp: .1
+    lerp: .1,
+    reloadOnContextChange: true
   });
 
   const comComment = $('.comment-container')
   if (comComment.length) {
     const ro = new ResizeObserver(entries => {
-      scroll.update();
+      scroll.scrollTo(0, {
+        callback () {
+          scroll.update();
+        }
+      });
     });
     ro.observe(comComment[0]);
   }
+
+  scroll.on('scroll', ({ scroll }) => {
+    if (scroll.y > 500) {
+      $('#post-toc').show(300)
+    } else {
+      $('#post-toc').hide(300)
+    }
+  });
 
   document.addEventListener('swup:contentReplaced', (event) => {
     scroll.destroy()
@@ -359,16 +372,29 @@ $(function () {
     const scroll = new LocomotiveScroll({
       el: document.querySelector('#trm-scroll-container'),
       smooth: true,
-      lerp: .1
+      lerp: .1,
+      reloadOnContextChange: true
     });
 
     const comComment = $('.comment-container')
     if (comComment.length) {
       const ro = new ResizeObserver(entries => {
-        scroll.update();
+        scroll.scrollTo(0, {
+          callback () {
+            scroll.update();
+          }
+        });
       });
       ro.observe(comComment[0]);
     }
+
+    scroll.on('scroll', ({ scroll }) => {
+      if (scroll.y > 500) {
+        $('#post-toc').show(300)
+      } else {
+        $('#post-toc').hide(300)
+      }
+    });
 
     document.addEventListener('swup:contentReplaced', (event) => {
       scroll.destroy()
