@@ -36,7 +36,7 @@ npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
 git clone https://gitee.com/ml13/hexo-theme-async.git
 ```
-然后在 theme 中 _config.yml 中更改设置。
+然后在 theme 中 \_config.yml 中更改设置。
 
 您也可以使用NPM包。
 
@@ -64,7 +64,7 @@ layout: about
 ```
 Cannot read properties of undefined (reading 'forEach')
 ```
-请检查您主题目录下的 _config 配置文件中是否含有关于友链部分的信息描述，此报错可能由于数据为空导致，解决方案是在 _config 中加入数据，避免空处理
+请检查您主题目录下的 \_config 配置文件中是否含有关于友链部分的信息描述，此报错可能由于数据为空导致，解决方案是在 \_config 中加入数据，避免空处理
 ```
 # 友链
 links:
