@@ -26,6 +26,8 @@
 
 ## 安装
 
+依赖包通过 npm 命令安装在博客目录下
+
 克隆仓库在 themes 目录下
 
 ``` bash
@@ -34,7 +36,7 @@ npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
 git clone https://gitee.com/ml13/hexo-theme-async.git
 ```
-然后在 theme 中 _config.yml 中更改设置。
+然后在 theme 中 \_config.yml 中更改设置。
 
 您也可以使用NPM包。
 
@@ -43,6 +45,34 @@ cd hexo
 npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 ```
 您可以覆盖 theme._config.yml 中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+
+如果您是第一次使用主题的新手，
+在安装后可能会发现，无法访问友链和关于页面，
+因为你并没有配置相关页面，故导致 url 无效。请尝试使用以下命令
+```bash
+hexo new page links
+hexo new page about
+```
+然后会在博客目录下的 /source 新增出现 links 文件夹和 about 文件夹，
+然后每个文件夹里会有一个 index.md 文件，打开并对应补充布局，使模板生效
+```
+layout: links
+layout: about
+```
+
+如果您在使用 hexo g 时产生关于友链页面代码报错
+```
+Cannot read properties of undefined (reading 'forEach')
+```
+请检查您主题目录下的 \_config 配置文件中是否含有关于友链部分的信息描述，此报错可能由于数据为空导致，解决方案是在 \_config 中加入数据，避免空处理
+```
+# 友链
+links:
+  - name: 白云苍狗 # 名称
+    url: //www.imalun.com/ # 地址
+    image: //www.imalun.com/images/avatar.jpg # 头像
+    desc: 醒，亦在人间；梦，亦在人间 # 描述
+```
 
 ## 演示
 

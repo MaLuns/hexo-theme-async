@@ -45,6 +45,32 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wo
 
 You can override the theme._config.yml configuration in _config.yml.
 
+If you are a novice using the theme for the first time, you may find that you cannot access the links and about page after installation, because you have not configured the relevant page, so the URL is invalid. Try the following command
+```bash
+hexo new page links
+hexo new page about
+```
+Then the links folder and about folder will appear in /source under the blog directory,
+Then there will be an index in each folder md file, open and supplement the layout accordingly to make the template effective
+```
+layout: links
+layout: about
+```
+
+If you make an error about the page code of links when using "hexo g" command
+```
+Cannot read properties of undefined (reading 'forEach')
+```
+Please check the \_config configuration file contains the information description about the links. This error may be caused by the empty data. The solution is to Add data to \_config to avoid null processing
+```
+# links
+links:
+  - name: 白云苍狗 # name
+    url: //www.imalun.com/ # url
+    image: //www.imalun.com/images/avatar.jpg # avater
+    desc: 醒，亦在人间；梦，亦在人间 # description
+```
+
 ## Demo
 You can review demo at my [personal blog](https://www.imalun.com) in chinese.
 
