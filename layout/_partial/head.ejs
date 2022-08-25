@@ -40,15 +40,21 @@
 <%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
 <%- variable('FAVICON',theme.favicon) %>
 <%- variable('HTMEM_VERSION',theme.version) %>
-<link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
-<link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+<%- variable('THEME',theme.theme) %>
 
 <!-- theme css -->
-<script>
-    let themeMode = localStorage.getItem('theme-mode') === 'style-dark' ? 'style-light' : 'style-dark';
-    let linkdom = document.querySelector('[data-theme-type='+themeMode+']');
-    if(linkdom) linkdom.remove();
-</script>
+<% if(theme.theme.switch){%>
+    <link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+    <link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+    <script>
+        let catchMode = localStorage.getItem('theme-mode') || THEME.default;
+        let themeMode = catchMode === 'style-dark' ? 'style-light' : 'style-dark';
+        let linkdom = document.querySelector('[data-theme-type='+themeMode+']');
+        if(linkdom) linkdom.remove();
+    </script>
+<%} else {%>
+    <link rel="stylesheet" href="<%= url_for('css/'+(theme.theme.default)+'.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+<%}%>
 
 <!-- Site Analytics -->
 <% if(theme.webAnalytics.enable){ %>

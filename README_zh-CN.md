@@ -200,6 +200,11 @@ comment:
     region: 
     path: window.location.pathname
 
+# 主题配置 
+theme: 
+  switch: true  # 是否可以切换，false 页面将不会显示切换按钮
+  default: style-light # 设置默认主题模式，可选 style-light style-dark
+
 # 开启 Service Worker
 sw: false
 ```
