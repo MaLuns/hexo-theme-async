@@ -189,6 +189,11 @@ comment:
     region: 
     path: window.location.pathname
 
+# Theme 
+theme: 
+  switch: true  
+  default: style-light # style-light style-dark
+
 # Service Worker
 sw: false
 ```

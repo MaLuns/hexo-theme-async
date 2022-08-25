@@ -116,5 +116,10 @@ comment:
     v: 0.0.12
     env: 
 
+# Theme 
+theme: 
+  switch: true 
+  default: style-light # style-light style-dark
+
 # Service Worker
 sw: false

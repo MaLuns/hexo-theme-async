@@ -85,7 +85,7 @@ $(function () {
   mode switch
 
   ***************************/
-  let checked = localStorage.getItem('theme-mode') == 'style-dark';
+  let checked = (localStorage.getItem('theme-mode') || THEME.default) == 'style-dark';
   $('#trm-swich').attr('checked', checked)
   if (checked) {
     $('.trm-mode-swich-animation').addClass('trm-active');
