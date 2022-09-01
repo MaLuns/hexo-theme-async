@@ -25,12 +25,9 @@
 </p>
 
 ## 安装
-
-依赖包通过 npm 命令安装在博客目录下
-
-克隆仓库在 themes 目录下
-
+### 克隆本仓库到 themes 目录下
 ``` bash
+# 安装 less、ejs、wordcount等插件
 cd hexo
 npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 cd themes
@@ -38,41 +35,13 @@ git clone https://gitee.com/ml13/hexo-theme-async.git
 ```
 然后在 theme 中 \_config.yml 中更改设置。
 
-您也可以使用NPM包。
-
+### 使用 npm 安装
 ``` bash
+# 安装 hexo-theme-async、less、ejs、wordcount等插件
 cd hexo
 npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 ```
 您可以覆盖 theme._config.yml 中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
-
-如果您是第一次使用主题的新手，
-在安装后可能会发现，无法访问友链和关于页面，
-因为你并没有配置相关页面，故导致 url 无效。请尝试使用以下命令
-```bash
-hexo new page links
-hexo new page about
-```
-然后会在博客目录下的 /source 新增出现 links 文件夹和 about 文件夹，
-然后每个文件夹里会有一个 index.md 文件，打开并对应补充布局，使模板生效
-```
-layout: links
-layout: about
-```
-
-如果您在使用 hexo g 时产生关于友链页面代码报错
-```
-Cannot read properties of undefined (reading 'forEach')
-```
-请检查您主题目录下的 \_config 配置文件中是否含有关于友链部分的信息描述，此报错可能由于数据为空导致，解决方案是在 \_config 中加入数据，避免空处理
-```
-# 友链
-links:
-  - name: 白云苍狗 # 名称
-    url: //www.imalun.com/ # 地址
-    image: //www.imalun.com/images/avatar.jpg # 头像
-    desc: 醒，亦在人间；梦，亦在人间 # 描述
-```
 
 ## 演示
 
@@ -209,8 +178,35 @@ theme:
 sw: false
 ```
 
+## 常见问题
+
+**友链页、关于页为啥没有，如何添加？**
+
+友链页、关于页属于自定义页面，需要自己手动添加，可以通过下面命令添加页面。
+```bash
+hexo new page links
+hexo new page about
+```
+然后会在博客目录下的 /source 新增出现 links 文件夹和 about 文件夹，
+然后每个文件夹里会有一个 index.md 文件，打开并对应补充布局，使模板生效
+```
+layout: links
+layout: about
+```
+
+**文章封面图怎么添加？**
+
+在文章的 Front-matter 添加 photos 字段。
+```
+---
+title: Hello World
+photos: [图片路径]
+---
+```
+
 ## 参与贡献
 非常欢迎你的贡献，你可以通过以下方式一起共建 :smiley:：
 
-- 通过 Issue 报告 bug 或进行咨询。
+- 遇到 Bug 通过提交 [Issue](https://github.com/MaLuns/hexo-theme-async/issues) 报告。
+- 有建议和疑问欢迎前往 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions) 讨论。
 - 提交 Pull Request 改进 hexo-theme-async 的代码。
