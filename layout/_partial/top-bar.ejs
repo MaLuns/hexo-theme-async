@@ -3,7 +3,9 @@
 		<div class="trm-left-side">
 			<!-- logo -->
 			<a href="<%- url_for('/')%>" class="trm-logo-frame trm-anima-link">
-				<img src="<%- url_for(theme.user.logo)%>" alt="logo">
+				<% if(theme.user.logo) { %>
+					<img src="<%- url_for(theme.user.logo)%>" alt="logo">
+				<% } %>
 				<div class="trm-logo-text">
 					<%= theme.user.first_name %>
 					<span><%= theme.user.last_name %></span>
