@@ -26,6 +26,8 @@
 
 ## Installation
 
+### Clone the repository to the themes directory
+
 ``` bash
 cd hexo
 npm install --save hexo-renderer-less hexo-renderer-ejs hexo-wordcount
@@ -34,42 +36,13 @@ git clone https://github.com/MaLuns/hexo-theme-async.git
 ```
 Then change your setting in .theme_config.yml.
 
-
-
-You can also use the NPM package.
+### Use npm to install
 
 ``` bash
 cd hexo
 npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs hexo-wordcount
 ```
-
-You can override the theme._config.yml configuration in _config.yml.
-
-If you are a novice using the theme for the first time, you may find that you cannot access the links and about page after installation, because you have not configured the relevant page, so the URL is invalid. Try the following command
-```bash
-hexo new page links
-hexo new page about
-```
-Then the links folder and about folder will appear in /source under the blog directory,
-Then there will be an index in each folder md file, open and supplement the layout accordingly to make the template effective
-```
-layout: links
-layout: about
-```
-
-If you make an error about the page code of links when using "hexo g" command
-```
-Cannot read properties of undefined (reading 'forEach')
-```
-Please check the \_config configuration file contains the information description about the links. This error may be caused by the empty data. The solution is to Add data to \_config to avoid null processing
-```
-# links
-links:
-  - name: 白云苍狗 # name
-    url: //www.imalun.com/ # url
-    image: //www.imalun.com/images/avatar.jpg # avater
-    desc: 醒，亦在人间；梦，亦在人间 # description
-```
+You can override the theme._config.yml configuration in _config.yml,Can refer to [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
 ## Demo
 You can review demo at my [personal blog](https://www.imalun.com) in chinese.
@@ -198,8 +171,40 @@ theme:
 sw: false
 ```
 
-## Contribute
+## Questions
+
+**Why don't you have a friend chain page and an about page, and how do I add it?**
+Friend chain pages and about also belong to custom pages, you need to add them manually, you can add pages by following command
+```bash
+hexo new page links
+hexo new page about
+```
+Then the links folder and the about folder will appear in the /source under the blog directory.
+Then there will be a index.md file in each folder, open and supplement the layout to make the template take effect
+```
+layout: links
+layout: about
+```
+
+**How to add an article cover art？**
+
+Add the photos field in the Front-matter of the article.
+```
+---
+title: Hello World
+photos: [Picture path]
+---
+```
+
+## Contribution
 Your contribution is very welcome. You can build it together in the following ways :smiley:
 
-- Use Issue to report bugs or consult.
+- Use [Issue](https://github.com/MaLuns/hexo-theme-async/issues) to report bugs or consult.
+- Suggestions and questions are welcome to discuss at [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions).
 - Submit Pull Request to improve hexo-theme-async code.
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2020-present, MaLuns
