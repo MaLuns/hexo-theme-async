@@ -5,10 +5,10 @@ user:
   name: ThemeAsync
   first_name: Theme
   last_name: Async
-  logo: /logo.png
+  logo: 
   email: 
   domain: 站点域名
-  avatar: 博主头像信息
+  avatar: /img/avatar.jpg
   describe: 网站简介。
   ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
   birthDay: 04/10/2022 17:00:00 #计时开始时间
