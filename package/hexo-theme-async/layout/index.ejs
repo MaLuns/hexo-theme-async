@@ -1,0 +1,85 @@
+<div class="trm-content-start">
+
+    <!-- banner -->
+    <%- partial('./_partial/banner',  {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...theme.banner.index 
+    }) %>
+    <!-- banner end -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+
+                <!-- main card -->
+                <%- partial('./_partial/sidebar') %>
+                <!-- main card end -->
+
+            </div>
+            <div class="col-lg-8">
+
+                <!-- content -->
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <!-- categories -->
+                    <div class="row">
+                        <%  site.categories.data.forEach((item,index) => { 
+                            if(index<2) { 
+                        %>
+                        <div class="col-lg-6">
+                            <!-- categories card -->
+                            <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
+                                <h6>
+                                    <%- item.name %>
+                                    <span class="trm-number">
+                                        <%= item.posts.length %>
+                                    </span>
+                                </h6>
+                                <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+                                <a href="<%- url_for(item.path) %>." class="trm-label">
+                                    <%- __('title.more') %> 
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <!-- categories card end -->
+                        </div>
+                        <% }
+                         }) %>
+                    </div>
+                    <!-- categories end -->
+
+                    <!-- newest publications -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- title -->
+                            <h5 class="trm-mb-40 trm-title-with-divider">
+                                <%-__('title.new_publish')%> 
+                                <span data-number="01"></span>
+                            </h5>
+                        </div>
+                        <% page.posts.each(function(post,postIndex){ %>
+                            <%- partial('./_partial/post-card',{ post }) %>
+                        <% }) %>
+                    </div>
+                    <!-- newest publications end -->
+
+                    <div class="trm-pagination">
+                        <%- paginator({prev_next:false}) %>
+                    </div>
+                    
+
+                    <div class="trm-divider trm-mb-40"></div>
+
+                    <!-- footer -->
+                    <%- partial('./_partial/footer') %>
+                    <!-- footer end -->
+
+                </div>
+                <!-- content end -->
+
+            </div>
+        </div>
+    </div>
+</div>

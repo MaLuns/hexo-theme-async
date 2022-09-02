@@ -207,4 +207,4 @@ Your contribution is very welcome. You can build it together in the following wa
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2020-present, MaLuns
+Copyright (c) 2022-present, MaLuns

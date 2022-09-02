@@ -1,0 +1,45 @@
+@brand  : #0078e7;
+@primary: #ccc;
+
+
+::-webkit-scrollbar {
+    width : 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius   : 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius   : 2px;
+    background-color: fade(@primary, 70%);
+
+    &:window-inactive {
+        background-color: fade(@primary, 60%);
+    }
+
+    &:hover {
+        background-color: fade(@primary, 80%);
+    }
+
+    &:active {
+        background-color: @primary;
+    }
+}
+
+:root {
+    --vp-c-brand        : @brand;
+    --vp-c-brand-light  : #0077e7de;
+    --vp-c-brand-lighter: #0077e7cb;
+    --vp-button-brand-bg: @brand;
+    --content-width     : 1000px;
+}
+
+.VPSidebar {
+    .link {
+        padding: 4px 0 !important;
+        margin : 0 !important;
+    }
+}
