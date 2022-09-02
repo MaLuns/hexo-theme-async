@@ -1,0 +1,32 @@
+{
+  "name": "hexo-theme-async",
+  "version": "1.0.9",
+  "description": "🎈 A simple, lightweight Hexo theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+  },
+  "keywords": [
+    "hexo-theme",
+    "hexo",
+    "theme",
+    "blog",
+    "cms"
+  ],
+  "author": "Maluns <admin@imalun.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaLuns/hexo-theme-async/issues"
+  },
+  "homepage": "https://github.com/MaLuns/hexo-theme-async#readme",
+  "files": [
+    "languages",
+    "layout",
+    "scripts",
+    "source",
+    "src",
+    "_config.yml",
+    "README_zh-CN.md",
+    "README.md"
+  ]
+}

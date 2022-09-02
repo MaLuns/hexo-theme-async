@@ -1,26 +1,24 @@
 {
   "name": "hexo-theme-async",
   "version": "1.0.9",
+  "author": "Maluns <admin@imalun.com>",
   "description": "🎈 A simple, lightweight Hexo theme",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "publish:theme": "zx scripts/publish.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.13"
   },
-  "keywords": [
-    "hexo-theme",
-    "hexo",
-    "theme",
-    "blog",
-    "cms"
-  ],
-  "author": "maluns",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/MaLuns/hexo-theme-async/issues"
   },
-  "homepage": "https://github.com/MaLuns/hexo-theme-async#readme"
+  "homepage": "https://github.com/MaLuns/hexo-theme-async#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+  }
 }

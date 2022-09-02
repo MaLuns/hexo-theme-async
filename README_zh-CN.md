@@ -77,16 +77,16 @@ favicon:
 
 # 顶部菜单
 top_bars:
-    - title: home
-      url: /
-      # children # 添加二级菜单
-      # noswup # 打开新的窗口
-    - title: archives
-      url: /archives/
-    - title: links
-      url: /links/
-    - title: about
-      url: /about/
+  - title: home
+    url: /
+    # children # 添加二级菜单
+    # noswup # 打开新的窗口
+  - title: archives
+    url: /archives/
+  - title: links
+    url: /links/
+  - title: about
+    url: /about/
 
 # 页面顶部横幅
 banner:

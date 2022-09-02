@@ -1,0 +1,39 @@
+name: NPM Publish
+
+on:
+  push:
+    branches: [ master ]
+    tags:
+      - "v*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout codes
+      uses: actions/checkout@v2
+
+    - name: Setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Copy README
+      run: |
+        cp ./README_zh-CN.md ./package/hexo-theme-async
+        cp ./README.md ./package/hexo-theme-async
+        cd ./package/hexo-theme-async
+
+    - uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
