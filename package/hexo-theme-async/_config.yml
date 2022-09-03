@@ -15,15 +15,56 @@ user:
 
 # logo
 favicon:
-  logo:
-  icon16:
-  icon32:
-  appleTouchIcon:
+  logo: 
+  icon16: 
+  icon32: 
+  appleTouchIcon: 
   webmanifest:
   visibilitychange: false
   hidden: 
   showText: (/≧▽≦/)咦！又好了！
   hideText: (●—●)喔哟，崩溃啦！
+
+# assets
+assets:
+  css: [
+    css/plugins/bootstrap.min.css,
+    css/plugins/locomotive-scroll.css,
+    css/plugins/swiper.min.css,
+    css/plugins/fancybox.min.css
+  ]
+  js: [
+    js/plugins/jquery.min,
+    js/plugins/swup.min.js,
+    js/plugins/locomotive-scroll.js,
+    js/plugins/typing.js,
+    js/plugins/fancybox.min.js,
+    js/plugins/swiper.min.js
+  ]
+  icons: 
+    type: font # font symbol
+    css:  css/plugins/font-awesome.min.css
+    js:
+
+# cdn
+cdn:
+  css: 
+  js:
+    head:
+    base: 
+    async: 
+    defer: 
+
+# icons
+icons:
+  sun: far fa-sun
+  moon: far fa-moon
+  play: fas fa-play
+  email: far fa-envelope
+  next: fas fa-arrow-right
+  calendar: far fa-calendar-alt
+  clock: far fa-clock
+  user: far fa-user
 
 # menu
 top_bars:
@@ -40,32 +81,27 @@ top_bars:
 banner:
   default:
     type: img
-    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
+    bgurl: /img/banner.png
     bannerText: Hi my new friend!
   index:
     type: img
-    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
     bannerTitle: 树深时见鹿，<br>溪午不闻钟。
     bannerText: Hi my new friend!
     videoUrl: 
   archive:
     type: img
-    bgurl: https://w.wallhaven.cc/full/j5/wallhaven-j5we85.jpg
     bannerTitle: 云间连下榻，<br>天上接行杯。
     bannerText: The article archive
   links:
     type: img
-    bgurl: https://images.unsplash.com/photo-1563718428108-a2420c356c5c
     bannerTitle: 莫愁前路无知己，<br>天下谁人不识君。
     bannerText: A link to a friend's website
   comment:
     type: img
-    bgurl: https://images.unsplash.com/photo-1621266309424-52f5a2e6d7f6
     bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
     bannerText: The magic tree hole
   about:
     type: img
-    bgurl: https://images.unsplash.com/photo-1637118560941-b2363dcd8a8e?crop=entropy&cs=srgb&fm=jpg&ixid=Mnw4OTgyNHwwfDF8c2VhcmNofDE0fHwlRTYlOTclQTUlRTUlODclQkF8ZW58MHx8fHwxNjQ5NjcwODgz&ixlib=rb-1.2.1&q=85
     bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
     bannerText: About me
 
@@ -81,12 +117,15 @@ sidebar:
     - key: sidebar.age
       val: 18
   social:
-    - icon: fab fa-github
+    - name: Github
+      icon: fab fa-github
       url: https://github.com
-    - icon: iconfont cg-gitee
-      url: https://gitee.com
-    - icon: iconfont cg-weibo
-      url: https://weibo.com/
+    - name: Twitter
+      icon: fab fa-twitter
+      url: https://twitter.com
+    - name: Youtube
+      icon: fab fa-youtube
+      url: https://youtube.com/
 
 # about
 about:

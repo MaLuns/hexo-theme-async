@@ -22,17 +22,20 @@
                     
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-calendar-alt trm-icon"></i><br>
+                            <div class="trm-card trm-label trm-label-light text-center">
+                                <%- icon(theme.icons.calendar,'trm-icon') %><br>
                                 <%= date(page.date,'MM/DD') %>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-clock trm-icon"></i><br>
+                            <div class="trm-card trm-label trm-label-light text-center">
+                                <%- icon(theme.icons.clock,'trm-icon') %><br>
                                 <%= date(page.date,'hh:mm') %>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-user trm-icon"></i><br>
+                            <div class="trm-card trm-label trm-label-light text-center">
+                                <%- icon(theme.icons.user,'trm-icon') %><br>
                                 <%= theme.user.name %>
                             </div>
                         </div>

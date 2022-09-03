@@ -1,0 +1,43 @@
+<% if(theme.webAnalytics.enable){ %>
+    <% if(theme.webAnalytics.baidu){ %>
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?<%- theme.webAnalytics.baidu %>";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <% } %> 
+
+    <% if (theme.webAnalytics.google){ %>
+        <!-- Google Analytics -->
+        <script defer>
+          window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+          ga.l = +new Date;
+          ga('create', '<%= theme.webAnalytics.google %>', 'auto');
+          ga('send', 'pageview');
+        </script>
+        <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <% } %>
+
+    <% if(theme.webAnalytics.tencent && theme.webAnalytics.tencent.sid && theme.webAnalytics.tencent.cid) { %>
+        <!-- Tencent Analytics -->
+        <script defer>
+          let _mtac = {};
+          (function () {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "<%= theme.webAnalytics.tencent.sid %>");
+            <% if(theme.webAnalytics.tencent.cid) { %>
+                mta.setAttribute("cid", "<%= theme.webAnalytics.tencent.cid %>");
+            <% } %>
+            let s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+          })();
+        </script>
+      <% } %>
+<% } %> 
