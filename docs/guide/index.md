@@ -43,7 +43,7 @@ theme: async
 
 ## 配置主题 Config
 
-在 Hexo 工作目录下新建 `_config.async.yml`，您仅需在 `_config.async.yml` 中自定义您想要覆盖的配置，其余将自动与主题默认配置合并。
+在 Hexo 工作目录下新建 `_config.async.yml`（ Hexo 5.0.0 + 起提供），您仅需在 `_config.async.yml` 中自定义您想要覆盖的配置，其余将自动与主题默认配置合并。
 
 如果您是通过克隆代码到本地方式安装主题，也优先推荐使用这种方式，而不是去修的主题目录下的 `_config.yml` 文件。（这样做也更方便日后的升级）
 

@@ -35,7 +35,7 @@ yarn add hexo-generator-feed
 ``` yaml
 sidebar:
   social:
-    - icon: iconfont cg-rss
+    - icon: fas fa-rss
       url: atom.xml
 ```
 

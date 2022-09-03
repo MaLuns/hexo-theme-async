@@ -1,6 +1,4 @@
 <script  setup>
-import { defineProps } from 'vue'
-
 defineProps({
     site: {
         type: Object,
@@ -21,13 +19,15 @@ defineProps({
         <sub :title="site.desc">{{ site.name }}</sub>
     </a>
 </template>
-<style lang="less">
+
+<style lang="less" scoped>
 .site-link {
     text-align: center;
 
     img {
-        width: 60px;
-        height: 60px;
+        margin: 0 6px;
+        width: 64px;
+        height: 64px;
         overflow: hidden;
         border-radius: 50%;
     }

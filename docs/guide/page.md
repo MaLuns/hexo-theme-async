@@ -6,7 +6,8 @@
 
 - `keywords`：关键字，用于 meta 标签
 - `description`: 描述，用于 meta 标签
-- `photos`： 文章封面图
+- `photos`：文章封面图 (下个版本弃用) 
+- `cover`: 文章封面图 
 - `top`: 首页排序值
 
 ``` yaml

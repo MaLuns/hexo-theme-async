@@ -1,0 +1,59 @@
+[
+    {
+        "large_version": "v1.1.x",
+        "children": [
+            {
+                "version": "1.1.0",
+                "logs": [
+                    {
+                        "type": "docs",
+                        "text": "增加使用文档（没错就是俺）"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加 404 模板"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加 hexo-wordcount 可选配置"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "Head  增加自定义 CDN"
+                    },
+                    {
+                        "type": "refactor",
+                        "text": "优化配置项"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "large_version": "v1.0.x",
+        "children": [
+            {
+                "version": "1.0.11",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "允许设置默认主题"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "友链配置为空渲染异常"
+                    }
+                ]
+            },
+            {
+                "version": "1.0.10",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复 动态区域加载异常，暗黑模式刷新丢失"
+                    }
+                ]
+            }
+        ]
+    }
+]

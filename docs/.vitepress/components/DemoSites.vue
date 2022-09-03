@@ -15,13 +15,9 @@ const numOfRow = ref(6)
             </template>
         </tr>
     </table>
-    <!--  <ul class="site-list">
-        <li v-for="site in sites">
-            <demo-site :site="site" />
-        </li>
-    </ul> -->
 </template>
-<style lang="less">
+
+<style lang="less" scoped>
 .site-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, 120px);

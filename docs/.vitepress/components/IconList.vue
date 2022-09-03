@@ -47,7 +47,7 @@ watch(searchVal, (newVal) => {
     </ul>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .title {
     display: flex;
     justify-content: space-between;
