@@ -8,10 +8,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Badge: typeof import('./components/Badge.vue')['default']
+    ChangeLog: typeof import('./components/ChangeLog.vue')['default']
+    ChangeLogs: typeof import('./components/ChangeLogs.vue')['default']
     DemoSite: typeof import('./components/DemoSite.vue')['default']
     DemoSites: typeof import('./components/DemoSites.vue')['default']
     IconList: typeof import('./components/IconList.vue')['default']
     InfoToast: typeof import('./components/InfoToast.vue')['default']
-    Sites: typeof import('./components/Sites.vue')['default']
+    OutLine: typeof import('./components/OutLine.vue')['default']
   }
 }

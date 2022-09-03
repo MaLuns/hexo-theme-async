@@ -9,7 +9,7 @@
 
 如未特殊说明，皆默认在 `_config.async.yml` 文件中配置。
 
-请最好**不要**对**主题的任何文件**进行修改，除非你确认你拥有一定的开发能力或此后将不会对主题进行升级。
+请最好**不要**对**主题的任何文件**进行修改，除非您确认您拥有一定的开发能力或此后将不会对主题进行升级。
 :::
 
 ## 语言 Language
@@ -33,8 +33,8 @@ theme:
   default: style-light 
 ```
 
-## 图标 Logo
-用于 logo、icon、WPA安装图标配置。
+## 网站图标 favicon
+用于 logo、icon、PWA安装图标配置。
 
 - `logo`: 顶部 logo
 - `icon16`: icon 16*16
@@ -58,6 +58,74 @@ favicon:
   show_text: (/≧▽≦/)咦！又好了！
   hide_text: (●—●)喔哟，崩溃啦！
 ```
+
+## CDN
+Content Delivery Network，统一加载网络资源，有利于提高网页加载速度。
+
+当您需要添加三方插件来个性您的博客时，您应该优先使用 CDN 加载文件。
+
+JavaScript 资源类型说明：
+- `head`: 插入到 head，其他三种默认时插入到 body 结尾的。
+- `base`: 立即加载并执行。
+- `async`: 异步加载，加载完成后立即执行。
+- `defer`: 异步加载资源，但最后执行。
+
+``` yaml
+cdn:
+  css: 
+  js:
+    head:
+    base: 
+    async: 
+    defer: 
+```
+
+## 图标 Icon
+本主题默认使用 Font Awesome 5 图标，
+
+> 默认支持的图标列表见 [默认图标](/about/icon.html)
+
+如您想要使用其他图标，只需要在 `assets.icons` 中配置您的图标。
+
+- `type`: 图标类型 `font` `symbol`
+- `css`： font-class 图标资源 url （有值或为空时，将覆盖或去除内置 Font Awesome 5 图标）
+- `js`: 多色图标资源 url 
+
+``` yaml
+assets:
+  icons: 
+    type: font # font symbol
+    css: 
+    js:
+```
+### [iconfont](https://www.iconfont.cn/)
+
+阿里旗下，可定制自己所需图标集。国内速度良好。（推荐） [使用说明](https://www.iconfont.cn/help/detail?helptype=code)
+
+``` yaml
+assets:
+  icons: 
+    type: font 
+    # 这里是您从 iconfont 处获得的图标链接。
+    css: //at.alicdn.com/t/font_383361_cfn4m13f4v.css
+    js:
+```
+
+多色图标使用方式
+
+``` yaml
+assets:
+  icons: 
+    type: symbol 
+    css: 
+    js: //at.alicdn.com/t/font_383361_cfn4m13f4v.js
+```
+
+::: warning
+当您覆盖内置图标资源时，因为博客 UI 中一些固定的图标使用到了，所以您需要将 [固定图标](#自定义图标-icon) 进行修改。
+
+单色图标 和 多色图标是可以同时使用的，但是博客 UI 固定图标只能根据 `type` 决定使用哪一种。
+:::
 
 ## 用户信息 User
 
@@ -112,18 +180,28 @@ top_bars:
 ## 侧栏 Sidebar
 
 ### 社交图标
-以内置 Font-Awesome Brand 图标，也可以使用 iconfont。
+默认内置 Font-Awesome Brand 图标，可根据您的需求添加，您可以通过在头部引入自定义图标资源来获取更多图标。
 
-- `icon`: 图标 Class
+- `name`: 链接名称
+- `icon`: 图标 class
 - `url`: 链接
 
 ``` yaml
 sidebar:
   social:  # 社交地址
-    - icon: fab fa-github   
+    - name: github
+      icon: fab fa-github   
       url: https://github.com 
-    - icon: iconfont cg-gitee
+    - name: gitee
+      icon: iconfont cg-gitee
       url: https://gitee.com
+```
+
+如果您不想放置任何链接，仅需在 `sidebar` 中设置：
+
+``` yaml
+sidebar:
+  social: 
 ```
 
 ### 打字动画
@@ -156,7 +234,7 @@ sidebar:
     - `bannerTitle`: 横幅上标题
     - `bannerText`: 横幅描述
 - `index`: 首页 (属性字段和上面保持一致)
-    - `videoUrl`: 视频地址
+    - `videoUrl`: 视频地址 (仅首页有)
 - `archive`: 分类页
 - `links`: 友链页
 - `comment`: 评论页
@@ -169,7 +247,30 @@ banner:
     bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
     bannerTitle: 树深时见鹿，<br>溪午不闻钟。
     bannerText: Hi my new friend!
-    videoUrl: 
+```
+
+## 自定义图标 Icon
+博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
+
+可以通过配置 `icons` 修改：
+
+``` yaml
+icons:
+  # 主题切换图标
+  sun: far fa-sun
+  moon: far fa-moon
+  # 首页视频播放
+  play: fas fa-play
+  # 邮箱
+  email: far fa-envelope
+  # 分类进入图标
+  next: fas fa-arrow-right
+  # 文章详情 日期
+  calendar: far fa-calendar-alt
+  # 文章详情 时间
+  clock: far fa-clock
+  # 文章详情 作者
+  user: far fa-user
 ```
 
 ## 渐进式应用 PWA

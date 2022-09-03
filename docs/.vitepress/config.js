@@ -1,7 +1,11 @@
 module.exports = {
+    lang: 'zh-CN',
     title: 'Hexo-Theme-Async',
     description: '🎈 A simple, lightweight Hexo theme',
     lastUpdated: true,
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.svg' }],
+    ],
     themeConfig: {
         logo: '/logo.svg',
         editLink: {

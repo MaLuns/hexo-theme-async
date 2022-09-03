@@ -1,5 +1,4 @@
 <script setup >
-import { defineProps } from 'vue'
 
 defineProps({
     type: String,
@@ -9,13 +8,14 @@ defineProps({
     }
 })
 </script>
-    
+
 <template>
     <span class="badge" :class="type">
         <slot>{{ text }}</slot>
     </span>
 </template>
-<style >
+
+<style scoped>
 .badge {
     display: inline-block;
     border-radius: 4px;
