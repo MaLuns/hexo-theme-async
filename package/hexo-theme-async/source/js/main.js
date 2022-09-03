@@ -36,7 +36,7 @@ $(function () {
     }
 
     /***************************
-    处理文章中图片
+    Work with pictures in articles
     ***************************/
     $("article img").each(function () {
       var element = document.createElement("span");
@@ -268,7 +268,7 @@ $(function () {
   document.addEventListener("swup:contentReplaced", function () {
     /***************************
 
-    底部倒计时
+    The blog runs long
 
     ***************************/
 
@@ -276,7 +276,7 @@ $(function () {
 
     /***************************
 
-    处理文章中图片
+    Work with pictures in articles
 
     ***************************/
     $("article img").each(function () {

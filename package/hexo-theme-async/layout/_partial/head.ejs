@@ -10,31 +10,48 @@
 <%}else if(config.description){%>
     <meta name="description" content="<%= config.description %>">
 <%}%>
-<title>
-    <%= (!!page.title ? page.title : config.title) %>
-</title>
+
+<%- tag("title", !!page.title ? page.title : config.title) %>
+
+<!-- icon -->
 <% if(theme.favicon.icon16){%>
-    <link rel="icon" type="image/png" sizes="16x16" href="<%= url_for(theme.favicon.icon16) %>?v=<%= theme.version %>">
+    <%- tag("link", {
+        href: url_for(theme.favicon.icon16) +'?v='+ theme.version,
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16"
+    }) %>
 <%}%>
 <% if(theme.favicon.icon32){%>
-    <link rel="icon" type="image/png" sizes="32x32" href="<%= url_for(theme.favicon.icon32) %>?v=<%= theme.version %>">
+    <%- tag("link", {
+        href: url_for(theme.favicon.icon32) +'?v='+ theme.version, 
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32"
+    }) %>
 <%}%>
 <% if(theme.favicon.appleTouchIcon){%>
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= url_for(theme.favicon.appleTouchIcon) %>?v=<%= theme.version %>">
+    <%- tag("link", {
+        href: url_for(theme.favicon.appleTouchIcon) +'?v='+ theme.version,
+        rel: "apple-touch-icon",
+        sizes: "180x180"
+    }) %>
 <%}%>
 <% if(theme.favicon.webmanifest){%>
-    <link rel="manifest" href="<%= url_for(theme.favicon.webmanifest) %>">
+    <%- tag("link", {
+        href: url_for(theme.favicon.webmanifest),
+        rel: "manifest"
+    }) %>
 <%}%>
-<link rel="preload" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1518765_bkgx3wku6h4.css">
 
-<%- css([
-    'css/plugins/bootstrap.min.css',
-    'css/plugins/locomotive-scroll.css',
-    'css/plugins/swiper.min.css',
-    'css/plugins/fancybox.min.css',
-    'css/plugins/font-awesome.min.css'
-]) %>
+<!-- css -->
+<%- css(theme.assets.css) %>
+<% if(theme.assets.icons.css) { %>
+    <%- css(theme.assets.icons.css) %>
+<% } %>
+<% if(theme.assets.icons.js) { %>
+    <%- js(theme.assets.icons.js) %>
+<% } %>
 
 <!-- variable -->
 <%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
@@ -42,7 +59,7 @@
 <%- variable('HTMEM_VERSION',theme.version) %>
 <%- variable('THEME',theme.theme) %>
 
-<!-- theme css -->
+<!-- theme mode css -->
 <% if(theme.theme.switch){%>
     <link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
@@ -56,47 +73,8 @@
     <link rel="stylesheet" href="<%= url_for('css/'+(theme.theme.default)+'.css') %>?v=<%= theme.version %>" id="trm-switch-style">
 <%}%>
 
+<!-- CDN -->
+<%- partial('../_third-party/cdn',{ cdntype: 'head' }) %>
+
 <!-- Site Analytics -->
-<% if(theme.webAnalytics.enable){ %>
-    <% if(theme.webAnalytics.baidu){ %>
-        <!-- Baidu Analytics -->
-        <script defer>
-            var _hmt = _hmt || [];
-            (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?<%- theme.webAnalytics.baidu %>";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-    <% } %> 
-
-    <% if (theme.webAnalytics.google){ %>
-        <!-- Google Analytics -->
-        <script defer>
-          window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', '<%= theme.webAnalytics.google %>', 'auto');
-          ga('send', 'pageview');
-        </script>
-        <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <% } %>
-
-    <% if(theme.webAnalytics.tencent && theme.webAnalytics.tencent.sid && theme.webAnalytics.tencent.cid) { %>
-        <!-- Tencent Analytics -->
-        <script defer>
-          let _mtac = {};
-          (function () {
-            var mta = document.createElement("script");
-            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-            mta.setAttribute("name", "MTAH5");
-            mta.setAttribute("sid", "<%= theme.webAnalytics.tencent.sid %>");
-            <% if(theme.webAnalytics.tencent.cid) { %>
-                mta.setAttribute("cid", "<%= theme.webAnalytics.tencent.cid %>");
-            <% } %>
-            let s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(mta, s);
-          })();
-        </script>
-      <% } %>
-<% } %> 
+<%- partial('../_third-party/web-analytics') %>

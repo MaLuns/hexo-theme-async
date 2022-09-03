@@ -1,11 +1,5 @@
-<%- js([
-    'js/plugins/jquery.min',
-    'js/plugins/swup.min.js',
-    'js/plugins/locomotive-scroll.js',
-    'js/plugins/typing.js',
-    'js/plugins/fancybox.min.js',
-    'js/plugins/swiper.min.js'
-]) %>
+<!-- js -->
+<%- js(theme.assets.js) %>
 
 <!-- 评论插件 -->
 <% if(theme.comment && theme.comment.enable) {%> 
@@ -26,17 +20,10 @@
     <% } %>
 <% } %>
 
+<!-- CDN -->
+<%- partial('../_third-party/cdn',{ cdntype: 'body' }) %>
+
 <!-- Service Worker -->
-<% if(theme.sw){ %>
-    <script>
-        "serviceWorker" in navigator ? navigator.serviceWorker.register('/sw.js').then(function () {
-            navigator.serviceWorker.controller ? 
-             console.log("Assets cached by the controlling service worker.") :
-             console.log("Please reload this page to allow the service worker to handle network operations.")
-        }).catch(function (e) {
-            console.log("ERROR: " + e)
-        }) : console.log("Service workers are not supported in the current browser.")
-    </script>
-<% } %>
+<%- partial('../_third-party/sw') %>
 
 <script src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>

@@ -1,8 +1,5 @@
 <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
-        <% if(post.top) { %>
-            <i class="fab fa-wand-magic-sparkles"></i>
-        <% } %>
         <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
             <img src="<%-  post.photos && post.photos.length ? post.photos[0] : url_for('/img/block.jpg') %>" alt="cover">
         </a>
