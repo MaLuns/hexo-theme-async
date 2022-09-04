@@ -40,3 +40,16 @@ sidebar:
 ```
 
 更多配置请参见[官方文档](https://github.com/hexojs/hexo-generator-feed)（在 Hexo 工作目录下的 `_config.yml` 中进行）。
+
+## 置顶
+
+> 确保你的 [hexo-generator-index](https://github.com/hexojs/hexo-generator-index) 为 `2.0.0` 或以上
+
+通过设置文章 Front Matter 中 `sticky` 属性以进行置顶，数值 >0 时越高，越靠前，数值 <0 时，越靠后。
+
+```md
+---
+title: xxx
+sticky: 100
+---
+```
