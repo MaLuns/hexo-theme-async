@@ -22,14 +22,14 @@
 						<% theme.top_bars.forEach(element=> { %>
 						<li class="menu-item-has-children <%= url_for(element.url) + 'index.html' === url_for(path) ?'current-menu-item':'' %>">
 							<a <%- element.noswup ? "data-no-swup":"" %> href="<%- url_for(element.url) %>">
-								<%- element.title %>
+								<%-__(element.title)%>
 							</a>
 							<% if(element.children) { %>
 							<ul>
 								<% element.children.forEach(item=> { %>
 								<li>
 									<a <%- item.noswup ? "data-no-swup":"" %> href="<%- url_for(item.url) %>">
-										<%- item.title %>
+										<%-__(item.title)%>
 									</a>
 								</li>
 								<% }) %>
@@ -44,7 +44,16 @@
 			
 			<!-- mode switcher place -->
 			<% if(theme.theme.switch){%>
-			<div class="trm-mode-switcher-place"></div>
+			<div class="trm-mode-switcher-place">
+				<!-- <div class="trm-hidden-switcher"> -->
+					<div class="trm-mode-switcher">
+					  <%- icon(theme.icons.sun) %>
+					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+					  <label class="trm-swich" for="trm-swich"></label>
+					  <%- icon(theme.icons.moon) %>
+					</div>
+				  <!-- </div> -->
+			</div>
 			<% } %>
 			<!-- mode switcher place end -->
 

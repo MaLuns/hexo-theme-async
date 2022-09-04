@@ -27,20 +27,21 @@ favicon:
 
 # assets
 assets:
-  css: [
-    css/plugins/bootstrap.row.css, # 提取栅栏布局 css/plugins/bootstrap.min.css
-    css/plugins/locomotive-scroll.css,
-    css/plugins/swiper.min.css,
-    css/plugins/fancybox.min.css
-  ]
-  js: [
-    js/plugins/jquery.min,
-    js/plugins/swup.min.js,
-    js/plugins/locomotive-scroll.js,
-    js/plugins/typing.js,
-    js/plugins/fancybox.min.js,
-    js/plugins/swiper.min.js
-  ]
+  css: 
+    - css/plugins/bootstrap.row.css # 提取栅栏布局 css/plugins/bootstrap.min.css
+    - css/plugins/locomotive-scroll.css
+    - //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
+  js: 
+   - js/plugins/swup.min.js
+   - js/plugins/locomotive-scroll.js
+   - //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
+  plugin:
+    typing:
+      js: js/plugins/typing.js
+    swiper: 
+      css: css/plugins/swiper.min.css
+      js: js/plugins/swiper.min.js
+
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css
@@ -68,13 +69,13 @@ icons:
 
 # menu
 top_bars:
-  - title: 首页
+  - title: menu.home
     url: /
-  - title: 归档
+  - title: menu.archives
     url: /archives/
-  - title: 友链
+  - title: menu.links
     url: /links/
-  - title: 关于
+  - title: menu.about
     url: /about/
 
 # banner 配置信息

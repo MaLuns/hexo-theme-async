@@ -1,57 +1,71 @@
-.fancybox-slide--video .fancybox-content {
+.fancybox-slide--video .fancybox__content {
     max-width : 80% !important;
     max-height: 80% !important
 }
 
-.fancybox-close-small {
+.fancybox__close-small {
     margin: 0 !important
 }
 
-.fancybox-thumbs {
+.fancybox__thumbs {
+    background-color: @theme-bg-color;
+    border-radius   : 0 0 10px 10px;
+    width           : calc(100% - 20px);
+    left            : 10px;
+    bottom          : 10px;
+}
+
+.fancybox__thumbs .fancybox-thumbs__list {
     background-color: @theme-bg-color
 }
 
-.fancybox-thumbs .fancybox-thumbs__list {
-    background-color: @theme-bg-color
-}
-
-.fancybox-thumbs-active:before {
+.fancybox__thumbs-active:before {
     border: solid 3px #AFB42B !important
 }
 
-.fancybox-bg {
+.fancybox__bg {
     background-color: @body-bg-color
 }
 
-.fancybox-button {
+.fancybox__button {
     margin-top      : 40px;
     background-color: transparent;
     color           : @theme-bg-color
 }
 
-.fancybox-image {
+.fancybox__image {
     transform: translateY(40px)
 }
 
-.fancybox-toolbar {
-    border-radius   : 10px 10px 0 0;
-    width           : calc(100% - 20px);
-    left            : 10px;
-    top             : 10px;
-    height          : 80px;
-    background-color: @theme-bg-color;
-    display         : flex;
-    justify-content : flex-end;
-    align-items     : center;
-    padding         : 0 40px
+.fancybox__toolbar {
+    border-radius  : 10px 10px 0 0;
+    width          : calc(100% - 20px);
+    left           : 10px;
+    top            : 10px;
+    height         : 80px;
+    background     : @theme-bg-color;
+    display        : flex;
+    justify-content: flex-end;
+    align-items    : center;
+    padding        : 0 40px;
+    text-shadow    : none;
 }
 
-.fancybox-toolbar .fancybox-button {
+.fancybox__counter {
+    color: @theme-color;
+}
+
+.fancybox__toolbar .carousel__button {
     margin-top: 0;
-    color     : @theme-color
+    color     : @theme-color;
+
+    svg {
+        filter: none;
+        color : @theme-color
+    }
 }
 
-.fancybox-infobar {
+.fancybox__infobar {
     mix-blend-mode: none;
     left          : 40px;
     top           : 28px;
@@ -60,12 +74,14 @@
 }
 
 @media(max-width:992px) {
-    .fancybox-toolbar {
+
+    .fancybox__toolbar,
+    .fancybox__thumbs {
         border-radius: 0;
         padding      : 0 20px
     }
 
-    .fancybox-infobar {
+    .fancybox__infobar {
         left: 20px
     }
 }
