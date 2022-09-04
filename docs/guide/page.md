@@ -8,18 +8,20 @@
 - `description`: 描述，用于 meta 标签
 - `photos`：文章封面图 (下个版本弃用) 
 - `cover`: 文章封面图 
-- `top`: 首页排序值
+~~- `top`: 首页排序值~~
+~~- `sticky`: 首页排序值~~
+
+内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0` 以上版本即可。
 
 ``` yaml
 ---
 title: 从零开始搭建一个后台模板
 keywords: admin-template,vue,element,后台模板
 photos: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
-top: 10
+sticky: 10
 ---
 ```
 
-若 top 值一样则按照文章日期降序排，否则按照top值降序排。
 
 ## 归档 Archives
 Hexo 默认支持
