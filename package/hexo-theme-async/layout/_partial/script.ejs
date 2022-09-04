@@ -1,5 +1,7 @@
-<!-- js -->
+<!-- Js -->
 <%- js(theme.assets.js) %>
+<!-- Plugin -->
+<%- partial('../_third-party/plugin',{ loadtype: 'js' }) %>
 
 <!-- 评论插件 -->
 <% if(theme.comment && theme.comment.enable) {%> 

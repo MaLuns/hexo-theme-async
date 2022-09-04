@@ -502,33 +502,12 @@
           if (!current.repeat) {
             this.els[i].call = false;
           }
-        } // if (!current.repeat && !current.speed && !current.sticky) {
+        } 
+        // if (!current.repeat && !current.speed && !current.sticky) {
         //     if (!current.call || current.call && this.hasCallEventSet) {
         //        this.els[i] = null
         //     }
         // }
-
-        if ($('#home-triger').hasClass('trm-active-el')) {
-          $('.trm-menu nav ul li').removeClass('current-item');
-          $('#home-link').addClass('current-item');
-        }
-        if ($('#about-triger').hasClass('trm-active-el')) {
-          $('.trm-menu nav ul li').removeClass('current-item');
-          $('#about-link').addClass('current-item');
-        }
-        if ($('#portfolio-triger').hasClass('trm-active-el')) {
-          $('.trm-menu nav ul li').removeClass('current-item');
-          $('#portfolio-link').addClass('current-item');
-        }
-        if ($('#resume-triger').hasClass('trm-active-el')) {
-          $('.trm-menu nav ul li').removeClass('current-item');
-          $('#resume-link').addClass('current-item');
-        }
-        if ($('#contact-triger').hasClass('trm-active-el')) {
-          $('.trm-menu nav ul li').removeClass('current-item');
-          $('#contact-link').addClass('current-item');
-        }
-
       }
     }, {
       key: "setOutOfView",

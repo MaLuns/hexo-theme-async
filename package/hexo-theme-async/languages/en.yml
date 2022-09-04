@@ -29,6 +29,12 @@ title:
   more: Read More
   all_archives: All Archives
   other_articles: Other Articles
-  unclassified: unclassified
+  unclassified: Unclassified
+
+menu:
+  home: Home
+  archives: Archives
+  links: Links
+  about: About
 
 ieTips: For a better experience, use a browser other than Internet Explorer

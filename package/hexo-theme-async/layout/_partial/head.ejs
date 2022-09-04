@@ -13,7 +13,7 @@
 
 <%- tag("title", !!page.title ? page.title : config.title) %>
 
-<!-- icon -->
+<!-- Favicon -->
 <% if(theme.favicon.icon16){%>
     <%- tag("link", {
         href: url_for(theme.favicon.icon16) +'?v='+ theme.version,
@@ -44,8 +44,11 @@
     }) %>
 <%}%>
 
-<!-- css -->
+<!-- CSS -->
 <%- css(theme.assets.css) %>
+<!-- Plugin -->
+<%- partial('../_third-party/plugin',{ loadtype: 'css' }) %>
+<!-- Icon -->
 <% if(theme.assets.icons.css) { %>
     <%- css(theme.assets.icons.css) %>
 <% } %>
@@ -53,13 +56,13 @@
     <%- js(theme.assets.icons.js) %>
 <% } %>
 
-<!-- variable -->
+<!-- Variable -->
 <%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
 <%- variable('FAVICON',theme.favicon) %>
 <%- variable('HTMEM_VERSION',theme.version) %>
 <%- variable('THEME',theme.theme) %>
 
-<!-- theme mode css -->
+<!-- Theme mode css -->
 <% if(theme.theme.switch){%>
     <link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">

@@ -1,0 +1,24 @@
+<%
+let isSwiper,isTyping;
+
+isSwiper = Object.values(theme.banner).findIndex(item=>item?.type && item.type === 'slideshow' ) > 0;
+
+isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0;
+%>
+
+<% if(loadtype ==='css') {%>
+
+    <% if(isSwiper) {%>
+       <%- css(theme.assets.plugin.swiper.css) %>
+    <% } %>
+
+<% } else { %>
+
+    <% if(isSwiper) {%>
+        <%- js(theme.assets.plugin.swiper.js) %>
+    <% } %>
+
+    <% if(isTyping) {%>
+        <%- js(theme.assets.plugin.typing.js) %>
+    <% } %>
+<% } %>
