@@ -18,11 +18,11 @@
         box-shadow      : @box-shadow2;
 
         &::before {
-            color: #AFB42B
+            color: @primary
         }
 
         &::after {
-            color: #AFB42B
+            color: @primary
         }
     }
 
@@ -68,7 +68,7 @@
                 left         : 0;
                 height       : 10px;
                 width        : 10px;
-                border       : solid 3px #AFB42B;
+                border       : solid 3px @primary;
                 border-radius: 50%
             }
 
@@ -123,7 +123,7 @@
             transition      : all 0.35s ease-out;
             content         : '';
             position        : absolute;
-            background-color: #AFB42B;
+            background-color: @primary;
             width           : 1em;
             height          : 5px;
             bottom          : -3px;

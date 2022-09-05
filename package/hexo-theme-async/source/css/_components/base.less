@@ -1,22 +1,7 @@
-.trm-p-10 {
-    padding: 10px !important;
-}
-
-.trm-p-20 {
-    padding: 20px !important;
-}
-
-.trm-p-30 {
-    padding: 30px !important;
-}
-
-
 body {
-    font-size             : 14px;
     font-weight           : 500;
     color                 : @body-color;
     background-color      : #00151f;
-    font-family           : 'Inter', sans-serif;
     letter-spacing        : .05em;
     overflow              : hidden;
     -webkit-font-smoothing: antialiased
@@ -106,7 +91,7 @@ p {
 
 
 .trm-accent-color {
-    color: #AFB42B
+    color: @primary
 }
 
 .trm-label {
@@ -122,42 +107,45 @@ p {
     }
 
     &.trm-label-color {
-        color: #afb42b;
+        color: @primary;
     }
 }
 
-a.trm-label i {
-    margin-top : -1px;
-    margin-left: 10px
-}
+a.trm-label {
+    i {
+        margin-top : -1px;
+        margin-left: 10px
+    }
 
-a.trm-label .fa-arrow-right {
-    margin-top : -1px;
-    margin-left: 5px;
-    transition : .4s ease-in-out
-}
+    .fa-arrow-right {
+        margin-top : -1px;
+        margin-left: 5px;
+        transition : .4s ease-in-out
+    }
 
-a.trm-label:focus,
-a.trm-label:hover {
-    outline: inherit;
-    color  : #AFB42B
-}
+    &:focus,
+    &:hover {
+        outline: inherit;
 
-a.trm-label:focus .fa-arrow-right,
-a.trm-label:hover .fa-arrow-right {
-    transform: translateX(5px);
-    color    : inherit
+        color: @primary;
+
+        .fa-arrow-right,
+        .fa-arrow-right {
+            transform: translateX(5px);
+            color    : inherit
+        }
+    }
 }
 
 .trm-scroll-animation {
     transform : translateY(30px) scale(1.02);
     opacity   : 0;
-    transition: .6s ease-in-out
-}
+    transition: .6s ease-in-out;
 
-.trm-scroll-animation.trm-active-el {
-    opacity  : 1;
-    transform: translateY(0) scale(1)
+    &.trm-active-el {
+        opacity  : 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .trm-swup-animation {
@@ -165,14 +153,30 @@ a.trm-label:hover .fa-arrow-right {
     transition-delay: .6s
 }
 
-html.is-animating .trm-preloader {
-    opacity         : 1;
-    transition-delay: 0s
+html {
+    &.is-animating {
+        .trm-preloader {
+            opacity         : 1;
+            transition-delay: 0s;
+        }
+
+        .trm-swup-animation {
+            opacity         : 0;
+            transition-delay: 0s;
+        }
+    }
 }
 
-html.is-animating .trm-swup-animation {
-    opacity         : 0;
-    transition-delay: 0s
+.trm-p-10 {
+    padding: 10px !important;
+}
+
+.trm-p-20 {
+    padding: 20px !important;
+}
+
+.trm-p-30 {
+    padding: 30px !important;
 }
 
 .trm-mb-15 {
@@ -228,7 +232,7 @@ html.is-animating .trm-swup-animation {
     width           : 4px;
     right           : 1px;
     border-radius   : 10px;
-    background-color: #AFB42B;
+    background-color: @primary;
     opacity         : 1
 }
 
