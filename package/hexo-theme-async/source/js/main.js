@@ -174,6 +174,19 @@
           numRun(item, setp, 0, num)
         }
       })
+    },
+    InitKatex(options = {}) {
+      if (typeof window.renderMathInElement !== 'undefined') {
+        window.renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '\\[', right: '\\]', display: true },
+          ],
+          ...options,
+        })
+      }
     }
   }
 
@@ -241,6 +254,10 @@
 
   /* fancybox */
   utils.InitFancybox()
+
+  /* Katex */
+  utils.InitKatex(window.KATEX_OPTIONS)
+
   //#endregion
 
   //#region  Re/init
@@ -271,6 +288,9 @@
 
     /* fancybox */
     utils.InitFancybox()
+
+    /* Katex */
+    utils.InitKatex(window.KATEX_OPTIONS)
   });
   //#endregion
 

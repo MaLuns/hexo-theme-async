@@ -1,9 +1,10 @@
 <%
-let isSwiper,isTyping;
+let isSwiper,isTyping,isKatex;
 
 isSwiper = Object.values(theme.banner).findIndex(item=>item?.type && item.type === 'slideshow' ) > 0;
-
 isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0;
+isKatex = theme.katex.global || page?.katex;
+
 %>
 
 <% if(loadtype ==='css') {%>
@@ -13,7 +14,15 @@ isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) &
     <%- css(theme.assets.plugin.fancybox.css) %>
 
     <% if(isSwiper) {%>
-       <%- css(theme.assets.plugin.swiper.css) %>
+        <%- css(theme.assets.plugin.swiper.css) %>
+    <% } %>
+
+    <% if(isKatex) {%>
+        <%- css(theme.assets.plugin.katex.css) %>
+
+        <% if(theme.katex.copy_tex) {%>
+            <%- css(theme.assets.plugin.katex.copy_tex.css) %>
+        <% } %>
     <% } %>
 
 <% } else { %>
@@ -30,5 +39,22 @@ isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) &
         <%- js(theme.assets.plugin.typing.js) %>
     <% } %>
 
+    <% if(isKatex) {
+        let options = { 
+            ...theme.katex.options
+        }
+        if(page?.katex?.options) {
+            options = {
+                ...options,
+                ...page.katex.options
+            }
+        }
+    %>
+        <%- js(theme.assets.plugin.katex.js) %>
+        <% if(theme.katex.copy_tex) {%>
+            <%- js(theme.assets.plugin.katex.copy_tex.js) %>
+        <% } %>
+        <%- js(theme.assets.plugin.katex.auto_render) %>
+        <%- variable('KATEX_OPTIONS',options) %>
+    <% } %>
 <% } %>
-
