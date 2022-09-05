@@ -66,10 +66,10 @@
       return new Swup(options);
     },
     InitThemeMode(init = false) {
+      let swich_input = utils.q('#trm-swich');
+      if (!swich_input) return;
       let scroll_container = utils.q("#trm-scroll-container");
       let switch_style = utils.q("#trm-switch-style");
-      let swich_input = utils.q('#trm-swich');
-
       /* Animated mask layers */
       let mode_swich_animation = utils.q('.trm-mode-swich-animation');
       let mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
@@ -96,12 +96,12 @@
           if (this.checked) {
             setTimeout(function () {
               mode_swich_animation.classList.add('trm-active');
-              switch_style.href = switch_style.href.replace('style-dark', 'style-light');
+              switch_style.href = switch_style.href.replace('style-light', 'style-dark');
             }, 200);
           } else {
             setTimeout(function () {
               mode_swich_animation.classList.remove('trm-active');
-              switch_style.href = switch_style.href.replace('style-light', 'style-dark');
+              switch_style.href = switch_style.href.replace('style-dark', 'style-light');
             }, 200);
           }
 
