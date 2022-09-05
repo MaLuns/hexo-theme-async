@@ -23,7 +23,7 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 - 通过本仓库安装
 
 从 <Badge>v1.1.0</Badge> 后，由于项目结构调整，不再需要整个仓库文件了。
-克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/hexo-theme-async` 目录下即可。
+克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
 
 - 通过 NPM 安装
 
