@@ -43,6 +43,13 @@ assets:
     swiper: 
       css: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/css/swiper.min.css
       js: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/js/swiper.min.js
+    katex:
+      js: //cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js
+      css: //cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
+      auto_render: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js
+      copy_tex:
+        css: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css
+        js: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css
@@ -165,8 +172,19 @@ theme:
 # Service Worker
 sw: false
 
-# wordcount
+# Post wordcount
+# https://github.com/willin/hexo-wordcount
 wordcount:
   enable: true
   count: true
   time: true
+
+# That is it only render those page which has `katex: true` in Front-matter.
+# math fomula
+# https://katex.org/
+katex:
+  copy_tex: true
+  global: false
+  # Options are for katex rendering options: https://katex.org/docs/options.html
+  # In page katex options are also possible and will be merged
+  options: {}

@@ -43,15 +43,14 @@ zh-Hans:
 # 你也可以扩展其他语言
 ```
 
-如果仅使用中文语言，除 `zh-Hans` 项目均可删除。
+如果仅使用中文语言，除 `zh-Hans` 项均可删除。
 
 
 ## 主题模式 ThemeMode
-`default` 设置主题默认模式
-- `style-light`: 亮色模式
-- `style-dark`: 暗色模式
-
-`switch` 如果为 false，将不会出现主题切换按钮，只加载设置默认主题模式。
+- `default`：设置主题默认模式
+  - `style-light`: 亮色模式
+  - `style-dark`: 暗色模式
+- `switch`：如果为 false，将不会出现主题切换按钮，只加载设置默认主题模式。
 ``` yaml
 theme: 
   switch: true 
@@ -297,6 +296,14 @@ icons:
   # 文章详情 作者
   user: far fa-user
 ```
+
+## 自定义样式 Style
+
+相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
+
+- 新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
+- 如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
+
 ## 渐进式应用 PWA
 
 开始 PWA 只需要设置 sw 为 true 即可，本主题已添加 Server Worker 相关操作 。
@@ -335,3 +342,7 @@ sw: true
     "start_url": "/"
 }
 ```
+
+## 更多配置
+
+你可以直接查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/dev/package/hexo-theme-async/_config.yml) 文件及相关注释。
