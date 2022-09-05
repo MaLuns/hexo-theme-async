@@ -6,12 +6,14 @@
             <h5 class="trm-name trm-mb-15">
                 <%= theme.user.name %>
             </h5>
+            <% if(theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0) { %>
             <div class="trm-label">
                 <%= theme.sidebar.typedTextPrefix %>
                 <span class="trm-typed-text">
                     <!-- Words for theme.user.typedText -->
                 </span>
             </div>
+            <% } %>
         </div>
         <!-- card header end -->
         
