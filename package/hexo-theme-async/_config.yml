@@ -22,26 +22,27 @@ favicon:
   webmanifest:
   visibilitychange: false
   hidden: /failure.ico # Displays an icon when not visible
-  showText: (/≧▽≦/)咦！又好了！
-  hideText: (●—●)喔哟，崩溃啦！
+  showText: favicon.showText
+  hideText: favicon.hideText
 
 # assets
 assets:
-  css: 
-    - css/plugins/bootstrap.row.css # grid system To css/plugins/bootstrap.min.css
-    - css/plugins/locomotive-scroll.css
-    - //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
-  js: 
-   - js/plugins/swup.min.js
-   - js/plugins/locomotive-scroll.js
-   - //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
   plugin:
+    row:
+      css: css/plugins/bootstrap.row.css
+    swup:
+      js: //cdn.jsdelivr.net/npm/swup@2.0.19/dist/swup.min.js
+    locomotive_scroll:
+      css: //cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+      js: //cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+    fancybox: 
+      css: //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
+      js: //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
     typing:
       js: js/plugins/typing.js
     swiper: 
-      css: css/plugins/swiper.min.css
-      js: js/plugins/swiper.min.js
-
+      css: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/css/swiper.min.css
+      js: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/js/swiper.min.js
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css

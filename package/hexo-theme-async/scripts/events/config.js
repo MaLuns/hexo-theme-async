@@ -5,7 +5,7 @@ const { merge } = require('../utils')
  * @param {*} hexo
  * @param {*} languages
  */
-function mergeLanguages(hexo, languages) {
+const mergeLanguages = (hexo, languages) => {
     const { language } = hexo.config
     const { i18n } = hexo.theme
 
