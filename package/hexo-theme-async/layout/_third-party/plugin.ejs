@@ -8,11 +8,19 @@ isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) &
 
 <% if(loadtype ==='css') {%>
 
+    <%- css(theme.assets.plugin.row.css) %>
+    <%- css(theme.assets.plugin.locomotive_scroll.css) %>
+    <%- css(theme.assets.plugin.fancybox.css) %>
+
     <% if(isSwiper) {%>
        <%- css(theme.assets.plugin.swiper.css) %>
     <% } %>
 
 <% } else { %>
+
+    <%- js(theme.assets.plugin.swup.js) %>
+    <%- js(theme.assets.plugin.locomotive_scroll.js) %>
+    <%- js(theme.assets.plugin.fancybox.js) %>
 
     <% if(isSwiper) {%>
         <%- js(theme.assets.plugin.swiper.js) %>
@@ -21,4 +29,6 @@ isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) &
     <% if(isTyping) {%>
         <%- js(theme.assets.plugin.typing.js) %>
     <% } %>
+
 <% } %>
+

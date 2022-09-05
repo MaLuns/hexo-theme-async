@@ -120,7 +120,8 @@
         el: utils.q('#trm-scroll-container'),
         smooth: true,
         lerp: .1,
-        reloadOnContextChange: true
+        reloadOnContextChange: true,
+        class: 'trm-active-el'
       });
 
       const comComment = utils.q('.comment-container')
