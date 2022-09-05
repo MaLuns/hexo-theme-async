@@ -3,7 +3,7 @@ const isPlainObject = (obj) => {
     return Object.prototype.toString.call(obj) === '[object Object]';
 };
 
-const toI18n = (obj, i18n) => {
+const toI18n = (obj, __) => {
     let isArr = Array.isArray(obj);
     if (isArr || (isPlainObject(obj) && obj.toString === Object.prototype.toString)) {
 
@@ -11,15 +11,19 @@ const toI18n = (obj, i18n) => {
         for (let key in obj) {
             if (isArr) {
                 if (Array.isArray(key) && isPlainObject(key)) {
-                    target.push(toI18n(key, i18n))
+                    target.push(toI18n(key, __))
+                } else if (typeof obj[key] === 'string') {
+                    target.push(__(key))
                 } else {
-                    target.push(i18n.__(key))
+                    target.push(key)
                 }
             } else {
                 if (Array.isArray(obj[key]) && isPlainObject(obj[key])) {
-                    target[key] = toI18n(obj[key], i18n);
+                    target[key] = toI18n(obj[key], __);
+                } else if (typeof obj[key] === 'string') {
+                    target[key] = __(obj[key]);
                 } else {
-                    target[key] = i18n.__(obj[key]);
+                    target[key] = obj[key];
                 }
             }
         }
@@ -33,7 +37,8 @@ function variableHelper(name, val, isLang) {
     if (![null, undefined].includes(val) && typeof name === 'string') {
         if (isLang) {
             const { i18n } = hexo.theme;
-            val = toI18n(val, i18n)
+            const __ = i18n.__()
+            val = toI18n(val, __)
         }
 
         let varStr = Array.isArray(val) || (isPlainObject(val) && val.toString === Object.prototype.toString)
