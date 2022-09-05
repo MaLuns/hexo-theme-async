@@ -51,7 +51,7 @@
         utils.qa("article img").forEach((img) => {
           let span = document.createElement("span");
           span.dataset.fancybox = "gallery"
-          span.href = img.scroll;
+          span.dataset.src = img.src;
           utils.wrap(img, span)
         })
       }

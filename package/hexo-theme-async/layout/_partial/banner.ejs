@@ -1,7 +1,7 @@
 <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     <% if(type === 'img'){ %>
     <!-- banner cover -->
-    <img src="<%= bgurl %>" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+    <img src="<%= url_for(bgurl) %>" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
     <!-- banner cover end -->
     <% } else if(type === 'slideshow' && Array.isArray(bgurl)) { %>
     <!-- banner slideshow cover-->
@@ -9,7 +9,7 @@
         <div class="swiper-wrapper">
             <%  bgurl.forEach((item,index) => {  %>
             <div class="swiper-slide">
-                <img src="<%= item %>" alt="banner" class="trm-banner-cover" data-swiper-parallax-y="-200" data-swiper-parallax-scale="1.2">
+                <img src="<%= url_for(item) %>" alt="banner" class="trm-banner-cover" data-swiper-parallax-y="-200" data-swiper-parallax-scale="1.2">
             </div>
             <% }) %>
         </div>
@@ -18,7 +18,7 @@
     <% } else if(type === 'video'){ %>
     <!-- banner video cover -->
     <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
-        <source src="<%= bgurl %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="<%= url_for(bgurl) %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
         Your browser does not support HTML5 video.
     </video>
     <!-- banner video cover end -->
@@ -41,7 +41,7 @@
                         </h1>
 
                         <% if(is_home() && videoUrl){ %>
-                            <a data-fancybox href="<%- videoUrl %>" class="trm-btn trm-btn-border">
+                            <a data-fancybox data-fancybox="gallery" href="<%- videoUrl %>" class="trm-btn trm-btn-border">
                                 Video <%- icon(theme.icons.play) %>
                             </a>
                         <% } else { %>
