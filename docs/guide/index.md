@@ -1,5 +1,5 @@
 # 使用指南
-本主题为 Hexo 主题，请确保您已了解 Hexo 的基本使用方式。更多信息请参见 [Hexo 官网](https://hexo.io/)
+本主题为 Hexo 主题，请确保您已了解 Hexo 的基本使用方式。更多信息请参见 [Hexo 官网](https://hexo.io/)。
 
 有任何关于本主题的缺陷报告与功能建议，可以发起 [Issues](https://github.com/MaLuns/hexo-theme-async/issues)。
 
@@ -9,7 +9,7 @@
 
 ::: warning 渲染器
 如果您没有 `ejs` 与 `less` 的渲染器，请先安装：
-[hexo-renderer-ejs](https://github.com/hexojs/hexo-renderer-ejs) 和 [hexo-renderer-less](https://github.com/hexojs/hexo-renderer-less)
+[hexo-renderer-ejs](https://github.com/hexojs/hexo-renderer-ejs) 和 [hexo-renderer-less](https://github.com/hexojs/hexo-renderer-less)。
 ::: 
 
 ``` bash
@@ -21,6 +21,7 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 ## 安装主题 Install
 
 - 通过本仓库安装
+
 从 <Badge>v1.1.0</Badge> 后，由于项目结构调整，不再需要整个仓库文件了。
 克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/hexo-theme-async` 目录下即可。
 
@@ -34,7 +35,7 @@ npm i hexo-theme-async@latest
 
 ## 启用主题 Use
 
-修改 Hexo 站点配置文件 `_config.yml`
+修改 Hexo 站点配置文件 `_config.yml`。
 
 ```bash
 # 将主题设置为 hexo-theme-async

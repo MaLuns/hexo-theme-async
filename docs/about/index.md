@@ -11,9 +11,17 @@
 > 你不知道这代表什么？简单来说，就是如果你使用了该主题，你需要马不停蹄地点一个 Star，接下来你便可以随意使用它。
 
 ## 关键词
+简洁、优雅、自适应、美观。
 
+## Thanks
+### Project
 
-<demo-c :sites='a'></demo-c>
-<script setup>
-    var a = [{message:"asdasd"},{message:"asdasd"},{message:"asdasd"},{message:"asdasd"}]
-</script>
+- [jsDelivr – Open Source CDN](https://www.jsdelivr.com/)
+- [Hexo](https://github.com/hexojs/hexo)
+- [iconfont](https://www.iconfont.cn/)
+- [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js/)
+- [VitePress](https://github.com/vuejs/vitepress)
+
+### Theme
+
+- [hexo-theme-yun](https://github.com/YunYouJun/hexo-theme-yun)
