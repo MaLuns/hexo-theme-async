@@ -8,8 +8,8 @@
 - `description`: 描述，用于 meta 标签
 - `photos`：文章封面图 (下个版本弃用) 
 - `cover`: 文章封面图 
-~~- `top`: 首页排序值~~
-~~- `sticky`: 首页排序值~~
+- ~~`top`: 首页排序值~~
+- `sticky`: 首页排序值
 
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0` 以上版本即可。
 
@@ -24,19 +24,19 @@ sticky: 10
 
 
 ## 归档 Archives
-Hexo 默认支持
+Hexo 默认支持。
 
 ## 分类 Categories
-Hexo 默认支持
+Hexo 默认支持。
 
 ## 友链 Links
 
-新建友链页面
+新建友链页面。
 
 ```bash
 hexo new page links
 ```
-进入 source/links/index.md，设置 layout 字段。
+进入 `source/links/index.md`，设置 `layout` 字段。
 
 ``` yaml
 ---
@@ -44,7 +44,7 @@ title: 友情链接
 type: links
 ---
 ```
-在 `_config.async.yml` 中的 links 添加友链列表信息。
+在 `_config.async.yml` 中的 `links` 添加友链列表信息。
 
 - `name`: 站点名称
 - `url`: 博客链接
@@ -66,7 +66,7 @@ links:
 hexo new page about
 ```
 
-进入 source/about/index.md，设置 layout 字段。
+进入 `source/about/index.md`，设置 `layout` 字段。
 
 ``` yaml
 ---
@@ -83,14 +83,14 @@ about:
   blog:         # 博客信息
   privacy:      # 隐私权说明    
 ```
-你也可以直接在 source/about/index.md 编写你的关于页面， 如果 about/index.md 有内容则优先使用自定义内容，否则使用配置项内容。
+你也可以直接在 `source/about/index.md` 编写你的关于页面， 如果 `about/index.md` 有内容则优先使用自定义内容，否则使用配置项内容。
 
 ## 404 Not Found
-可以直接在 source 目录下新建 404.md。
+可以直接在 `source` 目录下新建 `404.md`。
 ``` yaml
 ---
 layout: 404
 ---
 ```
 
-在本地，你也可以直接访问 /404.html 查看效果。只有当你将其部署到 GitHub Pages 上，你访问不存在的页面才会显示。
+在本地，你也可以直接访问 `/404.html` 查看效果。只有当你将其部署到 `GitHub Pages` 上，你访问不存在的页面才会显示。

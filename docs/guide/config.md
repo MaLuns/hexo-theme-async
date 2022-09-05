@@ -20,6 +20,31 @@
 ```yaml
 language: zh-Hans
 ```
+### 个性化语言包
+
+在 Hexo 工作目录下新建 `source/_data/languages.yml`。（若 `source/_data` 目录不存在，请新建。）
+
+采用约定大于配置的方式，您仅需在 `languages.yml` 中自定义您想要覆盖的语言，其余将自动与主题默认配置合并。（这样做也更方便日后的升级）
+
+配置方式参考下例：
+
+> 各语言对应属性和内容见 [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/languages/)，覆盖对应项即可。
+
+```yaml
+# 将要覆盖的语言
+en:
+  site:
+    title: Site Information
+
+zh-Hans: 
+  site:
+    title: 本站信息
+
+# 你也可以扩展其他语言
+```
+
+如果仅使用中文语言，除 `zh-Hans` 项目均可删除。
+
 
 ## 主题模式 ThemeMode
 `default` 设置主题默认模式
@@ -33,7 +58,7 @@ theme:
   default: style-light 
 ```
 
-## 网站图标 favicon
+## 网站图标 Favicon
 用于 logo、icon、PWA安装图标配置。
 
 - `logo`: 顶部 logo
@@ -81,7 +106,7 @@ cdn:
 ```
 
 ## 图标 Icon
-本主题默认使用 Font Awesome 5 图标，
+本主题默认使用 Font Awesome 5 图标。
 
 > 默认支持的图标列表见 [默认图标](/about/icon.html)
 
@@ -111,7 +136,7 @@ assets:
     js:
 ```
 
-多色图标使用方式
+多色图标使用方式：
 
 ``` yaml
 assets:
@@ -158,7 +183,7 @@ user:
 
 ## 导航栏 TopBars
 
-顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置
+顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置。
 
 - `title`: 标题
 - `url`: 路径
@@ -272,7 +297,6 @@ icons:
   # 文章详情 作者
   user: far fa-user
 ```
-
 ## 渐进式应用 PWA
 
 开始 PWA 只需要设置 sw 为 true 即可，本主题已添加 Server Worker 相关操作 。
@@ -283,7 +307,7 @@ sw: true
 ::: warning
 使用 PWA 要求
 - 站点必须为 HTTPS。
-- 添加一个清单文件（manifest),
+- 添加一个清单文件（manifest)，直接在 `source/`
 :::
 
 清单文件 结构
