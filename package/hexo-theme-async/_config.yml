@@ -21,14 +21,14 @@ favicon:
   appleTouchIcon: 
   webmanifest:
   visibilitychange: false
-  hidden: 
+  hidden: /failure.ico # Displays an icon when not visible
   showText: (/≧▽≦/)咦！又好了！
   hideText: (●—●)喔哟，崩溃啦！
 
 # assets
 assets:
   css: 
-    - css/plugins/bootstrap.row.css # 提取栅栏布局 css/plugins/bootstrap.min.css
+    - css/plugins/bootstrap.row.css # grid system To css/plugins/bootstrap.min.css
     - css/plugins/locomotive-scroll.css
     - //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
   js: 
@@ -78,7 +78,7 @@ top_bars:
   - title: menu.about
     url: /about/
 
-# banner 配置信息
+# banner 
 banner:
   default:
     type: img
