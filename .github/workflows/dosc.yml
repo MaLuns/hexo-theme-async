@@ -18,7 +18,10 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - name: Build
-        run: yarn docs:build
+        run: |
+          yarn docs:build
+          echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
+          chmod 600 docs/.vitepress/dist/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
