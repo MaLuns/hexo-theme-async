@@ -15,15 +15,39 @@
                     },
                     {
                         "type": "feat",
-                        "text": "增加 hexo-wordcount 可选配置"
+                        "text": "添加自定义样式支持"
                     },
                     {
                         "type": "feat",
-                        "text": "Head  增加自定义 CDN"
+                        "text": "添加个性化语言支持"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "添加对 KaTex 支持"
                     },
                     {
                         "type": "refactor",
-                        "text": "优化配置项"
+                        "text": "优化配置项(详情见文档吧🤣)"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "剥离对 Jquery 依赖"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "三方插件依赖调整为动态加载，并切换为 CDN 加载"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "文章封面图字段变更"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "移除内置置顶脚本，使用 hexo-generator-index"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复无需要主题切换时，初始化异常"
                     }
                 ]
             }
