@@ -6,18 +6,18 @@
 
 - `keywords`：关键字，用于 meta 标签
 - `description`: 描述，用于 meta 标签
-- `photos`：文章封面图 (下个版本弃用) 
+- ~~`photos`：文章封面图 (下个版本弃用)~~
 - `cover`: 文章封面图 
 - ~~`top`: 首页排序值~~
 - `sticky`: 首页排序值
 
-内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0` 以上版本即可。
+内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 
 ``` yaml
 ---
 title: 从零开始搭建一个后台模板
 keywords: admin-template,vue,element,后台模板
-photos: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
+cover: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
 sticky: 10
 ---
 ```
@@ -38,10 +38,10 @@ hexo new page links
 ```
 进入 `source/links/index.md`，设置 `layout` 字段。
 
-``` yaml
+``` yaml {3}
 ---
 title: 友情链接
-type: links
+layout: links
 ---
 ```
 在 `_config.async.yml` 中的 `links` 添加友链列表信息。
@@ -68,10 +68,10 @@ hexo new page about
 
 进入 `source/about/index.md`，设置 `layout` 字段。
 
-``` yaml
+``` yaml {3}
 ---
 title: 关于
-type: about
+layout: about
 ---
 ```
 

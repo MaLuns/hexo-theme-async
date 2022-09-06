@@ -25,6 +25,16 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 从 <Badge>v1.1.0</Badge> 后，由于项目结构调整，不再需要整个仓库文件了。
 克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
 
+您的项目结构应该是这样
+```text {4,7}
+┌── blog                     
+│   ├── source
+│   └── themes
+│       ├── async // 克隆到此处
+│   
+│   ├── _config.yml
+│   ├── _config.async.yml // 增加配置文件
+```
 - 通过 NPM 安装
 
 进入您的 Hexo 博客根目录，执行：
