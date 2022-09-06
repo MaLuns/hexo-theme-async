@@ -126,7 +126,7 @@ assets:
 
 阿里旗下，可定制自己所需图标集。国内速度良好。（推荐） [使用说明](https://www.iconfont.cn/help/detail?helptype=code)
 
-``` yaml
+``` yaml {5}
 assets:
   icons: 
     type: font 
@@ -137,7 +137,7 @@ assets:
 
 多色图标使用方式：
 
-``` yaml
+``` yaml {3,5}
 assets:
   icons: 
     type: symbol 
@@ -304,6 +304,18 @@ icons:
 - 新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
 - 如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
 
+```text {4,5,6,7,8}
+┌── blog                     
+│   └── source
+│       └── _data
+│           └── style
+│               ├── dark.less
+│               ├── light.less
+│               ├── dark.variables.less
+│               └── light.variables.less
+│   └── themes
+```
+
 ## 渐进式应用 PWA
 
 开始 PWA 只需要设置 sw 为 true 即可，本主题已添加 Server Worker 相关操作 。
@@ -314,7 +326,7 @@ sw: true
 ::: warning
 使用 PWA 要求
 - 站点必须为 HTTPS。
-- 添加一个清单文件（manifest)，直接在 `source/`
+- 添加一个清单文件（manifest)，直接在 `source` 下新增。
 :::
 
 清单文件 结构
