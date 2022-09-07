@@ -16,6 +16,7 @@
     blockquote {
         background-color: @theme-bg2-color;
         box-shadow      : @box-shadow2;
+        margin-bottom   : 1rem;
 
         &::before {
             color: @primary
@@ -76,6 +77,14 @@
                 margin-top: 10px;
             }
         }
+
+        li:has(>input) {
+            padding-left: 0px;
+
+            &:before {
+                display: none;
+            }
+        }
     }
 
     h1,
@@ -83,7 +92,9 @@
     h3,
     h4,
     h5 {
-        margin-bottom: 10px;
+        margin-top   : 2rem;
+        margin-bottom: 1rem;
+        font-weight  : bold;
         font-size    : initial;
 
         a {
@@ -136,7 +147,6 @@
         }
     }
 
-
     h3 {
         font-size: 1.3em;
     }
@@ -151,5 +161,21 @@
 
     h6 {
         font-size: 0.9em;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing : 0;
+
+        tr {
+            border: 0;
+
+            th,
+            td {
+                font-size: 16px;
+                border   : 1px solid #ccc;
+                padding  : 5px 10px;
+            }
+        }
     }
 }
