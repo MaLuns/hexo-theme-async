@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-async",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "🎈 A simple, lightweight Hexo theme",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/MaLuns/hexo-theme-async/issues"
   },
-  "homepage": "https://github.com/MaLuns/hexo-theme-async#readme",
+  "homepage": "https://hexo-theme-async.imalun.com",
   "files": [
     "languages",
     "layout",
