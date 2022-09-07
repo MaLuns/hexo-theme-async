@@ -3,6 +3,19 @@
         "large_version": "v1.1.x",
         "children": [
             {
+                "version": "1.1.1",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "友链渲染异常"
+                    },
+                    {
+                        "type": "style",
+                        "text": "优化文章详情页面"
+                    }
+                ]
+            },
+            {
                 "version": "1.1.0",
                 "logs": [
                     {
