@@ -187,6 +187,22 @@
           ...options,
         })
       }
+    },
+    InitToc() {
+      let tabs = document.getElementById('trm-tabs-nav')
+      if (tabs)
+        tabs.addEventListener('click', function (e) {
+          let to = e.target.dataset.to || e.target.parentElement.dataset.to;
+          let isAcive = e.target.classList.contains('active') || e.target.parentElement.classList.contains('active');
+          if (to && !isAcive) {
+            document.querySelectorAll('.trm-tabs-nav-item').forEach(item => {
+              item.classList.toggle('active');
+            })
+            document.querySelectorAll('.trm-tabs-item').forEach(item => {
+              item.classList.toggle('active');
+            })
+          }
+        })
     }
   }
 
@@ -258,6 +274,8 @@
   /* Katex */
   utils.InitKatex(window.KATEX_OPTIONS)
 
+  /* toc */
+  utils.InitToc()
   //#endregion
 
   //#region  Re/init
@@ -291,6 +309,9 @@
 
     /* Katex */
     utils.InitKatex(window.KATEX_OPTIONS)
+
+    /* toc */
+    utils.InitToc()
   });
   //#endregion
 

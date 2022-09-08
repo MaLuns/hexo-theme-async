@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 hidden-sm">
                 <!-- main card -->
                 <%- partial('./_partial/sidebar') %>
                 <!-- main card end -->
@@ -22,20 +22,20 @@
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
                     
-                    <div class="row">
-                        <div class="col-lg-4">
+                    <div class="row hidden-sm">
+                        <div class="col-sm-4">
                             <div class="trm-card trm-label trm-label-light text-center">
                                 <%- icon(theme.icons.calendar,'trm-icon') %><br>
                                 <%= date(page.date,'MM/DD') %>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-sm-4">
                             <div class="trm-card trm-label trm-label-light text-center">
                                 <%- icon(theme.icons.clock,'trm-icon') %><br>
                                 <%= date(page.date,'hh:mm') %>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-sm-4">
                             <div class="trm-card trm-label trm-label-light text-center">
                                 <%- icon(theme.icons.user,'trm-icon') %><br>
                                 <%= theme.user.name %>
@@ -78,12 +78,3 @@
         </div>
     </div>
 </div>
-
-<% if(is_post()){ %>
-    <% if(theme.is_toc){ %>
-      <div id="post-toc" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" class="post-toc single">
-          <%- toc(page.content) %>
-      </div>
-    <% } %>
-  <% } %>
-  

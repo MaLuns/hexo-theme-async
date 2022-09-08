@@ -1,60 +1,20 @@
 <div class="trm-main-card-frame trm-sidebar">
-    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" data-scroll-offset="60">
-        <!-- card header -->
-        <div class="trm-mc-header">
-            <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="<%- theme.user.avatar %>" alt="Avatar"> </div>
-            <h5 class="trm-name trm-mb-15">
-                <%= theme.user.name %>
-            </h5>
-            <% if(theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0) { %>
-            <div class="trm-label">
-                <%= theme.sidebar.typedTextPrefix %>
-                <span class="trm-typed-text">
-                    <!-- Words for theme.user.typedText -->
-                </span>
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" data-scroll-offset="60"> 
+    <% if(is_post() && (theme.is_toc && page.toc !== false)){ %>
+        <div class="trm-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <%- partial('./user') %>
             </div>
-            <% } %>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <%- partial('./toc') %>
+            </div>
         </div>
-        <!-- card header end -->
-        
-        <!-- sidebar social -->
-        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-        <% if(theme.sidebar.social) { %>
-        <div class="trm-social">
-            <% theme.sidebar.social.forEach(item=>{ %>
-                <a href="<%- url_for(item.url) %>" title="<%- item.name %>" rel="nofollow" target="_blank">
-                    <%- icon(item.icon) %>
-                </a>
-            <%})%>
-        </div>
-        <% } %>
-        <!-- sidebar social end -->
-        
-        <!-- info -->
-        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-        <ul class="trm-table trm-mb-20">
-            <% theme.sidebar.info.forEach(item=>{ %>
-                <li>
-                    <div class="trm-label">
-                        <%- __(item.key) %>:
-                    </div>
-                    <div class="trm-label trm-label-light">
-                        <%- item.val %>
-                    </div>
-                </li>
-            <%})%>
-        </ul>
-        <% if(theme.user.email){ %>
-        <!-- info end -->
-        <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-        <!-- action button -->
-        <div class="text-center">
-            <a href="mailto:<%- theme.user.email %>" class="trm-btn">
-                <%- __('sidebar.contact') %>
-                <%- icon(theme.icons.email) %>
-            </a>
-        </div>
-        <!-- action button end -->
-        <% } %>
+    <% } else { %>
+        <%- partial('./user') %>
+    <% } %>
     </div>
 </div>
