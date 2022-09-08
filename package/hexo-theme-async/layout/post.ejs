@@ -1,10 +1,12 @@
 <div class="trm-content-start">
 
     <!-- banner -->
+    <% let banner = page.banner || {}; %>
     <%- partial('./_partial/banner',  {
         ...theme.banner.default,
-        bannerTitle: page.title,
-        bannerText: 'NEWS LETTER'
+        bannerText: 'NEWS LETTER',
+        ...banner,
+        bannerTitle: page.title
     }) %>
     <!-- banner end -->
 
