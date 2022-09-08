@@ -1,13 +1,77 @@
 /* 文章导航 */
+
+.trm-tabs {
+    .trm-tabs-nav {
+        display        : flex;
+        justify-content: center;
+
+        .trm-tabs-nav-item {
+            border       : 1px solid @primary;
+            border-radius: 50%;
+            width        : 2.5rem;
+            height       : 2.5rem;
+            line-height  : 2.5rem;
+            text-align   : center;
+            margin       : 0 1rem;
+            color        : @primary;
+            transition   : all .3s;
+            cursor       : pointer;
+
+            &:hover,
+            &.active {
+                background-color: @primary;
+                color           : #fff;
+            }
+
+        }
+    }
+
+    .trm-tabs-item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
 .post-toc {
-    display   : none;
+    .toc {
+        text-align  : left;
+        padding-left: 1rem;
+        margin      : 0;
+    }
+
+    ol {
+        margin : 0 0 0 1em;
+        padding: 0;
+    }
+
+    .toc-link {
+        line-height     : 1.6;
+        display         : block;
+        font-weight     : bold;
+        overflow        : hidden;
+        white-space     : nowrap;
+        -o-text-overflow: ellipsis;
+        text-overflow   : ellipsis;
+    }
+
+    .toc-level-1 {
+        list-style: none;
+    }
+}
+
+/* .post-toc {
+    //display   : none;
     position  : fixed;
     top       : 200px;
     right     : 0px;
-    width     : 4em;
+    width     : 5em;
     height    : fit-content;
     max-height: calc(100vh - 200px);
     text-align: initial;
+    z-index   : 999;
 
 
     ol {
@@ -62,4 +126,4 @@
     .post-toc {
         display: none !important;
     }
-}
+} */
