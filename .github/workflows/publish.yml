@@ -16,6 +16,9 @@ jobs:
     - name: Checkout codes
       uses: actions/checkout@v2
 
+    - name: Set env
+        run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
+
     - name: Setup node
       uses: actions/setup-node@v1
       with:
@@ -32,6 +35,7 @@ jobs:
       run: |
         cp ./README_zh-CN.md ./package/hexo-theme-async
         cp ./README.md ./package/hexo-theme-async
+        node ./script/publish
         cd ./package/hexo-theme-async
         npm publish
       env:
