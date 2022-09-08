@@ -5,6 +5,9 @@ hexo.on('ready', () => {
 })
 
 hexo.on('generateBefore', () => {
+    // Set version 
+    hexo.theme.config.version = pkg.version;
+    
     // Merge config.
     require('./config')(hexo)
 })
