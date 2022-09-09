@@ -70,3 +70,12 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 - 遇到 Bug 通过提交 [Issue](https://github.com/MaLuns/hexo-theme-async/issues) 报告。
 - 有建议和疑问欢迎前往 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions) 讨论。
 - 提交 Pull Request 改进 **Hexo-theme-async** 的代码。
+
+
+## 协议
+
+本主题采用 [SATA License](https://github.com/zTrix/sata-license)。
+
+> 你不知道这代表什么？简单来说，就是如果你使用了该主题，你需要马不停蹄地点一个 Star，接下来你便可以随意使用它。
+
+哈哈 开个玩笑，当然使用的是 [MIT](https://opensource.org/licenses/MIT)

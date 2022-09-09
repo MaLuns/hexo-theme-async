@@ -273,6 +273,13 @@ banner:
     bannerText: Hi my new friend!
 ```
 
+## 目录 Toc
+
+文章详情页目录，默认关闭。开启后，您可以再文章页配置当前文章不需要开启。[参考这里](/guide/page.html#文章-posts)
+
+``` yaml 
+is_toc: true
+```
 ## 自定义图标 Icon
 博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
 

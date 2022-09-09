@@ -72,6 +72,8 @@ Your contribution is very welcome. You can build it together in the following wa
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+We use [SATA License](https://github.com/zTrix/sata-license).
 
-Copyright (c) 2022-present, MaLuns
+> You don’t know what this means? In short, if you use this theme, you need to Star this repo non-stop, and then you can use it anyway you like.
+
+Haha Just kidding, of course it's [MIT](https://opensource.org/licenses/MIT)
