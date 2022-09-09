@@ -3,6 +3,19 @@
         "large_version": "v1.1.x",
         "children": [
             {
+                "version": "1.1.2",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加 toc"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加文章详情页自定义 banner"
+                    }
+                ]
+            },
+            {
                 "version": "1.1.1",
                 "logs": [
                     {
