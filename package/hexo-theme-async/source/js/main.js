@@ -117,6 +117,8 @@
     },
     InitLocomotiveScroll() {
       const container = utils.q('#trm-scroll-container');
+      const backtop = utils.q('#trm-back-top')
+
       const scroll = new LocomotiveScroll({
         el: utils.q('#trm-scroll-container'),
         smooth: true,
@@ -131,15 +133,22 @@
       });
       ro.observe(container);
 
-      /* scroll.on('scroll', ({ scroll }) => {
+      scroll.on('scroll', ({ scroll }) => {
         if (scroll.y > 500) {
-          $('#post-toc').show(300)
+          backtop.classList.add('active-el')
         } else {
-          $('#post-toc').hide(300)
+          backtop.classList.remove('active-el')
         }
-      }); */
+      });
+
+      const back_fun = function (params) {
+        scroll.scrollTo(0);
+      }
+
+      backtop.addEventListener('click', back_fun)
 
       document.addEventListener('swup:contentReplaced', (event) => {
+        backtop.removeEventListener('click', back_fun)
         ro.unobserve(container)
         scroll.destroy()
       });

@@ -72,6 +72,7 @@ icons:
   calendar: far fa-calendar-alt
   clock: far fa-clock
   user: far fa-user
+  back_top: fas fa-arrow-up
 
 # menu
 top_bars:
