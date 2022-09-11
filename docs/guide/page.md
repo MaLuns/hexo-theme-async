@@ -5,13 +5,13 @@
 ## 文章 Posts
 
 - `keywords`：关键字，用于 meta 标签
-- `description`: 描述，用于 meta 标签
+- `description`：描述，用于 meta 标签
 - ~~`photos`：文章封面图 (下个版本弃用)~~
-- `cover`: 文章封面图 
-- ~~`top`: 首页排序值~~
-- `sticky`: 首页排序值
-- `banner`: 文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
-- `toc`: 是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
+- `cover`：文章封面图 
+- ~~`top`：首页排序值~~
+- `sticky`：首页排序值
+- `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
+- `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
 
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 
@@ -21,6 +21,11 @@ title: 从零开始搭建一个后台模板
 keywords: admin-template,vue,element,后台模板
 cover: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
 sticky: 10
+banner: 
+  type: img
+  bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
+  bannerText: Hi my new friend!
+toc: false # 无需显示目录
 ---
 ```
 
@@ -48,10 +53,10 @@ layout: links
 ```
 在 `_config.async.yml` 中的 `links` 添加友链列表信息。
 
-- `name`: 站点名称
-- `url`: 博客链接
-- `image`: 头像图片链接
-- `desc`: 一句话描述
+- `name`：站点名称
+- `url`：博客链接
+- `image`：头像图片链接
+- `desc`：一句话描述
 
 ``` yaml
 links:
