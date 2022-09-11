@@ -3,6 +3,19 @@
         "large_version": "v1.1.x",
         "children": [
             {
+                "version": "1.1.3",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复动态增加 dom, 滚动插件渲染异常"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "返回顶部"
+                    }
+                ]
+            },
+            {
                 "version": "1.1.2",
                 "logs": [
                     {

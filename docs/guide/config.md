@@ -302,6 +302,8 @@ icons:
   clock: far fa-clock
   # 文章详情 作者
   user: far fa-user
+  # 返回顶部
+  back_top: fas fa-arrow-up
 ```
 
 ## 自定义样式 Style
