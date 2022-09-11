@@ -48,8 +48,8 @@ zh-Hans:
 
 ## 主题模式 ThemeMode
 - `default`：设置主题默认模式
-  - `style-light`: 亮色模式
-  - `style-dark`: 暗色模式
+  - `style-light`：亮色模式
+  - `style-dark`：暗色模式
 - `switch`：如果为 false，将不会出现主题切换按钮，只加载设置默认主题模式。
 ``` yaml
 theme: 
@@ -58,17 +58,17 @@ theme:
 ```
 
 ## 网站图标 Favicon
-用于 logo、icon、PWA安装图标配置。
+用于 logo、icon、PWA 安装图标配置。
 
-- `logo`: 顶部 logo
-- `icon16`: icon 16*16
-- `icon32`: icon 32*32
-- `appleTouchIcon`: iOS 添加到桌面是图标
-- `webmanifest`: 应用程序清单文件
-- `visibilitychange`: 是否在离开窗口时切换标题显示
-- `hidden`: 离开窗口时显示图标
-- `show_text`: 激活窗口时显示文字
-- `hide_text`: 离开窗口显示文字
+- `logo`：顶部 logo
+- `icon16`：icon 16*16
+- `icon32`：icon 32*32
+- `appleTouchIcon`：iOS 添加到桌面是图标
+- `webmanifest`：应用程序清单文件
+- `visibilitychange`：是否在离开窗口时切换标题显示
+- `hidden`：离开窗口时显示图标
+- `show_text`：激活窗口时显示文字
+- `hide_text`：离开窗口显示文字
 
 ``` yaml
 favicon:
@@ -111,9 +111,9 @@ cdn:
 
 如您想要使用其他图标，只需要在 `assets.icons` 中配置您的图标。
 
-- `type`: 图标类型 `font` `symbol`
+- `type`：图标类型 `font` `symbol`
 - `css`： font-class 图标资源 url （有值或为空时，将覆盖或去除内置 Font Awesome 5 图标）
-- `js`: 多色图标资源 url 
+- `js`：多色图标资源 url 
 
 ``` yaml
 assets:
@@ -155,16 +155,16 @@ assets:
 
 用户基本信息，用于博主名称、头像、友链交换规则、站点运行计时等等。
  
-- `name`: 昵称，用于侧栏或其他区域标识
-- `first_name`: 名，用于顶部将姓和名分别显示
-- `last_name`: 姓，
-- `email`: 邮箱
-- `domain`: 域名
-- `avatar`: 头像
-- `describe`: 网站简介
-- `ruleText`: 友链交换规则
-- `birthDay`: 博客计时开始时间
-- `copyrightYear`: 版权日期
+- `name`：昵称，用于侧栏或其他区域标识
+- `first_name`：名，用于顶部将姓和名分别显示
+- `last_name`：姓，
+- `email`：邮箱
+- `domain`：域名
+- `avatar`：头像
+- `describe`：网站简介
+- `ruleText`：友链交换规则
+- `birthDay`：博客计时开始时间
+- `copyrightYear`：版权日期
 
 ``` yaml
 user:
@@ -184,11 +184,11 @@ user:
 
 顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置。
 
-- `title`: 标题
-- `url`: 路径
-- `noswup`: 不使用局部刷新
-- `target`: 打开链接方式，和 a 标签一致
-- `children`: 二级菜单 
+- `title`：标题
+- `url`：路径
+- `noswup`：不使用局部刷新
+- `target`：打开链接方式，和 a 标签属性一致
+- `children`：二级菜单 
 ``` yaml
 top_bars:
   - title: home
@@ -206,9 +206,9 @@ top_bars:
 ### 社交图标
 默认内置 Font-Awesome Brand 图标，可根据您的需求添加，您可以通过在头部引入自定义图标资源来获取更多图标。
 
-- `name`: 链接名称
-- `icon`: 图标 class
-- `url`: 链接
+- `name`：链接名称
+- `icon`：图标 class
+- `url`：链接
 
 ``` yaml
 sidebar:
@@ -229,8 +229,8 @@ sidebar:
 ```
 
 ### 打字动画
-- `typedTextPrefix`: 为固定前缀
-- `typedText`: 为打字效果切换条目，可设置多条，按顺序切换。
+- `typedTextPrefix`：为固定前缀
+- `typedText`：为打字效果切换条目，可设置多条，按顺序切换。
 ``` yaml
 sidebar:
   typedTextPrefix: I`m
@@ -252,17 +252,17 @@ sidebar:
 ## 横幅 Banner
 每个页面横幅都可以自定义不同背景图、标语等
 
-- `default`: 默认配置
-    - `type`: 横幅类型 img、slideshow、video
-    - `bgurl`: 背景图地址，如果 type 是 slideshow，需要为数组
-    - `bannerTitle`: 横幅上标题
-    - `bannerText`: 横幅描述
-- `index`: 首页 (属性字段和上面保持一致)
-    - `videoUrl`: 视频地址 (仅首页有)
-- `archive`: 分类页
-- `links`: 友链页
-- `comment`: 评论页
-- `about`: 关于
+- `default`：默认配置
+    - `type`：横幅类型 img、slideshow、video
+    - `bgurl`：背景图地址，如果 type 是 slideshow，需要为数组
+    - `bannerTitle`：横幅上标题
+    - `bannerText`：横幅描述
+- `index`：首页 (属性字段和上面保持一致)
+    - `videoUrl`：视频地址 (仅首页有)
+- `archive`：分类页
+- `links`：友链页
+- `comment`：评论页
+- `about`：关于
 
 ``` yaml
 banner:
