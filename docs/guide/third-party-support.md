@@ -22,6 +22,12 @@ webAnalytics:
     sid:
     cid:
 ```
+以百度统计为例：
+``` yaml
+webAnalytics:  
+  enable: true
+  baidu:  百度统计Key
+```
 
 ## 评论
 ::: warning
@@ -29,7 +35,7 @@ webAnalytics:
 :::
 
 - `enable`: 默认关闭
-- `bComments`: bComments.js 配置项
+- `bComments`: bComments.js 配置项，b-comments 是什么 [参考这里](https://github.com/MaLuns/bcommentjs)
 
 ```yaml
 comment:
@@ -38,3 +44,29 @@ comment:
     v: 0.0.12
     env: 
 ```
+若果您需要集成一些三方评论插件，您可以通过修改下列 layout 文件进行集成。
+
+第一部分：
+
+你需要 修改 `layout/_partial/comment.ejs`（评论插件模板，所有使用评论页面都引用了这个文件） 文件，有关三方评论插件使用的 HTML 相关代码可以在这个文件编写。`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
+
+第二部分：
+
+添加三方评论插件 CDN 文件，您可以[参考这里](/guide/config.html#cdn)。CDN 默认是全量加载的。
+如果您希望评论插件是动态加载的，您需要添加配置：
+```yaml
+assets:
+  plugin:
+     [插件名称]: 
+        css: 你的插件 css
+        js: 你的插件 js
+```
+并在 `layout/_third-party/plugin.ejs` 里，编写您动态加载插件代码。
+
+第三部分：
+
+通过上面步骤发现加载出您的评论插件后，您可能会发现，有评论页面，滚动条出现异常并不能滚动到底。是因为评论区域数据是动态的，滚动插件没更新高度导致的。您可以[参考这里](https://github.com/MaLuns/hexo-theme-async/blob/415eba005dffe1e42b10c7b9c104e901542a9dc7/source/js/main.js)代码的 164-174 行。
+
+如果您集成了三方评论插件，欢迎您提交 Pull Request 。
+
+
