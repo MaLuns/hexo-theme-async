@@ -116,6 +116,7 @@
 
     },
     InitLocomotiveScroll() {
+      const container = utils.q('#trm-scroll-container');
       const scroll = new LocomotiveScroll({
         el: utils.q('#trm-scroll-container'),
         smooth: true,
@@ -124,17 +125,11 @@
         class: 'trm-active-el'
       });
 
-      const comComment = utils.q('.comment-container')
-      if (comComment) {
-        const ro = new ResizeObserver(entries => {
-          scroll.scrollTo(0, {
-            callback() {
-              scroll.update();
-            }
-          });
-        });
-        ro.observe(comComment);
-      }
+      // The height is not updated when handling the dynamic addition of DOM elements
+      const ro = new ResizeObserver(entries => {
+        scroll.update();
+      });
+      ro.observe(container);
 
       /* scroll.on('scroll', ({ scroll }) => {
         if (scroll.y > 500) {
@@ -145,6 +140,7 @@
       }); */
 
       document.addEventListener('swup:contentReplaced', (event) => {
+        ro.unobserve(container)
         scroll.destroy()
       });
     },

@@ -173,7 +173,7 @@ sw: false
 # Post wordcount
 # https://github.com/willin/hexo-wordcount
 wordcount:
-  enable: true
+  enable: false
   count: true
   time: true
 
