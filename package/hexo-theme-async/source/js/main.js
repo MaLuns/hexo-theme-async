@@ -4,6 +4,18 @@
   const utils = {
     q: (...arg) => document.querySelector(...arg),
     qa: (...arg) => document.querySelectorAll(...arg),
+    debounce(func, wait, immediate) {
+      let timeout;
+      return function () {
+        let context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        }, wait);
+        if (immediate && !timeout) func.apply(context, args);
+      };
+    },
     wrap(el, wrapper) {
       el.parentNode.insertBefore(wrapper, el);
       el.parentNode.removeChild(el);
@@ -127,11 +139,15 @@
         class: 'trm-active-el'
       });
 
+      const update = utils.debounce(() => scroll.update(), 150)
+
       // The height is not updated when handling the dynamic addition of DOM elements
       const ro = new ResizeObserver(entries => {
         scroll.update();
       });
       ro.observe(container);
+
+      window.addEventListener('resize', update)
 
       scroll.on('scroll', ({ scroll }) => {
         if (scroll.y > 500) {
@@ -149,6 +165,7 @@
 
       document.addEventListener('swup:contentReplaced', (event) => {
         backtop.removeEventListener('click', back_fun)
+        window.removeEventListener('resize', update)
         ro.unobserve(container)
         scroll.destroy()
       });
