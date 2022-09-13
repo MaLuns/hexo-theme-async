@@ -919,3 +919,24 @@
         overflow: hidden
     }
 }
+
+// project card
+.trm-project-card {
+    background-color: @theme-bg-color;
+    position        : relative;
+    overflow        : hidden;
+    border-radius   : 10px;
+    margin-bottom   : 40px;
+    box-shadow      : @box-shadow;
+    padding         : 40px;
+    text-align      : center;
+
+    .trm-project-desc {
+        height  : 3rem;
+        overflow: hidden;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

@@ -5,4 +5,6 @@
     <%- partial('./comment') %>
 <%} else if (page.type=='about'){%>
     <%- partial('./about',{post: page }) %>
+<%} else if (page.type=='project'){%>
+    <%- partial('./project',{post: page }) %>
 <%}%>
