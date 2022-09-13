@@ -22,10 +22,27 @@ const mergeLanguages = (hexo, languages) => {
     }
 }
 
+/**
+ * 合并友联
+ * @param {*} hexo 
+ * @param {*} links 
+ */
+const mergeLinks = (hexo, links) => {
+    if (Array.isArray(hexo.theme.config.links))
+        hexo.theme.config.links.concat(links)
+    else
+        hexo.theme.config.links = links
+
+}
+
 module.exports = function (hexo) {
     const data = hexo.locals.get('data')
 
     // merge languages
     if (data.languages)
         mergeLanguages(hexo, data.languages)
+
+    // merge links
+    if (data.links && Array.isArray(data.links))
+        mergeLinks(hexo, data.links)
 }
