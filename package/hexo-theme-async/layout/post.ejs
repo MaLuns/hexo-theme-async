@@ -12,12 +12,14 @@
 
     <div class="container">
         <div class="row">
+            <% if(!page.single_column) { %>
             <div class="col-lg-4 hidden-sm">
                 <!-- main card -->
                 <%- partial('./_partial/sidebar') %>
                 <!-- main card end -->
             </div>
-            <div class="col-lg-8">
+            <% } %>
+            <div class="<%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
                 <!-- content -->
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>

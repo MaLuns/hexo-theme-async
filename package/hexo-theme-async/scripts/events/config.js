@@ -23,16 +23,16 @@ const mergeLanguages = (hexo, languages) => {
 }
 
 /**
- * 合并友联
+ * 合并数据
  * @param {*} hexo 
- * @param {*} links 
+ * @param {*} datas 
+ * @param {*} key 
  */
-const mergeLinks = (hexo, links) => {
-    if (Array.isArray(hexo.theme.config.links))
-        hexo.theme.config.links.concat(links)
+const mergeDatas = (hexo, datas, key) => {
+    if (Array.isArray(hexo.theme.config[key]))
+        hexo.theme.config[key].concat(datas)
     else
-        hexo.theme.config.links = links
-
+        hexo.theme.config[key] = datas
 }
 
 module.exports = function (hexo) {
@@ -44,5 +44,9 @@ module.exports = function (hexo) {
 
     // merge links
     if (data.links && Array.isArray(data.links))
-        mergeLinks(hexo, data.links)
+        mergeDatas(hexo, data.links, 'links')
+
+    // merge projects
+    if (data.projects && Array.isArray(data.projects))
+        mergeDatas(hexo, data.projects, 'projects')
 }

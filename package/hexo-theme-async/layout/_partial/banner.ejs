@@ -28,11 +28,13 @@
     <div class="trm-banner-content trm-overlay">
         <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
             <div class="row">
+                <% if(!page.single_column) { %>
                 <div class="col-lg-4"></div>
-                <div class="col-lg-8">
+                <% } %>
+                <div class="<%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
 
                     <!-- banner title -->
-                    <div class="trm-banner-text">
+                    <div class="<%- !page.single_column ? 'trm-banner-text':'trm-banner-text trm-text-center' %> ">
                         <div class="trm-label trm-mb-20">
                             <%= bannerText %>
                         </div>
