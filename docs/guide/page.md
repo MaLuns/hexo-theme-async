@@ -12,6 +12,7 @@
 - `sticky`：首页排序值
 - `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
 - `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
+- `single_column`：单栏显示详情页，为 true 时生效。
 
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 
@@ -66,6 +67,27 @@ links:
     desc: 醒，亦在人间；梦，亦在人间
 ```
 
+如果您的友链比较多，可能会导致 `_config.async.yml` 过长，您可以将 links 配置拆分出来。在 Hexo 工作目录下新建 `source/_data/links.yml` 文件，字段和 `_config.async.yml` 中的一致，只是不再需要 `links` 字段。
+
+``` yaml
+- name: 白云苍狗
+  url: //www.imalun.com/
+  image: //www.imalun.com/images/avatar.jpg
+  desc: 醒，亦在人间；梦，亦在人间
+```
+
+也可以是 `source/_data/links.json` 文件
+
+``` json
+[
+  {
+    "name": "白云苍狗",
+    "url": "//www.imalun.com/",
+    "image": "//www.imalun.com/images/avatar.jpg",
+    "desc": "醒，亦在人间；梦，亦在人间"
+  }
+]
+```
 ## 关于 About
 新建关于页面。
 
