@@ -9,7 +9,7 @@ module.exports = {
     themeConfig: {
         logo: '/logo.svg',
         editLink: {
-            pattern: 'https://github.com/Maluns/hexo-theme-async/edit/dev/docs/:path',
+            pattern: 'https://github.com/Maluns/hexo-theme-async/edit/master/docs/:path',
             text: '帮助改善此页面！( ￣□￣)/',
         },
         socialLinks: [
