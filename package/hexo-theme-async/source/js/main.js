@@ -315,7 +315,7 @@
     utils.InitMenu()
 
     /* theme mode switch */
-    utils.InitThemeMode()
+    utils.InitThemeMode(true)
 
     /* counters */
     utils.InitCounter();
