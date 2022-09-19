@@ -302,8 +302,12 @@ icons:
   clock: far fa-clock
   # 文章详情 作者
   user: far fa-user
-  # 返回顶部
+  # 返回顶部 v1.1.3+
   back_top: fas fa-arrow-up
+  # 查询 v1.1.5+
+  search: fas fa-search
+  # 关闭 v1.1.5+
+  close: fas fa-times
 ```
 
 ## 自定义样式 Style

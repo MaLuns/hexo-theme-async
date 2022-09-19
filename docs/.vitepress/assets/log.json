@@ -3,6 +3,23 @@
         "large_version": "v1.1.x",
         "children": [
             {
+                "version": "1.1.5",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加本地搜索功能"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "页面切换时主题按钮状态丢失"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "窗体大小变化时，滚动插件未刷新 （详情见：https://github.com/MaLuns/hexo-theme-async/issues/9）"
+                    }
+                ]
+            },
+            {
                 "version": "1.1.4",
                 "logs": [
                     {
