@@ -20,7 +20,7 @@
 }
 
 .fancybox__thumbs-active:before {
-    border: solid 3px @primary !important
+    border: solid 3px @primary  !important
 }
 
 .fancybox__bg {
@@ -30,7 +30,19 @@
 .fancybox__button {
     margin-top      : 40px;
     background-color: transparent;
-    color           : @theme-bg-color
+    color           : @theme-bg-color;
+}
+
+.carousel__button.is-close {
+    color  : @theme-bg-color;
+    padding: 10px !important;
+    right  : 0 !important;
+    top    : 0 !important;
+
+    svg {
+        filter: none;
+        color : @theme-color
+    }
 }
 
 .fancybox__image {
