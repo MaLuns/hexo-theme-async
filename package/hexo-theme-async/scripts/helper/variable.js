@@ -1,43 +1,9 @@
-
-const isPlainObject = (obj) => {
-    return Object.prototype.toString.call(obj) === '[object Object]';
-};
-
-const toI18n = (obj, __) => {
-    let isArr = Array.isArray(obj);
-    if (isArr || (isPlainObject(obj) && obj.toString === Object.prototype.toString)) {
-
-        let target = isArr ? [] : {};
-        for (let key in obj) {
-            if (isArr) {
-                if (Array.isArray(key) && isPlainObject(key)) {
-                    target.push(toI18n(key, __))
-                } else if (typeof obj[key] === 'string') {
-                    target.push(__(key))
-                } else {
-                    target.push(key)
-                }
-            } else {
-                if (Array.isArray(obj[key]) && isPlainObject(obj[key])) {
-                    target[key] = toI18n(obj[key], __);
-                } else if (typeof obj[key] === 'string') {
-                    target[key] = __(obj[key]);
-                } else {
-                    target[key] = obj[key];
-                }
-            }
-        }
-        return target;
-    } else {
-        return i18n.__(obj);
-    }
-}
+const { toI18n, isPlainObject } = require('../utils')
 
 function variableHelper(name, val, isLang) {
     if (![null, undefined].includes(val) && typeof name === 'string') {
         if (isLang) {
-            const { i18n } = hexo.theme;
-            const __ = i18n.__()
+            const { __ } = this;
             val = toI18n(val, __)
         }
 

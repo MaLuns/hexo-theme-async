@@ -1,0 +1,86 @@
+.trm-search-popup {
+    position       : fixed;
+    top            : 0;
+    width          : 100vw;
+    height         : 100vh;
+    display        : none;
+    background     : fade(@theme-bg-color, 80%);
+    backdrop-filter: blur(20px);
+    z-index        : 99;
+
+    &.show {
+        display: block;
+    }
+
+    .trm-search-header {
+        text-align: right;
+
+        .trm-search-popup-btn-close {
+            cursor       : pointer;
+            width        : 2rem;
+            height       : 2rem;
+            padding      : 0.5rem;
+            font-size    : 1.5rem;
+            margin       : 1rem 1rem 0 0;
+            align-items  : center;
+            display      : inline-flex;
+            border-radius: 50%;
+            transition   : all .3s;
+
+            &:hover {
+                background-color: fade(@primary, 70%);
+                color           : #fcfcfe;
+            }
+        }
+    }
+
+    .trm-search-form {
+        text-align: center;
+
+        .trm-search-input {
+            max-width    : 25rem;
+            display      : inline-block;
+            font-size    : 1.5rem;
+            border-radius: 3rem;
+            padding      : 1rem 1.5rem;
+            border       : 1px solid @body-color;
+            text-align   : center;
+            height       : auto;
+            margin-bottom: 0;
+        }
+    }
+
+    .trm-search-result-container {
+        border-radius: 5px;
+        color        : @theme-color;
+        text-align   : center;
+
+        .search-stats {
+            margin       : 10px;
+            padding      : 10px;
+            border-bottom: 1px solid @body-color;
+        }
+
+        .search-result-list {
+            height        : calc(100vh - 15rem);
+            overflow-y    : auto;
+            margin        : 0;
+            padding       : 0 10px;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+
+            li {
+                list-style   : none;
+                padding      : 10px;
+                cursor       : pointer;
+                border-bottom: 1px dashed @body-color;
+
+                .search-result-title {
+                    font-size: 1.1rem;
+                    color    : @primary ;
+                }
+            }
+        }
+    }
+}

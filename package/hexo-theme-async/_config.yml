@@ -23,7 +23,7 @@ favicon:
   showText: favicon.showText
   hideText: favicon.hideText
 
-# assets
+# Theme resource files or plug-ins
 assets:
   plugin:
     row:
@@ -38,6 +38,8 @@ assets:
       js: //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
     typing:
       js: js/plugins/typing.js
+    search:
+      js: //cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js
     swiper: 
       css: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/css/swiper.min.css
       js: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/js/swiper.min.js
@@ -62,7 +64,7 @@ cdn:
     async: 
     defer: 
 
-# icons
+# The icon used by the theme
 icons:
   sun: far fa-sun
   moon: far fa-moon
@@ -73,8 +75,10 @@ icons:
   clock: far fa-clock
   user: far fa-user
   back_top: fas fa-arrow-up
+  close: fas fa-times
+  search: fas fa-search
 
-# menu
+# Top navigation menu
 top_bars:
   - title: menu.home
     url: /
@@ -163,7 +167,7 @@ comment:
     v: 0.0.12
     env: 
 
-# Theme 
+# Theme mode 
 theme: 
   switch: true 
   default: style-light # style-light style-dark
@@ -187,3 +191,12 @@ katex:
   # Options are for katex rendering options: https://katex.org/docs/options.html
   # In page katex options are also possible and will be merged
   options: {}
+
+# Blog search
+search:
+  enable: false
+  type: engine #local engine
+  href: 'https://www.google.com/search?q=site:'
+  # href: "https://www.baidu.com/s?wd=site:"
+  # href: "https://www.bing.com/search?q=site:"
+  domain: 

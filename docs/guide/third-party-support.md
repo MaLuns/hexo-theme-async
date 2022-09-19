@@ -70,3 +70,47 @@ assets:
 如果您集成了三方评论插件，欢迎您提交 Pull Request 。
 
 
+## 搜索
+
+### 引擎搜索
+
+跳转搜索引擎搜索你的网站内容
+
+可通过 `site:www.imalun.com 想要搜索的内容` 进行搜索
+
+🌰：<https://www.google.com/search?q=site:www.imalun.com%20白云苍狗>
+
+针对搜索引擎配置：
+- `href`：搜索引擎地址。
+- `domain`：您的域名地址。
+
+设置 `type` 为 `engine`。
+```yaml {3}
+search:
+  enable: true
+  type: engine
+  href: 'https://www.google.com/search?q=site:'
+  # href: "https://www.baidu.com/s?wd=site:"
+  # href: "https://www.bing.com/search?q=site:"
+  domain: www.imalun.com
+```
+
+### 本地搜索
+
+您需要先安装 [hexo-generator-searchdb](https://github.com/next-theme/hexo-generator-searchdb)，并参考配置文档。
+
+```bash
+npm install hexo-generator-searchdb
+```
+
+针对本地搜索配置：
+- `preload`：是否预加载搜索。
+- `trigger`：默认回车或点击时触发搜索，设置为 `auto` 时 `input` 触发搜索。
+
+只需要修改 `type` 为 `local`。
+
+```yaml {3}
+search:
+  enable: true
+  type: local
+```
