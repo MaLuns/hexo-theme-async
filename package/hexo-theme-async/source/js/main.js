@@ -172,14 +172,14 @@
       }
 
       desktop.addListener(reload);
-      mobile.addListener(freload);
+      mobile.addListener(reload);
 
       document.addEventListener('swup:contentReplaced', (event) => {
         backtop.removeEventListener('click', back_fun)
         window.removeEventListener('resize', update)
         ro.unobserve(container)
         desktop.removeListener(reload);
-        mobile.removeListener(freload);
+        mobile.removeListener(reload);
         scroll.destroy()
       });
     },
