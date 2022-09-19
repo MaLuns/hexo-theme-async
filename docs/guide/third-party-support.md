@@ -48,7 +48,7 @@ comment:
 
 第一部分：
 
-你需要 修改 `layout/_partial/comment.ejs`（评论插件模板，所有使用评论页面都引用了这个文件） 文件，有关三方评论插件使用的 HTML 相关代码可以在这个文件编写。`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
+你需要 修改 `layout/_widget/comment.ejs`（评论插件模板，所有使用评论页面都引用了这个文件） 文件，有关三方评论插件使用的 HTML 相关代码可以在这个文件编写。`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
 
 第二部分：
 
