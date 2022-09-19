@@ -1,0 +1,15 @@
+<% if(theme.search.enable){ %>
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <%- icon(theme.icons.close)%>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="<%- __('search.placeholder') %>">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+<% } %>

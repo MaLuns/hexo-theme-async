@@ -277,3 +277,18 @@ html {
     color           : @theme-color;
     background-color: @primary;
 }
+
+::-webkit-scrollbar {
+    width : 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius   : 2px;
+    background-color: fade(@primary, 50%);
+}
+
+::-webkit-scrollbar-track {
+    border-radius   : 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+}

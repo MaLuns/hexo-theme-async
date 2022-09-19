@@ -1,6 +1,6 @@
 const text = document.querySelector('.trm-typed-text');
 
-const words = window.TYPED_TEXT || [];
+const words = window.ASYNC_CONFIG.typed_text || [];
 
 setTyper(text, words);
 

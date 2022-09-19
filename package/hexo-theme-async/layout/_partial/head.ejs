@@ -55,17 +55,14 @@
 <% } %>
 
 <!-- Variable -->
-<%- variable('TYPED_TEXT',theme.sidebar.typedText) %>
-<%- variable('FAVICON',theme.favicon, true) %>
-<%- variable('THEME_VERSION',theme.version) %>
-<%- variable('THEME',theme.theme) %>
+<%- async_config() %>
 
 <!-- Theme mode css -->
 <% if(theme.theme.switch){%>
     <link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <script>
-        let catchMode = localStorage.getItem('theme-mode') || THEME.default;
+        let catchMode = localStorage.getItem('theme-mode') || ASYNC_CONFIG.theme.default;
         let themeMode = catchMode === 'style-dark' ? 'style-light' : 'style-dark';
         let linkdom = document.querySelector('[data-theme-type='+themeMode+']');
         if(linkdom) linkdom.remove();

@@ -1,10 +1,10 @@
 <%
-let isSwiper,isTyping,isKatex;
+let isSwiper,isTyping,isKatex,isSearch;
 
 isSwiper = Object.values(theme.banner).findIndex(item=>item?.type && item.type === 'slideshow' ) > 0;
 isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0;
 isKatex = theme.katex.global || page?.katex;
-
+isSearch = theme.search.enable && theme.search.type === 'local'
 %>
 
 <% if(loadtype ==='css') {%>
@@ -37,6 +37,10 @@ isKatex = theme.katex.global || page?.katex;
 
     <% if(isTyping) {%>
         <%- js(theme.assets.plugin.typing.js) %>
+    <% } %>
+
+    <% if(isTyping) {%>
+        <%- js(theme.assets.plugin.search.js) %>
     <% } %>
 
     <% if(isKatex) {

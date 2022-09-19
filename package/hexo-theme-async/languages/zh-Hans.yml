@@ -41,4 +41,10 @@ favicon:
   showText: (/≧▽≦/)咦！又好了！
   hideText: (●—●)喔哟，崩溃啦！
 
+search:
+  placeholder: 搜索...
+  empty: '找不到您查询的内容: ${query}'
+  hits: '找到 ${hits} 条结果'
+  hits_time: '找到 ${hits} 条结果（用时 ${time} 毫秒）'
+
 ieTips: 为了更好的体验,请使用非IE浏览器
