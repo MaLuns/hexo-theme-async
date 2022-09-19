@@ -160,13 +160,26 @@
       const back_fun = function (params) {
         scroll.scrollTo(0);
       }
-
       backtop.addEventListener('click', back_fun)
+
+      const desktop = window.matchMedia('screen and (min-width: 768px)');
+      const mobile = window.matchMedia('screen and (max-width: 767px)');
+
+      const reload = function (e) {
+        if (e.matches) {
+          location.reload();
+        }
+      }
+
+      desktop.addListener(reload);
+      mobile.addListener(freload);
 
       document.addEventListener('swup:contentReplaced', (event) => {
         backtop.removeEventListener('click', back_fun)
         window.removeEventListener('resize', update)
         ro.unobserve(container)
+        desktop.removeListener(reload);
+        mobile.removeListener(freload);
         scroll.destroy()
       });
     },
