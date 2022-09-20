@@ -49,4 +49,7 @@ search:
   hits: '${hits} results found'
   hits_time: '${hits} results found in ${time} ms'
 
+reward:
+  comment: I'm so cute. Please give me money.
+
 ieTips: For a better experience, use a browser other than Internet Explorer

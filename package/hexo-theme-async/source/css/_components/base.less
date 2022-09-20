@@ -214,6 +214,23 @@ html {
     border-radius: 5px
 }
 
+.trm-glow {
+    animation-duration       : 2s;
+    animation-iteration-count: infinite;
+    animation-name           : glowing;
+    animation-direction      : alternate;
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+        box-shadow: 0 0 20px fade(@primary, 30%);
+    }
+}
+
 // trm-scroll-container
 .trm-scroll-container {
     transition: opacity .6s;
