@@ -15,7 +15,7 @@
             <% if(!page.single_column) { %>
             <div class="col-lg-4 hidden-sm">
                 <!-- main card -->
-                <%- partial('./_partial/sidebar') %>
+                <%- partial('./_partial/sidebar/index') %>
                 <!-- main card end -->
             </div>
             <% } %>
@@ -24,49 +24,9 @@
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
                     
-                    <div class="row hidden-sm">
-                        <div class="col-sm-4">
-                            <div class="trm-card trm-label trm-label-light text-center">
-                                <%- icon(theme.icons.calendar,'trm-icon') %><br>
-                                <%= date(page.date,'MM/DD') %>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="trm-card trm-label trm-label-light text-center">
-                                <%- icon(theme.icons.clock,'trm-icon') %><br>
-                                <%= date(page.date,'hh:mm') %>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="trm-card trm-label trm-label-light text-center">
-                                <%- icon(theme.icons.user,'trm-icon') %><br>
-                                <%= theme.user.name %>
-                            </div>
-                        </div>
-                    </div>
-
-                    <article class="trm-card trm-publication">
-                        <%- page.content %>
-                    </article>
-
-                    <!-- blog -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- title -->
-                            <h5 class="trm-mb-40 trm-title-with-divider">
-                                <%- __('title.other_articles') %>
-                                <span data-number="02"></span>
-                            </h5>
-                        </div>
-                        <% if(page.prev){ %>
-                            <%- partial('./_partial/post-card',{ post: page.prev }) %>
-                        <%}%>
-                        <% if(page.next){ %>
-                            <%- partial('./_partial/post-card',{ post: page.next }) %>
-                        <%}%>
-                    </div>
-                    <!-- blog end -->
-
+                    <%- partial('./_partial/post/post-info') %>
+                    <%- partial('./_partial/post/post-content') %>
+                    <%- partial('./_partial/post/post-next-prev') %>
                     <%- partial('./_widget/comment',{ titleHide: false }) %>
 
                     <div class="trm-divider trm-mb-40"></div>
