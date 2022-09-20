@@ -8,8 +8,6 @@ user:
   avatar: /img/avatar.jpg
   describe: 网站简介。
   ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
-  birthDay: 04/10/2022 17:00:00 #计时开始时间
-  copyrightYear: 2022
 
 # logo
 favicon:
@@ -150,6 +148,27 @@ about:
     </ul>
   privacy: 
     本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
+
+# footer
+footer:
+  # Hexo link (Powered by Hexo).
+  powered:
+    enable: true
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # https://beian.miit.gov.cn/
+  beian:
+    enable: false
+    icp: 
+  # Copyright date
+  copyrightYear:
+  # 
+  live_time:
+    enable: false
+    prefix: footer.tips
+    start_time: 04/10/2022 17:00:00
+  #
+  custom_text:
+
 
 # img loading="lazy"
 lazyload:

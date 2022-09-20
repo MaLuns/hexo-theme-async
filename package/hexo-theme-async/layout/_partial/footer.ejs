@@ -1,19 +1,48 @@
 <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
-    <div class="trm-label">
-        ©  <%- theme.user.copyrightYear %>- <%- date(Date.now(), 'YYYY') %> ·
-        <span class="trm-accent-color">
-            <%- theme.user.name %>
-        </span>
-    </div>
-    <div class="trm-label">
-        <%-__('footer.tips')%>:
-        <span id="since" class="trm-accent-color"></span>
-        <%-__('footer.day')%>
-    </div>
+
+    <% if(theme.footer.beian.enable) { %>
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank"><%- theme.footer.beian.icp %></a>
+        </div>
+    <% } %>
+
+    <% if(theme.footer.copyrightYear) { %>
+        <div class="trm-footer-item">
+            <span>© <%- theme.footer.copyrightYear %>- <%- date(Date.now(), 'YYYY') %></span>
+            <span class="footer-separator">·</span>
+            <span class="trm-accent-color"><%- theme.user.name %></span>
+        </div>
+    <% } %>
+
+    <% if(theme.footer.powered.enable) { %>
+        <div class="trm-footer-item">
+            <span>
+                <%- __('footer.powered','<a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>')%> v<%- hexo_env('version') %>
+            </span>
+            <span class="footer-separator"> | </span>
+            <span> 
+                <%- __('footer.theme') %> - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v<%- async_env('version')%>
+            </span>
+        </div>
+    <% } %>  
+
+    <% if(theme.footer.live_time.enable) { %>
+        <div class="trm-footer-item">
+            <%-__('footer.tips','<span id="since" class="trm-accent-color"></span>')%>
+        </div>
+    <% } %> 
+
+    <% if(theme.footer.custom_text) { %>
+        <div class="trm-footer-item">
+            <%- theme.footer.custom_text %>
+        </div>
+    <% } %> 
 </footer>
 <script>
     function show_date_time () {
-        BirthDay = new Date("<%- theme.user.birthDay %>");
+        BirthDay = new Date("<%- theme.footer.live_time.start_time %>");
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         msPerDay = 24 * 60 * 60 * 1000
