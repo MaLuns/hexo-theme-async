@@ -36,11 +36,12 @@ isSearch = theme.search.enable && theme.search.type === 'local'
     <% } %>
 
     <% if(isTyping) {%>
-        <%- js(theme.assets.plugin.typing.js) %>
+        <script src="<%= url_for(theme.assets.plugin.typing.js) %>?v=<%= theme.version %>"></script>
     <% } %>
 
-    <% if(isTyping) {%>
-        <%- js(theme.assets.plugin.search.js) %>
+    <% if(isSearch) {%>
+        <%- js(theme.assets.plugin.search.js[0]) %>
+        <script src="<%= url_for(theme.assets.plugin.search.js[1]) %>?v=<%= theme.version %>"></script>
     <% } %>
 
     <% if(isKatex) {

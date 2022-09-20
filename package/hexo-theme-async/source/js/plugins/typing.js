@@ -1,12 +1,9 @@
 const text = document.querySelector('.trm-typed-text');
-
 const words = window.ASYNC_CONFIG.typed_text || [];
 
-setTyper(text, words);
-
-function setTyper (element, words) {
-  if (!element) return;
-
+function setTyper(element, words) {
+  if (!element && Array.isArray(words) && !words.length) return;
+  
   const LETTER_TYPE_DELAY = 100;
   const WORD_STAY_DELAY = 3000;
 
@@ -21,11 +18,11 @@ function setTyper (element, words) {
 
   startTyping();
 
-  function startTyping () {
+  function startTyping() {
     wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
   }
 
-  function typeLetter () {
+  function typeLetter() {
     const word = words[wordIndex];
 
     if (direction == DIRECTION_FORWARDS) {
@@ -50,7 +47,7 @@ function setTyper (element, words) {
     element.textContent = textToType;
   }
 
-  function nextWord () {
+  function nextWord() {
 
     letterIndex = 0;
     direction = DIRECTION_FORWARDS;
@@ -63,13 +60,8 @@ function setTyper (element, words) {
   }
 }
 
-/*----------------------------------------------------------
-------------------------------------------------------------
+setTyper(text, words);
 
-REINIT
-
-------------------------------------------------------------
-----------------------------------------------------------*/
 document.addEventListener("swup:contentReplaced", function () {
   setTyper(document.querySelector('.trm-typed-text'), words);
 });
