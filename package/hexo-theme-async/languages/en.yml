@@ -13,7 +13,9 @@ sidebar:
   contact: Contact Me
 
 footer:
-  tips: The blog has been lovely to run
+  powered: 'Powered by %s'
+  theme: Theme
+  tips: 'The blog has been lovely to run %s day'
   day: day
   hour: hour
   minute: minute
