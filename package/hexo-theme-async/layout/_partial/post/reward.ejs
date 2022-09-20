@@ -1,0 +1,25 @@
+<% if(theme.reward.enable || page.reward){ %>
+    <div class="trm-reward">
+        <% if(theme.reward.url){ %>
+            <a rel="noopener" href='<%- theme.reward.url %>' target='_blank' class="trm-reward-btn trm-glow">
+                <%- icon(theme.icons.reward) %>
+            </a>
+        <% } else { %>
+            <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
+                <%- icon(theme.icons.reward) %>
+            </span>
+        <% } %>
+        <p class="trm-reward-comment"><%- __(theme.reward.comment) %></p>
+        <div id="qr" style="display:none;">
+            <% if(Array.isArray(theme.reward.methods)) {
+                theme.reward.methods.forEach(method =>{ %>
+                <div style="display:inline-block">
+                    <a rel="noopener" href='<%- method.link ? method.link : method.path %>' target='_blank' >
+                       <img src="<%- url_for(method.path) %>" alt="<%- method.name %>" loading="lazy">
+                    </a>
+                </div>
+            <%  })
+               } %>
+        </div>
+    </div>
+<% } %>

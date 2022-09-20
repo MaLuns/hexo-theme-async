@@ -75,6 +75,7 @@ icons:
   back_top: fas fa-arrow-up
   close: fas fa-times
   search: fas fa-search
+  reward: fas fa-hand-holding-usd
 
 # Top navigation menu
 top_bars:
@@ -169,6 +170,14 @@ footer:
   #
   custom_text:
 
+# Reward (Donate)
+# If enable true, reward would be displayed in every posts and pages by default.
+# You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
+reward:
+  enable: false
+  comment: reward.comment
+  # url:
+  methods:
 
 # img loading="lazy"
 lazyload:

@@ -25,7 +25,10 @@
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
                     
                     <%- partial('./_partial/post/post-info') %>
-                    <%- partial('./_partial/post/post-content') %>
+                    <div class="trm-card ">
+                        <%- partial('./_partial/post/post-content') %>
+                        <%- partial('./_partial/post/reward') %>
+                    </div>
                     <%- partial('./_partial/post/post-next-prev') %>
                     <%- partial('./_widget/comment',{ titleHide: false }) %>
 
