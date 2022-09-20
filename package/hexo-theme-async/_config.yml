@@ -39,7 +39,7 @@ assets:
     typing:
       js: js/plugins/typing.js
     search:
-      js: //cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js
+      js: [//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js, js/plugins/local_search.js]
     swiper: 
       css: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/css/swiper.min.css
       js: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/js/swiper.min.js
