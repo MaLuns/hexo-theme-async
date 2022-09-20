@@ -1,4 +1,4 @@
-<% if(theme.reward.enable || page.reward){ %>
+<% if(theme.reward.enable && page.reward !== false){ %>
     <div class="trm-reward">
         <% if(theme.reward.url){ %>
             <a rel="noopener" href='<%- theme.reward.url %>' target='_blank' class="trm-reward-btn trm-glow">

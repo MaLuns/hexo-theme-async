@@ -163,8 +163,8 @@ assets:
 - `avatar`：头像
 - `describe`：网站简介
 - `ruleText`：友链交换规则
-- `birthDay`：博客计时开始时间
-- `copyrightYear`：版权日期
+- ~~`birthDay`：博客计时开始时间 v1.1.7 弃用~~
+- ~~`copyrightYear`：版权日期 v1.1.7 弃用~~
 
 ``` yaml
 user:
@@ -176,8 +176,6 @@ user:
   avatar: /img/avatar.jpg
   describe: 网站简介。
   ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
-  birthDay: 04/10/2022 17:00:00 
-  copyrightYear: 2022
 ```
 
 ## 导航栏 TopBars
@@ -273,6 +271,99 @@ banner:
     bannerText: Hi my new friend!
 ```
 
+## 页脚 Footer
+此配置在 `v1.1.7+` 新增，以前版本在 [用户信息-user](#用户信息-user) 配置。
+
+### 起始年份
+``` yaml
+footer:
+  copyrightYear: 2020
+```
+
+### 驱动
+自豪地显示当前使用的博客框架 Hexo 与主题 Yun 的名字及版本。
+
+如：`由 Hexo 驱动 v5.4.2 | 主题 - Async v1.1.6`
+
+让更多人知道 Hexo 与主题 Async，这有利于开源社区进一步发展。
+
+``` yaml {3}
+footer:
+  powered:
+    enable: true
+```
+
+### 备案
+
+国内用户可以提供备案号，开启备案显示。
+
+备案信息默认链接为：<https://beian.miit.gov.cn/>
+
+- `enable`: 开启备案
+- `icp`: 备案号
+
+```yaml
+footer:
+  beian:
+    enable: true
+    icp: 苏ICP备xxxxxxxx号
+```
+
+### 运行时间
+
+默认关闭。
+
+`本博客已萌萌哒地运行 442 天`
+
+```yaml
+footer:
+  live_time:
+    enable: false
+    prefix: footer.tips
+    start_time: 04/10/2022 17:00:00
+```
+
+### 自定义文本
+
+`custom_text` 为自定义页脚，可以包含 HTML。
+譬如有时使用其他服务商进行托管页面，或一些 ICP 之外的备案信息。
+
+```yaml
+footer:
+  custom_text: Hosted by <a href="https://github.com" rel="noopener" target="_blank">Github Pages</a>
+```
+
+## 打赏 Reward
+开启后，将在每篇文章 `post` 末尾显示打赏按钮。
+
+- `enable`: 开启打赏
+- `comment`: 在打赏按钮下显示你想说的话
+- `url`: 你的打赏链接（当你开启打赏链接时，将自动跳转你的外部链接而不是展开二维码）
+- `methods`: 数组，打赏方式
+
+### 打赏二维码
+
+- `name`: 打赏方式
+- `path`: 图片路径
+
+在 `_config.async.yml` 中进行覆盖。
+
+```yaml
+reward:
+  enable: true
+  comment: I'm so cute. Please give me money.
+  methods:
+    - name: 支付宝
+      path: 二维码地址
+```
+
+您也可以在某篇文章的首部单独设置是否开启打赏。
+
+```yaml
+reward: true
+# reward: false
+```
+
 ## 目录 Toc
 
 文章详情页目录，默认关闭。开启后，您可以再文章页配置当前文章不需要开启。[参考这里](/guide/page.html#文章-posts)
@@ -280,6 +371,16 @@ banner:
 ``` yaml 
 is_toc: true
 ```
+
+## 图片懒加载 Lazyload
+
+默认开启，将会为 Markdown 的图片 img 加上 loading="lazy" 属性。
+
+``` yaml
+lazyload:
+  enable: true
+```
+
 ## 自定义图标 Icon
 博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
 
@@ -308,6 +409,8 @@ icons:
   search: fas fa-search
   # 关闭 v1.1.5+
   close: fas fa-times
+  # 打赏 v1.1.7+
+  reward: fas fa-hand-holding-usd
 ```
 
 ## 自定义样式 Style

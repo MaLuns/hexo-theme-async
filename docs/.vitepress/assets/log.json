@@ -3,7 +3,32 @@
         "large_version": "v1.1.x",
         "children": [
             {
-                "version": "1.1.5",
+                "version": "1.1.7",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "文章支持显示打赏功能"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "文章图片支持懒加载"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化 footer 区域显示和配置（不兼容，详情见：<a href='#/guide/config.html#页脚-footer'>页脚-footer</a>）"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化 about 配置可省略"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "开启 sw 时，内置插件更新异常"
+                    }
+                ]
+            },
+            {
+                "version": "1.1.6",
                 "logs": [
                     {
                         "type": "feat",
@@ -15,7 +40,7 @@
                     },
                     {
                         "type": "fix",
-                        "text": "窗体大小变化时，滚动插件未刷新 （详情见：https://github.com/MaLuns/hexo-theme-async/issues/9）"
+                        "text": "窗体大小变化时，滚动插件未刷新 （详情见：<a href='https://github.com/MaLuns/hexo-theme-async/issues/9' target='_blank' rel='noreferrer'>issues</a>）"
                     }
                 ]
             },

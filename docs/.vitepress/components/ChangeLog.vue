@@ -11,7 +11,7 @@ const props = defineProps({
     
 <template>
     <li class="log" :class="type">
-        <slot>{{ type }}：{{ text }}</slot>
+        <slot>{{ type }}：<span v-html="text"></span></slot>
     </li>
 </template>
     
