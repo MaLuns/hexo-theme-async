@@ -64,8 +64,8 @@
 </blockquote>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>关于 <code>Hexo-theme-async</code> 的使用文档可以<a href="https://hexo-theme-async.imalun.com/">点击这里</a>查看</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片，格式如下：</p>
-<p><img src="https://hexo-theme-async.imalun.com/github_star.png" alt="这里写图片描述"></p>
-<p><img src="https://markdown.com.cn/images/i-am-svg.svg"></p>
+<p><img src="https://hexo-theme-async.imalun.com/github_star.png" alt="这里写图片描述" loading="lazy"></p>
+<p><img src="https://markdown.com.cn/images/i-am-svg.svg" loading="lazy"></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>可以在一行中用三个以上的减号来建立一个分隔线，同时需要在分隔线的上面空一行。如下：</p>
 <hr>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>可以使用冒号来定义表格的对齐方式，如下：</p>
