@@ -40,6 +40,7 @@
         </div>
     <% } %> 
 </footer>
+<% if(theme.footer.live_time.enable) { %>
 <script>
     function show_date_time () {
         BirthDay = new Date("<%- theme.footer.live_time.start_time %>");
@@ -51,3 +52,4 @@
     }
     show_date_time()
 </script>
+<% } %> 
