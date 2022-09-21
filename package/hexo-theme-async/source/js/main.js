@@ -1,6 +1,246 @@
 ~(function () {
   "use strict";
 
+  const arrayify = (list) => Array.prototype.slice.call(list);
+
+  class SwupScriptsPlugin {
+    name = 'ScriptPlugin';
+    isSwupPlugin = true;
+
+    mount() {
+      this.swup.on('contentReplaced', this.getScriptAndInsert);
+    }
+
+    unmount() {
+      this.swup.off('contentReplaced', this.getScriptAndInsert);
+    }
+
+    // 动态插件脚本
+    getScriptAndInsert = () => {
+      let nextHeadChildren = this.getNextScriptChildren();
+      if (nextHeadChildren.length) {
+        let scripts = Array.from(document.scripts)
+        let scriptCDN = []
+        let scriptBlock = []
+
+        nextHeadChildren.forEach(item => {
+          if (item.src)
+            scripts.findIndex(s => s.src === item.src) < 0 && scriptCDN.push(item);
+          else
+            scriptBlock.push(item.innerText)
+        })
+
+        Promise.all(scriptCDN.map(item => this.loadScript(item))).then(_ => {
+          scriptBlock.forEach(code => {
+            this.runScriptBlock(code)
+          })
+        })
+      }
+    };
+
+
+    loadScript(item) {
+      return new Promise((resolve, reject) => {
+        const element = document.createElement('script');
+        for (const { name, value } of arrayify(item.attributes)) {
+          element.setAttribute(name, value);
+        }
+        element.textContent = item.textContent;
+        element.setAttribute('async', 'false');
+        element.onload = resolve
+        element.onerror = reject
+        this.insertScript(element)
+      })
+    }
+
+    runScriptBlock(code) {
+      try {
+        const func = new Function(code);
+        func()
+      } catch (error) {
+        try {
+          window.eval(code)
+        } catch (error) {
+        }
+      }
+    }
+
+    insertScript(el) {
+      const body = document.body;
+      const asyncScript = document.getElementById('async-script')
+      body.insertBefore(el, asyncScript)
+    }
+
+    getNextScriptChildren() {
+      const pageContent = this.swup.cache
+        .getCurrentPage()
+        .originalContent.replace('<body', '<div id="swupBody"')
+        .replace('</body>', '</div>');
+      let element = document.createElement('div');
+      element.innerHTML = pageContent;
+      const children = element.querySelector('#swupBody').querySelectorAll('script[data-swup-reload-script]');
+
+      // cleanup
+      element.innerHTML = '';
+      element = null;
+
+      return children;
+    };
+
+  }
+
+  class SwupHeadPlugin {
+    name = 'HeadPlugin';
+    isSwupPlugin = true;
+
+    defaultOptions = {
+      persistTags: false,
+      persistAssets: false,
+      specialTags: false
+    };
+
+    constructor(options) {
+      this.options = {
+        ...this.defaultOptions,
+        ...options
+      };
+
+      // options.persistAssets is a shortcut to:
+      // options.persistTags with a default asset selector for scripts & styles
+      if (this.options.persistAssets && !this.options.persistTags) {
+        this.options.persistTags = 'link[rel=stylesheet], script[src], style';
+      }
+    }
+
+    mount() {
+      this.swup.on('contentReplaced', this.getHeadAndReplace);
+      this.swup.on('contentReplaced', this.updateHtmlLangAttribute);
+    }
+
+    unmount() {
+      this.swup.off('contentReplaced', this.getHeadAndReplace);
+      this.swup.off('contentReplaced', this.updateHtmlLangAttribute);
+    }
+
+    getHeadAndReplace = () => {
+      const headChildren = this.getHeadChildren();
+      const nextHeadChildren = this.getNextHeadChildren();
+
+      this.replaceTags(headChildren, nextHeadChildren);
+    };
+
+    getHeadChildren = () => {
+      return document.head.children;
+    };
+
+    getNextHeadChildren = () => {
+      const pageContent = this.swup.cache
+        .getCurrentPage()
+        .originalContent.replace('<head', '<div id="swupHead"')
+        .replace('</head>', '</div>');
+      let element = document.createElement('div');
+      element.innerHTML = pageContent;
+      const children = element.querySelector('#swupHead').children;
+
+      // cleanup
+      element.innerHTML = '';
+      element = null;
+
+      return children;
+    };
+
+    replaceTags = (oldTags, newTags) => {
+      const head = document.head;
+      const themeActive = Boolean(document.querySelector('[data-swup-theme]'));
+      const addTags = this.getTagsToAdd(oldTags, newTags, themeActive);
+      const removeTags = this.getTagsToRemove(oldTags, newTags, themeActive);
+
+      removeTags.reverse().forEach((item) => {
+        head.removeChild(item.tag);
+      });
+
+      addTags.forEach((item) => {
+        // Insert tag *after* previous version of itself to preserve JS variable scope and CSS cascaade
+        head.insertBefore(item.tag, head.children[item.index + 1] || null);
+      });
+
+      this.swup.log(`Removed ${removeTags.length} / added ${addTags.length} tags in head`);
+    };
+
+    compareTags = (oldTag, newTag) => {
+      const oldTagContent = oldTag.outerHTML;
+      const newTagContent = newTag.outerHTML;
+      return oldTagContent === newTagContent;
+    };
+
+    getTagsToRemove = (oldTags, newTags) => {
+      const removeTags = [];
+
+      for (let i = 0; i < oldTags.length; i++) {
+        let foundAt = null;
+
+        for (let j = 0; j < newTags.length; j++) {
+          if (this.compareTags(oldTags[i], newTags[j])) {
+            foundAt = j;
+            break;
+          }
+        }
+
+        if (foundAt == null && oldTags[i].getAttribute('data-swup-theme') === null && !this.isMatchesTag(oldTags[i], this.options.persistTags)) {
+          removeTags.push({ tag: oldTags[i] });
+        }
+      }
+
+      return removeTags;
+    };
+
+    getTagsToAdd = (oldTags, newTags, themeActive) => {
+      const addTags = [];
+
+      for (let i = 0; i < newTags.length; i++) {
+        let foundAt = null;
+
+        for (let j = 0; j < oldTags.length; j++) {
+          if (this.compareTags(oldTags[j], newTags[i])) {
+            foundAt = j;
+            break;
+          }
+        }
+
+        if (foundAt == null && !this.isMatchesTag(newTags[i], this.options.specialTags)) {
+          addTags.push({ index: themeActive ? i + 1 : i, tag: newTags[i] });
+        }
+      }
+
+      return addTags;
+    };
+
+    isMatchesTag = (item, matchesTag = this.options.persistTags) => {
+      if (typeof matchesTag === 'function') {
+        return matchesTag(item);
+      }
+      if (typeof matchesTag === 'string') {
+        return item.matches(matchesTag);
+      }
+      return Boolean(matchesTag);
+    };
+
+    updateHtmlLangAttribute = () => {
+      const html = document.documentElement;
+
+      const newPage = new DOMParser().parseFromString(
+        this.swup.cache.getCurrentPage().originalContent,
+        'text/html'
+      );
+      const newLang = newPage.documentElement.lang;
+
+      if (html.lang !== newLang) {
+        this.swup.log(`Updated lang attribute: ${html.lang} > ${newLang}`);
+        html.lang = newLang;
+      }
+    };
+  }
+
   const utils = {
     q: (...arg) => document.querySelector(...arg),
     qa: (...arg) => document.querySelectorAll(...arg),
@@ -69,11 +309,23 @@
       }
     },
     InitSwup() {
+      let plugins = [];
+
+      plugins.push(new SwupHeadPlugin({
+        specialTags: '#trm-switch-style' // 忽略样式标签 避免重复添加
+      }))
+
+      plugins.push(new SwupScriptsPlugin({
+        body: true,
+        optin: true
+      }))
+
       const options = {
         containers: ['#trm-dynamic-content'],
         animateHistoryBrowsing: true,
         linkSelector: '.trm-menu a:not([data-no-swup]), .trm-anima-link:not([data-no-swup])',
-        animationSelector: '[class="trm-swup-animation"]'
+        animationSelector: '[class="trm-swup-animation"]',
+        plugins
       };
       return new Swup(options);
     },
@@ -210,19 +462,6 @@
         }
       })
     },
-    InitKatex(options = {}) {
-      if (typeof window.renderMathInElement !== 'undefined') {
-        window.renderMathInElement(document.body, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\(', right: '\\)', display: false },
-            { left: '\\[', right: '\\]', display: true },
-          ],
-          ...options,
-        })
-      }
-    },
     InitToc() {
       let tabs = document.getElementById('trm-tabs-nav')
       if (tabs)
@@ -306,9 +545,6 @@
   /* fancybox */
   utils.InitFancybox()
 
-  /* Katex */
-  utils.InitKatex(window.KATEX_OPTIONS)
-
   /* toc */
   utils.InitToc()
   //#endregion
@@ -341,9 +577,6 @@
 
     /* fancybox */
     utils.InitFancybox()
-
-    /* Katex */
-    utils.InitKatex(window.KATEX_OPTIONS)
 
     /* toc */
     utils.InitToc()

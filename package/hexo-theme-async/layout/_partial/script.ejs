@@ -26,4 +26,4 @@
 <!-- Service Worker -->
 <%- partial('../_third-party/sw') %>
 
-<script src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>
+<script id="async-script" src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>

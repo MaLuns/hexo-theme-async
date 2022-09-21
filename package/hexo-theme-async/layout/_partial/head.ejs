@@ -3,12 +3,11 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="keywords" content="<%= !!page.keywords ? page.keywords : config.keywords %>">
 <%- open_graph() %>
-<% if(page.description){%>
-    <meta name="description" content="<%= page.description %>">
-<%}else if(config.description){%>
-    <meta name="description" content="<%= config.description %>">
+<% if(page.keywords){%>
+    <meta name="keywords" content="<%= page.keywords %>">
+<%}else if(config.keywords){%>
+    <meta name="keywords" content="<%= config.keywords %>">
 <%}%>
 
 <%- tag("title", !!page.title ? page.title : config.title) %>
@@ -59,16 +58,16 @@
 
 <!-- Theme mode css -->
 <% if(theme.theme.switch){%>
-    <link data-theme-type="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
-    <link data-theme-type="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+    <link data-swup-theme="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+    <link data-swup-theme="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <script>
         let catchMode = localStorage.getItem('theme-mode') || ASYNC_CONFIG.theme.default;
         let themeMode = catchMode === 'style-dark' ? 'style-light' : 'style-dark';
-        let linkdom = document.querySelector('[data-theme-type='+themeMode+']');
+        let linkdom = document.querySelector('[data-swup-theme='+themeMode+']');
         if(linkdom) linkdom.remove();
     </script>
 <%} else {%>
-    <link rel="stylesheet" href="<%= url_for('css/'+(theme.theme.default)+'.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+    <link data-swup-theme rel="stylesheet" href="<%= url_for('css/'+(theme.theme.default)+'.css') %>?v=<%= theme.version %>" id="trm-switch-style">
 <%}%>
 
 <!-- CDN -->
