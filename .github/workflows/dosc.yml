@@ -2,10 +2,10 @@ name: Deploy docs
 
 on:
   push:
-    branches:
-      - master
+    branches: [master,dev]
     paths:
       - 'docs/**'
+      - 'demo/**'
 
   workflow_dispatch:
 
@@ -25,6 +25,11 @@ jobs:
           yarn docs:build
           echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
           chmod 600 docs/.vitepress/dist/CNAME
+          ln -s ./package/hexo-theme-async ./demo/themes/async
+          cd ./demo
+          npm run clean
+          npm run build
+          cd ../
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
