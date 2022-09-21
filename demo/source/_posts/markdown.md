@@ -1,5 +1,5 @@
 ---
-title: Hexo-theme-async 文章页面适配预览
+title: 文章页面适配预览
 categories: 测试分类
 katex: true
 ---

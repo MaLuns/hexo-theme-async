@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Hexo-theme-async
 subtitle: ''
-description: ''
+description: 这是一个 Hexo 主题
 keywords:
-author: John Doe
+author: 白云苍狗
 language: zh-Hans
 timezone: ''
 
@@ -23,7 +23,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: ../docs/.vitepress/dist/demosite
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
