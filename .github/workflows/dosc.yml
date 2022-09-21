@@ -25,10 +25,11 @@ jobs:
           yarn docs:build
           echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
           chmod 600 docs/.vitepress/dist/CNAME
-          ln -s ./package/hexo-theme-async ./demo/themes/async
+          ln -s ../package/hexo-theme-async ./demo/themes/async
           cd ./demo
-          npm run clean
-          npm run build
+          yarn
+          yarn clean
+          yarn build
           cd ../
 
       - name: Deploy
