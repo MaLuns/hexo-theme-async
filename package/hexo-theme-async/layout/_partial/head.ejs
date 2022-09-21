@@ -61,7 +61,8 @@
     <link data-swup-theme="style-light" rel="stylesheet" href="<%= url_for('css/style-light.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <link data-swup-theme="style-dark" rel="stylesheet" href="<%= url_for('css/style-dark.css') %>?v=<%= theme.version %>" id="trm-switch-style">
     <script>
-        let catchMode = localStorage.getItem('theme-mode') || ASYNC_CONFIG.theme.default;
+        let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+        let catchMode = localStorage.getItem('theme-mode') || defaultMode;
         let themeMode = catchMode === 'style-dark' ? 'style-light' : 'style-dark';
         let linkdom = document.querySelector('[data-swup-theme='+themeMode+']');
         if(linkdom) linkdom.remove();
