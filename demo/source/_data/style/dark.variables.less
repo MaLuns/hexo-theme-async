@@ -1,2 +1,15 @@
-@primary :#a4ce60;
+@primary      :#a4ce60;
 @primary-weak :#82df7a;
+
+body::before {
+    content   : 'dev';
+    position  : absolute;
+    z-index   : 55;
+    padding   : 1rem 3rem 0.5rem;
+    right     : -3rem;
+    top       : -0.5rem;
+    background: @primary;
+    color     : #fff;
+    transform : rotate(45deg);
+    transition: all .3s;
+}
