@@ -11,9 +11,9 @@ user:
 
 # logo
 favicon:
-  logo: 
-  icon16: 
-  icon32: 
+  logo: /img/favicon.svg
+  icon16: /img/favicon.svg
+  icon32: /img/favicon.svg
   appleTouchIcon: 
   webmanifest:
   visibilitychange: false
