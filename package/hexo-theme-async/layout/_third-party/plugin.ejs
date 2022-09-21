@@ -55,11 +55,21 @@ isSearch = theme.search.enable && theme.search.type === 'local'
             }
         }
     %>
-        <%- js(theme.assets.plugin.katex.js) %>
+        <%- js({src: theme.assets.plugin.katex.js,'data-swup-reload-script': true }) %>
         <% if(theme.katex.copy_tex) {%>
-            <%- js(theme.assets.plugin.katex.copy_tex.js) %>
+            <%- js({src: theme.assets.plugin.katex.copy_tex.js,'data-swup-reload-script': true }) %>
         <% } %>
-        <%- js(theme.assets.plugin.katex.auto_render) %>
-        <%- variable('KATEX_OPTIONS',options) %>
+        <%- js({src: theme.assets.plugin.katex.auto_render,'data-swup-reload-script': true }) %>
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...<%- JSON.stringify(options) %>,
+            })
+        </script>
     <% } %>
 <% } %>
