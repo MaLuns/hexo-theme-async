@@ -83,10 +83,6 @@ top_bars:
     url: /
   - title: menu.archives
     url: /archives/
-  - title: menu.links
-    url: /links/
-  - title: menu.about
-    url: /about/
 
 # banner 
 banner:
@@ -134,9 +130,6 @@ sidebar:
     - name: Twitter
       icon: fab fa-twitter
       url: https://twitter.com
-    - name: Youtube
-      icon: fab fa-youtube
-      url: https://youtube.com/
 
 # about
 about:

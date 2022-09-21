@@ -563,7 +563,7 @@
   //#region  Re/init
   document.addEventListener("swup:contentReplaced", function () {
     /* The blog runs long */
-    show_date_time && show_date_time();
+    window.show_date_time && window.show_date_time();
 
     /* Work with pictures in articles */
     utils.InitPictures()
