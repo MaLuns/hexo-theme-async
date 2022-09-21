@@ -1,0 +1,46 @@
+# logo
+favicon:
+  visibilitychange: true
+
+top_bars:
+  - title: menu.home
+    url: /
+  - title: menu.archives
+    url: /archives/
+  - title: menu.links
+    url: /links/
+  - title: menu.about
+    url: /about/
+
+
+sidebar:
+  typedTextPrefix: I`m
+  typedText: [ 'Web Developer' ]
+  social:
+    - icon: fab fa-github
+      url: https://github.com/MaLuns/Hexo-theme-async
+      name: Github
+    - icon: fab fa-npm
+      url: https://www.npmjs.com/package/hexo-theme-async
+      name: Npm
+
+is_toc: true
+
+footer:
+  # Hexo link (Powered by Hexo).
+  powered:
+    enable: true
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # https://beian.miit.gov.cn/
+  beian:
+    enable: false
+    icp: 
+  # Copyright date
+  copyrightYear: 2022
+  # 
+  live_time:
+    enable: true
+    prefix: footer.tips
+    start_time: 04/10/2022 17:00:00
+  #
+  custom_text:
