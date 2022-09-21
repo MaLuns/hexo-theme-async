@@ -338,6 +338,14 @@
       let mode_swich_animation = utils.q('.trm-mode-swich-animation');
       let mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
 
+      const setThemeColor = function () {
+        let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-color')
+        let themeColorDom = utils.q('meta[name="theme-color"]')
+        if (themeColor && themeColorDom) {
+          themeColorDom.content = themeColor
+        }
+      }
+
       /* Sets the cache value */
       if (init) {
         let checked = (localStorage.getItem('theme-mode') || ASYNC_CONFIG.theme.default) == 'style-dark';
@@ -349,6 +357,8 @@
           mode_swich_animation.classList.remove('trm-active');
           mode_swich_animation_frame.classList.remove('trm-active');
         }
+
+        setThemeColor()
       }
 
       swich_input.addEventListener('change', function () {
@@ -372,6 +382,7 @@
           setTimeout(function () {
             mode_swich_animation_frame.classList.remove('trm-active');
             scroll_container.style.opacity = 1;
+            setThemeColor()
           }, 1000);
         })
 
