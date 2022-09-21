@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/demosite/2022/09/21/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>文章页面适配预览</title>
+    <url>/demosite/2022/09/21/markdown/</url>
+    <content><![CDATA[<p>主题 Hexo-theme-async 文章页面适配预览。</p>
+<span id="more"></span>
+
+<h2 id="Markdown-基础语法"><a href="#Markdown-基础语法" class="headerlink" title="Markdown 基础语法"></a>Markdown 基础语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>粗体、斜体、粗体和斜体，删除线，需要在文字前后加不同的标记符号。如下：</p>
+<p><strong>这个是粗体</strong></p>
+<p><em>这个是斜体</em></p>
+<p><em><strong>这个是粗体加斜体</strong></em></p>
+<p><del>这里想用删除线</del></p>
+<p>注：如果想给字体换颜色、字体或者居中显示，需要使用内嵌HTML来实现。</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表的使用，在符号<code>-</code>后加空格使用。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2</li>
+<li>无序列表 3</li>
+</ul>
+<p>多层嵌套效果。如下：</p>
+<ul>
+<li>无序列表 1</li>
+<li>无序列表 2<ul>
+<li>无序列表 2.1</li>
+<li>无序列表 2.2<ul>
+<li>无序列表 2.2.1</li>
+<li>无序列表 2.2.2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>有序列表的使用，在数字及符号<code>.</code>后加空格后输入内容，如下：</p>
+<ol>
+<li>有序列表 1</li>
+<li>有序列表 2</li>
+<li>有序列表 3</li>
+</ol>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>引用的格式是在符号<code>&gt;</code>后面书写文字。如下：</p>
+<blockquote>
+<p>读一本好书，就是在和高尚的人谈话。 ——歌德</p>
+</blockquote>
+<blockquote>
+<p>雇用制度对工人不利，但工人根本无力摆脱这个制度。 ——阮一峰</p>
+</blockquote>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>关于 <code>Hexo-theme-async</code> 的使用文档可以<a href="https://hexo-theme-async.imalun.com/">点击这里</a>查看</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片，格式如下：</p>
+<p><img src="https://hexo-theme-async.imalun.com/github_star.png" alt="这里写图片描述"></p>
+<p><img src="https://markdown.com.cn/images/i-am-svg.svg"></p>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>可以在一行中用三个以上的减号来建立一个分隔线，同时需要在分隔线的上面空一行。如下：</p>
+<hr>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>可以使用冒号来定义表格的对齐方式，如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="center">年龄</th>
+<th align="right">工作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">小可爱</td>
+<td align="center">18</td>
+<td align="right">吃可爱多</td>
+</tr>
+<tr>
+<td align="left">小小勇敢</td>
+<td align="center">20</td>
+<td align="right">爬棵勇敢树</td>
+</tr>
+<tr>
+<td align="left">小小小机智</td>
+<td align="center">22</td>
+<td align="right">看一本机智书</td>
+</tr>
+</tbody></table>
+<h2 id="特殊语法"><a href="#特殊语法" class="headerlink" title="特殊语法"></a>特殊语法</h2><h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>Here’s a sentence with a footnote. [^1]<br>[^1]: This is the footnote.</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>如果在一个行内需要引用代码，只要用反引号引起来就好，如下：</p>
+<p>Use the <code>printf()</code> function.</p>
+<p>在需要高亮的代码块的前一行及后一行使用三个反引号，同时<strong>第一行反引号后面表示代码块所使用的语言</strong>，如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// FileName: HelloWorld.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">  <span class="comment">// Java 入口程序，程序从此入口</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello,World!&quot;</span>); <span class="comment">// 向控制台打印一条语句</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>diff 不能同时和其他语言的高亮同时显示，使用效果如下:</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+ 新增项</span></span><br><span class="line"><span class="deletion">- 删除项</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>行内公式使用方法：\(ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\)</p>
+<p>块公式使用方法如下：</p>
+<p>$$H(D_2) &#x3D; -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) &#x3D; 1$$</p>
+<h3 id="定义列表"><a href="#定义列表" class="headerlink" title="定义列表"></a>定义列表</h3><dl><dt>First Term</dt><dd>This is the definition of the first term.</dd></dl><dl><dt>Second Term<br>: This is one definition of the second term.</dt><dd>This is another definition of the second term.</dd></dl><h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> Write the press release</li>
+<li><input disabled="" type="checkbox"> Update the website</li>
+<li><input disabled="" type="checkbox"> Contact the media</li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="注音标签"><a href="#注音标签" class="headerlink" title="注音标签"></a>注音标签</h3><p><ruby>喜大普奔<rt>hē hē hē hē</rt></ruby></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span>喜大普奔<span class="tag">&lt;<span class="name">rt</span>&gt;</span>hē hē hē hē<span class="tag">&lt;/<span class="name">rt</span>&gt;</span><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="details"><a href="#details" class="headerlink" title="details"></a>details</h3><details>
+  <summary>Summary</summary>
+  Content
+</details>]]></content>
+      <categories>
+        <category>测试分类</category>
+      </categories>
+  </entry>
+</search>
