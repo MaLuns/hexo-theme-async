@@ -26,7 +26,7 @@ jobs:
           echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
           chmod 600 docs/.vitepress/dist/CNAME
           mkdir ./demo/themes
-          ln -s ../package/hexo-theme-async ./demo/themes/async
+          ln -s ./package/hexo-theme-async ./demo/themes/async
           cd ./demo
           yarn
           yarn clean
