@@ -1,8 +1,14 @@
 [
     {
+        "name": "默认示例",
+        "url": "https://hexo-theme-async.imalun.com/demosite/",
+        "avatar": "https://hexo-theme-async.imalun.com/demosite/img/favicon.svg",
+        "desc": "主题默认示例"
+    },
+    {
         "name": "白云苍狗",
         "url": "https://www.imalun.com",
         "avatar": "https://www.imalun.com/images/avatar.jpg",
-        "desc": "主题默认示例"
+        "desc": "醒，亦在人间；梦，亦在人间。"
     }
 ]
