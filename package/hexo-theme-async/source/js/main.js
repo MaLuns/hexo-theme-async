@@ -503,7 +503,7 @@
       document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
           iconEls.forEach(item => {
-            item.href = window.ASYNC_CONFIG.favicon.hidden
+            item.href = window.ASYNC_CONFIG.root + window.ASYNC_CONFIG.favicon.hidden
           })
           document.title = window.ASYNC_CONFIG.favicon.hideText;
           clearTimeout(titleTime);
