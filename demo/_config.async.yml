@@ -42,5 +42,15 @@ footer:
 search:
   enable: true
   type: local
+  preload: true
+  trigger: auto
 
 baidu_push: true
+
+reward:
+  enable: true
+  methods:
+    - name: 微信
+      path: https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png
+    - name: 支付宝
+      path: https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg
