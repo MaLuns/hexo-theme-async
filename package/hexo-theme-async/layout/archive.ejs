@@ -69,12 +69,12 @@
                                     <div class="trm-a trm-timeline-content">
                                         <div class="trm-card-header">
                                             <div class="trm-left-side">
-                                                <h6 class="trm-mb-15">
+                                                <h6>
                                                     <a href="<%- url_for(element.path) %>" class="trm-anima-link">
                                                         <%= element.title %>
                                                     </a>
                                                 </h6>
-                                                <div class="trm-text-sm trm-accent-color trm-mb-15">
+                                                <div class="trm-text-sm trm-accent-color trm-mt-15">
                                                     <ul class="trm-card-data trm-label ">
                                                         <li class="trm-accent-color"><%= date(element.date,'MM/DD') %></li>
                                                         <li class="trm-accent-color"><%= date(element.date,'hh:mm') %></li>
@@ -85,13 +85,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>
-                                            <%if(element.excerpt){%>
-                                                <%- truncate(element.excerpt,{length:80}) %>
-                                            <%}else{%>
-                                                <%- truncate(element.content,{length:80}) %>
-                                            <%}%>
-                                        </div>
+                                        <%if(element.excerpt){%>
+                                            <div class="trm-publication trm-mt-15">
+                                                <%- element.excerpt %>
+                                            </div>
+                                        <%}%>
                                     </div>
                                 </div>
                                 <% }) %>
