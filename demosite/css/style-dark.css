@@ -175,6 +175,9 @@ html.is-animating .trm-swup-animation {
 .trm-mb-40 {
   margin-bottom: 40px;
 }
+.trm-mt-15 {
+  margin-top: 15px;
+}
 .trm-mt-20 {
   margin-top: 20px;
 }
@@ -247,6 +250,11 @@ html.is-animating .trm-swup-animation {
 .trm-back-top.active-el {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+.katex-display {
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 0.5rem;
 }
 *::-webkit-selection,
 *::-moz-selection,
@@ -2438,6 +2446,9 @@ form textarea:focus,
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 10px;
+}
+.trm-timeline .trm-timeline-content .trm-publication > p:first-of-type {
+  margin-bottom: 0;
 }
 footer {
   background-color: #00283a;
