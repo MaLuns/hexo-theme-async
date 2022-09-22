@@ -23,7 +23,11 @@
 <!-- CDN -->
 <%- partial('../_third-party/cdn',{ cdntype: 'body' }) %>
 
-<!-- Service Worker -->
-<%- partial('../_third-party/sw') %>
+<% if(hexo_env('cmd') !== 'server'){ %>
+    <!-- Service Worker -->
+    <%- partial('../_third-party/sw') %>
+    <!-- baidu push -->
+    <%- partial('../_third-party/seo/baidu-push') %>
+<% } %>
 
 <script id="async-script" src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>
