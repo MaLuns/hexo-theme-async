@@ -60,7 +60,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":false,"type":"engine","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"}};</script>
 
 <!-- Theme mode css -->
 
@@ -201,6 +201,12 @@
 			
 			<!-- mode switcher place end -->
 
+			
+				
+				<div id="trm-search-btn" class="trm-search-btn">
+					<i class="fas fa-search"></i>
+				</div>
+				 
 			 
 
 		</div>
@@ -390,14 +396,14 @@
                                         <div class="trm-card-header">
                                             <div class="trm-left-side">
                                                 <h6 class="trm-mb-15">
-                                                    <a href="/demosite/2022/09/21/hello-world/" class="trm-anima-link">
+                                                    <a href="/demosite/2022/09/22/hello-world/" class="trm-anima-link">
                                                         Hello World
                                                     </a>
                                                 </h6>
                                                 <div class="trm-text-sm trm-accent-color trm-mb-15">
                                                     <ul class="trm-card-data trm-label ">
-                                                        <li class="trm-accent-color">09/21</li>
-                                                        <li class="trm-accent-color">02:27</li>
+                                                        <li class="trm-accent-color">09/22</li>
+                                                        <li class="trm-accent-color">06:36</li>
                                                         
                                                     </ul>
                                                 </div>
@@ -418,14 +424,14 @@
                                         <div class="trm-card-header">
                                             <div class="trm-left-side">
                                                 <h6 class="trm-mb-15">
-                                                    <a href="/demosite/2022/09/21/markdown/" class="trm-anima-link">
+                                                    <a href="/demosite/2022/09/22/markdown/" class="trm-anima-link">
                                                         文章页面适配预览
                                                     </a>
                                                 </h6>
                                                 <div class="trm-text-sm trm-accent-color trm-mb-15">
                                                     <ul class="trm-card-data trm-label ">
-                                                        <li class="trm-accent-color">09/21</li>
-                                                        <li class="trm-accent-color">02:27</li>
+                                                        <li class="trm-accent-color">09/22</li>
+                                                        <li class="trm-accent-color">06:36</li>
                                                         
                                                     </ul>
                                                 </div>
@@ -517,6 +523,20 @@
 </div>
 
   
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="搜索...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
 
   <!-- Plugin -->
 
@@ -540,6 +560,11 @@
     
 
     
+        
+<script src="//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/demosite/js/plugins/local_search.js?v=1.1.1"></script>
+    
 
     
 
@@ -559,11 +584,29 @@
 
 
 
-<!-- Service Worker -->
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
 
 
 <script id="async-script" src="/demosite/js/main.js?v=1.1.1"></script>
-
 
 </body>
 
