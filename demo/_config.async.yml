@@ -27,20 +27,20 @@ sidebar:
 is_toc: true
 
 footer:
-  # Hexo link (Powered by Hexo).
   powered:
     enable: true
-  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
-  # https://beian.miit.gov.cn/
   beian:
     enable: false
     icp: 
-  # Copyright date
   copyrightYear: 2022
-  # 
   live_time:
     enable: true
     prefix: footer.tips
     start_time: 04/10/2022 17:00:00
-  #
   custom_text:
+
+search:
+  enable: true
+  type: local
+
+baidu_push: true
