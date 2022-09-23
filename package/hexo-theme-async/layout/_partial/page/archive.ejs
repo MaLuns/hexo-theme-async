@@ -42,30 +42,40 @@
             <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
                 <div class="trm-timeline-mark-light"></div>
                 <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content">
-                    <div class="trm-card-header">
-                        <div class="trm-left-side">
+                <div class="trm-a trm-timeline-content <%- theme.archive.type %>">
+                    <% if(theme.archive.type === 'less'){ %>
+                        <div class="trm-card-header">
                             <h6>
                                 <a href="<%- url_for(element.path) %>" class="trm-anima-link">
                                     <%= element.title %>
                                 </a>
                             </h6>
-                            <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                <ul class="trm-card-data trm-label ">
-                                    <li class="trm-accent-color"><%= date(element.date,'MM/DD') %></li>
-                                    <li class="trm-accent-color"><%= date(element.date,'hh:mm') %></li>
-                                    <% if(theme.wordcount.enable && theme.wordcount.count){ %>
-                                    <li><%= wordcount(element.content) %></li>
-                                    <% } %>
-                                </ul>
+                        </div>
+                    <% } else {%>
+                        <div class="trm-card-header">
+                            <div class="trm-left-side">
+                                <h6>
+                                    <a href="<%- url_for(element.path) %>" class="trm-anima-link">
+                                        <%= element.title %>
+                                    </a>
+                                </h6>
+                                <div class="trm-text-sm trm-accent-color trm-mt-15">
+                                    <ul class="trm-card-data trm-label ">
+                                        <li class="trm-accent-color"><%= date(element.date,'MM/DD') %></li>
+                                        <li class="trm-accent-color"><%= date(element.date,'hh:mm') %></li>
+                                        <% if(theme.wordcount.enable && theme.wordcount.count){ %>
+                                        <li><%= wordcount(element.content) %></li>
+                                        <% } %>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <%if(element.excerpt){%>
-                        <div class="trm-publication trm-mt-15">
-                            <%- element.excerpt %>
-                        </div>
-                    <%}%>
+                        <%if(element.excerpt){%>
+                            <div class="trm-publication trm-mt-15">
+                                <%- element.excerpt %>
+                            </div>
+                        <%}%>
+                    <% } %>
                 </div>
             </div>
             <% }) %>
