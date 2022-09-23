@@ -159,6 +159,10 @@ footer:
   #
   custom_text:
 
+# archive
+archive:
+  type: more # less more
+
 # Reward (Donate)
 # If enable true, reward would be displayed in every posts and pages by default.
 # You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
