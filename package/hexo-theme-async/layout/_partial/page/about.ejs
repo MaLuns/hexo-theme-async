@@ -1,0 +1,53 @@
+<% if(page.content){ %>
+    <%- page.content %>
+<% }else{ let index = 0; %>
+    <div class="row trm-mb-40 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <blockquote>
+                <%- theme.about.title %>
+            </blockquote>
+        </div>
+    </div>
+    
+    <% if(theme.about.introduction) { %>
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                <%- __('title.author') %>
+                <span data-number="0<%- ++index %>"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-contrast trm-active-el" >
+                <%- theme.about.introduction %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+    <% if(theme.about.introduction) { %>
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                <%- __('title.blog') %>
+                <span data-number="0<%- ++index %>"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-active-el">
+                <%- theme.about.blog %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+    <% if(theme.about.introduction) { %>
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                <%- __('title.privacy') %>
+                <span data-number="0<%- ++index %>"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-active-el">
+                <%- theme.about.privacy %>
+            </div>
+        </div>
+    </div>
+    <% } %>
+<% } %>
