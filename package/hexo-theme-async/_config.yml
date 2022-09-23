@@ -96,19 +96,15 @@ banner:
     bannerText: Hi my new friend!
     videoUrl: 
   archive:
-    type: img
     bannerTitle: 云间连下榻，<br>天上接行杯。
     bannerText: The article archive
   links:
-    type: img
     bannerTitle: 莫愁前路无知己，<br>天下谁人不识君。
     bannerText: A link to a friend's website
   comment:
-    type: img
     bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
     bannerText: The magic tree hole
   about:
-    type: img
     bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
     bannerText: About me
 

@@ -1,35 +1,10 @@
-<div class="trm-content-start">
-
-    <!-- banner -->
-    <%- partial('./_partial/banner',  {
+<% let banner = page.banner || {}; %>
+<%- partial('./_partial/main',  {
+    banner: partial('./_partial/banner',  {
         ...theme.banner.default,
+        ...theme.banner.comment,
         bannerTitle: page.title,
-        ...theme.banner.comment 
-    }) %>
-    <!-- banner end -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <!-- main card -->
-                <%- partial('./_partial/sidebar/index') %>
-                <!-- main card end -->
-            </div>
-            <div class="col-lg-8">
-                <!-- content -->
-                <div class="trm-content" id="trm-content">
-                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
-                    
-                    <%- partial('./_widget/comment',{ titleHide: true }) %>
-                    
-                    <div class="trm-divider trm-mb-40"></div>
-
-                    <!-- footer -->
-                    <%- partial('./_partial/footer') %>
-                    <!-- footer end -->
-                </div>
-                <!-- content end -->
-            </div>
-        </div>
-    </div>
-</div>
+        ...banner
+    }),
+    content: partial('./_widget/comment',{ titleHide: true })
+}) %>

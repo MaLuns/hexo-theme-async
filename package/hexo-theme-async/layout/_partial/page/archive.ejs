@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="trm-card">
+            <% if(is_archive()){%>
+                <div style="padding: 0 20px;">
+                    <%- list_archives({
+                        type: "yearly",
+                        ulclass: "row trm",
+                        liclass: "col-lg-4 trm"
+                    }) %>
+                </div>
+            <% } else if (is_category()){ %>
+                <div style="padding: 0 20px;">
+                    <%- list_categories({
+                        type: "yearly",
+                        ulclass: "row trm",
+                        liclass: "col-lg-4 trm"
+                    }) %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<!-- history -->
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-mb-40 trm-title-with-divider">
+            <% if(page.archive){ %>
+                <%- page.year ? page.year : __('title.all_archives') %>
+            <% } else if (is_category()){ %>
+                <%- page.category %>
+            <% } %>
+            <span data-number="01"></span>
+        </h5>
+    </div>
+    <div class="col-lg-12">
+        <!-- timeline -->
+        <div class="trm-timeline">
+            <% page.posts.forEach(function(element) { %>
+            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+                <div class="trm-timeline-mark-light"></div>
+                <div class="trm-timeline-mark"></div>
+                <div class="trm-a trm-timeline-content">
+                    <div class="trm-card-header">
+                        <div class="trm-left-side">
+                            <h6>
+                                <a href="<%- url_for(element.path) %>" class="trm-anima-link">
+                                    <%= element.title %>
+                                </a>
+                            </h6>
+                            <div class="trm-text-sm trm-accent-color trm-mt-15">
+                                <ul class="trm-card-data trm-label ">
+                                    <li class="trm-accent-color"><%= date(element.date,'MM/DD') %></li>
+                                    <li class="trm-accent-color"><%= date(element.date,'hh:mm') %></li>
+                                    <% if(theme.wordcount.enable && theme.wordcount.count){ %>
+                                    <li><%= wordcount(element.content) %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <%if(element.excerpt){%>
+                        <div class="trm-publication trm-mt-15">
+                            <%- element.excerpt %>
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <!-- timeline end -->
+    </div>
+</div>
+<!-- history end -->
+
+<%- partial('../../_widget/paginator') %>
+
+
