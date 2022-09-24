@@ -1,0 +1,24 @@
+<% if(theme.creative_commons.post) { 
+
+    let ccVersion = (theme.creative_commons.license == 'zero') ? '1.0' : '4.0';
+    let ccPrefix = (theme.creative_commons.license == 'zero') ? 'publicdomain' : 'licenses';
+    let ccURL = 'https://creativecommons.org/' + ccPrefix + '/' + theme.creative_commons.license + '/' + ccVersion + '/' + theme.creative_commons.language;
+    let postURL = page.url || page.permalink;
+%>
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong><%-  __('post.copyright.author') + __('symbol.colon') %></strong>
+        <%- page.author || config.author %>
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong><%- __('post.copyright.link') + __('symbol.colon') %></strong>
+        <a href="<%- postURL %>" title="<%- page.title %>"><%- postURL %></a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong><%-  __('post.copyright.license_title') + __('symbol.colon') %></strong>
+        <%- _p('post.copyright.license_content', 
+        `<a href="${ccURL}" target="_blank" rel="noopener" title="CC ${theme.creative_commons.license.toUpperCase() + ' ' + ccVersion} ">CC ${theme.creative_commons.license.toUpperCase() + ' ' + ccVersion}</a>`) %>
+    </li>
+</ul>
+<% } %>
