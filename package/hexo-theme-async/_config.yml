@@ -1,4 +1,4 @@
-# user
+# user info
 user:
   name: ThemeAsync
   first_name: Theme
@@ -84,7 +84,7 @@ top_bars:
   - title: menu.archives
     url: /archives/
 
-# banner 
+# Banner settings
 banner:
   default:
     type: img
@@ -108,7 +108,7 @@ banner:
     bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
     bannerText: About me
 
-# sidebar
+# Sidebar settings
 sidebar:
   typedTextPrefix: I`m
   typedText: [ 'Web Developer' ]
@@ -127,7 +127,7 @@ sidebar:
       icon: fab fa-twitter
       url: https://twitter.com
 
-# about
+# About page settings
 about:
   title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
   introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
@@ -139,7 +139,7 @@ about:
   privacy: 
     本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
 
-# footer
+# Footer settings
 footer:
   # Hexo link (Powered by Hexo).
   powered:
@@ -162,6 +162,18 @@ footer:
 # archive
 archive:
   type: more # less more
+
+# Creative Commons 4.0 International License.
+# https://creativecommons.org/licenses/
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license.
+# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+# Valid values of language: deed.zh, deed.en, deed.ja, etc.
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh
+  post: false
+  clipboard: false
 
 # Reward (Donate)
 # If enable true, reward would be displayed in every posts and pages by default.

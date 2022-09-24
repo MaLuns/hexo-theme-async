@@ -17,6 +17,7 @@
                     <a rel="noopener" href='<%- method.link ? method.link : method.path %>' target='_blank' >
                        <img src="<%- url_for(method.path) %>" alt="<%- method.name %>" loading="lazy">
                     </a>
+                    <p><%- method.name %></p>
                 </div>
             <%  })
                } %>

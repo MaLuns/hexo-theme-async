@@ -52,4 +52,17 @@ search:
 reward:
   comment: 我很可爱，请给我钱
 
+post:
+  more: 更多
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: '本博客所有文章除特别声明外，均默认采用 %s 许可协议。'
+
+symbol:
+  comma: ，
+  period: 。
+  colon: ：
+
 ieTips: 为了更好的体验,请使用非IE浏览器
