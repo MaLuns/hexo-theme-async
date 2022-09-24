@@ -131,7 +131,7 @@
         }
 
         &::after {
-            transition      : all 0.35s ease-out;
+            .transition-mixin();
             content         : '';
             position        : absolute;
             background-color: @primary;
@@ -192,7 +192,7 @@
 
         background     : linear-gradient(fade(@primary, 50%), fade(@primary-weak, 50%)) bottom no-repeat;
         background-size: 100% .4em;
-        transition     : background-size 0.3s ease, color 0.3s ease;
+        .transition-mixin();
 
         &:hover {
             background-size: 100% 60%;

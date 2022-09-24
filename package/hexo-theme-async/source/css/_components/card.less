@@ -1,9 +1,9 @@
 .trm-card {
-    padding         : 40px;
     background-color: @theme-bg-color;
     position        : relative;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
+    border-radius   : @card-border-radius;
+    margin-bottom   : @card-bottom-card;
+    padding         : @card-padding;
     box-shadow      : @box-shadow;
 
     .trm-icon {
@@ -16,11 +16,11 @@
 // skill-card
 
 .trm-skill-card {
-    border-radius   : 10px;
+    border-radius   : @card-border-radius;
     box-shadow      : @box-shadow;
     background-color: @theme-bg-color;
-    padding         : 40px;
-    margin-bottom   : 40px;
+    padding         : @card-padding;
+    margin-bottom   : @card-bottom-card;
 
     .trm-skill-header {
         display        : flex;
@@ -29,7 +29,7 @@
 
     .trm-progressbar-frame {
         overflow        : hidden;
-        border-radius   : 10px;
+        border-radius   : @card-border-radius;
         background-color: @theme-bg2-color;
         height          : 5px;
         width           : 100%;
@@ -39,7 +39,7 @@
             width           : 0;
             height          : 100%;
             background-color: @primary;
-            transition      : .8s ease-in-out;
+            .transition-mixin(all, .8s);
             transition-delay: .4s;
         }
     }
@@ -138,11 +138,11 @@
 // icon-box
 
 .trm-service-icon-box {
-    padding         : 40px;
-    border-radius   : 10px;
-    margin-bottom   : 20px;
+    padding         : @card-padding;
+    border-radius   : @card-border-radius;
     background-color: @theme-bg-color;
     box-shadow      : @box-shadow;
+    margin-bottom   : 20px;
 
     .trm-service-content {
         display    : flex;
@@ -183,10 +183,10 @@
         display         : flex;
         flex-direction  : column;
         justify-content : flex-start;
-        padding         : 40px;
+        padding         : @card-padding;
+        border-radius   : @card-border-radius;
         width           : 100%;
         height          : calc(100vh - 100px);
-        border-radius   : 10px;
         box-shadow      : 0 2px 4px -2px rgba(0, 0, 0, 0.15);
         background-color: @theme-bg-color;
 
@@ -212,9 +212,9 @@
             justify-content: center;
 
             a {
-                color     : @theme-color;
-                margin    : 6px 10px;
-                transition: .4s ease-in-out;
+                color : @theme-color;
+                margin: 6px 10px;
+                .transition-mixin();
 
                 &:hover {
                     color: @primary;
@@ -260,7 +260,7 @@
         transform: translateY(-40px);
 
         .trm-main-card {
-            border-radius: 10px !important;
+            border-radius: @card-border-radius  !important;
             height       : auto
         }
     }
@@ -305,11 +305,11 @@
 
 .trm-counter-up {
     text-align      : center;
-    border-radius   : 10px;
-    padding         : 40px;
+    border-radius   : @card-border-radius;
     box-shadow      : @box-shadow;
     background-color: @theme-bg-color;
-    margin-bottom   : 40px;
+    padding         : @card-padding;
+    margin-bottom   : @card-bottom-card;
 
     &:before {
         content         : '';
@@ -340,9 +340,9 @@
 // contact card 
 
 .trm-contact-card {
-    border-radius: 10px;
+    border-radius: @card-border-radius;
     background   : @theme-bg-color;
-    padding      : 40px;
+    padding      : @card-padding;
     box-shadow   : @box-shadow;
 
     .trm-form-bottom {
@@ -373,8 +373,8 @@
     background-color: @theme-bg-color;
     position        : relative;
     overflow        : hidden;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
+    border-radius   : @card-border-radius;
+    margin-bottom   : @card-bottom-card;
     box-shadow      : @box-shadow;
 
     .trm-cover-frame {
@@ -392,12 +392,12 @@
             object-fit     : cover;
             object-position: center;
             transform      : scale(1.05);
-            transition     : .4s ease-in-out;
+            .transition-mixin();
         }
     }
 
     .trm-card-descr {
-        padding: 40px;
+        padding: @card-padding;
 
         h5 {
             a {
@@ -412,8 +412,8 @@
 
         .trm-category {
             a {
-                opacity   : .6;
-                transition: .4s ease-in-out;
+                opacity: .6;
+                .transition-mixin();
 
                 &:hover {
                     opacity: 1;
@@ -462,16 +462,16 @@
 // publications card
 
 .trm-older-publications-card {
-    padding         : 40px;
     background-color: @theme-bg-color;
     position        : relative;
     overflow        : hidden;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
+    border-radius   : @card-border-radius;
+    padding         : @card-padding;
+    margin-bottom   : @card-bottom-card;
     box-shadow      : @box-shadow;
 
     .trm-older-publication {
-        margin-bottom: 40px;
+        margin-bottom: @card-bottom-card;
 
         .trm-op-top {
             width          : 100%;
@@ -494,7 +494,7 @@
                     object-fit     : cover;
                     object-position: center;
                     border-radius  : 5px;
-                    transition     : .4s ease-in-out;
+                    .transition-mixin();
                 }
             }
 
@@ -509,7 +509,7 @@
                 -webkit-box-orient: vertical;
                 line-clamp        : 2;
                 box-orient        : vertical;
-                transition        : .4s ease-in-out;
+                .transition-mixin();
             }
 
             &:hover {
@@ -527,8 +527,8 @@
 
         .trm-category {
             a {
-                opacity   : .6;
-                transition: .4s ease-in-out;
+                opacity: .6;
+                .transition-mixin();
 
                 &:hover {
                     opacity: 1;
@@ -573,12 +573,12 @@
 //  categories card
 
 .trm-blog-categories {
-    padding         : 40px;
     text-align      : center;
-    background-color: @theme-bg-color;
     position        : relative;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
+    background-color: @theme-bg-color;
+    border-radius   : @card-border-radius;
+    padding         : @card-padding;
+    margin-bottom   : @card-bottom-card;
     box-shadow      : @box-shadow;
 
     &:before {
@@ -606,41 +606,6 @@
     }
 }
 
-// subscribe card
-
-.trm-subscribe-card {
-    padding         : 40px;
-    background-color: @theme-bg-color;
-    position        : relative;
-    overflow        : hidden;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
-    box-shadow      : @box-shadow;
-
-    form {
-        display: flex;
-
-        input {
-            margin       : 0;
-            border-radius: 40px;
-        }
-
-        button {
-            margin-left: 10px;
-        }
-    }
-}
-
-@media(max-width:992px) {
-    .trm-subscribe-card {
-        text-align: center
-    }
-
-    .trm-subscribe-card form {
-        margin-top: 40px
-    }
-}
-
 // price card
 
 .trm-price {
@@ -648,10 +613,10 @@
     overflow        : hidden;
     text-align      : center;
     background-color: @theme-bg-color;
-    border-radius   : 10px;
-    padding         : 40px;
+    border-radius   : @card-border-radius;
+    padding         : @card-padding;
     box-shadow      : @box-shadow;
-    margin-bottom   : 40px;
+    margin-bottom   : @card-bottom-card;
 
     &.trm-popular {
         &:after {
@@ -710,11 +675,11 @@
 
 .trm-portfolio-item {
     display      : block;
-    margin-bottom: 40px;
-    box-shadow   : @box-shadow;
     position     : relative;
     overflow     : hidden;
-    border-radius: 10px;
+    margin-bottom: @card-bottom-card;
+    box-shadow   : @box-shadow;
+    border-radius: @card-border-radius;
 
     .trm-cover-frame {
         padding-bottom: 100%;
@@ -730,7 +695,7 @@
             object-fit     : cover;
             object-position: center;
             transform      : scale(1.05);
-            transition     : .4s ease-in-out;
+            .transition-mixin();
         }
     }
 
@@ -747,7 +712,7 @@
         box-shadow      : @box-shadow;
         opacity         : 0;
         transform       : translateY(30px) scale(1.02);
-        transition      : .4s ease-in-out;
+        .transition-mixin();
 
         .trm-zoom-icon {
             background-color: @primary;
@@ -802,12 +767,12 @@
 .trm-order {
     box-shadow      : @box-shadow;
     background-color: @theme-bg-color;
+    border-radius   : @card-border-radius;
     overflow        : hidden;
     display         : none;
     width           : 100%;
     max-width       : 800px;
     padding         : 0;
-    border-radius   : 10px;
 
     .trm-popup-content {
         max-height : 550px;
@@ -856,7 +821,7 @@
     margin-left  : -20px;
     margin-right : -20px;
     padding      : 0 20px;
-    margin-bottom: 40px;
+    margin-bottom: @card-bottom-card;
 
     .trm-slider-navigation {
         opacity        : 0;
@@ -869,7 +834,7 @@
         left           : 0;
         display        : flex;
         justify-content: space-between;
-        transition     : .4s ease-in-out;
+        .transition-mixin();
 
         div {
             &.swiper-button-disabled {
@@ -890,11 +855,11 @@
 
 .trm-slider-card {
     z-index         : -1;
-    padding         : 40px;
-    background-color: @theme-bg-color;
-    border-radius   : 10px;
-    box-shadow      : @box-shadow;
     text-align      : center;
+    padding         : @card-padding;
+    background-color: @theme-bg-color;
+    border-radius   : @card-border-radius;
+    box-shadow      : @box-shadow;
 
     .trm-slider-author {
         img {
@@ -922,14 +887,14 @@
 
 // project card
 .trm-project-card {
-    background-color: @theme-bg-color;
     position        : relative;
     overflow        : hidden;
-    border-radius   : 10px;
-    margin-bottom   : 40px;
-    box-shadow      : @box-shadow;
-    padding         : 40px;
     text-align      : center;
+    background-color: @theme-bg-color;
+    border-radius   : @card-border-radius;
+    margin-bottom   : @card-bottom-card;
+    box-shadow      : @box-shadow;
+    padding         : @card-padding;
 
     .trm-project-desc {
         height  : 3rem;

@@ -83,14 +83,14 @@
                 background   : @theme-bg2-color;
                 border-radius: 2em;
                 padding      : 2px;
-                transition   : .4s ease-in-out;
+                .transition-mixin();
 
                 &:after {
                     width        : 47%;
                     border       : solid 3px @primary;
                     border-radius: 50%;
                     background   : @theme-bg-color;
-                    transition   : all .2s ease;
+                    .transition-mixin(all, .2s);
                 }
             }
         }
@@ -106,7 +106,7 @@
     align-items    : center;
     opacity        : 0;
     pointer-events : none;
-    transition     : .4s ease-in-out;
+    .transition-mixin();
 
     &.trm-active {
         opacity: 1;
@@ -139,7 +139,7 @@
             margin-left: -15px;
             opacity    : 1;
             color      : @theme-color;
-            transition : .6s ease-in-out;
+            .transition-mixin(all, .6s);
         }
 
         .i-moon {
@@ -151,7 +151,7 @@
             color      : @theme-color;
             opacity    : 0;
             transform  : translateY(70px) rotate(0);
-            transition : .6s ease-in-out;
+            .transition-mixin(all, .6s);
         }
 
         &.trm-active {
@@ -175,5 +175,5 @@
 }
 
 .portfolio {
-    transition: .4s ease-in-out
+    .transition-mixin();
 }

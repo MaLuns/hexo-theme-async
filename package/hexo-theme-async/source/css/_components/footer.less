@@ -1,10 +1,10 @@
 footer {
     background-color: @theme-bg-color;
     box-shadow      : @box-shadow;
+    border-radius   : @card-border-radius;
     text-align      : center;
     width           : 100%;
     padding         : 20px;
-    border-radius   : 10px;
 
     .trm-footer-item {
         color          : @body-color;
@@ -15,8 +15,8 @@ footer {
         align-items    : center;
 
         a {
-            color     : @primary;
-            transition: .4s ease-in-out;
+            color: @primary;
+            .transition-mixin();
 
             &:hover {
                 color: @primary-weak;

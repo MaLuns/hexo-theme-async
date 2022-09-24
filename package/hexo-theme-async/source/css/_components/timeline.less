@@ -24,7 +24,7 @@
             height       : 26px;
             opacity      : 0;
             border-radius: 50%;
-            transition   : .4s ease-in-out;
+            .transition-mixin();
         }
 
         .trm-timeline-mark {
@@ -46,12 +46,12 @@
     }
 
     .trm-timeline-content {
-        border-radius: 10px;
+        border-radius: @card-border-radius;
         position     : relative;
         margin-left  : 45px;
         background   : @theme-bg-color;
-        padding      : 40px;
-        margin-bottom: 40px;
+        padding      : @card-padding;
+        margin-bottom: @card-bottom-card;
         box-shadow   : @box-shadow;
 
         &:after {
@@ -94,8 +94,8 @@
         }
 
         &.less {
-            padding      : 20px 30px;
-            margin-bottom: 20px;
+            margin-left: 35px;
+            padding    : 20px;
         }
     }
 }

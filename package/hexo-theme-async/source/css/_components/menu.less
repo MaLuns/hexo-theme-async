@@ -23,7 +23,7 @@
                     height          : 4px;
                     width           : 0;
                     background-color: @primary;
-                    transition      : .4s ease-in-out;
+                    .transition-mixin();
                 }
 
                 a {
@@ -37,7 +37,7 @@
                     font-size     : 11px;
                     letter-spacing: 2px;
                     font-weight   : 700;
-                    transition    : .4s ease-in-out;
+                    .transition-mixin();
 
                     &:hover {
                         color: @primary;
@@ -59,7 +59,7 @@
                     z-index         : 9;
                     display         : flex;
                     flex-direction  : column;
-                    transition      : .4s ease-in-out;
+                    .transition-mixin();
 
                     li {
                         height         : 50px;
@@ -214,7 +214,7 @@
         border-radius      : 1px;
         background         : @theme-color;
         backface-visibility: hidden;
-        transition         : .4s ease-in-out;
+        .transition-mixin();
     }
 }
 
