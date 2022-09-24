@@ -2,12 +2,12 @@
     position        : fixed;
     left            : 0;
     right           : 0;
-    border-radius   : 10px;
-    box-shadow      : @top-bar-box-shadow;
     z-index         : 9;
-    background-color: @theme-bg-color;
     width           : 100%;
     height          : 80px;
+    border-radius   : @card-border-radius;
+    box-shadow      : @top-bar-box-shadow;
+    background-color: @theme-bg-color;
 
     &:after {
         content         : '';
@@ -94,7 +94,7 @@
                 pointer-events  : none;
                 box-shadow      : @top-bar-box-shadow;
                 transform       : translateY(20px);
-                transition      : .4s ease-in-out;
+                .transition-mixin();
 
                 &.trm-active {
                     opacity       : 1;

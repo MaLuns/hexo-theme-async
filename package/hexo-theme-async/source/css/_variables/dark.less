@@ -1,4 +1,5 @@
 // base
+
 @primary        :#afb42b;
 @primary-weak   :#c0ca33;
 @body-color     : #cccdcfb3;
@@ -14,6 +15,18 @@
 
 @preloader-background: #dedee0;
 
-//top-bar
+// top-bar
 
 @top-bar-box-shadow : 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+
+// card
+
+@card-padding      : 40px;
+@card-bottom-card  : 40px;
+@card-border-radius: 10px;
+
+// transition mixin
+
+.transition-mixin(@type: all, @time: .4s) {
+    transition: @type @time ease-in-out;
+}

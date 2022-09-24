@@ -104,7 +104,7 @@ p {
     font-weight   : 700;
     letter-spacing: 2px;
     color         : @theme-color;
-    transition    : .4s ease-in-out;
+    .transition-mixin();
 
     &.trm-label-light {
         color: @body-color;
@@ -124,7 +124,7 @@ a.trm-label {
     .fa-arrow-right {
         margin-top : -1px;
         margin-left: 5px;
-        transition : .4s ease-in-out
+        .transition-mixin();
     }
 
     &:focus,
@@ -142,9 +142,9 @@ a.trm-label {
 }
 
 .trm-scroll-animation {
-    transform : translateY(30px) scale(1.02);
-    opacity   : 0;
-    transition: .6s ease-in-out;
+    transform: translateY(30px) scale(1.02);
+    opacity  : 0;
+    .transition-mixin(all, .6s);
 
     &.trm-active-el {
         opacity  : 1;
@@ -153,7 +153,7 @@ a.trm-label {
 }
 
 .trm-swup-animation {
-    transition      : .6s ease-in-out;
+    .transition-mixin(all, .6s);
     transition-delay: .6s
 }
 
@@ -282,13 +282,13 @@ html {
 
 // back top
 .trm-back-top {
-    position  : fixed;
-    right     : 40px;
-    bottom    : 30px;
-    font-size : 1.5rem;
-    cursor    : pointer;
-    transition: all .3s;
-    transform : translateY(50px) scale(0);
+    position : fixed;
+    right    : 40px;
+    bottom   : 30px;
+    font-size: 1.5rem;
+    cursor   : pointer;
+    transform: translateY(50px) scale(0);
+    .transition-mixin();
 
     &.active-el {
         opacity  : 1;
