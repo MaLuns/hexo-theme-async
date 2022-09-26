@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://hexo-theme-async.imalun.com/github_star.png">
 <meta property="og:image" content="https://markdown.com.cn/images/i-am-svg.svg">
 <meta property="article:published_time" content="2022-09-21T15:25:29.000Z">
-<meta property="article:modified_time" content="2022-09-22T08:46:56.923Z">
+<meta property="article:modified_time" content="2022-09-26T02:47:06.535Z">
 <meta property="article:author" content="白云苍狗">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo-theme-async.imalun.com/github_star.png">
@@ -75,7 +75,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":false,"clipboard":false}};</script>
 
 <!-- Theme mode css -->
 
@@ -145,7 +145,7 @@
             <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
-            <div class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
 	<div class="container">
 		<div class="trm-left-side">
 			<!-- logo -->
@@ -229,14 +229,13 @@
 			<span></span>
 		</div>
 	</div>
-</div>
+</header>
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
-
+            
+<div class="trm-content-start">
     <!-- banner -->
-    
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
     <!-- banner cover -->
@@ -291,13 +290,12 @@
     <!-- banner content end -->
 </div>
     <!-- banner end -->
-
     <div class="container">
         <div class="row">
             
-            <div class="col-lg-4 hidden-sm">
-                <!-- main card -->
-                <div class="trm-main-card-frame trm-sidebar">
+                <div class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
         <div class="trm-tabs" id="sidebar-tabs">
@@ -383,14 +381,13 @@
     
     </div>
 </div>
-                <!-- main card end -->
-            </div>
+                    <!-- main card end -->
+                </div>
             
             <div class="col-lg-8">
-                <!-- content -->
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
-                    
+
                     <div class="row hidden-sm">
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
@@ -411,8 +408,8 @@
         </div>
     </div>
 </div>
-                    <div class="trm-card ">
-                        <article class="trm-publication">
+<div class="trm-card ">
+    <article class="trm-publication">
     <p>主题 Hexo-theme-async 文章页面适配预览。</p>
 <span id="more"></span>
 
@@ -510,7 +507,7 @@
   Content
 </details>
 </article>
-                        
+    
     <div class="trm-reward">
         
             <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
@@ -524,19 +521,22 @@
                     <a rel="noopener" href='https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png' target='_blank' >
                        <img src="https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png" alt="微信" loading="lazy">
                     </a>
+                    <p>微信</p>
                 </div>
             
                 <div style="display:inline-block">
                     <a rel="noopener" href='https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg' target='_blank' >
                        <img src="https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg" alt="支付宝" loading="lazy">
                     </a>
+                    <p>支付宝</p>
                 </div>
             
         </div>
     </div>
 
-                    </div>
-                    <div class="row">
+    
+</div>
+<div class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-mb-40 trm-title-with-divider">
@@ -601,7 +601,7 @@
 </div>
     
 </div>
-                    
+
 
                     <div class="trm-divider trm-mb-40"></div>
 
@@ -654,8 +654,8 @@
 </script>
  
                     <!-- footer end -->
+
                 </div>
-                <!-- content end -->
             </div>
         </div>
     </div>
@@ -672,7 +672,6 @@
   <div id="trm-back-top" class="trm-back-top">
     <i class="fas fa-arrow-up"></i>
 </div>
-
   
 <div class="trm-search-popup">
     <div class="trm-search-header">
@@ -687,7 +686,6 @@
 
     </div>
 </div>
-
 
   <!-- Plugin -->
 

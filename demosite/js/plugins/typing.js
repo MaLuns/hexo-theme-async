@@ -2,8 +2,8 @@ const text = document.querySelector('.trm-typed-text');
 const words = window.ASYNC_CONFIG.typed_text || [];
 
 function setTyper(element, words) {
-  if (!element && Array.isArray(words) && !words.length) return;
-  
+  if (!element || !Array.isArray(words) || (Array.isArray(words) && !words.length)) return;
+
   const LETTER_TYPE_DELAY = 100;
   const WORD_STAY_DELAY = 3000;
 

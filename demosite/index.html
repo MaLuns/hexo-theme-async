@@ -60,7 +60,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":false,"clipboard":false}};</script>
 
 <!-- Theme mode css -->
 
@@ -130,7 +130,7 @@
             <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
-            <div class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
 	<div class="container">
 		<div class="trm-left-side">
 			<!-- logo -->
@@ -214,12 +214,11 @@
 			<span></span>
 		</div>
 	</div>
-</div>
+</header>
             <!-- top bar end -->
 
             <!-- body -->
             <div class="trm-content-start">
-
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -275,13 +274,12 @@
     <!-- banner content end -->
 </div>
     <!-- banner end -->
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-
-                <!-- main card -->
-                <div class="trm-main-card-frame trm-sidebar">
+            
+                <div class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
         <!-- card header -->
@@ -354,50 +352,48 @@
     
     </div>
 </div>
-                <!-- main card end -->
-
-            </div>
+                    <!-- main card end -->
+                </div>
+            
             <div class="col-lg-8">
-
-                <!-- content -->
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
                     <!-- categories -->
-                    <div class="row hidden-sm">
-                        
-                        <div class="col-lg-6">
-                            <!-- categories card -->
-                            <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
-                                <h6>
-                                    测试分类
-                                    <span class="trm-number">
-                                        2
-                                    </span>
-                                </h6>
-                                <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-                                <a href="/demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/." class="trm-label">
-                                    查看分类 
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <!-- categories card end -->
-                        </div>
-                        
-                    </div>
-                    <!-- categories end -->
+<div class="row hidden-sm">
+    
+    <div class="col-lg-6">
+        <!-- categories card -->
+        <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
+            <h6>
+                测试分类
+                <span class="trm-number">
+                    2
+                </span>
+            </h6>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <a href="/demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/." class="trm-label">
+                查看分类 
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <!-- categories card end -->
+    </div>
+    
+</div>
+<!-- categories end -->
 
-                    <!-- newest publications -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- title -->
-                            <h5 class="trm-mb-40 trm-title-with-divider">
-                                最近发布 
-                                <span data-number="01"></span>
-                            </h5>
-                        </div>
-                        
-                            <div class="col-lg-6">
+<!-- newest publications -->
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-mb-40 trm-title-with-divider">
+            最近发布 
+            <span data-number="01"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
         <a href="/demosite/2022/09/21/hello-world/" class="trm-cover-frame trm-anima-link">
             <img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="cover">
@@ -423,8 +419,8 @@
         </div>
     </div>
 </div>
-                        
-                            <div class="col-lg-6">
+    
+        <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
         <a href="/demosite/2022/09/22/katex/" class="trm-cover-frame trm-anima-link">
             <img src="/demosite/img/block.jpg" alt="cover">
@@ -450,8 +446,8 @@
         </div>
     </div>
 </div>
-                        
-                            <div class="col-lg-6">
+    
+        <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
         <a href="/demosite/2022/09/21/markdown/" class="trm-cover-frame trm-anima-link">
             <img src="/demosite/img/block.jpg" alt="cover">
@@ -477,14 +473,15 @@
         </div>
     </div>
 </div>
-                        
-                    </div>
-                    <!-- newest publications end -->
+    
+</div>
+<!-- newest publications end -->
 
-                    <div class="trm-pagination">
-                        <span class="page-number current">1</span>
-                    </div>
-                    
+
+    <div class="trm-pagination">
+        <span class="page-number current">1</span>
+    </div>
+
 
                     <div class="trm-divider trm-mb-40"></div>
 
@@ -539,8 +536,6 @@
                     <!-- footer end -->
 
                 </div>
-                <!-- content end -->
-
             </div>
         </div>
     </div>
@@ -557,7 +552,6 @@
   <div id="trm-back-top" class="trm-back-top">
     <i class="fas fa-arrow-up"></i>
 </div>
-
   
 <div class="trm-search-popup">
     <div class="trm-search-header">
@@ -572,7 +566,6 @@
 
     </div>
 </div>
-
 
   <!-- Plugin -->
 

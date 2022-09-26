@@ -492,6 +492,21 @@
             })
           }
         })
+    },
+    InitCopyright() {
+      if (window.ASYNC_CONFIG.creative_commons.clipboard) {
+        let { author, i18n, creative_commons } = window.ASYNC_CONFIG
+        document.addEventListener('copy', function (event) {
+          const clipboardData = event.clipboardData || window.clipboardData;
+          if (!clipboardData) { return; }
+          const text = window.getSelection().toString();
+          if (text) {
+            event.preventDefault();
+            let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${location.href}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
+            clipboardData.setData('text/plain', text + copyrightText);
+          }
+        });
+      }
     }
   }
 
@@ -562,6 +577,9 @@
 
   /* toc */
   utils.InitToc()
+
+  /* copyright */
+  utils.InitCopyright()
   //#endregion
 
   //#region  Re/init

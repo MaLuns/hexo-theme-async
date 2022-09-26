@@ -14,8 +14,8 @@
 <meta property="og:site_name" content="Hexo-theme-async">
 <meta property="og:description" content="这是一个 Hexo 主题">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-09-22T08:46:56.923Z">
-<meta property="article:modified_time" content="2022-09-22T08:46:56.923Z">
+<meta property="article:published_time" content="2022-09-26T02:47:06.535Z">
+<meta property="article:modified_time" content="2022-09-26T02:47:06.535Z">
 <meta property="article:author" content="白云苍狗">
 <meta name="twitter:card" content="summary">
 
@@ -62,7 +62,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":false,"clipboard":false}};</script>
 
 <!-- Theme mode css -->
 
@@ -132,7 +132,7 @@
             <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
-            <div class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
 	<div class="container">
 		<div class="trm-left-side">
 			<!-- logo -->
@@ -216,12 +216,12 @@
 			<span></span>
 		</div>
 	</div>
-</div>
+</header>
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
-
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -277,12 +277,12 @@
     <!-- banner content end -->
 </div>
     <!-- banner end -->
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <!-- main card -->
-                <div class="trm-main-card-frame trm-sidebar">
+            
+                <div class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
         <!-- card header -->
@@ -355,64 +355,66 @@
     
     </div>
 </div>
-                <!-- main card end -->
-            </div>
+                    <!-- main card end -->
+                </div>
+            
             <div class="col-lg-8">
-                <!-- content -->
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
-                    
-                    
-                        <div class="row trm-mb-40 trm-scroll-animation" data-scroll data-scroll-offset="40">
-                            <div class="col-lg-12">
-                                <blockquote>
-                                    如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
-                                </blockquote>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
-                            <div class="col-lg-12">
-                                <h5 class="trm-mb-40 trm-title-with-divider">
-                                    作者
-                                    <span data-number="01"></span>
-                                </h5>
-                                <div class="trm-service-icon-box trm-contrast trm-active-el" >
-                                    大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
-                                </div>
-                            </div>
-                        </div>
-                        
 
-                        
-                        <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
-                            <div class="col-lg-12">
-                                <h5 class="trm-mb-40 trm-title-with-divider">
-                                    博客
-                                    <span data-number="02"></span>
-                                </h5>
-                                <div class="trm-service-icon-box trm-active-el">
-                                    <ul class="trm-list"> <li>程序：Hexo </li> <li>主题：Hexo-theme-async </li> </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        
-                        <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
-                            <div class="col-lg-12">
-                                <h5 class="trm-mb-40 trm-title-with-divider">
-                                    隐私权及评论
-                                    <span data-number="03"></span>
-                                </h5>
-                                <div class="trm-service-icon-box trm-active-el">
-                                    本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
-                                </div>
-                            </div>
-                        </div>
-                        
                     
+    <div class="row trm-mb-40 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <blockquote>
+                如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
+            </blockquote>
+        </div>
+    </div>
+    
+    
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                作者
+                <span data-number="01"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-contrast trm-active-el" >
+                大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                博客
+                <span data-number="02"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-active-el">
+                <ul class="trm-list"> <li>程序：Hexo </li> <li>主题：Hexo-theme-async </li> </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="row trm-mb-20 trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="col-lg-12">
+            <h5 class="trm-mb-40 trm-title-with-divider">
+                隐私权及评论
+                <span data-number="03"></span>
+            </h5>
+            <div class="trm-service-icon-box trm-active-el">
+                本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
+            </div>
+        </div>
+    </div>
+    
+
+
+
                     <div class="trm-divider trm-mb-40"></div>
 
                     <!-- footer -->
@@ -464,8 +466,8 @@
 </script>
  
                     <!-- footer end -->
+
                 </div>
-                <!-- content end -->
             </div>
         </div>
     </div>
@@ -482,7 +484,6 @@
   <div id="trm-back-top" class="trm-back-top">
     <i class="fas fa-arrow-up"></i>
 </div>
-
   
 <div class="trm-search-popup">
     <div class="trm-search-header">
@@ -497,7 +498,6 @@
 
     </div>
 </div>
-
 
   <!-- Plugin -->
 
