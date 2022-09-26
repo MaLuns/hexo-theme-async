@@ -3,7 +3,7 @@
 所有配置默认在 `_config.async.yml` 文件下进行。
 
 与额外依赖库支持的区别，此处主要为使用第三方服务商提供的服务实现。
-## 访问统计
+## 分析统计
 默认内置了 百度、谷歌、腾讯三个种。
 
 - `enable`: 是否开启
@@ -113,4 +113,17 @@ npm install hexo-generator-searchdb
 search:
   enable: true
   type: local
+```
+
+## SEO
+
+### 百度自动推送
+
+自动推送#
+将其设置为 true，以开启百度自动推送。
+
+> 即每次页面被访问时，将自动向百度提交该页面链接。（有利于百度的 SEO）
+
+``` yaml
+baidu_push: true
 ```

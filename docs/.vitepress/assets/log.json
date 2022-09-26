@@ -3,6 +3,47 @@
         "large_version": "v1.1.x",
         "children": [
             {
+                "version": "1.1.8",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加百度自动推送"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加文章版权信息"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "分类页可选择只显示标题"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "主题可根据系统选择加载样式"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "Pjax 下支持动态加载脚本插件"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复单闭合 img 懒加载替换错误"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 lang 属性取值错误"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复移动端 theme-color 取值异常"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复初次安装无配置时兼容处理"
+                    }
+                ]
+            },
+            {
                 "version": "1.1.7",
                 "logs": [
                     {
