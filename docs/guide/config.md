@@ -50,6 +50,7 @@ zh-Hans:
 - `default`：设置主题默认模式
   - `style-light`：亮色模式
   - `style-dark`：暗色模式
+  - `auto`：跟随系统选择
 - `switch`：如果为 false，将不会出现主题切换按钮，只加载设置默认主题模式。
 ``` yaml
 theme: 
@@ -333,7 +334,12 @@ footer:
   custom_text: Hosted by <a href="https://github.com" rel="noopener" target="_blank">Github Pages</a>
 ```
 
-## 打赏 Reward
+## 文章 Article
+
+这里是一些关于文章相关配置合集。
+
+### 打赏 Reward
+
 开启后，将在每篇文章 `post` 末尾显示打赏按钮。
 
 - `enable`: 开启打赏
@@ -341,7 +347,7 @@ footer:
 - `url`: 你的打赏链接（当你开启打赏链接时，将自动跳转你的外部链接而不是展开二维码）
 - `methods`: 数组，打赏方式
 
-### 打赏二维码
+#### 打赏二维码
 
 - `name`: 打赏方式
 - `path`: 图片路径
@@ -364,21 +370,62 @@ reward: true
 # reward: false
 ```
 
-## 目录 Toc
+### 文章目录
 
-文章详情页目录，默认关闭。开启后，您可以再文章页配置当前文章不需要开启。[参考这里](/guide/page.html#文章-posts)
+文章详情页目录，默认关闭。开启后，您可以在文章页单独配置当前文章关闭。[参考这里](/guide/page.html#文章-posts)
 
 ``` yaml 
 is_toc: true
 ```
 
-## 图片懒加载 Lazyload
+### 图片懒加载
 
 默认开启，将会为 Markdown 的图片 img 加上 loading="lazy" 属性。
 
 ``` yaml
 lazyload:
   enable: true
+```
+
+### 归档页
+
+默认下归档页时间轴卡片显示了标题和摘要信息，如果设置为 `less` 将只显示标题。
+
+- `type`: 显示方式，可选 `more` || `less`
+
+``` yaml
+archive:
+  type: more # less more
+```
+
+### 版权信息
+
+设置您的文章的分享版权
+
+> [关于许可协议](https://creativecommons.org/licenses/)
+> 默认使用 署名-非商业性使用-相同方式共享 4.0，即 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)。
+
+
+- `license`：设置证书 (by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero)
+- `language`：设置语言 (deed.zh | deed.en | deed.ja ｜ ...)
+- `post`：在每篇文章末尾显示
+- `clipboard`：是否在复制文章时，在剪贴板中追加版权信息（默认关闭）
+
+```yaml
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh
+  post: false
+  clipboard: false
+```
+
+> 你的 `url` 请在 Hexo 工作目录下的 `_config.yml` 中设置。
+> [配置｜ Hexo](https://hexo.io/zh-cn/docs/configuration#%E7%BD%91%E5%9D%80)
+
+```yaml
+# URL
+# # If your site is put in a subdirectory, set url as 'https://yoursite.com/child' and root as '/child/'
+url: https://www.imalun.com
 ```
 
 ## 自定义图标 Icon
