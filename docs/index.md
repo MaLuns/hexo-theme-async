@@ -5,7 +5,7 @@ layout: home
 hero:
   text: Hexo-Theme-Async
   image:
-    src: /github_star.png
+    src: /logo.gif
   tagline: 🎈 A simple & lightweight theme for Hexo.
   actions:
     - text: 快速上手
