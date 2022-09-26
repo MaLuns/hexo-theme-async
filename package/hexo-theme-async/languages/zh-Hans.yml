@@ -1,8 +1,8 @@
 site:
   title: 本站信息
-  webmaster: 站长
-  domain: 域名
-  avatar: 头像
+  webmaster: 网站名称
+  domain: 网站链接
+  avatar: 网站头像
   describe: 网站简介
   ruleText: 友链要求
 
