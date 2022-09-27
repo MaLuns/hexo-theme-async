@@ -25,7 +25,8 @@ hexo.extend.helper.register('async_config', function () {
             copyright_license_title: __('post.copyright.license_title') + __('symbol.colon'),
             copyright_license_content: __('post.copyright.license_content')
         },
-        creative_commons: theme.creative_commons
+        creative_commons: theme.creative_commons,
+        swup: theme.swup,
     }
 
     if (config.search) {

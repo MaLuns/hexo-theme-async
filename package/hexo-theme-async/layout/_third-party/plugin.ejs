@@ -26,8 +26,11 @@ isSearch = theme.search.enable && theme.search.type === 'local'
     <% } %>
 
 <% } else { %>
+    
+    <% if(theme.swup) { %>
+        <%- js(theme.assets.plugin.swup.js) %>
+    <% } %>
 
-    <%- js(theme.assets.plugin.swup.js) %>
     <%- js(theme.assets.plugin.locomotive_scroll.js) %>
     <%- js(theme.assets.plugin.fancybox.js) %>
 
