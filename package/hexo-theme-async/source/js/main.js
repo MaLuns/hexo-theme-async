@@ -387,7 +387,7 @@
             mode_swich_animation_frame.classList.remove('trm-active');
             scroll_container.style.opacity = 1;
             setThemeColor()
-          }, 1000);
+          }, 600);
         })
 
         localStorage.setItem('theme-mode', this.checked ? 'style-dark' : 'style-light')
@@ -548,14 +548,14 @@
     setTimeout(function () {
       utils.q('html').classList.remove('is-animating');
       utils.q(".trm-scroll-container").style.opacity = 1;
-    }, 1000);
+    }, 600);
   }
 
   document.readyState === 'loading' ?
     document.addEventListener('DOMContentLoaded', ready) : ready();
 
   /* swup */
-  utils.InitSwup()
+  window.ASYNC_CONFIG.swup && utils.InitSwup();
 
   /* menu */
   utils.InitMenu()
