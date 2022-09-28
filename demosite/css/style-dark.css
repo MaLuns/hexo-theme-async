@@ -770,7 +770,7 @@ pre .deletion {
     z-index: 999;
   }
   .trm-app-frame .trm-content {
-    margin-top: 0;
+    margin-top: 40px;
     padding: 0 0 40px;
   }
 }
@@ -1203,6 +1203,7 @@ pre .deletion {
   list-style-type: none;
   padding-left: 25px;
   color: #dedee0;
+  word-break: break-all;
 }
 .trm-list li:before {
   content: '';

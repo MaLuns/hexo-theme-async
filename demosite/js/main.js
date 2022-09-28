@@ -7,6 +7,18 @@
     name = 'ScriptPlugin';
     isSwupPlugin = true;
 
+    defaultOptions = {
+      selectors: 'script[data-swup-reload-script]',
+      insertBefore: '#async-script'
+    };
+
+    constructor(options = {}) {
+      this.options = {
+        ...this.defaultOptions,
+        ...options
+      };
+    }
+
     mount() {
       this.swup.on('contentReplaced', this.getScriptAndInsert);
     }
@@ -67,7 +79,7 @@
 
     insertScript(el) {
       const body = document.body;
-      const asyncScript = document.getElementById('async-script')
+      const asyncScript = document.querySelector(this.options.insertBefore)
       body.insertBefore(el, asyncScript)
     }
 
@@ -78,7 +90,7 @@
         .replace('</body>', '</div>');
       let element = document.createElement('div');
       element.innerHTML = pageContent;
-      const children = element.querySelector('#swupBody').querySelectorAll('script[data-swup-reload-script]');
+      const children = element.querySelector('#swupBody').querySelectorAll(this.options.selectors);
 
       // cleanup
       element.innerHTML = '';
@@ -186,7 +198,7 @@
           }
         }
 
-        if (foundAt == null && oldTags[i].getAttribute('data-swup-theme') === null && !this.isMatchesTag(oldTags[i], this.options.persistTags)) {
+        if (foundAt == null && oldTags[i].getAttribute('data-async-theme') === null && !this.isMatchesTag(oldTags[i], this.options.persistTags)) {
           removeTags.push({ tag: oldTags[i] });
         }
       }
@@ -319,10 +331,7 @@
         specialTags: '#trm-switch-style' // 忽略样式标签 避免重复添加
       }))
 
-      plugins.push(new SwupScriptsPlugin({
-        body: true,
-        optin: true
-      }))
+      plugins.push(new SwupScriptsPlugin())
 
       const options = {
         containers: ['#trm-dynamic-content'],
@@ -387,7 +396,7 @@
             mode_swich_animation_frame.classList.remove('trm-active');
             scroll_container.style.opacity = 1;
             setThemeColor()
-          }, 1000);
+          }, 600);
         })
 
         localStorage.setItem('theme-mode', this.checked ? 'style-dark' : 'style-light')
@@ -548,14 +557,14 @@
     setTimeout(function () {
       utils.q('html').classList.remove('is-animating');
       utils.q(".trm-scroll-container").style.opacity = 1;
-    }, 1000);
+    }, 600);
   }
 
   document.readyState === 'loading' ?
     document.addEventListener('DOMContentLoaded', ready) : ready();
 
   /* swup */
-  utils.InitSwup()
+  window.ASYNC_CONFIG.swup && utils.InitSwup();
 
   /* menu */
   utils.InitMenu()
