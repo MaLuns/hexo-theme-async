@@ -51,7 +51,7 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 您可以覆盖 \_config.async.yml 中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
 ## 演示
-
+<!-- demo-start -->
 <table>
   <tr align="center">
     <td>
@@ -63,6 +63,7 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
     </td>
   </tr>
 <table>
+<!-- demo-end -->
 
 ## 参与贡献
 非常欢迎你的贡献，你可以通过以下方式一起共建 :smiley:：
