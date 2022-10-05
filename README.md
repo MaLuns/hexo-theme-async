@@ -51,17 +51,26 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 You can override the theme._config.yml configuration in \_config.async.yml,Can refer to [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
 ## Demo
+<!-- demo-start -->
 <table>
-  <tr align="center">
-    <td>
-      <a href="https://www.imalun.com" target="_blank">
-        <img width="80px" src="https://www.imalun.com/images/avatar.jpg" />
-        <br />
-        <sub title="白云苍狗">白云苍狗</sub>
-      </a>
-    </td>
-  </tr>
-<table>
+    <tr align="center">
+        <td>
+            <a href="https://hexo-theme-async.imalun.com/demosite/" target="_blank">
+                <img width="80px" src="https://hexo-theme-async.imalun.com/demosite/img/favicon.svg" />
+                <br />
+                <sub title="主题默认示例">默认示例</sub>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.imalun.com" target="_blank">
+                <img width="80px" src="https://www.imalun.com/images/avatar.jpg" />
+                <br />
+                <sub title="醒，亦在人间；梦，亦在人间。">白云苍狗</sub>
+            </a>
+        </td>
+    </tr>
+</table>
+<!-- demo-end -->
 
 ## Contribution
 Your contribution is very welcome. You can build it together in the following ways :smiley:
