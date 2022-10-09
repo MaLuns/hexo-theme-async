@@ -29,7 +29,7 @@
 							<ul>
 								<% element.children.forEach(item=> { %>
 								<li>
-									<a <%- item.noswup ? "data-no-swup":"" %> href="<%- url_for(item.url) %>" target="<%- element.target %>">
+									<a <%- item.noswup ? "data-no-swup":"" %> href="<%- url_for(item.url) %>" target="<%- item.target %>">
 										<%-__(item.title)%>
 									</a>
 								</li>
