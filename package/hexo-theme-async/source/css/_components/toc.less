@@ -43,13 +43,32 @@
     }
 
     ol {
-        margin : 0 0 0 1em;
-        padding: 0;
+        margin    : 0 0 0 1em;
+        padding   : 0;
+        list-style: none;
+
+        .toc-item {
+            .toc-child {
+                overflow  : hidden;
+                transition: max-height .3s ease-in;
+                max-height: 0;
+            }
+
+            &.active {
+                >.toc-link {
+                    color        : @primary;
+                    border-bottom: 1px solid @primary;
+                }
+
+                >.toc-child {
+                    max-height: 1000px;
+                }
+            }
+        }
     }
 
     .toc-link {
-        line-height     : 1.6;
-        display         : block;
+        line-height     : 1.8;
         font-weight     : bold;
         overflow        : hidden;
         white-space     : nowrap;

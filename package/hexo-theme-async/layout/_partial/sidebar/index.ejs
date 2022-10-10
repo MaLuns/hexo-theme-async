@@ -1,6 +1,15 @@
+<%
+let toc_content = '';
+let is_toc = is_post() && (theme.toc.enable || page.toc === true )
+if(is_toc){
+  toc_content = toc(page.content, {list_number: theme.toc.list_number, max_depth: theme.toc.max_depth, min_depth: theme.toc.min_depth});
+  is_toc = is_toc  && toc_content.length > 1;
+}
+%>
+
 <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
-    <% if(is_post() && (theme.is_toc && page.toc !== false)){ %>
+    <% if(is_toc){ %>
         <div class="trm-tabs" id="sidebar-tabs">
            <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
                 <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
@@ -10,7 +19,7 @@
                 <%- partial('./user') %>
             </div>
             <div name="tabs-toc" class="trm-tabs-item active">
-                <%- partial('./toc') %>
+                <%- partial('./toc',{ toc_content }) %>
             </div>
         </div>
     <% } else { %>
