@@ -245,6 +245,7 @@ html.is-animating .trm-swup-animation {
   font-size: 1.5rem;
   cursor: pointer;
   transform: translateY(50px) scale(0);
+  z-index: 20;
   transition: all 0.4s ease-in-out;
 }
 .trm-back-top.active-el {
@@ -2298,6 +2299,7 @@ form textarea:focus,
 @media (max-width: 992px) {
   .trm-banner {
     height: 550px;
+    border-radius: 0 0 10px 10px;
   }
   .trm-banner .trm-banner-cover {
     top: 0;
@@ -2736,11 +2738,12 @@ footer #since {
 .trm-publication a:hover {
   background-size: 100% 60%;
 }
-@media (max-width: 768px) {
-  .trm-publication {
-    transform: translateY(-40px);
-  }
+/* @media(max-width:768px) {
+    .trm-publication {
+        transform: translateY(-40px);
+    }
 }
+ */
 .trm-post-copyright {
   font-size: 0.9rem;
   margin-top: 2rem;
