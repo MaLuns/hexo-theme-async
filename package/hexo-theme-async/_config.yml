@@ -184,7 +184,7 @@ reward:
   # url:
   methods:
 
-# p
+# Article table of contents
 toc:
   enable: false
   list_number: true

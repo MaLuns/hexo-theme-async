@@ -371,11 +371,19 @@ reward: true
 ```
 
 ### 文章目录
+文章目录，默认是关闭的。开启后，根据您的 [Markdown](https://segmentfault.com/markdown) 自动生成目录。如果您想关闭指定文章的目录，您可以在文章页单独配置当前文章关闭。[参考这里](/guide/page.html#文章-posts)
 
-文章详情页目录，默认关闭。开启后，您可以在文章页单独配置当前文章关闭。[参考这里](/guide/page.html#文章-posts)
+- `enable`：是否开启
+- `list_number`：是否显示编号
+- `max_depth`：生成 TOC 的最大深度
+- `min_depth`：生成 TOC 的最小深度
 
 ``` yaml 
-is_toc: true
+toc:
+  enable: true
+  list_number: true
+  max_depth: 3
+  min_depth: 1
 ```
 
 ### 图片懒加载
@@ -461,8 +469,48 @@ icons:
 ```
 
 ## 自定义样式 Style
-
 相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
+
+::: danger
+在 `1.2.x + ` 修改主题切换实现方式，由原来多份样式文件调整为 CSS 变量形式。所以自定义样式也有些许变化。
+:::
+
+### `1.2.x` 版本
+- 新建 `source/_data/style/index.less`，开始编写你的自定义样式了。
+
+```text {5}
+┌── blog                     
+│   └── source
+│       └── _data
+│           └── style
+│               ├── index.less
+│   └── themes
+```
+
+`:root` 下为白色主题，`:root.dart` 下为暗黑色主题，
+
+修改主题色示例：
+
+``` less source/_data/style/index.less
+:root {
+    .var-primary(#5a5df0, #697be2);
+
+    &.dark {
+        .var-primary(#a4ce60, #82df7a);
+    }
+}
+```
+
+跟随操作系统选择主题示例：
+
+``` less source/_data/style/index.less
+@media (prefers-color-scheme: dark) {
+    :root {
+        .dark()
+    }
+}
+```
+### `1.1.x` 版本
 
 - 新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
 - 如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
@@ -477,6 +525,18 @@ icons:
 │               ├── dark.variables.less
 │               └── light.variables.less
 │   └── themes
+```
+修改主题色示例：
+``` less source/_data/style/dark.less
+// source/_data/style/dark.less
+@primary :#6062ce;
+@primary-weak :#7a89df;
+```
+
+``` less source/_data/style/light.less
+// source/_data/style/light.less
+@primary :#6062ce;
+@primary-weak :#7a89df;
 ```
 
 ## 渐进式应用 PWA

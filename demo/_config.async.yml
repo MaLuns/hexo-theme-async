@@ -24,8 +24,6 @@ sidebar:
       url: https://www.npmjs.com/package/hexo-theme-async
       name: Npm
 
-is_toc: true
-
 footer:
   powered:
     enable: true
@@ -60,3 +58,11 @@ creative_commons:
   language: deed.zh
   post: true
   clipboard: true
+
+swup: true
+
+toc:
+  enable: true
+  list_number: true
+  max_depth: 3
+  min_depth: 1
