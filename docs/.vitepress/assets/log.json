@@ -1,5 +1,32 @@
 [
     {
+        "large_version": "v1.2.x",
+        "children": [
+            {
+                "version": "1.2.1",
+                "date": "2022-10-11",
+                "logs": [
+                    {
+                        "type": "refactor",
+                        "text": "修改主题切换方式"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化移动端间距"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化文章目录"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "嵌套导航 target 设置失效"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "large_version": "v1.1.x",
         "children": [
             {

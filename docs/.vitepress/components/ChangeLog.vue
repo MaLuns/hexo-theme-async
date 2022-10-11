@@ -22,7 +22,7 @@ const props = defineProps({
     }
 
     &.fix {
-        color: #ff9900;
+        color: #ff2600;
     }
 
     // 样式

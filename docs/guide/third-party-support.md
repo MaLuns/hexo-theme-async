@@ -3,6 +3,7 @@
 所有配置默认在 `_config.async.yml` 文件下进行。
 
 与额外依赖库支持的区别，此处主要为使用第三方服务商提供的服务实现。
+
 ## 分析统计
 默认内置了 百度、谷歌、腾讯三个种。
 
@@ -46,6 +47,10 @@ comment:
 ```
 若果您需要集成一些三方评论插件，您可以通过修改下列 layout 文件进行集成。
 
+::: tip
+增加三方评论插件，一般来说只需要按照三方插件添加对应 `js`、`css` 文件，在 `layout/_widget/comment.ejs` 添加对应初始化代码，处理好主题切换样式就可以了。
+:::
+
 第一部分：
 
 你需要 修改 `layout/_widget/comment.ejs`（评论插件模板，所有使用评论页面都引用了这个文件） 文件，有关三方评论插件使用的 HTML 相关代码可以在这个文件编写。`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
@@ -63,11 +68,7 @@ assets:
 ```
 并在 `layout/_third-party/plugin.ejs` 里，编写您动态加载插件代码。
 
-~~第三部分：~~
-
-~~通过上面步骤发现加载出您的评论插件后，您可能会发现，有评论页面，滚动条出现异常并不能滚动到底。是因为评论区域数据是动态的，滚动插件没更新高度导致的。您可以[参考这里](https://github.com/MaLuns/hexo-theme-async/blob/415eba005dffe1e42b10c7b9c104e901542a9dc7/source/js/main.js)代码的 InitLocomotiveScroll 函数。~~
-
-如果您集成了三方评论插件，欢迎您提交 Pull Request 。
+如果您集成了三方评论插件，欢迎您提交 [Pull Request](https://github.com/MaLuns/hexo-theme-async/pulls) ，完善主题健壮性。
 
 
 ## 搜索

@@ -11,6 +11,7 @@ import logs from "../assets/log.json";
         <template v-for="log in item.children">
             <blockquote>
                 <Badge>{{ log.version }}</Badge>
+                <span>{{ log.date }}</span>
             </blockquote>
             <ul>
                 <ChangeLog v-for="(item, index) in log.logs" v-bind="item" :key="index"></ChangeLog>
@@ -18,3 +19,15 @@ import logs from "../assets/log.json";
         </template>
     </template>
 </template>
+<style lang="less" scoped>
+blockquote {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    background: var(--vp-c-bg-alt);
+    padding: 10px 10px 10px 30px;
+    border-radius: 6px;
+}
+</style>
