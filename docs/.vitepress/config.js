@@ -49,6 +49,10 @@ module.exports = {
                         text: '更新日志',
                         link: '/guide/change-log',
                     },
+                    {
+                        text: 'FAQ',
+                        link: '/guide/faq',
+                    }
                 ],
             },
             {
