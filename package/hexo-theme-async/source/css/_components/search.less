@@ -4,7 +4,7 @@
     width          : 100vw;
     height         : 100vh;
     display        : none;
-    background     : fade(@theme-bg-color, 80%);
+    background     : var(--theme-bg-color-80, #fcfcfe);
     backdrop-filter: blur(20px);
     z-index        : 99;
 
@@ -28,7 +28,7 @@
             .transition-mixin();
 
             &:hover {
-                background-color: fade(@primary, 70%);
+                background-color: var(--primary-70, #afb42b);
                 color           : #fcfcfe;
             }
         }
@@ -43,7 +43,7 @@
             font-size    : 1.5rem;
             border-radius: 3rem;
             padding      : 1rem 1.5rem;
-            border       : 1px solid @body-color;
+            border       : 1px solid var(--body-color, #7B7B7D);
             text-align   : center;
             height       : auto;
             margin-bottom: 0;
@@ -52,13 +52,13 @@
 
     .trm-search-result-container {
         border-radius: 5px;
-        color        : @theme-color;
+        color        : var(--theme-color, #00283a);
         text-align   : center;
 
         .search-stats {
             margin       : 10px;
             padding      : 10px;
-            border-bottom: 1px solid @body-color;
+            border-bottom: 1px solid var(--body-color, #7B7B7D);
         }
 
         .search-result-list {
@@ -74,11 +74,11 @@
                 list-style   : none;
                 padding      : 10px;
                 cursor       : pointer;
-                border-bottom: 1px dashed @body-color;
+                border-bottom: 1px dashed var(--body-color, #7B7B7D);
 
                 .search-result-title {
                     font-size: 1.1rem;
-                    color    : @primary ;
+                    color    : var(--primary, #afb42b);
                 }
             }
         }

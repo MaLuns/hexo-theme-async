@@ -10,14 +10,14 @@
         align-items    : center;
         width          : 2.5rem;
         height         : 2.5rem;
-        color          : @primary;
+        color          : var(--primary, #afb42b);
         border-radius  : 100%;
         cursor         : pointer;
     }
 
     .trm-reward-comment {
         margin-top: 1rem;
-        color     : @theme-color ;
+        color     : var(--theme-color, #00283a);
     }
 
     #qr img {
@@ -30,6 +30,6 @@
         transition-property: all;
         transition-duration: .3s;
         transition-delay   : 0s;
-        box-shadow         : @box-shadow;
+        box-shadow         : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
     }
 }

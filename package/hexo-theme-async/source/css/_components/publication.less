@@ -1,7 +1,7 @@
 .trm-publication {
 
     >p:first-of-type {
-        color  : @theme-color  !important;
+        color  : var(--theme-color, #00283a) !important;
         opacity: 1 !important;
     }
 
@@ -14,16 +14,16 @@
     }
 
     blockquote {
-        background-color: @theme-bg2-color;
-        box-shadow      : @box-shadow2;
+        background-color: var(--theme-bg2-color, #f4f5f7);
+        box-shadow      : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
         margin-bottom   : 1rem;
 
         &::before {
-            color: @primary
+            color: var(--primary, #afb42b)
         }
 
         &::after {
-            color: @primary
+            color: var(--primary, #afb42b)
         }
     }
 
@@ -69,7 +69,7 @@
                 left         : 0;
                 height       : 10px;
                 width        : 10px;
-                border       : solid 3px @primary;
+                border       : solid 3px var(--primary, #afb42b);
                 border-radius: 50%
             }
 
@@ -123,7 +123,7 @@
             content      : '';
             width        : 100%;
             padding      : 0px 20px;
-            border-bottom: 1px solid @theme-bg2-color;
+            border-bottom: 1px solid var(--theme-bg2-color, #f4f5f7);
             position     : absolute;
             bottom       : -1px;
             left         : -20px;
@@ -134,7 +134,7 @@
             .transition-mixin();
             content         : '';
             position        : absolute;
-            background-color: @primary;
+            background-color: var(--primary, #afb42b);
             width           : 1em;
             height          : 5px;
             bottom          : -3px;
@@ -181,8 +181,8 @@
 
     details {
         summary {
-            background-color: @body-bg-color;
-            color           : @body-color ;
+            background-color: var(--body-bg-color, #00151f);
+            color           : var(--body-color, #7B7B7D);
             padding         : 10px 20px;
             margin-bottom   : 10px;
         }
@@ -190,7 +190,7 @@
 
     a {
 
-        background     : linear-gradient(fade(@primary, 50%), fade(@primary-weak, 50%)) bottom no-repeat;
+        background     : linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
         background-size: 100% .4em;
         .transition-mixin();
 
@@ -211,8 +211,8 @@
     font-size       : 0.9rem;
     margin-top      : 2rem;
     padding         : 0.5rem 1rem;
-    border-left     : 4px solid @primary;
-    background-color: fade(@body-color, 5%);
+    border-left     : 4px solid var(--primary, #afb42b);
+    background-color: var(--body-color-5, #7B7B7D);
     list-style      : none;
     word-break      : break-all;
     position        : relative;
@@ -224,6 +224,6 @@
     }
 
     a {
-        color: @primary;
+        color: var(--primary, #afb42b);
     }
 }

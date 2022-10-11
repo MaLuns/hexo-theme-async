@@ -6,20 +6,20 @@
         justify-content: center;
 
         .trm-tabs-nav-item {
-            border       : 1px solid @primary;
+            border       : 1px solid var(--primary, #afb42b);
             border-radius: 50%;
             width        : 2.5rem;
             height       : 2.5rem;
             line-height  : 2.5rem;
             text-align   : center;
             margin       : 0 1rem;
-            color        : @primary;
+            color        : var(--primary, #afb42b);
             cursor       : pointer;
             .transition-mixin();
 
             &:hover,
             &.active {
-                background-color: @primary;
+                background-color: var(--primary, #afb42b);
                 color           : #fff;
             }
 
@@ -56,8 +56,8 @@
 
             &.active {
                 >.toc-link {
-                    color        : @primary;
-                    border-bottom: 1px solid @primary;
+                    color        : var(--primary, #afb42b);
+                    border-bottom: 1px solid var(--primary, #afb42b);
                 }
 
                 >.toc-child {
@@ -110,11 +110,11 @@
                 display         : flex;
                 height          : 16px;
                 margin          : 0 0 10px 0;
-                background-color: @theme-bg-color;
+                background-color: var(--theme-bg-color ,#fcfcfe);
                 border-radius   : 16px 0 0 16px;
 
                 &.current {
-                    background-color: @primary;
+                    background-color: var(--primary,#afb42b);
                 }
 
                 .toc-tips {
@@ -123,7 +123,7 @@
                     width           : max-content;
                     top             : -4px;
                     font-size       : 14px;
-                    background-color: @theme-bg-color;
+                    background-color: var(--theme-bg-color ,#fcfcfe);
                     border-radius   : 6px;
                     padding         : 0 .5em;
                     line-height     : 24px;

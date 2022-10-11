@@ -347,7 +347,7 @@
       let swich_input = utils.q('#trm-swich');
       if (!swich_input) return;
       let scroll_container = utils.q("#trm-scroll-container");
-      let switch_style = utils.q("#trm-switch-style");
+      /* let switch_style = utils.q("#trm-switch-style"); */
       /* Animated mask layers */
       let mode_swich_animation = utils.q('.trm-mode-swich-animation');
       let mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
@@ -381,7 +381,12 @@
           scroll_container.style.opacity = 0;
           setTimeout(() => resolve(), 600);
         }).then(() => {
-          if (this.checked) {
+          setTimeout(() => {
+            let type = this.checked ? 'add' : 'remove'
+            mode_swich_animation.classList[type]('trm-active');
+            document.documentElement.classList[type]('dark')
+          }, 200);
+          /* if (this.checked) {
             setTimeout(function () {
               mode_swich_animation.classList.add('trm-active');
               switch_style.href = switch_style.href.replace('style-light', 'style-dark');
@@ -391,7 +396,7 @@
               mode_swich_animation.classList.remove('trm-active');
               switch_style.href = switch_style.href.replace('style-dark', 'style-light');
             }, 200);
-          }
+          } */
 
           setTimeout(function () {
             mode_swich_animation_frame.classList.remove('trm-active');

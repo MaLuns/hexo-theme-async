@@ -1,8 +1,8 @@
 .trm-btn {
     white-space     : nowrap;
-    background-color: @primary;
+    background-color: var(--primary, #afb42b);
     height          : 45px;
-    border          : solid 2px @primary;
+    border          : solid 2px var(--primary, #afb42b);
     color           : #fcfcfe;
     text-transform  : uppercase;
     font-size       : 11px;
@@ -44,8 +44,8 @@
     &:hover {
         transform       : scale(1.03);
         color           : #fcfcfe;
-        background-color: @primary-weak;
-        border          : solid 2px @primary-weak;
+        background-color: var(--primary-weak, #afb42b);
+        border          : solid 2px var(--primary-weak, #afb42b);
 
         .fa-arrow-right {
             transform: translateX(5px);
