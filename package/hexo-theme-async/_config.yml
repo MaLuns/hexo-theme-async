@@ -251,3 +251,15 @@ search:
 # https://swup.js.org/
 # Whether swup is enabled
 swup: false
+
+# Datetime formatting
+datetime_foramt:
+  post_card:
+    date: YY/MM/DD
+    time: HH:mm
+  post_info:
+    date: MM/DD
+    time: HH:mm
+  archive:
+    date: MM/DD
+    time: HH:mm
