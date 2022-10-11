@@ -1,14 +1,14 @@
 .trm-card {
-    background-color: @theme-bg-color;
+    background-color: var(--theme-bg-color, #fcfcfe);
     position        : relative;
-    border-radius   : @card-border-radius;
-    margin-bottom   : @card-bottom-card;
-    padding         : @card-padding;
-    box-shadow      : @box-shadow;
+    border-radius   : var(--card-border-radius, 10px);
+    margin-bottom   : var(--card-bottom-card, 40px);
+    padding         : var(--card-padding, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     .trm-icon {
         font-size    : 22px;
-        color        : @theme-color;
+        color        : var(--theme-color, #00283a);
         margin-bottom: 20px;
     }
 }
@@ -16,11 +16,11 @@
 // skill-card
 
 .trm-skill-card {
-    border-radius   : @card-border-radius;
-    box-shadow      : @box-shadow;
-    background-color: @theme-bg-color;
-    padding         : @card-padding;
-    margin-bottom   : @card-bottom-card;
+    border-radius   : var(--card-border-radius, 10px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    background-color: var(--theme-bg-color, #fcfcfe);
+    padding         : var(--card-padding, 40px);
+    margin-bottom   : var(--card-bottom-card, 40px);
 
     .trm-skill-header {
         display        : flex;
@@ -29,16 +29,16 @@
 
     .trm-progressbar-frame {
         overflow        : hidden;
-        border-radius   : @card-border-radius;
-        background-color: @theme-bg2-color;
+        border-radius   : var(--card-border-radius, 10px);
+        background-color: var(--theme-bg2-color, #f4f5f7);
         height          : 5px;
         width           : 100%;
-        box-shadow      : @box-shadow2;
+        box-shadow      : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
 
         .trm-progressbar {
             width           : 0;
             height          : 100%;
-            background-color: @primary;
+            background-color: var(--primary, #afb42b);
             .transition-mixin(all, .8s);
             transition-delay: .4s;
         }
@@ -138,10 +138,10 @@
 // icon-box
 
 .trm-service-icon-box {
-    padding         : @card-padding;
-    border-radius   : @card-border-radius;
-    background-color: @theme-bg-color;
-    box-shadow      : @box-shadow;
+    padding         : var(--card-padding, 40px);
+    border-radius   : var(--card-border-radius, 10px);
+    background-color: var(--theme-bg-color, #fcfcfe);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
     margin-bottom   : 20px;
 
     .trm-service-content {
@@ -183,12 +183,12 @@
         display         : flex;
         flex-direction  : column;
         justify-content : flex-start;
-        padding         : @card-padding;
-        border-radius   : @card-border-radius;
+        padding         : var(--card-padding, 40px);
+        border-radius   : var(--card-border-radius, 10px);
         width           : 100%;
         height          : calc(100vh - 100px);
         box-shadow      : 0 2px 4px -2px rgba(0, 0, 0, 0.15);
-        background-color: @theme-bg-color;
+        background-color: var(--theme-bg-color, #fcfcfe);
 
         &.trm-active-el {
             border-radius: 0;
@@ -201,7 +201,7 @@
             top             : -8px;
             height          : 8px;
             width           : calc(100% - 60px);
-            background-color: @theme-bg-color;
+            background-color: var(--theme-bg-color, #fcfcfe);
             border-radius   : 5px 5px 0 0;
             opacity         : .3;
         }
@@ -212,12 +212,12 @@
             justify-content: center;
 
             a {
-                color : @theme-color;
+                color : var(--theme-color, #00283a);
                 margin: 6px 10px;
                 .transition-mixin();
 
                 &:hover {
-                    color: @primary;
+                    color: var(--primary, #afb42b);
                 }
 
                 i {
@@ -260,7 +260,7 @@
         transform: translateY(-40px);
 
         .trm-main-card {
-            border-radius: @card-border-radius  !important;
+            border-radius: var(--card-border-radius, 10px) !important;
             height       : auto
         }
     }
@@ -274,8 +274,8 @@
         display : inline-block;
 
         .trm-avatar {
-            border         : solid 3px @theme-bg-color;
-            box-shadow     : @box-shadow;
+            border         : solid 3px var(--theme-bg-color, #fcfcfe);
+            box-shadow     : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
             width          : 110px;
             height         : 110px;
             border-radius  : 50%;
@@ -305,11 +305,11 @@
 
 .trm-counter-up {
     text-align      : center;
-    border-radius   : @card-border-radius;
-    box-shadow      : @box-shadow;
-    background-color: @theme-bg-color;
-    padding         : @card-padding;
-    margin-bottom   : @card-bottom-card;
+    border-radius   : var(--card-border-radius, 10px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    background-color: var(--theme-bg-color, #fcfcfe);
+    padding         : var(--card-padding, 40px);
+    margin-bottom   : var(--card-bottom-card, 40px);
 
     &:before {
         content         : '';
@@ -318,7 +318,7 @@
         top             : -8px;
         height          : 8px;
         width           : calc(100% - 60px);
-        background-color: @theme-bg-color;
+        background-color: var(--theme-bg-color, #fcfcfe);
         border-radius   : 5px 5px 0 0;
         opacity         : .3;
     }
@@ -326,11 +326,11 @@
     .trm-counter-number {
         font-size  : 24px;
         font-weight: 900;
-        color      : @theme-color;
+        color      : var(--theme-color, #00283a);
         line-height: 20px;
 
         .trm-counter-symbol {
-            color      : @primary;
+            color      : var(--primary, #afb42b);
             font-size  : 16px;
             margin-left: 3px;
         }
@@ -340,10 +340,10 @@
 // contact card 
 
 .trm-contact-card {
-    border-radius: @card-border-radius;
-    background   : @theme-bg-color;
-    padding      : @card-padding;
-    box-shadow   : @box-shadow;
+    border-radius: var(--card-border-radius, 10px);
+    background   : var(--theme-bg-color, #fcfcfe);
+    padding      : var(--card-padding, 40px);
+    box-shadow   : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     .trm-form-bottom {
         display    : flex;
@@ -370,12 +370,12 @@
 //  blog card
 
 .trm-blog-card {
-    background-color: @theme-bg-color;
+    background-color: var(--theme-bg-color, #fcfcfe);
     position        : relative;
     overflow        : hidden;
-    border-radius   : @card-border-radius;
-    margin-bottom   : @card-bottom-card;
-    box-shadow      : @box-shadow;
+    border-radius   : var(--card-border-radius, 10px);
+    margin-bottom   : var(--card-bottom-card, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     .trm-cover-frame {
         display       : block;
@@ -397,7 +397,7 @@
     }
 
     .trm-card-descr {
-        padding: @card-padding;
+        padding: var(--card-padding, 40px);
 
         h5 {
             a {
@@ -417,7 +417,7 @@
 
                 &:hover {
                     opacity: 1;
-                    color  : @primary;
+                    color  : var(--primary, #afb42b);
                 }
             }
         }
@@ -462,16 +462,16 @@
 // publications card
 
 .trm-older-publications-card {
-    background-color: @theme-bg-color;
+    background-color: var(--theme-bg-color, #fcfcfe);
     position        : relative;
     overflow        : hidden;
-    border-radius   : @card-border-radius;
-    padding         : @card-padding;
-    margin-bottom   : @card-bottom-card;
-    box-shadow      : @box-shadow;
+    border-radius   : var(--card-border-radius, 10px);
+    padding         : var(--card-padding, 40px);
+    margin-bottom   : var(--card-bottom-card, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     .trm-older-publication {
-        margin-bottom: @card-bottom-card;
+        margin-bottom: var(--card-bottom-card, 40px);
 
         .trm-op-top {
             width          : 100%;
@@ -520,7 +520,7 @@
                 }
 
                 .trm-op-title {
-                    color: @primary;
+                    color: var(--primary, #afb42b);
                 }
             }
         }
@@ -532,7 +532,7 @@
 
                 &:hover {
                     opacity: 1;
-                    color  : @primary;
+                    color  : var(--primary, #afb42b);
                 }
             }
         }
@@ -575,11 +575,11 @@
 .trm-blog-categories {
     text-align      : center;
     position        : relative;
-    background-color: @theme-bg-color;
-    border-radius   : @card-border-radius;
-    padding         : @card-padding;
-    margin-bottom   : @card-bottom-card;
-    box-shadow      : @box-shadow;
+    background-color: var(--theme-bg-color, #fcfcfe);
+    border-radius   : var(--card-border-radius, 10px);
+    padding         : var(--card-padding, 40px);
+    margin-bottom   : var(--card-bottom-card, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     &:before {
         content         : '';
@@ -588,13 +588,13 @@
         top             : -8px;
         height          : 8px;
         width           : calc(100% - 60px);
-        background-color: @theme-bg-color;
+        background-color: var(--theme-bg-color, #fcfcfe);
         border-radius   : 5px 5px 0 0;
         opacity         : .3;
     }
 
     .trm-number {
-        color           : @theme-bg-color;
+        color           : var(--theme-bg-color, #fcfcfe);
         margin-left     : 5px;
         border-radius   : 20px;
         font-size       : 12px;
@@ -602,7 +602,7 @@
         display         : inline-block;
         padding         : 3px 10px;
         transform       : translateY(-2px);
-        background-color: @primary;
+        background-color: var(--primary, #afb42b);
     }
 }
 
@@ -612,11 +612,11 @@
     position        : relative;
     overflow        : hidden;
     text-align      : center;
-    background-color: @theme-bg-color;
-    border-radius   : @card-border-radius;
-    padding         : @card-padding;
-    box-shadow      : @box-shadow;
-    margin-bottom   : @card-bottom-card;
+    background-color: var(--theme-bg-color, #fcfcfe);
+    border-radius   : var(--card-border-radius, 10px);
+    padding         : var(--card-padding, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    margin-bottom   : var(--card-bottom-card, 40px);
 
     &.trm-popular {
         &:after {
@@ -628,7 +628,7 @@
             letter-spacing  : 2px;
             line-height     : 20px;
             padding         : 0 40px;
-            background-color: @primary;
+            background-color: var(--primary, #afb42b);
             height          : 20px;
             transform       : rotate(45deg);
             position        : absolute;
@@ -644,14 +644,14 @@
     .trm-price-number {
         font-size  : 32px;
         font-weight: 900;
-        color      : @theme-color;
+        color      : var(--theme-color, #00283a);
         line-height: 30px;
 
         sup {
             font-weight: 300;
             font-size  : 14px;
             margin     : 0 5px;
-            color      : @body-color;
+            color      : var(--body-color, #7B7B7D);
         }
     }
 
@@ -677,9 +677,9 @@
     display      : block;
     position     : relative;
     overflow     : hidden;
-    margin-bottom: @card-bottom-card;
-    box-shadow   : @box-shadow;
-    border-radius: @card-border-radius;
+    margin-bottom: var(--card-bottom-card, 40px);
+    box-shadow   : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    border-radius: var(--card-border-radius, 10px);
 
     .trm-cover-frame {
         padding-bottom: 100%;
@@ -700,7 +700,7 @@
     }
 
     .trm-item-description {
-        background-color: @theme-bg-color;
+        background-color: var(--theme-bg-color, #fcfcfe);
         position        : absolute;
         width           : 100%;
         padding         : 20px 40px;
@@ -709,13 +709,13 @@
         display         : flex;
         justify-content : space-between;
         align-items     : center;
-        box-shadow      : @box-shadow;
+        box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
         opacity         : 0;
         transform       : translateY(30px) scale(1.02);
         .transition-mixin();
 
         .trm-zoom-icon {
-            background-color: @primary;
+            background-color: var(--primary, #afb42b);
             border-radius   : 50%;
             color           : #fcfcfe;
             width           : 40px;
@@ -765,9 +765,9 @@
 // order card
 
 .trm-order {
-    box-shadow      : @box-shadow;
-    background-color: @theme-bg-color;
-    border-radius   : @card-border-radius;
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    background-color: var(--theme-bg-color, #fcfcfe);
+    border-radius   : var(--card-border-radius, 10px);
     overflow        : hidden;
     display         : none;
     width           : 100%;
@@ -821,7 +821,7 @@
     margin-left  : -20px;
     margin-right : -20px;
     padding      : 0 20px;
-    margin-bottom: @card-bottom-card;
+    margin-bottom: var(--card-bottom-card, 40px);
 
     .trm-slider-navigation {
         opacity        : 0;
@@ -838,8 +838,8 @@
 
         div {
             &.swiper-button-disabled {
-                background-color: @theme-bg2-color;
-                border-color    : @theme-bg2-color;
+                background-color: var(--theme-bg2-color, #f4f5f7);
+                border-color    : var(--theme-bg2-color, #f4f5f7);
                 cursor          : not-allowed;
             }
         }
@@ -856,10 +856,10 @@
 .trm-slider-card {
     z-index         : -1;
     text-align      : center;
-    padding         : @card-padding;
-    background-color: @theme-bg-color;
-    border-radius   : @card-border-radius;
-    box-shadow      : @box-shadow;
+    padding         : var(--card-padding, 40px);
+    background-color: var(--theme-bg-color, #fcfcfe);
+    border-radius   : var(--card-border-radius, 10px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
     .trm-slider-author {
         img {
@@ -869,8 +869,8 @@
             object-fit     : cover;
             object-position: center;
             margin-bottom  : 20px;
-            border         : solid 3px @theme-bg-color;
-            box-shadow     : @box-shadow;
+            border         : solid 3px var(--theme-bg-color, #fcfcfe);
+            box-shadow     : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
         }
     }
 
@@ -890,11 +890,11 @@
     position        : relative;
     overflow        : hidden;
     text-align      : center;
-    background-color: @theme-bg-color;
-    border-radius   : @card-border-radius;
-    margin-bottom   : @card-bottom-card;
-    box-shadow      : @box-shadow;
-    padding         : @card-padding;
+    background-color: var(--theme-bg-color, #fcfcfe);
+    border-radius   : var(--card-border-radius, 10px);
+    margin-bottom   : var(--card-bottom-card, 40px);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+    padding         : var(--card-padding, 40px);
 
     .trm-project-desc {
         height  : 3rem;

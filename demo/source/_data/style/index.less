@@ -1,0 +1,29 @@
+.var-primary(@primary: #afb42b; @primary-weak: #c0ca33) {
+    --primary        : @primary;
+    --primary-70     : fade(@primary, 70%);
+    --primary-50     : fade(@primary, 50%);
+    --primary-30     : fade(@primary, 30%);
+    --primary-weak   : @primary-weak;
+    --primary-weak-50: fade(@primary-weak, 50%);
+}
+
+:root {
+    .var-primary(#5a5df0, #697be2);
+
+    &.dark {
+        .var-primary(#a4ce60, #82df7a);
+    }
+}
+
+body::before {
+    content         : 'dev';
+    position        : absolute;
+    z-index         : 55;
+    padding         : 1rem 3rem 0.5rem;
+    right           : -3rem;
+    top             : -.5rem;
+    background-color: var(--primary);
+    color           : #fff;
+    transform       : rotate(45deg);
+    transition      : all .3s;
+}

@@ -1,20 +1,20 @@
 blockquote {
-    box-shadow      : @box-shadow;
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
     padding         : 0;
     margin          : 0;
     display         : block;
     position        : relative;
-    background-color: @theme-bg-color;
-    color           : @theme-color;
-    padding         : @card-padding;
-    border-radius   : @card-border-radius;
+    background-color: var(--theme-bg-color, #fcfcfe);
+    color           : var(--theme-color, #00283a);
+    padding         : var(--card-padding, 40px);
+    border-radius   : var(--card-border-radius, 10px);
     font-style      : italic;
     font-size       : 16px;
     font-weight     : 500;
 
     &:before {
         margin     : 0;
-        color      : @primary;
+        color      : var(--primary, #afb42b);
         width      : 50px;
         line-height: 55px;
         content    : '"';
@@ -27,7 +27,7 @@ blockquote {
     &:after {
         margin     : 0;
         width      : 50px;
-        color      : @primary;
+        color      : var(--primary, #afb42b);
         line-height: 55px;
         content    : '"';
         position   : absolute;

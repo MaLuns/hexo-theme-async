@@ -4,7 +4,7 @@ form,
     width   : 100%;
 
     input {
-        color           : @theme-color;
+        color           : var(--theme-color, #00283a);
         width           : 100%;
         box-sizing      : border-box;
         display         : block;
@@ -13,8 +13,8 @@ form,
         border-radius   : 10px;
         margin-bottom   : 20px;
         border          : 0;
-        box-shadow      : @box-shadow2;
-        background-color: @theme-bg2-color;
+        box-shadow      : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
+        background-color: var(--theme-bg2-color, #f4f5f7);
         padding         : 0 20px;
 
         &:focus {
@@ -23,7 +23,7 @@ form,
     }
 
     textarea {
-        color           : @theme-color;
+        color           : var(--theme-color, #00283a);
         width           : 100%;
         box-sizing      : border-box;
         display         : block;
@@ -31,8 +31,8 @@ form,
         border-radius   : 10px;
         margin-bottom   : 40px;
         border          : 0;
-        box-shadow      : @box-shadow2;
-        background-color: @theme-bg2-color;
+        box-shadow      : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
+        background-color: var(--theme-bg2-color, #f4f5f7);
         padding         : 15px 20px;
 
         &:focus {

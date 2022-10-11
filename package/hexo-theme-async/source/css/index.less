@@ -1,0 +1,27 @@
+:root {
+    .trm-white-icon {
+        display: none
+    }
+
+    &.dark {
+
+        .trm-black-icon {
+            display: none
+        }
+
+        .trm-white-icon {
+            display: inline;
+            opacity: .4
+        }
+
+    }
+}
+
+// transition mixin
+.transition-mixin(@type: all; @time: .4s) {
+    transition: @type @time ease-in-out;
+}
+
+@import './_variables/index.less';
+@import (optional) '../../../../source/_data/style/index.less';
+@import './_components/index.less';

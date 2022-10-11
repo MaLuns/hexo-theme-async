@@ -5,8 +5,8 @@
     border-radius   : 20px;
     width           : 100vw;
     height          : 100vh;
-    background-color: @theme-bg2-color;
-    box-shadow      : @box-shadow;
+    background-color: var(--theme-bg2-color, #f4f5f7);
+    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
     .transition-mixin();
 
     /* .trm-hidden-switcher {
@@ -23,7 +23,7 @@
             top             : -8px;
             height          : 8px;
             width           : calc(100% - 60px);
-            background-color: @theme-color;
+            background-color: var(--theme-color, #00283a);
             border-radius   : 5px 5px 0 0;
             opacity         : .3;
         }
@@ -44,7 +44,7 @@
 
 @media(max-width:992px) {
     body {
-        background-color: @theme-bg2-color;
+        background-color: var(--theme-bg2-color, #f4f5f7);
         overflow        : auto
     }
 

@@ -22,7 +22,7 @@
                     border-radius   : 10px;
                     height          : 4px;
                     width           : 0;
-                    background-color: @primary;
+                    background-color: var(--primary, #afb42b);
                     .transition-mixin();
                 }
 
@@ -32,7 +32,7 @@
                     width         : 100%;
                     padding       : 0 20px;
                     line-height   : 80px;
-                    color         : @theme-color;
+                    color         : var(--theme-color, #00283a);
                     text-transform: uppercase;
                     font-size     : 11px;
                     letter-spacing: 2px;
@@ -40,21 +40,21 @@
                     .transition-mixin();
 
                     &:hover {
-                        color: @primary;
+                        color: var(--primary, #afb42b);
                     }
                 }
 
                 ul {
                     padding         : 10px;
                     pointer-events  : none;
-                    background-color: @theme-bg-color;
+                    background-color: var(--theme-bg-color, #fcfcfe);
                     opacity         : 0;
                     transform       : translateY(20px);
                     height          : auto;
                     top             : 80px;
                     left            : -10px;
                     border-radius   : 0 0 10px 10px;
-                    box-shadow      : @box-shadow;
+                    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
                     position        : absolute;
                     z-index         : 9;
                     display         : flex;
@@ -134,17 +134,17 @@
     } */
 
     .trm-menu nav ul li.current-menu-item a {
-        color: @primary
+        color: var(--primary, #afb42b)
     }
 
     .trm-menu nav ul li.current-menu-item ul li a {
-        color: @theme-color
+        color: var(--theme-color, #00283a)
     }
 
     .trm-menu nav ul li ul {
         border-radius   : 0;
         margin          : 0;
-        background-color: @theme-bg2-color;
+        background-color: var(--theme-bg2-color, #f4f5f7);
         top             : 0;
         left            : 0;
         width           : 100%;
@@ -156,7 +156,7 @@
         margin          : 0;
         pointer-events  : all;
         max-height      : 0;
-        box-shadow      : @box-shadow2;
+        box-shadow      : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
     }
 
     .trm-menu nav ul li:hover ul {
@@ -212,7 +212,7 @@
         width              : 15px;
         height             : .15em;
         border-radius      : 1px;
-        background         : @theme-color;
+        background         : var(--theme-color, #00283a);
         backface-visibility: hidden;
         .transition-mixin();
     }

@@ -79,17 +79,17 @@
         .tgl-light {
             &+.trm-swich {
                 margin-bottom: 0;
-                box-shadow   : @box-shadow2;
-                background   : @theme-bg2-color;
+                box-shadow   : var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
+                background   : var(--theme-bg2-color, #f4f5f7);
                 border-radius: 2em;
                 padding      : 2px;
                 .transition-mixin();
 
                 &:after {
                     width        : 47%;
-                    border       : solid 3px @primary;
+                    border       : solid 3px var(--primary, #afb42b);
                     border-radius: 50%;
-                    background   : @theme-bg-color;
+                    background   : var(--theme-bg-color, #fcfcfe);
                     .transition-mixin(all, .2s);
                 }
             }
@@ -124,7 +124,7 @@
             content      : '';
             height       : 1px;
             width        : 120%;
-            border-bottom: dotted 5px @theme-color;
+            border-bottom: dotted 5px var(--theme-color, #00283a);
             position     : absolute;
             z-index      : 9;
             bottom       : 0;
@@ -138,7 +138,7 @@
             font-size  : 32px;
             margin-left: -15px;
             opacity    : 1;
-            color      : @theme-color;
+            color      : var(--theme-color, #00283a);
             .transition-mixin(all, .6s);
         }
 
@@ -148,7 +148,7 @@
             top        : 0;
             font-size  : 32px;
             margin-left: -15px;
-            color      : @theme-color;
+            color      : var(--theme-color, #00283a);
             opacity    : 0;
             transform  : translateY(70px) rotate(0);
             .transition-mixin(all, .6s);

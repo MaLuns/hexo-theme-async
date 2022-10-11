@@ -54,3 +54,9 @@ reward:
       path: https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png
     - name: 支付宝
       path: https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg
+
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh
+  post: true
+  clipboard: true

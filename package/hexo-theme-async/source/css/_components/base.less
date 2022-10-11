@@ -1,10 +1,6 @@
-:root {
-    --theme-color: @theme-bg-color;
-}
-
 body {
     font-weight           : 500;
-    color                 : @body-color;
+    color                 : var(--body-color, #7B7B7D);
     background-color      : #00151f;
     letter-spacing        : .05em;
     overflow              : hidden;
@@ -40,7 +36,7 @@ h6 {
     line-height   : 1.2;
     letter-spacing: 0;
     font-weight   : 800;
-    color         : @theme-color;
+    color         : var(--theme-color, #00283a);
     margin-bottom : 0;
     margin-top    : 0;
 }
@@ -89,13 +85,13 @@ p {
 }
 
 .trm-contrast {
-    color  : @theme-color  !important;
+    color  : var(--theme-color, #00283a) !important;
     opacity: 1 !important
 }
 
 
 .trm-accent-color {
-    color: @primary
+    color: var(--primary, #afb42b)
 }
 
 .trm-label {
@@ -103,15 +99,15 @@ p {
     font-size     : 11px;
     font-weight   : 700;
     letter-spacing: 2px;
-    color         : @theme-color;
+    color         : var(--theme-color, #00283a);
     .transition-mixin();
 
     &.trm-label-light {
-        color: @body-color;
+        color: var(--body-color, #7B7B7D);
     }
 
     &.trm-label-color {
-        color: @primary;
+        color: var(--primary, #afb42b);
     }
 }
 
@@ -131,7 +127,7 @@ a.trm-label {
     &:hover {
         outline: inherit;
 
-        color: @primary;
+        color: var(--primary, #afb42b);
 
         .fa-arrow-right,
         .fa-arrow-right {
@@ -213,7 +209,7 @@ html {
 
 .trm-divider {
     height       : 1px;
-    border-bottom: @border-dotted;
+    border-bottom: var(--border-dotted, dotted 2px rgba(225, 225, 235, 0.9));
     width        : 100%
 }
 
@@ -235,7 +231,7 @@ html {
     }
 
     100% {
-        box-shadow: 0 0 20px fade(@primary, 30%);
+        box-shadow: 0 0 20px var(--primary-30, #afb42b);
     }
 }
 
@@ -257,7 +253,7 @@ html {
     width           : 4px;
     right           : 1px;
     border-radius   : 10px;
-    background-color: @primary;
+    background-color: var(--primary, #afb42b);
     opacity         : 1
 }
 
@@ -306,8 +302,8 @@ html {
 *::-webkit-selection,
 *::-moz-selection,
 *::selection {
-    color           : @theme-color;
-    background-color: @primary;
+    color           : var(--theme-color, #00283a);
+    background-color: var(--primary, #afb42b);
 }
 
 ::-webkit-scrollbar {
@@ -317,7 +313,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
     border-radius   : 2px;
-    background-color: fade(@primary, 50%);
+    background-color: var(--primary-50, #afb42b);
 }
 
 ::-webkit-scrollbar-track {
