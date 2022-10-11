@@ -1,7 +1,8 @@
 .trm-title-with-divider {
-    display    : flex;
-    align-items: center;
-    white-space: nowrap;
+    display      : flex;
+    align-items  : center;
+    white-space  : nowrap;
+    margin-bottom: var(--card-bottom-card);
 
     span {
         position     : relative;
@@ -26,5 +27,15 @@
             top          : -6px;
             right        : -35px;
         }
+    }
+}
+
+.trm-divider {
+    height       : 1px;
+    border-bottom: var(--border-dotted, dotted 2px rgba(225, 225, 235, 0.9));
+    width        : 100%;
+
+    &.footer-divider {
+        margin-bottom: var(--card-bottom-card);
     }
 }

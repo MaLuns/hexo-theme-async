@@ -10,7 +10,7 @@
     <% theme.projects.forEach((item,index)=>{ %>
         <div class="row">
             <div class="col-lg-12">
-              <h5 class="trm-mb-40 trm-title-with-divider"><%- item.title %><span  data-number="<%- index+1 %>"></span></h5>
+              <h5 class="trm-title-with-divider"><%- item.title %><span  data-number="<%- index+1 %>"></span></h5>
             </div>
             <% item.children.forEach((project,index)=>{ %>
                 <div class="<%- !page.single_column ? 'col-lg-6':'col-lg-4' %>">
