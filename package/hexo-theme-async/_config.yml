@@ -90,6 +90,8 @@ banner:
     type: img
     bgurl: /img/banner.png
     bannerText: Hi my new friend!
+    position: top
+    fit: cover
   index:
     type: img
     bannerTitle: 树深时见鹿，<br>溪午不闻钟。
