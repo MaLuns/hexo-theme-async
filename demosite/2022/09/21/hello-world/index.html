@@ -16,7 +16,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png">
 <meta property="article:published_time" content="2022-09-21T15:08:29.000Z">
-<meta property="article:modified_time" content="2022-10-10T01:34:14.331Z">
+<meta property="article:modified_time" content="2022-10-11T02:09:45.847Z">
 <meta property="article:author" content="白云苍狗">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png">
@@ -64,20 +64,16 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":false,"clipboard":false},"swup":false};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":false};</script>
 
 <!-- Theme mode css -->
-
-    <link data-swup-theme="style-light" rel="stylesheet" href="/demosite/css/style-light.css?v=1.1.1" id="trm-switch-style">
-    <link data-swup-theme="style-dark" rel="stylesheet" href="/demosite/css/style-dark.css?v=1.1.1" id="trm-switch-style">
-    <script>
-        let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
-        let catchMode = localStorage.getItem('theme-mode') || defaultMode;
-        let themeMode = catchMode === 'style-dark' ? 'style-light' : 'style-dark';
-        let linkdom = document.querySelector('[data-swup-theme='+themeMode+']');
-        if(linkdom) linkdom.remove();
-    </script>
-
+<link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=1.1.1" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
 
 <!-- CDN -->
 
@@ -284,16 +280,12 @@
             
                 <div class="col-lg-4 hidden-sm">
                     <!-- main card -->
-                    <div class="trm-main-card-frame trm-sidebar">
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
-        <div class="trm-tabs" id="sidebar-tabs">
-           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
-                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
-                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
-           </div>
-            <div name="tabs-user" class="trm-tabs-item">
-                <!-- card header -->
+        <!-- card header -->
 <div class="trm-mc-header">
     <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/demosite/img/avatar.jpg" alt="Avatar"> </div>
     <h5 class="trm-name trm-mb-15">
@@ -360,13 +352,6 @@
     
 </ul>
 
-            </div>
-            <div name="tabs-toc" class="trm-tabs-item active">
-                <div class="post-toc">
-    <ol class="toc"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#Hexo-Theme-Async" data-scroll-to="#Hexo-Theme-Async"><span class="toc-tips">Hexo Theme Async</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#Hexo" data-scroll-to="#Hexo"><span class="toc-tips">Hexo</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#Quick-Start" data-scroll-to="#Quick-Start"><span class="toc-tips">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#Create-a-new-post" data-scroll-to="#Create-a-new-post"><span class="toc-tips">Create a new post</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#Run-server" data-scroll-to="#Run-server"><span class="toc-tips">Run server</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#Generate-static-files" data-scroll-to="#Generate-static-files"><span class="toc-tips">Generate static files</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#Deploy-to-remote-sites" data-scroll-to="#Deploy-to-remote-sites"><span class="toc-tips">Deploy to remote sites</span></a></li></ol></li></ol>
-</div>
-            </div>
-        </div>
     
     </div>
 </div>
@@ -447,6 +432,22 @@
     </div>
 
     
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        白云苍狗
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="https://hexo-theme-async.imalun.com/2022/09/21/hello-world/" title="Hello Theme Async">https://hexo-theme-async.imalun.com/2022/09/21/hello-world/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
 </div>
 <div class="row">
     <div class="col-lg-12">

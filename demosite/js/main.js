@@ -256,6 +256,7 @@
   const utils = {
     q: (...arg) => document.querySelector(...arg),
     qa: (...arg) => document.querySelectorAll(...arg),
+    gId: (...arg) => document.getElementById(...arg),
     debounce(func, wait, immediate) {
       let timeout;
       return function () {
@@ -346,7 +347,7 @@
       let swich_input = utils.q('#trm-swich');
       if (!swich_input) return;
       let scroll_container = utils.q("#trm-scroll-container");
-      let switch_style = utils.q("#trm-switch-style");
+      /* let switch_style = utils.q("#trm-switch-style"); */
       /* Animated mask layers */
       let mode_swich_animation = utils.q('.trm-mode-swich-animation');
       let mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
@@ -380,7 +381,12 @@
           scroll_container.style.opacity = 0;
           setTimeout(() => resolve(), 600);
         }).then(() => {
-          if (this.checked) {
+          setTimeout(() => {
+            let type = this.checked ? 'add' : 'remove'
+            mode_swich_animation.classList[type]('trm-active');
+            document.documentElement.classList[type]('dark')
+          }, 200);
+          /* if (this.checked) {
             setTimeout(function () {
               mode_swich_animation.classList.add('trm-active');
               switch_style.href = switch_style.href.replace('style-light', 'style-dark');
@@ -390,7 +396,7 @@
               mode_swich_animation.classList.remove('trm-active');
               switch_style.href = switch_style.href.replace('style-dark', 'style-light');
             }, 200);
-          }
+          } */
 
           setTimeout(function () {
             mode_swich_animation_frame.classList.remove('trm-active');
@@ -458,6 +464,7 @@
         mobile.removeListener(reload);
         scroll.destroy()
       });
+      return scroll
     },
     InitMenu() {
       utils.q('.trm-menu-btn').addEventListener('click', function () {
@@ -488,7 +495,7 @@
     },
     InitToc() {
       let tabs = document.getElementById('trm-tabs-nav')
-      if (tabs)
+      if (tabs) {
         tabs.addEventListener('click', function (e) {
           let to = e.target.dataset.to || e.target.parentElement.dataset.to;
           let isAcive = e.target.classList.contains('active') || e.target.parentElement.classList.contains('active');
@@ -501,6 +508,80 @@
             })
           }
         })
+
+        const listenSidebarTOC = () => {
+          const toc = utils.q('.post-toc')
+          const links = Array.from(toc.querySelectorAll('a.toc-link'))
+          if (!links.length) return;
+          const sections = links.map(item => utils.gId(decodeURI(item.getAttribute('href').replace('#', ''))))
+          const appFrame = document.querySelector('.trm-app-frame')
+          if (!appFrame) return;
+          const topBar = document.querySelector('.trm-top-bar')
+          let { bottom } = topBar.getBoundingClientRect()
+
+          function activateNavByIndex(target) {
+            target = target.parentNode
+            if (target.classList.contains('active-current'))
+              return
+
+            utils.qa('.post-toc .active').forEach((element) => {
+              element.classList.remove('active', 'active-current')
+            })
+            target.classList.add('active', 'active-current')
+            let parent = target.parentNode
+            while (!parent.matches('.post-toc')) {
+              if (parent.matches('li')) parent.classList.add('active');
+              parent = parent.parentNode
+            }
+          }
+
+          function findIndex(entries) {
+            let index = 0
+            let entry = entries[index]
+            if (entry.intersectionRatio <= 0) {
+              index = sections.indexOf(entry.target)
+              return index === 0 ? 0 : index - 1
+            }
+            for (; index < entries.length; index++) {
+              // 存在相交区域,表示进入该 标题-段落
+              if (entries[index].intersectionRatio > 0)
+                entry = entries[index]
+              else
+                return sections.indexOf(entry.target)
+            }
+            return sections.indexOf(entry.target)
+          }
+
+          function createIntersectionObserver(marginTop) {
+            // 扩大上面区域 避免图片懒加载等导致高度超出
+            marginTop = Math.floor(marginTop + 10000)
+            const intersectionObserver = new IntersectionObserver(
+              (entries, observe) => {
+                const scrollHeight = document.documentElement.scrollHeight + 100
+                if (scrollHeight > marginTop) { // 内容高度超出后监听区域后，重新添加监听
+                  observe.disconnect()
+                  createIntersectionObserver(scrollHeight)
+                  return
+                }
+                const index = findIndex(entries)
+                activateNavByIndex(links[index])
+              },
+              {
+                root: appFrame,
+                rootMargin: `${marginTop}px 0px -${appFrame.clientHeight - bottom - 20}px 0px`,
+                threshold: [0, 1],
+              },
+            )
+            sections.forEach((element) => {
+              element && intersectionObserver.observe(element)
+            })
+          }
+
+          createIntersectionObserver(document.documentElement.scrollHeight)
+        }
+
+        listenSidebarTOC()
+      }
     },
     InitCopyright() {
       if (window.ASYNC_CONFIG.creative_commons.clipboard) {
