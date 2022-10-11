@@ -1,15 +1,17 @@
 <div class="trm-banner" data-scroll data-scroll-direction="vertical">
-    <% if(type === 'img'){ %>
+    <% if(type === 'img'){ 
+        let style = `object-position:${position || 'top'};object-fit:${fit || 'cover'};` %>
     <!-- banner cover -->
-    <img src="<%= url_for(bgurl) %>" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+    <img style="<%- style %>" src="<%= url_for(bgurl) %>" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
     <!-- banner cover end -->
     <% } else if(type === 'slideshow' && Array.isArray(bgurl)) { %>
     <!-- banner slideshow cover-->
     <div class="swiper-container trm-slideshow" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
         <div class="swiper-wrapper">
-            <%  bgurl.forEach((item,index) => {  %>
+            <%  bgurl.forEach((item,index) => {  
+                let style = `object-position:${(Array.isArray(position) ? position[index]  : position) || 'top'};object-fit:${(Array.isArray(fit) ? fit[index]  : fit) || 'cover'}` %>
             <div class="swiper-slide">
-                <img src="<%= url_for(item) %>" alt="banner" class="trm-banner-cover" data-swiper-parallax-y="-200" data-swiper-parallax-scale="1.2">
+                <img style="<%- style %>" src="<%= url_for(item) %>" alt="banner" class="trm-banner-cover <%- Array.isArray(position) ? (position[index] || 'top') : position %>" data-swiper-parallax-y="-200" data-swiper-parallax-scale="1.2">
             </div>
             <% }) %>
         </div>
