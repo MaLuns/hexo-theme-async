@@ -47,6 +47,7 @@ isSearch = theme.search.enable && theme.search.type === 'local'
         <script src="<%= url_for(theme.assets.plugin.search.js[1]) %>?v=<%= theme.version %>"></script>
     <% } %>
 
+    <!-- 数学公式 -->
     <% if(isKatex) {
         let options = { 
             ...theme.katex.options
@@ -74,5 +75,21 @@ isSearch = theme.search.enable && theme.search.type === 'local'
                 ...<%- JSON.stringify(options) %>,
             })
         </script>
+    <% } %>
+
+
+    <!-- 评论插件 -->
+    <% if(page.comments) { %>
+        <% let comment = theme.comment%>
+        <% if(comment.bComments.enable) { %>
+            <%- js(theme.assets.plugin.bComments.map(src=>({src, 'data-swup-reload-script': true}))) %>
+        <% } else if(comment.twikoo.enable) { %>
+            <%- js({src:theme.assets.plugin.twikoo,'data-swup-reload-script': true}) %>
+            <script data-swup-reload-script>
+                const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
+                twikooConfig.el = '#tcomment';
+                twikoo.init(twikooConfig);
+            </script>
+        <% } %>
     <% } %>
 <% } %>
