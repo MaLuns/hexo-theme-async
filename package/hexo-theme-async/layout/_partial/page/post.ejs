@@ -5,4 +5,6 @@
     <%- partial('../post/post-copyright') %>
 </div>
 <%- partial('../post/post-next-prev') %>
-<%- partial('../../_widget/comment',{ titleHide: false }) %>
+<% if(page.comments) { %>
+    <%- partial('../../_third-party/comment/index') %>
+<% } %>
