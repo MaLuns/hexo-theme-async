@@ -34,39 +34,83 @@ webAnalytics:
 ::: warning
 ~~因为主题滚动插件原因，需要监听评论区域 DOM 变动，用来更新插件滚动监听信息，所以导致对兼容三方插件变得比较繁琐~~ (在 v1.1.3 进行修复)。本人使用评论插件有限，所以做了兼容处理比较少。
 :::
+### bComments
+b-comments 是什么 [参考这里](https://github.com/MaLuns/bcommentjs)
 
 - `enable`: 默认关闭
-- `bComments`: bComments.js 配置项，b-comments 是什么 [参考这里](https://github.com/MaLuns/bcommentjs)
+- `env`:腾讯云环境ID 
 
 ```yaml
 comment:
-  enable: false
   bComments:
-    v: 0.0.12
-    env: 
+    enable: true
+    env: 腾讯云环境ID
 ```
+
+### Twikoo
+
+一个简洁、安全、免费的静态网站评论系统，基于[腾讯云开发](https://curl.qcloud.com/KnnJtUom)。
+
+> 后端部署请参见[官方文档](https://twikoo.js.org/)。
+> [快速上手](https://twikoo.js.org/quick-start.html)
+
+```yaml
+comment:
+  twikoo:
+    enable: true
+    envId: xxxxxxxxxxxxxxx # 腾讯云环境id
+    region: # 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+    option: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+```
+
+### 集成其他评论插件
+
 若果您需要集成一些三方评论插件，您可以通过修改下列 layout 文件进行集成。
 
 ::: tip
-增加三方评论插件，一般来说只需要按照三方插件添加对应 `js`、`css` 文件，在 `layout/_widget/comment.ejs` 添加对应初始化代码，处理好主题切换样式就可以了。
+增加三方评论插件，一般来说只需要按照三方插件添加对应 `js`、`css` 文件，在 `layout/_third-party/comment/` 添加对应初始化代码，处理好主题切换样式就可以了。
 :::
+
+以 Twikoo 为例：
 
 第一部分：
 
-你需要 修改 `layout/_widget/comment.ejs`（评论插件模板，所有使用评论页面都引用了这个文件） 文件，有关三方评论插件使用的 HTML 相关代码可以在这个文件编写。`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
+你需要`layout/_third-party/comment/twikoo.ejs` 文件，在里面编写评论插件使用的 HTML 相关代码。
+
+``` html 
+<div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
+    <div id="tcomment"></div>
+</div>
+```
 
 第二部分：
 
-添加三方评论插件 CDN 文件，您可以[参考这里](/guide/config.html#cdn)。CDN 默认是全量加载的。
-如果您希望评论插件是动态加载的，您需要添加配置：
+添加配置 twikoo CDN 配置
+
 ```yaml
 assets:
   plugin:
-     [插件名称]: 
-        css: 你的插件 css
-        js: 你的插件 js
+     twikoo: //cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js
 ```
-并在 `layout/_third-party/plugin.ejs` 里，编写您动态加载插件代码。
+在 `layout/_third-party/plugin.ejs` 里，根据配置加载插件。仅在页面开始评论配置加载插件，并在初始化代码块上添加 `data-swup-reload-script` 标识。
+
+`data-swup-reload-script` 表示在 Pjax 里会重新执行当前代码块。
+
+``` js
+<% if(page.comments) { %>
+  <% let comment = theme.comment%>
+  <% if(comment.twikoo.enable) { %>
+      <%- js({src:theme.assets.plugin.twikoo,'data-swup-reload-script': true}) %>
+      <script data-swup-reload-script>
+          const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
+          twikooConfig.el = '#tcomment';
+          twikoo.init(twikooConfig);
+      </script>
+  <% } %>
+<% } %>
+```
+
+`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
 
 如果您集成了三方评论插件，欢迎您提交 [Pull Request](https://github.com/MaLuns/hexo-theme-async/pulls) ，完善主题健壮性。
 
