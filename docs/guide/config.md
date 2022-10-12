@@ -256,6 +256,8 @@ sidebar:
     - `bgurl`：背景图地址，如果 type 是 slideshow，需要为数组
     - `bannerTitle`：横幅上标题
     - `bannerText`：横幅描述
+    - `position`： 同 CSS object-position
+    - `fit`：同 CSS  object-fit
 - `index`：首页 (属性字段和上面保持一致)
     - `videoUrl`：视频地址 (仅首页有)
 - `archive`：分类页
