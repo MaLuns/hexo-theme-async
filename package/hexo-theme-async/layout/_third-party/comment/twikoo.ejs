@@ -1,0 +1,9 @@
+<div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
+    <div id="tcomment"></div>
+</div>
+<%- js(theme.assets.plugin.twikoo) %>
+<script data-swup-reload-script>
+    const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
+    twikooConfig.el = '#tcomment';
+    twikoo.init(twikooConfig);
+</script>
