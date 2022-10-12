@@ -3078,3 +3078,106 @@ footer #since {
   transition-delay: 0s;
   box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 }
+:root.dark {
+  --ui-bg: #1d1d1d;
+  --ui-bg-weak: #252525;
+  --ui-aide-bg: #111111;
+  --ui-text: #dddddd;
+  --ui-text-weak: #b4b4b4;
+  --ui-aide-text: #979797;
+  --ui-text-inversion: #3d3d3d;
+  --ui-aide-text-stress: #b4b4b4;
+  --ui-danger: #ed4014;
+  --ui-danger-weak: #f16643;
+  --ui-warning: #fac20a;
+  --ui-warning-weak: #fac20a;
+  --ui-success: #32d4a1;
+  --ui-success-weak: #50d4ab;
+  --ui-info: #2d8cf0;
+  --ui-info-weak: #57a3f3;
+  --ui-shadow: rgba(0, 0, 0, 0.2);
+  --ui-light-shadow: rgba(0, 0, 0, 0.1);
+  --ui-dropdown-menu-item: #5e7ce0;
+  --ui-dropdown-menu-item-color: #ffffff;
+  --ui-link: #536eb3;
+  --ui-link-active: #4976e9;
+  --ui-border-line: #2b2b2c;
+  --ui-dividing-line: #555658;
+  --ui-transition-duration: 0.3s ease;
+  --ui-form-control-line: #414141;
+  --ui-form-control-line-hover: #525457;
+  --ui-form-control-line-active: #364a8b;
+  --ui-skeleton-background: linear-gradient(90deg, #1d1d1d 25%, #2e2e2e 37%, #181818 63%);
+}
+:root {
+  --twikoo-white: #fff;
+  --twikoo-fontcolor: #000;
+  --twikoo-background: #fff;
+  --twikoo-navbg: rgba(255, 255, 255, 0.9);
+  --twikoo-card-btn-bg: #F7F7FA;
+  --twikoo-post-blockquote-bg: #f2f5f7;
+  --twikoo-sceondbg: #F7F7FA;
+}
+:root.dark {
+  --twikoo-fontcolor: #fff;
+  --twikoo-background: #1e1e1e;
+  --twikoo-card-btn-bg: #3f3f3f;
+  --twikoo-post-blockquote-bg: #000;
+  --twikoo-sceondbg: #252627;
+}
+/* 评论 */
+/* ---------------------------------------------------------------- */
+/* 填写项标题 */
+.el-input-group__append,
+.el-input-group__prepend {
+  background-color: var(--twikoo-sceondbg) !important;
+  color: var(--twikoo-fontcolor) !important;
+  border: 0px solid var(--primary) !important;
+}
+/* 输入框 */
+.el-input__inner {
+  background: var(--twikoo-post-blockquote-bg) !important;
+  border: 0px solid var(--primary) !important;
+  color: var(--twikoo-fontcolor) !important;
+}
+/* 评论输入框 */
+.el-textarea__inner {
+  background: var(--twikoo-post-blockquote-bg) !important;
+  border: 0px solid var(--primary) !important;
+  color: var(--twikoo-fontcolor) !important;
+}
+/* 加载时背景颜色 */
+.el-loading-mask {
+  background-color: var(--twikoo-background) !important;
+}
+/* 评论博主标签圆角 */
+.tk-tag-green {
+  border-radius: 12px !important;
+  border: 0px solid #e1f3d8 !important;
+}
+/* 预览按钮 */
+.el-button {
+  background: var(--twikoo-card-btn-bg) !important;
+  border: 0px solid var(--primary) !important;
+  color: var(--twikoo-fontcolor) !important;
+}
+.el-button:hover {
+  background: var(--primary) !important;
+  color: var(--twikoo-white) !important;
+}
+/* 发送按钮正常状态 */
+.el-button--primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--twikoo-white) !important;
+}
+/* 发送按钮禁用状态 */
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:active,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:hover {
+  opacity: 0.4;
+}
+.tk-submit {
+  margin-top: none;
+}
