@@ -105,7 +105,7 @@ cdn:
     defer: 
 ```
 
-## 图标 Icon
+## 字体图标 Icon
 本主题默认使用 Font Awesome 5 图标。
 
 > 默认支持的图标列表见 [默认图标](/about/icon.html)
@@ -436,6 +436,26 @@ creative_commons:
 # URL
 # # If your site is put in a subdirectory, set url as 'https://yoursite.com/child' and root as '/child/'
 url: https://www.imalun.com
+```
+
+## 日期格式化 Date Format
+用于配置主题中使用日期的格式。
+
+- `post_card`：文章卡片的格式
+- `post_info`：文章详情页里的格式
+- `archive`：归档分类页的格式
+
+``` yaml
+datetime_foramt:
+  post_card:
+    date: YY/MM/DD
+    time: HH:mm
+  post_info:
+    date: MM/DD
+    time: HH:mm
+  archive:
+    date: MM/DD
+    time: HH:mm
 ```
 
 ## 自定义图标 Icon
