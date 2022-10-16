@@ -4,6 +4,28 @@
         "children": [
             {
                 "version": "1.2.1",
+                "date": "2022-10-12",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "适配 bComments, twikoo"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "添加日期格式化配置"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "banner 支持配置背景定位信息"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复单篇文章强制关闭目录失效"
+                    }
+                ]
+            },
+            {
+                "version": "1.2.1",
                 "date": "2022-10-11",
                 "logs": [
                     {
