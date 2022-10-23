@@ -7,3 +7,4 @@ node_modules/
 .vscode
 db.json
 demo/themes/
+docs/.vitepress/dist

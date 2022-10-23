@@ -1,36 +1,41 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="trm-card">
-            <% if(is_archive()){%>
-                <div style="padding: 0 20px;">
+            <div style="padding: 0 20px;">
+                <% if(is_archive()){%>
                     <%- list_archives({
                         type: "yearly",
                         ulclass: "row trm",
                         liclass: "col-lg-4 trm"
                     }) %>
-                </div>
-            <% } else if (is_category()){ %>
-                <div style="padding: 0 20px;">
+                <% } else if (is_category()){ %>
                     <%- list_categories({
-                        type: "yearly",
                         ulclass: "row trm",
                         liclass: "col-lg-4 trm"
                     }) %>
-                </div>
-            <% } %>
+                <% } else if (is_tag()) { %>
+                    <%- list_tags({ class: {
+                        ul: "row trm-tag-list trm-list",
+                        li:"col-lg-4 trm-list-item"
+                    } }) %>
+                <% } %>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- history -->
+<% if(page.posts) { %>
 <div class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
             <% if(page.archive){ %>
-                <%- page.year ? page.year : __('title.all_archives') %>
+                <%- page.year ? __('title.year_archives',page.year) : __('title.all_archives') %>
             <% } else if (is_category()){ %>
                 <%- page.category %>
+            <% } else if (is_tag()) { %>
+                <%- page.tag %>
             <% } %>
             <span data-number="01"></span>
         </h5>
@@ -83,6 +88,7 @@
         <!-- timeline end -->
     </div>
 </div>
+<% } %>
 <!-- history end -->
 
 <%- partial('../../_widget/paginator') %>

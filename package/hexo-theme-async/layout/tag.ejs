@@ -1,0 +1,8 @@
+<%- partial('./_partial/main',  {
+    banner: partial('./_partial/banner',  {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...theme.banner.archive 
+    }),
+    content: is_tag() ? partial('./_partial/page/archive') : partial('./_partial/page/tag')
+}) %>
