@@ -1293,6 +1293,16 @@ pre .deletion {
 .trm-list li + li {
   margin-top: 15px;
 }
+.trm-tag-list li {
+  white-space: nowrap;
+  margin: 6px 0 !important;
+}
+.trm-tag-list li .tag-list-count::before {
+  content: "（";
+}
+.trm-tag-list li .tag-list-count::after {
+  content: "）";
+}
 blockquote {
   box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
   padding: 0;
@@ -2696,6 +2706,12 @@ footer #since {
   vertical-align: text-top;
   padding: 0;
   margin: 0;
+}
+.trm-publication [data-fancybox=gallery] + em {
+  display: block;
+  font-size: 0.9rem;
+  font-style: normal;
+  text-align: center;
 }
 .trm-publication ul {
   padding: 0;

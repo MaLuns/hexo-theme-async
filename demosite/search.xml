@@ -3,7 +3,8 @@
   <entry>
     <title>Hello Theme Async</title>
     <url>/demosite/2022/09/21/hello-world/</url>
-    <content><![CDATA[<p><img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="1663833969157.png" loading="lazy"><br>Welcome to <a href="https://hexo-theme-async.imalun.com/">hexo-theme-async</a>.</p>
+    <content><![CDATA[<p><img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="1663833969157.png" loading="lazy"><em>示例图</em></p>
+<p>Welcome to <a href="https://hexo-theme-async.imalun.com/">hexo-theme-async</a>.</p>
 <span id="more"></span>
 <h2 id="Hexo-Theme-Async"><a href="#Hexo-Theme-Async" class="headerlink" title="Hexo Theme Async"></a>Hexo Theme Async</h2><ul>
 <li>文档:<a href="https://hexo-theme-async.imalun.com/">https://hexo-theme-async.imalun.com/</a></li>
