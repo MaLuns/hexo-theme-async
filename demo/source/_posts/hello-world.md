@@ -4,7 +4,8 @@ date: 2022-09-21 15:08:29
 cover: https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png
 sticky: 1
 ---
-![1663833969157.png](https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png)
+![1663833969157.png](https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png)_示例图_
+
 Welcome to [hexo-theme-async](https://hexo-theme-async.imalun.com/).
 <!--more-->
 ## Hexo Theme Async

@@ -3,7 +3,21 @@
         "large_version": "v1.2.x",
         "children": [
             {
-                "version": "1.2.1",
+                "version": "1.2.3",
+                "date": "2022-10-23",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加标签和分类的汇总页"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复图片注释样式失效"
+                    }
+                ]
+            },
+            {
+                "version": "1.2.2",
                 "date": "2022-10-12",
                 "logs": [
                     {
