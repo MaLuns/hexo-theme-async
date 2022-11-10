@@ -68,8 +68,8 @@ theme:
 - `webmanifest`：应用程序清单文件
 - `visibilitychange`：是否在离开窗口时切换标题显示
 - `hidden`：离开窗口时显示图标
-- `show_text`：激活窗口时显示文字
-- `hide_text`：离开窗口显示文字
+- `showText`：激活窗口时显示文字
+- `hideText`：离开窗口显示文字
 
 ``` yaml
 favicon:
@@ -80,8 +80,8 @@ favicon:
   webmanifest: /site.webmanifest
   visibilitychange: true
   hidden: failure.ico
-  show_text: (/≧▽≦/)咦！又好了！
-  hide_text: (●—●)喔哟，崩溃啦！
+  showText: (/≧▽≦/)咦！又好了！
+  hideText: (●—●)喔哟，崩溃啦！
 ```
 
 ## CDN
