@@ -35,7 +35,7 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 │   ├── _config.yml
 │   ├── _config.async.yml // 增加配置文件
 ```
-- 通过 NPM 安装
+- 通过 NPM 安装 (推荐)
 
 进入您的 Hexo 博客根目录，执行：
 
@@ -47,7 +47,7 @@ npm i hexo-theme-async@latest
 
 修改 Hexo 站点配置文件 `_config.yml`。
 
-```bash
+```yaml
 # 将主题设置为 hexo-theme-async
 theme: async
 ```

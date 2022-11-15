@@ -6,9 +6,7 @@
 
 - `keywords`：关键字，用于 meta 标签
 - `description`：描述，用于 meta 标签
-- ~~`photos`：文章封面图 (下个版本弃用)~~
 - `cover`：文章封面图 
-- ~~`top`：首页排序值~~
 - `sticky`：首页排序值
 - `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
 - `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。

@@ -16,12 +16,8 @@
 ## Thanks
 ### Project
 
-- [jsDelivr – Open Source CDN](https://www.jsdelivr.com/)
 - [Hexo](https://github.com/hexojs/hexo)
+- [VitePress](https://github.com/vuejs/vitepress)
+- [jsDelivr – Open Source CDN](https://www.jsdelivr.com/)
 - [iconfont](https://www.iconfont.cn/)
 - [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js/)
-- [VitePress](https://github.com/vuejs/vitepress)
-
-### Theme
-
-- [hexo-theme-yun](https://github.com/YunYouJun/hexo-theme-yun)
