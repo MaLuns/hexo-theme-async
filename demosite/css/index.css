@@ -897,7 +897,7 @@ pre .deletion {
   color: var(--primary, #afb42b);
 }
 .trm-top-bar .container .trm-left-side .trm-logo-frame img {
-  width: 32px !important;
+  width: 32px;
   margin-right: 10px;
 }
 .trm-top-bar .container .trm-right-side {
