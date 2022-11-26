@@ -3,6 +3,46 @@
         "large_version": "v1.2.x",
         "children": [
             {
+                "version": "1.2.5",
+                "date": "2022-11-26",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "可自定义默认封面图"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "文章增加自定义作者"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "复制时版权信息显示当前文章作者"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "优化分割线显示"
+                    }
+                ]
+            },
+            {
+                "version": "1.2.4",
+                "date": "2022-11-19",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复首页 banner 覆盖问题"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 logo 样式宽度不可覆盖"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复版本显示多了个 v"
+                    }
+                ]
+            },
+            {
                 "version": "1.2.3",
                 "date": "2022-10-23",
                 "logs": [

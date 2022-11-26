@@ -193,7 +193,7 @@ reward:
 # cover
 cover:
   default: /img/block.jpg
-  type: date
+  type: img
 
 # Article table of contents
 toc:

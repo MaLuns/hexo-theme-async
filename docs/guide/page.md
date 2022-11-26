@@ -11,6 +11,7 @@
 - `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
 - `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
 - `single_column`：单栏显示详情页，为 true 时生效。
+- `author`：文章作者
 
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 

@@ -438,6 +438,19 @@ creative_commons:
 url: https://www.imalun.com
 ```
 
+### 自定义封面图
+
+当您没有设置文章封面图时，将会显示主题内置的封面图，您可以通过修改配置来替换默认行为。
+
+- `default`: 封面默认显示的图片
+- `type`: 封面显示类型，可选 `img` || `date`
+
+``` yaml
+cover:
+  default: /img/block.jpg
+  type: img
+```
+
 ## 日期格式化 Date Format
 用于配置主题中使用日期的格式。
 
