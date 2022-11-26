@@ -9,7 +9,7 @@
 <ul class="trm-post-copyright">
     <li class="trm-post-copyright-author">
         <strong><%-  __('post.copyright.author') + __('symbol.colon') %></strong>
-        <%- page.author || config.author %>
+        <%- page.author || theme.user.name || config.author %>
     </li>
     <li class="trm-post-copyright-link">
         <strong><%- __('post.copyright.link') + __('symbol.colon') %></strong>

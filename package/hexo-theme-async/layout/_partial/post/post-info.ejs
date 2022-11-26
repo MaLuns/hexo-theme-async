@@ -14,7 +14,7 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <%- icon(theme.icons.user,'trm-icon') %><br>
-            <%= theme.user.name %>
+            <%= page.author || theme.user.name || config.author %>
         </div>
     </div>
 </div>
