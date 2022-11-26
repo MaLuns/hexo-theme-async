@@ -190,6 +190,11 @@ reward:
   # url:
   methods:
 
+# cover
+cover:
+  default: /img/block.jpg
+  type: date
+
 # Article table of contents
 toc:
   enable: false

@@ -1,7 +1,20 @@
 <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
         <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
-            <img src="<%- post.cover ? url_for(post.cover) : (post.photos && post.photos.length ? url_for(post.photos[0]) : url_for('/img/block.jpg')) %>" alt="cover">
+            <%  let coverURl = post.cover ? 
+                url_for(post.cover) :  (
+                post.photos && post.photos.length ? 
+                url_for(post.photos[0]) : 
+                ( theme.cover.type === 'img' ?  url_for(theme.cover.default) : false)
+            ) %>
+            <% if(coverURl) { %>
+                <img src="<%- coverURl %>" alt="cover">
+            <% } else { %>
+                <div class="trm-cover-date">
+                    <div class="trm-cover-day"><%= date(post.date,'DD') %></div>
+                    <div class="trm-cover-month"><%= date(post.date,'YY/MM') %></div>
+                </div>
+            <% } %>
         </a>
         <div class="trm-card-descr">
             <div class="trm-label trm-category trm-mb-20">

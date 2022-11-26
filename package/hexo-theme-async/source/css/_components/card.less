@@ -383,6 +383,7 @@
         padding-bottom: 60%;
         overflow      : hidden;
 
+        .trm-cover-date,
         img {
             position       : absolute;
             top            : 0;
@@ -393,6 +394,25 @@
             object-position: center;
             transform      : scale(1.05);
             .transition-mixin();
+        }
+
+        .trm-cover-date {
+            background-color: var(--card-cover-bg-color, #f3f3f3);
+            display         : flex;
+            flex-direction  : column;
+            justify-content : center;
+            align-items     : center;
+            line-height     : 1.2;
+            font-family     : fantasy;
+
+            .trm-cover-day {
+                font-size  : 100px;
+                font-weight: 800;
+            }
+
+            .trm-cover-month {
+                font-size: 20px;
+            }
         }
     }
 
