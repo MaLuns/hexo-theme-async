@@ -592,6 +592,10 @@
           const text = window.getSelection().toString();
           if (text) {
             event.preventDefault();
+            const authorEl = document.getElementById('post-author')
+            if (authorEl) {
+              author = authorEl.innerText.replace('\n', '')
+            }
             let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${location.href}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
             clipboardData.setData('text/plain', text + copyrightText);
           }

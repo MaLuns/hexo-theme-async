@@ -30,6 +30,7 @@
   --card-padding: 40px;
   --card-bottom-card: 40px;
   --card-border-radius: 10px;
+  --card-cover-bg-color: #e9e9e9;
 }
 :root.dark {
   --primary: #afb42b;
@@ -50,6 +51,7 @@
   --border-dotted: dotted 2px rgba(225, 225, 235, 0.15);
   --preloader-background: #dedee0;
   --top-bar-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+  --card-cover-bg-color: #162e38;
 }
 /* @media (prefers-color-scheme: dark) {
     :root {
@@ -1639,6 +1641,7 @@ blockquote:after {
   padding-bottom: 60%;
   overflow: hidden;
 }
+.trm-blog-card .trm-cover-frame .trm-cover-date,
 .trm-blog-card .trm-cover-frame img {
   position: absolute;
   top: 0;
@@ -1649,6 +1652,22 @@ blockquote:after {
   object-position: center;
   transform: scale(1.05);
   transition: all 0.4s ease-in-out;
+}
+.trm-blog-card .trm-cover-frame .trm-cover-date {
+  background-color: var(--card-cover-bg-color, #f3f3f3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
+  font-family: fantasy;
+}
+.trm-blog-card .trm-cover-frame .trm-cover-date .trm-cover-day {
+  font-size: 100px;
+  font-weight: 800;
+}
+.trm-blog-card .trm-cover-frame .trm-cover-date .trm-cover-month {
+  font-size: 20px;
 }
 .trm-blog-card .trm-card-descr {
   padding: var(--card-padding, 40px);
@@ -2437,6 +2456,9 @@ form textarea:focus,
 }
 .trm-divider.footer-divider {
   margin-bottom: var(--card-bottom-card);
+}
+.trm-divider + .trm-divider {
+  display: none;
 }
 .trm-timeline {
   position: relative;
