@@ -270,6 +270,8 @@ datetime_foramt:
   post_card:
     date: YY/MM/DD
     time: HH:mm
+    cover_date: DD
+    cover_date2: YYYY/MM
   post_info:
     date: MM/DD
     time: HH:mm

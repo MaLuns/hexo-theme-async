@@ -11,8 +11,8 @@
                 <img src="<%- coverURl %>" alt="cover">
             <% } else { %>
                 <div class="trm-cover-date">
-                    <div class="trm-cover-day"><%= date(post.date,'DD') %></div>
-                    <div class="trm-cover-month"><%= date(post.date,'YY/MM') %></div>
+                    <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>
+                    <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
                 </div>
             <% } %>
         </a>
