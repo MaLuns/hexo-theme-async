@@ -164,7 +164,7 @@
 
 @media(max-width:992px) {
     .trm-banner {
-        height       : 550px;
+        height       : 350px;
         border-radius: 0 0 10px 10px;
 
         .trm-banner-cover {
@@ -174,12 +174,15 @@
 
         .trm-banner-content {
             .trm-banner-text {
-                transform : translateY(-20px);
                 text-align: center;
 
                 &.trm-text-center {
                     text-align: center;
                     margin-top: 0;
+                }
+
+                .trm-breadcrumbs {
+                    display: none;
                 }
             }
 
@@ -187,5 +190,6 @@
                 display: none;
             }
         }
+
     }
 }
