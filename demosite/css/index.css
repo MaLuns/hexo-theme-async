@@ -2401,7 +2401,7 @@ form textarea:focus,
 }
 @media (max-width: 992px) {
   .trm-banner {
-    height: 550px;
+    height: 350px;
     border-radius: 0 0 10px 10px;
   }
   .trm-banner .trm-banner-cover {
@@ -2409,12 +2409,14 @@ form textarea:focus,
     height: 100%;
   }
   .trm-banner .trm-banner-content .trm-banner-text {
-    transform: translateY(-20px);
     text-align: center;
   }
   .trm-banner .trm-banner-content .trm-banner-text.trm-text-center {
     text-align: center;
     margin-top: 0;
+  }
+  .trm-banner .trm-banner-content .trm-banner-text .trm-breadcrumbs {
+    display: none;
   }
   .trm-banner .trm-banner-content .trm-scroll-hint-frame {
     display: none;
@@ -2707,19 +2709,22 @@ footer #since {
 .trm-publication blockquote::after {
   color: var(--primary, #afb42b);
 }
-.trm-publication img {
+.trm-publication img,
+.trm-publication svg {
   display: block;
   max-width: 100%;
   border-radius: 8px;
   margin: 0.5rem auto;
 }
-.trm-publication img + em {
+.trm-publication img + em,
+.trm-publication svg + em {
   display: block;
   font-size: 0.9rem;
   font-style: normal;
   text-align: center;
 }
-.trm-publication img.emoji {
+.trm-publication img.emoji,
+.trm-publication svg.emoji {
   display: inline-block;
   left: 0;
   transform: none;
@@ -2921,6 +2926,9 @@ footer #since {
   padding: 0;
   list-style: none;
 }
+.post-toc ol .toc-item {
+  overflow: hidden;
+}
 .post-toc ol .toc-item .toc-child {
   overflow: hidden;
   transition: max-height 0.3s ease-in;
@@ -2928,12 +2936,14 @@ footer #since {
 }
 .post-toc ol .toc-item.active > .toc-link {
   color: var(--primary, #afb42b);
-  border-bottom: 1px solid var(--primary, #afb42b);
+  white-space: pre-wrap;
+  text-decoration: var(--primary, #afb42b) underline;
 }
 .post-toc ol .toc-item.active > .toc-child {
   max-height: 1000px;
 }
 .post-toc .toc-link {
+  display: block;
   line-height: 1.8;
   font-weight: bold;
   overflow: hidden;
