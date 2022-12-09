@@ -48,6 +48,8 @@
         list-style: none;
 
         .toc-item {
+            overflow: hidden;
+
             .toc-child {
                 overflow  : hidden;
                 transition: max-height .3s ease-in;
@@ -56,8 +58,10 @@
 
             &.active {
                 >.toc-link {
-                    color        : var(--primary, #afb42b);
-                    border-bottom: 1px solid var(--primary, #afb42b);
+                    color          : var(--primary, #afb42b);
+                    white-space    : pre-wrap;
+                    text-decoration: var(--primary, #afb42b) underline;
+                    //border-bottom  : 1px solid var(--primary, #afb42b);
                 }
 
                 >.toc-child {
@@ -68,6 +72,7 @@
     }
 
     .toc-link {
+        display         : block;
         line-height     : 1.8;
         font-weight     : bold;
         overflow        : hidden;
