@@ -1,4 +1,12 @@
 <script setup >
+const types = {
+    feat: "✨",
+    fix: "🐞",
+    perf: "🎈",
+    refactor: "🦄",
+    style: "🌈",
+    docs: "📃"
+}
 const props = defineProps({
     type: String,
     text: {
@@ -10,29 +18,34 @@ const props = defineProps({
 </script>
     
 <template>
-    <li class="log" :class="type">
-        <slot>{{ type }}：<span v-html="text"></span></slot>
+    <li class="log" :class="type" :title="type">
+        <slot>
+            <span class="type">{{ types[type] }}：</span>
+            <span v-html="text"></span>
+        </slot>
     </li>
 </template>
     
 <style lang="less" scoped>
 .log {
+    list-style: none;
+
     &.feat {
         color: #2d8cf0;
     }
 
     &.fix {
-        color: #ff2600;
+        color: #d9391b;
     }
 
     // 样式
     &.style {
-        color: #2db7f5;
+        color: #b86d3b;
     }
 
     // 优化
     &.refactor {
-        color: #19be6b;
+        color: #35b9d7;
     }
 }
 </style>
