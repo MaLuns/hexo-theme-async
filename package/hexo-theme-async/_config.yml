@@ -117,7 +117,7 @@ banner:
 # Sidebar settings
 sidebar:
   typedTextPrefix: I`m
-  typedText: [ 'Web Developer' ]
+  typedText: 
   info: 
     - key: sidebar.residence
       val: Mars
