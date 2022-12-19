@@ -1,0 +1,15 @@
+<!-- categories card -->
+<div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <h6>
+        <%- name %>
+        <span class="trm-number">
+            <%= length %>
+        </span>
+    </h6>
+    <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+    <a href="<%- url_for(path) %>." class="trm-label">
+        <%- __('title.more') %> 
+        <%- icon(theme.icons.next) %>
+    </a>
+</div>
+<!-- categories card end -->

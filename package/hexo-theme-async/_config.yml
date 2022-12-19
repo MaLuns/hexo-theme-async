@@ -278,3 +278,9 @@ datetime_foramt:
   archive:
     date: MM/DD
     time: HH:mm
+
+# Home page category card configuration
+categorie_card:
+  enable: true
+  len: 2
+  list:

@@ -1,28 +1,24 @@
 <!-- categories -->
+<% if(theme.categorie_card.enable) { %>
 <div class="row hidden-sm">
-    <%  site.categories.data.forEach((item,index) => { 
-        if(index<2) { 
+    <% 
+        let cards = [] 
+        if (Array.isArray(theme.categorie_card.list)) {
+            theme.categorie_card.list.forEach(title => {
+               let categorie = site.categories.data.find(item=> item.name === title)
+               if(categorie) cards.push(categorie)
+            })
+        } else {
+            cards = site.categories.data.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
+        }
     %>
+    <% cards.forEach((item,index) => {  %>
     <div class="col-lg-6">
-        <!-- categories card -->
-        <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
-            <h6>
-                <%- item.name %>
-                <span class="trm-number">
-                    <%= item.posts.length %>
-                </span>
-            </h6>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <a href="<%- url_for(item.path) %>." class="trm-label">
-                <%- __('title.more') %> 
-                <%- icon(theme.icons.next) %>
-            </a>
-        </div>
-        <!-- categories card end -->
+        <%- partial('../../_widget/categorie',{ name:item.name,length:item.length,path:item.path }) %>
     </div>
-    <% }
-        }) %>
+    <% }) %>
 </div>
+<% } %>
 <!-- categories end -->
 
 <!-- newest publications -->
