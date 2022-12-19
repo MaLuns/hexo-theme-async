@@ -596,7 +596,13 @@
             if (authorEl) {
               author = authorEl.innerText.replace('\n', '')
             }
-            let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${location.href}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
+
+            let originalLink = location.href
+            const originalLinkEl = document.getElementById('original-link')
+            if (originalLinkEl) {
+              originalLink = originalLinkEl.innerText.replace('\n', '')
+            }
+            let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${originalLink}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
             clipboardData.setData('text/plain', text + copyrightText);
           }
         });

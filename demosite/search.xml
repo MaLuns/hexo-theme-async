@@ -103,7 +103,7 @@ $$
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">  <span class="keyword">\left</span><span class="keyword">\&#123;</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;aligned&#125;</span><br><span class="line">      x=a<span class="keyword">\cos</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">      y=b<span class="keyword">\sin</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">    end&#123;aligned&#125;</span><br><span class="line">  <span class="keyword">\right</span>.</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>测试分类</category>
+        <category>测试分类2</category>
       </categories>
   </entry>
   <entry>
