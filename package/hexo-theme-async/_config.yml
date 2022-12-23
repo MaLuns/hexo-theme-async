@@ -121,17 +121,10 @@ sidebar:
   info: 
     - key: sidebar.residence
       val: Mars
-    - key: sidebar.city
-      val: WuHan
-    - key: sidebar.age
-      val: 18
   social:
     - name: Github
       icon: fab fa-github
       url: https://github.com
-    - name: Twitter
-      icon: fab fa-twitter
-      url: https://twitter.com
 
 # About page settings
 about:
