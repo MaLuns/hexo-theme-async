@@ -81,6 +81,9 @@ icons:
   close: fas fa-times
   search: fas fa-search
   reward: fas fa-hand-holding-usd
+  user_tag: fas fa-user-alt
+  toc_tag: fas fa-th-list
+
 
 # Top navigation menu
 top_bars:

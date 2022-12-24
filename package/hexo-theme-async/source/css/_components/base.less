@@ -112,13 +112,13 @@ p {
 }
 
 a.trm-label {
+
+    svg,
     i {
-        margin-top : -1px;
         margin-left: 10px
     }
 
-    .fa-arrow-right {
-        margin-top : -1px;
+    .arrow-right {
         margin-left: 5px;
         .transition-mixin();
     }
@@ -126,11 +126,10 @@ a.trm-label {
     &:focus,
     &:hover {
         outline: inherit;
+        color  : var(--primary, #afb42b);
 
-        color: var(--primary, #afb42b);
-
-        .fa-arrow-right,
-        .fa-arrow-right {
+        .arrow-right,
+        .arrow-right {
             transform: translateX(5px);
             color    : inherit
         }

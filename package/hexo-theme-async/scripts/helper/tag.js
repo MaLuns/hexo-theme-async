@@ -20,12 +20,13 @@ function iconHelper(...args) {
     const type = hexo.theme.config?.assets?.icons?.type || 'font'
     const icons = args.flat(Infinity).filter(item => typeof item === 'string' || item instanceof String)
     if (type === 'symbol') {
-        return `<svg class="symbol-icon" aria-hidden="true">
-    <use xlink:href="#${icons.join(" ")}"></use>
+        let id = icons.shift()
+        return `<svg class="symbol-icon ${icons.join(" ")}" aria-hidden="true">
+    <use xlink:href="#${id}"></use>
 </svg>`;
 
     } else {
-        return `<i class="${icons.join(" ")}"></i>`
+        return `<i class="iconfont ${icons.join(" ")}"></i>`
     }
 }
 
