@@ -1,19 +1,16 @@
 :root {
-    .trm-white-icon {
+    .trm-dark-icon {
         display: none
     }
 
     &.dark {
+        .trm-dark-icon {
+            display: inherit
+        }
 
-        .trm-black-icon {
+        .trm-light-icon {
             display: none
         }
-
-        .trm-white-icon {
-            display: inline;
-            opacity: .4
-        }
-
     }
 }
 
