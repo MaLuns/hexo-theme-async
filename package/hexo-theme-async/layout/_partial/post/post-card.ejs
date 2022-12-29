@@ -2,13 +2,13 @@
     <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
         <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
             <%  let coverURl = post.cover ? 
-                url_for(post.cover) :  (
+                post.cover :  (
                 post.photos && post.photos.length ? 
-                url_for(post.photos[0]) : 
-                ( theme.cover.type === 'img' ?  url_for(theme.cover.default) : false)
+                post.photos[0] : 
+                ( theme.cover.type === 'img' ?  theme.cover.default : false)
             ) %>
             <% if(coverURl) { %>
-                <img src="<%- coverURl %>" alt="cover">
+                <%- swich_imgs(coverURl, { alt: "cover" }) %>
             <% } else { %>
                 <div class="trm-cover-date">
                     <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>

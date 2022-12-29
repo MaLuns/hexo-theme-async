@@ -2,12 +2,14 @@
     <% if(type === 'img'){ 
         let style = `object-position:${position || 'top'};object-fit:${fit || 'cover'};` %>
     <!-- banner cover -->
-    <% if (Array.isArray(bgurl)) { %>
-        <img style="<%- style %>" src="<%= url_for(bgurl[0]) %>" alt="banner" class="trm-banner-cover trm-light-icon" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
-        <img style="<%- style %>" src="<%= url_for(bgurl[1] || bgurl[0]) %>" alt="banner" class="trm-banner-cover trm-dark-icon" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
-    <% } else { %>
-        <img style="<%- style %>" src="<%= url_for(bgurl) %>" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
-    <% } %>
+    <%- swich_imgs(bgurl,{
+        style:style,
+        alt:"banner",
+        class:"trm-banner-cover",
+        "data-scroll":true,
+        "data-scroll-direction":"vertical",
+        "data-scroll-speed":"-3"
+    }) %>
     <!-- banner cover end -->
     <% } else if(type === 'slideshow' && Array.isArray(bgurl)) { %>
     <!-- banner slideshow cover-->

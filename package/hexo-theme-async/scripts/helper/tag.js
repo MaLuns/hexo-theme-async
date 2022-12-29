@@ -45,6 +45,27 @@ function jssHelper(src, props = {}) {
     return result
 }
 
+function swichImgsHelper(srcs, props = {}) {
+    const classMap = ['trm-light-icon', 'trm-dark-icon']
+    if (Array.isArray(srcs)) {
+        srcs = srcs.filter(src => !!src)
+        if (srcs.length === 2) {
+            return srcs.map((src, index) => {
+                return htmlTag('img', {
+                    ...props,
+                    class: `${props.class || ''} ${classMap[index] || ''}`,
+                    src: url_for.call(hexo, src),
+                })
+            }).join(' ')
+        } else {
+            return htmlTag('img', { ...props, src: url_for.call(hexo, srcs[0]) })
+        }
+    } else {
+        return htmlTag('img', { ...props, src: url_for.call(hexo, srcs) })
+    }
+}
+
 hexo.extend.helper.register('jss', jssHelper)
 hexo.extend.helper.register('icon', iconHelper)
 hexo.extend.helper.register('tag', tagHelper)
+hexo.extend.helper.register('swich_imgs', swichImgsHelper)

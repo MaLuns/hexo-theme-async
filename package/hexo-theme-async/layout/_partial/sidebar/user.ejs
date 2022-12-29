@@ -1,8 +1,10 @@
 <!-- card header -->
 <div class="trm-mc-header">
     <div class="trm-avatar-frame trm-mb-20">
-        <img class="trm-avatar trm-light-icon" src="<%- url_for(theme.user.avatar) %>" alt="Avatar">
-        <img class="trm-avatar trm-dark-icon" src="<%- url_for(theme.user.dark_avatar || theme.user.avatar) %>" alt="Avatar">
+        <%- swich_imgs([theme.user.avatar,theme.user.dark_avatar], {
+            alt:"Avatar",
+            class:"trm-avatar"
+        }) %>
     </div>
     <h5 class="trm-name trm-mb-15">
         <%= theme.user.name %>
