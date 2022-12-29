@@ -1,0 +1,33 @@
+.trm-message {
+    position        : fixed;
+    top             : 30px;
+    z-index         : 1000;
+    left            : 0;
+    right           : 0;
+    margin          : auto;
+    width           : fit-content;
+    padding         : 6px 20px;
+    border-radius   : 30px;
+    box-shadow      : 2px 2px 9px 0 #0000005e;
+    transition      : all .2s;
+
+    &.success {
+        color           : var(--theme-bg-color, #fcfcfe);
+        background-color: var(--primary, #afb42b);
+    }
+
+    &.warning {
+        background-color: #fb9a2c;
+        color           : #fff;
+    }
+
+    &.info {
+        background-color: #6a7a9a;
+        color           : #fff;
+    }
+
+    &.error {
+        background-color: #ff5959;
+        color           : #fff;
+    }
+}

@@ -45,12 +45,23 @@ pre,
         table-layout: fixed;
     }
 
-    .opt-btn {
+    .code-btn {
         position   : absolute;
         top        : 0;
-        right      : 0px;
+        right      : 10px;
         height     : 30px;
         line-height: 30px;
+        cursor     : pointer;
+        user-select: none;
+        font-size  : 12px;
+        color      : #adadad;
+        opacity    : 0;
+    }
+
+    &:hover {
+        .code-btn {
+            opacity: 1;
+        }
     }
 
     .gutter {
@@ -67,7 +78,7 @@ pre,
     }
 
     .code {
-        padding   : 10px 14px !important;
+        padding   : 10px !important;
         color     : #eee;
         background: #303030;
         width     : 100%;

@@ -23,7 +23,10 @@ hexo.extend.helper.register('async_config', function () {
             author: __('post.copyright.author') + __('symbol.colon'),
             copyright_link: __('post.copyright.link') + __('symbol.colon'),
             copyright_license_title: __('post.copyright.license_title') + __('symbol.colon'),
-            copyright_license_content: __('post.copyright.license_content')
+            copyright_license_content: __('post.copyright.license_content'),
+            copy_button: __('post.copy.button'),
+            copy_success: __('post.copy.success'),
+            copy_failure: __('post.copy.failure')
         },
         creative_commons: theme.creative_commons,
         swup: theme.swup,
