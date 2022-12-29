@@ -8,16 +8,19 @@
 }
 
 .fancybox__thumbs {
-    background-color: var(--theme-bg-color, #fcfcfe);
-    border-radius   : 0 0 10px 10px;
-    width           : calc(100% - 20px);
-    left            : 10px;
-    bottom          : 10px;
+    background-color       : var(--theme-bg-color, #fcfcfe);
+    border-radius          : 0 0 10px 10px;
+    width                  : calc(100% - 20px);
+    left                   : 10px;
+    bottom                 : 10px;
+    z-index                : 10;
+    --fancybox-accent-color: var(--primary);
+
+    .fancybox-thumbs__list {
+        background-color: var(--theme-bg-color, #fcfcfe)
+    }
 }
 
-.fancybox__thumbs .fancybox-thumbs__list {
-    background-color: var(--theme-bg-color, #fcfcfe)
-}
 
 .fancybox__thumbs-active:before {
     border: solid 3px var(--primary, #afb42b) !important
@@ -50,16 +53,17 @@
 }
 
 .fancybox__toolbar {
+    position       : relative;
     border-radius  : 10px 10px 0 0;
     width          : calc(100% - 20px);
     left           : 10px;
     top            : 10px;
-    height         : 80px;
+    height         : 90px;
     background     : var(--theme-bg-color, #fcfcfe);
     display        : flex;
     justify-content: flex-end;
     align-items    : center;
-    padding        : 0 40px;
+    padding        : 0 20px;
     text-shadow    : none;
 }
 
@@ -86,11 +90,26 @@
 }
 
 @media(max-width:992px) {
+    .fancybox__toolbar {
+        top  : 0;
+        left : 0;
+        width: 100%;
+    }
+
+    .fancybox__thumbs {
+        left  : 0;
+        bottom: 0;
+        width : 100%;
+    }
 
     .fancybox__toolbar,
     .fancybox__thumbs {
         border-radius: 0;
         padding      : 0 20px
+    }
+
+    .fancybox__slide {
+        padding: 8px;
     }
 
     .fancybox__infobar {

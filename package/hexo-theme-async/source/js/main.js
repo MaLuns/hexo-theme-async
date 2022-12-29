@@ -281,8 +281,12 @@
     InitFancybox() {
       if (window.Fancybox) {
         Fancybox.bind("[data-fancybox]");
-        Fancybox.bind('[data-fancybox="gallery"]');
-        Fancybox.bind('[data-fancybox="portfolio"]');
+        Fancybox.bind('[data-fancybox="light"],[data-fancybox="article"]', {
+          groupAll: true,
+        });
+        Fancybox.bind('[data-fancybox="dark"],[data-fancybox="article"]', {
+          groupAll: true,
+        });
         Fancybox.defaults.Hash = false;
       }
     },
@@ -319,8 +323,15 @@
       if (window.Fancybox) {
         utils.qa("article img").forEach((img) => {
           let span = document.createElement("span");
-          span.dataset.fancybox = "gallery"
-          span.dataset.src = img.src;
+          if (img.classList.contains('trm-light-icon')) {
+            span.dataset.fancybox = "light"
+          } else if (img.classList.contains('trm-dark-icon')) {
+            span.dataset.fancybox = "dark"
+          } else {
+            span.dataset.fancybox = "article"
+          }
+
+          span.dataset.src = img.dataset.src || img.src;
           utils.wrap(img, span)
         })
       }
