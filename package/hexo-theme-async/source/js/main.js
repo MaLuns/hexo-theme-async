@@ -644,7 +644,7 @@
     message(title, type = 'success') {
       let message = document.createElement('div')
       message.className = `trm-message ${type}`
-      message.style.top = `${30 + utils._message.length * 50}px`
+      message.style.top = `${30 + utils._message.length * 60}px`
       message.innerText = title
       document.body.append(message)
       utils._message.push(message)
@@ -652,7 +652,7 @@
         utils._message = utils._message.filter(item => item !== message)
         document.body.removeChild(message)
         utils._message.forEach((item, index) => {
-          item.style.top = `${30 + index * 50}px`
+          item.style.top = `${30 + index * 60}px`
         })
       }, 2000)
     }

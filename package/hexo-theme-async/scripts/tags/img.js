@@ -41,7 +41,7 @@ hexo.extend.tag.register('imgs', function (args) {
                 height = attrs.shift();
             }
         }
-        console.log(attrs.join("'"));
+        
         const match = rMeta.exec(attrs.join("'"));
 
         // Find image title and alt
