@@ -1,0 +1,9 @@
+<% let banner = page.banner || {}; %>
+<%- partial('./_partial/main',  {
+    banner: partial('./_partial/banner',  {
+        ...theme.banner.default,
+        bannerTitle: page.title,
+        ...banner
+    }),
+    content: page.content 
+}) %>
