@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://hexo-theme-async.imalun.com/github_star.png">
 <meta property="og:image" content="https://markdown.com.cn/images/i-am-svg.svg">
 <meta property="article:published_time" content="2022-09-21T15:25:29.000Z">
-<meta property="article:modified_time" content="2022-12-23T10:13:52.771Z">
+<meta property="article:modified_time" content="2022-12-30T06:44:59.760Z">
 <meta property="article:author" content="白云苍狗">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo-theme-async.imalun.com/github_star.png">
@@ -75,7 +75,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=1.1.1" id="trm-switch-style">
@@ -126,9 +126,9 @@
     <!-- change mode preloader -->
     <div class="trm-mode-swich-animation-frame">
     <div class="trm-mode-swich-animation">
-        <i class="i-sun"><i class="far fa-sun"></i></i>
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
         <div class="trm-horizon"></div>
-        <i class="i-moon"><i class="far fa-moon"></i></i>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
     </div>
 </div>
     <!-- change mode preloader end -->
@@ -147,7 +147,7 @@
 			<!-- logo -->
 			<a href="/demosite/" class="trm-logo-frame trm-anima-link">
 				
-					<img src="/demosite/img/favicon.svg" alt="logo">
+					<img alt="logo" src="/demosite/img/favicon.svg">
 				
 				
 					<div class="trm-logo-text">
@@ -192,6 +192,13 @@
 							
 						</li>
 						
+						<li class="menu-item-has-children ">
+							<a  href="/demosite/customize_page/" target="">
+								自定义
+							</a>
+							
+						</li>
+						
 					</ul>
 				</nav>
 			</div>
@@ -202,10 +209,10 @@
 			<div class="trm-mode-switcher-place">
 				<!-- <div class="trm-hidden-switcher"> -->
 					<div class="trm-mode-switcher">
-					  <i class="far fa-sun"></i>
+					  <i class="iconfont far fa-sun"></i>
 					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
 					  <label class="trm-swich" for="trm-swich"></label>
-					  <i class="far fa-moon"></i>
+					  <i class="iconfont far fa-moon"></i>
 					</div>
 				  <!-- </div> -->
 			</div>
@@ -215,7 +222,7 @@
 			
 				
 				<div id="trm-search-btn" class="trm-search-btn">
-					<i class="fas fa-search"></i>
+					<i class="iconfont fas fa-search"></i>
 				</div>
 				 
 			 
@@ -235,7 +242,7 @@
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
     <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" src="/demosite/img/banner.png" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3" src="/demosite/img/banner.png">
     <!-- banner cover end -->
     
 
@@ -298,13 +305,19 @@
     
         <div class="trm-tabs" id="sidebar-tabs">
            <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
-                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
-                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+                <div data-to="tabs-user" class="trm-tabs-nav-item">
+                    <i class="iconfont fas fa-user-alt"></i>
+                </div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active">
+                    <i class="iconfont fas fa-th-list"></i>
+                </div>
            </div>
             <div name="tabs-user" class="trm-tabs-item">
                 <!-- card header -->
 <div class="trm-mc-header">
-    <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/demosite/img/avatar.jpg" alt="Avatar"> </div>
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/demosite/img/avatar.jpg">
+    </div>
     <h5 class="trm-name trm-mb-15">
         ThemeAsync
     </h5>
@@ -325,11 +338,11 @@
 <div class="trm-social">
     
         <a href="https://github.com/MaLuns/Hexo-theme-async" title="Github" rel="nofollow" target="_blank">
-            <i class="fab fa-github"></i>
+            <i class="iconfont fab fa-github"></i>
         </a>
     
         <a href="https://www.npmjs.com/package/hexo-theme-async" title="Npm" rel="nofollow" target="_blank">
-            <i class="fab fa-npm"></i>
+            <i class="iconfont fab fa-npm"></i>
         </a>
     
 </div>
@@ -371,19 +384,19 @@
                     <div class="row hidden-sm">
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
-            <i class="far fa-calendar-alt trm-icon"></i><br>
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
             09/21
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
-            <i class="far fa-clock trm-icon"></i><br>
+            <i class="iconfont far fa-clock trm-icon"></i><br>
             15:25
         </div>
     </div>
     <div class="col-sm-4">
         <div id="post-author" class="trm-card trm-label trm-label-light text-center">
-            <i class="far fa-user trm-icon"></i><br>
+            <i class="iconfont far fa-user trm-icon"></i><br>
             白云苍狗
         </div>
     </div>
@@ -466,10 +479,10 @@
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>如果在一个行内需要引用代码，只要用反引号引起来就好，如下：</p>
 <p>Use the <code>printf()</code> function.</p>
 <p>在需要高亮的代码块的前一行及后一行使用三个反引号，同时<strong>第一行反引号后面表示代码块所使用的语言</strong>，如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// FileName: HelloWorld.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">  <span class="comment">// Java 入口程序，程序从此入口</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello,World!&quot;</span>); <span class="comment">// 向控制台打印一条语句</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// FileName: HelloWorld.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">  <span class="comment">// Java 入口程序，程序从此入口</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello,World!&quot;</span>); <span class="comment">// 向控制台打印一条语句</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>diff 不能同时和其他语言的高亮同时显示，使用效果如下:</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+ 新增项</span></span><br><span class="line"><span class="deletion">- 删除项</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ 新增项</span></span><br><span class="line"><span class="deletion">- 删除项</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>行内公式使用方法：\(ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\)</p>
 <p>块公式使用方法如下：</p>
@@ -480,7 +493,7 @@
 <li><input disabled="" type="checkbox"> Contact the media</li>
 </ul>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="注音标签"><a href="#注音标签" class="headerlink" title="注音标签"></a>注音标签</h3><p><ruby>喜大普奔<rt>hē hē hē hē</rt></ruby></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span>喜大普奔<span class="tag">&lt;<span class="name">rt</span>&gt;</span>hē hē hē hē<span class="tag">&lt;/<span class="name">rt</span>&gt;</span><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span>喜大普奔<span class="tag">&lt;<span class="name">rt</span>&gt;</span>hē hē hē hē<span class="tag">&lt;/<span class="name">rt</span>&gt;</span><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="details"><a href="#details" class="headerlink" title="details"></a>details</h3><details>
   <summary>Summary</summary>
@@ -491,7 +504,7 @@
     <div class="trm-reward">
         
             <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
-                <i class="fas fa-hand-holding-usd"></i>
+                <i class="iconfont fas fa-hand-holding-usd"></i>
             </span>
         
         <p class="trm-reward-comment">我很可爱，请给我钱</p>
@@ -546,7 +559,7 @@
         <a href="/demosite/2022/09/22/katex/" class="trm-cover-frame trm-anima-link">
             
             
-                <img src="/demosite/img/block.jpg" alt="cover">
+                <img alt="cover" src="/demosite/img/block.jpg">
             
         </a>
         <div class="trm-card-descr">
@@ -577,7 +590,7 @@
         <a href="/demosite/2022/09/21/hello-world/" class="trm-cover-frame trm-anima-link">
             
             
-                <img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="cover">
+                <img alt="cover" class=" trm-light-icon" src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png"> <img alt="cover" class=" trm-dark-icon" src="https://th.wallhaven.cc/small/k7/k7q9m7.jpg">
             
         </a>
         <div class="trm-card-descr">
@@ -675,13 +688,13 @@
   <!-- app wrapper end -->
 
   <div id="trm-back-top" class="trm-back-top">
-    <i class="fas fa-arrow-up"></i>
+    <i class="iconfont fas fa-arrow-up"></i>
 </div>
   
 <div class="trm-search-popup">
     <div class="trm-search-header">
         <span class="trm-search-popup-btn-close">
-            <i class="fas fa-times"></i>
+            <i class="iconfont fas fa-times"></i>
         </span>
     </div>
     <div class="form trm-search-form">

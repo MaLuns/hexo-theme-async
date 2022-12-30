@@ -281,8 +281,12 @@
     InitFancybox() {
       if (window.Fancybox) {
         Fancybox.bind("[data-fancybox]");
-        Fancybox.bind('[data-fancybox="gallery"]');
-        Fancybox.bind('[data-fancybox="portfolio"]');
+        Fancybox.bind('[data-fancybox="light"],[data-fancybox="article"]', {
+          groupAll: true,
+        });
+        Fancybox.bind('[data-fancybox="dark"],[data-fancybox="article"]', {
+          groupAll: true,
+        });
         Fancybox.defaults.Hash = false;
       }
     },
@@ -319,8 +323,15 @@
       if (window.Fancybox) {
         utils.qa("article img").forEach((img) => {
           let span = document.createElement("span");
-          span.dataset.fancybox = "gallery"
-          span.dataset.src = img.src;
+          if (img.classList.contains('trm-light-icon')) {
+            span.dataset.fancybox = "light"
+          } else if (img.classList.contains('trm-dark-icon')) {
+            span.dataset.fancybox = "dark"
+          } else {
+            span.dataset.fancybox = "article"
+          }
+
+          span.dataset.src = img.dataset.src || img.src;
           utils.wrap(img, span)
         })
       }
@@ -607,6 +618,43 @@
           }
         });
       }
+    },
+    InitCodeBtn() {
+      const { i18n } = window.ASYNC_CONFIG
+      utils.qa('.highlight').forEach(element => {
+        const div = document.createElement("div");
+        div.className = 'code-btn'
+        const span = document.createElement('span')
+        span.innerText = i18n.copy_button
+        span.addEventListener('click', function (e) {
+          try {
+            let code = element.querySelector('.code')
+            if (!code) code = element.querySelector('table')
+            navigator.clipboard.writeText(code.innerText);
+            utils.message(i18n.copy_success)
+          } catch (error) {
+            utils.message(i18n.copy_failure, 'warning')
+          }
+        })
+        div.append(span)
+        element.append(div)
+      });
+    },
+    _message: [],
+    message(title, type = 'success') {
+      let message = document.createElement('div')
+      message.className = `trm-message ${type}`
+      message.style.top = `${30 + utils._message.length * 60}px`
+      message.innerText = title
+      document.body.append(message)
+      utils._message.push(message)
+      setTimeout(() => {
+        utils._message = utils._message.filter(item => item !== message)
+        document.body.removeChild(message)
+        utils._message.forEach((item, index) => {
+          item.style.top = `${30 + index * 60}px`
+        })
+      }, 2000)
     }
   }
 
@@ -641,6 +689,9 @@
 
     /* Work with pictures in articles */
     utils.InitPictures()
+
+    /* Work with code blocks in articles */
+    utils.InitCodeBtn()
 
     /* loading animate */
     utils.q('html').classList.add('is-animating');
@@ -689,6 +740,9 @@
 
     /* Work with pictures in articles */
     utils.InitPictures()
+
+    /* Work with code blocks in articles */
+    utils.InitCodeBtn()
 
     /* preloader */
     utils.q(".trm-scroll-container").style.opacity = 1;
