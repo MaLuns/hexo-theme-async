@@ -6,7 +6,7 @@
 
 - `keywords`：关键字，用于 meta 标签
 - `description`：描述，用于 meta 标签
-- `cover`：文章封面图 
+- `cover`：文章封面图，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
 - `sticky`：首页排序值
 - `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
 - `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
@@ -171,3 +171,15 @@ layout: 404
 ```
 
 在本地，你也可以直接访问 `/404.html` 查看效果。只有当你将其部署到 `GitHub Pages` 上，你访问不存在的页面才会显示。
+
+
+## 自定义页面 Customize Page
+可以直接在 `source` 目录下新建文件夹，然后添加 `md` 文件。自定义页面只会保留顶部菜单、背景区域、左侧个人信息（如果不想要个人信息，可以页面设置为 `single_column: true`）。
+
+``` yaml
+---
+title: 自定义页面
+single_column: true
+---
+```
+在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)

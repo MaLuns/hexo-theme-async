@@ -3,6 +3,28 @@
         "large_version": "v1.2.x",
         "children": [
             {
+                "version": "1.2.11",
+                "date": "2022-12-30",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "支持复制代码片段"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "支持根据主题模式设置黑白两种logo、文章图片、封面等"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "支持自定义页面"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化代码片段样式"
+                    }
+                ]
+            },
+            {
                 "version": "1.2.9",
                 "date": "2022-12-23",
                 "logs": [

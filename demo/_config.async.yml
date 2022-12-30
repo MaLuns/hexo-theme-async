@@ -11,7 +11,12 @@ top_bars:
     url: /links/
   - title: menu.about
     url: /about/
+  - title: 自定义
+    url: /customize_page/
 
+banner:
+  index:
+    bgurl: [/img/bg.jpg,/img/banner.png]
 
 sidebar:
   typedTextPrefix: I`m

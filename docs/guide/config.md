@@ -62,6 +62,7 @@ theme:
 用于 logo、icon、PWA 安装图标配置。
 
 - `logo`：顶部 logo
+- `dark_logo`：顶部 logo，暗黑模式时显示
 - `icon16`：icon 16*16
 - `icon32`：icon 32*32
 - `appleTouchIcon`：iOS 添加到桌面是图标
@@ -162,6 +163,7 @@ assets:
 - `email`：邮箱
 - `domain`：域名
 - `avatar`：头像
+- `dark_avatar`：头像，黑暗主题时显示
 - `describe`：网站简介
 - `ruleText`：友链交换规则
 - ~~`birthDay`：博客计时开始时间 v1.1.7 弃用~~
@@ -253,7 +255,7 @@ sidebar:
 
 - `default`：默认配置
     - `type`：横幅类型 img、slideshow、video
-    - `bgurl`：背景图地址，如果 type 是 slideshow，需要为数组
+    - `bgurl`：背景图地址，如果 type 是 slideshow，必须为数组。如果 type 是 img 时，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
     - `bannerTitle`：横幅上标题
     - `bannerText`：横幅描述
     - `position`： 同 CSS object-position
