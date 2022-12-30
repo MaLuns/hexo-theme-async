@@ -52,4 +52,6 @@
 </div>
 <% } %>
 
-<%- partial('../../_widget/comment',{ titleHide: false }) %>
+<% if(page.comments) { %>
+    <%- partial('../../_third-party/comment/index') %>
+<% } %>
