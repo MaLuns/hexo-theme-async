@@ -95,6 +95,10 @@
                 display: none;
             }
         }
+
+        ul {
+            margin-top: 10px;
+        }
     }
 
     h1,
@@ -174,8 +178,15 @@
     }
 
     table {
-        border-collapse: collapse;
+        display        : table;
+        width          : 100%;
         border-spacing : 0;
+        border-collapse: collapse;
+        empty-cells    : show;
+
+        thead {
+            background: var(--tabele-thead-bg-color);
+        }
 
         tr {
             border: 0;
@@ -183,18 +194,29 @@
             th,
             td {
                 font-size: 16px;
-                border   : 1px solid #ccc;
+                border   : 1px solid var(--tabele-thead-border-color);
                 padding  : 5px 10px;
             }
         }
     }
 
     details {
+        padding: 10px;
+        border : 1px solid var(--tab-border-color);
+
+        &[open] {
+            summary {
+                margin: -10px -10px 10px;
+            }
+        }
+
         summary {
-            background-color: var(--body-bg-color, #00151f);
-            color           : var(--body-color, #7B7B7D);
-            padding         : 10px 20px;
-            margin-bottom   : 10px;
+            background : var(--tab-botton-bg);
+            color      : var(--tab-botton-color);
+            padding    : 10px 20px;
+            margin     : -10px;
+            cursor     : pointer;
+            user-select: none;
         }
     }
 
