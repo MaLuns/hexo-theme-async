@@ -48,11 +48,10 @@ assets:
       copy_tex:
         css: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css
         js: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js
-    bComments: [
-      //imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js,
-      //cdn.jsdelivr.net/npm/b-comments@0.0.13/dist/index.all.min.js
-    ]
+    bComments: [//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js,//cdn.jsdelivr.net/npm/b-comments@0.0.13/dist/index.all.min.js]
     twikoo: //cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js
+    flickr_justified_gallery: 
+      js: //cdn.jsdelivr.net/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css

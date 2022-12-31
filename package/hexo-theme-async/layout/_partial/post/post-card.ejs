@@ -8,7 +8,7 @@
                 ( theme.cover.type === 'img' ?  theme.cover.default : false)
             ) %>
             <% if(coverURl) { %>
-                <%- swich_imgs(coverURl, { alt: "cover" }) %>
+                <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
             <% } else { %>
                 <div class="trm-cover-date">
                     <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>

@@ -30,6 +30,10 @@ hexo.extend.helper.register('async_config', function () {
         },
         creative_commons: theme.creative_commons,
         swup: theme.swup,
+        plugin: {
+            flickr_justified_gallery: theme.assets.plugin.flickr_justified_gallery,
+            fancybox: theme.assets.plugin.fancybox
+        }
     }
 
     if (config.search) {

@@ -269,9 +269,16 @@
         if (immediate && !timeout) func.apply(context, args);
       };
     },
-    wrap(el, wrapper) {
+    wrap(el, wrapper, options = {}) {
+      if (typeof wrapper === 'string') {
+        wrapper = document.createElement(wrapper)
+        for (const [key, value] of Object.entries(options)) {
+          wrapper.setAttribute(key, value)
+        }
+      }
+
       el.parentNode.insertBefore(wrapper, el);
-      el.parentNode.removeChild(el);
+      /* el.parentNode.removeChild(el); */
       wrapper.appendChild(el);
     },
     urlFor(path) {
@@ -301,6 +308,32 @@
           item.style.top = `${30 + index * 60}px`
         })
       }, 2000)
+    },
+    loadScript(url) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url
+        script.setAttribute('async', 'false');
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function () {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(script)
+      })
+    },
+    isLoaded(key, url) {
+      return new Promise((resolve, reject) => {
+        if (window[key]) {
+          resolve();
+          return;
+        }
+        utils.loadScript(url).then(() => {
+          resolve()
+        })
+      })
     }
   }
 
@@ -348,18 +381,21 @@
     },
     InitPictures() {
       if (window.Fancybox) {
-        utils.qa("article img:not(.no-fancybox)").forEach((img) => {
-          let span = document.createElement("span");
-          if (img.classList.contains('trm-light-icon')) {
-            span.dataset.fancybox = "light"
-          } else if (img.classList.contains('trm-dark-icon')) {
-            span.dataset.fancybox = "dark"
-          } else {
-            span.dataset.fancybox = "article"
-          }
+        // 仅查找文章内图片
+        utils.qa("#article-container img:not(.no-fancybox)").forEach((img) => {
+          if (!img.parentNode.dataset.fancybox) {
+            let fancybox = "article"
+            if (img.classList.contains('trm-light-icon')) {
+              fancybox = "light"
+            } else if (img.classList.contains('trm-dark-icon')) {
+              fancybox = "dark"
+            }
 
-          span.dataset.src = img.dataset.src || img.src;
-          utils.wrap(img, span)
+            utils.wrap(img, 'div', {
+              'data-src': img.dataset.src || img.src,
+              'data-fancybox': fancybox
+            })
+          }
         })
       }
     },
@@ -687,6 +723,37 @@
           }
         })
       })
+    },
+    InitJustifiedGallery() {
+      const gallerys = utils.qa('.fj-gallery')
+      if (gallerys.length) {
+        gallerys.forEach(item => {
+          const imgList = item.querySelectorAll('img')
+          imgList.forEach(i => {
+            i.loading = "auto"
+            utils.wrap(i, 'div', {
+              class: 'fj-gallery-item',
+              'data-src': i.dataset.src || i.src,
+              'data-fancybox': 'gallery',
+            })
+          })
+        })
+
+        utils
+          .isLoaded('fjGallery', window.ASYNC_CONFIG.plugin.flickr_justified_gallery.js)
+          .then(() => {
+            gallerys.forEach((selector) => {
+              window.fjGallery(selector, {
+                itemSelector: '.fj-gallery-item',
+                rowHeight: 220,
+                gutter: 4,
+                onJustify: function () {
+                  this.$container.style.opacity = '1'
+                }
+              })
+            })
+          })
+      }
     }
   }
 
@@ -719,13 +786,16 @@
       });
     }
 
-    /* Work with pictures in articles */
+    /* Initialize album */
+    initFn.InitJustifiedGallery()
+
+    /* Initialize with pictures in articles */
     initFn.InitPictures()
 
-    /* Work with code blocks in articles */
+    /* Initialize with code blocks in articles */
     initFn.InitCodeBtn()
 
-    /* Work with tabs in articles */
+    /* Initialize the tabs in the article */
     initFn.InitTabs()
 
     /* loading animate */
@@ -773,13 +843,16 @@
     /* The blog runs long */
     window.show_date_time && window.show_date_time();
 
-    /* Work with pictures in articles */
+    /* Initialize album */
+    initFn.InitJustifiedGallery()
+
+    /* Initialize with pictures in articles */
     initFn.InitPictures()
 
-    /* Work with code blocks in articles */
+    /* Initialize with code blocks in articles */
     initFn.InitCodeBtn()
 
-    /* Work with tabs in articles */
+    /* Initialize with tabs in articles */
     initFn.InitTabs()
 
     /* preloader */
