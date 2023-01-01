@@ -2,6 +2,7 @@
 title: 自定义页面
 date: 2022-09-22 15:45:29
 single_column: true
+comments: false
 ---
 
 <div class="row">

@@ -167,6 +167,11 @@ Second Term
 
 ### details
 <details>
-  <summary>Summary</summary>
-  Content
+  <summary>Async 安装方法</summary>
+
+进入您的 Hexo 博客根目录，执行：
+
+``` bash
+npm i hexo-theme-async@latest
+```
 </details>

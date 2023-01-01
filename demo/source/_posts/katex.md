@@ -1,7 +1,6 @@
 ---
 title: KaTeX
 date: 2022-09-22 15:45:29
-categories: 测试分类2
 katex: true
 toc: false
 ---

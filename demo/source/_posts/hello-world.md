@@ -1,7 +1,7 @@
 ---
 title: Hello Theme Async
 date: 2022-09-21 15:08:29
-cover: [https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png,https://th.wallhaven.cc/small/k7/k7q9m7.jpg]
+cover: [https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png]
 sticky: 1
 ---
 ![1663833969157.png](https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png)_示例图_
