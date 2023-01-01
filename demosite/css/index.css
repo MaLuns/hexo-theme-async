@@ -30,6 +30,13 @@
   --card-bottom-card: 40px;
   --card-border-radius: 10px;
   --card-cover-bg-color: #e9e9e9;
+  --tabele-thead-bg-color: rgba(153, 169, 191, 0.1);
+  --tabele-thead-border-color: #eee;
+  --tab-border-color: #f1f1f1;
+  --tab-botton-bg: #f1f1f1;
+  --tab-botton-color: #7B7B7D;
+  --tab-button-hover-bg: #eeeeee;
+  --tab-button-active-bg: #ffffff;
 }
 :root.dark {
   --primary: #afb42b;
@@ -51,6 +58,13 @@
   --preloader-background: #dedee0;
   --top-bar-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
   --card-cover-bg-color: #162e38;
+  --tabele-thead-bg-color: #525f663d;
+  --tabele-thead-border-color: #ffffff1c;
+  --tab-border-color: #063c54;
+  --tab-botton-bg: #063c54;
+  --tab-botton-color: #dedee0;
+  --tab-button-hover-bg: #003146;
+  --tab-button-active-bg: #042838;
 }
 /* @media (prefers-color-scheme: dark) {
     :root {
@@ -1721,6 +1735,7 @@ blockquote:after {
   object-fit: cover;
   object-position: center;
   transform: scale(1.05);
+  margin: 0;
   transition: all 0.4s ease-in-out;
 }
 .trm-portfolio-item .trm-item-description {
@@ -2599,6 +2614,9 @@ footer #since {
 .trm-publication ul li:has(>input):before {
   display: none;
 }
+.trm-publication ul ul {
+  margin-top: 10px;
+}
 .trm-publication h1,
 .trm-publication h2,
 .trm-publication h3,
@@ -2668,8 +2686,14 @@ footer #since {
   font-size: 0.9em;
 }
 .trm-publication table {
-  border-collapse: collapse;
+  display: table;
+  width: 100%;
   border-spacing: 0;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+.trm-publication table thead {
+  background: var(--tabele-thead-bg-color);
 }
 .trm-publication table tr {
   border: 0;
@@ -2677,14 +2701,23 @@ footer #since {
 .trm-publication table tr th,
 .trm-publication table tr td {
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--tabele-thead-border-color);
   padding: 5px 10px;
 }
+.trm-publication details {
+  padding: 10px;
+  border: 1px solid var(--tab-border-color);
+}
+.trm-publication details[open] summary {
+  margin: -10px -10px 10px;
+}
 .trm-publication details summary {
-  background-color: var(--body-bg-color, #00151f);
-  color: var(--body-color, #7B7B7D);
+  background: var(--tab-botton-bg);
+  color: var(--tab-botton-color);
   padding: 10px 20px;
-  margin-bottom: 10px;
+  margin: -10px;
+  cursor: pointer;
+  user-select: none;
 }
 .trm-publication a {
   background: linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
@@ -2719,11 +2752,11 @@ footer #since {
   color: var(--primary, #afb42b);
 }
 /* 文章导航 */
-.trm-tabs .trm-tabs-nav {
+.trm-user-tabs .trm-tabs-nav {
   display: flex;
   justify-content: center;
 }
-.trm-tabs .trm-tabs-nav .trm-tabs-nav-item {
+.trm-user-tabs .trm-tabs-nav .trm-tabs-nav-item {
   border: 1px solid var(--primary, #afb42b);
   border-radius: 50%;
   width: 2.5rem;
@@ -2735,15 +2768,15 @@ footer #since {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
-.trm-tabs .trm-tabs-nav .trm-tabs-nav-item:hover,
-.trm-tabs .trm-tabs-nav .trm-tabs-nav-item.active {
+.trm-user-tabs .trm-tabs-nav .trm-tabs-nav-item:hover,
+.trm-user-tabs .trm-tabs-nav .trm-tabs-nav-item.active {
   background-color: var(--primary, #afb42b);
   color: #fff;
 }
-.trm-tabs .trm-tabs-item {
+.trm-user-tabs .trm-tabs-item {
   display: none;
 }
-.trm-tabs .trm-tabs-item.active {
+.trm-user-tabs .trm-tabs-item.active {
   display: block;
 }
 .post-toc .toc {
@@ -3182,6 +3215,83 @@ pre .deletion {
 .trm-message.error {
   background-color: #ff5959;
   color: #fff;
+}
+/* 标签页 */
+.trm-tabs {
+  position: relative;
+  margin: 0 0 20px;
+  border-right: 1px solid var(--tab-border-color);
+  border-bottom: 1px solid var(--tab-border-color);
+  border-left: 1px solid var(--tab-border-color);
+}
+.trm-tabs .trm-nav-tabs {
+  background: var(--tab-botton-bg);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.trm-tabs .trm-nav-tabs .trm-tab {
+  margin: 0;
+  padding: 0;
+}
+.trm-tabs .trm-nav-tabs .trm-tab button {
+  border: none;
+  background: var(--tab-botton-bg);
+  border-top: 2px solid var(--tab-border-color);
+  color: var(--tab-botton-color);
+  display: block;
+  line-height: 2;
+  padding: 8px 18px;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+.trm-tabs .trm-nav-tabs .trm-tab button i {
+  width: 1.5em;
+}
+.trm-tabs .trm-nav-tabs .trm-tab::before {
+  content: none;
+}
+.trm-tabs .trm-nav-tabs .trm-tab:not(.active) button:hover {
+  background: var(--tab-button-hover-bg);
+  border-top: 2px solid var(--tab-button-hover-bg);
+}
+.trm-tabs .trm-nav-tabs .trm-tab.active button {
+  background: var(--tab-button-active-bg);
+  border-top: 2px solid var(--primary);
+  cursor: default;
+}
+.trm-tabs .trm-tab-contents {
+  background: var(--tab-button-active-bg);
+}
+.trm-tabs .trm-tab-contents .trm-tab-item-content {
+  display: none;
+  padding: 20px;
+  position: relative;
+}
+.trm-tabs .trm-tab-contents .trm-tab-item-content.active {
+  display: block;
+}
+/* 相册排版 */
+.fj-gallery {
+  position: relative;
+  overflow: hidden;
+}
+.fj-gallery::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.fj-gallery .fj-gallery-item {
+  float: left;
+  top: 0;
+  left: 0;
+}
+.fj-gallery .fj-gallery-item > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
 }
 :root.dark {
   --ui-bg: #1d1d1d;
