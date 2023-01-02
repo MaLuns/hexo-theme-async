@@ -269,75 +269,15 @@
         if (immediate && !timeout) func.apply(context, args);
       };
     },
-    wrap(el, wrapper, options = {}) {
-      if (typeof wrapper === 'string') {
-        wrapper = document.createElement(wrapper)
-        for (const [key, value] of Object.entries(options)) {
-          wrapper.setAttribute(key, value)
-        }
-      }
-
+    wrap(el, wrapper) {
       el.parentNode.insertBefore(wrapper, el);
-      /* el.parentNode.removeChild(el); */
+      el.parentNode.removeChild(el);
       wrapper.appendChild(el);
     },
     urlFor(path) {
       if (/^(#|\/\/|http(s)?:)/.test(path)) return path;
       return (window.ASYNC_CONFIG.root + path).replace(/\/{2,}/g, '/')
     },
-    siblings: (ele, selector) => {
-      return [...ele.parentNode.children].filter((child) => {
-        if (selector) {
-          return child !== ele && child.matches(selector)
-        }
-        return child !== ele
-      })
-    },
-    _message: [],
-    message(title, type = 'success') {
-      let message = document.createElement('div')
-      message.className = `trm-message ${type}`
-      message.style.top = `${30 + utils._message.length * 60}px`
-      message.innerText = title
-      document.body.append(message)
-      utils._message.push(message)
-      setTimeout(() => {
-        utils._message = utils._message.filter(item => item !== message)
-        document.body.removeChild(message)
-        utils._message.forEach((item, index) => {
-          item.style.top = `${30 + index * 60}px`
-        })
-      }, 2000)
-    },
-    loadScript(url) {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = url
-        script.setAttribute('async', 'false');
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function () {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(script)
-      })
-    },
-    isLoaded(key, url) {
-      return new Promise((resolve, reject) => {
-        if (window[key]) {
-          resolve();
-          return;
-        }
-        utils.loadScript(url).then(() => {
-          resolve()
-        })
-      })
-    }
-  }
-
-  const initFn = {
     InitFancybox() {
       if (window.Fancybox) {
         Fancybox.bind("[data-fancybox]");
@@ -381,21 +321,18 @@
     },
     InitPictures() {
       if (window.Fancybox) {
-        // 仅查找文章内图片
-        utils.qa("#article-container img:not(.no-fancybox)").forEach((img) => {
-          if (!img.parentNode.dataset.fancybox) {
-            let fancybox = "article"
-            if (img.classList.contains('trm-light-icon')) {
-              fancybox = "light"
-            } else if (img.classList.contains('trm-dark-icon')) {
-              fancybox = "dark"
-            }
-
-            utils.wrap(img, 'div', {
-              'data-src': img.dataset.src || img.src,
-              'data-fancybox': fancybox
-            })
+        utils.qa("article img").forEach((img) => {
+          let span = document.createElement("span");
+          if (img.classList.contains('trm-light-icon')) {
+            span.dataset.fancybox = "light"
+          } else if (img.classList.contains('trm-dark-icon')) {
+            span.dataset.fancybox = "dark"
+          } else {
+            span.dataset.fancybox = "article"
           }
+
+          span.dataset.src = img.dataset.src || img.src;
+          utils.wrap(img, span)
         })
       }
     },
@@ -703,57 +640,21 @@
         element.append(div)
       });
     },
-    InitTabs() {
-      utils.qa('.trm-tabs .trm-tab > button').forEach(function (item) {
-        item.addEventListener('click', function (e) {
-          const $this = this
-          const $tabItem = $this.parentNode
-
-          if (!$tabItem.classList.contains('active')) {
-            const $tabContent = $tabItem.parentNode.nextElementSibling
-            const $siblings = utils.siblings($tabItem, '.active')[0]
-            $siblings && $siblings.classList.remove('active')
-            $tabItem.classList.add('active')
-            const tabId = $this.getAttribute('data-href').replace('#', '')
-            const childList = [...$tabContent.children]
-            childList.forEach(item => {
-              if (item.id === tabId) item.classList.add('active')
-              else item.classList.remove('active')
-            })
-          }
+    _message: [],
+    message(title, type = 'success') {
+      let message = document.createElement('div')
+      message.className = `trm-message ${type}`
+      message.style.top = `${30 + utils._message.length * 60}px`
+      message.innerText = title
+      document.body.append(message)
+      utils._message.push(message)
+      setTimeout(() => {
+        utils._message = utils._message.filter(item => item !== message)
+        document.body.removeChild(message)
+        utils._message.forEach((item, index) => {
+          item.style.top = `${30 + index * 60}px`
         })
-      })
-    },
-    InitJustifiedGallery() {
-      const gallerys = utils.qa('.fj-gallery')
-      if (gallerys.length) {
-        gallerys.forEach(item => {
-          const imgList = item.querySelectorAll('img')
-          imgList.forEach(i => {
-            i.loading = "auto"
-            utils.wrap(i, 'div', {
-              class: 'fj-gallery-item',
-              'data-src': i.dataset.src || i.src,
-              'data-fancybox': 'gallery',
-            })
-          })
-        })
-
-        utils
-          .isLoaded('fjGallery', window.ASYNC_CONFIG.plugin.flickr_justified_gallery.js)
-          .then(() => {
-            gallerys.forEach((selector) => {
-              window.fjGallery(selector, {
-                itemSelector: '.fj-gallery-item',
-                rowHeight: 220,
-                gutter: 4,
-                onJustify: function () {
-                  this.$container.style.opacity = '1'
-                }
-              })
-            })
-          })
-      }
+      }, 2000)
     }
   }
 
@@ -786,17 +687,11 @@
       });
     }
 
-    /* Initialize album */
-    initFn.InitJustifiedGallery()
+    /* Work with pictures in articles */
+    utils.InitPictures()
 
-    /* Initialize with pictures in articles */
-    initFn.InitPictures()
-
-    /* Initialize with code blocks in articles */
-    initFn.InitCodeBtn()
-
-    /* Initialize the tabs in the article */
-    initFn.InitTabs()
+    /* Work with code blocks in articles */
+    utils.InitCodeBtn()
 
     /* loading animate */
     utils.q('html').classList.add('is-animating');
@@ -811,31 +706,31 @@
     document.addEventListener('DOMContentLoaded', ready) : ready();
 
   /* swup */
-  window.ASYNC_CONFIG.swup && initFn.InitSwup();
+  window.ASYNC_CONFIG.swup && utils.InitSwup();
 
   /* menu */
-  initFn.InitMenu()
+  utils.InitMenu()
 
   /* theme mode switch */
-  initFn.InitThemeMode(true)
+  utils.InitThemeMode(true)
 
   /* counters */
-  initFn.InitCounter();
+  utils.InitCounter();
 
   /* locomotive scroll */
-  initFn.InitLocomotiveScroll()
+  utils.InitLocomotiveScroll()
 
   /* swiper */
-  initFn.InitSwiper()
+  utils.InitSwiper()
 
   /* fancybox */
-  initFn.InitFancybox()
+  utils.InitFancybox()
 
   /* toc */
-  initFn.InitToc()
+  utils.InitToc()
 
   /* copyright */
-  initFn.InitCopyright()
+  utils.InitCopyright()
   //#endregion
 
   //#region  Re/init
@@ -843,41 +738,35 @@
     /* The blog runs long */
     window.show_date_time && window.show_date_time();
 
-    /* Initialize album */
-    initFn.InitJustifiedGallery()
+    /* Work with pictures in articles */
+    utils.InitPictures()
 
-    /* Initialize with pictures in articles */
-    initFn.InitPictures()
-
-    /* Initialize with code blocks in articles */
-    initFn.InitCodeBtn()
-
-    /* Initialize with tabs in articles */
-    initFn.InitTabs()
+    /* Work with code blocks in articles */
+    utils.InitCodeBtn()
 
     /* preloader */
     utils.q(".trm-scroll-container").style.opacity = 1;
 
     /* menu */
-    initFn.InitMenu()
+    utils.InitMenu()
 
     /* theme mode switch */
-    initFn.InitThemeMode(true)
+    utils.InitThemeMode(true)
 
     /* counters */
-    initFn.InitCounter();
+    utils.InitCounter();
 
     /* locomotive scroll */
-    initFn.InitLocomotiveScroll()
+    utils.InitLocomotiveScroll()
 
     /* swiper */
-    initFn.InitSwiper()
+    utils.InitSwiper()
 
     /* fancybox */
-    initFn.InitFancybox()
+    utils.InitFancybox()
 
     /* toc */
-    initFn.InitToc()
+    utils.InitToc()
 
   });
   //#endregion
