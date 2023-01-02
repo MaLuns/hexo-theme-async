@@ -8,11 +8,13 @@ footer {
 
     .trm-footer-item {
         color          : var(--body-color, #7B7B7D);
-        height         : 1.6rem;
+        min-height     : 1.6rem;
+        line-height    : 1.6rem;
         font-size      : .9rem;
         display        : flex;
         justify-content: center;
         align-items    : center;
+        flex-wrap      : wrap;
 
         a {
             color: var(--primary, #afb42b);
@@ -27,5 +29,17 @@ footer {
     .footer-separator,
     #since {
         margin: 0 .5rem;
+    }
+
+    .footer-separator::before {
+        content: attr(data-separator);
+    }
+}
+
+@media(max-width:768px) {
+    footer {
+        .footer-separator::before {
+            content: '  ';
+        }
     }
 }

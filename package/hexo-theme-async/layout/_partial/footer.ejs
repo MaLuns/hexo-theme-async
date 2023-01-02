@@ -9,7 +9,7 @@
     <% if(theme.footer.copyrightYear) { %>
         <div class="trm-footer-item">
             <span>© <%- theme.footer.copyrightYear %>- <%- date(Date.now(), 'YYYY') %></span>
-            <span class="footer-separator">·</span>
+            <span class="footer-separator"data-separator=" · "></span>
             <span class="trm-accent-color"><%- theme.user.name %></span>
         </div>
     <% } %>
@@ -19,7 +19,7 @@
             <span>
                 <%- __('footer.powered','<a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>')%> v<%- hexo_env('version') %>
             </span>
-            <span class="footer-separator"> | </span>
+            <span class="footer-separator" data-separator=" | "></span>
             <span> 
                 <%- __('footer.theme') %> - 
                 <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
