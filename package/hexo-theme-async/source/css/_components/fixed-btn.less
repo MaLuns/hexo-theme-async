@@ -1,0 +1,87 @@
+.trm-fixed-container {
+    @height        : 200px;
+    position       : fixed;
+    right          : 20px;
+    height         : @height;
+    top            : calc(100vh - @height - 90px);
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-end;
+    align-items    : center;
+
+    .trm-fixed-btn {
+        position        : relative;
+        cursor          : pointer;
+        font-size       : 1.2rem;
+        width           : 2.5rem;
+        height          : 2.5rem;
+        line-height     : 2.5rem;
+        border-radius   : 50%;
+        text-align      : center;
+        background-color: var(--fixed-button-bg);
+        color           : var(--fixed-button-color);
+
+        .transition-mixin(color);
+
+        +.trm-fixed-btn {
+            margin-top: 10px;
+        }
+
+        &::before {
+            content         : attr(data-title);
+            position        : absolute;
+            background-color: var(--fixed-button-bg);
+            color           : var(--fixed-button-color);
+            font-size       : 0.8rem;
+            width           : max-content;
+            right           : 50px;
+            line-height     : 2;
+            top             : 50%;
+            padding         : 4px 10px;
+            border-radius   : 4px;
+            transform       : translate(80%, -50%) scale(0);
+            opacity         : 0;
+            pointer-events  : none;
+            .transition-mixin(all, .2s);
+        }
+
+        &:hover {
+            color: var(--primary-70);
+
+            &::before {
+                opacity  : 1;
+                transform: translate(0, -50%) scale(1);
+            }
+        }
+    }
+}
+
+
+// back top
+.trm-back-top {
+    position        : fixed;
+    right           : 30px;
+    bottom          : 30px;
+    font-size       : 1.2rem;
+    width           : 2.5rem;
+    height          : 2.5rem;
+    text-align      : center;
+    line-height     : 2.5rem;
+    border-radius   : 50%;
+    cursor          : pointer;
+    transform       : translateY(50px) scale(0);
+    z-index         : 20;
+    background-color: var(--fixed-button-bg);
+    color           : var(--fixed-button-color);
+    opacity         : 0;
+    .transition-mixin();
+
+    &.active-el {
+        opacity  : 1;
+        transform: translateY(0) scale(1);
+    }
+
+    &:hover {
+        color: var(--primary-70);
+    }
+}

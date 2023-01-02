@@ -82,6 +82,7 @@ icons:
   reward: fas fa-hand-holding-usd
   user_tag: fas fa-user-alt
   toc_tag: fas fa-th-list
+  read: fas fa-book-reader
 
 
 # Top navigation menu

@@ -5,13 +5,13 @@
     <div class="container">
         <div class="row">
             <% if(!page.single_column) { %>
-                <div class="col-lg-4 hidden-sm">
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
                     <!-- main card -->
                     <%- partial('./sidebar/index') %>
                     <!-- main card end -->
                 </div>
             <% } %>
-            <div class="<%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
+            <div id="page-content" class="<%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 

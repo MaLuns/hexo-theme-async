@@ -64,6 +64,9 @@ post:
     button: Copy
     success: Copied
     failure: Copy failed
+  read_mode:
+    open: Enter reading mode
+    exit: Exit reading mode
 
 symbol:
   comma: ', '

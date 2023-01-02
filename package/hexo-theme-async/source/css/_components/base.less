@@ -269,23 +269,6 @@ html {
     pointer-events: none;
 }
 
-// back top
-.trm-back-top {
-    position : fixed;
-    right    : 40px;
-    bottom   : 30px;
-    font-size: 1.5rem;
-    cursor   : pointer;
-    transform: translateY(50px) scale(0);
-    z-index  : 20;
-    .transition-mixin();
-
-    &.active-el {
-        opacity  : 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
 .katex-display {
     overflow-y: hidden;
     overflow-x: auto;

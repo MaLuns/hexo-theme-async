@@ -1,0 +1,7 @@
+<div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    <% if(is_post()) { %>
+        <div class="trm-fixed-btn" data-title="<%- __('post.read_mode.open') %>" onclick="switchReadMode()">
+            <%- icon(theme.icons.read) %>
+        </div>
+    <% } %>
+</div>

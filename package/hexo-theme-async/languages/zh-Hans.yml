@@ -64,6 +64,9 @@ post:
     button: 复制
     success: 复制成功
     failure: 复制失败
+  read_mode:
+    open: 进入阅读模式
+    exit: 退出阅读模式
 
 symbol:
   comma: ，

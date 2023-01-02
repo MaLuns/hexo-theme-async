@@ -334,7 +334,7 @@
           resolve()
         })
       })
-    }
+    },
   }
 
   const initFn = {
@@ -460,17 +460,6 @@
             mode_swich_animation.classList[type]('trm-active');
             document.documentElement.classList[type]('dark')
           }, 200);
-          /* if (this.checked) {
-            setTimeout(function () {
-              mode_swich_animation.classList.add('trm-active');
-              switch_style.href = switch_style.href.replace('style-light', 'style-dark');
-            }, 200);
-          } else {
-            setTimeout(function () {
-              mode_swich_animation.classList.remove('trm-active');
-              switch_style.href = switch_style.href.replace('style-dark', 'style-light');
-            }, 200);
-          } */
 
           setTimeout(function () {
             mode_swich_animation_frame.classList.remove('trm-active');
@@ -754,12 +743,31 @@
             })
           })
       }
+    },
+    switchReadMode() {
+      const $body = document.body
+      $body.classList.add('trm-read-mode')
+      const newEle = document.createElement('button')
+      newEle.type = 'button'
+      newEle.title = window.ASYNC_CONFIG.i18n.exit_read_mode
+      newEle.className = `${window.ASYNC_CONFIG.icons.close} trm-exit-readmode trm-glow`
+      $body.appendChild(newEle)
+
+      function clickFn() {
+        $body.classList.remove('trm-read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', clickFn)
+      }
+
+      newEle.addEventListener('click', clickFn)
     }
   }
 
   //#region init
   /* preloader */
   function ready() {
+    window.switchReadMode = initFn.switchReadMode
+
     /* window title */
     if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.favicon.visibilitychange) {
       window.originTitle = document.title;
@@ -840,6 +848,8 @@
 
   //#region  Re/init
   document.addEventListener("swup:contentReplaced", function () {
+    document.body.classList.remove('trm-read-mode')
+
     /* The blog runs long */
     window.show_date_time && window.show_date_time();
 
