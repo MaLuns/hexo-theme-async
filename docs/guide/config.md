@@ -85,7 +85,7 @@ favicon:
   hideText: (●—●)喔哟，崩溃啦！
 ```
 
-## CDN
+## 加速静态资源 CDN
 Content Delivery Network，统一加载网络资源，有利于提高网页加载速度。
 
 当您需要添加三方插件来个性您的博客时，您应该优先使用 CDN 加载文件。
@@ -453,6 +453,17 @@ cover:
   type: img
 ```
 
+### 上下篇文章
+
+- `enable`: 是否开启
+- `type`: 卡片类型，可选 `large` || `small`
+
+``` yaml
+post_pagination: 
+  enable: true 
+  type: large # large || small
+```
+
 ## 卡片 Card
 
 这里是一些关于页面中卡片配置合集。
@@ -524,6 +535,12 @@ icons:
   close: fas fa-times
   # 打赏 v1.1.7+
   reward: fas fa-hand-holding-usd
+  # 用户信息和文章目录切换 v1.2.10+
+  user_tag: fas fa-user-alt
+  toc_tag: fas fa-th-list
+  # 右下角固定按钮 v1.2.11+
+  read: fas fa-book-reader
+  arrows: fas fa-arrows-alt-h
 ```
 
 ## 自定义样式 Style

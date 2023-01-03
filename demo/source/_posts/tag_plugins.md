@@ -266,3 +266,55 @@ feature     : 在https://caniuse.com上搜索您想要的特性，然后单击�
 ```
 
 {% caniuse fetch %}
+
+## Flink 链接列表
+
+可在任何界面插入类似友情链接列表效果
+
+内容格式与友情链接界面一样，支持 yml 格式
+
+```yaml
+{% flink [key] [col] %}
+[content]
+{% endflink %}
+
+[content]   : 可选参数。链接数据，格式为 yaml。
+[key]       : 可选参数。Hexo 数据文件的 key，如果 content 为空，则会加载指定 key 数据。[content] 和 [key] 需要二选一。
+[col]       : 可选参数。链接列宽 1-12 ，默认为 6
+```
+示例
+
+```
+{% flink 12 %}
+- name: Hexo
+  url: //hexo.io/
+  image: //d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+  desc: 快速、简洁且高效的博客框架
+- name: 白云苍狗
+  url: //www.imalun.com/
+  image: //www.imalun.com/images/avatar.jpg
+  desc: 醒，亦在人间；梦，亦在人间
+{% endflink %}
+```
+
+{% flink 12 %}
+- name: Hexo
+  url: //hexo.io/
+  image: //d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+  desc: 快速、简洁且高效的博客框架
+- name: 白云苍狗
+  url: //www.imalun.com/
+  image: //www.imalun.com/images/avatar12312.jpg
+  desc: 醒，亦在人间；梦，亦在人间
+{% endflink %}
+
+或者使用 Hexo 数据文件
+
+```
+{% flink links 12 %}
+{% endflink %}
+```
+
+{% flink links 12 %}
+{% endflink %}
+

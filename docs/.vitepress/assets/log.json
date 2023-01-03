@@ -3,6 +3,36 @@
         "large_version": "v1.2.x",
         "children": [
             {
+                "version": "1.2.12",
+                "date": "开发中",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "支持阅读模式、单双栏切换"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加 tabs、imgs、gallery、caniuse、flink 标签插件"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "可调整上下篇文章卡片大小"
+                    },
+                    {
+                        "type": "style",
+                        "text": "优化 table、details 样式"
+                    },
+                    {
+                        "type": "style",
+                        "text": "优化 footer 移动端样式"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复自定义页面不显示评论插件"
+                    }
+                ]
+            },
+            {
                 "version": "1.2.11",
                 "date": "2022-12-30",
                 "logs": [

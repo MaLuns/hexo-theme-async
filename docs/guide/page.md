@@ -174,7 +174,14 @@ layout: 404
 
 
 ## 自定义页面 Customize Page
-可以直接在 `source` 目录下新建文件夹，然后添加 `md` 文件。自定义页面只会保留顶部菜单、背景区域、左侧个人信息（如果不想要个人信息，可以页面设置为 `single_column: true`）。
+
+新建自定义页面。像上面 友链、关于等页面也属于自定义页面，主要区别是它们可以通过约定配置，就可以输出主题内置页面样式，当然如果你想要个性化这些页面，也可以通过自定也页面覆盖主题的默认信行为。
+
+```bash
+hexo new page xxxxx
+```
+
+自定义页面只会保留顶部菜单、背景区域、左侧个人信息（如果不想要个人信息，可以将页面设置为单栏 `single_column: true`）。
 
 ``` yaml
 ---
@@ -182,4 +189,47 @@ title: 自定义页面
 single_column: true
 ---
 ```
-在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)
+在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)，以及主题内置的  [Tag Plugins](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)
+
+
+### 相册页
+
+相册页面只是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+
+然后使用标签外挂 [gallery](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
+
+``` markdown
+<div class="row">
+{% gallery '壁纸' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %}
+{% gallery '图库' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/rd/rddgwm.jpg %}
+</div>
+```
+<VersionBlock version="1.2.12">
+</VersionBlock>
+
+### 相册详情页
+
+相册详情页面也是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+
+然后使用标签外挂 [galleryGroup](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
+
+``` markdown
+{% galleryGroup %}
+{% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %}
+![](https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg)
+{% galleryItem https://th.wallhaven.cc/orig/85/85oylj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oylj.png %}
+{% galleryItem https://th.wallhaven.cc/orig/vq/vq9688.jpg https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/2y/2y8q7m.jpg https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png %}
+{% galleryItem https://th.wallhaven.cc/orig/85/85oyzj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png %}
+{% galleryItem https://th.wallhaven.cc/orig/7p/7p2589.jpg https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png %}
+{% galleryItem https://th.wallhaven.cc/orig/m3/m39kj1.jpg https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/6d/6dorxl.jpg https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/o5/o53ro5.jpg https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/l8/l831lq.jpg https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/zy/zy8ewv.jpg https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/3l/3lz1pd.jpg https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png %}
+{% galleryItem https://th.wallhaven.cc/orig/1p/1pkz5w.jpg https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png %}
+{% galleryItem https://th.wallhaven.cc/orig/p9/p9kdej.jpg https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg %}
+{% galleryItem https://th.wallhaven.cc/orig/x6/x68mrd.jpg https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg %}
+{% endgalleryGroup %}
+```

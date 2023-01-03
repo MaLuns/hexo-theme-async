@@ -162,6 +162,7 @@ footer:
   custom_text:
 
 # Here is a collection of articles related to configuration.
+#### Article configuration start ###
 # Reward (Donate)
 # If enable true, reward would be displayed in every posts and pages by default.
 # You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
@@ -201,12 +202,14 @@ cover:
 
 # The previous and the next article
 post_pagination: 
-  enable: false 
-  type: small # large || small
+  enable: true 
+  type: large # large || small
 
 # img loading="lazy"
 lazyload:
   enable: true
+
+#### Article configuration end ###
 
 # Page Visit Statistics
 webAnalytics:  
