@@ -199,6 +199,11 @@ cover:
   default: /img/block.jpg
   type: img
 
+# The previous and the next article
+post_pagination: 
+  enable: false 
+  type: small # large || small
+
 # img loading="lazy"
 lazyload:
   enable: true

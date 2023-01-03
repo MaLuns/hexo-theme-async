@@ -1,43 +1,41 @@
-<div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
-        <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
-            <%  let coverURl = post.cover ? 
-                post.cover :  (
-                post.photos && post.photos.length ? 
-                post.photos[0] : 
-                ( theme.cover.type === 'img' ?  theme.cover.default : false)
-            ) %>
-            <% if(coverURl) { %>
-                <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
-            <% } else { %>
-                <div class="trm-cover-date">
-                    <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>
-                    <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
-                </div>
-            <% } %>
-        </a>
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" <%- post.categories && post.categories.length ? url_for(post.categories.data[0].path) :'#.' %>">
-                    <%- post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')  %>
-                </a>
+<div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
+        <%  let coverURl = post.cover ? 
+            post.cover :  (
+            post.photos && post.photos.length ? 
+            post.photos[0] : 
+            ( theme.cover.type === 'img' ?  theme.cover.default : false)
+        ) %>
+        <% if(coverURl) { %>
+            <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
+        <% } else { %>
+            <div class="trm-cover-date">
+                <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>
+                <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
             </div>
-            <h5>
-                <a href="<%- url_for(post.path) %>" class="trm-anima-link">
-                    <%= post.title %>
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li><%= date(post.date,theme.datetime_foramt.post_card.date) %></li>
-                <li><%= date(post.date,theme.datetime_foramt.post_card.time) %></li>
-                <% if(theme.wordcount.enable && theme.wordcount.count){ %>
-                    <li><%= wordcount(post.content) %></li>
-                <% } %>
-                <% if(theme.wordcount.enable && theme.wordcount.time){ %>
-                    <li><%= min2read(post.content) %></li>
-                <% } %>
-            </ul>
+        <% } %>
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" <%- post.categories && post.categories.length ? url_for(post.categories.data[0].path) :'#.' %>">
+                <%- post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')  %>
+            </a>
         </div>
+        <h5>
+            <a href="<%- url_for(post.path) %>" class="trm-anima-link">
+                <%= post.title %>
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li><%= date(post.date,theme.datetime_foramt.post_card.date) %></li>
+            <li><%= date(post.date,theme.datetime_foramt.post_card.time) %></li>
+            <% if(theme.wordcount.enable && theme.wordcount.count){ %>
+                <li><%= wordcount(post.content) %></li>
+            <% } %>
+            <% if(theme.wordcount.enable && theme.wordcount.time){ %>
+                <li><%= min2read(post.content) %></li>
+            <% } %>
+        </ul>
     </div>
 </div>

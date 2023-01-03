@@ -1,0 +1,19 @@
+<div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-older-publication">
+        <%  let coverURl = post.cover ? 
+            post.cover : ( post.photos && post.photos.length ? post.photos : theme.cover.default )
+        %>
+        <a class="trm-op-top trm-anima-link" href="<%- url_for(post.path) %>">
+            <span class="trm-op-cover">
+                <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
+            </span>
+            <h6 class="trm-op-title"><%= post.title %></h6>
+        </a>
+        <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li><%= date(post.date,theme.datetime_foramt.post_card.date) %></li>
+            <li><%= date(post.date,theme.datetime_foramt.post_card.time) %></li>
+            <li><%- post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')  %></li>
+        </ul>
+    </div>
+</div>

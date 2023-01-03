@@ -31,7 +31,9 @@
         </h5>
     </div>
     <% page.posts.each(function(post,postIndex){ %>
-        <%- partial('../post/post-card',{ post }) %>
+        <div class="col-lg-6">
+            <%- partial('../post/post-card',{ post }) %>
+        </div>
     <% }) %>
 </div>
 <!-- newest publications end -->
