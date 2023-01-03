@@ -102,9 +102,6 @@ $$
 
 <figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">  <span class="keyword">\left</span><span class="keyword">\&#123;</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;aligned&#125;</span><br><span class="line">      x=a<span class="keyword">\cos</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">      y=b<span class="keyword">\sin</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">    end&#123;aligned&#125;</span><br><span class="line">  <span class="keyword">\right</span>.</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>测试分类2</category>
-      </categories>
   </entry>
   <entry>
     <title>Markdown</title>
@@ -202,11 +199,180 @@ $$
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span>喜大普奔<span class="tag">&lt;<span class="name">rt</span>&gt;</span>hē hē hē hē<span class="tag">&lt;/<span class="name">rt</span>&gt;</span><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="details"><a href="#details" class="headerlink" title="details"></a>details</h3><details>
-  <summary>Summary</summary>
-  Content
+  <summary>Async 安装方法</summary>
+
+<p>进入您的 Hexo 博客根目录，执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-theme-async@latest</span><br></pre></td></tr></table></figure>
 </details>]]></content>
       <categories>
         <category>测试分类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tag Plugins</title>
+    <url>/demosite/2022/12/30/tag_plugins/</url>
+    <content><![CDATA[<p>主题内置的一些标签插件说明和示例。</p>
+<span id="more"></span>
+
+<h2 id="Imgs-照片"><a href="#Imgs-照片" class="headerlink" title="Imgs 照片"></a>Imgs 照片</h2><p>用于适配黑白两种主题时显示图片，切换主题样式查看效果</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">imgs</span> [<span class="string">class</span> <span class="string">names</span>] [<span class="string">src1</span>] [<span class="string">src2</span>] [<span class="string">width</span>] [<span class="string">height</span>] [<span class="string">alt</span> <span class="string">text&#x27;title</span> <span class="string">text</span>] <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">src1</span>]          <span class="string">:</span> <span class="string">亮色主题时显示图片路径</span></span><br><span class="line">[<span class="string">src2</span>]          <span class="string">:</span> <span class="string">暗色主题时显示图片路径</span></span><br><span class="line">[<span class="string">width</span>]         <span class="string">:</span> <span class="string">宽</span></span><br><span class="line">[<span class="string">height</span>]        <span class="string">:</span> <span class="string">高</span></span><br><span class="line">[<span class="string">alt</span> <span class="string">text</span>]      <span class="string">:</span> <span class="string">alt</span> <span class="string">属性</span></span><br><span class="line">[<span class="string">title</span> <span class="string">text</span>]    <span class="string">:</span> <span class="string">title</span> <span class="string">属性</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用方式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% imgs trm-cover /img/1.jpg /img/2.jpg  alt text %&#125;</span><br><span class="line"></span><br><span class="line">等效于</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;trm-cover trm-light-icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/img/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;alt text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;trm-cover trm-dark-icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/img/2.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;alt text&quot;</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img class="trm-cover trm-light-icon" src="/demosite/img/1.jpg" title="text" alt loading="lazy"> <img class="trm-cover trm-dark-icon" src="/demosite/img/2.jpg" title="text" alt loading="lazy">
+
+
+<h2 id="Tabs-标签选项卡"><a href="#Tabs-标签选项卡" class="headerlink" title="Tabs 标签选项卡"></a>Tabs 标签选项卡</h2><p>从next主题移植</p>
+<p>使用方法</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">tabs</span> <span class="string">Unique</span> <span class="string">name</span>, [<span class="string">index</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">tab</span> [<span class="string">Tab</span> <span class="string">caption</span>]<span class="string">--&gt;</span></span><br><span class="line"><span class="string">任何内容(也支持内联标签)。</span></span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">endtab</span> <span class="string">--&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endtabs</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">Unique name   :</span> <span class="string">标签块标签的唯一名称，不带逗号。</span></span><br><span class="line">                <span class="string">如果名称中有空格，对于生成</span> <span class="string">id，所有空格将被破折号取代</span></span><br><span class="line">[<span class="string">index</span>]       <span class="string">:</span> <span class="string">tabs</span> <span class="string">默认选项卡的下标。</span></span><br><span class="line">                <span class="string">如果未指定，将选择第一个选项卡。</span></span><br><span class="line">                <span class="string">如果索引为</span> <span class="number">-1</span><span class="string">，则不会选择任何选项卡。</span></span><br><span class="line">                <span class="string">(可选参数)</span></span><br><span class="line"></span><br><span class="line">[<span class="string">Tab</span> <span class="string">caption</span>] <span class="string">:</span> <span class="string">当前标签的标题。</span></span><br><span class="line">                <span class="string">如果没有指定标题，带有标签索引后缀的唯一名称将被用作标签标题。</span></span><br><span class="line">                <span class="string">(可选参数)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="默认使用方式"><a href="#默认使用方式" class="headerlink" title="默认使用方式"></a>默认使用方式</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test1 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-tabs" id="test1"><ul class="trm-nav-tabs"><li class="trm-tab active"><button type="button" data-href="#test1-1">标签1</button></li><li class="trm-tab"><button type="button" data-href="#test1-2">标签2</button></li><li class="trm-tab"><button type="button" data-href="#test1-3">test1 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+
+<h3 id="预设选择tabs"><a href="#预设选择tabs" class="headerlink" title="预设选择tabs"></a>预设选择tabs</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test2, 3 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-tabs" id="test2"><ul class="trm-nav-tabs"><li class="trm-tab"><button type="button" data-href="#test2-1">test2 1</button></li><li class="trm-tab"><button type="button" data-href="#test2-2">test2 2</button></li><li class="trm-tab active"><button type="button" data-href="#test2-3">test2 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content" id="test2-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test2-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content active" id="test2-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+
+<h3 id="沒有预设tabs"><a href="#沒有预设tabs" class="headerlink" title="沒有预设tabs"></a>沒有预设tabs</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test3, -1 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-tabs" id="test3"><ul class="trm-nav-tabs"><li class="trm-tab"><button type="button" data-href="#test3-1">test3 1</button></li><li class="trm-tab"><button type="button" data-href="#test3-2">test3 2</button></li><li class="trm-tab"><button type="button" data-href="#test3-3">test3 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content" id="test3-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test3-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content" id="test3-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+
+<h2 id="Gallery-相册"><a href="#Gallery-相册" class="headerlink" title="Gallery 相册"></a>Gallery 相册</h2><p>一个相册集合。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">&lt;div</span> <span class="string">class=&quot;row&quot;&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name            :</span> <span class="string">相册名字</span></span><br><span class="line"><span class="attr">description     :</span> <span class="string">相册描述</span></span><br><span class="line"><span class="attr">link            :</span> <span class="string">连接到对应相册的地址</span></span><br><span class="line"><span class="attr">img-url         :</span> <span class="string">图库封面的地址</span></span><br><span class="line">[<span class="string">col</span>]           <span class="string">:</span> <span class="string">相册列宽</span> <span class="number">1</span><span class="number">-12</span> <span class="string">，默认为</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% gallery &#x27;壁纸&#x27; &#x27;收藏的一些壁纸&#x27; &#x27;/gallery/wallpaper&#x27; https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %&#125;</span><br><span class="line">&#123;% gallery &#x27;图库&#x27; &#x27;收藏的一些壁纸&#x27; &#x27;/gallery/wallpaper&#x27; https://th.wallhaven.cc/lg/rd/rddgwm.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<div class="row">
+
+<div class="col-lg-6">
+    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="trm-cover-frame" style="padding-bottom:60%">
+            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/z8/z8dg9y.jpg" alt="Group Image Gallery" loading="lazy">
+        </div>
+        <div class="trm-item-description">
+            <div>
+                <h6>壁纸</h6>
+                <p style="margin: 5px 0 0;font-size: .9rem;opacity: .8;">收藏的一些壁纸</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-lg-6">
+    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <div class="trm-cover-frame" style="padding-bottom:60%">
+            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/rd/rddgwm.jpg" alt="Group Image Gallery" loading="lazy">
+        </div>
+        <div class="trm-item-description">
+            <div>
+                <h6>图库</h6>
+                <p style="margin: 5px 0 0;font-size: .9rem;opacity: .8;">收藏的一些壁纸</p>
+            </div>
+        </div>
+    </a>
+</div>
+</div>
+
+<h3 id="相册详情"><a href="#相册详情" class="headerlink" title="相册详情"></a>相册详情</h3>
+<p>相册详情，会根据图片自动排版。</p>
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryItem</span> <span class="string">url1</span> [<span class="string">url2</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">markdown</span> <span class="string">图片格式</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endgalleryGroup</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">有两种编写方式可以直接写</span> <span class="string">markdown</span> <span class="string">格式图片，也可以使用</span> <span class="string">galleryItem</span> <span class="string">标签插件。</span></span><br><span class="line"></span><br><span class="line"><span class="string">galleryItem</span></span><br><span class="line"><span class="attr">url1        :</span> <span class="string">图片略缩图地址</span></span><br><span class="line">[<span class="string">url2</span>]      <span class="string">:</span> <span class="string">图片原图地址，可选</span></span><br></pre></td></tr></table></figure>
+
+示例：
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% galleryGroup %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %&#125;</span><br><span class="line">![](<span class="link">https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg</span>)</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oylj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oylj.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/vq/vq9688.jpg https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/2y/2y8q7m.jpg https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oyzj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/7p/7p2589.jpg https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/m3/m39kj1.jpg https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/6d/6dorxl.jpg https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/o5/o53ro5.jpg https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/l8/l831lq.jpg https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/zy/zy8ewv.jpg https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/3l/3lz1pd.jpg https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/1p/1pkz5w.jpg https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/p9/p9kdej.jpg https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/x6/x68mrd.jpg https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg %&#125;</span><br><span class="line">&#123;% endgalleryGroup %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="fj-gallery no-fancybox">
+    <img src="https://th.wallhaven.cc/orig/85/85oy2j.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png" loading="lazy"><p><img src="https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg" loading="lazy"></p>
+<img src="https://th.wallhaven.cc/orig/85/85oylj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oylj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/vq/vq9688.jpg" data-src="https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/2y/2y8q7m.jpg" data-src="https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/85/85oyzj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/7p/7p2589.jpg" data-src="https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/m3/m39kj1.jpg" data-src="https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/6d/6dorxl.jpg" data-src="https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/o5/o53ro5.jpg" data-src="https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/l8/l831lq.jpg" data-src="https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/zy/zy8ewv.jpg" data-src="https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/3l/3lz1pd.jpg" data-src="https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/1p/1pkz5w.jpg" data-src="https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/p9/p9kdej.jpg" data-src="https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/x6/x68mrd.jpg" data-src="https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg" loading="lazy">
+</div>
+
+<h2 id="Caniuse-查看兼容性"><a href="#Caniuse-查看兼容性" class="headerlink" title="Caniuse 查看兼容性"></a>Caniuse 查看兼容性</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">caniuse</span> <span class="string">feature</span> <span class="string">@</span> [<span class="string">periods</span>] <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">feature     :</span> <span class="string">在https://caniuse.com上搜索您想要的特性，然后单击搜索结果标题左侧的#，您将得到该特性的唯一名称。</span></span><br><span class="line">[<span class="string">periods</span>]   <span class="string">:</span> <span class="string">可选参数。选择要显示的浏览器版本。支持值:，，，，，，，，。如果该值为空，将使用默认值</span> <span class="string">past_1past_2past_3past_4past_5currentfuture_3future_2future_1current</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse fetch %&#125;</span><br></pre></td></tr></table></figure>
+
+<iframe data-feature="fetch" src="https://caniuse.bitsofco.de/embed/index.html?feat=fetch&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
+
+<h2 id="Flink-链接列表"><a href="#Flink-链接列表" class="headerlink" title="Flink 链接列表"></a>Flink 链接列表</h2><p>可在任何界面插入类似友情链接列表效果</p>
+<p>内容格式与友情链接界面一样，支持 yml 格式</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">flink</span> [<span class="string">key</span>] [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">[<span class="string">content</span>]</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endflink</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">content</span>]   <span class="string">:</span> <span class="string">可选参数。链接数据，格式为</span> <span class="string">yaml。</span></span><br><span class="line">[<span class="string">key</span>]       <span class="string">:</span> <span class="string">可选参数。Hexo</span> <span class="string">数据文件的</span> <span class="string">key，如果</span> <span class="string">content</span> <span class="string">为空，则会加载指定</span> <span class="string">key</span> <span class="string">数据。[content]</span> <span class="string">和</span> [<span class="string">key</span>] <span class="string">需要二选一。</span></span><br><span class="line">[<span class="string">col</span>]       <span class="string">:</span> <span class="string">可选参数。链接列宽</span> <span class="number">1</span><span class="number">-12</span> <span class="string">，默认为</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% flink 12 %&#125;</span><br><span class="line">- name: Hexo</span><br><span class="line">  url: //hexo.io/</span><br><span class="line">  image: //d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg</span><br><span class="line">  desc: 快速、简洁且高效的博客框架</span><br><span class="line">- name: 白云苍狗</span><br><span class="line">  url: //www.imalun.com/</span><br><span class="line">  image: //www.imalun.com/images/avatar.jpg</span><br><span class="line">  desc: 醒，亦在人间；梦，亦在人间</span><br><span class="line">&#123;% endflink %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-flink row">
+<div class="col-lg-12">
+    <a href='//hexo.io/' target='_blank' rel="nofollow">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+            <div class="trm-service-content">
+                <div class="trm-icon">
+                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                </div>
+                <div class="trm-service-text">
+                    <h6 class="trm-mb-10">Hexo</h6>
+                    <div>快速、简洁且高效的博客框架</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-12">
+    <a href='//www.imalun.com/' target='_blank' rel="nofollow">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+            <div class="trm-service-content">
+                <div class="trm-icon">
+                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy">
+                </div>
+                <div class="trm-service-text">
+                    <h6 class="trm-mb-10">白云苍狗</h6>
+                    <div>醒，亦在人间；梦，亦在人间</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div></div>
+
+<p>或者使用 Hexo 数据文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% flink links 12 %&#125;</span><br><span class="line">&#123;% endflink %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-flink row">
+<div class="col-lg-12">
+    <a href='//hexo.io/' target='_blank' rel="nofollow">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+            <div class="trm-service-content">
+                <div class="trm-icon">
+                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                </div>
+                <div class="trm-service-text">
+                    <h6 class="trm-mb-10">Hexo</h6>
+                    <div>快速、简洁且高效的博客框架</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-lg-12">
+    <a href='//www.imalun.com/' target='_blank' rel="nofollow">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+            <div class="trm-service-content">
+                <div class="trm-icon">
+                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy">
+                </div>
+                <div class="trm-service-text">
+                    <h6 class="trm-mb-10">白云苍狗</h6>
+                    <div>醒，亦在人间；梦，亦在人间</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div></div>
+
+]]></content>
+      <categories>
+        <category>Plugins</category>
       </categories>
   </entry>
 </search>

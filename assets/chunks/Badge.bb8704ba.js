@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as n,r as _,d as o,t as c,n as r}from"../app.20d5d2e8.js";const p={__name:"Badge",props:{type:String,text:{type:String,default:""}},setup(e){return(t,d)=>(s(),n("span",{class:r(["badge",e.type])},[_(t.$slots,"default",{},()=>[o(c(e.text),1)],!0)],2))}},u=a(p,[["__scopeId","data-v-e95cbadf"]]);export{u as _};

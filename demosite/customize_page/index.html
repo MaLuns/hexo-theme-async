@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://hexo-theme-async.imalun.com/demosite/img/1.jpg">
 <meta property="og:image" content="https://hexo-theme-async.imalun.com/demosite/img/2.jpg">
 <meta property="article:published_time" content="2022-09-22T15:45:29.000Z">
-<meta property="article:modified_time" content="2023-01-02T07:51:18.600Z">
+<meta property="article:modified_time" content="2023-01-03T09:01:11.917Z">
 <meta property="article:author" content="白云苍狗">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo-theme-async.imalun.com/demosite/img/1.jpg">
@@ -75,7 +75,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true,"plugin":{"flickr_justified_gallery":{"js":"//cdn.jsdelivr.net/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"fancybox":{"css":"//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","js":"//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"}},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h"}};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=1.1.1" id="trm-switch-style">
@@ -296,7 +296,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="col-lg-12">
+            <div id="page-content" class="col-lg-12">
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
@@ -639,7 +639,7 @@
     
         <div class="trm-footer-item">
             <span>© 2022- 2023</span>
-            <span class="footer-separator">·</span>
+            <span class="footer-separator"data-separator=" · "></span>
             <span class="trm-accent-color">ThemeAsync</span>
         </div>
     
@@ -649,7 +649,7 @@
             <span>
                 由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
             </span>
-            <span class="footer-separator"> | </span>
+            <span class="footer-separator" data-separator=" | "></span>
             <span> 
                 主题 - 
                 <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
@@ -688,6 +688,17 @@
 </div>
 
             <!-- body end -->
+
+            <!-- body -->
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+    
+        <div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="document.body.classList.toggle('trm-single-column')">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+</div>
+            <!-- body end -->
           </div>
         </div>
       </div>
@@ -696,7 +707,7 @@
   </div>
   <!-- app wrapper end -->
 
-  <div id="trm-back-top" class="trm-back-top">
+  <div id="trm-back-top" class="trm-back-top" data-title="回到顶部">
     <i class="iconfont fas fa-arrow-up"></i>
 </div>
   
@@ -750,9 +761,6 @@
 
 
     <!-- 评论插件 -->
-    
-        
-        
     
 
 

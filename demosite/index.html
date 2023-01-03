@@ -60,7 +60,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.1.1","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true,"plugin":{"flickr_justified_gallery":{"js":"//cdn.jsdelivr.net/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"fancybox":{"css":"//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","js":"//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"}},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h"}};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=1.1.1" id="trm-switch-style">
@@ -280,7 +280,7 @@
     <div class="container">
         <div class="row">
             
-                <div class="col-lg-4 hidden-sm">
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
                     <!-- main card -->
                     
 
@@ -344,7 +344,7 @@
                     <!-- main card end -->
                 </div>
             
-            <div class="col-lg-8">
+            <div id="page-content" class="col-lg-8">
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
@@ -357,13 +357,13 @@
         <!-- categories card -->
 <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
     <h6>
-        测试分类2
+        测试分类
         <span class="trm-number">
             1
         </span>
     </h6>
     <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-    <a href="/demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB2/." class="trm-label">
+    <a href="/demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/." class="trm-label">
         查看分类 
         <i class="iconfont fas fa-arrow-right arrow-right"></i>
     </a>
@@ -375,13 +375,13 @@
         <!-- categories card -->
 <div class="trm-blog-categories trm-scroll-animation" data-scroll data-scroll-offset="40">
     <h6>
-        测试分类
+        Plugins
         <span class="trm-number">
             1
         </span>
     </h6>
     <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-    <a href="/demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/." class="trm-label">
+    <a href="/demosite/categories/Plugins/." class="trm-label">
         查看分类 
         <i class="iconfont fas fa-arrow-right arrow-right"></i>
     </a>
@@ -404,94 +404,124 @@
     </div>
     
         <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
-        <a href="/demosite/2022/09/21/hello-world/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class=" trm-light-icon" src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png"> <img alt="cover" class=" trm-dark-icon" src="https://th.wallhaven.cc/small/k7/k7q9m7.jpg">
-            
-        </a>
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" #.">
-                    未分类
-                </a>
-            </div>
-            <h5>
-                <a href="/demosite/2022/09/21/hello-world/" class="trm-anima-link">
-                    Hello Theme Async
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>22/09/21</li>
-                <li>15:08</li>
-                
-                
-            </ul>
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/2022/09/21/hello-world/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" #.">
+                未分类
+            </a>
         </div>
+        <h5>
+            <a href="/demosite/2022/09/21/hello-world/" class="trm-anima-link">
+                Hello Theme Async
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>22/09/21</li>
+            <li>15:08</li>
+            
+            
+        </ul>
     </div>
 </div>
+        </div>
     
         <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
-        <a href="/demosite/2022/09/22/katex/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" src="/demosite/img/block.jpg">
-            
-        </a>
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB2/">
-                    测试分类2
-                </a>
-            </div>
-            <h5>
-                <a href="/demosite/2022/09/22/katex/" class="trm-anima-link">
-                    KaTeX
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>22/09/22</li>
-                <li>15:45</li>
-                
-                
-            </ul>
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/2022/12/30/tag_plugins/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="/demosite/img/block.jpg">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" /demosite/categories/Plugins/">
+                Plugins
+            </a>
         </div>
+        <h5>
+            <a href="/demosite/2022/12/30/tag_plugins/" class="trm-anima-link">
+                Tag Plugins
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>22/12/30</li>
+            <li>15:08</li>
+            
+            
+        </ul>
     </div>
 </div>
+        </div>
     
         <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
-        <a href="/demosite/2022/09/21/markdown/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" src="/demosite/img/block.jpg">
-            
-        </a>
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/">
-                    测试分类
-                </a>
-            </div>
-            <h5>
-                <a href="/demosite/2022/09/21/markdown/" class="trm-anima-link">
-                    Markdown
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>22/09/21</li>
-                <li>15:25</li>
-                
-                
-            </ul>
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/2022/09/22/katex/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="/demosite/img/block.jpg">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" #.">
+                未分类
+            </a>
         </div>
+        <h5>
+            <a href="/demosite/2022/09/22/katex/" class="trm-anima-link">
+                KaTeX
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>22/09/22</li>
+            <li>15:45</li>
+            
+            
+        </ul>
     </div>
 </div>
+        </div>
+    
+        <div class="col-lg-6">
+            <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/2022/09/21/markdown/" class="trm-cover-frame trm-anima-link">
+        
+        
+            <img alt="cover" class="no-fancybox" src="/demosite/img/block.jpg">
+        
+    </a>
+    <div class="trm-card-descr">
+        <div class="trm-label trm-category trm-mb-20">
+            <a href=" /demosite/categories/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/">
+                测试分类
+            </a>
+        </div>
+        <h5>
+            <a href="/demosite/2022/09/21/markdown/" class="trm-anima-link">
+                Markdown
+            </a>
+        </h5>
+        <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+        <ul class="trm-card-data trm-label">
+            <li>22/09/21</li>
+            <li>15:25</li>
+            
+            
+        </ul>
+    </div>
+</div>
+        </div>
     
 </div>
 <!-- newest publications end -->
@@ -512,7 +542,7 @@
     
         <div class="trm-footer-item">
             <span>© 2022- 2023</span>
-            <span class="footer-separator">·</span>
+            <span class="footer-separator"data-separator=" · "></span>
             <span class="trm-accent-color">ThemeAsync</span>
         </div>
     
@@ -522,7 +552,7 @@
             <span>
                 由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
             </span>
-            <span class="footer-separator"> | </span>
+            <span class="footer-separator" data-separator=" | "></span>
             <span> 
                 主题 - 
                 <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
@@ -560,6 +590,17 @@
     </div>
 </div>
             <!-- body end -->
+
+            <!-- body -->
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+    
+        <div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="document.body.classList.toggle('trm-single-column')">
+            <i class="iconfont fas fa-arrows-alt-h"></i>
+        </div>
+    
+</div>
+            <!-- body end -->
           </div>
         </div>
       </div>
@@ -568,7 +609,7 @@
   </div>
   <!-- app wrapper end -->
 
-  <div id="trm-back-top" class="trm-back-top">
+  <div id="trm-back-top" class="trm-back-top" data-title="回到顶部">
     <i class="iconfont fas fa-arrow-up"></i>
 </div>
   

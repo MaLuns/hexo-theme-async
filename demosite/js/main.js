@@ -269,15 +269,75 @@
         if (immediate && !timeout) func.apply(context, args);
       };
     },
-    wrap(el, wrapper) {
+    wrap(el, wrapper, options = {}) {
+      if (typeof wrapper === 'string') {
+        wrapper = document.createElement(wrapper)
+        for (const [key, value] of Object.entries(options)) {
+          wrapper.setAttribute(key, value)
+        }
+      }
+
       el.parentNode.insertBefore(wrapper, el);
-      el.parentNode.removeChild(el);
+      /* el.parentNode.removeChild(el); */
       wrapper.appendChild(el);
     },
     urlFor(path) {
       if (/^(#|\/\/|http(s)?:)/.test(path)) return path;
       return (window.ASYNC_CONFIG.root + path).replace(/\/{2,}/g, '/')
     },
+    siblings: (ele, selector) => {
+      return [...ele.parentNode.children].filter((child) => {
+        if (selector) {
+          return child !== ele && child.matches(selector)
+        }
+        return child !== ele
+      })
+    },
+    _message: [],
+    message(title, type = 'success') {
+      let message = document.createElement('div')
+      message.className = `trm-message ${type}`
+      message.style.top = `${30 + utils._message.length * 60}px`
+      message.innerText = title
+      document.body.append(message)
+      utils._message.push(message)
+      setTimeout(() => {
+        utils._message = utils._message.filter(item => item !== message)
+        document.body.removeChild(message)
+        utils._message.forEach((item, index) => {
+          item.style.top = `${30 + index * 60}px`
+        })
+      }, 2000)
+    },
+    loadScript(url) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url
+        script.setAttribute('async', 'false');
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function () {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(script)
+      })
+    },
+    isLoaded(key, url) {
+      return new Promise((resolve, reject) => {
+        if (window[key]) {
+          resolve();
+          return;
+        }
+        utils.loadScript(url).then(() => {
+          resolve()
+        })
+      })
+    },
+  }
+
+  const initFn = {
     InitFancybox() {
       if (window.Fancybox) {
         Fancybox.bind("[data-fancybox]");
@@ -321,18 +381,21 @@
     },
     InitPictures() {
       if (window.Fancybox) {
-        utils.qa("article img").forEach((img) => {
-          let span = document.createElement("span");
-          if (img.classList.contains('trm-light-icon')) {
-            span.dataset.fancybox = "light"
-          } else if (img.classList.contains('trm-dark-icon')) {
-            span.dataset.fancybox = "dark"
-          } else {
-            span.dataset.fancybox = "article"
-          }
+        // 仅查找文章内图片
+        utils.qa("#article-container img:not(.no-fancybox)").forEach((img) => {
+          if (!img.parentNode.dataset.fancybox) {
+            let fancybox = "article"
+            if (img.classList.contains('trm-light-icon')) {
+              fancybox = "light"
+            } else if (img.classList.contains('trm-dark-icon')) {
+              fancybox = "dark"
+            }
 
-          span.dataset.src = img.dataset.src || img.src;
-          utils.wrap(img, span)
+            utils.wrap(img, 'div', {
+              'data-src': img.dataset.src || img.src,
+              'data-fancybox': fancybox
+            })
+          }
         })
       }
     },
@@ -397,17 +460,6 @@
             mode_swich_animation.classList[type]('trm-active');
             document.documentElement.classList[type]('dark')
           }, 200);
-          /* if (this.checked) {
-            setTimeout(function () {
-              mode_swich_animation.classList.add('trm-active');
-              switch_style.href = switch_style.href.replace('style-light', 'style-dark');
-            }, 200);
-          } else {
-            setTimeout(function () {
-              mode_swich_animation.classList.remove('trm-active');
-              switch_style.href = switch_style.href.replace('style-dark', 'style-light');
-            }, 200);
-          } */
 
           setTimeout(function () {
             mode_swich_animation_frame.classList.remove('trm-active');
@@ -423,6 +475,7 @@
     InitLocomotiveScroll() {
       const container = utils.q('#trm-scroll-container');
       const backtop = utils.q('#trm-back-top')
+      const fixedContainer = utils.q('.trm-fixed-container')
 
       const scroll = new LocomotiveScroll({
         el: utils.q('#trm-scroll-container'),
@@ -445,8 +498,10 @@
       scroll.on('scroll', ({ scroll }) => {
         if (scroll.y > 500) {
           backtop.classList.add('active-el')
+          fixedContainer.classList.add('offset')
         } else {
           backtop.classList.remove('active-el')
+          fixedContainer.classList.remove('offset')
         }
       });
 
@@ -640,27 +695,82 @@
         element.append(div)
       });
     },
-    _message: [],
-    message(title, type = 'success') {
-      let message = document.createElement('div')
-      message.className = `trm-message ${type}`
-      message.style.top = `${30 + utils._message.length * 60}px`
-      message.innerText = title
-      document.body.append(message)
-      utils._message.push(message)
-      setTimeout(() => {
-        utils._message = utils._message.filter(item => item !== message)
-        document.body.removeChild(message)
-        utils._message.forEach((item, index) => {
-          item.style.top = `${30 + index * 60}px`
+    InitTabs() {
+      utils.qa('.trm-tabs .trm-tab > button').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          const $this = this
+          const $tabItem = $this.parentNode
+
+          if (!$tabItem.classList.contains('active')) {
+            const $tabContent = $tabItem.parentNode.nextElementSibling
+            const $siblings = utils.siblings($tabItem, '.active')[0]
+            $siblings && $siblings.classList.remove('active')
+            $tabItem.classList.add('active')
+            const tabId = $this.getAttribute('data-href').replace('#', '')
+            const childList = [...$tabContent.children]
+            childList.forEach(item => {
+              if (item.id === tabId) item.classList.add('active')
+              else item.classList.remove('active')
+            })
+          }
         })
-      }, 2000)
+      })
+    },
+    InitJustifiedGallery() {
+      const gallerys = utils.qa('.fj-gallery')
+      if (gallerys.length) {
+        gallerys.forEach(item => {
+          const imgList = item.querySelectorAll('img')
+          imgList.forEach(i => {
+            i.loading = "auto"
+            utils.wrap(i, 'div', {
+              class: 'fj-gallery-item',
+              'data-src': i.dataset.src || i.src,
+              'data-fancybox': 'gallery',
+            })
+          })
+        })
+
+        utils
+          .isLoaded('fjGallery', window.ASYNC_CONFIG.plugin.flickr_justified_gallery.js)
+          .then(() => {
+            gallerys.forEach((selector) => {
+              window.fjGallery(selector, {
+                itemSelector: '.fj-gallery-item',
+                rowHeight: 220,
+                gutter: 4,
+                onJustify: function () {
+                  this.$container.style.opacity = '1'
+                }
+              })
+            })
+          })
+      }
+    },
+    switchReadMode() {
+      const $body = document.body
+      $body.classList.add('trm-read-mode')
+      const newEle = document.createElement('button')
+      newEle.type = 'button'
+      newEle.title = window.ASYNC_CONFIG.i18n.exit_read_mode
+      newEle.className = `${window.ASYNC_CONFIG.icons.close} trm-exit-readmode trm-glow`
+      $body.appendChild(newEle)
+
+      function clickFn() {
+        $body.classList.remove('trm-read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', clickFn)
+      }
+
+      newEle.addEventListener('click', clickFn)
     }
   }
 
   //#region init
   /* preloader */
   function ready() {
+    window.switchReadMode = initFn.switchReadMode
+
     /* window title */
     if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.favicon.visibilitychange) {
       window.originTitle = document.title;
@@ -687,11 +797,17 @@
       });
     }
 
-    /* Work with pictures in articles */
-    utils.InitPictures()
+    /* Initialize album */
+    initFn.InitJustifiedGallery()
 
-    /* Work with code blocks in articles */
-    utils.InitCodeBtn()
+    /* Initialize with pictures in articles */
+    initFn.InitPictures()
+
+    /* Initialize with code blocks in articles */
+    initFn.InitCodeBtn()
+
+    /* Initialize the tabs in the article */
+    initFn.InitTabs()
 
     /* loading animate */
     utils.q('html').classList.add('is-animating');
@@ -706,67 +822,75 @@
     document.addEventListener('DOMContentLoaded', ready) : ready();
 
   /* swup */
-  window.ASYNC_CONFIG.swup && utils.InitSwup();
+  window.ASYNC_CONFIG.swup && initFn.InitSwup();
 
   /* menu */
-  utils.InitMenu()
+  initFn.InitMenu()
 
   /* theme mode switch */
-  utils.InitThemeMode(true)
+  initFn.InitThemeMode(true)
 
   /* counters */
-  utils.InitCounter();
+  initFn.InitCounter();
 
   /* locomotive scroll */
-  utils.InitLocomotiveScroll()
+  initFn.InitLocomotiveScroll()
 
   /* swiper */
-  utils.InitSwiper()
+  initFn.InitSwiper()
 
   /* fancybox */
-  utils.InitFancybox()
+  initFn.InitFancybox()
 
   /* toc */
-  utils.InitToc()
+  initFn.InitToc()
 
   /* copyright */
-  utils.InitCopyright()
+  initFn.InitCopyright()
   //#endregion
 
   //#region  Re/init
   document.addEventListener("swup:contentReplaced", function () {
+    document.body.classList.remove('trm-read-mode')
+
     /* The blog runs long */
     window.show_date_time && window.show_date_time();
 
-    /* Work with pictures in articles */
-    utils.InitPictures()
+    /* Initialize album */
+    initFn.InitJustifiedGallery()
 
-    /* Work with code blocks in articles */
-    utils.InitCodeBtn()
+    /* Initialize with pictures in articles */
+    initFn.InitPictures()
+
+    /* Initialize with code blocks in articles */
+    initFn.InitCodeBtn()
+
+    /* Initialize with tabs in articles */
+    initFn.InitTabs()
 
     /* preloader */
     utils.q(".trm-scroll-container").style.opacity = 1;
 
     /* menu */
-    utils.InitMenu()
+    initFn.InitMenu()
 
     /* theme mode switch */
-    utils.InitThemeMode(true)
+    initFn.InitThemeMode(true)
 
     /* counters */
-    utils.InitCounter();
+    initFn.InitCounter();
 
     /* locomotive scroll */
-    utils.InitLocomotiveScroll()
+    initFn.InitLocomotiveScroll()
 
     /* swiper */
-    utils.InitSwiper()
+    initFn.InitSwiper()
 
     /* fancybox */
-    utils.InitFancybox()
+    initFn.InitFancybox()
 
     /* toc */
-    utils.InitToc()
+    initFn.InitToc()
 
   });
   //#endregion
