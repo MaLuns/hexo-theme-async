@@ -68,6 +68,11 @@ post:
     open: 进入阅读模式
     exit: 退出阅读模式
 
+rightside:
+  readmode_title: 阅读模式
+  back_to_top: 回到顶部
+  aside: 单栏和双栏切换
+
 symbol:
   comma: ，
   period: 。

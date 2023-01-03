@@ -475,6 +475,7 @@
     InitLocomotiveScroll() {
       const container = utils.q('#trm-scroll-container');
       const backtop = utils.q('#trm-back-top')
+      const fixedContainer = utils.q('.trm-fixed-container')
 
       const scroll = new LocomotiveScroll({
         el: utils.q('#trm-scroll-container'),
@@ -497,8 +498,10 @@
       scroll.on('scroll', ({ scroll }) => {
         if (scroll.y > 500) {
           backtop.classList.add('active-el')
+          fixedContainer.classList.add('offset')
         } else {
           backtop.classList.remove('active-el')
+          fixedContainer.classList.remove('offset')
         }
       });
 

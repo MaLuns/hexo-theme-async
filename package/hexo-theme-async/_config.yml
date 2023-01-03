@@ -83,7 +83,7 @@ icons:
   user_tag: fas fa-user-alt
   toc_tag: fas fa-th-list
   read: fas fa-book-reader
-
+  arrows: fas fa-arrows-alt-h
 
 # Top navigation menu
 top_bars:
@@ -161,7 +161,24 @@ footer:
   #
   custom_text:
 
-# archive
+# Here is a collection of articles related to configuration.
+# Reward (Donate)
+# If enable true, reward would be displayed in every posts and pages by default.
+# You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
+reward:
+  enable: false
+  comment: reward.comment
+  # url:
+  methods:
+
+# Article table of contents
+toc:
+  enable: false
+  list_number: true
+  max_depth: 3
+  min_depth: 1
+
+# Archive page
 archive:
   type: more # less more
 
@@ -177,26 +194,10 @@ creative_commons:
   post: false
   clipboard: false
 
-# Reward (Donate)
-# If enable true, reward would be displayed in every posts and pages by default.
-# You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
-reward:
-  enable: false
-  comment: reward.comment
-  # url:
-  methods:
-
-# cover
+# Customize the cover image
 cover:
   default: /img/block.jpg
   type: img
-
-# Article table of contents
-toc:
-  enable: false
-  list_number: true
-  max_depth: 3
-  min_depth: 1
 
 # img loading="lazy"
 lazyload:
@@ -280,3 +281,8 @@ categorie_card:
   enable: true
   len: 2
   list:
+
+# Lower right button
+rightside:
+  readmode: true
+  aside: false

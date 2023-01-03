@@ -7,7 +7,7 @@
     border-left  : 1px solid var(--tab-border-color);
 
     .trm-nav-tabs {
-        background: var(--tab-botton-bg);
+        background: var(--tab-botton-bg-color);
         display   : flex;
         flex-wrap : wrap;
         margin    : 0;
@@ -20,7 +20,7 @@
 
             button {
                 border     : none;
-                background : var(--tab-botton-bg);
+                background : var(--tab-botton-bg-color);
                 border-top : 2px solid var(--tab-border-color);
                 color      : var(--tab-botton-color);
                 display    : block;
@@ -41,15 +41,15 @@
             &:not(.active) {
                 button {
                     &:hover {
-                        background: var(--tab-button-hover-bg);
-                        border-top: 2px solid var(--tab-button-hover-bg);
+                        background: var(--tab-button-hover-bg-color);
+                        border-top: 2px solid var(--tab-button-hover-bg-color);
                     }
                 }
             }
 
             &.active {
                 button {
-                    background: var(--tab-button-active-bg);
+                    background: var(--tab-button-active-bg-color);
                     border-top: 2px solid var(--primary);
                     cursor    : default;
                 }
@@ -58,7 +58,7 @@
     }
 
     .trm-tab-contents {
-        background: var(--tab-button-active-bg);
+        background: var(--tab-button-active-bg-color);
 
         .trm-tab-item-content {
             display : none;

@@ -1,7 +1,12 @@
 <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
-    <% if(is_post()) { %>
-        <div class="trm-fixed-btn" data-title="<%- __('post.read_mode.open') %>" onclick="switchReadMode()">
+    <% if(is_post() && theme.rightside.readmode) { %>
+        <div class="trm-fixed-btn" data-title="<%- __('rightside.readmode_title') %>" onclick="switchReadMode()">
             <%- icon(theme.icons.read) %>
+        </div>
+    <% } %>
+    <% if(theme.rightside.aside) { %>
+        <div class="trm-fixed-btn" data-title="<%- __('rightside.aside') %>" onclick="document.body.classList.toggle('trm-single-column')">
+            <%- icon(theme.icons.arrows) %>
         </div>
     <% } %>
 </div>

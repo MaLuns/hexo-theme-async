@@ -68,6 +68,11 @@ post:
     open: Enter reading mode
     exit: Exit reading mode
 
+rightside:
+  readmode_title: Read Mode
+  back_to_top: Back To Top
+  aside: Toggle between single-column and double-column
+
 symbol:
   comma: ', '
   period: '. '
