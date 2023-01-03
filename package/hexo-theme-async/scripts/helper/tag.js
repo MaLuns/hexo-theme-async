@@ -1,5 +1,6 @@
 'use strict';
 const { htmlTag, url_for } = require('hexo-util');
+const urlFor = url_for.bind(hexo)
 
 function tagHelper(tag, props, innerHTML = '') {
     if (!tag || (!props && !innerHTML)) return;
@@ -33,12 +34,12 @@ function iconHelper(...args) {
 function jssHelper(src, props = {}) {
     let result = '';
     if (typeof src === 'string') {
-        src = url_for.call(this, src)
+        src = urlFor(src)
         result += htmlTag('script', { src, ...props }, '') + '\n';
     }
     if (Array.isArray(src)) {
         src.forEach(item => {
-            item = url_for.call(this, item);
+            item = urlFor(item);
             result += htmlTag('script', { src: item, ...props }, '') + '\n';
         })
     }
@@ -54,18 +55,23 @@ function swichImgsHelper(srcs, props = {}) {
                 return htmlTag('img', {
                     ...props,
                     class: `${props.class || ''} ${classMap[index] || ''}`,
-                    src: url_for.call(hexo, src),
+                    src: urlFor(src),
                 })
             }).join(' ')
         } else {
-            return htmlTag('img', { ...props, src: url_for.call(hexo, srcs[0]) })
+            return htmlTag('img', { ...props, src: urlFor(srcs[0]) })
         }
     } else {
-        return htmlTag('img', { ...props, src: url_for.call(hexo, srcs) })
+        return htmlTag('img', { ...props, src: urlFor(srcs) })
     }
+}
+
+function onerrorHelper(key = 'post_page') {
+    return `onerror='this.onerror=null;this.src="${urlFor(hexo.theme.config.error_img[key])}"'`
 }
 
 hexo.extend.helper.register('jss', jssHelper)
 hexo.extend.helper.register('icon', iconHelper)
 hexo.extend.helper.register('tag', tagHelper)
 hexo.extend.helper.register('swich_imgs', swichImgsHelper)
+hexo.extend.helper.register('onerror', onerrorHelper)

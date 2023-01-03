@@ -291,3 +291,8 @@ categorie_card:
 rightside:
   readmode: true
   aside: false
+
+# Replace Broken Images 
+error_img:
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
