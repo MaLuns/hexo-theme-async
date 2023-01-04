@@ -33,7 +33,7 @@ const flinkFn = (args, content) => {
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img draggable="false" ${onerror('flink')} alt="${item.name}" src="${item.image}">
+                    <img class="no-fancybox" draggable="false" ${onerror('flink')} alt="${item.name}" src="${item.image}">
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">${item.name}</h6>

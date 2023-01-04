@@ -19,10 +19,6 @@ isSearch = theme.search.enable && theme.search.type === 'local'
 
     <% if(isKatex) {%>
         <%- css(theme.assets.plugin.katex.css) %>
-
-        <% if(theme.katex.copy_tex) {%>
-            <%- css(theme.assets.plugin.katex.copy_tex.css) %>
-        <% } %>
     <% } %>
 
 <% } else { %>

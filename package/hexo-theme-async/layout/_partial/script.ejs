@@ -1,25 +1,6 @@
 <!-- Plugin -->
 <%- partial('../_third-party/plugin',{ loadtype: 'js' }) %>
 
-<!-- 评论插件 -->
-<% if(theme.comment && theme.comment.enable) {%> 
-    <% if(theme.comment.bComments.env){ %>
-        <script type="text/javascript" src="//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js"></script>
-        <script type="text/javascript" src="//unpkg.com/b-comments@<%= theme.comment.bComments.v %>/dist/index.all.min.js"></script>
-    <% } else if (theme.comment.twikoo.envId){ %>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/twikoo@1.5.3/dist/twikoo.all.min.js"></script>
-        <script>
-            twikoo.init({
-                el: '#tcomment', 
-                envId: '<%-theme.comment.twikoo.envId%>',
-                region: '<%-theme.comment.twikoo.region%>', 
-                path: '<%-theme.comment.twikoo.path%>', 
-              
-            })
-        </script>
-    <% } %>
-<% } %>
-
 <!-- CDN -->
 <%- partial('../_third-party/cdn',{ cdntype: 'body' }) %>
 
@@ -30,4 +11,4 @@
     <%- partial('../_third-party/seo/baidu-push') %>
 <% } %>
 
-<script id="async-script" src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>
+<script id="async-script" src="<%= url_for(theme.assets.plugin.hexo_theme_async.js) %>?v=<%= theme.version %>"></script>

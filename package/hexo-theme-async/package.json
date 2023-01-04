@@ -26,6 +26,7 @@
     "source",
     "src",
     "_config.yml",
+    "plugins.yml",
     "README_zh-CN.md",
     "README.md"
   ]

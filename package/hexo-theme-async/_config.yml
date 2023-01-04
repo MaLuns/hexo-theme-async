@@ -23,41 +23,25 @@ favicon:
 
 # Theme resource files or plug-ins
 assets:
+  # 主題內部 js 的 cdn 配置
+  internal_provider: local
+  # 第三方 js 的 cdn 配置
+  third_party_provider: unpkg
+  # 主题使用到的插件
   plugin:
     row:
       css: css/plugins/bootstrap.row.css
-    swup:
-      js: //cdn.jsdelivr.net/npm/swup@2.0.19/dist/swup.min.js
-    locomotive_scroll:
-      css: //cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
-      js: //cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
-    fancybox: 
-      css: //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css
-      js: //cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js
     typing:
       js: js/plugins/typing.js
-    search:
-      js: [//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js, js/plugins/local_search.js]
-    swiper: 
-      css: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/css/swiper.min.css
-      js: //cdn.jsdelivr.net/npm/swiper@4.5.1/dist/js/swiper.min.js
-    katex:
-      js: //cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js
-      css: //cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
-      auto_render: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js
-      copy_tex:
-        css: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css
-        js: //cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js
-    bComments: [//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js,//cdn.jsdelivr.net/npm/b-comments@0.0.13/dist/index.all.min.js]
-    twikoo: //cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js
-    flickr_justified_gallery: 
-      js: //cdn.jsdelivr.net/npm/flickr-justified-gallery@latest/dist/fjGallery.min.js
+    hexo_theme_async:
+      js: js/main.js
+  # 图标配置
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css
     js:
 
-# cdn
+# CDN 用户自定义插件时使用
 cdn:
   css: 
   js:

@@ -1,0 +1,28 @@
+swup:
+  js: $cdn$/swup@2.0.19/dist/swup.min.js
+locomotive_scroll:
+  css: $cdn$/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+  js: $cdn$/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+fancybox: 
+  css: $cdn$/@fancyapps/ui@4.0/dist/fancybox.css
+  js: $cdn$/@fancyapps/ui@4.0/dist/fancybox.umd.js
+search:
+  js: [
+    $cdn$/hexo-generator-searchdb@1.4.0/dist/search.js, 
+    js/plugins/local_search.js
+  ]
+swiper: 
+  css: $cdn$/swiper@4.5.1/dist/css/swiper.min.css
+  js: $cdn$/swiper@4.5.1/dist/js/swiper.min.js
+katex:
+  js: $cdn$/katex@latest/dist/katex.min.js
+  css: $cdn$/katex@latest/dist/katex.min.css
+  auto_render: $cdn$/katex@latest/dist/contrib/auto-render.min.js
+  copy_tex: $cdn$/katex@latest/dist/contrib/copy-tex.min.js
+bComments: [
+  //imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js ,
+  $cdn$/b-comments@0.0.13/dist/index.all.min.js
+]
+twikoo: $cdn$/twikoo@1.6.7/dist/twikoo.all.min.js
+flickr_justified_gallery: 
+  js: $cdn$/flickr-justified-gallery@latest/dist/fjGallery.min.js

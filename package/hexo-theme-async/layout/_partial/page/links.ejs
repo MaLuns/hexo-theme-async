@@ -17,7 +17,7 @@
             <ul class="trm-list">
                 <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
                 <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
-                <li><%-__('site.avatar')%>：<%- theme.user.avatar %></li>
+                <li><%-__('site.avatar')%>：<%- full_url_for(theme.user.avatar) %></li>
                 <li><%-__('site.describe')%>：<%- theme.user.describe %></li>
             </ul>
         </div>
