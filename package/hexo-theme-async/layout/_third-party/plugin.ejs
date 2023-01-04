@@ -80,7 +80,7 @@ isSearch = theme.search.enable && theme.search.type === 'local'
         <% if(comment.bComments.enable) { %>
             <%- js(theme.assets.plugin.bComments.map(src=>({src, 'data-swup-reload-script': true}))) %>
         <% } else if(comment.twikoo.enable) { %>
-            <%- js({src:theme.assets.plugin.twikoo,'data-swup-reload-script': true}) %>
+            <%- js({src:theme.assets.plugin.twikoo,'data-swup-reload-script': true, 'data-reset':'true' }) %>
             <script data-swup-reload-script>
                 const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
                 twikooConfig.el = '#tcomment';

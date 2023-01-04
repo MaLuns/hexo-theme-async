@@ -37,7 +37,14 @@
 
         nextHeadChildren.forEach(item => {
           if (item.src)
-            scripts.findIndex(s => s.src === item.src) < 0 && scriptCDN.push(item);
+            scripts.findIndex(s => {
+              if (s.src === item.src) {
+                if (!s.dataset.reset) {
+                  return true
+                }
+                s.remove()
+              }
+            }) < 0 && scriptCDN.push(item);
           else
             scriptBlock.push(item.innerText)
         })
