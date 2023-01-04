@@ -37,7 +37,7 @@ const flinkFn = (args, content) => {
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">${item.name}</h6>
-                    <div>${truncate(item.desc, { length: 32 })}</div>
+                    <div>${truncate(item.desc || '', { length: 32 })}</div>
                 </div>
             </div>
         </div>
