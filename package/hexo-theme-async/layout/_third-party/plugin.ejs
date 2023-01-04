@@ -84,7 +84,11 @@ isSearch = theme.search.enable && theme.search.type === 'local'
             <script data-swup-reload-script>
                 const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
                 twikooConfig.el = '#tcomment';
-                twikoo.init(twikooConfig);
+                twikoo.init(twikooConfig).then(function () {
+                    let container = document.querySelector('body>.tk-admin-container')
+                    if(container) container.remove()
+                    document.body.append(document.querySelector('.tk-admin-container'))
+                });;
             </script>
         <% } %>
     <% } %>
