@@ -309,7 +309,7 @@ $$
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">Hexo</h6>
@@ -324,7 +324,7 @@ $$
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy">
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">白云苍狗</h6>
@@ -344,7 +344,7 @@ $$
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">Hexo</h6>
@@ -359,7 +359,7 @@ $$
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy">
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">白云苍狗</h6>
