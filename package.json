@@ -5,9 +5,9 @@
   "author": "Maluns <admin@imalun.com>",
   "description": "🎈 A simple, lightweight Hexo theme",
   "scripts": {
-    "demo:dev": "hexo --cwd ./demo server",
-    "demo:build": "hexo --cwd ./demo generate",
+    "demo:dev": "hexo server --cwd ./demo ",
     "demo:clean": "hexo --cwd ./demo clean",
+    "demo:build": "hexo --cwd ./demo generate",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",

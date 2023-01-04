@@ -3,6 +3,24 @@
         "large_version": "v1.2.x",
         "children": [
             {
+                "version": "1.2.13",
+                "date": "2023-01-04",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "支持内置插件切换 CDN 源"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 Pjax 下,插件插入 style 标签丢失"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 flink 重复构建时报错"
+                    }
+                ]
+            },
+            {
                 "version": "1.2.12",
                 "date": "2023-01-03",
                 "logs": [
