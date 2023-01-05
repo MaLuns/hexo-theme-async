@@ -26,10 +26,11 @@
         align-items    : center;
 
         .trm-left-side {
-            height     : 100%;
-            display    : flex;
-            align-items: center;
-            width      : 30%;
+            height         : 100%;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            width          : 30%;
 
             .trm-logo-frame {
                 display    : flex;
@@ -78,6 +79,10 @@
         }
 
         .container {
+            .trm-left-side {
+                justify-content: start;
+            }
+
             .trm-right-side {
                 border-radius   : 0 0 10px 10px;
                 padding         : 0 0 40px;
