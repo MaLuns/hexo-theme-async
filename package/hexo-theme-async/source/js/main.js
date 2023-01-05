@@ -49,11 +49,24 @@
             scriptBlock.push(item.innerText)
         })
 
-        Promise.all(scriptCDN.map(item => this.loadScript(item))).then(_ => {
+        const run = async (cdns, blocks) => {
+          try {
+            var data = [];
+            for (var i = 0; i < cdns.length; i++) {
+              data.push(await this.loadScript(cdns[i]));
+            }
+            blocks.forEach(code => {
+              this.runScriptBlock(code)
+            })
+          } catch (e) {
+          }
+        }
+        run()
+        /* Promise.all(scriptCDN.map(item => this.loadScript(item))).then(_ => {
           scriptBlock.forEach(code => {
             this.runScriptBlock(code)
           })
-        })
+        }) */
       }
     };
 

@@ -57,7 +57,7 @@ isSearch = theme.search.enable && theme.search.type === 'local'
     %>
         <%- js({src: theme.assets.plugin.katex.js,'data-swup-reload-script': true }) %>
         <% if(theme.katex.copy_tex) {%>
-            <%- js({src: theme.assets.plugin.katex.copy_tex.js,'data-swup-reload-script': true }) %>
+            <%- js({src: theme.assets.plugin.katex.copy_tex,'data-swup-reload-script': true }) %>
         <% } %>
         <%- js({src: theme.assets.plugin.katex.auto_render,'data-swup-reload-script': true }) %>
         <script data-swup-reload-script>
