@@ -28,7 +28,9 @@ hexo.extend.filter.register('before_generate', () => {
             });
         } else {
             let cdn = cdnSource[type] || type
-
+            if (/^http:\/\/|^https:\/\/|^\/\//.test(data)) {
+                return data
+            }
             if (internal) {
                 if (cdn === 'local') return data
                 if (cdn) cdn += `/hexo-theme-async@${pkg.version == '0.0.0' ? 'latest' : pkg.version}/source/`
@@ -41,8 +43,8 @@ hexo.extend.filter.register('before_generate', () => {
     }
 
     themeConfig.assets.plugin = Object.assign(
-        createCDNLink(assets.plugin, assets.internal_provider, true),
-        createCDNLink(thirdPartySrc, assets.third_party_provider)
+        createCDNLink(thirdPartySrc, assets.third_party_provider),
+        createCDNLink(assets.plugin, assets.internal_provider, true)
     )
     themeConfig.assets._CND_CREATED_ = true
 })
