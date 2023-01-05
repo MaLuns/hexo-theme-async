@@ -713,6 +713,7 @@ html.is-animating .trm-swup-animation {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 30%;
 }
 .trm-top-bar .container .trm-left-side .trm-logo-frame {
@@ -750,6 +751,9 @@ html.is-animating .trm-swup-animation {
   }
   .trm-top-bar .trm-logo-text {
     display: none;
+  }
+  .trm-top-bar .container .trm-left-side {
+    justify-content: start;
   }
   .trm-top-bar .container .trm-right-side {
     border-radius: 0 0 10px 10px;
