@@ -14,13 +14,23 @@
 
 ``` bash
 npm install --save hexo-renderer-less hexo-renderer-ejs
-# or
+```
+或者
+``` bash
 yarn add -D hexo-renderer-less hexo-renderer-ejs
 ```
 
 ## 安装主题 Install
 
-- 通过本仓库安装
+- 通过 npm 安装 （推荐）
+
+进入您的 Hexo 博客根目录，执行：
+
+```bash
+npm i hexo-theme-async@latest
+```
+
+- 通过本仓库安装（不推荐）
 
 从 <Badge>v1.1.0</Badge> 后，由于项目结构调整，不再需要整个仓库文件了。
 克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
@@ -35,13 +45,10 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 │   ├── _config.yml
 │   ├── _config.async.yml // 增加配置文件
 ```
-- 通过 NPM 安装 (推荐)
 
-进入您的 Hexo 博客根目录，执行：
-
-```bash
-npm i hexo-theme-async@latest
-```
+::: danger
+不推荐直接使用这种方式安装，直接拉取不会显示主题版本号（你也可以手动补齐 package.json 的 version），会导致 bug 版本定位和后续升级比较麻烦。只有当你需要修改源码文件，且不在需要升级时才可通过这种方式安装。
+::: 
 
 ## 启用主题 Use
 
