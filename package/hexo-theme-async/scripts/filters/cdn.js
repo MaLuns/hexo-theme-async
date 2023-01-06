@@ -1,6 +1,8 @@
 const path = require('path')
 const pkg = require('../../package.json')
 
+const httpRegExp = /^http:\/\/|^https:\/\/|^\/\//
+
 hexo.extend.filter.register('before_generate', () => {
     const themeConfig = hexo.theme.config
     const { assets } = themeConfig
@@ -27,16 +29,16 @@ hexo.extend.filter.register('before_generate', () => {
                 data[index] = createCDNLink(item, type, internal)
             });
         } else {
-            let cdn = cdnSource[type] || type
-            if (/^http:\/\/|^https:\/\/|^\/\//.test(data)) {
+            if (httpRegExp.test(data)) {
                 return data
             }
+            let cdn = cdnSource[type] || type
             if (internal) {
                 if (cdn === 'local') return data
                 if (cdn) cdn += `/hexo-theme-async@${pkg.version == '0.0.0' ? 'latest' : pkg.version}/source/`
                 data = cdn + data
             } else {
-                data = data.replace('$cdn$', cdn)
+                data = cdn + data
             }
         }
         return data;

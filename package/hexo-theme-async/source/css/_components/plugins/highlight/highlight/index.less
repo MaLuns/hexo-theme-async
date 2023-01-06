@@ -22,9 +22,8 @@ pre,
         background        : #ff5f56;
         width             : 12px;
         height            : 12px;
-        top               : 0;
+        top               : 9px;
         left              : 12px;
-        margin-top        : 12px;
         -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
         box-shadow        : 20px 0 #ffbd2e, 40px 0 #27c93f;
     }
@@ -36,7 +35,7 @@ pre,
         left            : 0;
         width           : 100%;
         height          : 31px;
-        background-color: #444444;
+        background-color: var(--highlight-tools-bg-color);
     }
 
     table {
@@ -54,7 +53,7 @@ pre,
         cursor     : pointer;
         user-select: none;
         font-size  : 12px;
-        color      : #adadad;
+        color      : var(--highlight-tools-color);
         opacity    : 0;
     }
 
@@ -68,8 +67,8 @@ pre,
 
     .gutter {
         width           : 28px;
-        color           : #b9b9b9;
-        background-color: #2a2a2a;
+        color           : var(--highlight-gutter-color);
+        background-color: var(--highlight-gutter-bg-color);
         text-align      : center;
         padding         : 10px 4px !important;
         user-select     : none;
@@ -81,10 +80,14 @@ pre,
 
     .code {
         padding   : 10px !important;
-        color     : #eee;
-        background: #303030;
         width     : 100%;
         overflow-x: auto;
+        color     : var(--highlight-foreground);
+        background: var(--highlight-background);
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--highlight-scrollbar)
+        }
     }
 
     pre {
@@ -99,26 +102,28 @@ pre,
         padding: 0 !important;
     }
 
-
     figcaption {
-        zoom         : 1;
-        font-size    : 0.85em;
-        color        : #999;
-        line-height  : 1em;
-        margin-bottom: 1em;
-
-        &:after {
-            clear: both;
-        }
-
-        &:before,
-        &:after {
-            content: "";
-            display: table;
-        }
+        position   : absolute;
+        top        : 0;
+        line-height: 30px;
+        right      : 0;
+        left       : 0;
+        margin     : 0 auto;
+        width      : fit-content;
+        font-size  : .9rem;
+        user-select: none;
 
         a {
-            float: right;
+            background : transparent !important;
+            margin-left: 2px;
+
+            &::before {
+                content: '【';
+            }
+
+            &::after {
+                content: '】';
+            }
         }
     }
 }
@@ -134,101 +139,4 @@ code {
     word-break   : break-all;
     word-wrap    : break-word;
     white-space  : normal;
-}
-
-pre {
-    overflow   : initial;
-    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
-
-    code {
-        font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
-        background : none;
-        text-shadow: none;
-        padding    : 0;
-    }
-
-    .css {
-        .hexcolor {
-            color: #6cc !important;
-        }
-    }
-
-    .comment,
-    .title {
-        color: #999;
-    }
-
-    .variable,
-    .attribute,
-
-    .regexp,
-    .ruby .constant,
-    .xml .tag .title,
-    .xml .pi,
-    .xml .doctype,
-    .html .doctype,
-    .css .id,
-    .css .class,
-    .css .pseudo {
-        color: #f2777a !important;
-    }
-
-    .tag {
-        color: #f9d926;
-
-        .attr,
-        .name {
-            color: #f92672 !important;
-        }
-    }
-
-    .number,
-    .preprocessor,
-    .built_in,
-    .literal,
-    .params,
-    .constant {
-        color: #f99157 !important;
-    }
-
-
-    .class,
-    .ruby .class .title,
-    .css .rules .attribute {
-        color: #9c9 !important;
-    }
-
-
-    .string,
-    .value,
-    .inheritance,
-    .header,
-    .ruby .symbol,
-    .xml .cdata {
-        color: #9c9 !important;
-    }
-
-    .function,
-    .python .decorator,
-    .python .title,
-    .ruby .function .title,
-    .ruby .title .keyword,
-    .perl .sub,
-    .javascript .title,
-    .coffeescript .title {
-        color: #a6e22e !important;
-    }
-
-    .keyword,
-    .javascript .function {
-        color: #f92672 !important;
-    }
-
-    .addition {
-        color: #a6e22e !important;
-    }
-
-    .deletion {
-        color: #f92672 !important;
-    }
 }

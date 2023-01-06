@@ -29,11 +29,8 @@ assets:
   third_party_provider: unpkg
   # 主题使用到的插件
   plugin:
-    row:
-      css: css/plugins/bootstrap.row.css
-    typing:
-      js: js/plugins/typing.js
     hexo_theme_async:
+      rowcss: css/plugins/bootstrap.row.css
       typing: js/plugins/typing.js
       search: js/plugins/local_search.js
       main: js/main.js

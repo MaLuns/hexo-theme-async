@@ -1,46 +1,48 @@
 <%
-let isSwiper,isTyping,isKatex,isSearch;
+let isSwiper,isTyping,isKatex,isSearch,plugin;
 
 isSwiper = Object.values(theme.banner).findIndex(item=>item?.type && item.type === 'slideshow' ) > 0;
 isTyping = theme?.sidebar?.typedText && Array.isArray(theme.sidebar.typedText) && theme.sidebar.typedText.length>0;
 isKatex = theme.katex.global || page?.katex;
 isSearch = theme.search.enable && theme.search.type === 'local'
+
+plugin = theme.assets.plugin;
 %>
 
 <% if(loadtype ==='css') {%>
 
-    <%- css(theme.assets.plugin.row.css) %>
-    <%- css(theme.assets.plugin.locomotive_scroll.css) %>
-    <%- css(theme.assets.plugin.fancybox.css) %>
+    <%- css(plugin.hexo_theme_async.rowcss) %>
+    <%- css(plugin.locomotive_scroll.css) %>
+    <%- css(plugin.fancybox.css) %>
 
     <% if(isSwiper) {%>
-        <%- css(theme.assets.plugin.swiper.css) %>
+        <%- css(plugin.swiper.css) %>
     <% } %>
 
     <% if(isKatex) {%>
-        <%- css(theme.assets.plugin.katex.css) %>
+        <%- css(plugin.katex.css) %>
     <% } %>
 
 <% } else { %>
     
     <% if(theme.swup) { %>
-        <%- js(theme.assets.plugin.swup.js) %>
+        <%- js(plugin.swup) %>
     <% } %>
 
-    <%- js(theme.assets.plugin.locomotive_scroll.js) %>
-    <%- js(theme.assets.plugin.fancybox.js) %>
+    <%- js(plugin.locomotive_scroll.js) %>
+    <%- js(plugin.fancybox.js) %>
 
     <% if(isSwiper) {%>
-        <%- js(theme.assets.plugin.swiper.js) %>
+        <%- js(plugin.swiper.js) %>
     <% } %>
 
     <% if(isTyping) {%>
-        <script src="<%= url_for(theme.assets.plugin.typing.js) %>?v=<%= theme.version %>"></script>
+        <script src="<%= url_for(plugin.hexo_theme_async.typing) %>?v=<%= theme.version %>"></script>
     <% } %>
 
     <% if(isSearch) {%>
-        <%- js(theme.assets.plugin.search.js[0]) %>
-        <script src="<%= url_for(theme.assets.plugin.hexo_theme_async.search) %>?v=<%= theme.version %>"></script>
+        <%- js(plugin.search) %>
+        <script src="<%= url_for(plugin.hexo_theme_async.search) %>?v=<%= theme.version %>"></script>
     <% } %>
 
     <!-- 数学公式 -->
@@ -55,11 +57,11 @@ isSearch = theme.search.enable && theme.search.type === 'local'
             }
         }
     %>
-        <%- js({src: theme.assets.plugin.katex.js,'data-swup-reload-script': true }) %>
+        <%- js({src: plugin.katex.js,'data-swup-reload-script': true }) %>
         <% if(theme.katex.copy_tex) {%>
-            <%- js({src: theme.assets.plugin.katex.copy_tex,'data-swup-reload-script': true }) %>
+            <%- js({src: plugin.katex.copy_tex,'data-swup-reload-script': true }) %>
         <% } %>
-        <%- js({src: theme.assets.plugin.katex.auto_render,'data-swup-reload-script': true }) %>
+        <%- js({src: plugin.katex.auto_render,'data-swup-reload-script': true }) %>
         <script data-swup-reload-script>
               window.renderMathInElement(document.body, {
                 delimiters: [
@@ -73,14 +75,15 @@ isSearch = theme.search.enable && theme.search.type === 'local'
         </script>
     <% } %>
 
-
     <!-- 评论插件 -->
     <% if(page.comments) { %>
         <% let comment = theme.comment%>
+
         <% if(comment.bComments.enable) { %>
-            <%- js(theme.assets.plugin.bComments.map(src=>({src, 'data-swup-reload-script': true}))) %>
+            <%- js(plugin.bComments.map(src=>({src, 'data-swup-reload-script': true}))) %>
         <% } else if(comment.twikoo.enable) { %>
-            <%- js({src:theme.assets.plugin.twikoo,'data-swup-reload-script': true, 'data-reset':'true' }) %>
+
+            <%- js({src: plugin.twikoo,'data-swup-reload-script': true, 'data-reset':'true' }) %>
             <script data-swup-reload-script>
                 const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
                 twikooConfig.el = '#tcomment';
@@ -90,6 +93,7 @@ isSearch = theme.search.enable && theme.search.type === 'local'
                     document.body.append(document.querySelector('.tk-admin-container'))
                 });;
             </script>
+
         <% } %>
     <% } %>
 <% } %>

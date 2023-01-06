@@ -372,15 +372,20 @@ export function InitCopyright() {
  */
 export function InitCodeBtn() {
 	const { i18n } = window.ASYNC_CONFIG
-	utils.qa('.highlight').forEach(element => {
+	// highlight prismjs
+	utils.qa('.highlight,pre[class*="language-"]').forEach(element => {
 		const div = document.createElement("div");
 		div.className = 'code-btn'
 		const span = document.createElement('span')
 		span.innerText = i18n.copy_button
 		span.addEventListener('click', function (e) {
 			try {
+				// highlight
 				let code = element.querySelector('.code')
 				if (!code) code = element.querySelector('table')
+				// prismjs
+				if (!code) code = element.querySelector('code')
+				if (!code) return;
 				navigator.clipboard.writeText(code.innerText);
 				utils.message(i18n.copy_success)
 			} catch (error) {
@@ -436,7 +441,7 @@ export function InitJustifiedGallery() {
 		})
 
 		utils.loadScript(
-			window.ASYNC_CONFIG.plugin.flickr_justified_gallery.js,
+			window.ASYNC_CONFIG.plugin.flickr_justified_gallery,
 			window.fjGallery
 		).then(() => {
 			gallerys.forEach((selector) => {

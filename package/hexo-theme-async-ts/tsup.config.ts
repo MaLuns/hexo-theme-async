@@ -6,7 +6,13 @@ export default defineConfig((options) => {
         splitting: true,
         sourcemap: false,
         clean: true,
-        format: ['esm'],
+        format: ['iife'],
+        outExtension(ctx) {
+            return {
+                js: '.js'
+            }
+        },
+        platform: 'browser',
         minify: !options.watch,
         outDir: '../hexo-theme-async/source/js/',
     }

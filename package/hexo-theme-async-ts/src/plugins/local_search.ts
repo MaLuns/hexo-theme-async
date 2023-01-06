@@ -1,12 +1,15 @@
+
 const GetLocalSearch = (() => {
     let localSearch = null;
     return () => {
-        if (!window.LocalSearch) {
+        // @ts-expect-error global LocalSearch
+        if (!LocalSearch) {
             return;
         }
         if (!localSearch) {
             const { search, root } = window.ASYNC_CONFIG;
-            localSearch = new window.LocalSearch({
+            // @ts-expect-error global LocalSearch
+            localSearch = new LocalSearch({
                 path: root + search.path,
                 top_n_per_article: search.top_n_per_article,
                 unescape: search.unescape,

@@ -35,6 +35,52 @@ const mergeDatas = (hexo, datas, key) => {
         hexo.theme.config[key] = datas
 }
 
+/**
+ * 处理 Less 配置
+ * @param {*} hexo 
+ */
+const processLess = (hexo) => {
+    const { theme, config: { highlight, prismjs } } = hexo;
+
+    const less = Object.assign({
+        paths: [],
+        options: {
+            globalVars: {}
+        }
+    }, theme.config.less);
+
+    // 评论插件
+    const comment = theme.config.comment
+    for (const key in comment) {
+        if (Object.hasOwnProperty.call(comment, key)) {
+            const c = comment[key];
+            if (c.enable) {
+                less.options.globalVars.commentType = key
+            }
+        }
+    }
+
+    // 本地查询插件
+    if (theme.config.search && theme.config.search.enable) less.options.globalVars.isSearch = true
+
+    // 阅读模式
+    if (theme.config.rightside) {
+        if (theme.config.rightside.readmode) less.options.globalVars.isReadmode = true
+        if (theme.config.rightside.aside) less.options.globalVars.isAside = true
+    }
+
+    // 打赏
+    if (theme.config.reward.enable) less.options.globalVars.isReward = true
+
+    // 代码高亮
+    less.options.globalVars.highlightEnable = highlight && highlight.enable
+    less.options.globalVars.highlightLineNumber = highlight && highlight.line_number
+    less.options.globalVars.prismjsEnable = prismjs && prismjs.enable
+    less.options.globalVars.prismjsLineNumber = prismjs && prismjs.line_number
+
+    theme.config.less = less
+}
+
 module.exports = function (hexo) {
     const data = hexo.locals.get('data')
 
@@ -49,4 +95,7 @@ module.exports = function (hexo) {
     // merge projects
     if (data.projects && Array.isArray(data.projects))
         mergeDatas(hexo, data.projects, 'projects')
+
+    // merge less
+    processLess(hexo)
 }
