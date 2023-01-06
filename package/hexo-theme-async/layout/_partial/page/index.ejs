@@ -1,35 +1,37 @@
 <!-- categories -->
 <% if(theme.categorie_card.enable) { %>
-<div class="row hidden-sm">
-    <% 
-        let cards = [] 
-        if (Array.isArray(theme.categorie_card.list)) {
-            theme.categorie_card.list.forEach(title => {
-               let categorie = site.categories.data.find(item=> item.name === title)
-               if(categorie) cards.push(categorie)
-            })
-        } else {
-            cards = site.categories.data.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
-        }
-    %>
-    <% cards.forEach((item,index) => {  %>
-    <div class="col-lg-6">
-        <%- partial('../../_widget/categorie',{ name:item.name,length:item.length,path:item.path }) %>
+    <div class="row hidden-sm">
+        <% 
+            let cards = [] 
+            if (Array.isArray(theme.categorie_card.list)) {
+                theme.categorie_card.list.forEach(title => {
+                let categorie = site.categories.data.find(item=> item.name === title)
+                if(categorie) cards.push(categorie)
+                })
+            } else {
+                cards = site.categories.data.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
+            }
+        %>
+        <% cards.forEach((item,index) => {  %>
+        <div class="col-lg-6">
+            <%- partial('../../_widget/categorie',{ name:item.name,length:item.length,path:item.path }) %>
+        </div>
+        <% }) %>
     </div>
-    <% }) %>
-</div>
 <% } %>
 <!-- categories end -->
 
 <!-- newest publications -->
 <div class="row">
-    <div class="col-lg-12">
-        <!-- title -->
-        <h5 class="trm-title-with-divider">
-            <%-__('title.new_publish')%> 
-            <span data-number="01"></span>
-        </h5>
-    </div>
+    <% if(theme.categorie_card.enable) { %>
+        <div class="col-lg-12">
+            <!-- title -->
+            <h5 class="trm-title-with-divider">
+                <%-__('title.new_publish')%> 
+                <span data-number="01"></span>
+            </h5>
+        </div>
+    <% } %>
     <% page.posts.each(function(post,postIndex){ %>
         <div class="col-lg-6">
             <%- partial('../post/post-card',{ post }) %>
