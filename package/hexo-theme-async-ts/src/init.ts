@@ -368,31 +368,65 @@ export function InitCopyright() {
 }
 
 /**
- * 初始化代码片段按钮
+ * 初始化代码片段-工具栏
  */
-export function InitCodeBtn() {
-	const { i18n } = window.ASYNC_CONFIG
+export function InitHighlightTool() {
+	const { i18n, highlight } = window.ASYNC_CONFIG
 	// highlight prismjs
-	utils.qa('.highlight,pre[class*="language-"]').forEach(element => {
+	const isHighlightCopy = highlight.copy
+	const isHighlightLang = highlight.lang
+	const isShowTool = isHighlightCopy || isHighlightLang
+	const isPrismjs = highlight.plugin === 'prismjs'
+	const isMacTitle = highlight.title === 'mac'
+
+	const selector = isPrismjs ? 'pre[class*="language-"]' : 'figure.highlight'
+	const $figureHighlight = utils.qa(selector)
+
+	if (!(isShowTool || $figureHighlight.length)) return;
+
+	utils.qa(selector).forEach(element => {
 		const div = document.createElement("div");
-		div.className = 'code-btn'
-		const span = document.createElement('span')
-		span.innerText = i18n.copy_button
-		span.addEventListener('click', function (e) {
-			try {
-				// highlight
-				let code = element.querySelector('.code')
-				if (!code) code = element.querySelector('table')
-				// prismjs
-				if (!code) code = element.querySelector('code')
-				if (!code) return;
-				navigator.clipboard.writeText(code.innerText);
-				utils.message(i18n.copy_success)
-			} catch (error) {
-				utils.message(i18n.copy_failure, 'warning')
+		div.className = `code-tools ${isShowTool && isMacTitle ? 'mac-style' : 'default-style'}`
+
+		/* Show Lang */
+		if (isHighlightLang) {
+			let langName = ''
+			if (isPrismjs) {
+				langName = element.getAttribute('data-language') ? element.getAttribute('data-language') : 'Code'
+			} else {
+				langName = element.getAttribute('class').split(' ')[1]
+				if (langName === 'plain' || langName === undefined) langName = 'Code'
 			}
-		})
-		div.append(span)
+
+			const span = document.createElement('span')
+			span.className = 'code-lang'
+			span.innerText = langName
+
+			div.append(span)
+		}
+
+		/* Copy Button */
+		if (isHighlightCopy) {
+			const span = document.createElement('span')
+			span.className = 'copy-button'
+			span.innerText = i18n.copy_button
+			span.addEventListener('click', function (e) {
+				try {
+					// highlight
+					let code = element.querySelector('.code')
+					if (!code) code = element.querySelector('table')
+					// prismjs
+					if (!code) code = element.querySelector('code')
+					if (!code) return;
+					navigator.clipboard.writeText(code.innerText);
+					utils.message(i18n.copy_success)
+				} catch (error) {
+					utils.message(i18n.copy_failure, 'warning')
+				}
+			})
+			div.append(span)
+		}
+
 		element.append(div)
 	});
 }
@@ -554,7 +588,7 @@ export function ready() {
 	InitPictures()
 
 	/* Initialize with code blocks in articles */
-	InitCodeBtn()
+	InitHighlightTool()
 
 	/* Initialize the tabs in the article */
 	InitTabs()
@@ -600,7 +634,7 @@ export function ready() {
 			InitPictures()
 
 			/* Initialize with code blocks in articles */
-			InitCodeBtn()
+			InitHighlightTool()
 
 			/* Initialize with tabs in articles */
 			InitTabs()

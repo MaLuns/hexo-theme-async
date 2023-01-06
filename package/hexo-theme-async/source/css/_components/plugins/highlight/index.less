@@ -1,21 +1,19 @@
+@import './minix.less';
+
 & when (@highlightEnable), (@prismjsEnable) {
     @import './theme.less';
 }
 
 & when (@highlightEnable) {
-    @import './theme.less';
-
     @import './highlight/index.less';
     @import './highlight/diff.less';
 }
 
-
 & when (@prismjsEnable) {
     @import './prismjs/index.less';
+    @import './prismjs/diff.less';
 
     & when(@prismjsLineNumber) {
         @import './prismjs/line-number.less';
     }
-
-    @import './prismjs/diff.less';
 }

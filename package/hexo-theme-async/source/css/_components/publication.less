@@ -221,7 +221,6 @@
     }
 
     a {
-
         background     : linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
         background-size: 100% .4em;
         .transition-mixin();
@@ -229,6 +228,19 @@
         &:hover {
             background-size: 100% 60%;
         }
+    }
+
+    p>code,
+    >code {
+        color        : var(--code-color);
+        background   : var(--code-bg-color);
+        border-radius: 4px;
+        padding      : 3px 6px;
+        margin       : 0 5px;
+        font-size    : 90%;
+        word-break   : break-all;
+        word-wrap    : break-word;
+        white-space  : normal;
     }
 }
 

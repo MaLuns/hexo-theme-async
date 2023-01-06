@@ -46,7 +46,7 @@ const processLess = (hexo) => {
         paths: [],
         options: {
             globalVars: {
-                commentType: '',
+                commentType: 'none',
                 isSearch: false,
                 isReadmode: false,
                 isAside: false,
@@ -55,6 +55,7 @@ const processLess = (hexo) => {
                 highlightLineNumber: false,
                 prismjsEnable: false,
                 prismjsLineNumber: false,
+                highlightTitleStyle: 'default'
             }
         }
     }, theme.config.less);
@@ -87,6 +88,7 @@ const processLess = (hexo) => {
     less.options.globalVars.highlightLineNumber = highlight && highlight.line_number
     less.options.globalVars.prismjsEnable = prismjs && prismjs.enable
     less.options.globalVars.prismjsLineNumber = prismjs && prismjs.line_number
+    less.options.globalVars.highlightTitleStyle = theme.config.highlight.title
 
     theme.config.less = less
 }

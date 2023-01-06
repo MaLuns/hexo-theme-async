@@ -12,7 +12,13 @@ declare interface Window {
         creative_commons: any,
         swup: boolean
         plugin: any
-        icons: any
+        icons: any,
+        highlight: {
+            plugin: 'highlighjs' | 'prismjs'
+            copy: boolean
+            lang: boolean
+            title: 'mac' | 'default'
+        }
     }
 
     switchReadMode: any

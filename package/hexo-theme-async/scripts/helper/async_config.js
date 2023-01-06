@@ -36,7 +36,13 @@ hexo.extend.helper.register('async_config', function () {
             flickr_justified_gallery: theme.assets.plugin.flickr_justified_gallery,
             fancybox: theme.assets.plugin.fancybox
         },
-        icons: theme.icons
+        icons: theme.icons,
+        highlight: {
+            plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
+            copy: theme.highlight.copy,
+            lang: theme.highlight.lang,
+            title: theme.highlight.title
+        }
     }
 
     if (config.search) {

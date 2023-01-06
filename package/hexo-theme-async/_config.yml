@@ -9,7 +9,7 @@ user:
   describe: 网站简介。
   ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
 
-# logo
+# Configure the icon information of the site
 favicon:
   logo: /img/favicon.svg
   icon16: /img/favicon.svg
@@ -40,7 +40,7 @@ assets:
     css:  css/plugins/font-awesome.min.css
     js:
 
-# CDN 用户自定义插件时使用
+# CDN User - defined plug-in
 cdn:
   css: 
   js:
@@ -282,3 +282,10 @@ rightside:
 error_img:
   flink: /img/friend_404.gif
   post_page: /img/404.jpg
+
+# Code highlighting configuration
+highlight:
+  theme: true # 
+  copy: true # copy button
+  lang: true # show the code language
+  title: mac # mac | default
