@@ -1,11 +1,16 @@
+# custom
 .DS_Store
-Thumbs.db
-*.log
 node_modules/
-.deploy*/
-.vs
-.vscode
-db.json
-demo/themes/
-docs/.vitepress/dist
-cache
+
+# lock
+yarn.lock
+package-lock.json
+pnpm-global
+
+dist/
+
+# logs
+*.log
+
+.cache
+.temp

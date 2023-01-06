@@ -34,7 +34,9 @@ assets:
     typing:
       js: js/plugins/typing.js
     hexo_theme_async:
-      js: js/main.js
+      typing: js/plugins/typing.js
+      search: js/plugins/local_search.js
+      main: js/main.js
   # 图标配置
   icons: 
     type: font # font symbol

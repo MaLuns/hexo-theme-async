@@ -1,12 +1,12 @@
 const GetLocalSearch = (() => {
     let localSearch = null;
     return () => {
-        if (!LocalSearch) {
+        if (!window.LocalSearch) {
             return;
         }
         if (!localSearch) {
             const { search, root } = window.ASYNC_CONFIG;
-            localSearch = new LocalSearch({
+            localSearch = new window.LocalSearch({
                 path: root + search.path,
                 top_n_per_article: search.top_n_per_article,
                 unescape: search.unescape,
@@ -17,7 +17,7 @@ const GetLocalSearch = (() => {
 })()
 
 function InitSearch() {
-    const { search, i18n } = ASYNC_CONFIG;
+    const { search, i18n } = window.ASYNC_CONFIG;
     if (search.enable && search.type === 'local') {
         if (!search.path) {
             console.warn('`hexo-generator-searchdb` plugin is not installed!')
@@ -26,7 +26,7 @@ function InitSearch() {
 
         const searchBtn = document.querySelector('#trm-search-btn')
         const closeBtn = document.querySelector('.trm-search-popup-btn-close')
-        const input = document.querySelector('.trm-search-input')
+        const input = <HTMLInputElement>document.querySelector('.trm-search-input')
         const localSearch = GetLocalSearch()
 
         if (search.preload && !localSearch.isfetched)
@@ -104,6 +104,9 @@ function InitSearch() {
 
 InitSearch()
 
-document.addEventListener("swup:contentReplaced", function () {
-    InitSearch();
-});
+if (window.ASYNC_CONFIG.swup) {
+    document.addEventListener("swup:contentReplaced", function () {
+        InitSearch();
+    });
+}
+

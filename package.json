@@ -5,13 +5,17 @@
   "author": "Maluns <admin@imalun.com>",
   "description": "🎈 A simple, lightweight Hexo theme",
   "scripts": {
+    "dev": "npm run lib:dev & npm run demo:dev",
+    "build": "npm run docs:build && npm run lib:build && npm run demo:clean && npm run demo:build",
+    "lib:dev": "npm --prefix package/hexo-theme-async-ts run dev",
+    "lib:build": "npm --prefix package/hexo-theme-async-ts run build",
     "demo:dev": "hexo server --cwd ./demo ",
     "demo:clean": "hexo --cwd ./demo clean",
     "demo:build": "hexo --cwd ./demo generate",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "demosite": "node ./script/demosite"
+    "generate:demo-sites": "node ./script/demosite"
   },
   "bugs": {
     "url": "https://github.com/MaLuns/hexo-theme-async/issues"
@@ -21,6 +25,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.2",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.4"
   },
   "workspaces": [
     "package/*",

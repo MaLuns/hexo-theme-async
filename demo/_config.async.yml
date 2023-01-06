@@ -79,3 +79,8 @@ rightside:
 post_pagination: 
   enable: true 
   type: small
+
+cdn:
+  js:
+    head:
+    base: [demo.js]

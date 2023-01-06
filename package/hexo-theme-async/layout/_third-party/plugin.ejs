@@ -40,7 +40,7 @@ isSearch = theme.search.enable && theme.search.type === 'local'
 
     <% if(isSearch) {%>
         <%- js(theme.assets.plugin.search.js[0]) %>
-        <script src="<%= url_for(theme.assets.plugin.search.js[1]) %>?v=<%= theme.version %>"></script>
+        <script src="<%= url_for(theme.assets.plugin.hexo_theme_async.search) %>?v=<%= theme.version %>"></script>
     <% } %>
 
     <!-- 数学公式 -->
