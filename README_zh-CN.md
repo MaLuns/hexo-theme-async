@@ -81,8 +81,6 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 
 > 你不知道这代表什么？简单来说，就是如果你使用了该主题，你需要马不停蹄地点一个 Star，接下来你便可以随意使用它。
 
-哈哈 开个玩笑，当然使用的是 [MIT](https://opensource.org/licenses/MIT)
-
 ## 演示
 <!-- demo-start -->
 <table>

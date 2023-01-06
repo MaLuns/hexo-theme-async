@@ -39,7 +39,7 @@ footer:
   live_time:
     enable: true
     prefix: footer.tips
-    start_time: 04/10/2022 17:00:00
+    start_time: 2022/04/10 17:00:00
   custom_text:
 
 search:

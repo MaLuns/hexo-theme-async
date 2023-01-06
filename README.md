@@ -80,8 +80,6 @@ We use [SATA License](https://github.com/zTrix/sata-license).
 
 > You don’t know what this means? In short, if you use this theme, you need to Star this repo non-stop, and then you can use it anyway you like.
 
-Haha Just kidding, of course it's [MIT](https://opensource.org/licenses/MIT)
-
 ## 演示
 <!-- demo-start -->
 <table>

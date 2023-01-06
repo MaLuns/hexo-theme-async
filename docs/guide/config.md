@@ -290,7 +290,7 @@ footer:
 
 如：`由 Hexo 驱动 v5.4.2 | 主题 - Async v1.1.7`
 
-让更多人知道 Hexo 与主题 Async，这有利于开源社区进一步发展。
+让更多人知道 Hexo 与主题 Hexo-Theme-Async，这有利于开源社区进一步发展。
 
 ``` yaml {3}
 footer:
@@ -319,6 +319,10 @@ footer:
 默认关闭。
 
 `本博客已萌萌哒地运行 442 天`
+
+- `enable`: 开启运行计时
+- `prefix`: 计时文案，如果需要自定义，请覆盖语言文件里 footer.tips ，个性化语言 [参考这里](#语言-language)
+- `start_time`: 计时开始时间，浏览器支持的日期格式即可
 
 ```yaml
 footer:
