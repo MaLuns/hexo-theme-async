@@ -45,7 +45,17 @@ const processLess = (hexo) => {
     const less = Object.assign({
         paths: [],
         options: {
-            globalVars: {}
+            globalVars: {
+                commentType: '',
+                isSearch: false,
+                isReadmode: false,
+                isAside: false,
+                isReward: false,
+                highlightEnable: false,
+                highlightLineNumber: false,
+                prismjsEnable: false,
+                prismjsLineNumber: false,
+            }
         }
     }, theme.config.less);
 
