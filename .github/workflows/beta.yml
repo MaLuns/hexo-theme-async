@@ -1,0 +1,36 @@
+name: Beta
+
+on:
+  workflow_dispatch:
+    inputs:
+      beta:
+        description: "预览版本"
+        required: true
+        type: string
+        default: ""
+      latest:
+        description: "最后版本"
+        required: true
+        type: string
+        default: ""
+
+jobs:
+  version:
+    if: github.repository == 'MaLuns/hexo-theme-async'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+          cache: yarn
+
+
+      - name: Publish
+        run: |
+          npm dist-tag add test-npm-tag@${{ github.event.inputs.beta }}  beta
+          npm dist-tag add test-npm-tag@${{ github.event.inputs.latest }}  latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
