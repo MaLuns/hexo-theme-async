@@ -13,11 +13,14 @@ declare interface Window {
         swup: boolean
         plugin: any
         icons: any,
+        icontype: 'symbol' | 'font'
         highlight: {
             plugin: 'highlighjs' | 'prismjs'
+            theme: boolean
             copy: boolean
             lang: boolean
             title: 'mac' | 'default'
+            height_limit: false | number
         }
     }
 
@@ -27,7 +30,6 @@ declare interface Window {
 
     show_date_time: () => void
 
-    LocalSearch: any
     // 三方插件
     LocomotiveScroll: any
     Fancybox: any

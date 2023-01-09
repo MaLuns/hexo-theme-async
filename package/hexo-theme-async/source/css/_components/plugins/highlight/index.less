@@ -1,17 +1,52 @@
 @import './minix.less';
 
-& when (@highlightEnable), (@prismjsEnable) {
+figure.highlight {
+    position     : relative;
+    overflow     : hidden;
+    padding      : 31px 0 0;
+    margin-left  : 0;
+    margin-right : 0;
+    border-radius: 4px;
+    font-size    : 14px !important;
+    line-height  : 1.5;
+    font-family  : Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+    color        : var(--highlight-foreground);
+    background   : var(--highlight-background);
+
+    pre {
+        margin : 0;
+        padding: 0;
+        border : none;
+    }
+
+    figcaption,
+    .caption {
+        .caption();
+    }
+
+    .tools();
+    .mac();
+    .height_limit();
+}
+
+& when (@highlightEnable),(@prismjsEnable) {
     @import './theme.less';
 }
 
 & when (@highlightEnable) {
     @import './highlight/index.less';
-    @import './highlight/diff.less';
+
+    & when(@highlightTheme) {
+        @import './highlight/diff.less';
+    }
 }
 
 & when (@prismjsEnable) {
     @import './prismjs/index.less';
-    @import './prismjs/diff.less';
+
+    & when(@highlightTheme) {
+        @import './prismjs/diff.less';
+    }
 
     & when(@prismjsLineNumber) {
         @import './prismjs/line-number.less';

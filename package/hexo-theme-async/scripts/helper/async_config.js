@@ -24,7 +24,6 @@ hexo.extend.helper.register('async_config', function () {
             copyright_link: __('post.copyright.link') + __('symbol.colon'),
             copyright_license_title: __('post.copyright.license_title') + __('symbol.colon'),
             copyright_license_content: __('post.copyright.license_content'),
-            copy_button: __('post.copy.button'),
             copy_success: __('post.copy.success'),
             copy_failure: __('post.copy.failure'),
             open_read_mode: __('post.read_mode.open'),
@@ -37,11 +36,14 @@ hexo.extend.helper.register('async_config', function () {
             fancybox: theme.assets.plugin.fancybox
         },
         icons: theme.icons,
+        icontype: theme.assets.icons.type,
         highlight: {
             plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
+            theme: theme.highlight.theme,
             copy: theme.highlight.copy,
             lang: theme.highlight.lang,
-            title: theme.highlight.title
+            title: theme.highlight.title,
+            height_limit: theme.highlight.height_limit
         }
     }
 

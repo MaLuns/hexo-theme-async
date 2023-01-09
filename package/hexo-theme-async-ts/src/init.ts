@@ -371,10 +371,11 @@ export function InitCopyright() {
  * 初始化代码片段-工具栏
  */
 export function InitHighlightTool() {
-	const { i18n, highlight } = window.ASYNC_CONFIG
+	const { i18n, highlight, icons, icontype } = window.ASYNC_CONFIG
 	// highlight prismjs
 	const isHighlightCopy = highlight.copy
 	const isHighlightLang = highlight.lang
+	const isHighlightHeightLimit = highlight.height_limit
 	const isShowTool = isHighlightCopy || isHighlightLang
 	const isPrismjs = highlight.plugin === 'prismjs'
 	const isMacTitle = highlight.title === 'mac'
@@ -382,11 +383,32 @@ export function InitHighlightTool() {
 	const selector = isPrismjs ? 'pre[class*="language-"]' : 'figure.highlight'
 	const $figureHighlight = utils.qa(selector)
 
-	if (!(isShowTool || $figureHighlight.length)) return;
+	if (!(isShowTool || isHighlightHeightLimit || $figureHighlight.length)) return;
+
+	const copyCode = function () {
+		try {
+			const element = this.parentNode.parentNode
+			// highlight
+			let code = element.querySelector('.code')
+			if (!code) code = element.querySelector('table')
+			// prismjs
+			if (!code) code = element.querySelector('code')
+			if (!code) return;
+			navigator.clipboard.writeText(code.innerText);
+			utils.message(i18n.copy_success)
+		} catch (error) {
+			utils.message(i18n.copy_failure, 'warning')
+		}
+	}
+
+	const expandCode = function () {
+		this.classList.toggle('expand-done')
+	}
 
 	utils.qa(selector).forEach(element => {
-		const div = document.createElement("div");
-		div.className = `code-tools ${isShowTool && isMacTitle ? 'mac-style' : 'default-style'}`
+		const fragment = document.createDocumentFragment()
+		const tools = document.createElement("div");
+		tools.className = `code-tools ${isShowTool && isMacTitle ? 'mac-style' : 'default-style'}`
 
 		/* Show Lang */
 		if (isHighlightLang) {
@@ -402,32 +424,37 @@ export function InitHighlightTool() {
 			span.className = 'code-lang'
 			span.innerText = langName
 
-			div.append(span)
+			tools.append(span)
 		}
 
 		/* Copy Button */
 		if (isHighlightCopy) {
 			const span = document.createElement('span')
 			span.className = 'copy-button'
-			span.innerText = i18n.copy_button
-			span.addEventListener('click', function (e) {
-				try {
-					// highlight
-					let code = element.querySelector('.code')
-					if (!code) code = element.querySelector('table')
-					// prismjs
-					if (!code) code = element.querySelector('code')
-					if (!code) return;
-					navigator.clipboard.writeText(code.innerText);
-					utils.message(i18n.copy_success)
-				} catch (error) {
-					utils.message(i18n.copy_failure, 'warning')
-				}
-			})
-			div.append(span)
+			span.innerHTML = utils.icons(icons.copy, icontype)
+			span.addEventListener('click', copyCode)
+			tools.append(span)
 		}
 
-		element.append(div)
+		/* height limit */
+		if (isHighlightHeightLimit && element.offsetHeight > <number>highlight.height_limit + 50) {
+			const expand = document.createElement("div");
+			expand.innerHTML = utils.icons(icons.double_arrows, icontype)
+			expand.className = 'code-expand-btn'
+			expand.addEventListener('click', expandCode)
+			fragment.append(expand)
+		}
+
+		fragment.append(tools)
+
+		if (isPrismjs) {
+			utils.wrap(element, 'figure', { class: 'highlight' })
+			element.parentNode.insertBefore(fragment, element);
+			const caption = element.querySelector('.caption,caption')
+			if (caption) element.parentNode.appendChild(caption);
+		} else {
+			element.insertBefore(fragment, element.querySelector('table'));
+		}
 	});
 }
 
@@ -464,8 +491,8 @@ export function InitJustifiedGallery() {
 	if (gallerys.length) {
 		gallerys.forEach(item => {
 			const imgList = item.querySelectorAll('img')
-			imgList.forEach(i => {
-				i.loading = "auto"
+			imgList.forEach((i: HTMLImageElement) => {
+				i.loading = 'eager'
 				utils.wrap(i, 'div', {
 					class: 'fj-gallery-item',
 					'data-src': i.dataset.src || i.src,
@@ -501,7 +528,8 @@ export function SwitchReadMode() {
 	const newEle = document.createElement('button')
 	newEle.type = 'button'
 	newEle.title = window.ASYNC_CONFIG.i18n.exit_read_mode
-	newEle.className = `${window.ASYNC_CONFIG.icons.close} trm-exit-readmode trm-glow`
+	newEle.className = `trm-exit-readmode trm-glow`
+	newEle.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.close, window.ASYNC_CONFIG.icontype)
 	$body.appendChild(newEle)
 
 	function clickFn() {

@@ -6,11 +6,10 @@ class SwupScriptsPlugin {
 
     defaultOptions = {
         selectors: 'script[data-swup-reload-script]',
-        insertBefore: '#async-script'
     };
 
     swup: any;
-    options: { selectors: string; insertBefore: string; };
+    options: { selectors: string; };
 
     constructor(options = {}) {
         this.options = {
@@ -31,70 +30,70 @@ class SwupScriptsPlugin {
     getScriptAndInsert = () => {
         let nextHeadChildren = this.getNextScriptChildren();
         if (nextHeadChildren.length) {
-            let scripts = Array.from(document.scripts)
-            let scriptCDN = <Array<HTMLScriptElement>>[]
-            let scriptBlock = <Array<string>>[]
+            const run = async (newScripts: Array<HTMLScriptElement>) => {
+                let scripts = Array.from(document.scripts)
 
-            nextHeadChildren.forEach(item => {
-                if (item.src)
-                    scripts.findIndex(s => {
-                        if (s.src === item.src) {
-                            if (!s.dataset.reset) {
-                                return true
-                            }
-                            s.remove()
+                for (let index = 0; index < newScripts.length; index++) {
+                    const script = newScripts[index];
+                    if (script.src) {
+                        // 如果已经加载 、并且不需要重新执行的 则跳过
+                        if (scripts.findIndex(s => s.src === script.src && !s.dataset.reset) < 0) {
+                            await this.loadScript(script);
                         }
-                    }) < 0 && scriptCDN.push(item);
-                else
-                    scriptBlock.push(item.innerText)
-            })
-
-            const run = async (cdns: Array<HTMLScriptElement>, blocks: Array<string>) => {
-                try {
-                    for (var i = 0; i < cdns.length; i++) {
-                        await this.loadScript(cdns[i]);
+                    } else {
+                        this.runScriptBlock(script)
                     }
-                    blocks.forEach(code => {
-                        this.runScriptBlock(code)
-                    })
-                } catch (e) {
                 }
             }
 
-            run(scriptCDN, scriptBlock)
+            run(nextHeadChildren)
         }
     };
 
     loadScript(item: HTMLScriptElement) {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             const element = document.createElement('script');
             for (const { name, value } of arrayify(item.attributes)) {
                 element.setAttribute(name, value);
             }
             element.textContent = item.textContent;
             element.setAttribute('async', 'false');
-            element.onload = resolve
+            element.onload = () => {
+                resolve()
+                if (document.body.contains(element)) {
+                    document.body.removeChild(element);
+                }
+            }
             element.onerror = reject
-            this.insertScript(element)
+            document.body.appendChild(element)
         })
     }
 
-    runScriptBlock(code: string) {
-        try {
-            const func = new Function(code);
-            func()
-        } catch (error) {
-            try {
-                window.eval(code)
-            } catch (error) {
-            }
-        }
-    }
+    runScriptBlock(el: HTMLScriptElement) {
+        const code = el.text || el.textContent || el.innerHTML || "";
+        const parent = document.head || document.querySelector("head") || document.documentElement;
+        const script = document.createElement('script')
 
-    insertScript(el) {
-        const body = document.body;
-        const asyncScript = document.querySelector(this.options.insertBefore)
-        body.insertBefore(el, asyncScript)
+        if (code.match("document.write")) {
+            if (console && console.log) {
+                console.log("Script contains document.write. Can’t be executed correctly. Code skipped ");
+            }
+            return false;
+        }
+
+        try {
+            script.appendChild(document.createTextNode(code));
+        } catch (e) {
+            // old IEs have funky script nodes
+            script.text = code;
+        }
+
+        // 执行代码块
+        parent.appendChild(script);
+        // 移除执行后的代码块，避免污染标签
+        if (parent.contains(script)) {
+            parent.removeChild(script);
+        }
     }
 
     getNextScriptChildren(): HTMLScriptElement[] {
@@ -112,7 +111,6 @@ class SwupScriptsPlugin {
 
         return children;
     };
-
 }
 
 export default SwupScriptsPlugin

@@ -3,6 +3,8 @@ title: Code Snippet
 date: 2023-01-05 15:08:29
 ---
 
+{% include_code lang:yaml config.yml %}
+
 ``` bash 代码块的标题 /aas/asd /asd/asd
 #!/bin/bash
 

@@ -27,7 +27,12 @@
         .copy-button {
             cursor     : pointer;
             font-weight: bolder;
-            font-size  : .8em;
+            font-size  : 1.05em;
+            .transition-mixin();
+
+            &:hover {
+                color: var(--primary);
+            }
         }
 
         &.mac-style {
@@ -50,7 +55,7 @@
     }
 
     &:hover {
-        box-shadow: 1px 1px 4px 0 #0000000e;
+        /* box-shadow: 1px 1px 4px 0 #0000000e; */
 
         .code-tools.mac-style {
             .code-lang {
@@ -78,13 +83,9 @@
     letter-spacing: 0;
     color         : var(--highlight-tools-color);
 
-    span {
-        vertical-align: middle;
-    }
-
     a {
         background : transparent !important;
-        margin-left: 6px;
+        margin-left: 4px;
 
         &::before {
             content: '[';
@@ -110,6 +111,62 @@
             left              : 12px;
             -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
             box-shadow        : 20px 0 #ffbd2e, 40px 0 #27c93f;
+        }
+    }
+}
+
+/* max height */
+.height_limit() {
+    /* & when(isnumber(@highlightHeightLimit)) {
+        max-height: unit(@highlightHeightLimit, px);
+    } */
+
+    .code-expand-btn {
+        @height    : 24px;
+        position   : absolute;
+        z-index    : 10;
+        bottom     : 0;
+        left       : 0;
+        font-size  : 16px;
+        height     : @height;
+        line-height: @height;
+        font-weight: bold;
+        width      : 100%;
+        color      : var(--highlight-foreground);
+        background : linear-gradient(0, var(--highlight-gutter-bg-color), transparent);
+        text-align : center;
+        cursor     : pointer;
+        animation  : code-expand-key 2s infinite;
+
+        &~pre,
+        &~table {
+            margin-bottom: @height;
+        }
+
+        &.expand-done {
+            background: linear-gradient(0, transparent, var(--highlight-gutter-bg-color));
+            transform : rotate(180deg);
+        }
+
+        &:not(.expand-done)~pre,
+        &:not(.expand-done)~table {
+            margin-bottom: 0;
+            overflow     : hidden;
+            height       : unit(@highlightHeightLimit, px);
+        }
+    }
+
+    @keyframes code-expand-key {
+        0% {
+            opacity: .6
+        }
+
+        50% {
+            opacity: .1
+        }
+
+        100% {
+            opacity: .6
         }
     }
 }

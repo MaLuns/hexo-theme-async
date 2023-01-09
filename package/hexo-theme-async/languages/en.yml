@@ -61,7 +61,6 @@ post:
     license_title: Copyright Notice
     license_content: 'All articles in this blog are licensed under %s unless otherwise stated.'
   copy:
-    button: Copy
     success: Copied
     failure: Copy failed
   read_mode:

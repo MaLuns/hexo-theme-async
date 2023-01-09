@@ -55,7 +55,9 @@ const processLess = (hexo) => {
                 highlightLineNumber: false,
                 prismjsEnable: false,
                 prismjsLineNumber: false,
-                highlightTitleStyle: 'default'
+                highlightTheme: true,
+                highlightTitleStyle: 'default',
+                highlightHeightLimit: false
             }
         }
     }, theme.config.less);
@@ -88,7 +90,9 @@ const processLess = (hexo) => {
     less.options.globalVars.highlightLineNumber = highlight && highlight.line_number
     less.options.globalVars.prismjsEnable = prismjs && prismjs.enable
     less.options.globalVars.prismjsLineNumber = prismjs && prismjs.line_number
+    less.options.globalVars.highlightTheme = theme.config.highlight.theme
     less.options.globalVars.highlightTitleStyle = theme.config.highlight.title
+    less.options.globalVars.highlightHeightLimit = theme.config.highlight.height_limit
 
     theme.config.less = less
 }

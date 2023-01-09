@@ -67,6 +67,8 @@ icons:
   toc_tag: fas fa-th-list
   read: fas fa-book-reader
   arrows: fas fa-arrows-alt-h
+  double_arrows: fas fa-angle-double-down
+  copy: fas fa-copy
 
 # Top navigation menu
 top_bars:
@@ -286,6 +288,7 @@ error_img:
 # Code highlighting configuration
 highlight:
   theme: true # 
+  title: default # mac | default
   copy: true # copy button
   lang: true # show the code language
-  title: mac # mac | default
+  height_limit: false # unit: px

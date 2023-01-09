@@ -73,14 +73,19 @@ const utils = {
                 const script = document.createElement('script');
                 script.src = url
                 script.setAttribute('async', 'false');
-                script.onerror = reject
-                script.onload = function () {
-                    resolve()
-                }
+                script.onerror = reject;
+                script.onload = () => resolve();
                 document.head.appendChild(script)
             }
         })
     },
+    icons(icon: string, type: 'symbol' | 'font' = 'font') {
+        if (type === 'symbol') {
+            return `<svg class="symbol-icon " aria-hidden="true"><use xlink:href="#${icon}"></use></svg>`;
+        } else {
+            return `<i class="iconfont ${icon}"></i>`
+        }
+    }
 }
 
 export default utils
