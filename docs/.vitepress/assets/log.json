@@ -1,5 +1,24 @@
 [
     {
+        "large_version": "v2.0.x",
+        "children": [
+            {
+                "version": "2.0.0-beta.1",
+                "date": "2023-01-09",
+                "logs": [
+                    {
+                        "type": "refactor",
+                        "text": "使用 ts 重写主题脚本，减少 js 体积"
+                    },
+                    {
+                        "type": "perf",
+                        "text": "优化主题样式，减少 css 体积"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "large_version": "v1.2.x",
         "children": [
             {

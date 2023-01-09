@@ -32,8 +32,19 @@ npm i hexo-theme-async@latest
 
 - 通过本仓库安装（不推荐）
 
-从 <Badge>v1.1.0</Badge> 后，由于项目结构调整，不再需要整个仓库文件了。
-克隆本仓库后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
+::: danger
+不推荐直接使用这种方式安装，直接拉取不会显示主题版本号（你也可以手动补齐 package.json 的 version），会导致 bug 版本定位和后续升级比较麻烦。只有当你需要修改源码文件，且不在需要升级时才可通过这种方式安装。
+::: 
+
+::: details v2.0.0 后版本
+从 v2.0.0 开始不在支持拉取后直接使用。新版本的脚本使用 TypeScript 进行重构，项目中不在提供打包压缩后的脚本。
+
+如果您仍然想要使用该方式，请 clone 项目后，手动执行 yarn i && yarn run lib:build 以构建压缩后的脚本。
+::: 
+
+::: details v1.1.0 至 v2.0.0 版本
+
+从 v1.1.0 后，由于项目结构调整，不再需要整个仓库文件了。clone 项目后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
 
 您的项目结构应该是这样
 ```text {4,7}
@@ -45,10 +56,7 @@ npm i hexo-theme-async@latest
 │   ├── _config.yml
 │   ├── _config.async.yml // 增加配置文件
 ```
-
-::: danger
-不推荐直接使用这种方式安装，直接拉取不会显示主题版本号（你也可以手动补齐 package.json 的 version），会导致 bug 版本定位和后续升级比较麻烦。只有当你需要修改源码文件，且不在需要升级时才可通过这种方式安装。
-::: 
+:::
 
 ## 启用主题 Use
 

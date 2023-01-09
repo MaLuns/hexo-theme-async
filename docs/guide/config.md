@@ -85,6 +85,38 @@ favicon:
   hideText: (●—●)喔哟，崩溃啦！
 ```
 
+## 插件 Plugins
+主题内置插件配置。
+
+- `internal_provider`：主题 JS 的 CDN 配置，可选  `local`、`unpkg`、`jsdelivr`
+  - `local`: 不使用 CDN
+  - `unpkg`: 使用 unpkg
+  - `jsdelivr`: 使用 jsdelivr
+- `third_party_provider`：三方插件 JS 的 CDN 配置，可选 `unpkg`、`jsdelivr`
+
+``` yaml
+assets:
+  internal_provider: local # local | unpkg | jsdelivr
+  third_party_provider: unpkg # unpkg | jsdelivr
+```
+
+除了使用 unpkg、jsdelivr 外，也可以自定义其他 CDN 源。
+
+``` yaml
+assets:
+  third_party_provider: https://npm.elemecdn.com
+```
+
+也可以单独给某个插件配置 CDN 源。
+
+``` yaml
+assets:
+  internal_provider: local
+  third_party_provider: unpkg
+  plugin:
+    swup: https://npm.elemecdn.com/swup@2.0.19/dist/swup.min.js
+```
+
 ## 加速静态资源 CDN
 Content Delivery Network，统一加载网络资源，有利于提高网页加载速度。
 
@@ -468,47 +500,6 @@ post_pagination:
   type: large # large || small
 ```
 
-## 卡片 Card
-
-这里是一些关于页面中卡片配置合集。
-
-### 分类卡片
-
-首页中显示的分类卡片。
-
-默认情况下，会显示分类里文章最多的两个，您可以通过修改配置来替换默认行为。
-
-- `enable`: 是否开启
-- `len`: 需要显示分类数量，默认为 2 个
-- `list`: 如果你需要固定显示分类，可以通过这个字段配置
-
-``` yaml
-categorie_card:
-  enable: true
-  len: 2
-  list: ['分类1','分类2']
-```
-
-## 日期格式化 Date Format
-用于配置主题中使用日期的格式。
-
-- `post_card`：文章卡片的格式
-- `post_info`：文章详情页里的格式
-- `archive`：归档分类页的格式
-
-``` yaml
-datetime_foramt:
-  post_card:
-    date: YY/MM/DD
-    time: HH:mm
-  post_info:
-    date: MM/DD
-    time: HH:mm
-  archive:
-    date: MM/DD
-    time: HH:mm
-```
-
 ## 自定义图标 Icon
 博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
 
@@ -616,6 +607,116 @@ icons:
 // source/_data/style/light.less
 @primary :#6062ce;
 @primary-weak :#7a89df;
+```
+
+## 其他配置 Other
+
+这里是一些关于页面中杂项配置合集。
+
+### 分类卡片
+
+首页中显示的分类卡片。
+
+默认情况下，会显示分类里文章最多的两个，您可以通过修改配置来替换默认行为。
+
+- `enable`: 是否开启
+- `len`: 需要显示分类数量，默认为 2 个
+- `list`: 如果你需要固定显示分类，可以通过这个字段配置
+
+``` yaml
+categorie_card:
+  enable: true
+  len: 2
+  list: ['分类1','分类2']
+```
+
+### 固定按钮块
+
+右下角悬浮按钮块。
+
+- `readmode`: 阅读模式按钮
+- `aside`: 单双栏切换按钮
+
+``` yaml
+rightside:
+  readmode: true
+  aside: false
+```
+
+### 日期格式化 Date Format
+用于配置主题中使用日期的格式。
+
+- `post_card`：文章卡片的格式
+- `post_info`：文章详情页里的格式
+- `archive`：归档分类页的格式
+
+``` yaml
+datetime_foramt:
+  post_card:
+    date: YY/MM/DD
+    time: HH:mm
+  post_info:
+    date: MM/DD
+    time: HH:mm
+  archive:
+    date: MM/DD
+    time: HH:mm
+```
+
+### 代码高亮 Highlight
+代码块中的所有功能只适用于 Hexo 自带的代码渲染，如果使用第三方的渲染器，不一定会有效
+
+- `theme`：是否使用内置代码高亮配色
+- `title`：代码块标题样式，`mac`、`default`
+- `copy`：是否可以一键复制，默认开启
+- `lang`：是否显示代码块语言，默认显示
+- `height_limit`：设置代码块高低
+
+``` yaml
+highlight:
+  theme: true 
+  title: default
+  copy: true
+  lang: true
+  height_limit: 200 # 超出时，显示折叠按钮
+```
+
+通过 CSS 变量来覆盖默认色
+
+``` css
+:root {
+  /* 代码块背景色、前景色 */
+  --highlight-background     : #F6F8FA;
+  --highlight-foreground     : #4d5a60;
+  /* 行号 */
+  --highlight-gutter-color   : #90A4AE;
+  --highlight-gutter-bg-color: #f1f1f1;
+  /* 工具栏 */
+  --highlight-tools-color    : #646464;
+  --highlight-tools-bg-color : #e6ebf1;
+  /* 滚动条 */
+  --highlight-scrollbar      : #d7d7d7;
+
+   /* 代码 */
+  --highlight-addition: #e32323;
+  --highlight-deletion: #BF42BF;
+  --highlight-comment : rgba(149, 165, 166, .8);
+
+  --highlight-yellow: #FFB62C;
+  --highlight-purple: #7C4DFF;
+  --highlight-aqua  : #39ADB5;
+  --highlight-red   : #E53935;
+  --highlight-orange: #F76D47;
+  --highlight-green : #91B859;
+  --highlight-blue  : #6182B8;
+}
+```
+
+您也可以将 `theme: false`，然后引入 `highlight.js` 和 `PrismJS` 的主题文件，来自定义代码块高亮。
+
+``` yaml
+highlight:
+  theme: false
 ```
 
 ## 渐进式应用 PWA
