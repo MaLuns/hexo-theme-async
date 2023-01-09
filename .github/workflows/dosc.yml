@@ -23,11 +23,11 @@ jobs:
       - name: Build
         run: |
           yarn lib:build
-          echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
-          chmod 600 docs/.vitepress/dist/CNAME
           mkdir -p ./demo/themes/async
           cp -RT ./package/hexo-theme-async ./demo/themes/async
           yarn build
+          echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
+          chmod 600 docs/.vitepress/dist/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
