@@ -1,6 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Code Snippet</title>
+    <url>/demosite/2023/01/05/code_snippet/</url>
+    <content><![CDATA[<pre class="line-numbers language-yaml" data-language="yaml"><div class="caption"><span>config.yml</span><a href="/demosite/downloads/code/config.yml">view raw</a></div><code class="language-yaml"><span class="token comment"># logo</span>
+<span class="token key atrule">favicon</span><span class="token punctuation">:</span>
+  <span class="token key atrule">visibilitychange</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">top_bars</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> menu.home
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /
+  <span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> menu.archives
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /archives/
+  <span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> menu.links
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /links/
+  <span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> menu.about
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /about/
+  <span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> 自定义
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> /customize_page/
+
+<span class="token key atrule">banner</span><span class="token punctuation">:</span>
+  <span class="token key atrule">index</span><span class="token punctuation">:</span>
+    <span class="token key atrule">bgurl</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>/img/bg.jpg<span class="token punctuation">,</span>/img/banner.png<span class="token punctuation">]</span>
+
+<span class="token key atrule">sidebar</span><span class="token punctuation">:</span>
+  <span class="token key atrule">typedTextPrefix</span><span class="token punctuation">:</span> I`m
+  <span class="token key atrule">typedText</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">'Web Developer'</span> <span class="token punctuation">]</span>
+  <span class="token key atrule">info</span><span class="token punctuation">:</span> 
+    <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> 文档地址
+      <span class="token key atrule">val</span><span class="token punctuation">:</span> &lt;a href="https<span class="token punctuation">:</span>//hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>async.imalun.com/" target="_blank" rel="nofollow"<span class="token punctuation">></span>查看&lt;/a<span class="token punctuation">></span>  
+    <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> 备用地址
+      <span class="token key atrule">val</span><span class="token punctuation">:</span> &lt;a href="https<span class="token punctuation">:</span>//async<span class="token punctuation">-</span>docs.imalun.com/" target="_blank" rel="nofollow"<span class="token punctuation">></span>查看&lt;/a<span class="token punctuation">></span>   
+    <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> 提交示例站点
+      <span class="token key atrule">val</span><span class="token punctuation">:</span> &lt;a href="https<span class="token punctuation">:</span>//hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>async.imalun.com/demo/" target="_blank" rel="nofollow"<span class="token punctuation">></span>查看&lt;/a<span class="token punctuation">></span>   
+
+  <span class="token key atrule">social</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> fab fa<span class="token punctuation">-</span>github
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/MaLuns/Hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>async
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> Github
+    <span class="token punctuation">-</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> fab fa<span class="token punctuation">-</span>npm
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.npmjs.com/package/hexo<span class="token punctuation">-</span>theme<span class="token punctuation">-</span>async
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> Npm
+
+<span class="token key atrule">footer</span><span class="token punctuation">:</span>
+  <span class="token key atrule">powered</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">beian</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">icp</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">copyrightYear</span><span class="token punctuation">:</span> <span class="token number">2022</span>
+  <span class="token key atrule">live_time</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">prefix</span><span class="token punctuation">:</span> footer.tips
+    <span class="token key atrule">start_time</span><span class="token punctuation">:</span> 2022/04/10 17<span class="token punctuation">:</span><span class="token datetime number">00:00</span>
+  <span class="token key atrule">custom_text</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> local
+  <span class="token key atrule">preload</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">trigger</span><span class="token punctuation">:</span> auto
+
+<span class="token key atrule">baidu_push</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">reward</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">methods</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> 微信
+      <span class="token key atrule">path</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> 支付宝
+      <span class="token key atrule">path</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg
+
+<span class="token key atrule">creative_commons</span><span class="token punctuation">:</span>
+  <span class="token key atrule">license</span><span class="token punctuation">:</span> by<span class="token punctuation">-</span>nc<span class="token punctuation">-</span>sa
+  <span class="token key atrule">language</span><span class="token punctuation">:</span> deed.zh
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">clipboard</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">swup</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">toc</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">list_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">max_depth</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">min_depth</span><span class="token punctuation">:</span> <span class="token number">1</span>
+
+<span class="token key atrule">rightside</span><span class="token punctuation">:</span>
+  <span class="token key atrule">readmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">aside</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">post_pagination</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> small
+
+<span class="token key atrule">cdn</span><span class="token punctuation">:</span>
+  <span class="token key atrule">js</span><span class="token punctuation">:</span>
+    <span class="token key atrule">head</span><span class="token punctuation">:</span>
+    <span class="token key atrule">base</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>demo.js<span class="token punctuation">]</span>
+
+<span class="token key atrule">assets</span><span class="token punctuation">:</span>
+    <span class="token key atrule">third_party_provider</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//npm.elemecdn.com
+
+<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">title</span><span class="token punctuation">:</span> mac
+  <span class="token key atrule">height_limit</span><span class="token punctuation">:</span> <span class="token number">200</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><div class="caption"><span>代码块的标题</span><a href="/aas/asd">/asd/asd</a></div><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment">###### CONFIG</span>
+<span class="token assign-left variable">ACCEPTED_HOSTS</span><span class="token operator">=</span><span class="token string">"/root/.hag_accepted.conf"</span>
+<span class="token assign-left variable">BE_VERBOSE</span><span class="token operator">=</span>false
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token environment constant">$UID</span>"</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+ <span class="token builtin class-name">echo</span> <span class="token string">"Superuser rights required"</span>
+ <span class="token builtin class-name">exit</span> <span class="token number">2</span>
+<span class="token keyword">fi</span>
+
+<span class="token function-name function">genApacheConf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+ <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"# Host <span class="token variable">$&#123;HOME_DIR&#125;</span><span class="token variable">$1</span>/<span class="token variable">$2</span> :"</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">'"quoted"'</span> <span class="token operator">|</span> <span class="token function">tr</span> <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>" <span class="token operator">></span> text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> myValue<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>init<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>myValue <span class="token operator">=</span> init<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">import</span> fs <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">module</span> MyModule <span class="token punctuation">&#123;</span>
+  <span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">MyInterface</span> <span class="token keyword">extends</span> <span class="token class-name">Other</span> <span class="token punctuation">&#123;</span>
+    myProperty<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">declare</span> magicNumber <span class="token builtin">number</span><span class="token punctuation">;</span>
+myArray<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// fat arrow syntax</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">$initHighlight</span><span class="token punctuation">(</span><span class="token parameter">block<span class="token punctuation">,</span> cls</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cls<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\bno\-highlight\b</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token function">process</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">0x0F</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+             <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> class="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>cls<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/* handle exception */</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> classes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkCondition</span><span class="token punctuation">(</span>classes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'undefined'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>web<span class="token operator">-</span>component<span class="token operator">></span><span class="token punctuation">&#123;</span>block<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>web<span class="token operator">-</span>component<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span>  $initHighlight<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>IO<span class="token punctuation">.</span>Compression</span><span class="token punctuation">;</span>
+
+<span class="token preprocessor property">#<span class="token directive keyword">pragma</span> warning disable 414, 3021</span>
+
+<span class="token keyword">namespace</span> <span class="token namespace">MyApplication</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Obsolete</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token string">"..."</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+    <span class="token keyword">class</span> <span class="token class-name">Program</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">IInterface</span></span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token return-type class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">int</span><span class="token punctuation">></span></span> <span class="token function">JustDoIt</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> count<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Span<span class="token punctuation">&lt;</span><span class="token keyword">int</span><span class="token punctuation">></span></span> numbers <span class="token operator">=</span> <span class="token keyword">stackalloc</span> <span class="token keyword">int</span><span class="token punctuation">[</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token expression language-csharp">Name</span><span class="token punctuation">&#125;</span></span><span class="token string">!"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">int</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> <span class="token punctuation">&#123;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Chunkfive<span class="token punctuation">;</span> <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'Chunkfive.otf'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">body, .usertext</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #F0F0F0<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> #600<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Chunkfive<span class="token punctuation">,</span> sans<span class="token punctuation">;</span>
+  <span class="token property">--heading-1</span><span class="token punctuation">:</span> 30px/32px Helvetica<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>print.css<span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
+<span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">&#123;</span>
+  <span class="token selector">a[href^=http]::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><span class="token selector">body</span> <span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">function</span> <span class="token function">$init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">checked</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>title<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- here goes the rest of the page --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> hello world</span>
+
+you can write text <span class="token url">[<span class="token content">with links</span>](<span class="token url">http://example.com</span>)</span> inline or <span class="token url">[<span class="token content">link references</span>][<span class="token variable">1</span>]</span>.
+
+<span class="token list punctuation">*</span> one <span class="token italic"><span class="token punctuation">_</span><span class="token content">thing</span><span class="token punctuation">_</span></span> has <span class="token italic"><span class="token punctuation">*</span><span class="token content">em</span><span class="token punctuation">*</span></span>phasis
+<span class="token list punctuation">*</span> two <span class="token bold"><span class="token punctuation">__</span><span class="token content">things</span><span class="token punctuation">__</span></span> are <span class="token bold"><span class="token punctuation">**</span><span class="token content">bold</span><span class="token punctuation">**</span></span>
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> http://example.com</span>
+
+<span class="token hr punctuation">---</span>
+
+<span class="token title important">hello world
+<span class="token punctuation">===========</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>this_is</span> <span class="token attr-name">inline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>this_is</span><span class="token punctuation">></span></span>
+
+<span class="token blockquote punctuation">></span> markdown is so cool
+
+<span class="token code keyword">    so are code segments</span>
+
+<span class="token list punctuation">1.</span> one thing (yeah!)
+<span class="token list punctuation">2.</span> two thing <span class="token code-snippet code keyword">`i can write code`</span>, and <span class="token code-snippet code keyword">`more`</span> wipee!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token string">"topic"</span> <span class="token punctuation">(</span>
+    <span class="token string">"id"</span> <span class="token keyword">integer</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    <span class="token string">"forum_id"</span> <span class="token keyword">integer</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token string">"subject"</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token string">"topic"</span>
+<span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> forum_id <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token string">"forum_id"</span><span class="token punctuation">)</span>
+<span class="token keyword">REFERENCES</span> <span class="token string">"forum"</span> <span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Initials</span>
+<span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token string">"topic"</span> <span class="token punctuation">(</span><span class="token string">"forum_id"</span><span class="token punctuation">,</span> <span class="token string">"subject"</span><span class="token punctuation">)</span>
+<span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'D''artagnian'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello Theme Async</title>
     <url>/demosite/2022/09/21/hello-world/</url>
     <content><![CDATA[<p><img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="1663833969157.png" loading="lazy"><em>示例图</em></p>
@@ -10,16 +256,16 @@
 <li>文档:<a href="https://hexo-theme-async.imalun.com/">https://hexo-theme-async.imalun.com/</a></li>
 </ul>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
@@ -30,15 +276,16 @@
     <content><![CDATA[<h2 id="KaTeX"><a href="#KaTeX" class="headerlink" title="KaTeX"></a>KaTeX</h2><ul>
 <li><a href="https://katex.org/docs/autorender.html">https://katex.org/docs/autorender.html</a></li>
 </ul>
-<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span>$\&#123;x | Ax = b\&#125;$<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span></span><br></pre></td></tr></table></figure>
+<h3 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>$\&#123;x | Ax = b\&#125;$<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><span>$\mathcal{X}_{c^*}&lt;1, \mathcal{X}_{q^*}&lt;1$</span></p>
 <p>$E &#x3D; mc^2$</p>
 <p>$\frac{\partial}{\partial t}$</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span>E = mc<span class="built_in">^</span>2<span class="built_in">$</span></span><br><span class="line"><span class="built_in">$</span><span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span>&#125;&#123;<span class="keyword">\partial</span> t&#125;<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$E = mc^2$</span>
+<span class="token equation string">$<span class="token equation-command regex">\frac</span>&#123;<span class="token equation-command regex">\partial</span>&#125;&#123;<span class="token equation-command regex">\partial</span> t&#125;$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h3><p>$$ E &#x3D; mc^2 $$</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span> E = mc<span class="built_in">^</span>2 <span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$ E = mc^2 $$</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>注意，在 Markdown 文件中直接书写时，你需要多一个 <code>\</code> 来转译 <code>\</code>。或直接使用 <code>$$ E = mc^2 $$</code> 的形式。</p>
 <p>使用 <code>\\[ E = mc^2 \\]</code> 而不是 <code>\[ E = mc^2 \]</code>。</p>
@@ -50,23 +297,24 @@
 \[ E = mc^2 \]
 </div>
 
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>\[ E = mc^2 \]<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>\[ E = mc^2 \]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <p>\[ E &#x3D; mc^2 \]</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\[</span> E = mc<span class="built_in">^</span>2 <span class="keyword">\]</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">\[ E = mc^2 \]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <p>\( E &#x3D; mc^2 \)</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\(</span> E = mc<span class="built_in">^</span>2 <span class="keyword">\)</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">\( E = mc^2 \)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <p>$$ \vec a&#x3D;\frac{d\vec v}{dt}&#x3D;\frac{d(\frac{dr}{dt}\vec e*{i}+r\frac{d\theta}{dt}\vec e*{j})}{dt}&#x3D;\frac{d^2r}{dt^2}\vec e*{i}+\frac{dr}{dt}\frac{d\vec e*{i}}{dt}+\frac{dr}{dt}\frac{d\theta}{dt}\vec e*{j}+r\frac{d^2\theta}{dt^2}\vec e*{j}+r\frac{d\theta}{dt}\frac{d\vec e_{j}}{dt} $$</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\[</span> <span class="keyword">\vec</span> a=<span class="keyword">\frac</span>&#123;d<span class="keyword">\vec</span> v&#125;&#123;dt&#125;=<span class="keyword">\frac</span>&#123;d(<span class="keyword">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;i&#125;+r<span class="keyword">\frac</span>&#123;d<span class="keyword">\theta</span>&#125;&#123;dt&#125;<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;j&#125;)&#125;&#123;dt&#125;=<span class="keyword">\frac</span>&#123;d<span class="built_in">^</span>2r&#125;&#123;dt<span class="built_in">^</span>2&#125;<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;i&#125;+<span class="keyword">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="keyword">\frac</span>&#123;d<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;i&#125;&#125;&#123;dt&#125;+<span class="keyword">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="keyword">\frac</span>&#123;d<span class="keyword">\theta</span>&#125;&#123;dt&#125;<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;j&#125;+r<span class="keyword">\frac</span>&#123;d<span class="built_in">^</span>2<span class="keyword">\theta</span>&#125;&#123;dt<span class="built_in">^</span>2&#125;<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;j&#125;+r<span class="keyword">\frac</span>&#123;d<span class="keyword">\theta</span>&#125;&#123;dt&#125;<span class="keyword">\frac</span>&#123;d<span class="keyword">\vec</span> e<span class="built_in">_</span>&#123;j&#125;&#125;&#123;dt&#125; <span class="keyword">\]</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">\[ <span class="token equation-command regex">\vec</span> a=<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\vec</span> v&#125;&#123;dt&#125;=<span class="token equation-command regex">\frac</span>&#123;d(<span class="token equation-command regex">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="token equation-command regex">\vec</span> e_&#123;i&#125;+r<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\theta</span>&#125;&#123;dt&#125;<span class="token equation-command regex">\vec</span> e_&#123;j&#125;)&#125;&#123;dt&#125;=<span class="token equation-command regex">\frac</span>&#123;d^2r&#125;&#123;dt^2&#125;<span class="token equation-command regex">\vec</span> e_&#123;i&#125;+<span class="token equation-command regex">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\vec</span> e_&#123;i&#125;&#125;&#123;dt&#125;+<span class="token equation-command regex">\frac</span>&#123;dr&#125;&#123;dt&#125;<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\theta</span>&#125;&#123;dt&#125;<span class="token equation-command regex">\vec</span> e_&#123;j&#125;+r<span class="token equation-command regex">\frac</span>&#123;d^2<span class="token equation-command regex">\theta</span>&#125;&#123;dt^2&#125;<span class="token equation-command regex">\vec</span> e_&#123;j&#125;+r<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\theta</span>&#125;&#123;dt&#125;<span class="token equation-command regex">\frac</span>&#123;d<span class="token equation-command regex">\vec</span> e_&#123;j&#125;&#125;&#123;dt&#125; \]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>$$ m_t&#x3D;g_t $$</p>
 <p>$$ V_t&#x3D;1 $$</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span> m<span class="built_in">_</span>t=g<span class="built_in">_</span>t <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span> V<span class="built_in">_</span>t=1 <span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$ m_t=g_t $$</span>
+<span class="token equation string">$$ V_t=1 $$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <div>
 
@@ -79,13 +327,22 @@
 
 </div>
 
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span> <span class="keyword">\eta</span><span class="built_in">_</span>t=lr*&#123;<span class="keyword">\frac</span> &#123;m<span class="built_in">_</span>t&#125;&#123;<span class="keyword">\sqrt</span> V<span class="built_in">_</span>t&#125;&#125;=lr*g<span class="built_in">_</span>t <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span> w<span class="built_in">_</span>&#123;t+1&#125;=w<span class="built_in">_</span>t-<span class="keyword">\eta</span><span class="built_in">_</span>t=w<span class="built_in">_</span>t-lr*&#123;<span class="keyword">\frac</span> &#123;m<span class="built_in">_</span>t&#125;&#123;<span class="keyword">\sqrt</span> V<span class="built_in">_</span>t&#125;&#125;=w<span class="built_in">_</span>t-lr*g<span class="built_in">_</span>t <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">&lt;font size=5 color=red&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span> &#123;<span class="keyword">\Rightarrow</span> <span class="keyword">\boxed</span>&#123;w<span class="built_in">_</span>&#123;t+1&#125;=w<span class="built_in">_</span>t-lr*&#123;<span class="keyword">\frac</span> &#123;<span class="keyword">\partial</span> loss&#125;&#123;<span class="keyword">\partial</span> w<span class="built_in">_</span>t&#125;&#125;&#125;&#125; <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">&lt;/font&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$ <span class="token equation-command regex">\eta</span>_t=lr*&#123;<span class="token equation-command regex">\frac</span> &#123;m_t&#125;&#123;<span class="token equation-command regex">\sqrt</span> V_t&#125;&#125;=lr*g_t $$</span>
+<span class="token equation string">$$ w_&#123;t+1&#125;=w_t-<span class="token equation-command regex">\eta</span>_t=w_t-lr*&#123;<span class="token equation-command regex">\frac</span> &#123;m_t&#125;&#123;<span class="token equation-command regex">\sqrt</span> V_t&#125;&#125;=w_t-lr*g_t $$</span>
+
+&lt;font size=5 color=red>
+
+<span class="token equation string">$$ &#123;<span class="token equation-command regex">\Rightarrow</span> <span class="token equation-command regex">\boxed</span>&#123;w_&#123;t+1&#125;=w_t-lr*&#123;<span class="token equation-command regex">\frac</span> &#123;<span class="token equation-command regex">\partial</span> loss&#125;&#123;<span class="token equation-command regex">\partial</span> w_t&#125;&#125;&#125;&#125; $$</span>
+
+&lt;/font><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div>
 $$ \begin{bmatrix} a & b \\ c & d \end{bmatrix} $$
 </div>
 
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span> <span class="keyword">\begin</span>&#123;bmatrix&#125; a <span class="built_in">&amp;</span> b <span class="keyword">\\</span> c <span class="built_in">&amp;</span> d <span class="keyword">\end</span>&#123;bmatrix&#125; <span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">&lt;div>
+<span class="token equation string">$$ <span class="token equation-command regex">\begin</span>&#123;bmatrix&#125; a &amp; b <span class="token equation-command regex">\\</span> c &amp; d <span class="token equation-command regex">\end</span>&#123;bmatrix&#125; $$</span>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <div>
 $$
@@ -100,7 +357,18 @@ $$
 $$
 </div>
 
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">  <span class="keyword">\left</span><span class="keyword">\&#123;</span></span><br><span class="line">    <span class="keyword">\begin</span>&#123;aligned&#125;</span><br><span class="line">      x=a<span class="keyword">\cos</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">      y=b<span class="keyword">\sin</span><span class="keyword">\theta</span><span class="keyword">\\</span></span><br><span class="line">    end&#123;aligned&#125;</span><br><span class="line">  <span class="keyword">\right</span>.</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex">&lt;div>
+<span class="token equation string">$$
+<span class="token equation-command regex">\begin</span>&#123;equation&#125;
+  <span class="token equation-command regex">\left</span><span class="token equation-command regex">\&#123;</span>
+    <span class="token equation-command regex">\begin</span>&#123;aligned&#125;
+      x=a<span class="token equation-command regex">\cos</span><span class="token equation-command regex">\theta</span><span class="token equation-command regex">\\</span>
+      y=b<span class="token equation-command regex">\sin</span><span class="token equation-command regex">\theta</span><span class="token equation-command regex">\\</span>
+    end&#123;aligned&#125;
+  <span class="token equation-command regex">\right</span>.
+<span class="token equation-command regex">\end</span>&#123;equation&#125;
+$$</span>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -182,10 +450,17 @@ $$
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>如果在一个行内需要引用代码，只要用反引号引起来就好，如下：</p>
 <p>Use the <code>printf()</code> function.</p>
 <p>在需要高亮的代码块的前一行及后一行使用三个反引号，同时<strong>第一行反引号后面表示代码块所使用的语言</strong>，如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// FileName: HelloWorld.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">  <span class="comment">// Java 入口程序，程序从此入口</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello,World!&quot;</span>); <span class="comment">// 向控制台打印一条语句</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// FileName: HelloWorld.java</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// Java 入口程序，程序从此入口</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello,World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 向控制台打印一条语句</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>diff 不能同时和其他语言的高亮同时显示，使用效果如下:</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+ 新增项</span></span><br><span class="line"><span class="deletion">- 删除项</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff"><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> 新增项
+</span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> 删除项</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><p>行内公式使用方法：\(ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\)</p>
 <p>块公式使用方法如下：</p>
@@ -196,13 +471,13 @@ $$
 <li><input disabled="" type="checkbox"> Contact the media</li>
 </ul>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="注音标签"><a href="#注音标签" class="headerlink" title="注音标签"></a>注音标签</h3><p><ruby>喜大普奔<rt>hē hē hē hē</rt></ruby></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span>喜大普奔<span class="tag">&lt;<span class="name">rt</span>&gt;</span>hē hē hē hē<span class="tag">&lt;/<span class="name">rt</span>&gt;</span><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ruby</span><span class="token punctuation">></span></span>喜大普奔<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rt</span><span class="token punctuation">></span></span>hē hē hē hē<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ruby</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="details"><a href="#details" class="headerlink" title="details"></a>details</h3><details>
   <summary>Async 安装方法</summary>
 
 <p>进入您的 Hexo 博客根目录，执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i hexo-theme-async@latest</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-theme-async@latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </details>]]></content>
       <categories>
         <category>测试分类</category>
@@ -215,35 +490,114 @@ $$
 <span id="more"></span>
 
 <h2 id="Imgs-照片"><a href="#Imgs-照片" class="headerlink" title="Imgs 照片"></a>Imgs 照片</h2><p>用于适配黑白两种主题时显示图片，切换主题样式查看效果</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">imgs</span> [<span class="string">class</span> <span class="string">names</span>] [<span class="string">src1</span>] [<span class="string">src2</span>] [<span class="string">width</span>] [<span class="string">height</span>] [<span class="string">alt</span> <span class="string">text&#x27;title</span> <span class="string">text</span>] <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">src1</span>]          <span class="string">:</span> <span class="string">亮色主题时显示图片路径</span></span><br><span class="line">[<span class="string">src2</span>]          <span class="string">:</span> <span class="string">暗色主题时显示图片路径</span></span><br><span class="line">[<span class="string">width</span>]         <span class="string">:</span> <span class="string">宽</span></span><br><span class="line">[<span class="string">height</span>]        <span class="string">:</span> <span class="string">高</span></span><br><span class="line">[<span class="string">alt</span> <span class="string">text</span>]      <span class="string">:</span> <span class="string">alt</span> <span class="string">属性</span></span><br><span class="line">[<span class="string">title</span> <span class="string">text</span>]    <span class="string">:</span> <span class="string">title</span> <span class="string">属性</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% imgs <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> <span class="token punctuation">[</span>src1<span class="token punctuation">]</span> <span class="token punctuation">[</span>src2<span class="token punctuation">]</span> <span class="token punctuation">[</span>width<span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>alt text'title text<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">[</span>src1<span class="token punctuation">]</span>          <span class="token punctuation">:</span> 亮色主题时显示图片路径
+<span class="token punctuation">[</span>src2<span class="token punctuation">]</span>          <span class="token punctuation">:</span> 暗色主题时显示图片路径
+<span class="token punctuation">[</span>width<span class="token punctuation">]</span>         <span class="token punctuation">:</span> 宽
+<span class="token punctuation">[</span>height<span class="token punctuation">]</span>        <span class="token punctuation">:</span> 高
+<span class="token punctuation">[</span>alt text<span class="token punctuation">]</span>      <span class="token punctuation">:</span> alt 属性
+<span class="token punctuation">[</span>title text<span class="token punctuation">]</span>    <span class="token punctuation">:</span> title 属性
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>使用方式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% imgs trm-cover /img/1.jpg /img/2.jpg  alt text %&#125;</span><br><span class="line"></span><br><span class="line">等效于</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;trm-cover trm-light-icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/img/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;alt text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">&quot;trm-cover trm-dark-icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/img/2.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;alt text&quot;</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% imgs trm-cover /img/1.jpg /img/2.jpg  alt text %&#125;
+
+等效于
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trm-cover trm-light-icon<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/img/1.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trm-cover trm-dark-icon<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/img/2.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <img class="trm-cover trm-light-icon" src="/demosite/img/1.jpg" title="text" alt loading="lazy"> <img class="trm-cover trm-dark-icon" src="/demosite/img/2.jpg" title="text" alt loading="lazy">
 
 
 <h2 id="Tabs-标签选项卡"><a href="#Tabs-标签选项卡" class="headerlink" title="Tabs 标签选项卡"></a>Tabs 标签选项卡</h2><p>从next主题移植</p>
 <p>使用方法</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">tabs</span> <span class="string">Unique</span> <span class="string">name</span>, [<span class="string">index</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">tab</span> [<span class="string">Tab</span> <span class="string">caption</span>]<span class="string">--&gt;</span></span><br><span class="line"><span class="string">任何内容(也支持内联标签)。</span></span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">endtab</span> <span class="string">--&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endtabs</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">Unique name   :</span> <span class="string">标签块标签的唯一名称，不带逗号。</span></span><br><span class="line">                <span class="string">如果名称中有空格，对于生成</span> <span class="string">id，所有空格将被破折号取代</span></span><br><span class="line">[<span class="string">index</span>]       <span class="string">:</span> <span class="string">tabs</span> <span class="string">默认选项卡的下标。</span></span><br><span class="line">                <span class="string">如果未指定，将选择第一个选项卡。</span></span><br><span class="line">                <span class="string">如果索引为</span> <span class="number">-1</span><span class="string">，则不会选择任何选项卡。</span></span><br><span class="line">                <span class="string">(可选参数)</span></span><br><span class="line"></span><br><span class="line">[<span class="string">Tab</span> <span class="string">caption</span>] <span class="string">:</span> <span class="string">当前标签的标题。</span></span><br><span class="line">                <span class="string">如果没有指定标题，带有标签索引后缀的唯一名称将被用作标签标题。</span></span><br><span class="line">                <span class="string">(可选参数)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% tabs Unique name<span class="token punctuation">,</span> <span class="token punctuation">[</span>index<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+&lt;<span class="token tag">!--</span> tab <span class="token punctuation">[</span>Tab caption<span class="token punctuation">]</span><span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>
+任何内容(也支持内联标签)。
+&lt;<span class="token tag">!--</span> endtab <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span>
+<span class="token punctuation">&#123;</span>% endtabs %<span class="token punctuation">&#125;</span>
 
-<h3 id="默认使用方式"><a href="#默认使用方式" class="headerlink" title="默认使用方式"></a>默认使用方式</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test1 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<span class="token key atrule">Unique name</span>   <span class="token punctuation">:</span> 标签块标签的唯一名称，不带逗号。
+                如果名称中有空格，对于生成 id，所有空格将被破折号取代
+<span class="token punctuation">[</span>index<span class="token punctuation">]</span>       <span class="token punctuation">:</span> tabs 默认选项卡的下标。
+                如果未指定，将选择第一个选项卡。
+                如果索引为 <span class="token punctuation">-</span>1，则不会选择任何选项卡。
+                (可选参数)
+
+<span class="token punctuation">[</span>Tab caption<span class="token punctuation">]</span> <span class="token punctuation">:</span> 当前标签的标题。
+                如果没有指定标题，带有标签索引后缀的唯一名称将被用作标签标题。
+                (可选参数)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="默认使用方式"><a href="#默认使用方式" class="headerlink" title="默认使用方式"></a>默认使用方式</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test1 %&#125;
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="trm-tabs" id="test1"><ul class="trm-nav-tabs"><li class="trm-tab active"><button type="button" data-href="#test1-1">标签1</button></li><li class="trm-tab"><button type="button" data-href="#test1-2">标签2</button></li><li class="trm-tab"><button type="button" data-href="#test1-3">test1 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content active" id="test1-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test1-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content" id="test1-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 
-<h3 id="预设选择tabs"><a href="#预设选择tabs" class="headerlink" title="预设选择tabs"></a>预设选择tabs</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test2, 3 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="预设选择tabs"><a href="#预设选择tabs" class="headerlink" title="预设选择tabs"></a>预设选择tabs</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test2, 3 %&#125;
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="trm-tabs" id="test2"><ul class="trm-nav-tabs"><li class="trm-tab"><button type="button" data-href="#test2-1">test2 1</button></li><li class="trm-tab"><button type="button" data-href="#test2-2">test2 2</button></li><li class="trm-tab active"><button type="button" data-href="#test2-3">test2 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content" id="test2-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test2-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content active" id="test2-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 
-<h3 id="沒有预设tabs"><a href="#沒有预设tabs" class="headerlink" title="沒有预设tabs"></a>沒有预设tabs</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs test3, -1 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="沒有预设tabs"><a href="#沒有预设tabs" class="headerlink" title="沒有预设tabs"></a>沒有预设tabs</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test3, -1 %&#125;
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+
+<span class="token comment">&lt;!-- tab --></span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span>
+<span class="token comment">&lt;!-- endtab --></span>
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="trm-tabs" id="test3"><ul class="trm-nav-tabs"><li class="trm-tab"><button type="button" data-href="#test3-1">test3 1</button></li><li class="trm-tab"><button type="button" data-href="#test3-2">test3 2</button></li><li class="trm-tab"><button type="button" data-href="#test3-3">test3 3</button></li></ul><div class="trm-tab-contents"><div class="trm-tab-item-content" id="test3-1"><p><strong>This is Tab 1.</strong></p></div><div class="trm-tab-item-content" id="test3-2"><p><strong>This is Tab 2.</strong></p></div><div class="trm-tab-item-content" id="test3-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 
 <h2 id="Gallery-相册"><a href="#Gallery-相册" class="headerlink" title="Gallery 相册"></a>Gallery 相册</h2><p>一个相册集合。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">&lt;div</span> <span class="string">class=&quot;row&quot;&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">name</span> <span class="string">description</span> <span class="string">link</span> <span class="string">img-url</span> [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name            :</span> <span class="string">相册名字</span></span><br><span class="line"><span class="attr">description     :</span> <span class="string">相册描述</span></span><br><span class="line"><span class="attr">link            :</span> <span class="string">连接到对应相册的地址</span></span><br><span class="line"><span class="attr">img-url         :</span> <span class="string">图库封面的地址</span></span><br><span class="line">[<span class="string">col</span>]           <span class="string">:</span> <span class="string">相册列宽</span> <span class="number">1</span><span class="number">-12</span> <span class="string">，默认为</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">&lt;div class="row"<span class="token punctuation">></span>
+<span class="token punctuation">&#123;</span>% galleryGroup name description link img<span class="token punctuation">-</span>url <span class="token punctuation">[</span>col<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span>% galleryGroup name description link img<span class="token punctuation">-</span>url <span class="token punctuation">[</span>col<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span>% galleryGroup name description link img<span class="token punctuation">-</span>url <span class="token punctuation">[</span>col<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+&lt;/div<span class="token punctuation">></span>
+
+<span class="token key atrule">name</span>            <span class="token punctuation">:</span> 相册名字
+<span class="token key atrule">description</span>     <span class="token punctuation">:</span> 相册描述
+<span class="token key atrule">link</span>            <span class="token punctuation">:</span> 连接到对应相册的地址
+<span class="token key atrule">img-url</span>         <span class="token punctuation">:</span> 图库封面的地址
+<span class="token punctuation">[</span>col<span class="token punctuation">]</span>           <span class="token punctuation">:</span> 相册列宽 1<span class="token punctuation">-</span>12 ，默认为 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% gallery &#x27;壁纸&#x27; &#x27;收藏的一些壁纸&#x27; &#x27;/gallery/wallpaper&#x27; https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %&#125;</span><br><span class="line">&#123;% gallery &#x27;图库&#x27; &#x27;收藏的一些壁纸&#x27; &#x27;/gallery/wallpaper&#x27; https://th.wallhaven.cc/lg/rd/rddgwm.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+&#123;% gallery '壁纸' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %&#125;
+&#123;% gallery '图库' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/rd/rddgwm.jpg %&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="row">
 
@@ -279,29 +633,73 @@ $$
 <h3 id="相册详情"><a href="#相册详情" class="headerlink" title="相册详情"></a>相册详情</h3>
 <p>相册详情，会根据图片自动排版。</p>
 
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryItem</span> <span class="string">url1</span> [<span class="string">url2</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">markdown</span> <span class="string">图片格式</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endgalleryGroup</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">有两种编写方式可以直接写</span> <span class="string">markdown</span> <span class="string">格式图片，也可以使用</span> <span class="string">galleryItem</span> <span class="string">标签插件。</span></span><br><span class="line"></span><br><span class="line"><span class="string">galleryItem</span></span><br><span class="line"><span class="attr">url1        :</span> <span class="string">图片略缩图地址</span></span><br><span class="line">[<span class="string">url2</span>]      <span class="string">:</span> <span class="string">图片原图地址，可选</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% galleryGroup %<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#123;</span>% galleryItem url1 <span class="token punctuation">[</span>url2<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+markdown 图片格式
+<span class="token punctuation">&#123;</span>% endgalleryGroup %<span class="token punctuation">&#125;</span>
+
+有两种编写方式可以直接写 markdown 格式图片，也可以使用 galleryItem 标签插件。
+
+galleryItem
+<span class="token key atrule">url1</span>        <span class="token punctuation">:</span> 图片略缩图地址
+<span class="token punctuation">[</span>url2<span class="token punctuation">]</span>      <span class="token punctuation">:</span> 图片原图地址，可选<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 示例：
 
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% galleryGroup %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %&#125;</span><br><span class="line">![](<span class="link">https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg</span>)</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oylj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oylj.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/vq/vq9688.jpg https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/2y/2y8q7m.jpg https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oyzj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/7p/7p2589.jpg https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/m3/m39kj1.jpg https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/6d/6dorxl.jpg https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/o5/o53ro5.jpg https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/l8/l831lq.jpg https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/zy/zy8ewv.jpg https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/3l/3lz1pd.jpg https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/1p/1pkz5w.jpg https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/p9/p9kdej.jpg https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg %&#125;</span><br><span class="line">&#123;% galleryItem https://th.wallhaven.cc/orig/x6/x68mrd.jpg https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg %&#125;</span><br><span class="line">&#123;% endgalleryGroup %&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% galleryGroup %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %&#125;
+![](https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg)
+&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oylj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oylj.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/vq/vq9688.jpg https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/2y/2y8q7m.jpg https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/85/85oyzj.jpg https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/7p/7p2589.jpg https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/m3/m39kj1.jpg https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/6d/6dorxl.jpg https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/o5/o53ro5.jpg https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/l8/l831lq.jpg https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/zy/zy8ewv.jpg https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/3l/3lz1pd.jpg https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/1p/1pkz5w.jpg https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/p9/p9kdej.jpg https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg %&#125;
+&#123;% galleryItem https://th.wallhaven.cc/orig/x6/x68mrd.jpg https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg %&#125;
+&#123;% endgalleryGroup %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="fj-gallery no-fancybox">
     <img src="https://th.wallhaven.cc/orig/85/85oy2j.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png" loading="lazy"><p><img src="https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg" loading="lazy"></p>
 <img src="https://th.wallhaven.cc/orig/85/85oylj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oylj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/vq/vq9688.jpg" data-src="https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/2y/2y8q7m.jpg" data-src="https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/85/85oyzj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/7p/7p2589.jpg" data-src="https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/m3/m39kj1.jpg" data-src="https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/6d/6dorxl.jpg" data-src="https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/o5/o53ro5.jpg" data-src="https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/l8/l831lq.jpg" data-src="https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/zy/zy8ewv.jpg" data-src="https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/3l/3lz1pd.jpg" data-src="https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/1p/1pkz5w.jpg" data-src="https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/p9/p9kdej.jpg" data-src="https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/x6/x68mrd.jpg" data-src="https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg" loading="lazy">
 </div>
 
-<h2 id="Caniuse-查看兼容性"><a href="#Caniuse-查看兼容性" class="headerlink" title="Caniuse 查看兼容性"></a>Caniuse 查看兼容性</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">caniuse</span> <span class="string">feature</span> <span class="string">@</span> [<span class="string">periods</span>] <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">feature     :</span> <span class="string">在https://caniuse.com上搜索您想要的特性，然后单击搜索结果标题左侧的#，您将得到该特性的唯一名称。</span></span><br><span class="line">[<span class="string">periods</span>]   <span class="string">:</span> <span class="string">可选参数。选择要显示的浏览器版本。支持值:，，，，，，，，。如果该值为空，将使用默认值</span> <span class="string">past_1past_2past_3past_4past_5currentfuture_3future_2future_1current</span></span><br></pre></td></tr></table></figure>
+<h2 id="Caniuse-查看兼容性"><a href="#Caniuse-查看兼容性" class="headerlink" title="Caniuse 查看兼容性"></a>Caniuse 查看兼容性</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% caniuse feature @ <span class="token punctuation">[</span>periods<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+
+<span class="token key atrule">feature</span>     <span class="token punctuation">:</span> 在https<span class="token punctuation">:</span>//caniuse.com上搜索您想要的特性，然后单击搜索结果标题左侧的<span class="token comment">#，您将得到该特性的唯一名称。</span>
+<span class="token punctuation">[</span>periods<span class="token punctuation">]</span>   <span class="token punctuation">:</span> 可选参数。选择要显示的浏览器版本。支持值<span class="token punctuation">:</span>，，，，，，，，。如果该值为空，将使用默认值 past_1past_2past_3past_4past_5currentfuture_3future_2future_1current<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse fetch %&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% caniuse fetch %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <iframe data-feature="fetch" src="https://caniuse.bitsofco.de/embed/index.html?feat=fetch&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
 
 <h2 id="Flink-链接列表"><a href="#Flink-链接列表" class="headerlink" title="Flink 链接列表"></a>Flink 链接列表</h2><p>可在任何界面插入类似友情链接列表效果</p>
 <p>内容格式与友情链接界面一样，支持 yml 格式</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">flink</span> [<span class="string">key</span>] [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">[<span class="string">content</span>]</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endflink</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">content</span>]   <span class="string">:</span> <span class="string">可选参数。链接数据，格式为</span> <span class="string">yaml。</span></span><br><span class="line">[<span class="string">key</span>]       <span class="string">:</span> <span class="string">可选参数。Hexo</span> <span class="string">数据文件的</span> <span class="string">key，如果</span> <span class="string">content</span> <span class="string">为空，则会加载指定</span> <span class="string">key</span> <span class="string">数据。[content]</span> <span class="string">和</span> [<span class="string">key</span>] <span class="string">需要二选一。</span></span><br><span class="line">[<span class="string">col</span>]       <span class="string">:</span> <span class="string">可选参数。链接列宽</span> <span class="number">1</span><span class="number">-12</span> <span class="string">，默认为</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% flink <span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token punctuation">[</span>col<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+<span class="token punctuation">[</span>content<span class="token punctuation">]</span>
+<span class="token punctuation">&#123;</span>% endflink %<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">[</span>content<span class="token punctuation">]</span>   <span class="token punctuation">:</span> 可选参数。链接数据，格式为 yaml。
+<span class="token punctuation">[</span>key<span class="token punctuation">]</span>       <span class="token punctuation">:</span> 可选参数。Hexo 数据文件的 key，如果 content 为空，则会加载指定 key 数据。<span class="token punctuation">[</span>content<span class="token punctuation">]</span> 和 <span class="token punctuation">[</span>key<span class="token punctuation">]</span> 需要二选一。
+<span class="token punctuation">[</span>col<span class="token punctuation">]</span>       <span class="token punctuation">:</span> 可选参数。链接列宽 1<span class="token punctuation">-</span>12 ，默认为 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% flink 12 %&#125;</span><br><span class="line">- name: Hexo</span><br><span class="line">  url: //hexo.io/</span><br><span class="line">  image: //d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg</span><br><span class="line">  desc: 快速、简洁且高效的博客框架</span><br><span class="line">- name: 白云苍狗</span><br><span class="line">  url: //www.imalun.com/</span><br><span class="line">  image: //www.imalun.com/images/avatar.jpg</span><br><span class="line">  desc: 醒，亦在人间；梦，亦在人间</span><br><span class="line">&#123;% endflink %&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% flink 12 %&#125;
+- name: Hexo
+  url: &#x2F;&#x2F;hexo.io&#x2F;
+  image: &#x2F;&#x2F;d33wubrfki0l68.cloudfront.net&#x2F;6657ba50e702d84afb32fe846bed54fba1a77add&#x2F;827ae&#x2F;logo.svg
+  desc: 快速、简洁且高效的博客框架
+- name: 白云苍狗
+  url: &#x2F;&#x2F;www.imalun.com&#x2F;
+  image: &#x2F;&#x2F;www.imalun.com&#x2F;images&#x2F;avatar.jpg
+  desc: 醒，亦在人间；梦，亦在人间
+&#123;% endflink %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="trm-flink row">
 <div class="col-lg-12">
@@ -336,7 +734,8 @@ $$
 </div></div>
 
 <p>或者使用 Hexo 数据文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% flink links 12 %&#125;</span><br><span class="line">&#123;% endflink %&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% flink links 12 %&#125;
+&#123;% endflink %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <div class="trm-flink row">
 <div class="col-lg-12">
