@@ -22,10 +22,8 @@ jobs:
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-          cache: yarn
 
-
-      - name: Publish
+      - name: Fix version
         run: |
           npm dist-tag add test-npm-tag@${{ github.event.inputs.beta }}  beta
           npm dist-tag add test-npm-tag@${{ github.event.inputs.latest }}  latest
