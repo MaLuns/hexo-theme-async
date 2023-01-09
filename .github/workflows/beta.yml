@@ -16,9 +16,7 @@ on:
 
 jobs:
   version:
-    if: github.repository == 'MaLuns/hexo-theme-async'
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/setup-node@v3
         with:
