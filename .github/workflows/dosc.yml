@@ -22,6 +22,7 @@ jobs:
 
       - name: Build
         run: |
+          yarn lib:build
           echo ${{ secrets.CNAME }} > docs/.vitepress/dist/CNAME
           chmod 600 docs/.vitepress/dist/CNAME
           mkdir -p ./demo/themes/async
