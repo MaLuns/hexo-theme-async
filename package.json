@@ -6,7 +6,7 @@
   "description": "🎈 A simple, lightweight Hexo theme",
   "scripts": {
     "dev": "npm run lib:dev & npm run demo:dev",
-    "build": "npm run docs:build && npm run lib:build && npm run demo:clean && npm run demo:build",
+    "build": "npm run docs:build && npm run lib:build && npm run demo:build",
     "lib:dev": "npm --prefix package/hexo-theme-async-ts run dev",
     "lib:build": "npm --prefix package/hexo-theme-async-ts run build",
     "demo:dev": "hexo --cwd ./demo clean && hexo server --cwd ./demo ",

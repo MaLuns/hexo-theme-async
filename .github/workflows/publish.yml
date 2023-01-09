@@ -33,6 +33,7 @@ jobs:
         cp ./README_zh-CN.md ./package/hexo-theme-async
         cp ./README.md ./package/hexo-theme-async
         node ./script/publish
+        npm run lib:build
         cd ./package/hexo-theme-async
         npm publish
       env:
