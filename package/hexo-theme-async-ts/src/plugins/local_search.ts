@@ -21,7 +21,7 @@ const GetLocalSearch = (() => {
 
 function InitSearch() {
     const { search, i18n } = window.ASYNC_CONFIG;
-    if (search.enable && search.type === 'local') {
+    if (search) {
         if (!search.path) {
             console.warn('`hexo-generator-searchdb` plugin is not installed!')
             return;
@@ -51,13 +51,12 @@ function InitSearch() {
                 resultItems.sort((left, right) => {
                     if (left.includedCount !== right.includedCount)
                         return right.includedCount - left.includedCount
-
                     else if (left.hitCount !== right.hitCount)
                         return right.hitCount - left.hitCount
 
                     return right.id - left.id
                 })
-                const stats = i18n.hits.replace(/\$\{hits}/, resultItems.length)
+                const stats = i18n.hits.replace(/\$\{hits}/, resultItems.length.toString())
 
                 container.innerHTML = `
             <div class="search-stats">${stats}</div>

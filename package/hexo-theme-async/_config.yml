@@ -194,6 +194,12 @@ post_pagination:
 lazyload:
   enable: true
 
+# Displays outdated notice for a post (文章过期提醒)
+notice_outdate:
+  enable: true
+  style: flat # style: simple/flat
+  limit_day: 1 # When will it be shown
+  position: top # position: top/bottom
 #### Article configuration end ###
 
 # Page Visit Statistics

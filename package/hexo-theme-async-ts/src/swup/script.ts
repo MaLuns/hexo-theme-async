@@ -1,3 +1,5 @@
+import utils from "../utils";
+
 const arrayify = (list) => Array.prototype.slice.call(list);
 
 class SwupScriptsPlugin {
@@ -41,7 +43,7 @@ class SwupScriptsPlugin {
                             await this.loadScript(script);
                         }
                     } else {
-                        this.runScriptBlock(script)
+                        utils.runScriptBlock(script)
                     }
                 }
             }
@@ -50,6 +52,7 @@ class SwupScriptsPlugin {
         }
     };
 
+    // 加载脚本
     loadScript(item: HTMLScriptElement) {
         return new Promise<void>((resolve, reject) => {
             const element = document.createElement('script');
@@ -69,33 +72,7 @@ class SwupScriptsPlugin {
         })
     }
 
-    runScriptBlock(el: HTMLScriptElement) {
-        const code = el.text || el.textContent || el.innerHTML || "";
-        const parent = document.head || document.querySelector("head") || document.documentElement;
-        const script = document.createElement('script')
-
-        if (code.match("document.write")) {
-            if (console && console.log) {
-                console.log("Script contains document.write. Can’t be executed correctly. Code skipped ");
-            }
-            return false;
-        }
-
-        try {
-            script.appendChild(document.createTextNode(code));
-        } catch (e) {
-            // old IEs have funky script nodes
-            script.text = code;
-        }
-
-        // 执行代码块
-        parent.appendChild(script);
-        // 移除执行后的代码块，避免污染标签
-        if (parent.contains(script)) {
-            parent.removeChild(script);
-        }
-    }
-
+    // 提取 script
     getNextScriptChildren(): HTMLScriptElement[] {
         const pageContent = this.swup.cache
             .getCurrentPage()

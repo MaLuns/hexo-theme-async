@@ -66,11 +66,19 @@ post:
   read_mode:
     open: Enter reading mode
     exit: Exit reading mode
+  notice_outdate_message: 'It has been %s days since the last update, the content of the article may be outdated.'
 
 rightside:
   readmode_title: Read Mode
   back_to_top: Back To Top
   aside: Toggle between single-column and double-column
+
+date_suffix:
+  just: Just
+  min: minutes ago
+  hour: hours ago
+  day: days ago
+  month: months ago
 
 symbol:
   comma: ', '

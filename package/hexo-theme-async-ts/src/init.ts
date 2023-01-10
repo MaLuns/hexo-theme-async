@@ -342,9 +342,9 @@ export function InitToc() {
  * 初始化版本复制
  */
 export function InitCopyright() {
-	if (window.ASYNC_CONFIG.creative_commons.clipboard) {
+	if (window.ASYNC_CONFIG.creative_commons) {
 		let { author, i18n, creative_commons } = window.ASYNC_CONFIG
-		document.addEventListener('copy', function (event) {
+		const copyFn = function (event: ClipboardEvent) {
 			const clipboardData = event.clipboardData || window.clipboardData;
 			if (!clipboardData) { return; }
 			const text = window.getSelection().toString();
@@ -363,7 +363,8 @@ export function InitCopyright() {
 				let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${originalLink}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
 				clipboardData.setData('text/plain', text + copyrightText);
 			}
-		});
+		}
+		document.addEventListener('copy', copyFn);
 	}
 }
 
@@ -572,6 +573,27 @@ export function InitChangeTitle() {
 }
 
 /**
+ * 添加过期提醒
+ */
+export function AddPostOutdateNotice() {
+	let { notice_outdate: data, i18n } = window.ASYNC_CONFIG
+	if (data) {
+		const diffDay = utils.diffDate(window.PAGE_CONFIG.postUpdate)
+		if (diffDay >= data.limit_day) {
+			const ele = document.createElement('div')
+			ele.className = `post-outdate-notice ${data.position}`
+			ele.textContent = i18n.notice_outdate_message.replace('undefined', diffDay.toString())
+			const $targetEle = document.getElementById('article-container')
+			if (data.position === 'top') {
+				$targetEle.insertBefore(ele, $targetEle.firstChild)
+			} else {
+				$targetEle.appendChild(ele)
+			}
+		}
+	}
+}
+
+/**
  * 显示版权
  */
 export function PrintCopyright() {
@@ -608,6 +630,10 @@ export function ready() {
 
 	/* window title */
 	InitChangeTitle()
+
+	if (window.PAGE_CONFIG.isPost) {
+		AddPostOutdateNotice()
+	}
 
 	/* Initialize album */
 	InitJustifiedGallery()
@@ -650,6 +676,15 @@ export function ready() {
 
 	if (window.ASYNC_CONFIG.swup) {
 		document.addEventListener("swup:contentReplaced", function () {
+			/* Update page configuration */
+			const site = <HTMLScriptElement>utils.gId('async-page-config')
+			site && utils.runScriptBlock(site)
+
+			if (window.PAGE_CONFIG.isPost) {
+				AddPostOutdateNotice()
+			}
+
+			/* Launch reading mode */
 			document.body.classList.remove('trm-read-mode')
 
 			/* The blog runs long */

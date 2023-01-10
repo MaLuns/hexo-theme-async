@@ -242,6 +242,27 @@
         word-wrap    : break-word;
         white-space  : normal;
     }
+
+    .post-outdate-notice {
+        position        : relative;
+        padding         : 0.5em 1em;
+        border-radius   : 4px;
+        font-size       : .9rem;
+        background-color: var(--notice-outdate-bg);
+        color           : var(--notice-outdate-color);
+
+        &.top {
+            margin: 0 0 20px;
+        }
+
+        &.bottom {
+            margin: 20px 0 0;
+        }
+
+        & when(@noticeOutdateStyle =flat) {
+            border-left: 5px solid var(--notice-outdate-border);
+        }
+    }
 }
 
 /* @media(max-width:768px) {

@@ -10,11 +10,10 @@ function setTyper(element: HTMLElement, words: Array<string>) {
     const DIRECTION_FORWARDS = 0;
     const DIRECTION_BACKWARDS = 1;
 
-    var direction = DIRECTION_FORWARDS;
-    var wordIndex = 0;
-    var letterIndex = 0;
-
-    var wordTypeInterval;
+    let direction = DIRECTION_FORWARDS;
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let wordTypeInterval;
 
     startTyping();
 
@@ -43,12 +42,10 @@ function setTyper(element: HTMLElement, words: Array<string>) {
         }
 
         const textToType = word.substring(0, letterIndex);
-
         element.textContent = textToType;
     }
 
     function nextWord() {
-
         letterIndex = 0;
         direction = DIRECTION_FORWARDS;
         wordIndex++;

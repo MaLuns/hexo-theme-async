@@ -45,6 +45,7 @@
 
 <!-- Plugin -->
 <%- partial('../_third-party/plugin',{ loadtype: 'css' }) %>
+
 <!-- Icon -->
 <% if(theme.assets.icons.css) { %>
     <%- css(theme.assets.icons.css) %>
@@ -55,6 +56,7 @@
 
 <!-- Variable -->
 <%- async_config() %>
+<%- page_config() %>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="<%= url_for('css/index.css') %>?v=<%= theme.version %>" id="trm-switch-style">
