@@ -249,7 +249,7 @@ you can write text <span class="token url">[<span class="token content">with lin
   <entry>
     <title>Hello Theme Async</title>
     <url>/demosite/2022/09/21/hello-world/</url>
-    <content><![CDATA[<p><img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="1663833969157.png" loading="lazy"><em>示例图</em></p>
+    <content><![CDATA[<p><img src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="1663833969157.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><em>示例图</em></p>
 <p>Welcome to <a href="https://hexo-theme-async.imalun.com/">hexo-theme-async</a>.</p>
 <span id="more"></span>
 <h2 id="Hexo-Theme-Async"><a href="#Hexo-Theme-Async" class="headerlink" title="Hexo Theme Async"></a>Hexo Theme Async</h2><ul>
@@ -417,8 +417,8 @@ $$</span>
 </blockquote>
 <h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>关于 <code>Hexo-theme-async</code> 的使用文档可以<a href="https://hexo-theme-async.imalun.com/">点击这里</a>查看</p>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>插入图片，格式如下：</p>
-<p><img src="https://hexo-theme-async.imalun.com/github_star.png" alt="这里写图片描述" loading="lazy"></p>
-<p><img src="https://markdown.com.cn/images/i-am-svg.svg" loading="lazy"></p>
+<p><img src="https://hexo-theme-async.imalun.com/github_star.png" alt="这里写图片描述" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'></p>
+<p><img src="https://markdown.com.cn/images/i-am-svg.svg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>可以在一行中用三个以上的减号来建立一个分隔线，同时需要在分隔线的上面空一行。如下：</p>
 <hr>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>可以使用冒号来定义表格的对齐方式，如下：</p>
@@ -509,7 +509,7 @@ $$</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trm-cover trm-dark-icon<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/img/2.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<img class="trm-cover trm-light-icon" src="/demosite/img/1.jpg" title="text" alt loading="lazy"> <img class="trm-cover trm-dark-icon" src="/demosite/img/2.jpg" title="text" alt loading="lazy">
+<img class="trm-cover trm-light-icon" src="/demosite/img/1.jpg" title="text" alt loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'> <img class="trm-cover trm-dark-icon" src="/demosite/img/2.jpg" title="text" alt loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
 
 
 <h2 id="Tabs-标签选项卡"><a href="#Tabs-标签选项卡" class="headerlink" title="Tabs 标签选项卡"></a>Tabs 标签选项卡</h2><p>从next主题移植</p>
@@ -604,7 +604,7 @@ $$</span>
 <div class="col-lg-6">
     <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
         <div class="trm-cover-frame" style="padding-bottom:60%">
-            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/z8/z8dg9y.jpg" alt="Group Image Gallery" loading="lazy">
+            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/z8/z8dg9y.jpg" alt="Group Image Gallery" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
         </div>
         <div class="trm-item-description">
             <div>
@@ -618,7 +618,7 @@ $$</span>
 <div class="col-lg-6">
     <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
         <div class="trm-cover-frame" style="padding-bottom:60%">
-            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/rd/rddgwm.jpg" alt="Group Image Gallery" loading="lazy">
+            <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/rd/rddgwm.jpg" alt="Group Image Gallery" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
         </div>
         <div class="trm-item-description">
             <div>
@@ -666,8 +666,8 @@ galleryItem
 &#123;% endgalleryGroup %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <div class="fj-gallery no-fancybox">
-    <img src="https://th.wallhaven.cc/orig/85/85oy2j.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png" loading="lazy"><p><img src="https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg" loading="lazy"></p>
-<img src="https://th.wallhaven.cc/orig/85/85oylj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oylj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/vq/vq9688.jpg" data-src="https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/2y/2y8q7m.jpg" data-src="https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/85/85oyzj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/7p/7p2589.jpg" data-src="https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/m3/m39kj1.jpg" data-src="https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/6d/6dorxl.jpg" data-src="https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/o5/o53ro5.jpg" data-src="https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/l8/l831lq.jpg" data-src="https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/zy/zy8ewv.jpg" data-src="https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/3l/3lz1pd.jpg" data-src="https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/1p/1pkz5w.jpg" data-src="https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png" loading="lazy"><img src="https://th.wallhaven.cc/orig/p9/p9kdej.jpg" data-src="https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg" loading="lazy"><img src="https://th.wallhaven.cc/orig/x6/x68mrd.jpg" data-src="https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg" loading="lazy">
+    <img src="https://th.wallhaven.cc/orig/85/85oy2j.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><p><img src="https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'></p>
+<img src="https://th.wallhaven.cc/orig/85/85oylj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oylj.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/vq/vq9688.jpg" data-src="https://w.wallhaven.cc/full/vq/wallhaven-vq9688.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/2y/2y8q7m.jpg" data-src="https://w.wallhaven.cc/full/2y/wallhaven-2y8q7m.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/85/85oyzj.jpg" data-src="https://w.wallhaven.cc/full/85/wallhaven-85oyzj.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/7p/7p2589.jpg" data-src="https://w.wallhaven.cc/full/7p/wallhaven-7p2589.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/m3/m39kj1.jpg" data-src="https://w.wallhaven.cc/full/m3/wallhaven-m39kj1.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/6d/6dorxl.jpg" data-src="https://w.wallhaven.cc/full/6d/wallhaven-6dorxl.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/o5/o53ro5.jpg" data-src="https://w.wallhaven.cc/full/o5/wallhaven-o53ro5.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/l8/l831lq.jpg" data-src="https://w.wallhaven.cc/full/l8/wallhaven-l831lq.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/zy/zy8ewv.jpg" data-src="https://w.wallhaven.cc/full/zy/wallhaven-zy8ewv.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/3l/3lz1pd.jpg" data-src="https://w.wallhaven.cc/full/3l/wallhaven-3lz1pd.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/1p/1pkz5w.jpg" data-src="https://w.wallhaven.cc/full/1p/wallhaven-1pkz5w.png" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/p9/p9kdej.jpg" data-src="https://w.wallhaven.cc/full/p9/wallhaven-p9kdej.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'><img src="https://th.wallhaven.cc/orig/x6/x68mrd.jpg" data-src="https://w.wallhaven.cc/full/x6/wallhaven-x68mrd.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
 </div>
 
 <h2 id="Caniuse-查看兼容性"><a href="#Caniuse-查看兼容性" class="headerlink" title="Caniuse 查看兼容性"></a>Caniuse 查看兼容性</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">&#123;</span>% caniuse feature @ <span class="token punctuation">[</span>periods<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
@@ -707,7 +707,7 @@ galleryItem
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">Hexo</h6>
@@ -722,7 +722,7 @@ galleryItem
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">白云苍狗</h6>
@@ -743,7 +743,7 @@ galleryItem
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">Hexo</h6>
@@ -758,7 +758,7 @@ galleryItem
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
             <div class="trm-service-content">
                 <div class="trm-icon">
-                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy">
+                    <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
                 </div>
                 <div class="trm-service-text">
                     <h6 class="trm-mb-10">白云苍狗</h6>

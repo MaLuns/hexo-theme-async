@@ -41,6 +41,9 @@
   --fixed-button-color: #7B7B7D;
   --code-bg-color: #f1f1f1;
   --code-color: #476582;
+  --notice-outdate-bg: #ffe6e6;
+  --notice-outdate-color: #ff6666;
+  --notice-outdate-border: #ff8080;
 }
 :root.dark {
   --primary: #afb42b;
@@ -73,6 +76,9 @@
   --fixed-button-color: #dedee0;
   --code-bg-color: #3a3a3a;
   --code-color: #c9def1;
+  --notice-outdate-bg: #403131;
+  --notice-outdate-color: #ff6565;
+  --notice-outdate-border: #bb1e1e;
 }
 /* @media (prefers-color-scheme: dark) {
     :root {
@@ -2657,6 +2663,21 @@ footer .footer-separator::before {
   word-break: break-all;
   word-wrap: break-word;
   white-space: normal;
+}
+.trm-publication .post-outdate-notice {
+  position: relative;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: var(--notice-outdate-bg);
+  color: var(--notice-outdate-color);
+  border-left: 5px solid var(--notice-outdate-border);
+}
+.trm-publication .post-outdate-notice.top {
+  margin: 0 0 20px;
+}
+.trm-publication .post-outdate-notice.bottom {
+  margin: 20px 0 0;
 }
 /* @media(max-width:768px) {
     .trm-publication {
