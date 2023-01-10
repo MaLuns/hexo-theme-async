@@ -233,7 +233,7 @@ comment:
     lang: zh-CN
     theme: 
       light: light
-      dark: dark
+      dark: transparent_dark
 
 # Theme mode 
 theme: 
