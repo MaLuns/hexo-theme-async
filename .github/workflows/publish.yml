@@ -21,14 +21,27 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile
 
-      - name: Publish
+      - name: Build
         run: |
           cp ./README_zh-CN.md ./package/hexo-theme-async
           cp ./README.md ./package/hexo-theme-async
           node ./script/publish
           yarn lib:build
+        env:
+          RELEASE_VERSION: ${{ github.ref }}
+      
+      - name: Beta Publish
+        if: ${{ contains(github.ref,'beta') }}
+        run: |
+          cd ./package/hexo-theme-async
+          npm publish --tag beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        if: ${{ !contains(github.ref,'beta') }}
+        run: |
           cd ./package/hexo-theme-async
           npm publish
         env:
-          RELEASE_VERSION: ${{ github.ref}}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
