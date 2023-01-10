@@ -3,4 +3,6 @@
     <%- partial('./b-comments') %>
 <% } else if(comment.twikoo.enable) { %>
     <%- partial('./twikoo') %>
+<% } else if(comment.giscus.enable) { %>
+    <%- partial('./giscus') %>
 <% } %>

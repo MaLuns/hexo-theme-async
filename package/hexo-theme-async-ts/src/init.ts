@@ -128,6 +128,9 @@ export function InitThemeMode(init = false) {
 				let type = this.checked ? 'add' : 'remove'
 				mode_swich_animation.classList[type]('trm-active');
 				document.documentElement.classList[type]('dark')
+
+				// 适配 Giscus
+				typeof window.changeGiscusTheme === 'function' && window.changeGiscusTheme()
 			}, 200);
 
 			setTimeout(function () {

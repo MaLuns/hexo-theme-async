@@ -81,6 +81,7 @@ declare interface Window {
     clipboardData: any
     originTitle: any
 
+    changeGiscusTheme: () => void
     show_date_time: () => void
 
     // 三方插件

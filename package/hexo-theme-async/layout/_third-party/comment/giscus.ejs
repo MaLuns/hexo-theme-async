@@ -1,0 +1,43 @@
+<div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50"></div>
+<script data-swup-reload-script>
+    function loadGiscus() {
+        let nowTheme = document.documentElement.classList.contains('dark') ? '<%- theme.comment.giscus.theme.dark %>' : '<%- theme.comment.giscus.theme.light %>'
+        const config = {
+            src: 'https://giscus.app/client.js',
+            "data-repo": '<%- theme.comment.giscus.repo %>',
+            "data-repo-id": '<%- theme.comment.giscus["repo-id"] %>',
+            "data-category": '<%- theme.comment.giscus.category %>',
+            "data-category-id": '<%- theme.comment.giscus["category-id"] %>',
+            "data-mapping": '<%- theme.comment.giscus.mapping %>',
+            "data-reactions-enabled": '<%- theme.comment.giscus["reactions-enabled"] %>',
+            "data-emit-metadata": '<%- theme.comment.giscus["emit-metadata"] %>',
+            "data-theme": nowTheme,
+            "data-lang": '<%- theme.comment.giscus.lang %>',
+            crossorigin: "anonymous",
+            async: true
+        }
+        let ele = document.createElement('script')
+        for (let key in config) {
+            ele.setAttribute(key, config[key])
+        }
+        document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin', ele)
+    }
+
+    function changeGiscusTheme() {
+        let theme = document.documentElement.classList.contains('dark') ? '<%- theme.comment.giscus.theme.dark %>' : '<%- theme.comment.giscus.theme.light %>'
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    loadGiscus();
+</script>

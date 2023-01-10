@@ -63,6 +63,34 @@ comment:
     option: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
 ```
 
+
+### Giscus
+
+[Giscus](https://github.com/laymonage/giscus) 是由 GitHub Discussions 提供支持的评论系统。
+让访问者通过 GitHub 在您的网站上留下评论和反应！
+受到 [utterances](https://utteranc.es/) 的极大启发。
+
+> Giscus （基于 Discussions）相比 utterances（基于 Issue）权限更加细分，且可指定回复。更像一个评论系统。
+
+配置信息字段对应参考 [Giscus Docs](https://giscus.app/zh-CN)
+
+```yaml
+comment:
+  giscus:
+    enable: false
+    repo:
+    repo-id:
+    category:
+    category-id:
+    mapping: pathname
+    reactions-enabled: 1
+    emit-metadata: 0
+    lang: zh-CN
+    theme: 
+      light: light
+      dark: dark
+```
+
 ### 集成其他评论插件
 
 若果您需要集成一些三方评论插件，您可以通过修改下列 layout 文件进行集成。
