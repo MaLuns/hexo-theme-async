@@ -196,9 +196,9 @@ lazyload:
 
 # Displays outdated notice for a post (文章过期提醒)
 notice_outdate:
-  enable: true
+  enable: false
   style: flat # style: simple/flat
-  limit_day: 1 # When will it be shown
+  limit_day: 365 # When will it be shown
   position: top # position: top/bottom
 #### Article configuration end ###
 

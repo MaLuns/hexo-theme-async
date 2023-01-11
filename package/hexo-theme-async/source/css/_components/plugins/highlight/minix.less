@@ -152,7 +152,15 @@
         &:not(.expand-done)~table {
             margin-bottom: 0;
             overflow     : hidden;
-            height       : unit(@highlightHeightLimit, px);
+
+            & when(isnumber(@highlightHeightLimit)) {
+                height: unit(@highlightHeightLimit, px);
+            }
+        }
+
+        svg {
+            margin : 0;
+            display: initial;
         }
     }
 
