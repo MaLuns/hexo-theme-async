@@ -42,8 +42,7 @@ const mergeDatas = (hexo, datas, key) => {
 const processLess = (hexo) => {
     const { theme, config: { highlight, prismjs } } = hexo;
 
-    const less = Object.assign({
-        paths: [],
+    const less = merge(theme.config.less || {}, {
         options: {
             globalVars: {
                 commentType: 'none',
@@ -58,10 +57,11 @@ const processLess = (hexo) => {
                 highlightTheme: true,
                 highlightTitleStyle: 'default',
                 highlightHeightLimit: false,
-                noticeOutdateStyle: 'none'
+                noticeOutdateStyle: 'none',
+                highlightCodeWordWrap: false
             }
         }
-    }, theme.config.less);
+    });
 
     // 评论插件
     const comment = theme.config.comment
@@ -94,6 +94,7 @@ const processLess = (hexo) => {
     less.options.globalVars.highlightTheme = theme.config.highlight.theme
     less.options.globalVars.highlightTitleStyle = theme.config.highlight.title
     less.options.globalVars.highlightHeightLimit = theme.config.highlight.height_limit
+    less.options.globalVars.highlightCodeWordWrap = theme.config.highlight.code_word_wrap
 
     // 过期提醒
     less.options.globalVars.noticeOutdateStyle = theme.config.notice_outdate.style
