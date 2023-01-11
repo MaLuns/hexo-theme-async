@@ -49,24 +49,28 @@ A detailed usage document can solve most of your unclear points 🤣
 - English documentation: None
 
 ## Installation
-
-### Clone the repository to the themes directory
-
-After v1.1.0, the entire repository file is no longer required due to project restructuring. After cloning the repository, you only need to copy package/hexo-theme-async to the themes/async directory.
-``` bash
-cd hexo
-npm install --save hexo-renderer-less hexo-renderer-ejs
-```
-Then change your setting in \_config.async.yml.
-
-### Use npm to install
+In your hexo folder:
 
 ``` bash
-cd hexo
 npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 ```
+
+or
+
+``` bash
+yarn add --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
+```
+
 You can override the theme._config.yml configuration in \_config.async.yml,Can refer to [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
+
+## Upgrade
+
+You just need to execute:
+
+``` bash
+npm install hexo-theme-async@latest
+```
 ## Contribution
 Your contribution is very welcome. You can build it together in the following ways :smiley:
 
@@ -80,7 +84,10 @@ We use [SATA License](https://github.com/zTrix/sata-license).
 
 > You don’t know what this means? In short, if you use this theme, you need to Star this repo non-stop, and then you can use it anyway you like.
 
-## 演示
+## Demo Sites
+
+If you are using this theme, welcome to leave your site in [Demo Sites | Example Site | Discussions](https://github.com/MaLuns/hexo-theme-async/discussions/7), and I will add it to the sample site below.
+
 <!-- demo-start -->
 <table>
   <tr align="center">
@@ -110,6 +117,13 @@ We use [SATA License](https://github.com/zTrix/sata-license).
                 <img width="80px" src="https://blog.wzwzx.cn/img/tx.jpg" />
                 <br />
                 <sub title="希望运气好一些">wzwzx</sub>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.bio-w.cn" target="_blank">
+                <img width="80px" src="https://bu.dusays.com/2022/10/17/634d313602a1e.png" />
+                <br />
+                <sub title="我在人间贩卖彩虹">西瓜撞地球</sub>
             </a>
         </td>
       </tr>

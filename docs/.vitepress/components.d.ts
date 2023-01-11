@@ -15,5 +15,6 @@ declare module '@vue/runtime-core' {
     IconList: typeof import('./components/IconList.vue')['default']
     InfoToast: typeof import('./components/InfoToast.vue')['default']
     OutLine: typeof import('./components/OutLine.vue')['default']
+    SponsorsLog: typeof import('./components/SponsorsLog.vue')['default']
   }
 }

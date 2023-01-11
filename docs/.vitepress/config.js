@@ -25,6 +25,7 @@ module.exports = {
         nav: [
             { text: 'Guide', link: '/guide/' },
             { text: 'Demo', link: '/demo/' },
+            { text: 'Sponsors', link: '/sponsors/' },
         ],
         sidebar: [
             {

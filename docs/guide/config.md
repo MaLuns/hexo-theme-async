@@ -670,6 +670,7 @@ datetime_foramt:
 - `title`：代码块标题样式，`mac`、`default`
 - `copy`：是否可以一键复制，默认开启
 - `lang`：是否显示代码块语言，默认显示
+- `code_word_wrap`：是否强制换行，默认关闭，开启后需关闭代码行号
 - `height_limit`：设置代码块高低
 
 ``` yaml
@@ -678,6 +679,7 @@ highlight:
   title: default
   copy: true
   lang: true
+  code_word_wrap: fasle 
   height_limit: 200 # 超出时，显示折叠按钮
 ```
 

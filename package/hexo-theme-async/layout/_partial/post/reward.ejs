@@ -1,7 +1,7 @@
 <% if(theme.reward.enable && page.reward !== false){ %>
     <div class="trm-reward">
         <% if(theme.reward.url){ %>
-            <a rel="noopener" href='<%- theme.reward.url %>' target='_blank' class="trm-reward-btn trm-glow">
+            <a rel="noopener noreferrer" href='<%- theme.reward.url %>' target='_blank' class="trm-reward-btn trm-glow">
                 <%- icon(theme.icons.reward) %>
             </a>
         <% } else { %>
@@ -14,7 +14,7 @@
             <% if(Array.isArray(theme.reward.methods)) {
                 theme.reward.methods.forEach(method =>{ %>
                 <div style="display:inline-block">
-                    <a rel="noopener" href='<%- method.link ? method.link : method.path %>' target='_blank' >
+                    <a rel="noopener noreferrer" href='<%- method.link ? method.link : method.path %>' target='_blank' >
                        <img src="<%- url_for(method.path) %>" alt="<%- method.name %>" loading="lazy">
                     </a>
                     <p><%- method.name %></p>

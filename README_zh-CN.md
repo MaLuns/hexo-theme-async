@@ -49,24 +49,28 @@
 - 英文文档：无
 
 ## 安装
-### 克隆本仓库到 themes 目录下
-从 v1.1.0 后，由于项目结构调整，不再需要整个仓库文件了。 克隆本仓库后，只需要将 package/hexo-theme-async 复制到 themes/async 目录下即可。
+
+安装 hexo-theme-async、less、ejs 等插件
 
 ``` bash
-# 安装 less、ejs 等插件
-cd hexo
-npm install --save hexo-renderer-less hexo-renderer-ejs
-```
-然后在 \_config.async.yml 中更改设置。
-
-### 使用 npm 安装
-``` bash
-# 安装 hexo-theme-async、less、ejs 等插件
-cd hexo
 npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 ```
-您可以覆盖 \_config.async.yml 中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
 
+或者
+
+``` bash
+yarn add --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
+```
+
+您可以创建一个 \_config.async.yml 来覆盖主题默认 \_config.yml  中配置，可以参考 [Hexo Docs](https://hexo.io/zh-cn/docs/configuration#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+
+## 更新
+
+你只需要执行:
+
+``` bash
+npm install hexo-theme-async@latest
+```
 ## 参与贡献
 非常欢迎你的贡献，你可以通过以下方式一起共建 :smiley:：
 
@@ -81,7 +85,12 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
 
 > 你不知道这代表什么？简单来说，就是如果你使用了该主题，你需要马不停蹄地点一个 Star，接下来你便可以随意使用它。
 
-## 演示
+## 演示站点
+
+如果你已经使用了本主题，欢迎前往 [Demo Sites | 示例站点 | Discussions](https://github.com/MaLuns/hexo-theme-async/discussions/7) 留下你的站点，我将会将其添加到下方的示例站点中。
+
+也可以直接修改 [sites.json](https://github.com/MaLuns/hexo-theme-async/blob/dev/docs/.vitepress/assets/sites.json) 创建 PR。
+
 <!-- demo-start -->
 <table>
   <tr align="center">
@@ -111,6 +120,13 @@ npm install --save hexo-theme-async hexo-renderer-less hexo-renderer-ejs
                 <img width="80px" src="https://blog.wzwzx.cn/img/tx.jpg" />
                 <br />
                 <sub title="希望运气好一些">wzwzx</sub>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.bio-w.cn" target="_blank">
+                <img width="80px" src="https://bu.dusays.com/2022/10/17/634d313602a1e.png" />
+                <br />
+                <sub title="我在人间贩卖彩虹">西瓜撞地球</sub>
             </a>
         </td>
       </tr>

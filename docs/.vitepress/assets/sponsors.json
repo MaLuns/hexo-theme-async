@@ -1,0 +1,51 @@
+{
+    "modes": [
+        {
+            "type": "alipay",
+            "title": "支付宝",
+            "path": "https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg"
+        },
+        {
+            "type": "wechat",
+            "title": "微信",
+            "path": "https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png"
+        },
+        {
+            "type": "qq",
+            "title": "QQ",
+            "path": "https://img.lkxin.cn/tu/2023/01/11/63be672c56d6c.jpg"
+        }
+    ],
+    "logs": [
+        {
+            "name": "对*.",
+            "money": 10.00,
+            "type": "wechat",
+            "date": "2023-01-11"
+        },
+        {
+            "name": "*负能量",
+            "money": 5.00,
+            "type": "wechat",
+            "date": "2022-12-30"
+        },
+        {
+            "name": "*羊",
+            "money": 1.00,
+            "type": "wechat",
+            "date": "2022-12-11"
+        },
+        {
+            "name": "*奶",
+            "money": 1.88,
+            "type": "wechat",
+            "date": "2022-10-27"
+        },
+        {
+            "name": "*洋",
+            "money": 1.00,
+            "type": "wechat",
+            "date": "2022-10-18"
+        }
+    ]
+}
