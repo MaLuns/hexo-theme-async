@@ -9,5 +9,9 @@ pre[class*='language-'] {
         &::-webkit-scrollbar-thumb {
             background: var(--highlight-scrollbar)
         }
+
+        & when(@highlightCodeWordWrap),(@prismjsLineNumber=false) {
+            white-space: pre-wrap;
+        }
     }
 }

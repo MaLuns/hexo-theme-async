@@ -28,6 +28,14 @@
         overflow-x: auto;
         color     : var(--highlight-foreground);
         background: var(--highlight-background);
+
+        pre {
+
+            & when(@highlightCodeWordWrap),
+            (@highlightLineNumber=false) {
+                white-space: pre-wrap;
+            }
+        }
     }
 
     pre {

@@ -310,4 +310,5 @@ highlight:
   title: default # mac | default
   copy: true # copy button
   lang: true # show the code language
+  code_word_wrap: fasle #
   height_limit: false # unit: px
