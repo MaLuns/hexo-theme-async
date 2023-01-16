@@ -10,6 +10,8 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +29,7 @@ jobs:
           cp ./README.md ./package/hexo-theme-async
           node ./script/publish
           yarn lib:build
+          zip -r hexo-theme-async ./package/hexo-theme-async
         env:
           RELEASE_VERSION: ${{ github.ref }}
       
@@ -45,3 +48,11 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Releases
+        uses: MaLuns/add-release@v1
+        with:
+          files: hexo-theme-async.zip
+          generate_release_notes: true
+          generate_release_notes_by_commit: true
+          prerelease: ${{ contains(github.ref,'beta') }}
