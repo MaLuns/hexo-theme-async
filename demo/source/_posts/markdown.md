@@ -82,6 +82,20 @@ katex: true
 
 ![](https://markdown.com.cn/images/i-am-svg.svg)
 
+<img src="https://hexo-theme-async.imalun.com/github_star.png" align="left">
+<img src="https://hexo-theme-async.imalun.com/github_star.png" align="right">
+
+<div class="row">
+  <div class="col-lg-4">
+    <img src="https://hexo-theme-async.imalun.com/github_star.png">
+  </div>
+  <div class="col-lg-4">
+    <img src="https://hexo-theme-async.imalun.com/github_star.png">
+  </div>
+  <div class="col-lg-4">
+    <img src="https://hexo-theme-async.imalun.com/github_star.png">
+  </div>
+<div>
 
 ### 分割线
 

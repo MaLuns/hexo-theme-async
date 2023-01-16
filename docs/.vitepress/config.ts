@@ -1,4 +1,6 @@
-module.exports = {
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
     lang: 'zh-CN',
     title: 'Hexo-Theme-Async',
     description: '🎈 A simple, lightweight Hexo theme',
@@ -8,6 +10,11 @@ module.exports = {
     ],
     themeConfig: {
         logo: '/logo.svg',
+        algolia: {
+            appId: 'GER60TPC08',
+            apiKey: '993137f59d71d252c8bafbce33bda9c2',
+            indexName: 'hexo_theme_async_docs',
+        },
         editLink: {
             pattern: 'https://github.com/Maluns/hexo-theme-async/edit/master/docs/:path',
             text: '帮助改善此页面！( ￣□￣)/',
@@ -87,4 +94,4 @@ module.exports = {
             copyright: 'Copyright © 2020-PRESENT MaLuns',
         },
     }
-}
+})

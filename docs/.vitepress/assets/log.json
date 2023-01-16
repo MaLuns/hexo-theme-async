@@ -3,6 +3,41 @@
         "large_version": "v2.0.x",
         "children": [
             {
+                "version": "2.0.0-beta.3",
+                "date": "2023-01-16",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加代码块强制换行"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 less 合并配置问题"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复代码块高度限制失效"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "兼容图片浮动对齐"
+                    }
+                ]
+            },{
+                "version": "2.0.0-beta.2",
+                "date": "2023-01-10",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "增加文章过期提醒"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "适配 giscus"
+                    }
+                ]
+            },
+            {
                 "version": "2.0.0-beta.1",
                 "date": "2023-01-09",
                 "logs": [
