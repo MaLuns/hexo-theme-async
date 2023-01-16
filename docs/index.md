@@ -18,7 +18,7 @@ features:
   - title: 简洁
     icon: 🌸
     details: 简洁、优雅、轻量、美观的用户界面。
-  - title: 多端
+  - title: 响应式
     icon: ⚡️
     details: 响应式界面，支持手机、平板、PC 多种平台。
   - title: PWA 
@@ -33,3 +33,4 @@ footer:
     url: https://www.imalun.com
 ---
 
+<DemoSitesLine title="📢 Sites that use themes" />
