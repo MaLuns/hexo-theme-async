@@ -33,6 +33,17 @@ export default defineConfig({
             { text: 'Guide', link: '/guide/' },
             { text: 'Demo', link: '/demo/' },
             { text: 'Sponsors', link: '/sponsors/' },
+            {
+                text: 'Docs',
+                items: [
+                    {
+                        items: [
+                            { text: 'Preview', link: 'http://hexo-theme-async.imalun.com/' },
+                            { text: 'Laster', link: 'http://async-docs.imalun.com/' }
+                        ]
+                    }
+                ]
+            }
         ],
         sidebar: [
             {
@@ -83,10 +94,10 @@ export default defineConfig({
             },
         ],
         localeLinks: {
-            text: '',
+            text: 'language',
             items: [
-                /* { text: 'English', link: '/en/guide/' }, */
                 { text: '简体中文', link: '/guide/' },
+                { text: 'English', link: '/en/guide/' },
             ],
         },
         footer: {

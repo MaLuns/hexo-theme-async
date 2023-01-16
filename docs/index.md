@@ -8,9 +8,9 @@ hero:
     src: /logo.gif
   tagline: 🎈 A simple & lightweight theme for Hexo.
   actions:
-    - text: 🚀 快速上手
+    - text: 🚀 Get Started
       link: /guide/
-    - text: 💻 示例站点
+    - text: 💻 Demo Sites
       link: /demo/
       theme: alt
 

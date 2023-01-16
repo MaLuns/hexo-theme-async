@@ -10,9 +10,6 @@
 
 如果您有其他相关的想法与问题，可前往 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions)。
 
----
-
-
 ## 自查通用问题解决方案
 
 检查文件或仓库命名是否错误。
