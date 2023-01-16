@@ -62,6 +62,15 @@
         }
     }
 
+    [data-fancybox="article"] {
+        &:after {
+            content: "\200B";
+            display: block;
+            height : 0;
+            clear  : both;
+        }
+    }
+
     ul {
         padding      : 0;
         margin-left  : 10px;

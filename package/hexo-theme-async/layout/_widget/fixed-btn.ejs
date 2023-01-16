@@ -4,7 +4,7 @@
             <%- icon(theme.icons.read) %>
         </div>
     <% } %>
-    <% if(theme.rightside.aside) { %>
+    <% if(theme.rightside.aside && !page.single_column) { %>
         <div class="trm-fixed-btn" data-title="<%- __('rightside.aside') %>" onclick="document.body.classList.toggle('trm-single-column')">
             <%- icon(theme.icons.arrows) %>
         </div>
