@@ -1,8 +1,8 @@
-<%- partial('./_partial/main',  {
-    banner: partial('./_partial/banner',  {
+<%- partial(theme.layout.main,  {
+    banner: partial(theme.layout.banner,  {
         ...theme.banner.default,
         bannerTitle: page.title,
         ...theme.banner.archive 
     }),
-    content: is_tag() ? partial('./_partial/page/archive') : partial('./_partial/page/tag')
+    content: is_tag() ? partial(theme.layout.page_archive) : partial(theme.layout.page_tag)
 }) %>

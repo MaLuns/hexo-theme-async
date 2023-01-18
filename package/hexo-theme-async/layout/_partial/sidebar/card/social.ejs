@@ -1,0 +1,12 @@
+<!-- sidebar social -->
+<% if(theme.sidebar.social) { %>
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    <% theme.sidebar.social.forEach(item=>{ %>
+        <a href="<%- url_for(item.url) %>" title="<%- item.name %>" rel="nofollow" target="_blank">
+            <%- icon(item.icon) %>
+        </a>
+    <%})%>
+</div>
+<% } %>
+<!-- sidebar social end -->

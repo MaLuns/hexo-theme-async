@@ -1,18 +1,11 @@
 <% if(cdntype==='head') {%>
 
-    <% if(theme.cdn.css) {%>
-        <%- css(theme.cdn.css)%>
-    <% } %>
-
-    <% if(theme.cdn.js.head) {%>
-        <%- jss(theme.cdn.js.head)%>
-    <% } %>
+    <%- theme.cdn.css ? css(theme.cdn.css) : '' %>
+    <%- theme.cdn.js.head ? jss(theme.cdn.js.head) : '' %>
 
 <% } else if(cdntype==='body') { %>
 
-    <% if(theme.cdn.js.base) {%>
-        <%- js(theme.cdn.js.base)%>
-    <% } %>
+    <%- theme.cdn.js.base ? js(theme.cdn.js.base) : '' %>
 
     <% if(theme.cdn.js.async) {%>
         <%- Array.isArray(theme.cdn.js.async)? js(theme.cdn.js.async.map(src=>({src, async: true}))): js({src:theme.cdn.js.async, async: true}) %>

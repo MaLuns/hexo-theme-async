@@ -7,7 +7,7 @@
             <% if(!page.single_column) { %>
                 <div id="page-sidebar" class="col-lg-4 hidden-sm">
                     <!-- main card -->
-                    <%- partial('./sidebar/index') %>
+                    <%- partial(theme.layout.sidebar) %>
                     <!-- main card end -->
                 </div>
             <% } %>
@@ -20,7 +20,7 @@
                     <div class="trm-divider footer-divider"></div>
 
                     <!-- footer -->
-                    <%- partial('./footer') %>
+                    <%- partial(theme.layout.footer) %>
                     <!-- footer end -->
 
                 </div>

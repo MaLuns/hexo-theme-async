@@ -1,0 +1,15 @@
+<!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    <% theme.sidebar.info.forEach(item=>{ %>
+        <li>
+            <div class="trm-label">
+                <%- __(item.key) %>:
+            </div>
+            <div class="trm-label trm-label-light">
+                <%- item.val %>
+            </div>
+        </li>
+    <%})%>
+</ul>
+<!-- info end -->

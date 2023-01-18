@@ -9,7 +9,7 @@ sticky: 1
 Welcome to [hexo-theme-async](https://hexo-theme-async.imalun.com/).
 <!--more-->
 ## Hexo Theme Async
-- 文档:[https://hexo-theme-async.imalun.com/](https://hexo-theme-async.imalun.com/)
+- docs: [https://hexo-theme-async.imalun.com/](https://hexo-theme-async.imalun.com/)
 
 ## Hexo
 

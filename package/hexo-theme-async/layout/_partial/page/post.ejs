@@ -1,10 +1,10 @@
-<%- partial('../post/post-info') %>
+<%- partial(theme.layout.post_info) %>
 <div class="trm-card ">
-    <%- partial('../post/post-content') %>
-    <%- partial('../post/reward') %>
-    <%- partial('../post/post-copyright') %>
+    <%- partial(theme.layout.post_content) %>
+    <%- partial(theme.layout.reward) %>
+    <%- partial(theme.layout.post_copyright) %>
 </div>
-<%- partial('../post/post-next-prev') %>
+<%- partial(theme.layout.post_next_prev) %>
 <% if(page.comments) { %>
-    <%- partial('../../_third-party/comment/index') %>
+    <%- partial(theme.layout.comment) %>
 <% } %>

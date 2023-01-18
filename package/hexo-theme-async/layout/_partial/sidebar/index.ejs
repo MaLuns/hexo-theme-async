@@ -20,14 +20,20 @@ if(is_toc){
                 </div>
            </div>
             <div name="tabs-user" class="trm-tabs-item">
-                <%- partial('./user') %>
+                <%- partial(theme.layout.sidebar_user) %>
+                <%- partial(theme.layout.sidebar_social) %>
+                <%- partial(theme.layout.sidebar_info) %>
+                <%- partial(theme.layout.sidebar_email) %>
             </div>
             <div name="tabs-toc" class="trm-tabs-item active">
-                <%- partial('./toc',{ toc_content }) %>
+                <%- partial('./card/toc', { toc_content }) %>
             </div>
         </div>
     <% } else { %>
-        <%- partial('./user') %>
+        <%- partial(theme.layout.sidebar_user) %>
+        <%- partial(theme.layout.sidebar_social) %>
+        <%- partial(theme.layout.sidebar_info) %>
+        <%- partial(theme.layout.sidebar_email) %>
     <% } %>
     </div>
 </div>

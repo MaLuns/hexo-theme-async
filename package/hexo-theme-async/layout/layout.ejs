@@ -11,11 +11,11 @@
   <div class="trm-app-frame">
 
     <!-- page preloader -->
-    <%- partial('./_partial/preloader/page-preloader') %>
+    <%- partial(theme.layout.page_loading) %>
     <!-- page preloader end -->
 
     <!-- change mode preloader -->
-    <%- partial('./_partial/preloader/change-mode-preloader') %>
+    <%- partial(theme.layout.mode_change) %>
     <!-- change mode preloader end -->
 
       <!-- scroll container -->
@@ -26,7 +26,7 @@
             <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
-            <%- partial('./_partial/header') %>
+            <%- partial(theme.layout.header) %>
             <!-- top bar end -->
 
             <!-- body -->
@@ -34,7 +34,7 @@
             <!-- body end -->
 
             <!-- body -->
-            <%- partial('./_widget/fixed-btn') %>
+            <%- partial(theme.layout.fixed_btn) %>
             <!-- body end -->
           </div>
         </div>
@@ -44,7 +44,7 @@
   </div>
   <!-- app wrapper end -->
 
-  <%- partial('./_widget/back-to-top') %>
+  <%- partial(theme.layout.back_to_top) %>
   <%- partial('./_widget/search') %>
   <%- partial('./_partial/script') %>
 

@@ -5,8 +5,8 @@
             let cards = [] 
             if (Array.isArray(theme.categorie_card.list)) {
                 theme.categorie_card.list.forEach(title => {
-                let categorie = site.categories.data.find(item=> item.name === title)
-                if(categorie) cards.push(categorie)
+                    let categorie = site.categories.data.find(item=> item.name === title)
+                    if(categorie) cards.push(categorie)
                 })
             } else {
                 cards = site.categories.data.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
@@ -14,7 +14,7 @@
         %>
         <% cards.forEach((item,index) => {  %>
         <div class="col-lg-6">
-            <%- partial('../../_widget/categorie',{ name:item.name,length:item.length,path:item.path }) %>
+            <%- partial(theme.layout.categorie, { name:item.name,length:item.length,path:item.path }) %>
         </div>
         <% }) %>
     </div>
@@ -34,10 +34,10 @@
     <% } %>
     <% page.posts.each(function(post,postIndex){ %>
         <div class="col-lg-6">
-            <%- partial('../post/post-card',{ post }) %>
+            <%- partial(theme.layout.post_card,{ post }) %>
         </div>
     <% }) %>
 </div>
 <!-- newest publications end -->
 
-<%- partial('../../_widget/paginator') %>
+<%- partial(theme.layout.paginator) %>

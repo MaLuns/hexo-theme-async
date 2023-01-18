@@ -46,10 +46,10 @@ const props = defineProps({
 .demo-template-cards {
     width: 100%;
     overflow-x: hidden;
-    padding: 20px 0 40px;
+    padding: 64px 0;
 
     .demo-template-title {
-        padding: 40px 0 30px;
+        padding: 0px 0 30px;
         text-align: center;
         font-size: 22px;
         font-weight: bold;

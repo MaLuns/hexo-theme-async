@@ -76,7 +76,7 @@ swup: true
 
 toc:
   enable: true
-  list_number: true
+  list_number: false
   max_depth: 3
   min_depth: 1
 
@@ -99,3 +99,6 @@ assets:
 highlight:
   title: mac
   height_limit: 200
+
+layout:
+  footer: async/footer

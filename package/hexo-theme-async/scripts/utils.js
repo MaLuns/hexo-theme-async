@@ -66,9 +66,14 @@ function toI18n(obj, __) {
     }
 }
 
+function escapeBackslash(path) {
+    // Replace backslashes on Windows
+    return path.replace(/\\/g, '/');
+}
 
 module.exports = {
     merge,
     toI18n,
-    isPlainObject
+    isPlainObject,
+    escapeBackslash
 }

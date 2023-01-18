@@ -1,10 +1,10 @@
 <% let banner = page.banner || {}; %>
-<%- partial('./_partial/main',  {
-    banner: partial('./_partial/banner',  {
+<%- partial(theme.layout.main,  {
+    banner: partial(theme.layout.banner,  {
         ...theme.banner.default,
         bannerTitle: page.title,
         ...theme.banner.links,
         ...banner
     }),
-    content: partial('./_partial/page/links')
+    content: partial(theme.layout.page_links)
 }) %>

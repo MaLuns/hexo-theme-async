@@ -14,27 +14,15 @@ plugin = theme.assets.plugin;
     <%- css(plugin.hexo_theme_async.rowcss) %>
     <%- css(plugin.locomotive_scroll.css) %>
     <%- css(plugin.fancybox.css) %>
-
-    <% if(isSwiper) {%>
-        <%- css(plugin.swiper.css) %>
-    <% } %>
-
-    <% if(isKatex) {%>
-        <%- css(plugin.katex.css) %>
-    <% } %>
+    <%- isSwiper ? css(plugin.swiper.css) : '' %>
+    <%- isKatex ? css(plugin.katex.css) : '' %>
 
 <% } else { %>
-    
-    <% if(theme.swup) { %>
-        <%- js(plugin.swup) %>
-    <% } %>
 
+    <%- theme.swup ? js(plugin.swup) : '' %>
     <%- js(plugin.locomotive_scroll.js) %>
     <%- js(plugin.fancybox.js) %>
-
-    <% if(isSwiper) {%>
-        <%- js(plugin.swiper.js) %>
-    <% } %>
+    <%- isSwiper ? js(plugin.swiper.js) : '' %>
 
     <% if(isTyping) {%>
         <script src="<%= url_for(plugin.hexo_theme_async.typing) %>?v=<%= theme.version %>"></script>

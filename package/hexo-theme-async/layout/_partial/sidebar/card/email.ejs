@@ -1,0 +1,11 @@
+<% if(theme.user.email){ %>
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:<%- theme.user.email %>" class="trm-btn">
+            <%- __('sidebar.contact') %>
+            <%- icon(theme.icons.email) %>
+        </a>
+    </div>
+    <!-- action button end -->
+<% } %>

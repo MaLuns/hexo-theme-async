@@ -9,7 +9,7 @@
     "build": "npm run docs:build && npm run lib:build && npm run demo:build",
     "lib:dev": "npm --prefix package/hexo-theme-async-ts run dev",
     "lib:build": "npm --prefix package/hexo-theme-async-ts run build",
-    "demo:dev": "hexo --cwd ./demo clean && hexo server --cwd ./demo ",
+    "demo:dev": "hexo --cwd ./demo clean && hexo server --cwd ./demo --debug",
     "demo:build": "hexo --cwd ./demo clean && hexo --cwd ./demo generate",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",

@@ -1,9 +1,9 @@
 <% let banner = page.banner || {}; %>
-<%- partial('./_partial/main',  {
-    banner: partial('./_partial/banner',  {
+<%- partial(theme.layout.main,  {
+    banner: partial(theme.layout.banner,  {
         ...theme.banner.default,
         bannerTitle: page.title,
         ...banner
     }),
-    content: page.content + (page.comments ? partial('./_third-party/comment/index') :'')
+    content: page.content + (page.comments ? partial(theme.layout.comment) :'')
 }) %>

@@ -312,3 +312,42 @@ highlight:
   lang: true # show the code language
   code_word_wrap: fasle #
   height_limit: false # unit: px
+
+# Customize the template path
+layout:
+  path: layout
+  # layout
+  main:  _partial/main
+  header: _partial/header
+  banner: _partial/banner
+  sidebar: _partial/sidebar/index
+  footer: _partial/footer
+  # page
+  post_info: _partial/post/post-info
+  post_content: _partial/post/post-content
+  reward: _partial/post/reward
+  post_copyright: _partial/post/post-copyright
+  post_next_prev: _partial/post/post-next-prev
+  post_card: _partial/post/post-card
+  post_card_mini: _partial/post/post-card-mini
+  # widget
+  categorie: _widget/categorie
+  paginator: _widget/paginator
+  back_to_top: _widget/back-to-top
+  fixed_btn: _widget/fixed-btn
+  sidebar_user: _partial/sidebar/card/user
+  sidebar_social: _partial/sidebar/card/social
+  sidebar_info: _partial/sidebar/card/info
+  sidebar_email: _partial/sidebar/card/email
+  comment: _third-party/comment/index
+  # animation
+  page_loading: _partial/preloader/page-preloader
+  mode_change:  _partial/preloader/change-mode-preloader
+  # page
+  page_about: _partial/page/about
+  page_archive: _partial/page/archive
+  page_category: _partial/page/category
+  page_index: _partial/page/index
+  page_links: _partial/page/links
+  page_post: _partial/page/post
+  page_tag: _partial/page/tag

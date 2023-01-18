@@ -1,4 +1,5 @@
 const { merge } = require('../utils')
+const Layout = require('./layout')
 
 /**
  * 合并语言
@@ -102,8 +103,17 @@ const processLess = (hexo) => {
     theme.config.less = less
 }
 
+/**
+ * 注入模板
+ * @param {*} hexo 
+ */
+const processLayout = (hexo) => Layout(hexo)
+
 module.exports = function (hexo) {
     const data = hexo.locals.get('data')
+
+    // Load template 
+    processLayout(hexo)
 
     // merge languages
     if (data.languages)

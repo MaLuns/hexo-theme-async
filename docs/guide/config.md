@@ -500,115 +500,6 @@ post_pagination:
   type: large # large || small
 ```
 
-## 自定义图标 Icon
-博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
-
-可以通过配置 `icons` 修改：
-
-``` yaml
-icons:
-  # 主题切换图标
-  sun: far fa-sun
-  moon: far fa-moon
-  # 首页视频播放
-  play: fas fa-play
-  # 邮箱
-  email: far fa-envelope
-  # 分类进入图标
-  next: fas fa-arrow-right
-  # 文章详情 日期
-  calendar: far fa-calendar-alt
-  # 文章详情 时间
-  clock: far fa-clock
-  # 文章详情 作者
-  user: far fa-user
-  # 返回顶部 v1.1.3+
-  back_top: fas fa-arrow-up
-  # 查询 v1.1.5+
-  search: fas fa-search
-  # 关闭 v1.1.5+
-  close: fas fa-times
-  # 打赏 v1.1.7+
-  reward: fas fa-hand-holding-usd
-  # 用户信息和文章目录切换 v1.2.10+
-  user_tag: fas fa-user-alt
-  toc_tag: fas fa-th-list
-  # 右下角固定按钮 v1.2.11+
-  read: fas fa-book-reader
-  arrows: fas fa-arrows-alt-h
-```
-
-## 自定义样式 Style
-相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
-
-::: danger
-在 `1.2.x + ` 修改主题切换实现方式，由原来多份样式文件调整为 CSS 变量形式。所以自定义样式也有些许变化。
-:::
-
-### `1.2.x` 版本
-- 新建 `source/_data/style/index.less`，开始编写你的自定义样式了。
-
-```text {5}
-┌── blog                     
-│   └── source
-│       └── _data
-│           └── style
-│               ├── index.less
-│   └── themes
-```
-
-`:root` 下为白色主题，`:root.dart` 下为暗黑色主题，
-
-修改主题色示例：
-
-``` less source/_data/style/index.less
-:root {
-    .var-primary(#5a5df0, #697be2);
-
-    &.dark {
-        .var-primary(#a4ce60, #82df7a);
-    }
-}
-```
-
-跟随操作系统选择主题示例：
-
-``` less source/_data/style/index.less
-@media (prefers-color-scheme: dark) {
-    :root {
-        .dark()
-    }
-}
-```
-### `1.1.x` 版本
-
-- 新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
-- 如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
-
-```text {4,5,6,7,8}
-┌── blog                     
-│   └── source
-│       └── _data
-│           └── style
-│               ├── dark.less
-│               ├── light.less
-│               ├── dark.variables.less
-│               └── light.variables.less
-│   └── themes
-```
-修改主题色示例：
-``` less source/_data/style/dark.less
-// source/_data/style/dark.less
-@primary :#6062ce;
-@primary-weak :#7a89df;
-```
-
-``` less source/_data/style/light.less
-// source/_data/style/light.less
-@primary :#6062ce;
-@primary-weak :#7a89df;
-```
-
 ## 其他配置 Other
 
 这里是一些关于页面中杂项配置合集。
@@ -720,6 +611,199 @@ highlight:
 highlight:
   theme: false
 ```
+
+## 自定义图标 Icon
+博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
+
+可以通过配置 `icons` 修改：
+
+``` yaml
+icons:
+  # 主题切换图标
+  sun: far fa-sun
+  moon: far fa-moon
+  # 首页视频播放
+  play: fas fa-play
+  # 邮箱
+  email: far fa-envelope
+  # 分类进入图标
+  next: fas fa-arrow-right
+  # 文章详情 日期
+  calendar: far fa-calendar-alt
+  # 文章详情 时间
+  clock: far fa-clock
+  # 文章详情 作者
+  user: far fa-user
+  # 返回顶部 v1.1.3+
+  back_top: fas fa-arrow-up
+  # 查询 v1.1.5+
+  search: fas fa-search
+  # 关闭 v1.1.5+
+  close: fas fa-times
+  # 打赏 v1.1.7+
+  reward: fas fa-hand-holding-usd
+  # 用户信息和文章目录切换 v1.2.10+
+  user_tag: fas fa-user-alt
+  toc_tag: fas fa-th-list
+  # 右下角固定按钮 v1.2.11+
+  read: fas fa-book-reader
+  arrows: fas fa-arrows-alt-h
+```
+
+## 自定义样式 Style
+相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
+
+::: danger
+在 `1.2.x + ` 修改主题切换实现方式，由原来多份样式文件调整为 CSS 变量形式。所以自定义样式也有些许变化。
+:::
+
+### `1.2.x` 版本
+- 新建 `source/_data/style/index.less`，开始编写你的自定义样式了。
+
+```text {5}
+┌── blog                     
+│   └── source
+│       └── _data
+│           └── style
+│               ├── index.less
+│   └── themes
+```
+
+`:root` 下为白色主题，`:root.dart` 下为暗黑色主题，
+
+修改主题色示例：
+
+``` less source/_data/style/index.less
+:root {
+    .var-primary(#5a5df0, #697be2);
+
+    &.dark {
+        .var-primary(#a4ce60, #82df7a);
+    }
+}
+```
+
+跟随操作系统选择主题示例：
+
+``` less source/_data/style/index.less
+@media (prefers-color-scheme: dark) {
+    :root {
+        .dark()
+    }
+}
+```
+### `1.1.x` 版本
+
+- 新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
+- 如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
+
+```text {4,5,6,7,8}
+┌── blog                     
+│   └── source
+│       └── _data
+│           └── style
+│               ├── dark.less
+│               ├── light.less
+│               ├── dark.variables.less
+│               └── light.variables.less
+│   └── themes
+```
+修改主题色示例：
+``` less source/_data/style/dark.less
+// source/_data/style/dark.less
+@primary :#6062ce;
+@primary-weak :#7a89df;
+```
+
+``` less source/_data/style/light.less
+// source/_data/style/light.less
+@primary :#6062ce;
+@primary-weak :#7a89df;
+```
+
+## 自定义模板 Layout
+主题允许您自定义模板来替换主题模板。
+
+- `path`: 指定自定义模板目录（默认情况下不要修改）
+
+``` yaml
+layout:
+  path: layout
+```
+
+内置模板列表：
+
+```yaml
+layout:
+  # layout
+  main:  _partial/main
+  header: _partial/header
+  banner: _partial/banner
+  sidebar: _partial/sidebar/index
+  footer: _partial/footer
+  # page
+  post_info: _partial/post/post-info
+  post_content: _partial/post/post-content
+  reward: _partial/post/reward
+  post_copyright: _partial/post/post-copyright
+  post_next_prev: _partial/post/post-next-prev
+  post_card: _partial/post/post-card
+  post_card_mini: _partial/post/post-card-mini
+  # widget
+  categorie: _widget/categorie
+  paginator: _widget/paginator
+  back_to_top: _widget/back-to-top
+  fixed_btn: _widget/fixed-btn
+  sidebar_user: _partial/sidebar/card/user
+  sidebar_social: _partial/sidebar/card/social
+  sidebar_info: _partial/sidebar/card/info
+  sidebar_email: _partial/sidebar/card/email
+  comment: _third-party/comment/index
+  # animation
+  page_loading: _partial/preloader/page-preloader
+  mode_change:  _partial/preloader/change-mode-preloader
+  # page
+  page_about: _partial/page/about
+  page_archive: _partial/page/archive
+  page_category: _partial/page/category
+  page_index: _partial/page/index
+  page_links: _partial/page/links
+  page_post: _partial/page/post
+  page_tag: _partial/page/tag
+```
+
+用覆盖 footer 来举个例子：
+
+不修改 `layout.path` 时，您的目录结构如下，并添加 `footer.ejs`
+
+```text {2,3}
+┌── blog                     
+│   └── layout
+│          └── footer.ejs
+│   └── scaffolds
+│   └── source
+│   └── themes
+```
+
+编写好 `footer.ejs` 后，修改配置如下：
+
+上面 `footer.ejs` 的目录是 `layout/footer.ejs` 则为 `async/footer`， 如果 `footer.ejs` 的目录是 `layout/demo/footer.ejs` 则为 `async/demo/footer`。
+
+必须已 `async/` 作为根（以免和主题冲突）。
+ 
+```yaml
+layout:
+  footer: async/footer
+```
+
+::: tip
+您在 `footer.ejs` 可以访问到所有配置，全局变量，和辅助函数等，和主题模板一致。
+
+除了使用 `ejs` 以外，您可以使用 hexo 支持的任意渲染器。
+
+比如使用 pug ，您只需要安装 `hexo-render-pug` 后即可使用。
+:::
+
 
 ## 渐进式应用 PWA
 
