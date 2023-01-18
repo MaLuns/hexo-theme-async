@@ -17,9 +17,12 @@ class Layout {
         this.init = stats.isDirectory()
 
         if (this.init) {
-            this.readDirWalker(layout_dir)
-            this.watch()
-            hexo.log.debug('Watch layou path: %s', magenta(layout_dir));
+            this.loadDir(layout_dir)
+            const { alias } = hexo.extend.console;
+            if (alias[hexo.env.cmd] === 'server') {
+                this.watch()
+                hexo.log.debug('Watch layou path: %s', magenta(layout_dir));
+            }
         }
     }
 
@@ -50,7 +53,7 @@ class Layout {
             watcher.on('add', path => this.setView(escapeBackslash(path)));
             watcher.on('change', path => this.setView(escapeBackslash(path)));
             watcher.on('unlink', path => this.removeView(escapeBackslash(path)));
-            watcher.on('addDir', path => this.readDirWalker(escapeBackslash(path)));
+            watcher.on('addDir', path => this.loadDir(escapeBackslash(path)));
         })
     }
 
@@ -64,13 +67,13 @@ class Layout {
         this.hexo.theme.removeView(path);
     }
 
-    readDirWalker(base) {
+    loadDir(base) {
         let dirs = readdirSync(base)
         dirs.forEach(path => {
             const fullpath = escapeBackslash(resolve(base, path))
             const stats = statSync(fullpath)
             if (stats.isDirectory()) {
-                this.readDirWalker(fullpath)
+                this.loadDir(fullpath)
             } else if (stats.isFile()) {
                 this.setView(fullpath)
             }
