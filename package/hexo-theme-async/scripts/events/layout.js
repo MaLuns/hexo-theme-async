@@ -60,6 +60,10 @@ class Layout {
     setView(fullpath) {
         const path = 'async' + fullpath.replace(this.layout_dir, '');
         this.hexo.theme.setView(path, readFileSync(fullpath, { encoding: "utf8" }));
+        // 修正原文件路径
+        const view = this.hexo.theme.getView(path)
+        view.source = fullpath
+        view._precompile()
     }
 
     removeView(fullpath) {
