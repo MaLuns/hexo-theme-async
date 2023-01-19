@@ -7,13 +7,9 @@
         </h5>
     </div>
     <% if(page.prev && theme.post_pagination.enable){ %>
-        <div class="col-lg-6">
-            <%- theme.post_pagination.type === 'large' ? partial(theme.layout.post_card, { post: page.prev }) : partial(theme.layout.post_card_mini, { post: page.prev }) %>
-        </div>
+        <%- theme.post_pagination.type === 'large' ? partial(theme.layout.post_card, { post: page.prev }) : partial(theme.layout.post_card_mini, { post: page.prev }) %>
     <%}%>
     <% if(page.next && theme.post_pagination.enable){ %>
-        <div class="col-lg-6">
-            <%- theme.post_pagination.type === 'large' ? partial(theme.layout.post_card, { post: page.next }) : partial(theme.layout.post_card_mini, { post: page.next }) %>
-        </div>
+        <%- theme.post_pagination.type === 'large' ? partial(theme.layout.post_card, { post: page.next }) : partial(theme.layout.post_card_mini, { post: page.next }) %>
     <%}%>
 </div>

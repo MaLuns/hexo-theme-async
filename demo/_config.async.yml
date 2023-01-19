@@ -103,6 +103,7 @@ theme:
 
 layout:
   footer: async/footer
-  page_loading: async/page_loading
+  page_loading: async/page-loading
+  post_card: async/post-card
   fixed_btn: async/fixed-btn
   header_search: async/empty

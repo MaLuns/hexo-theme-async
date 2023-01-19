@@ -1,0 +1,39 @@
+- var coverURl = post.cover ? post.cover : (post.photos && post.photos.length ? post.photos[0] : (theme.cover.type === 'img' ? theme.cover.default : false));
+- var index = 0 || postIndex
+
+mixin conver
+    a.trm-cover-frame.trm-anima-link(href=url_for(post.path), style= { width:"40%", "padding-bottom": 0  })
+        if coverURl
+            div !{swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" })}
+        else 
+            div.trm-cover-date
+                div.trm-cover-day !{date(post.date, theme.datetime_foramt.post_card.cover_date)}
+                div.trm-cover-month !{date(post.date, theme.datetime_foramt.post_card.cover_date2)}
+
+if postIndex === 0 && is_home()
+    div.col-lg-12
+        include ./test.pug
+            h6.trm-mt-10 使用 pug 模块来自定义模板
+            h6.trm-mt-10 演示主题使用自定义模块区域：首页文章卡片、主题切换、查询、Footer
+
+div.col-lg-12
+    div.trm-blog-card.trm-scroll-animation(data-scroll, data-scroll-offset="40",style={ display: "flex" })   
+        if index % 2 === 0
+            +conver
+        div.trm-card-descr(style={ padding: "40px", flex: 1 })
+            div.trm-label.trm-category.trm-mb-20
+                a(href= post.categories && post.categories.length ? url_for(post.categories.data[0].path) :'#.') !{post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')}
+            h5
+                a.trm-anima-link(href=url_for(post.path)) !{post.title}
+            div.trm-divider.trm-mb-20.trm-mt-20
+            ul.trm-card-data.trm-label
+                li !{date(post.date,theme.datetime_foramt.post_card.date)}
+                li !{date(post.date,theme.datetime_foramt.post_card.time)}
+                if theme.wordcount.enable && theme.wordcount.count
+                    li !{wordcount(post.content)}
+                if theme.wordcount.enable && theme.wordcount.time
+                    li !{min2read(post.content)}
+        if index % 2 !== 0
+            +conver
+        if is_home() && post.sticky > 0
+            div.trm-top !{__('post.sticky')}

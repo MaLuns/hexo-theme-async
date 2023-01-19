@@ -33,9 +33,7 @@
         </div>
     <% } %>
     <% page.posts.each(function(post,postIndex){ %>
-        <div class="col-lg-6">
-            <%- partial(theme.layout.post_card,{ post }) %>
-        </div>
+        <%- partial(theme.layout.post_card,{ post, postIndex}) %>
     <% }) %>
 </div>
 <!-- newest publications end -->
