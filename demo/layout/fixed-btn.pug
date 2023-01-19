@@ -1,0 +1,37 @@
+div(
+    class="trm-fixed-container"
+    data-scroll 
+    data-scroll-sticky 
+    data-scroll-target=".locomotive-scroll__sticky-target" 
+    data-scroll-offset="-10"
+)
+    if theme.search.enable
+        if theme.search.type === 'local'
+            div#trm-search-btn(
+                class="trm-fixed-btn"
+                data-title="查询"
+            ) !{icon(theme.icons.search)}
+        if theme.search.type === 'engine'
+            a#trm-search-btn(
+                class="trm-fixed-btn"
+                data-no-swup 
+                target="_blank" 
+                href=theme.search.href + theme.search.domain
+            ) !{icon(theme.icons.search)}
+    div(
+        class="trm-fixed-btn"
+        data-title="切换主题模式"
+        onclick="asyncFun.switchThemeMode(document.documentElement.classList.contains('dark')?'style-light':'style-dark')"
+    ) <i class="fas fa-sun"></i>
+    if is_post() && theme.rightside.readmode
+        div(
+            class="trm-fixed-btn"
+            data-title=`${__('rightside.readmode_title')}`
+            onclick="asyncFun.switchReadMode()"
+        ) !{icon(theme.icons.read)}
+    if theme.rightside.aside && !page.single_column
+        div(
+            class="trm-fixed-btn"
+            data-title=`${ __('rightside.aside')}`
+            onclick="asyncFun.switchSingleColumn()"
+        ) !{icon(theme.icons.arrows)}

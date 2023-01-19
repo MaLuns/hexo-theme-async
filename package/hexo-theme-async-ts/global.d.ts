@@ -77,7 +77,10 @@ declare interface Window {
         postUpdate: string
     }
 
-    switchReadMode: any
+    asyncFun: {
+        [key: string]: Function
+    }
+
     clipboardData: any
     originTitle: any
 

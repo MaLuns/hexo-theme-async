@@ -1,4 +1,4 @@
-import utils from "./utils";
+import { utils, asyncFun } from "./utils";
 import SwupHeadPlugin from "./swup/head";
 import SwupScriptsPlugin from "./swup/script";
 
@@ -87,62 +87,27 @@ export function InitSwup() {
  * @returns 
  */
 export function InitThemeMode(init = false) {
-	let swich_input = utils.q('#trm-swich');
-	if (!swich_input) return;
-	let scroll_container = utils.q("#trm-scroll-container");
-	/* let switch_style = utils.q("#trm-switch-style"); */
-	/* Animated mask layers */
-	let mode_swich_animation = utils.q('.trm-mode-swich-animation');
-	let mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
+	const swich_input = utils.q('#trm-swich');
 
-	const setThemeColor = function () {
-		let themeColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-bg-color')
-		let themeColorDom = utils.q('meta[name="theme-color"]')
-		if (themeColor && themeColorDom) {
-			themeColorDom.content = themeColor
-		}
-	}
+	/* Animated mask layers */
+	const mode_swich_animation = utils.q('.trm-mode-swich-animation');
+	const mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
 
 	/* Sets the cache value */
 	if (init) {
-		let checked = (localStorage.getItem('theme-mode') || window.ASYNC_CONFIG.theme.default) == 'style-dark';
-		swich_input.checked = checked;
-		if (checked) {
-			mode_swich_animation.classList.add('trm-active');
-			mode_swich_animation_frame.classList.remove('trm-active');
-		} else {
-			mode_swich_animation.classList.remove('trm-active');
-			mode_swich_animation_frame.classList.remove('trm-active');
-		}
+		const checked = (localStorage.getItem('theme-mode') || window.ASYNC_CONFIG.theme.default) == 'style-dark';
+		const type = checked ? 'add' : 'remove'
 
-		setThemeColor()
+		mode_swich_animation.classList[type]('trm-active');
+		mode_swich_animation_frame.classList.remove('trm-active');
+
+		asyncFun.setThemeColor()
+		if (swich_input) swich_input.checked = checked;
 	}
 
-	swich_input.addEventListener('change', function () {
-		new Promise<void>(resolve => {
-			mode_swich_animation_frame.classList.add('trm-active');
-			scroll_container.style.opacity = 0;
-			setTimeout(() => resolve(), 600);
-		}).then(() => {
-			setTimeout(() => {
-				let type = this.checked ? 'add' : 'remove'
-				mode_swich_animation.classList[type]('trm-active');
-				document.documentElement.classList[type]('dark')
-
-				// 适配 Giscus
-				typeof window.changeGiscusTheme === 'function' && window.changeGiscusTheme()
-			}, 200);
-
-			setTimeout(function () {
-				mode_swich_animation_frame.classList.remove('trm-active');
-				scroll_container.style.opacity = 1;
-				setThemeColor()
-			}, 600);
-		})
-
-		localStorage.setItem('theme-mode', this.checked ? 'style-dark' : 'style-light')
+	swich_input && swich_input.addEventListener('change', function () {
+		asyncFun.switchThemeMode(this.checked ? 'style-dark' : 'style-light')
 	});
-
 }
 
 /**
@@ -172,7 +137,9 @@ export function InitLocomotiveScroll() {
 
 	window.addEventListener('resize', update)
 
-	scroll.on('scroll', ({ scroll }) => {
+	scroll.on('scroll', ({ scroll, limit }) => {
+		const b = parseInt((scroll.y / limit.y * 100).toString());
+		backtop.style.backgroundSize = `100% ${b}%`
 		if (scroll.y > 500) {
 			backtop.classList.add('active-el')
 			fixedContainer.classList.add('offset')
@@ -185,7 +152,7 @@ export function InitLocomotiveScroll() {
 	const back_fun = function () {
 		scroll.scrollTo(0);
 	}
-	backtop.addEventListener('click', back_fun)
+	backtop?.addEventListener('click', back_fun)
 
 	const desktop = window.matchMedia('screen and (min-width: 768px)');
 	const mobile = window.matchMedia('screen and (max-width: 767px)');
@@ -200,7 +167,7 @@ export function InitLocomotiveScroll() {
 	mobile.addListener(reload);
 
 	document.addEventListener('swup:contentReplaced', (event) => {
-		backtop.removeEventListener('click', back_fun)
+		backtop?.removeEventListener('click', back_fun)
 		window.removeEventListener('resize', update)
 		ro.unobserve(container)
 		desktop.removeListener(reload);
@@ -609,27 +576,15 @@ export function PrintCopyright() {
 }
 
 /**
- * 加载动画
- */
-export function Loading() {
-	utils.q('html').classList.add('is-animating');
-	utils.q(".trm-scroll-container").style.opacity = 0;
-	setTimeout(function () {
-		utils.q('html').classList.remove('is-animating');
-		utils.q(".trm-scroll-container").style.opacity = 1;
-	}, 600);
-}
-
-/**
  * 初始化
  */
 export function ready() {
-	window.switchReadMode = SwitchReadMode
+	window.asyncFun = asyncFun
 
 	PrintCopyright();
 
 	/* loading animate */
-	Loading()
+	asyncFun.pageLoading()
 
 	/* window title */
 	InitChangeTitle()

@@ -43,11 +43,11 @@
 <% if(theme.footer.live_time.enable) { %>
 <script>
     function show_date_time () {
-        BirthDay = new Date("<%- theme.footer.live_time.start_time %>");
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        msPerDay = 24 * 60 * 60 * 1000
-        day = Math.floor(timeold / msPerDay)
+        var BirthDay = new Date("<%- theme.footer.live_time.start_time %>");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
         since.innerHTML = day
     }
     show_date_time()

@@ -1,0 +1,12 @@
+<!-- logo -->
+<a href="<%- url_for('/')%>" class="trm-logo-frame trm-anima-link">
+    <% if(theme.favicon.logo) { %>
+        <%- swich_imgs([theme.favicon.logo, theme.favicon.dark_logo], { alt: "logo" }) %>
+    <% } %>
+    <% if(theme.user.last_name) { %>
+        <div class="trm-logo-text">
+            <%= theme.user.last_name %><span><%= theme.user.first_name %></span>
+        </div>
+    <% } %>
+</a>
+<!-- logo end -->

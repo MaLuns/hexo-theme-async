@@ -1,4 +1,4 @@
-import utils from "../utils";
+import { utils } from "../utils";
 
 const arrayify = (list) => Array.prototype.slice.call(list);
 

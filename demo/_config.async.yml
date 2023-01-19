@@ -13,10 +13,8 @@ top_bars:
     url: /about/
   - title: 自定义
     url: /customize_page/
-
-banner:
-  index:
-    bgurl: [/img/bg.jpg,/img/banner.png]
+  - title: 相册
+    url: /gallery/
 
 sidebar:
   typedTextPrefix: I`m
@@ -94,11 +92,17 @@ cdn:
     base: [demo.js]
 
 assets:
-    third_party_provider: https://npm.elemecdn.com
+  third_party_provider: https://npm.elemecdn.com
 
 highlight:
   title: mac
   height_limit: 200
 
+theme: 
+  switch: false
+
 layout:
   footer: async/footer
+  page_loading: async/page_loading
+  fixed_btn: async/fixed-btn
+  header_search: async/empty

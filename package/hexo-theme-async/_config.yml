@@ -322,7 +322,7 @@ layout:
   banner: _partial/banner
   sidebar: _partial/sidebar/index
   footer: _partial/footer
-  # page
+  # post
   post_info: _partial/post/post-info
   post_content: _partial/post/post-content
   reward: _partial/post/reward
@@ -331,6 +331,10 @@ layout:
   post_card: _partial/post/post-card
   post_card_mini: _partial/post/post-card-mini
   # widget
+  header_logo: _widget/header_logo
+  header_menu: _widget/header_menu
+  header_theme: _widget/header_theme
+  header_search: _widget/header_search
   categorie: _widget/categorie
   paginator: _widget/paginator
   back_to_top: _widget/back-to-top

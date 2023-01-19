@@ -796,6 +796,8 @@ layout:
   footer: async/footer
 ```
 
+可以前往 [演示站点](https://hexo-theme-async.imalun.com/demo/) 查看效果，首页 footer 和 页面切换已是自定义效果了。
+
 ::: tip
 您在 `footer.ejs` 可以访问到所有配置，全局变量，和辅助函数等，和主题模板一致。
 

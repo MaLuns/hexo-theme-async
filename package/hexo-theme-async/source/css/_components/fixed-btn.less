@@ -79,7 +79,13 @@
     background-color: var(--fixed-button-bg-color);
     color           : var(--fixed-button-color);
     opacity         : 0;
+
     .transition-mixin();
+
+    background-image   : linear-gradient(var(--primary-weak-50), var(--primary-weak-50));
+    background-repeat  : no-repeat;
+    background-size    : 100% 0;
+    background-position: bottom;
 
     &.active-el {
         opacity  : 1;

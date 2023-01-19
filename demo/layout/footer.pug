@@ -1,0 +1,11 @@
+if is_home()
+    div
+        h5(class='trm-title-with-divider') 自定义 Footer 模板
+            span(data-number='02')
+        div(class='trm-card')
+            p 使用 pug 渲染
+            p(class='trm-mt-10') 仅在首页显示
+        include ./test.pug
+            p(class='trm-mt-10') 插入主题内置 Footer 模块
+
+!= partial('_partial/footer')

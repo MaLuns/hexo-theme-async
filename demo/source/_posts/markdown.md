@@ -95,7 +95,7 @@ katex: true
   <div class="col-lg-4">
     <img src="https://hexo-theme-async.imalun.com/github_star.png">
   </div>
-<div>
+</div>
 
 ### 分割线
 
