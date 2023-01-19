@@ -15,6 +15,9 @@
             </div>
         <% } %>
     </a>
+    <% if(is_home() && post.sticky > 0) { %>
+        <div class="trm-top"><%- __('post.sticky') %></div>
+    <% } %>
     <div class="trm-card-descr">
         <div class="trm-label trm-category trm-mb-20">
             <a href=" <%- post.categories && post.categories.length ? url_for(post.categories.data[0].path) :'#.' %>">

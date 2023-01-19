@@ -54,6 +54,7 @@ reward:
   comment: I'm so cute. Please give me money.
 
 post:
+  sticky: TOP
   read_more: READ MORE
   copyright:
     author: Post author

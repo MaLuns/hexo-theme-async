@@ -54,6 +54,7 @@ reward:
   comment: 我很可爱，请给我钱
 
 post:
+  sticky: 置顶
   more: 更多
   copyright:
     author: 本文作者
