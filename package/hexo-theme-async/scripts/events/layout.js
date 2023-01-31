@@ -1,6 +1,6 @@
 const { escapeBackslash } = require('../utils')
 const { resolve } = require('path')
-const { statSync, readdirSync, readFileSync, watch } = require('hexo-fs')
+const { statSync, readdirSync, readFileSync, watch, existsSync } = require('hexo-fs')
 const { magenta } = require('picocolors');
 
 class Layout {
@@ -12,7 +12,7 @@ class Layout {
 
         const { theme } = hexo;
         const layout_dir = this.layout_dir = escapeBackslash(resolve(hexo.base_dir, theme.config.layout.path))
-
+        if (!existsSync(layout_dir)) return;
         const stats = statSync(layout_dir)
         this.init = stats.isDirectory()
 
