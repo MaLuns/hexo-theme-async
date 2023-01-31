@@ -39,15 +39,14 @@
 <link rel="stylesheet" href="/demosite/css/plugins/bootstrap.row.css">
 
     
-<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<link rel="stylesheet" href="https://npm.elemecdn.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 
     
-<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
-
-
-    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
 
     
+    
+
 
 
 
@@ -60,7 +59,8 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"0.0.0","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_button":"复制","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true},"swup":true,"plugin":{"flickr_justified_gallery":{"js":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"fancybox":{"css":"https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css","js":"https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"}},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"theme_version":"0.0.0","theme":{"switch":false,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":true,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":200},"creative_commons":{"license":"by-nc-sa","language":"deed.zh"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2023-01-31 08:37:30"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=0.0.0" id="trm-switch-style">
@@ -75,7 +75,6 @@
 
 
     
-
     
 
 
@@ -91,20 +90,12 @@
 
     <!-- page preloader -->
     <div class="trm-preloader">
-    <div class="trm-holder">
-        <div class="preloader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div class="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
     </div>
+    <div style="margin-top: 120px;font-weight: bold;font-size: 20px;">这是自定义的加载动画</div>
 </div>
     <!-- page preloader end -->
 
@@ -123,95 +114,79 @@
         <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
           <div data-scroll-section id="content" class="trm-scroll-section">
 
-            <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
 
             <!-- top bar -->
             <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
 	<div class="container">
 		<div class="trm-left-side">
 			<!-- logo -->
-			<a href="/demosite/" class="trm-logo-frame trm-anima-link">
-				
-					<img alt="logo" src="/demosite/img/favicon.svg">
-				
-				
-					<div class="trm-logo-text">
-						Async<span>Theme</span>
-					</div>
-				
-			</a>
-			<!-- logo end -->
+<a href="/demosite/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/demosite/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
 		</div>
 		<div class="trm-right-side">
-
 			<!-- menu -->
-			<div class="trm-menu">
-				<nav>
-					<ul>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/demosite/" target="">
-								首页
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/demosite/archives/" target="">
-								归档
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/demosite/links/" target="">
-								友链
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/demosite/about/" target="">
-								关于
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/demosite/customize_page/" target="">
-								自定义
-							</a>
-							
-						</li>
-						
-					</ul>
-				</nav>
-			</div>
-			<!-- menu end -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/customize_page/" target="">
+                    自定义
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/gallery/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
 			
-			<!-- mode switcher place -->
 			
-			<div class="trm-mode-switcher-place">
-				<!-- <div class="trm-hidden-switcher"> -->
-					<div class="trm-mode-switcher">
-					  <i class="iconfont far fa-sun"></i>
-					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-					  <label class="trm-swich" for="trm-swich"></label>
-					  <i class="iconfont far fa-moon"></i>
-					</div>
-				  <!-- </div> -->
-			</div>
-			
-			<!-- mode switcher place end -->
-
-			
-				
-				<div id="trm-search-btn" class="trm-search-btn">
-					<i class="iconfont fas fa-search"></i>
-				</div>
-				 
-			 
-
 		</div>
 		<div class="trm-menu-btn">
 			<span></span>
@@ -296,19 +271,18 @@
         ThemeAsync
     </h5>
     
-    <div class="trm-label">
-        I`m
-        <span class="trm-typed-text">
-            <!-- Words for theme.user.typedText -->
-        </span>
-    </div>
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
     
 </div>
 <!-- card header end -->
+        <!-- sidebar social -->
 
-<!-- sidebar social -->
 <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-
 <div class="trm-social">
     
         <a href="https://github.com/MaLuns/Hexo-theme-async" title="Github" rel="nofollow" target="_blank">
@@ -322,22 +296,41 @@
 </div>
 
 <!-- sidebar social end -->
-
-<!-- info -->
+        <!-- info -->
 <div class="trm-divider trm-mb-40 trm-mt-40"></div>
 <ul class="trm-table trm-mb-20">
     
         <li>
             <div class="trm-label">
-                Residence:
+                文档地址:
             </div>
             <div class="trm-label trm-label-light">
-                Mars
+                <a href="https://hexo-theme-async.imalun.com/" target="_blank" rel="nofollow">查看</a>
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                备用地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                <a href="https://async-docs.imalun.com/" target="_blank" rel="nofollow">查看</a>
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                提交示例站点:
+            </div>
+            <div class="trm-label trm-label-light">
+                <a href="https://hexo-theme-async.imalun.com/demo/" target="_blank" rel="nofollow">查看</a>
             </div>
         </li>
     
 </ul>
+<!-- info end -->
 
+        
     
     </div>
 </div>
@@ -353,7 +346,7 @@
         <div class="trm-card">
             <div style="padding: 0 20px;">
                 
-                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/demosite/archives/2022/">2022</a><span class="archive-list-count">（4）</span></li></ul>
+                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/demosite/archives/2023/">2023</a><span class="archive-list-count">（1）</span></li><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/demosite/archives/2022/">2022</a><span class="archive-list-count">（4）</span></li></ul>
                 
             </div>
         </div>
@@ -462,11 +455,11 @@
 
 <script>
     function show_date_time () {
-        BirthDay = new Date("04/10/2022 17:00:00");
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        msPerDay = 24 * 60 * 60 * 1000
-        day = Math.floor(timeold / msPerDay)
+        var BirthDay = new Date("2022/04/10 17:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
         since.innerHTML = day
     }
     show_date_time()
@@ -481,16 +474,7 @@
 </div>
             <!-- body end -->
 
-            <!-- body -->
-            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
-    
-    
-        <div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="document.body.classList.toggle('trm-single-column')">
-            <i class="iconfont fas fa-arrows-alt-h"></i>
-        </div>
-    
-</div>
-            <!-- body end -->
+            <div class="trm-fixed-container" data-scroll="data-scroll" data-scroll-sticky="data-scroll-sticky" data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10"><div class="trm-fixed-btn" id="trm-search-btn" data-title="查询"><i class="iconfont fas fa-search"></i></div><div class="trm-fixed-btn" data-title="切换主题模式" onclick="asyncFun.switchThemeMode(document.documentElement.classList.contains('dark')?'style-light':'style-dark')"><i class="fas fa-sun"></i></div><div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()"><i class="iconfont fas fa-arrows-alt-h"></i></div></div>
           </div>
         </div>
       </div>
@@ -521,19 +505,15 @@
 
 
 
-    
-    
-        
-<script src="https://unpkg.com/swup@2.0.19/dist/swup.min.js"></script>
 
     
+<script src="https://npm.elemecdn.com/swup@2.0.19/dist/swup.min.js"></script>
 
     
-<script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://npm.elemecdn.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
     
-<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
     
 
@@ -543,14 +523,13 @@
 
     
         
-<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
 
         <script src="/demosite/js/plugins/local_search.js?v=0.0.0"></script>
     
 
     <!-- 数学公式 -->
     
-
 
     <!-- 评论插件 -->
     
@@ -561,6 +540,8 @@
 
 
     
+<script src="/demosite/demo.js"></script>
+
 
     
 

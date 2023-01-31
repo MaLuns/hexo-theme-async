@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="config.ymlview raw# logofavicon:  visibilitychange: truetop_bars:  - title: menu.home    url: &#x2F;  - title: menu.archives    url: &#x2F;archives&#x2F;  - title: menu.links    url: &#x2F;links&#x2F;  - title: menu.about">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code Snippet">
+<meta property="og:url" content="https://hexo-theme-async.imalun.com/2023/01/05/code_snippet/index.html">
+<meta property="og:site_name" content="Hexo-theme-async">
+<meta property="og:description" content="config.ymlview raw# logofavicon:  visibilitychange: truetop_bars:  - title: menu.home    url: &#x2F;  - title: menu.archives    url: &#x2F;archives&#x2F;  - title: menu.links    url: &#x2F;links&#x2F;  - title: menu.about">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-01-05T15:08:29.000Z">
+<meta property="article:modified_time" content="2023-01-31T08:36:46.995Z">
+<meta property="article:author" content="白云苍狗">
+<meta name="twitter:card" content="summary">
+
+
+<title >Code Snippet</title>
+
+<!-- Favicon -->
+
+    <link href='/demosite/img/favicon.svg?v=0.0.0' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/demosite/img/favicon.svg?v=0.0.0' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/demosite/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/demosite/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"hexo-theme-async.imalun.com","author":"白云苍狗","root":"/demosite/","typed_text":["Web Developer"],"theme_version":"0.0.0","theme":{"switch":false,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":true,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":200},"creative_commons":{"license":"by-nc-sa","language":"deed.zh"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","path":"search.xml"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-01-31 08:36:46"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/demosite/css/index.css?v=0.0.0" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
+    </div>
+    <div style="margin-top: 120px;font-weight: bold;font-size: 20px;">这是自定义的加载动画</div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/demosite/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/demosite/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>Theme</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/customize_page/" target="">
+                    自定义
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/demosite/gallery/" target="">
+                    相册
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3" src="/demosite/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            Code Snippet
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/demosite/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
+    
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/demosite/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        ThemeAsync
+    </h5>
+    
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/MaLuns/Hexo-theme-async" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://www.npmjs.com/package/hexo-theme-async" title="Npm" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-npm"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                文档地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                <a href="https://hexo-theme-async.imalun.com/" target="_blank" rel="nofollow">查看</a>
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                备用地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                <a href="https://async-docs.imalun.com/" target="_blank" rel="nofollow">查看</a>
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                提交示例站点:
+            </div>
+            <div class="trm-label trm-label-light">
+                <a href="https://hexo-theme-async.imalun.com/demo/" target="_blank" rel="nofollow">查看</a>
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div id="page-content" class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/05
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            15:08
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            白云苍狗
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <figure class="highlight yaml"><figcaption><span>config.yml</span><a href="/demosite/downloads/code/config.yml">view raw</a></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># logo</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">visibilitychange:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">top_bars:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">menu.home</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">menu.archives</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">menu.links</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/links/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">menu.about</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/about/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">title:</span> <span class="string">自定义</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/customize_page/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">banner:</span></span><br><span class="line">  <span class="attr">index:</span></span><br><span class="line">    <span class="attr">bgurl:</span> [<span class="string">/img/bg.jpg</span>,<span class="string">/img/banner.png</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">typedTextPrefix:</span> <span class="string">I`m</span></span><br><span class="line">  <span class="attr">typedText:</span> [ <span class="string">&#x27;Web Developer&#x27;</span> ]</span><br><span class="line">  <span class="attr">info:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">文档地址</span></span><br><span class="line">      <span class="attr">val:</span> <span class="string">&lt;a</span> <span class="string">href=&quot;https://hexo-theme-async.imalun.com/&quot;</span> <span class="string">target=&quot;_blank&quot;</span> <span class="string">rel=&quot;nofollow&quot;&gt;查看&lt;/a&gt;</span>  </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">备用地址</span></span><br><span class="line">      <span class="attr">val:</span> <span class="string">&lt;a</span> <span class="string">href=&quot;https://async-docs.imalun.com/&quot;</span> <span class="string">target=&quot;_blank&quot;</span> <span class="string">rel=&quot;nofollow&quot;&gt;查看&lt;/a&gt;</span>   </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">提交示例站点</span></span><br><span class="line">      <span class="attr">val:</span> <span class="string">&lt;a</span> <span class="string">href=&quot;https://hexo-theme-async.imalun.com/demo/&quot;</span> <span class="string">target=&quot;_blank&quot;</span> <span class="string">rel=&quot;nofollow&quot;&gt;查看&lt;/a&gt;</span>   </span><br><span class="line"></span><br><span class="line">  <span class="attr">social:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">icon:</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://github.com/MaLuns/Hexo-theme-async</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">Github</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">icon:</span> <span class="string">fab</span> <span class="string">fa-npm</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://www.npmjs.com/package/hexo-theme-async</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">Npm</span></span><br><span class="line"></span><br><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">powered:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">beian:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">icp:</span> </span><br><span class="line">  <span class="attr">copyrightYear:</span> <span class="number">2022</span></span><br><span class="line">  <span class="attr">live_time:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">prefix:</span> <span class="string">footer.tips</span></span><br><span class="line">    <span class="attr">start_time:</span> <span class="number">2022</span><span class="string">/04/10</span> <span class="number">17</span><span class="string">:00:00</span></span><br><span class="line">  <span class="attr">custom_text:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">local</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line"></span><br><span class="line"><span class="attr">baidu_push:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">methods:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">微信</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">支付宝</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">clipboard:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">swup:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">list_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">min_depth:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rightside:</span></span><br><span class="line">  <span class="attr">readmode:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">aside:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">post_pagination:</span> </span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> </span><br><span class="line">  <span class="attr">type:</span> <span class="string">small</span></span><br><span class="line"></span><br><span class="line"><span class="attr">cdn:</span></span><br><span class="line">  <span class="attr">js:</span></span><br><span class="line">    <span class="attr">head:</span></span><br><span class="line">    <span class="attr">base:</span> [<span class="string">demo.js</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">assets:</span></span><br><span class="line">    <span class="attr">third_party_provider:</span> <span class="string">https://npm.elemecdn.com</span></span><br><span class="line"></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">mac</span></span><br><span class="line">  <span class="attr">height_limit:</span> <span class="number">200</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><figcaption><span>代码块的标题</span><a href="/aas/asd">/asd/asd</a></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###### CONFIG</span></span><br><span class="line">ACCEPTED_HOSTS=<span class="string">&quot;/root/.hag_accepted.conf&quot;</span></span><br><span class="line">BE_VERBOSE=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$UID</span>&quot;</span> -ne 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;Superuser rights required&quot;</span></span><br><span class="line"> <span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">genApacheConf</span></span>()&#123;</span><br><span class="line"> <span class="built_in">echo</span> -e <span class="string">&quot;# Host <span class="variable">$&#123;HOME_DIR&#125;</span><span class="variable">$1</span>/<span class="variable">$2</span> :&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&quot;quoted&quot;&#x27;</span> | <span class="built_in">tr</span> -d \&quot; &gt; text.txt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="attr">myValue</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">init: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">myValue</span> = init;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="variable language_">module</span> <span class="title class_">MyModule</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">interface</span> <span class="title class_">MyInterface</span> <span class="keyword">extends</span> <span class="title class_">Other</span> &#123;</span><br><span class="line">    <span class="attr">myProperty</span>: <span class="built_in">any</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">declare</span> magicNumber <span class="built_in">number</span>;</span><br><span class="line">myArray.<span class="title function_">forEach</span>(<span class="function">() =&gt;</span> &#123; &#125;); <span class="comment">// fat arrow syntax</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">$initHighlight</span>(<span class="params">block, cls</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (cls.<span class="title function_">search</span>(<span class="regexp">/\bno\-highlight\b/</span>) != -<span class="number">1</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">process</span>(block, <span class="literal">true</span>, <span class="number">0x0F</span>) +</span><br><span class="line">             <span class="string">` class=&quot;<span class="subst">$&#123;cls&#125;</span>&quot;`</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">/* handle exception */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span> / <span class="number">2</span>; i &lt; classes.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">checkCondition</span>(classes[i]) === <span class="literal">undefined</span>)</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;undefined&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">web-component</span>&gt;</span>&#123;block&#125;<span class="tag">&lt;/<span class="name">web-component</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span>  $initHighlight;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.IO.Compression;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> <span class="keyword">warning</span> disable 414, 3021</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MyApplication</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Obsolete(<span class="string">&quot;...&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span> : <span class="title">IInterface</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;<span class="built_in">int</span>&gt; <span class="title">JustDoIt</span>(<span class="params"><span class="built_in">int</span> count</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Span&lt;<span class="built_in">int</span>&gt; numbers = <span class="keyword">stackalloc</span> <span class="built_in">int</span>[length];</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;Hello <span class="subst">&#123;Name&#125;</span>!&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;(<span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Chunkfive; <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;Chunkfive.otf&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>, <span class="selector-class">.usertext</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#F0F0F0</span>; <span class="attribute">background</span>: <span class="number">#600</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: Chunkfive, sans;</span><br><span class="line">  <span class="attr">--heading-1</span>: <span class="number">30px</span>/<span class="number">32px</span> Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@import</span> url(print.css);</span><br><span class="line"><span class="keyword">@media</span> print &#123;</span><br><span class="line">  <span class="selector-tag">a</span><span class="selector-attr">[href^=http]</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="built_in">attr</span>(href)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"><span class="selector-tag">body</span> &#123;<span class="attribute">width</span>: <span class="number">500px</span>;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;application/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">function</span> <span class="title function_">$init</span>(<span class="params"></span>) &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">checked</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">id</span>=<span class="string">&#x27;title&#x27;</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- here goes the rest of the page --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># hello world</span></span><br><span class="line"></span><br><span class="line">you can write text [<span class="string">with links</span>](<span class="link">http://example.com</span>) inline or [<span class="string">link references</span>][<span class="symbol">1</span>].</span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> one <span class="emphasis">_thing_</span> has <span class="emphasis">*em*</span>phasis</span><br><span class="line"><span class="bullet">*</span> two <span class="strong">__things__</span> are <span class="strong">**bold**</span></span><br><span class="line"></span><br><span class="line">[<span class="symbol">1</span>]: <span class="link">http://example.com</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="section">hello world</span></span><br><span class="line"><span class="section">===========</span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">this_is</span> <span class="attr">inline</span>=<span class="string">&quot;xml&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">this_is</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; markdown is so cool</span></span><br><span class="line"></span><br><span class="line"><span class="code">    so are code segments</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="bullet">1.</span> one thing (yeah!)</span><br><span class="line"><span class="bullet">2.</span> two thing <span class="code">`i can write code`</span>, and <span class="code">`more`</span> wipee!</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> &quot;topic&quot; (</span><br><span class="line">    &quot;id&quot; <span class="type">integer</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    &quot;forum_id&quot; <span class="type">integer</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    &quot;subject&quot; <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &quot;topic&quot;</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> forum_id <span class="keyword">FOREIGN</span> KEY (&quot;forum_id&quot;)</span><br><span class="line"><span class="keyword">REFERENCES</span> &quot;forum&quot; (&quot;id&quot;);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Initials</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> &quot;topic&quot; (&quot;forum_id&quot;, &quot;subject&quot;)</span><br><span class="line"><span class="keyword">values</span> (<span class="number">2</span>, <span class="string">&#x27;D&#x27;&#x27;artagnian&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+</article>
+    
+    <div class="trm-reward">
+        
+            <span class="trm-reward-btn trm-glow" onclick='var qr = document.getElementById("qr"); qr.style.display = (qr.style.display === "none") ? "block" : "none";'>
+                <i class="iconfont fas fa-hand-holding-usd"></i>
+            </span>
+        
+        <p class="trm-reward-comment">我很可爱，请给我钱</p>
+        <div id="qr" style="display:none;">
+            
+                <div style="display:inline-block">
+                    <a rel="noopener noreferrer" href='https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png' target='_blank' >
+                       <img src="https://img.lkxin.cn/tu/2022/09/22/632c11ab2f727.png" alt="微信" loading="lazy">
+                    </a>
+                    <p>微信</p>
+                </div>
+            
+                <div style="display:inline-block">
+                    <a rel="noopener noreferrer" href='https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg' target='_blank' >
+                       <img src="https://img.lkxin.cn/tu/2022/09/22/632c11ab08ffc.jpg" alt="支付宝" loading="lazy">
+                    </a>
+                    <p>支付宝</p>
+                </div>
+            
+        </div>
+    </div>
+
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        白云苍狗
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a id="original-link" href="https://hexo-theme-async.imalun.com/2023/01/05/code_snippet/" title="Code Snippet">https://hexo-theme-async.imalun.com/2023/01/05/code_snippet/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/demosite/2022/12/30/tag_plugins/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/demosite/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">Tag Plugins</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/12/30</li>
+                <li>15:08</li>
+                <li>Plugins</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2022- 2023</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">ThemeAsync</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v0.0.0
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("2022/04/10 17:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            <div class="trm-fixed-container" data-scroll="data-scroll" data-scroll-sticky="data-scroll-sticky" data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10"><div class="trm-fixed-btn" id="trm-search-btn" data-title="查询"><i class="iconfont fas fa-search"></i></div><div class="trm-fixed-btn" data-title="切换主题模式" onclick="asyncFun.switchThemeMode(document.documentElement.classList.contains('dark')?'style-light':'style-dark')"><i class="fas fa-sun"></i></div><div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()"><i class="iconfont fas fa-book-reader"></i></div><div class="trm-fixed-btn" data-title="单栏和双栏切换" onclick="asyncFun.switchSingleColumn()"><i class="iconfont fas fa-arrows-alt-h"></i></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  <div id="trm-back-top" class="trm-back-top" data-title="回到顶部">
+    <i class="iconfont fas fa-arrow-up"></i>
+</div>
+  
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="iconfont fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="搜索...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+<script src="https://npm.elemecdn.com/swup@2.0.19/dist/swup.min.js"></script>
+
+    
+<script src="https://npm.elemecdn.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/demosite/js/plugins/typing.js?v=0.0.0"></script>
+    
+
+    
+        
+<script src="https://npm.elemecdn.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/demosite/js/plugins/local_search.js?v=0.0.0"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+<script src="/demosite/demo.js"></script>
+
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+    <script data-swup-reload-script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+
+
+<script id="async-script" src="/demosite/js/main.js?v=0.0.0"></script>
+
+</body>
+
+</html>
