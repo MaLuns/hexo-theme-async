@@ -500,6 +500,33 @@ post_pagination:
   type: large # large || small
 ```
 
+### 文章过期提醒
+您可以给文章添加过期提醒。
+
+- `enable`: 是否开启，默认关闭
+- `style`: 卡片类型，可选 `simple` || `flat`
+- `limit_day`: 超过多少天未更新提醒
+- `position`: 显示在文章位置，可选 `top` || `bottom`
+
+``` yaml
+notice_outdate:
+  enable: true
+  style: flat 
+  limit_day: 365 
+  position: top
+```
+### 文章破图时默认图片
+您可以添加图片加载失败时显示默认图片。
+
+- `flink`: 友链头像破图时显示默认图片
+- `post_page`: 文章中图片破图时显示默认图片
+
+```yaml
+error_img:
+  flink: /img/friend_404.gif
+  post_page: /img/404.jpg
+```
+
 ## 其他配置 Other
 
 这里是一些关于页面中杂项配置合集。
@@ -735,34 +762,59 @@ layout:
 
 ```yaml
 layout:
-  # layout
+  path: layout
+  # 整体布局结构模板
   main:  _partial/main
+  # 顶部菜单栏模板
   header: _partial/header
+  # 顶部横幅模板
   banner: _partial/banner
+  # 侧栏模板
   sidebar: _partial/sidebar/index
+  # 页脚模板
   footer: _partial/footer
-  # page
+  # 文章信息模板
   post_info: _partial/post/post-info
+  # 文章内容模板
   post_content: _partial/post/post-content
+  # 文章信息里打赏模板
   reward: _partial/post/reward
+  # 文章详情版权信息模板
   post_copyright: _partial/post/post-copyright
+  # 文章详情上下篇文章模板
   post_next_prev: _partial/post/post-next-prev
+  # 文章卡片信息模板
   post_card: _partial/post/post-card
+  # 文章卡片信息模板
   post_card_mini: _partial/post/post-card-mini
-  # widget
+  # 顶部菜单-logo部分
+  header_logo: _widget/header_logo
+  # 顶部菜单-菜单部分
+  header_menu: _widget/header_menu
+  # 顶部菜单-主题切换部分
+  header_theme: _widget/header_theme
+  # 顶部菜单-查询部分
+  header_search: _widget/header_search
+  # 分类卡片模板
   categorie: _widget/categorie
+  # 分页模板
   paginator: _widget/paginator
+  # 返回顶部模板
   back_to_top: _widget/back-to-top
+  # 固定按钮模板
   fixed_btn: _widget/fixed-btn
+  # 侧栏
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social
   sidebar_info: _partial/sidebar/card/info
   sidebar_email: _partial/sidebar/card/email
+  # 评论插件模板
   comment: _third-party/comment/index
-  # animation
+  # 页面切换动画模板
   page_loading: _partial/preloader/page-preloader
+  # 主题切换动画模板
   mode_change:  _partial/preloader/change-mode-preloader
-  # page
+  # 内置几个页面模板
   page_about: _partial/page/about
   page_archive: _partial/page/archive
   page_category: _partial/page/category

@@ -41,6 +41,8 @@ npm i hexo-theme-async@latest
 ::: details v2.0.0 后版本
 从 v2.0.0 开始不在支持拉取后直接使用。新版本的脚本使用 TypeScript 进行重构，项目中不在提供打包压缩后的脚本。
 
+如果您只想修改模板，您可以前往 [Github Releases](https://github.com/MaLuns/hexo-theme-async/releases) 的 Assets 下载打包文件 `hexo-theme-async` 。
+
 如果您仍然想要使用该方式，请 clone 项目后，手动执行 yarn && yarn run lib:build 以构建压缩后的脚本。
 ::: 
 
@@ -72,6 +74,7 @@ npm i hexo-theme-async@beta
 ::: warning
 预览版本仅在主版本更新时使用，预览版还处于功能开发和 bug 修复阶段。如果您想提前尝试新功能，可以安装它，顺便能帮忙找找 Bug 🤣
 ::: 
+
 ## 启用主题 Use
 
 修改 Hexo 站点配置文件 `_config.yml`。
