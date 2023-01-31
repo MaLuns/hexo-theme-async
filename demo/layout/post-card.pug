@@ -1,8 +1,9 @@
 - var coverURl = post.cover ? post.cover : (post.photos && post.photos.length ? post.photos[0] : (theme.cover.type === 'img' ? theme.cover.default : false));
 - var index = 0 || postIndex
 
-mixin conver
-    a.trm-cover-frame.trm-anima-link(href=url_for(post.path), style= { width:"40%", "padding-bottom": 0  })
+mixin conver(type)
+    - var t = type === 'left' ? 'polygon(0 0,100% 0,94% 100%,0 100%)' : 'polygon(6% 0,100% 0,100% 100%,0 100%)'
+    a.trm-cover-frame.trm-anima-link(href=url_for(post.path), style= { width:"40%", "padding-bottom": 0 ,"clip-path": t })
         if coverURl
             div !{swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" })}
         else 
@@ -19,7 +20,7 @@ if postIndex === 0 && is_home()
 div.col-lg-12
     div.trm-blog-card.trm-scroll-animation(data-scroll, data-scroll-offset="40",style={ display: "flex" })   
         if index % 2 === 0
-            +conver
+            +conver('left')
         div.trm-card-descr(style={ padding: "40px", flex: 1 })
             div.trm-label.trm-category.trm-mb-20
                 a(href= post.categories && post.categories.length ? url_for(post.categories.data[0].path) :'#.') !{post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')}
@@ -34,6 +35,6 @@ div.col-lg-12
                 if theme.wordcount.enable && theme.wordcount.time
                     li !{min2read(post.content)}
         if index % 2 !== 0
-            +conver
+            +conver('right')
         if is_home() && post.sticky > 0
             div.trm-top !{__('post.sticky')}
