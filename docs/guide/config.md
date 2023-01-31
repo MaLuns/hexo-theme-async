@@ -65,7 +65,7 @@ theme:
 - `dark_logo`：顶部 logo，暗黑模式时显示
 - `icon16`：icon 16*16
 - `icon32`：icon 32*32
-- `appleTouchIcon`：iOS 添加到桌面是图标
+- `appleTouchIcon`：iOS 添加到桌面时显示图标
 - `webmanifest`：应用程序清单文件
 - `visibilitychange`：是否在离开窗口时切换标题显示
 - `hidden`：离开窗口时显示图标
@@ -218,7 +218,7 @@ user:
 顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置。
 
 - `title`：标题
-- `url`：路径
+- `url`：路径，如果设置了二级菜单后，不需要已经一级菜单触发跳转可将其设置为 `'#'`
 - `noswup`：不使用局部刷新
 - `target`：打开链接方式，和 a 标签属性一致
 - `children`：二级菜单 
@@ -701,6 +701,15 @@ icons:
 修改主题色示例：
 
 ``` less source/_data/style/index.less
+.var-primary(@primary: #afb42b; @primary-weak: #c0ca33) {
+    --primary        : @primary;
+    --primary-70     : fade(@primary, 70%);
+    --primary-50     : fade(@primary, 50%);
+    --primary-30     : fade(@primary, 30%);
+    --primary-weak   : @primary-weak;
+    --primary-weak-50: fade(@primary-weak, 50%);
+}
+
 :root {
     .var-primary(#5a5df0, #697be2);
 
@@ -749,7 +758,7 @@ icons:
 ```
 
 ## 自定义模板 Layout
-主题允许您自定义模板来替换主题模板。
+主题允许您自定义模板来替换主题模板，此功能需要您的版本 v2.0.0+ 。
 
 - `path`: 指定自定义模板目录（默认情况下不要修改）
 
