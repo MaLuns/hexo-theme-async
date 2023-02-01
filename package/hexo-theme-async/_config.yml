@@ -337,7 +337,6 @@ layout:
   header_search: _widget/header_search
   categorie: _widget/categorie
   paginator: _widget/paginator
-  back_to_top: _widget/back-to-top
   fixed_btn: _widget/fixed-btn
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social

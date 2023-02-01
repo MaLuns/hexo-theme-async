@@ -47,7 +47,6 @@
         }
     }
 
-
     #page-content {
         flex     : 0 0 100%;
         max-width: 100%;
@@ -63,18 +62,20 @@
 }
 
 .trm-exit-readmode {
-    position     : fixed;
-    top          : 30px;
-    right        : 30px;
-    z-index      : 100;
-    width        : 2rem;
-    height       : 2rem;
-    border-radius: 8px;
-    font-size    : 1.2rem;
-    border       : none;
+    position        : fixed;
+    bottom          : 30px;
+    right           : 20px;
+    z-index         : 100;
+    font-size       : 1.2rem;
+    width           : 2.5rem;
+    height          : 2.5rem;
+    line-height     : 2.5rem;
+    border-radius   : 6px;
+    border          : none;
+    background-color: var(--fixed-button-bg-color);
+    color           : var(--fixed-button-color);
 
     &:hover {
-        background-color: var(--primary-70, #afb42b);
-        color           : #fcfcfe;
+        color: var(--primary);
     }
 }

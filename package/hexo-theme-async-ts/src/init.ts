@@ -130,23 +130,16 @@ export function InitLocomotiveScroll() {
 	const update = utils.debounce(() => scroll.update(), 150)
 
 	// The height is not updated when handling the dynamic addition of DOM elements
-	const ro = new ResizeObserver(() => {
-		scroll.update();
-	});
+	const ro = new ResizeObserver(() => scroll.update());
 	ro.observe(container);
 
 	window.addEventListener('resize', update)
 
 	scroll.on('scroll', ({ scroll, limit }) => {
 		const b = parseInt((scroll.y / limit.y * 100).toString());
-		backtop.style.backgroundSize = `100% ${b}%`
-		if (scroll.y > 500) {
-			backtop.classList.add('active-el')
-			fixedContainer.classList.add('offset')
-		} else {
-			backtop.classList.remove('active-el')
-			fixedContainer.classList.remove('offset')
-		}
+		if (backtop) backtop.style.backgroundSize = `100% ${b}%`;
+		const fun = scroll.y > 500 ? 'add' : 'remove'
+		fixedContainer?.classList[fun]('offset')
 	});
 
 	const back_fun = function () {
@@ -488,28 +481,6 @@ export function InitJustifiedGallery() {
 			})
 		})
 	}
-}
-
-/**
- * 阅读模式切换
- */
-export function SwitchReadMode() {
-	const $body = document.body
-	$body.classList.add('trm-read-mode')
-	const newEle = document.createElement('button')
-	newEle.type = 'button'
-	newEle.title = window.ASYNC_CONFIG.i18n.exit_read_mode
-	newEle.className = `trm-exit-readmode trm-glow`
-	newEle.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.close, window.ASYNC_CONFIG.icontype)
-	$body.appendChild(newEle)
-
-	function clickFn() {
-		$body.classList.remove('trm-read-mode')
-		newEle.remove()
-		newEle.removeEventListener('click', clickFn)
-	}
-
-	newEle.addEventListener('click', clickFn)
 }
 
 /**
