@@ -73,9 +73,10 @@ plugin = theme.assets.plugin;
 
             <%- js({src: plugin.twikoo,'data-swup-reload-script': true, 'data-reset':'true' }) %>
             <script data-swup-reload-script>
-                const twikooConfig = <%- JSON.stringify(theme.comment.twikoo) %>;
-                twikooConfig.el = '#tcomment';
-                twikoo.init(twikooConfig).then(function () {
+                twikoo.init({
+                    ...<%- JSON.stringify(theme.comment.twikoo) %>,
+                    el:'#tcomment'
+                }).then(function () {
                     let container = document.querySelector('body>.tk-admin-container')
                     if(container) container.remove()
                     document.body.append(document.querySelector('.tk-admin-container'))
