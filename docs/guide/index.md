@@ -5,6 +5,8 @@
 
 如果您有其他相关的想法与问题，可前往 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions)。
 
+也可前往 [QQ 群](https://jq.qq.com/?_wv=1027&k=0hEe5D0U)，进行反馈。
+
 ## 快速开始 Get started
 
 ::: warning 渲染器
