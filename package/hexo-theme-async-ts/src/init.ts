@@ -1,4 +1,5 @@
-import { utils, asyncFun } from "./utils";
+import { utils } from "./utils";
+import globalFun from "./global";
 import SwupHeadPlugin from "./swup/head";
 import SwupScriptsPlugin from "./swup/script";
 
@@ -101,12 +102,12 @@ export function InitThemeMode(init = false) {
 		mode_swich_animation.classList[type]('trm-active');
 		mode_swich_animation_frame.classList.remove('trm-active');
 
-		asyncFun.setThemeColor()
+		globalFun.setThemeColor()
 		if (swich_input) swich_input.checked = checked;
 	}
 
 	swich_input && swich_input.addEventListener('change', function () {
-		asyncFun.switchThemeMode(this.checked ? 'style-dark' : 'style-light')
+		globalFun.switchThemeMode(this.checked ? 'style-dark' : 'style-light')
 	});
 }
 
@@ -167,6 +168,7 @@ export function InitLocomotiveScroll() {
 		mobile.removeListener(reload);
 		scroll.destroy()
 	});
+
 	return scroll
 }
 
@@ -366,7 +368,25 @@ export function InitHighlightTool() {
 	}
 
 	const expandCode = function () {
+		let flag: boolean, oldHeight: number, newHeight: number, scrollTop: number;
+		let scroll = window?.locomotiveScrollInstance?.scroll
+
+		flag = this.classList.contains('expand-done');
+		newHeight = this.parentElement.clientHeight;
+
+		scrollTop = scroll?.instance?.scroll?.y; // 记录滚动高度
+
 		this.classList.toggle('expand-done')
+		oldHeight = this.parentElement.clientHeight;
+
+		if (flag && scroll) {
+			const expandHeight = newHeight - oldHeight;
+			if (expandHeight < scroll.scrollbarHeight) return; // 展开高度低于屏幕高度不滚动
+
+			window.locomotiveScrollInstance.setScroll(scroll.instance.delta.x, scrollTop - expandHeight)
+
+			/* window.locomotiveScrollInstance.scrollTo(scrollTop - expandHeight, { duration: 0 }) */
+		}
 	}
 
 	utils.qa(selector).forEach(element => {
@@ -550,12 +570,12 @@ export function PrintCopyright() {
  * 初始化
  */
 export function ready() {
-	window.asyncFun = asyncFun
+	window.asyncFun = globalFun
 
 	PrintCopyright();
 
 	/* loading animate */
-	asyncFun.pageLoading()
+	globalFun.pageLoading()
 
 	/* window title */
 	InitChangeTitle()
@@ -589,7 +609,7 @@ export function ready() {
 	InitCounter();
 
 	/* locomotive scroll */
-	InitLocomotiveScroll()
+	window.locomotiveScrollInstance = InitLocomotiveScroll()
 
 	/* swiper */
 	InitSwiper()
@@ -644,7 +664,7 @@ export function ready() {
 			InitCounter();
 
 			/* locomotive scroll */
-			InitLocomotiveScroll()
+			window.locomotiveScrollInstance = InitLocomotiveScroll()
 
 			/* swiper */
 			InitSwiper()
