@@ -3,6 +3,20 @@
         "large_version": "v2.0.x",
         "children": [
             {
+                "version": "2.0.1",
+                "date": "2023-02-04",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复代码块展开后收起导致内容错位"
+                    },
+                    {
+                        "type": "fix",
+                        "text": "修复 swup 下 twikoo 加载异常"
+                    }
+                ]
+            },
+            {
                 "version": "2.0.0",
                 "date": "2023-01-31",
                 "logs": [
