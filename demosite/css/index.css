@@ -3116,18 +3116,20 @@ footer .footer-separator::before {
 }
 .trm-exit-readmode {
   position: fixed;
-  top: 30px;
-  right: 30px;
+  bottom: 30px;
+  right: 20px;
   z-index: 100;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 8px;
   font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 6px;
   border: none;
+  background-color: var(--fixed-button-bg-color);
+  color: var(--fixed-button-color);
 }
 .trm-exit-readmode:hover {
-  background-color: var(--primary-70, #afb42b);
-  color: #fcfcfe;
+  color: var(--primary);
 }
 .trm-single-column .trm-banner .col-lg-8 {
   flex: 0 0 100%;
@@ -3583,7 +3585,7 @@ pre .coffeescript .title {
   z-index: 10;
   right: 20px;
   height: 200px;
-  top: calc(100vh - 200px - 40px);
+  top: calc(100vh - 200px + 6px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -3630,24 +3632,8 @@ pre .coffeescript .title {
   opacity: 1;
   transform: translate(0, -50%) scale(1);
 }
-.trm-fixed-container.offset {
-  top: calc(100vh - 200px - 86px);
-}
-.trm-back-top {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  font-size: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  text-align: center;
-  line-height: 2.5rem;
-  border-radius: 6px;
-  cursor: pointer;
+.trm-fixed-container .trm-fixed-btn#trm-back-top {
   transform: translateY(50px) scale(0);
-  z-index: 20;
-  background-color: var(--fixed-button-bg-color);
-  color: var(--fixed-button-color);
   opacity: 0;
   transition: all 0.4s ease-in-out;
   background-image: var(--scroll-progress-bg-color);
@@ -3655,17 +3641,12 @@ pre .coffeescript .title {
   background-size: 100% 0;
   background-position: bottom;
 }
-.trm-back-top.active-el {
+.trm-fixed-container.offset {
+  top: calc(100vh - 200px - 2.5rem);
+}
+.trm-fixed-container.offset #trm-back-top {
   opacity: 1;
   transform: translateY(0) scale(1);
-}
-.trm-back-top:hover {
-  color: var(--primary);
-}
-@media (max-width: 992px) {
-  .trm-fixed-container {
-    right: 30px;
-  }
 }
 :root {
   --primary: #5a5df0;
