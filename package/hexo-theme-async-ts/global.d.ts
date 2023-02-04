@@ -77,6 +77,9 @@ declare interface Window {
         postUpdate: string
     }
 
+    // LocomotiveScroll 实例
+    locomotiveScrollInstance: any
+
     asyncFun: {
         [key: string]: Function
     }
