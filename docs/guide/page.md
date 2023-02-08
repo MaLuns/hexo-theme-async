@@ -99,7 +99,9 @@ title: 友情链接
 layout: links
 ---
 ```
-在 `_config.async.yml` 中的 `links` 添加友链列表信息。
+在 `_config.async.yml` 中的添加 `links` 配置信息。
+
+提示：（❌）不是在 `banner.links` 添加，（✔）是直接在配置文件添加新的 `links` 属性。
 
 - `name`：站点名称
 - `url`：博客链接
