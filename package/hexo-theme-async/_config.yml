@@ -342,7 +342,9 @@ layout:
   sidebar_social: _partial/sidebar/card/social
   sidebar_info: _partial/sidebar/card/info
   sidebar_email: _partial/sidebar/card/email
+  # third-party
   comment: _third-party/comment/index
+  analytics: _third-party/web-analytics
   # animation
   page_loading: _partial/preloader/page-preloader
   mode_change:  _partial/preloader/change-mode-preloader

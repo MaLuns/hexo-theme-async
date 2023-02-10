@@ -4,23 +4,23 @@
         <script defer>
             var _hmt = _hmt || [];
             (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?<%- theme.webAnalytics.baidu %>";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?<%- theme.webAnalytics.baidu %>";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
             })();
         </script>
     <% } %> 
 
     <% if (theme.webAnalytics.google){ %>
         <!-- Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=<%- theme.webAnalytics.google %>'></script>
         <script defer>
-          window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-          ga.l = +new Date;
-          ga('create', '<%= theme.webAnalytics.google %>', 'auto');
-          ga('send', 'pageview');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '<%= theme.webAnalytics.google %>');
         </script>
-        <script async src='https://www.google-analytics.com/analytics.js'></script>
     <% } %>
 
     <% if(theme.webAnalytics.tencent && theme.webAnalytics.tencent.sid && theme.webAnalytics.tencent.cid) { %>
