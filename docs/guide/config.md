@@ -28,7 +28,7 @@ language: zh-Hans
 
 配置方式参考下例：
 
-> 各语言对应属性和内容见 [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/languages/)，覆盖对应项即可。
+> 各语言对应属性和内容见 [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/languages/)，覆盖对应项即可。
 
 ```yaml
 # 将要覆盖的语言
