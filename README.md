@@ -126,6 +126,20 @@ If you are using this theme, welcome to leave your site in [Demo Sites | Example
                 <sub title="我在人间贩卖彩虹">西瓜撞地球</sub>
             </a>
         </td>
+        <td>
+            <a href="https://grainrain.site/" target="_blank">
+                <img width="80px" src="https://cdn.luogu.com.cn/upload/usericon/746291.png" />
+                <br />
+                <sub title="世事漫随流水 算来一生浮梦">谷雨</sub>
+            </a>
+        </td>
+        <td>
+            <a href="https://www.dingh.co" target="_blank">
+                <img width="80px" src="https://dingh.co/img/avatar.png" />
+                <br />
+                <sub title="现充爆炸吧">Offends</sub>
+            </a>
+        </td>
       </tr>
 </table>
 <!-- demo-end -->
