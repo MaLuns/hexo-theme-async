@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[Gitee](https://yunyoujun.coding.net/public/hexo-theme-yun/hexo-theme-yun/git/files) ｜
+[Gitee](https://gitee.com/ml13/hexo-theme-async) ｜
 [演示](https://hexo-theme-async.imalun.com/demosite/) ｜
 [示例预览](https://www.imalun.com) ｜
 [使用文档](https://hexo-theme-async.imalun.com/)
