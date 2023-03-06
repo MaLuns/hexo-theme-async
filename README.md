@@ -36,7 +36,7 @@ A simple & lightweight theme for Hexo.
 </p>
 
 <p align="center">
-  <img width="80%" src="https://img.lkxin.cn/tu/2022/09/22/632c1767d795b.png" alt="8dRAS.png" border="0" />
+  <img width="80%" style="border-radius:8px;" src="docs/public/imgs/demo2.png" alt="demo.png" border="0" />
 </p>
 
 ## Docs

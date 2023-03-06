@@ -46,6 +46,6 @@ root: /
 
 如图：
 
-![示例](https://pic.iqjty.com/2023/02/08/63e32b9b03888.png)
+![示例](/imgs/cdn_err.png)
 
 打开控制面板，检查插件是否加载正确加载，因为 jsdelivr、unpkg 国内可以会出现 DNS 污染等原因，导致有时候可能无法使用，可以参考[这里](https://hexo-theme-async.imalun.com/guide/config.html#%E6%8F%92%E4%BB%B6-plugins)替换 CDN 源。
