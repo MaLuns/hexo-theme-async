@@ -143,6 +143,13 @@ npm install hexo-theme-async@latest
                 <sub title="现充爆炸吧">Offends</sub>
             </a>
         </td>
+        <td>
+            <a href="https://www.biuling.top" target="_blank">
+                <img width="80px" src="https://cdn.staticaly.com/gh/CheckingChen/image-hosting@master/avatar.6awsc8i38s80.webp" />
+                <br />
+                <sub title="Creativity,起飞！">31100Cafe</sub>
+            </a>
+        </td>
       </tr>
 </table>
 <!-- demo-end -->
