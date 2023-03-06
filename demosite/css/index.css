@@ -2574,13 +2574,6 @@ footer .footer-separator::before {
   font-weight: bold;
   font-size: initial;
 }
-.trm-publication h1 a,
-.trm-publication h2 a,
-.trm-publication h3 a,
-.trm-publication h4 a,
-.trm-publication h5 a {
-  display: none;
-}
 .trm-publication h4:before,
 .trm-publication h5:before,
 .trm-publication h6:before {
