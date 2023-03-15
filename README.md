@@ -147,6 +147,15 @@ If you are using this theme, welcome to leave your site in [Demo Sites | Example
                 <sub title="Creativity,起飞！">31100Cafe</sub>
             </a>
         </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <a href="https://hexo.yahoo94.love" target="_blank">
+                <img width="80px" src="https://yahoo94.love/upload/2022/11/11.png" />
+                <br />
+                <sub title="再过十年，我们还是过着今天。">乌冬</sub>
+            </a>
+        </td>
       </tr>
 </table>
 <!-- demo-end -->
