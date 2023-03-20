@@ -32,7 +32,7 @@ export default defineConfig({
         nav: [
             { text: 'Guide', link: '/guide/' },
             { text: 'Demo', link: '/demo/' },
-            { text: 'Sponsors', link: '/sponsors/' },
+            /* { text: 'Sponsors', link: '/sponsors/' }, */
             {
                 text: 'Docs',
                 items: [

@@ -3,6 +3,20 @@
         "large_version": "v2.0.x",
         "children": [
             {
+                "version": "2.0.4",
+                "date": "2023-03-20",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "支持随机设置略缩图"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "增加下载三方插件到本地命令"
+                    }
+                ]
+            },
+            {
                 "version": "2.0.3",
                 "date": "2023-03-06",
                 "logs": [
