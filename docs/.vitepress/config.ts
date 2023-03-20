@@ -32,6 +32,7 @@ export default defineConfig({
         nav: [
             { text: 'Guide', link: '/guide/' },
             { text: 'Demo', link: '/demo/' },
+            { text: 'Editor', link: 'https://web-hexo-editor.imalun.com/' },
             /* { text: 'Sponsors', link: '/sponsors/' }, */
             {
                 text: 'Docs',
