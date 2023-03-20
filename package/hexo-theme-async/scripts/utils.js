@@ -1,3 +1,11 @@
+
+/**
+ * Regular expression
+ */
+const regExp = {
+    http: /^http:\/\/|^https:\/\/|^\/\//
+}
+
 /**
  * Is a object?
  * typeof [] === "object"
@@ -75,5 +83,6 @@ module.exports = {
     merge,
     toI18n,
     isPlainObject,
-    escapeBackslash
+    escapeBackslash,
+    regExp
 }

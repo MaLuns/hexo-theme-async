@@ -1,7 +1,6 @@
 const path = require('path')
 const pkg = require('../../package.json')
-
-const httpRegExp = /^http:\/\/|^https:\/\/|^\/\//
+const { regExp, isPlainObject } = require('../utils')
 
 hexo.extend.filter.register('before_generate', () => {
     const themeConfig = hexo.theme.config
@@ -16,10 +15,8 @@ hexo.extend.filter.register('before_generate', () => {
         unpkg: `https://unpkg.com`,
     }
 
-    const isObject = (obj) => Object.prototype.toString.call(obj) === '[object Object]'
-
     const createCDNLink = (data, type, internal) => {
-        if (isObject(data)) {
+        if (isPlainObject(data)) {
             let keys = Object.keys(data)
             keys.forEach(key => {
                 data[key] = createCDNLink(data[key], type, internal)
@@ -29,7 +26,7 @@ hexo.extend.filter.register('before_generate', () => {
                 data[index] = createCDNLink(item, type, internal)
             });
         } else {
-            if (httpRegExp.test(data)) {
+            if (regExp.http.test(data)) {
                 return data
             }
             let cdn = cdnSource[type] || type
