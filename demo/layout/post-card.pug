@@ -1,15 +1,17 @@
-- var coverURl = post.cover ? post.cover : (post.photos && post.photos.length ? post.photos[0] : (theme.cover.type === 'img' ? theme.cover.default : false));
+- var coverURl = post.cover ? post.cover : (post.photos && post.photos.length ? post.photos[0] : (theme.cover.type === 'img' ? theme.cover.default : theme.cover.type));
 - var index = 0 || postIndex
 
 mixin conver(type)
     - var t = type === 'left' ? 'polygon(0 0,100% 0,94% 100%,0 100%)' : 'polygon(6% 0,100% 0,100% 100%,0 100%)'
     a.trm-cover-frame.trm-anima-link(href=url_for(post.path), style= { width:"40%", "padding-bottom": 0 ,"clip-path": t })
-        if coverURl
-            div !{swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" })}
-        else 
+        if coverURl === 'date'
             div.trm-cover-date
                 div.trm-cover-day !{date(post.date, theme.datetime_foramt.post_card.cover_date)}
                 div.trm-cover-month !{date(post.date, theme.datetime_foramt.post_card.cover_date2)}
+        else if coverURl === 'random'
+            <img data-random-img alt="cover" class="no-fancybox" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPSURBVBhXY/gPBVDG//8Aj4IP8dFqTzkAAAAASUVORK5CYII=">
+        else if coverURl
+            div !{swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" })}
 
 if postIndex === 0 && is_home()
     div.col-lg-12

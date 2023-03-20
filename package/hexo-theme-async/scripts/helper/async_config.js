@@ -1,7 +1,10 @@
 'use strict';
 
 const url = require('url');
+const { url_for } = require('hexo-util');
 const { toI18n } = require('../utils')
+
+const urlFor = url_for.bind(hexo)
 
 hexo.extend.helper.register('async_config', function () {
     const { config, theme, __ } = this
@@ -50,6 +53,13 @@ hexo.extend.helper.register('async_config', function () {
             title: theme.highlight.title,
             height_limit: theme.highlight.height_limit
         }
+    }
+
+    // 随便封面
+    if (theme.cover.type === "random") {
+        exportConfig.covers = Array.isArray(theme.cover.default) ?
+            theme.cover.default.map(item => urlFor(item))
+            : urlFor(theme.cover.default)
     }
 
     // 复制添加版权

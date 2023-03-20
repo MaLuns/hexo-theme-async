@@ -3,17 +3,18 @@
         <a href="<%- url_for(post.path) %>" class="trm-cover-frame trm-anima-link">
             <%  let coverURl = post.cover ? 
                 post.cover :  (
-                post.photos && post.photos.length ? 
-                post.photos[0] : 
-                ( theme.cover.type === 'img' ?  theme.cover.default : false)
-            ) %>
-            <% if(coverURl) { %>
-                <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
-            <% } else { %>
+                    theme.cover.type === 'img' ?
+                    theme.cover.default : theme.cover.type ) 
+            %>
+            <% if(coverURl === 'date' ) { %>
                 <div class="trm-cover-date">
                     <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>
                     <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
                 </div>
+            <% } else if(coverURl === 'random' ) { %>
+                <img data-random-img alt="cover" class="no-fancybox" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPSURBVBhXY/gPBVDG//8Aj4IP8dFqTzkAAAAASUVORK5CYII=">
+            <% } else if(coverURl) { %>
+                <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
             <% } %>
         </a>
         <% if(is_home() && post.sticky > 0) { %>

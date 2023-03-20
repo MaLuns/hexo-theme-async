@@ -103,6 +103,34 @@ highlight:
 theme: 
   switch: false
 
+cover:
+  default: 
+    - /img/block.jpg
+    - https://th.wallhaven.cc/orig/wq/wqvkl7.jpg
+    - https://th.wallhaven.cc/orig/rd/rdq3v1.jpg
+    - https://th.wallhaven.cc/orig/rd/rd183j.jpg
+    - https://th.wallhaven.cc/orig/q2/q287wd.jpg
+    - https://th.wallhaven.cc/orig/g7/g79ov3.jpg
+    - https://th.wallhaven.cc/orig/q2/q2mkzr.jpg
+    - https://th.wallhaven.cc/orig/v9/v9j3yp.jpg
+    - https://th.wallhaven.cc/orig/y8/y8yvzx.jpg
+    - https://th.wallhaven.cc/orig/1k/1kdw2w.jpg
+    - https://th.wallhaven.cc/orig/57/57jqk1.jpg
+    - https://th.wallhaven.cc/orig/57/5762p1.jpg
+    - https://th.wallhaven.cc/orig/j3/j3zo1y.jpg
+    - https://th.wallhaven.cc/orig/m9/m9gkky.jpg
+    - https://th.wallhaven.cc/orig/e7/e7kv9k.jpg
+    - https://th.wallhaven.cc/orig/ym/ym9ldk.jpg
+    - https://th.wallhaven.cc/orig/pk/pk5259.jpg
+    - https://th.wallhaven.cc/orig/8o/8opxpk.jpg
+    - https://th.wallhaven.cc/orig/k7/k7yog7.jpg
+    - https://th.wallhaven.cc/orig/v9/v93zv3.jpg
+    - https://th.wallhaven.cc/orig/wq/wqj65q.jpg
+    - https://th.wallhaven.cc/orig/p9/p9kg1m.jpg
+    - https://th.wallhaven.cc/orig/8o/8o9vw1.jpg
+    - https://th.wallhaven.cc/orig/x8/x8yy3o.jpg
+  type: random
+
 layout:
   footer: async/footer
   page_loading: async/page-loading

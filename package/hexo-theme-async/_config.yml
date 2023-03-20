@@ -183,7 +183,7 @@ creative_commons:
 # Customize the cover image
 cover:
   default: /img/block.jpg
-  type: img
+  type: img # img || date || random
 
 # The previous and the next article
 post_pagination: 
