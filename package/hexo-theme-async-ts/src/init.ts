@@ -557,7 +557,7 @@ export function AddPostOutdateNotice() {
  * 随机设置文章封面
  */
 export function InitRandomCovers() {
-	if (window.ASYNC_CONFIG.covers) {
+	if (window.ASYNC_CONFIG.covers && window.PAGE_CONFIG.isHome) {
 		const imgs = utils.qa("img[data-random-img]");
 		const convers = window.ASYNC_CONFIG.covers;
 		imgs.forEach((item) => {
@@ -687,6 +687,9 @@ export function ready() {
 
 			/* toc */
 			InitToc();
+
+			/* random covers */
+			InitRandomCovers();
 		});
 	}
 }
