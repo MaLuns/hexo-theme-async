@@ -18,6 +18,12 @@
     ],
     "logs": [
         {
+            "name": "Jesse",
+            "money": 66.66,
+            "type": "alipay",
+            "date": "2023-03-23"
+        },
+        {
             "name": "对*.",
             "money": 10.00,
             "type": "wechat",
