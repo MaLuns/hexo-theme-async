@@ -1,54 +1,54 @@
-# 页面配置
+# Theme page
 
-本主题默认支持并使用以下页面类型。
+The following page types are supported and used by default for this theme.
 
-## 文章 Posts
+## Article
 
-- `keywords`：关键字，用于 meta 标签
-- `description`：描述，用于 meta 标签
-- `cover`：文章封面图，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
-- `sticky`：首页排序值
-- `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
-- `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
-- `single_column`：单栏显示详情页，为 true 时生效。
-- `author`：文章作者
-- `originalLink`：文章源链接（用于转载）
+-   `keywords`: keyword used for meta tags
+-   `description`: Description for meta tags
+-   `cover`: Article cover, which can be a string or array. If the array length is 2, it will automatically switch according to the theme.
+-   `sticky`: home page sorting value
+-   `banner`: Article page banner background, field reference [banner.default](/guide/config.html#横幅-banner) Field.
+-   `toc`: Specifies whether to display directories. This parameter takes effect only when the value is false. Pass by default `_config.async.yaml` 的 `is_toc` Control.
+-   `single_column`: Displays details in one column. This parameter takes effect when it is true.
+-   `author`: Set the author will show
+-   `originalLink`: Article source link
 
+The built-in top script has been removed. Upgrade the `hexo-generator-index` to version `2.0.0+` or higher.
 
-内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
-
-``` yaml
+```yaml
 ---
-title: 从零开始搭建一个后台模板
-keywords: admin-template,vue,element,后台模板
+title: Build a background template from scratch
+keywords: admin-template
 cover: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
 sticky: 10
-banner: 
-  type: img
-  bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
-  bannerText: Hi my new friend!
-toc: false # 无需显示目录
+banner:
+    type: img
+    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
+    bannerText: Hi my new friend!
+toc: false # No need to display directories
 ---
 ```
 
+## Archives
 
-## 归档 Archives
-Hexo 默认支持。
+Hexo support by default.
 
-## 分类 Categories
-如果您尚未安装 `hexo-generator-category`，请输入 `npm install hexo-generator-category`。
+## Categories
 
-新建 `categories` 页面，在博客根目录下输入：
+If you have not installed `hexo-generator-category`, please enter `npm install hexo-generator-category` in the terminal.
+
+Create a new `categories` page, and enter the following in the root directory of the blog:
 
 ```bash
 hexo new page categories
 ```
 
-修改 `source/categories/index.md` 的 `Front Matter`
+Modify `Front Matter` of `source/categories/index.md`
 
 ```yaml {4}
 ---
-title: 分类
+title: Category
 date: 2019-11-16 10:46:27
 layout: category
 ---
@@ -56,166 +56,171 @@ layout: category
 
 ::: tip
 
-> [分类和标签](https://hexo.io/zh-cn/docs/front-matter.html#%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE)
+> [Categories & Tags](https://hexo.io/zh-cn/docs/front-matter.html#%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE)
 
-尽管 Hexo 支持了为一篇文章设置多个分类，但我个人更建议你一篇文章只放在一个分类下，而使用标签来为它进行多个描述。
+Although Hexo supports multiple categories for an article, I personally recommend you to put an article under one category only and use tags for multiple descriptions for it.
 
-同时太多的分类与标签，既不方便整理，也不利于移动端的展示。
+Also, too many categories and tags are not easy to organize and not good for mobile display.
 
 :::
 
-## 标签 tags
+## Tags
 
-如果您尚未安装 `hexo-generator-tag`，请输入 `npm install hexo-generator-tag`。
+If you have not installed `hexo-generator-tag`, please enter `npm install hexo-generator-tag` in the terminal.
 
-新建 `tags` 页面，在博客根目录下输入：
+Create a new `tags` page, and enter the following in the root directory of the blog:
 
 ```bash
 hexo new page tags
 ```
 
-修改 `source/tags/index.md` 的 `Front Matter`
+Modify `Front Matter` of `source/tags/index.md`
 
 ```yaml {4}
 ---
-title: 标签
+title: tag
 date: 2019-11-16 10:46:27
 layout: tag
 ---
 ```
 
-## 友链 Links
+## Friend links
 
-新建友链页面。
+New Friends Link Page.
 
 ```bash
 hexo new page links
 ```
-进入 `source/links/index.md`，设置 `layout` 字段。
 
-``` yaml {3}
+Go to `source/links/index.md` and set the `layout` field.
+
+```yaml {3}
 ---
-title: 友情链接
+title: My friends
 layout: links
 ---
 ```
-在 `_config.async.yml` 中的添加 `links` 配置信息。
 
-提示：（❌）不是在 `banner.links` 添加，（✔）是直接在配置文件添加新的 `links` 属性。
+Add `links` configuration information in `_config.async.yml`.
 
-- `name`：站点名称
-- `url`：博客链接
-- `image`：头像图片链接
-- `desc`：一句话描述
+-   `name`: their name
+-   `url`: blog link
+-   `image`: avatar image link
+-   `desc`: one-sentence description
 
-``` yaml
+```yaml
 links:
-  - name: 白云苍狗
-    url: //www.imalun.com/
-    image: //www.imalun.com/images/avatar.jpg
-    desc: 醒，亦在人间；梦，亦在人间
+    - name: 白云苍狗
+      url: //www.imalun.com/
+      image: //www.imalun.com/images/avatar.jpg
+      desc: 醒，亦在人间；梦，亦在人间
 ```
 
-如果您的友链比较多，可能会导致 `_config.async.yml` 过长，您可以将 links 配置拆分出来。在 Hexo 工作目录下新建 `source/_data/links.yml` 文件，字段和 `_config.async.yml` 中的一致，只是不再需要 `links` 字段。
+If you have too many friend links, the `_config.async.yml` may be too long. You can split the links configuration. Create a new `source/_data/links.yml` file in the Hexo working directory with the same fields as in `_config.async.yml` except that the `links` field is no longer required.
 
-``` yaml
+```yaml
 - name: 白云苍狗
   url: //www.imalun.com/
   image: //www.imalun.com/images/avatar.jpg
   desc: 醒，亦在人间；梦，亦在人间
 ```
 
-也可以是 `source/_data/links.json` 文件
+It can also be a `source/_data/links.json` file
 
-``` json
+```json
 [
-  {
-    "name": "白云苍狗",
-    "url": "//www.imalun.com/",
-    "image": "//www.imalun.com/images/avatar.jpg",
-    "desc": "醒，亦在人间；梦，亦在人间"
-  }
+	{
+		"name": "白云苍狗",
+		"url": "//www.imalun.com/",
+		"image": "//www.imalun.com/images/avatar.jpg",
+		"desc": "醒，亦在人间；梦，亦在人间"
+	}
 ]
 ```
 
-## 关于 About
-新建关于页面。
+## About
+
+Create a new About page.
 
 ```bash
 hexo new page about
 ```
 
-进入 `source/about/index.md`，设置 `layout` 字段。
+Go to `source/about/index.md` and set the `layout` field.
 
-``` yaml {3}
+```yaml {3}
 ---
-title: 关于
+title: about
 layout: about
 ---
 ```
 
-如果使用内置模板，可以设置 `_config.async.yml` 中的 `about`。
-``` yaml
+If using a built-in template, you can set `about` in `_config.async.yml`.
+
+```yaml
 about:
-  title:        # 标题
-  introduction: # 个人简单描述
-  blog:         # 博客信息
-  privacy:      # 隐私权说明    
+    title: # Title
+    introduction: # Personal brief description
+    blog: # Blog message
+    privacy: # Privacy Note
 ```
-你也可以直接在 `source/about/index.md` 编写你的关于页面， 如果 `about/index.md` 有内容则优先使用自定义内容，否则使用配置项内容。
+
+You can also write your about page directly in `source/about/index.md`, using custom content if `about/index.md` has content, and configuration items if not.
 
 ## 404 Not Found
-可以直接在 `source` 目录下新建 `404.md`。
-``` yaml
+
+You can create `404.md` directly in the `source` directory.
+
+```yaml
 ---
 layout: 404
 ---
 ```
 
-在本地，你也可以直接访问 `/404.html` 查看效果。只有当你将其部署到 `GitHub Pages` 上，你访问不存在的页面才会显示。
+Locally, you can also go directly to `/404.html` to see the effect. Only when you deploy it to `GitHub Pages` will pages you visit that don't exist show up.
 
+## Customize Page
 
-## 自定义页面 Customize Page
-
-新建自定义页面。像上面 友链、关于等页面也属于自定义页面，主要区别是它们可以通过约定配置，就可以输出主题内置页面样式，当然如果你想要个性化这些页面，也可以通过自定也页面覆盖主题的默认信行为。
+Create a custom page. The main difference is that they can be configured by convention to output the built-in page style of the theme. Of course, if you want to personalize these pages, you can also override the default line of the theme through custom pages.
 
 ```bash
 hexo new page xxxxx
 ```
 
-自定义页面只会保留顶部菜单、背景区域、左侧个人信息（如果不想要个人信息，可以将页面设置为单栏 `single_column: true`）。
+The custom page only keeps the top menu, the background area, and the left profile (if you don't want the profile, you can set the page to single_column: true).
 
-``` yaml
+```yaml
 ---
-title: 自定义页面
+title: Custom page
 single_column: true
 ---
 ```
-在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)，以及主题内置的  [Tag Plugins](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)
 
+When customizing pages, you can directly copy the HTML code in the theme for use, increasing the efficiency of writing [custom pages](https://hexo-theme-async.imalun.com/demosite/customize_page/). In addition to reusing the default theme code, there are other built-in card styles that can refer to the custom page demo, as well as the theme built-in [Tag Plugins](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)
 
-### 相册页
+### Album page
 
-相册页面只是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+Album pages are just regular pages, you just need `hexo new page xxxxx` to create your page
 
-然后使用标签外挂 [gallery](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
+Then use the tag [gallery](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/), see the corresponding content for the specific usage.
 
-``` markdown
+```markdown
 <div class="row">
-{% gallery '壁纸' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %}
-{% gallery '图库' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/rd/rddgwm.jpg %}
+{% gallery 'wallpaper' 'collection of some wallpaper' '/gallery/wallpaper' https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %}
+{% gallery 'gallery' 'collection of some wallpape' '/gallery/wallpaper' https://th.wallhaven.cc/lg/rd/rddgwm.jpg %}
 </div>
 ```
+
 <VersionBlock version="1.2.12">
 </VersionBlock>
 
-### 相册详情页
+### Album details page
 
-相册详情页面也是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+The album details page is also a normal page, you just need `hexo new page xxxxx` to create your page
 
-然后使用标签外挂 [galleryGroup](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
+Then use the tag external [galleryGroup](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/), please see the corresponding content for specific usage.
 
-``` markdown
+```markdown
 {% galleryGroup %}
 {% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %}
 ![](https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg)

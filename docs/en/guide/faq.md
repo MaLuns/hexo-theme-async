@@ -2,19 +2,19 @@
 
 ::: tip
 
-- <Badge text="dev" vertical="middle"/> 代表只和开发有关。默认示例站点使用的 dev 分支，所以可能会出现还未发版功能。
+-   <Badge text="dev" vertical="middle"/> stands for development only. The default example site uses the dev branch, so unreleased features may appear.
 
 :::
 
-有任何关于本主题的缺陷报告与功能建议，可以发起 [Issues](https://github.com/MaLuns/hexo-theme-async/issues)。
+If you have any bug reports or feature suggestions on this theme, you can initiate [Issues](https://github.com/MaLuns/hexo-theme-async/issues).
 
-如果您有其他相关的想法与问题，可前往 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions)。
+If you have other related ideas and questions, head over to [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions).
 
-## 自查通用问题解决方案
+## Self-examine common problem solutions
 
-检查文件或仓库命名是否错误。
+Check if the file or warehouse name is right.
 
-检查 `Hexo` 工作目录下 `_config.yml` 中 `url` 是否设置正确。（此部分为 Hexo 初始化时自动生成）
+Check if the url under `_config.yml` in the `Hexo` working directory is set correctly. (This part is automatically generated when Hexo is initialized)
 
 ```yaml
 # If your site is put in a subdirectory
@@ -23,29 +23,30 @@ url: https://www.imalun.com
 root: /
 ```
 
-检查是否在 `_config.async.yml` 文件中进行主题配置，且已经保存。
-检查是否已经执行如下几步：
+Check whether the theme configurations are done in the `_config.async.yml` file and has been saved. Check whether the following steps have been performed:
 
-- `hexo clean`：清除本地缓存
-- `hexo g`：生成新的静态文件
-- `hexo s`：本地查看效果（如果正常，使用 `hexo d` 重新部署）
+-   `hexo clean`:clear the local cache
+-   `hexo g`:generate a new static file
+-   `hexo s`:local viewing effect (if normal, use `hexo d` to redeploy)
 
-检查是否已强制刷新本地浏览器缓存（Windows: `Ctrl + F5`，Mac: `Shift + Cmd + R`）。
+Check whether the local browser cache is forcibly refreshed (Windows: Ctrl + F5, Mac: Shift + Cmd + R).
 
-检查是否为最新版本。
+Check whether it is the latest version.
 
-主题相关问题请发起 [ISSUE](https://github.com/MaLuns/hexo-theme-async/issues) ，其他讨论与展示请使用 [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions)。
+Please open an [ISSUE](https://github.com/MaLuns/hexo-theme-async/issues) for questions related to the theme and use [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions) for other discussions and presentations.
 
-## 配置项不生效？
-检查安装主题版本，然后查看更新日志里是否发生变更，参考文档配置说明，确保配置正确。
+## Does the configuration item not take effect?
 
-## About 页面不显示？
-检查是否和其他插件冲突，解决方式，可以弃用配置方式，在 md 文件里编写您的 About 页面。
+Check the version of the installation theme, and then check the update log for changes. Refer to the configuration instructions in the documentation to ensure that the configuration is correct.
 
-## 页面加载缓慢？或者页面显示不完整，无法滚动等。
+## The About page is not displayed?
 
-如图：
+Check for conflicts with other plugins, resolve them, and write your About page in the md file instead of using the configuration.
+
+## Slow page load? Or the page display is incomplete, unable to scroll, etc.
+
+As shown below:
 
 ![示例](/imgs/cdn_err.png)
 
-打开控制面板，检查插件是否加载正确加载，因为 jsdelivr、unpkg 国内可以会出现 DNS 污染等原因，导致有时候可能无法使用，可以参考[这里](https://hexo-theme-async.imalun.com/guide/config.html#%E6%8F%92%E4%BB%B6-plugins)替换 CDN 源。
+Check whether the plug-in CDN are loaded properly and replace the available CND.

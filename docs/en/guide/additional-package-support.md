@@ -1,28 +1,32 @@
-# 额外依赖库支持
+# Additional dependency library support
 
-与第三方支持的区别是，此处大部分功能为安装插件或引入 CDN 实现，并由主题进行简单适配。
+Unlike third-party support, most of the functionality here is to install plug-ins or introduce CDN implementations, easily adapted by themes.
 
-## 字数统计
-安装 [hexo-wordcount](https://github.com/willin/hexo-wordcount)
-``` bash
+## Word Count
+
+Install [hexo-wordcount](https://github.com/willin/hexo-wordcount)
+
+```bash
 npm install hexo-wordcount
 # or
 yarn add hexo-wordcount
 ```
-在配置文件 `_config.async.yml` 中：
 
-- `count`: 字数统计
-- `time`: 阅读时间
+In the configuration file `_config.async.yml`:
 
-``` yaml
+-   `count`: Word count
+-   `time`: Reading time
+
+```yaml
 wordcount:
-  enable: true
-  count: true
-  time: true
+    enable: true
+    count: true
+    time: true
 ```
 
 ## RSS
-安装 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。
+
+Install [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)。
 
 ```bash
 npm install hexo-generator-feed
@@ -30,22 +34,22 @@ npm install hexo-generator-feed
 yarn add hexo-generator-feed
 ```
 
-可配置在 `_config.async.yml` 的 `social` 字段里，如：
+It can be configured in the `social` field of `_config.async.yml`, for example:
 
-``` yaml
+```yaml
 sidebar:
-  social:
-    - icon: fas fa-rss
-      url: atom.xml
+    social:
+        - icon: fas fa-rss
+          url: atom.xml
 ```
 
-更多配置请参见[官方文档](https://github.com/hexojs/hexo-generator-feed)（在 Hexo 工作目录下的 `_config.yml` 中进行）。
+See the official documentation for more [configuration](https://github.com/hexojs/hexo-generator-feed) (in `_config.yml` in the Hexo working directory).
 
-## 置顶
+## Sticky
 
-> 确保你的 [hexo-generator-index](https://github.com/hexojs/hexo-generator-index) 为 `2.0.0` 或以上
+> Make sure your [hexo-generator-index](https://github.com/hexojs/hexo-generator-index) is 2.0.0 or above
 
-通过设置文章 Front Matter 中 `sticky` 属性以进行置顶，数值 >0 时越高，越靠前，数值 <0 时，越靠后。
+The `sticky` property in `Front Matter` is set to the top. If the value is >0, the higher it is, the higher it will be; if the value is <0, the lower it will be.
 
 ```yaml {3}
 ---
@@ -54,27 +58,26 @@ sticky: 100
 ---
 ```
 
-## 数学公式
+## Math Formula
 
 ### KaTeX
 
-在文章中显示一些简单的数学公式，使用 KaTeX 实现。具体方法请参见[官方文档](https://katex.org/)。
+Show some simple mathematical formulas in the article, implemented using KaTeX. For details, see [documents](https://katex.org/).
 
-> 其主要采用 CDN 的方式实现。
+> It mainly adopts the way of CDN.
 
-- `copy_tex`: 复制 KaTeX 文本，默认开启
-- `global`: 如果你想要在全局页面使用 `KaTeX`，（譬如首页的文章摘要），那么你可以开启它。（当然，这也意味着你的页面每次需要加载更多的资源。）
-- `options`: 传入 KaTeX 渲染器的选项。具体选项参考[这里](https://katex.org/docs/options.html)。
+-   `copy_tex`: Copy KaTeX text, enabled by default
+-   `global`: If you want to use it in the global page `KaTeX`, (such as an article summary on the home page), then you can open it. (Of course, this also means that your page has to load more resources each time.)
+-   `options`: Options passed to the KaTeX renderer. Specific option reference [here](https://katex.org/docs/options.html).
 
 ```yaml
 katex:
-  copy_tex: true
-  global: false
-  options: {}
+    copy_tex: true
+    global: false
+    options: {}
 ```
 
-只有在使用了 `katex` 的文章或页面才会加载 KaTeX 的库，所以你需要在使用 KaTeX 的文章或头部进行设置。
-（当你开启全局加载时，将不再需要设置此选项。）
+katex's library will only load if the article or page uses KaTeX, so you need to set it up if the article or header uses KaTeX. (When you enable global loading, you no longer need to set this option.)
 
 ```yaml {3}
 ---
@@ -83,18 +86,18 @@ katex: true
 ---
 ```
 
-头部中的 `katex` 类型可以是 `bool | object`，如果是 `object`，那只有 `options` 选项有效果，具体参数与全局设置一样，并且会与全局设置合并与替换。
+Head of `katex` type can be a `bool | object`, if is `object`, the only `options` options have the effect, specific parameters and global Settings, and will be a merger with global Settings and replacement.
 
-你可以使用如下方式包裹公式。
+You can wrap the formula as follows.
 
-如下包裹，公式将被居中展示。
+In the following package, the formula will be displayed centered.
 
 ```latex
 $$ E = mc^2 $$
 \[ E = mc^2 \]
 ```
 
-如下包裹，公式将以行内形式展示。
+In the following package, the formula will be displayed in inline form.
 
 ```latex
 $E = mc^2$
@@ -106,9 +109,13 @@ $E = mc^2$
 
 使用 `\\[ E = mc^2 \\]` 而不是 `\[ E = mc^2 \]`。
 
-如果你有过多需要转译的字符，你可以直接使用 HTML 标签包裹它（内部的字符将不会被作为 Markdown 解析），而无需使用多个 `\` 来转译。
+Note that you need an extra `\` to translate `\` when writing directly in Markdown files. (Or use `$E=mc^2$`)
 
-譬如：
+Use `\\[E = mc^2 \]` instead of `\[E = mc^2 \]`.
+
+If you have too many characters that need to be translated, you can simply wrap it in HTML tags (internal characters will not be parsed as Markdown) instead of using multiple `\` to translate.
+
+For example:
 
 ```html
 <div>\[ E = mc^2 \]</div>

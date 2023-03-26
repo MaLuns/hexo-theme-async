@@ -1,39 +1,39 @@
-# 主题配置
+# Theme Configuration
 
-## 配置文件 async.yml
+## Configuration File
 
-约定 ＞ 配置
+Convention > Configuration
 
 ::: danger
-请在 `_config.async.yml` 中定义您所需要的配置，其余将自动使用主题的默认配置。
+Define the configuration you need in `_config.async.yml`, and the rest will automatically use the theme's default configuration.
 
-如未特殊说明，皆默认在 `_config.async.yml` 文件中配置。
+Unless otherwise specified, the default configuration is in the `_config.async.yml` file.
 
-请最好**不要**对**主题的任何文件**进行修改，除非您确认您拥有一定的开发能力或此后将不会对主题进行升级。
+It is best not to change any files of the theme unless you are sure that you have some development capability or that you will not upgrade the theme thereafter.
 :::
 
-## 语言 Language
+## Language
 
-本主题内置了中英文两种语言，`zh-Hans` 和 `en`。
+This theme is available in both Chinese and English, zh-Hans and en.
 
-> 站点的语言需要自己在 Hexo 目录下的 `_config.yml` 中设置。
+> The language of the site needs to be set itself in `_config.yml` under the Hexo directory.
 
 ```yaml
 language: zh-Hans
 ```
 
-### 个性化语言包
+### Personalized language package
 
-在 Hexo 工作目录下新建 `source/_data/languages.yml`。（若 `source/_data` 目录不存在，请新建。）
+Create a new `source/_data/languages.yml` in the Hexo working directory. (If the `source/_data` directory does not exist, create one.)
 
-采用约定大于配置的方式，您仅需在 `languages.yml` 中自定义您想要覆盖的语言，其余将自动与主题默认配置合并。（这样做也更方便日后的升级）
+With convention over configuration, you only need to customize the languages you want to cover in `languages.yml`, and the rest is automatically merged with the theme default configuration. (It also makes it easier to upgrade later.)
 
-配置方式参考下例：
+For details, see the following example:
 
-> 各语言对应属性和内容见 [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/languages/)，覆盖对应项即可。
+> See the corresponding language attributes and content [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/languages/), covering the corresponding item.
 
 ```yaml
-# 将要覆盖的语言
+# Language to be covered
 en:
     site:
         title: Site Information
@@ -41,18 +41,18 @@ en:
 zh-Hans:
     site:
         title: 本站信息
-# 你也可以扩展其他语言
+You can also extend other languages
 ```
 
-如果仅使用中文语言，除 `zh-Hans` 项均可删除。
+If only Chinese language is used, all entries except `zh-Hans` can be deleted.
 
-## 主题模式 ThemeMode
+## Theme mode
 
--   `default`：设置主题默认模式
-    -   `style-light`：亮色模式
-    -   `style-dark`：暗色模式
-    -   `auto`：跟随系统选择
--   `switch`：如果为 false，将不会出现主题切换按钮，只加载设置默认主题模式。
+-   `default`: Set the theme default mode
+    -   `style-light`: Light mode
+    -   `style-dark`: Dark mode
+    -   `auto`: Follow the system selection
+-   `switch`: If false, the theme switch button will not appear and only load the default theme mode.
 
 ```yaml
 theme:
@@ -60,20 +60,20 @@ theme:
     default: style-light
 ```
 
-## 网站图标 Favicon
+## Favicon
 
-用于 logo、icon、PWA 安装图标配置。
+Used to configure logo, icon, and PWA installation ICONS.
 
--   `logo`：顶部 logo
--   `dark_logo`：顶部 logo，暗黑模式时显示
+-   `logo`: Top logo
+-   `dark_logo`: Top logo, displayed in dark mode
 -   `icon16`：icon 16\*16
 -   `icon32`：icon 32\*32
--   `appleTouchIcon`：iOS 添加到桌面时显示图标
--   `webmanifest`：应用程序清单文件
--   `visibilitychange`：是否在离开窗口时切换标题显示
--   `hidden`：离开窗口时显示图标
--   `showText`：激活窗口时显示文字
--   `hideText`：离开窗口显示文字
+-   `appleTouchIcon`: Displays icons when iOS is added to the desktop
+-   `webmanifest`: Application manifest file
+-   `visibilitychange`: Whether to switch title display when leaving the window
+-   `hidden`: Displays the icon when leaving the window
+-   `showText`: Displays text when activating the window
+-   `hideText`: Leaves the window to display text
 
 ```yaml
 favicon:
@@ -88,15 +88,15 @@ favicon:
     hideText: (●—●)喔哟，崩溃啦！
 ```
 
-## 插件 Plugins
+## Plugins
 
-主题内置插件配置。
+Theme built-in plug-in configuration.
 
--   `internal_provider`：主题 JS 的 CDN 配置，可选 `local`、`unpkg`、`jsdelivr`
-    -   `local`: 不使用 CDN
-    -   `unpkg`: 使用 unpkg
-    -   `jsdelivr`: 使用 jsdelivr
--   `third_party_provider`：三方插件 JS 的 CDN 配置，可选 `unpkg`、`jsdelivr`
+-   `internal_provider`: CDN of the theme JS. This parameter is optional `local`、`unpkg`、`jsdelivr`
+    -   `local`: The CDN is not used
+    -   `unpkg`: Use unpkg
+    -   `jsdelivr`: Use jsdelivr
+-   `third_party_provider`: CDN configuration of the three-party plug-in JS, optional `unpkg`、`jsdelivr`
 
 ```yaml
 assets:
@@ -104,14 +104,14 @@ assets:
     third_party_provider: unpkg # unpkg | jsdelivr
 ```
 
-除了使用 unpkg、jsdelivr 外，也可以自定义其他 CDN 源。
+In addition to using unpkg, jsdelivr, you can customize other CDN as well.
 
 ```yaml
 assets:
     third_party_provider: https://npm.elemecdn.com
 ```
 
-也可以单独给某个插件配置 CDN 源。
+You can also configure a CDN source for a plug-in.
 
 ```yaml
 assets:
@@ -121,25 +121,25 @@ assets:
         swup: https://npm.elemecdn.com/swup@2.0.19/dist/swup.min.js
 ```
 
-如果您想将主题使用三方插件下载到本地，可以执行 `hexo plugin` 命令下载到本地（需要主题版本 2.0.4+）。然后修改配置：
+If you want to download a theme locally using a three-party plug-in, you can do so by executing the `hexo plugin` command (theme version 2.0.4+ is required). Then modify the configuration:
 
 ```yaml
 assets:
     third_party_provider: plugins
 ```
 
-## 加速静态资源 CDN
+## CDN
 
-Content Delivery Network，统一加载网络资源，有利于提高网页加载速度。
+Content Delivery Network, unified loading network resources, conducive to improving the loading speed of web pages.
 
-当您需要添加三方插件来个性您的博客时，您应该优先使用 CDN 加载文件。
+When you need to add third-party plug-ins to personalize your blog, you should prioritize using CDN to load files.
 
-JavaScript 资源类型说明：
+JavaScript resource type description:
 
--   `head`: 插入到 head，其他三种默认时插入到 body 结尾的。
--   `base`: 立即加载并执行。
--   `async`: 异步加载，加载完成后立即执行。
--   `defer`: 异步加载资源，但最后执行。
+-   `head`: Insert into the head, and the other three at the end of the body by default.
+-   `base`: Load and execute immediately.
+-   `async`: Load asynchronously and execute immediately after the loading is complete.
+-   `defer`: Load resources asynchronously, but execute last.
 
 ```yaml
 cdn:
@@ -151,17 +151,17 @@ cdn:
         defer:
 ```
 
-## 字体图标 Icon
+## Font Icon
 
-本主题默认使用 Font Awesome 5 图标。
+The default for this theme is the Font Awesome 5 icon.
 
-> 默认支持的图标列表见 [默认图标](/about/icon.html)
+> See Default ICONS for a list of supported ICONS by [default](/about/icon.html)
 
-如您想要使用其他图标，只需要在 `assets.icons` 中配置您的图标。
+If you want to use other icons, just configure your icon in `assets.icons`.
 
--   `type`：图标类型 `font` `symbol`
--   `css`： font-class 图标资源 url （有值或为空时，将覆盖或去除内置 Font Awesome 5 图标）
--   `js`：多色图标资源 url
+-   `type`: Icon type `font` `symbol`
+-   `css`: font-class icon resource url (overrides or removes the built-in Font Awesome 5 icon if it has a value or is empty)
+-   `js`: Multi-color icon resource url
 
 ```yaml
 assets:
@@ -173,18 +173,18 @@ assets:
 
 ### [iconfont](https://www.iconfont.cn/)
 
-阿里旗下，可定制自己所需图标集。国内速度良好。（推荐） [使用说明](https://www.iconfont.cn/help/detail?helptype=code)
+Under Alibaba, you can customize your own icon set. Good domestic speed. (Recommended) [Instructions for use](https://www.iconfont.cn/help/detail?helptype=code)
 
 ```yaml {5}
 assets:
     icons:
         type: font
-        # 这里是您从 iconfont 处获得的图标链接。
+        #  Here is the icon link you got from iconfont.
         css: //at.alicdn.com/t/font_383361_cfn4m13f4v.css
         js:
 ```
 
-多色图标使用方式：
+Multi-color icon use mode:
 
 ```yaml {3,5}
 assets:
@@ -195,26 +195,26 @@ assets:
 ```
 
 ::: warning
-当您覆盖内置图标资源时，因为博客 UI 中一些固定的图标使用到了，所以您需要将 [固定图标](#自定义图标-icon) 进行修改。
+When you overwrite the built-in icon resources, you need to change the fixed ICONS because some [fixed icons](#自定义图标-icon) in the blog UI are used.
 
-单色图标 和 多色图标是可以同时使用的，但是博客 UI 固定图标只能根据 `type` 决定使用哪一种。
+Monochrome and multicolor icons can be used together, but the blog UI fixed ICONS can only be used depending on `type`.
 :::
 
-## 用户信息 User
+## User info
 
-用户基本信息，用于博主名称、头像、友链交换规则、站点运行计时等等。
+Basic user information, used for blogger name, profile picture, link exchange rules, site runtime, and so on.
 
--   `name`：昵称，用于侧栏或其他区域标识
--   `first_name`：名，用于顶部将姓和名分别显示
--   `last_name`：姓，
--   `email`：邮箱
--   `domain`：域名
--   `avatar`：头像
--   `dark_avatar`：头像，黑暗主题时显示
--   `describe`：网站简介
--   `ruleText`：友链交换规则
--   ~~`birthDay`：博客计时开始时间 v1.1.7 弃用~~
--   ~~`copyrightYear`：版权日期 v1.1.7 弃用~~
+-   `name`: Nickname used for sidebar or other area identification
+-   `first_name`: Name, used at the top to display the first and last names separately
+-   `last_name`: Surname
+-   `email`: Email address
+-   `domain`: domain name
+-   `avatar`: avatar
+-   `dark_avatar`: Avatar, dark theme display
+-   `describe`: Website Introduction
+-   `ruleText`: buddy link exchange rule
+-   ~~`birthDay`： Blog timing start time v1.1.7 deprecated~~
+-   ~~`copyrightYear`：Copyright date v1.1.7 deprecated~~
 
 ```yaml
 user:
@@ -228,15 +228,15 @@ user:
     ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
 ```
 
-## 导航栏 TopBars
+## Navigation bar
 
-顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置。
+The logo for the top navigation is configured in [favicon](#favicon) and the theme toggle button is configured in [Theme mode](#theme-mode).
 
--   `title`：标题
--   `url`：路径，如果设置了二级菜单后，不需要已经一级菜单触发跳转可将其设置为 `'#'`
--   `noswup`：不使用局部刷新
--   `target`：打开链接方式，和 a 标签属性一致
--   `children`：二级菜单
+-   `title`: Title
+-   `url`: path. If the level-2 menu is set, you can set it to `'#'`
+-   `noswup`: Do not use local refresh
+-   `target`: Link opening mode, which is consistent with the attribute of label a
+-   `children`: Secondary menu
 
 ```yaml
 top_bars:
@@ -250,19 +250,19 @@ top_bars:
       noswup: true
 ```
 
-## 侧栏 Sidebar
+## Sidebar
 
-### 社交图标
+### Social icon
 
-默认内置 Font-Awesome Brand 图标，可根据您的需求添加，您可以通过在头部引入自定义图标资源来获取更多图标。
+The default built-in Font-Awesome Brand icon can be added according to your needs, and you can get more ICONS by introducing custom icon resources in the header.
 
--   `name`：链接名称
--   `icon`：图标 class
--   `url`：链接
+-   `name`: Link name
+-   `icon`: Icon class
+-   `url`: Link
 
 ```yaml
 sidebar:
-    social: # 社交地址
+    social: # Social Address
         - name: github
           icon: fab fa-github
           url: https://github.com
@@ -271,17 +271,17 @@ sidebar:
           url: https://gitee.com
 ```
 
-如果您不想放置任何链接，仅需在 `sidebar` 中设置：
+If you do not want to place any links, simply set the following in the `sidebar`:
 
 ```yaml
 sidebar:
     social:
 ```
 
-### 打字动画
+### Typing animation
 
--   `typedTextPrefix`：为固定前缀
--   `typedText`：为打字效果切换条目，可设置多条，按顺序切换。
+-   `typedTextPrefix`: indicates a fixed prefix
+-   `typedText`: To switch entries for typing effect, multiple entries can be set and switched in order.
 
 ```yaml
 sidebar:
@@ -289,36 +289,36 @@ sidebar:
     typedText: ["Web Developer"]
 ```
 
-### 侧栏信息
+### Sidebar info
 
-侧栏信息是一个数组，里面元素 key-val 形式的。
+The sidebar information is an array of key-val elements.
 
 ```yaml
 sidebar:
-    info: # 个人信息
-        - key: 地址
-          val: 火星
-        - key: 年龄
+    info:
+        - key: address
+          val: Mars
+        - key: age
           val: 18
 ```
 
-## 横幅 Banner
+## Banner
 
-每个页面横幅都可以自定义不同背景图、标语等，当您需要视频背景的时候，您的视频格式需要为 MP4、WebM 、Ogg 等格式。
+Each page banner can be customized with different background images, slogans, etc. When you need video background, your video format should be MP4, WebM, Ogg, etc.
 
--   `default`：默认配置
-    -   `type`：横幅类型 img、slideshow、video
-    -   `bgurl`：背景图地址，如果 type 是 slideshow，必须为数组。如果 type 是 img 时，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
-    -   `bannerTitle`：横幅上标题
-    -   `bannerText`：横幅描述
-    -   `position`： 同 CSS object-position
-    -   `fit`：同 CSS object-fit
--   `index`：首页 (属性字段和上面保持一致)
-    -   `videoUrl`：视频地址 (仅首页有)
--   `archive`：分类页
--   `links`：友链页
--   `comment`：评论页
--   `about`：关于
+-   `default`: Default configuration
+    -   `type`: Banner types img、slideshow、video
+    -   `bgurl`: Background image address, if type is slideshow, must be an array. If type is img, it can be a string or an array. If the array length is 2, it will be switched automatically according to the theme.
+    -   `bannerTitle`: Banner title
+    -   `bannerText`: Banner description
+    -   `position`: same as CSS object-position
+    -   `fit`: Same as CSS object-fit
+-   `index`: Home page (property fields remain the same as above)
+    -   `videoUrl`: Video address (available on home page only)
+-   `archive`: Category page
+-   `links`: Friend link page
+-   `comment`: Comment page
+-   `about`About page
 
 ```yaml
 banner:
@@ -329,24 +329,24 @@ banner:
         bannerText: Hi my new friend!
 ```
 
-## 页脚 Footer
+## Footer
 
-此配置在 `v1.1.7+` 新增，以前版本在 [用户信息-user](#用户信息-user) 配置。
+This configuration was added in `v1.1.7+`. In previous versions, it was configured in [user info](#user-info).
 
-### 起始年份
+### Starting year
 
 ```yaml
 footer:
     copyrightYear: 2020
 ```
 
-### 驱动
+### Powered
 
-自豪地显示当前使用的博客框架 Hexo 与主题 Async 的名字及版本。
+Proudly displays the names and versions of the currently used blog framework Hexo and theme Async.
 
-如：`由 Hexo 驱动 v5.4.2 | 主题 - Async v1.1.7`
+Such as: `driven by Hexo v5.4.2 | theme - Async v1.1.7`
 
-让更多人知道 Hexo 与主题 Hexo-Theme-Async，这有利于开源社区进一步发展。
+Let more people know Hexo and the Theme hexo-theme-async, which is good for the open source community further development.
 
 ```yaml {3}
 footer:
@@ -354,31 +354,15 @@ footer:
         enable: true
 ```
 
-### 备案
+### Running time
 
-国内用户可以提供备案号，开启备案显示。
-
-备案信息默认链接为：<https://beian.miit.gov.cn/>
-
--   `enable`: 开启备案
--   `icp`: 备案号
-
-```yaml
-footer:
-    beian:
-        enable: true
-        icp: 苏ICP备xxxxxxxx号
-```
-
-### 运行时间
-
-默认关闭。
+This function is disabled by default.
 
 `本博客已萌萌哒地运行 442 天`
 
--   `enable`: 开启运行计时
--   `prefix`: 计时文案，如果需要自定义，请覆盖语言文件里 footer.tips ，个性化语言 [参考这里](#语言-language)
--   `start_time`: 计时开始时间，浏览器支持的日期格式即可
+-   `enable`: Enable the runtime
+-   `prefix` : Timing copy, if you need to customize, please override the language file footer.tips, personalized language [refer to here](#language)
+-   `start_time`: Time the start time in any date format supported by the browser
 
 ```yaml
 footer:
@@ -388,60 +372,59 @@ footer:
         start_time: 04/10/2022 17:00:00
 ```
 
-### 自定义文本
+### Custom text
 
-`custom_text` 为自定义页脚，可以包含 HTML。
-譬如有时使用其他服务商进行托管页面，或一些 ICP 之外的备案信息。
+`custom_text` is a custom footer that can contain HTML. For example, sometimes use other service providers for hosting pages, or some ICP outside of the record information.
 
 ```yaml
 footer:
     custom_text: Hosted by <a href="https://github.com" rel="noopener" target="_blank">Github Pages</a>
 ```
 
-## 文章 Article
+## Article
 
-这里是一些关于文章相关配置合集。
+Here is a collection of articles related to configuration.
 
-### 打赏 Reward
+### Reward
 
-开启后，将在每篇文章 `post` 末尾显示打赏按钮。
+When enabled, a tip button will be displayed at the end of each `post`.
 
--   `enable`: 开启打赏
--   `comment`: 在打赏按钮下显示你想说的话
--   `url`: 你的打赏链接（当你开启打赏链接时，将自动跳转你的外部链接而不是展开二维码）
--   `methods`: 数组，打赏方式
+-   `enable`: Start tipping
+-   `comment`: Show what you want to say under the Tip button
+-   `url`: Your tip link (When you open the tip link, it automatically redirects to your external link instead of expanding the QR code)
+-   `methods`: Array, tip method
 
-#### 打赏二维码
+#### Reward QR code
 
--   `name`: 打赏方式
--   `path`: 图片路径
+-   `name`: Reward name
+-   `path`: picture path
 
-在 `_config.async.yml` 中进行覆盖。
+Override in` _config.async.yml`.
 
 ```yaml
 reward:
     enable: true
     comment: I'm so cute. Please give me money.
     methods:
-        - name: 支付宝
-          path: 二维码地址
+        - name: Alipay
+          path: Qr code address
 ```
 
-您也可以在某篇文章的首部单独设置是否开启打赏。
+You can also set whether to enable tipping separately at the beginning of an article.
 
 ```yaml
 reward: true
 # reward: false
 ```
 
-### 文章目录
+### Article toc
 
-文章目录，默认是关闭的。开启后，根据您的 [Markdown](https://segmentfault.com/markdown) 自动生成目录。如果您想关闭指定文章的目录，您可以在文章页单独配置当前文章关闭。[参考这里](/guide/page.html#文章-posts)
+Article tocs, which is closed by default. When enabled, the directory is automatically generated based on your [Markdown](https://segmentfault.com/markdown) . If you want to close the directory for a specified article, you can configure the current article to close separately on the article page. Refer to [here](/guide/page.html#文章-posts)
 
--   `enable`：是否开启
--   `list_number`：是否显示编号
--   `max_depth`：生成 TOC 的最大深度
--   `min_depth`：生成 TOC 的最小深度
+-   `enable`: Whether to enable
+-   `list_number`: Indicates whether to display the number
+-   `max_depth`: Indicates the maximum depth of the TOC
+-   `min_depth`: Indicates the minimum depth to generate the TOC
 
 ```yaml
 toc:
@@ -453,35 +436,35 @@ toc:
 
 ### 图片懒加载
 
-默认开启，将会为 Markdown 的图片 img 加上 loading="lazy" 属性。
+Enabled by default, will add loading="lazy" attribute to Markdown image img.
 
 ```yaml
 lazyload:
     enable: true
 ```
 
-### 归档页
+### Archive page
 
-默认下归档页时间轴卡片显示了标题和摘要信息，如果设置为 `less` 将只显示标题。
+By default, the archive page timeline card displays the title and summary information. If set to `less`, only the title is displayed.
 
--   `type`: 显示方式，可选 `more` || `less`
+-   `type`: Display mode. This parameter is optional `more` || `less`
 
 ```yaml
 archive:
     type: more # less more
 ```
 
-### 版权信息
+### Copyright info
 
-设置您的文章的分享版权
+Set the sharing copyright of your article
 
-> [关于许可协议](https://creativecommons.org/licenses/)
-> 默认使用 署名-非商业性使用-相同方式共享 4.0，即 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)。
+> [About the license agreement](https://creativecommons.org/licenses/)
+> default uses attribution - Non-commercial - Same way Share [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)。
 
--   `license`：设置证书 (by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero)
--   `language`：设置语言 (deed.zh | deed.en | deed.ja ｜ ...)
--   `post`：在每篇文章末尾显示
--   `clipboard`：是否在复制文章时，在剪贴板中追加版权信息（默认关闭）
+-   `license`: set certificate (by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero)
+-   `language`: set language (deed.zh | deed.en | deed.ja ｜ ...)
+-   `post`: displayed at the end of each article
+-   `clipboard`: Whether to append copyright information to Clipboard when copying articles (default off)
 
 ```yaml
 creative_commons:
@@ -491,8 +474,8 @@ creative_commons:
     clipboard: false
 ```
 
-> 你的 `url` 请在 Hexo 工作目录下的 `_config.yml` 中设置。
-> [配置｜ Hexo](https://hexo.io/zh-cn/docs/configuration#%E7%BD%91%E5%9D%80)
+> Your `url` is set in `_config.yml` under the Hexo working directory.
+> [Config ｜ Hexo](https://hexo.io/zh-cn/docs/configuration#%E7%BD%91%E5%9D%80)
 
 ```yaml
 # URL
@@ -500,12 +483,12 @@ creative_commons:
 url: https://www.imalun.com
 ```
 
-### 自定义封面图
+### Customize the cover image
 
-当您没有设置文章封面图时，将会显示主题内置的封面图，您可以通过修改配置来替换默认行为。
+When you do not set an article cover image, the theme's built-in cover image is displayed, and you can change the configuration to replace the default behavior.
 
--   `default`: 封面默认显示的图片，类型为 `string` || `array`
--   `type`: 封面显示类型，可选 `img` || `date` || `random`
+-   `default`: Indicates the default image displayed on the cover. The type is `string` || `array`
+-   `type`: Cover display type (optional) `img` || `date` || `random`
 
 ```yaml
 cover:
@@ -513,10 +496,10 @@ cover:
     type: img
 ```
 
-### 上下篇文章
+### Upper and lower articles
 
--   `enable`: 是否开启
--   `type`: 卡片类型，可选 `large` || `small`
+-   `enable`: Whether to enable
+-   `type`: Card type, optional `large` || `small`
 
 ```yaml
 post_pagination:
@@ -524,14 +507,14 @@ post_pagination:
     type: large # large || small
 ```
 
-### 文章过期提醒
+### Article expiration reminder
 
-您可以给文章添加过期提醒。
+You can add expiration reminders to articles.
 
--   `enable`: 是否开启，默认关闭
--   `style`: 卡片类型，可选 `simple` || `flat`
--   `limit_day`: 超过多少天未更新提醒
--   `position`: 显示在文章位置，可选 `top` || `bottom`
+-   `enable`: Whether to enable it. It is disabled by default
+-   `style`: Card type, optional `simple` || `flat`
+-   `limit_day`: How many days have passed without updating alerts
+-   `position`: Displayed in the article location, optional `top` || `bottom`
 
 ```yaml
 notice_outdate:
@@ -541,12 +524,12 @@ notice_outdate:
     position: top
 ```
 
-### 文章破图时默认图片
+### The article is broken when the default picture
 
-您可以添加图片加载失败时显示默认图片。
+You can add pictures to display default pictures when loading fails.
 
--   `flink`: 友链头像破图时显示默认图片
--   `post_page`: 文章中图片破图时显示默认图片
+-   `flink`: The default picture is displayed when the friend's profile picture is broken
+-   `post_page`: The default picture is displayed when the picture in the article is broken
 
 ```yaml
 error_img:
@@ -554,33 +537,33 @@ error_img:
     post_page: /img/404.jpg
 ```
 
-## 其他配置 Other
+## Other config
 
-这里是一些关于页面中杂项配置合集。
+Here is a collection of miscellaneous configurations on the page.
 
-### 分类卡片
+### Categorie card
 
-首页中显示的分类卡片。
+The category card displayed on the home page.
 
-默认情况下，会显示分类里文章最多的两个，您可以通过修改配置来替换默认行为。
+By default, the two most articles in the category are displayed, and you can change the configuration to replace the default behavior.
 
--   `enable`: 是否开启
--   `len`: 需要显示分类数量，默认为 2 个
--   `list`: 如果你需要固定显示分类，可以通过这个字段配置
+-   `enable`: Whether to enable
+-   `len`: Indicates the number of categories to be displayed. The default value is 2
+-   `list`: If you need fixed display categories, you can configure them through this field
 
 ```yaml
 categorie_card:
     enable: true
     len: 2
-    list: ["分类1", "分类2"]
+    list: ["Category 1", "Category 2"]
 ```
 
-### 固定按钮块
+### Fixed button block
 
-右下角悬浮按钮块。
+Lower right corner suspension button block.
 
--   `readmode`: 阅读模式按钮
--   `aside`: 单双栏切换按钮
+-   `readmode`: Read Mode button
+-   `aside`: Single or double column switch button
 
 ```yaml
 rightside:
@@ -588,13 +571,13 @@ rightside:
     aside: false
 ```
 
-### 日期格式化 Date Format
+### Date Format
 
-用于配置主题中使用日期的格式。
+Used to configure the format of the date used in the theme.
 
--   `post_card`：文章卡片的格式
--   `post_info`：文章详情页里的格式
--   `archive`：归档分类页的格式
+-   `post_card`：Format of the article card
+-   `post_info`: Format in the detail page of the article
+-   `archive`: Format of the archive category page
 
 ```yaml
 datetime_foramt:
@@ -609,16 +592,16 @@ datetime_foramt:
         time: HH:mm
 ```
 
-### 代码高亮 Highlight
+### Code Highlight
 
-代码块中的所有功能只适用于 Hexo 自带的代码渲染，如果使用第三方的渲染器，不一定会有效
+All features in the code block apply only to the code render that comes with Hexo, and may not work if a third party renderer is used
 
--   `theme`：是否使用内置代码高亮配色
--   `title`：代码块标题样式，`mac`、`default`
--   `copy`：是否可以一键复制，默认开启
--   `lang`：是否显示代码块语言，默认显示
--   `code_word_wrap`：是否强制换行，默认关闭，开启后需关闭代码行号
--   `height_limit`：设置代码块高低
+-   `theme`：Whether to use built-in code to highlight the color scheme
+-   `title`：block title style，`mac`、`default`
+-   `copy`：Specifies whether one-click replication is enabled. This parameter is enabled by default
+-   `lang`：Whether to display the code block language. It is displayed by default
+-   `code_word_wrap`：Whether to force newlines. This parameter is disabled by default. After this parameter is enabled, the code line number must be disabled
+-   `height_limit`：Sets the code block height
 
 ```yaml
 highlight:
@@ -627,26 +610,26 @@ highlight:
     copy: true
     lang: true
     code_word_wrap: fasle
-    height_limit: 200 # 超出时，显示折叠按钮
+    height_limit: 200 #  When exceeded, the fold button is displayed
 ```
 
-通过 CSS 变量来覆盖默认色
+Override the default color with CSS variables
 
 ```css
 :root {
-	/* 代码块背景色、前景色 */
+	/* Block background color, foreground color */
 	--highlight-background: #f6f8fa;
 	--highlight-foreground: #4d5a60;
-	/* 行号 */
+	/* Line number */
 	--highlight-gutter-color: #90a4ae;
 	--highlight-gutter-bg-color: #f1f1f1;
-	/* 工具栏 */
+	/* Toolbar */
 	--highlight-tools-color: #646464;
 	--highlight-tools-bg-color: #e6ebf1;
-	/* 滚动条 */
+	/* Scroll bar */
 	--highlight-scrollbar: #d7d7d7;
 
-	/* 代码 */
+	/* Code */
 	--highlight-addition: #e32323;
 	--highlight-deletion: #bf42bf;
 	--highlight-comment: rgba(149, 165, 166, 0.8);
@@ -661,63 +644,63 @@ highlight:
 }
 ```
 
-您也可以将 `theme: false`，然后引入 `highlight.js` 和 `PrismJS` 的主题文件，来自定义代码块高亮。
+You can also use `theme: false` and then introduce `highlight.js` and `PrismJS` theme files that come from defining code blocks to highlight.
 
 ```yaml
 highlight:
     theme: false
 ```
 
-## 自定义图标 Icon
+## Custom Icon
 
-博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
+There are some fixed icons in the blog, such as theme switching icon, category icon and so on.
 
-可以通过配置 `icons` 修改：
+You can change this by configuring `icons`:
 
 ```yaml
 icons:
-    # 主题切换图标
+    # Theme switch icon
     sun: far fa-sun
     moon: far fa-moon
-    # 首页视频播放
+    # Home video play
     play: fas fa-play
-    # 邮箱
+    # Email
     email: far fa-envelope
-    # 分类进入图标
+    # Category entry icon
     next: fas fa-arrow-right
-    # 文章详情 日期
+    # Article details date
     calendar: far fa-calendar-alt
-    # 文章详情 时间
+    # Article details time
     clock: far fa-clock
-    # 文章详情 作者
+    Article details author
     user: far fa-user
-    # 返回顶部 v1.1.3+
+    # Return to top v1.1.3+
     back_top: fas fa-arrow-up
-    # 查询 v1.1.5+
+    Query v1.1.5+
     search: fas fa-search
-    # 关闭 v1.1.5+
+    # Disable v1.1.5+
     close: fas fa-times
-    # 打赏 v1.1.7+
+    # Tip v1.1.7+
     reward: fas fa-hand-holding-usd
-    # 用户信息和文章目录切换 v1.2.10+
+    # User Info and article directory switch v1.2.10+
     user_tag: fas fa-user-alt
     toc_tag: fas fa-th-list
-    # 右下角固定按钮 v1.2.11+
+    # Lower right corner fixed button v1.2.11+
     read: fas fa-book-reader
     arrows: fas fa-arrows-alt-h
 ```
 
-## 自定义样式 Style
+## Custom Style
 
-相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
+Instead of the `head` import, you can write `less` files directly and use the variables that the theme already has, which will be compiled with the theme style files.
 
 ::: danger
-在 `1.2.x + ` 修改主题切换实现方式，由原来多份样式文件调整为 CSS 变量形式。所以自定义样式也有些许变化。
+In `1.2.x +`, the implementation method of theme switching was changed from multiple style files to CSS variable form. So custom styles have changed a little bit.
 :::
 
-### `1.2.x` 版本
+### `1.2.x` version
 
--   新建 `source/_data/style/index.less`，开始编写你的自定义样式了。
+-   Newly built `source/_data/style/index.less` to start writing your custom styles.
 
 ```text {5}
 ┌── blog
@@ -728,9 +711,9 @@ icons:
 │   └── themes
 ```
 
-`:root` 下为白色主题，`:root.dart` 下为暗黑色主题，
+White theme under `:root`, dark theme under `:root.dart`,
 
-修改主题色示例：
+Example of modifying the theme color:
 
 ```less source/_data/style/index.less
 .var-primary(@primary: #afb42b; @primary-weak: #c0ca33) {
@@ -751,7 +734,7 @@ icons:
 }
 ```
 
-跟随操作系统选择主题示例：
+Follow the operating system to select a theme example:
 
 ```less source/_data/style/index.less
 @media (prefers-color-scheme: dark) {
@@ -761,10 +744,10 @@ icons:
 }
 ```
 
-### `1.1.x` 版本
+### `1.1.x` version
 
--   新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
--   如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
+-   Newly built` source/_data/style/dark.less`,`source/_data/style/light.less` To start writing your custom styles. They will merge todark,lightGo between the two modes.
+-   You can add variables if you need to override them `source/_data/style/dark.variables.less`,`source/_data/style/light.variables.less`, overwrite.
 
 ```text {4,5,6,7,8}
 ┌── blog
@@ -778,7 +761,7 @@ icons:
 │   └── themes
 ```
 
-修改主题色示例：
+Example of modifying the theme color:
 
 ```less source/_data/style/dark.less
 // source/_data/style/dark.less
@@ -792,74 +775,74 @@ icons:
 @primary-weak: #7a89df;
 ```
 
-## 自定义模板 Layout
+## Customize the template Layout
 
-主题允许您自定义模板来替换主题模板，此功能需要您的版本 v2.0.0+ 。
+Themes allow you to customize templates to replace theme templates. This feature requires your version `v2.0.0+`.
 
--   `path`: 指定自定义模板目录（默认情况下不要修改）
+-   `path`: Specify the custom template directory (not modified by default)
 
 ```yaml
 layout:
     path: layout
 ```
 
-内置模板列表：
+List of built-in templates:
 
 ```yaml
 layout:
     path: layout
-    # 整体布局结构模板
+    # Overall layout structure template
     main: _partial/main
-    # 顶部菜单栏模板
+    # Top menu bar template
     header: _partial/header
-    # 顶部横幅模板
+    # Top banner template
     banner: _partial/banner
-    # 侧栏模板
+    # Sidebar template
     sidebar: _partial/sidebar/index
-    # 页脚模板
+    # Footer template
     footer: _partial/footer
-    # 文章信息模板
+    # Article information template
     post_info: _partial/post/post-info
-    # 文章内容模板
+    # Article content template
     post_content: _partial/post/post-content
-    # 文章信息里打赏模板
+    # Tip template in article information
     reward: _partial/post/reward
-    # 文章详情版权信息模板
+    Copyright information template for article details
     post_copyright: _partial/post/post-copyright
-    # 文章详情上下篇文章模板
+    # Template for each article
     post_next_prev: _partial/post/post-next-prev
-    # 文章卡片信息模板
+    # Article card information template
     post_card: _partial/post/post-card
-    # 文章卡片信息模板
+    # Article card information template
     post_card_mini: _partial/post/post-card-mini
-    # 顶部菜单-logo部分
+    # Top Menu -logo section
     header_logo: _widget/header_logo
-    # 顶部菜单-菜单部分
+    # Top Menu - Menu section
     header_menu: _widget/header_menu
-    # 顶部菜单-主题切换部分
+    # Top Menu - Theme switching section
     header_theme: _widget/header_theme
-    # 顶部菜单-查询部分
+    # Top Menu - Query section
     header_search: _widget/header_search
-    # 分类卡片模板
+    # Sort card template
     categorie: _widget/categorie
-    # 分页模板
+    Paging template
     paginator: _widget/paginator
-    # 返回顶部模板
+    # Return to top template
     back_to_top: _widget/back-to-top
-    # 固定按钮模板
+    Fixed button template
     fixed_btn: _widget/fixed-btn
-    # 侧栏
+    # Sidebar
     sidebar_user: _partial/sidebar/card/user
     sidebar_social: _partial/sidebar/card/social
     sidebar_info: _partial/sidebar/card/info
     sidebar_email: _partial/sidebar/card/email
-    # 评论插件模板
+    # Comment plugin template
     comment: _third-party/comment/index
-    # 页面切换动画模板
+    # Page switch animation template
     page_loading: _partial/preloader/page-preloader
-    # 主题切换动画模板
+    # Theme switch animation template
     mode_change: _partial/preloader/change-mode-preloader
-    # 内置几个页面模板
+    # Built-in several page templates
     page_about: _partial/page/about
     page_archive: _partial/page/archive
     page_category: _partial/page/category
@@ -869,9 +852,9 @@ layout:
     page_tag: _partial/page/tag
 ```
 
-用覆盖 footer 来举个例子：
+An example would be overriding footer:
 
-不修改 `layout.path` 时，您的目录结构如下，并添加 `footer.ejs`
+Without changing `layout.path`, you have the following directory structure and add `footer.ejs`
 
 ```text {2,3}
 ┌── blog
@@ -882,43 +865,44 @@ layout:
 │   └── themes
 ```
 
-编写好 `footer.ejs` 后，修改配置如下：
+After writing `footer.ejs`, modify the configuration as follows:
 
-上面 `footer.ejs` 的目录是 `layout/footer.ejs` 则为 `async/footer`， 如果 `footer.ejs` 的目录是 `layout/demo/footer.ejs` 则为 `async/demo/footer`。
+directory is `layout/footer.ejs` is `async/footer.ejs`,directory is l`ayout/demo/footer.ejs` is `async/demo/footer`.
 
-必须已 `async/` 作为根（以免和主题冲突）。
+Must have `async/` as the root (to avoid conflicts with the theme).
 
 ```yaml
 layout:
     footer: async/footer
 ```
 
-可以前往 [演示站点](https://hexo-theme-async.imalun.com/demo/) 查看效果，首页 footer 和 页面切换已是自定义效果了。
+You can go to the [demo site](https://hexo-theme-async.imalun.com/demo/) to see the effect, home page footer and page switching is a custom effect.
 
 ::: tip
-您在 `footer.ejs` 可以访问到所有配置，全局变量，和辅助函数等，和主题模板一致。
+You can access all configurations, global variables, and helper functions in `footer.ejs`, just like the theme template.
 
-除了使用 `ejs` 以外，您可以使用 hexo 支持的任意渲染器。
+In addition to using `ejs`, you can use any renderer supported by hexo.
 
-比如使用 pug ，您只需要安装 `hexo-render-pug` 后即可使用。
+For example, with pug, you only need to install `hexo-render-pug` to use it.
 :::
 
-## 渐进式应用 PWA
+## PWA
 
-开始 PWA 只需要设置 sw 为 true 即可，本主题已添加 Server Worker 相关操作 。
+To start PWA, you only need to set sw to true. Server Worker related operations have been added in this topic.
 
 ```yaml
 sw: true
 ```
 
 ::: warning
-使用 PWA 要求
+Use PWA requirements
 
--   站点必须为 HTTPS。
--   添加一个清单文件（manifest)，直接在 `source` 下新增。
-    :::
+-   The site must be HTTPS.
+-   Add a manifest file directly in `source` New.
 
-清单文件 结构
+:::
+
+Manifest file structure
 
 ```json
 {
@@ -945,6 +929,6 @@ sw: true
 }
 ```
 
-## 更多配置
+## More configuration
 
-你可以直接查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml) 文件及相关注释。
+You can directly see [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml) file and related comments.

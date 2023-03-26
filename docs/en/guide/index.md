@@ -1,8 +1,8 @@
 # Usage guide
 
-This author is on the topic of Hexo, so make sure you understand the basic uses of Hexo. For more information, see [Hexo's website](https://hexo.io/).
+This is a Hexo theme. so make sure you understand the basic uses of Hexo. For more information, see [Hexo's website](https://hexo.io/).
 
-If you have any bug reports or feature suggestions on this topic, you can initiate [Issues](https://github.com/MaLuns/hexo-theme-async/issues).
+If you have any bug reports or feature suggestions on this theme, you can initiate [Issues](https://github.com/MaLuns/hexo-theme-async/issues).
 
 If you have other related ideas and questions, head over to [Discussions](https://github.com/MaLuns/hexo-theme-async/discussions).
 
@@ -100,7 +100,7 @@ If you are installing the theme by cloning the code locally, it is also recommen
 
 Such as:
 
-The complete configuration of the topic schema is as follows
+The complete configuration of the theme schema is as follows
 
 ```yaml
 theme:

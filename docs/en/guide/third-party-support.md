@@ -1,130 +1,134 @@
-# 第三方支持
+# Third-party support
 
-所有配置默认在 `_config.async.yml` 文件下进行。
+All configuration is done by default in the `_config.async.yml` file.
 
-与额外依赖库支持的区别，此处主要为使用第三方服务商提供的服务实现。
+The difference from the additional packagfe support, here is mainly to use the service implementation provided by third-party service providers.
 
-## 分析统计
-默认内置了 百度、谷歌、腾讯三个种。
+## Analysis Statistics
 
-- `enable`: 是否开启
-- `baidu`: 百度统计的Key
-- `google`: Google统计的Tracking ID
-- `tencent`: 腾讯统计的H5 App id
-    - `sid`:
-    - `cid`:
+The default built-in Baidu, Google, Tencent three.
 
-``` yaml
-webAnalytics:  
-  enable: false
-  baidu:   
-  google:  
-  tencent: 
-    sid:
-    cid:
-```
-以百度统计为例：
-``` yaml
-webAnalytics:  
-  enable: true
-  baidu:  百度统计Key
+-   `enable`: whether to enable
+-   `baidu`: Key of Baidu statistics
+-   `google`: Indicates the Tracking ID of Google statistics
+-   `tencent`:H5 App id collected by Tencent
+    -   `sid`:
+    -   `cid`:
+
+```yaml
+webAnalytics:
+    enable: false
+    baidu:
+    google:
+    tencent:
+        sid:
+        cid:
 ```
 
-## 评论
+Take Baidu Statistics as an example:
+
+```yaml
+webAnalytics:
+    enable: true
+    baidu: Baidu statistics Key
+```
+
+## Comment
+
 ::: warning
-~~因为主题滚动插件原因，需要监听评论区域 DOM 变动，用来更新插件滚动监听信息，所以导致对兼容三方插件变得比较繁琐~~ (在 v1.1.3 进行修复)。本人使用评论插件有限，所以做了兼容处理比较少。
+~~Due to the theme scrolling plug-in, the DOM changes in the comment area need to be monitored to update the scrolling listening information of the plug-in, so the compatible three-party plug-in becomes tedious~~ (fixed in v1.1.3). I use comment plug-in limited, so do compatibility processing is relatively little.
 :::
-### bComments
-b-comments 是什么 [参考这里](https://github.com/MaLuns/bcommentjs)
 
-- `enable`: 默认关闭
-- `env`:腾讯云环境ID 
+### bComments
+
+What are b-comments references [here](https://github.com/MaLuns/bcommentjs)
+
+-   `enable`: Disabled by default
+-   `env`:Tencent cloud environment ID
 
 ```yaml
 comment:
-  bComments:
-    enable: true
-    env: 腾讯云环境ID
+    bComments:
+        enable: true
+        env: Tencent cloud environment ID
 ```
 
 ### Twikoo
 
-一个简洁、安全、免费的静态网站评论系统，基于[腾讯云开发](https://curl.qcloud.com/KnnJtUom)。
+A simple, safe, free static website review system, based on [Tencent cloud development](https://curl.qcloud.com/KnnJtUom).
 
 > 后端部署请参见[官方文档](https://twikoo.js.org/)。
 > [快速上手](https://twikoo.js.org/quick-start.html)
 
 ```yaml
 comment:
-  twikoo:
-    enable: true
-    envId: xxxxxxxxxxxxxxx # 腾讯云环境id
-    region: # 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
-    option: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+    twikoo:
+        enable: true
+        envId: xxxxxxxxxxxxxxx # Tencent Cloud environment id
+        region: # Environment region, the default is ap-shanghai. If your environment region is not shanghai, this parameter is required
+        option: # A custom js path for different articles. If your article path is not location.pathname, pass this parameter
 ```
-
 
 ### Giscus
 
-[Giscus](https://github.com/laymonage/giscus) 是由 GitHub Discussions 提供支持的评论系统。
-让访问者通过 GitHub 在您的网站上留下评论和反应！
-受到 [utterances](https://utteranc.es/) 的极大启发。
+[Giscus](https://github.com/laymonage/giscus) is a commenting system supported by GitHub Discussions. Let visitors leave comments and reactions on your site via GitHub! Greatly inspired by [utterances](https://utteranc.es/).
 
-> Giscus （基于 Discussions）相比 utterances（基于 Issue）权限更加细分，且可指定回复。更像一个评论系统。
+> Giscus (Discussions) are more detailed than utterances (issue-based), and responses can be specified. More like a comment system.
 
-配置信息字段对应参考 [Giscus Docs](https://giscus.app/zh-CN)
+Refer to [Giscus Docs](https://giscus.app/zh-CN) for the configuration information fields
 
 ```yaml
 comment:
-  giscus:
-    enable: false
-    repo:
-    repo-id:
-    category:
-    category-id:
-    mapping: pathname
-    reactions-enabled: 1
-    emit-metadata: 0
-    lang: zh-CN
-    theme: 
-      light: light
-      dark: dark
+    giscus:
+        enable: false
+        repo:
+        repo-id:
+        category:
+        category-id:
+        mapping: pathname
+        reactions-enabled: 1
+        emit-metadata: 0
+        lang: zh-CN
+        theme:
+            light: light
+            dark: dark
 ```
 
-### 集成其他评论插件
+### Integrate other commenting plug-ins
 
-若果您需要集成一些三方评论插件，您可以通过修改下列 layout 文件进行集成。
+If you need to integrate some three-party comment plug-ins, you can do so by modifying the following layout file.
 
 ::: tip
-增加三方评论插件，一般来说只需要按照三方插件添加对应 `js`、`css` 文件，在 `layout/_third-party/comment/` 添加对应初始化代码，处理好主题切换样式就可以了。
+Generally speaking, you only need to add corresponding `js` and `css` files according to the three-party comment plug-in, add corresponding initialization code in `layout/_third-party/comment/`, and handle the theme switching style well.
 :::
 
-以 Twikoo 为例：
+Take Twikoo for example:
 
-第一部分：
+Part I:
 
-你需要`layout/_third-party/comment/twikoo.ejs` 文件，在里面编写评论插件使用的 HTML 相关代码。
+You'll need a `layout/_third-party/comment/twikoo.ejs` file where you'll write the HTML-related code used by the comment plug-in.
 
-``` html 
+```html
 <div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
-    <div id="tcomment"></div>
+	<div id="tcomment"></div>
 </div>
 ```
 
-第二部分：
+Part Two:
 
-添加配置 twikoo CDN 配置
+Add Config twikoo CDN Config
 
 ```yaml
 assets:
-  plugin:
-     twikoo: //cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js
+    plugin:
+        twikoo: //cdn.jsdelivr.net/npm/twikoo@1.6.7/dist/twikoo.all.min.js
 ```
-在 `layout/_third-party/plugin.ejs` 里，根据配置加载插件。仅在页面开始评论配置加载插件，并在初始化代码块上添加 `data-swup-reload-script` 标识。
 
-`data-swup-reload-script` 表示在 Pjax 里会重新执行当前代码块。
+In `layout/_third-party/plugin.ejs`, load the plug-in according to the configuration. Comment on the configuration load plug-in only at the beginning of the page and add the `data-swup-reload-script` identifier to the initialization block.
 
-``` js
+`data-swup-reload-script` indicates that the current code block will be reexecuted in Pjax.
+
+```js
 <% if(page.comments) { %>
   <% let comment = theme.comment%>
   <% if(comment.twikoo.enable) { %>
@@ -138,71 +142,73 @@ assets:
 <% } %>
 ```
 
-`layout/comment.ejs` 文件为留言页面模板，一般不需要额外修改。
+The `layout/comment.ejs` file is a template for the comment page and does not need to be modified.
 
-如果您集成了三方评论插件，欢迎您提交 [Pull Request](https://github.com/MaLuns/hexo-theme-async/pulls) ，完善主题健壮性。
+If you integrate a three-party comment plug-in, you are welcome to submit a [Pull Request](https://github.com/MaLuns/hexo-theme-async/pulls) to improve topic robustness.
 
-### 使用自定义模板添加评论插件
+### Add comment plug-ins using custom templates
 
-在不修改源码情况下，您也可以通过自定义模板来。关于自定义模板可以参考 [这里](/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF-layout)。
+You can also customize the template without modifying the source code. See [here](/guide/config.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF-layout)。 for custom templates.
 
 ::: tip
-在自定义模板情况下，您只需要处理评论的初始化相关情况就可以了，比如评论插件位置和哪些页面显示将根据配置保持一致行为，主题会处理这部分操作。
+In the case of custom templates, you only need to handle the initialization of comments, such as the comment plug-in location and which page displays will behave consistently according to the configuration, which is handled by the theme.
 :::
-## 搜索
 
-### 引擎搜索
+## Search
 
-跳转搜索引擎搜索你的网站内容
+### Engine search
 
-可通过 `site:www.imalun.com 想要搜索的内容` 进行搜索
+Jump to search engines to search your site content
+You can search for the content you want to search at `site:www.imalun.com`
 
 🌰：<https://www.google.com/search?q=site:www.imalun.com%20白云苍狗>
 
-针对搜索引擎配置：
-- `href`：搜索引擎地址。
-- `domain`：您的域名地址。
+For search engine configuration:
 
-设置 `type` 为 `engine`。
+-   `href`: search engine address.
+-   `domain`: Your domain name address.
+
+Set `type` to `engine`。
+
 ```yaml {3}
 search:
-  enable: true
-  type: engine
-  href: 'https://www.google.com/search?q=site:'
-  # href: "https://www.baidu.com/s?wd=site:"
-  # href: "https://www.bing.com/search?q=site:"
-  domain: www.imalun.com
+    enable: true
+    type: engine
+    href: "https://www.google.com/search?q=site:"
+    # href: "https://www.baidu.com/s?wd=site:"
+    # href: "https://www.bing.com/search?q=site:"
+    domain: www.imalun.com
 ```
 
-### 本地搜索
+### Local search
 
-您需要先安装 [hexo-generator-searchdb](https://github.com/next-theme/hexo-generator-searchdb)，并参考配置文档。
+You need to install the [hexo-generator-searchdb](https://github.com/next-theme/hexo-generator-searchdb) first and refer to the configuration documentation.
 
 ```bash
 npm install hexo-generator-searchdb
 ```
 
-针对本地搜索配置：
-- `preload`：是否预加载搜索。
-- `trigger`：默认回车或点击时触发搜索，设置为 `auto` 时 `input` 触发搜索。
+For local search configuration:
 
-只需要修改 `type` 为 `local`。
+-   `preload`: Whether to preload the search.
+-   `trigger`：By default, search is triggered when enter or click. Set `auto` to `input` to trigger search.
+
+You only need to change `type` to `local`。
 
 ```yaml {3}
 search:
-  enable: true
-  type: local
+    enable: true
+    type: local
 ```
 
 ## SEO
 
-### 百度自动推送
+### Baidu automatic push
 
-自动推送#
-将其设置为 true，以开启百度自动推送。
+Set this to true to enable Baidu Auto Push.
 
-> 即每次页面被访问时，将自动向百度提交该页面链接。（有利于百度的 SEO）
+> That is, every time the page is visited, it will automatically submit the page link to Baidu. (Beneficial to Baidu's SEO)
 
-``` yaml
+```yaml
 baidu_push: true
 ```
