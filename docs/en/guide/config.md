@@ -807,7 +807,7 @@ layout:
     post_content: _partial/post/post-content
     # Tip template in article information
     reward: _partial/post/reward
-    Copyright information template for article details
+    # Copyright information template for article details
     post_copyright: _partial/post/post-copyright
     # Template for each article
     post_next_prev: _partial/post/post-next-prev
@@ -825,11 +825,11 @@ layout:
     header_search: _widget/header_search
     # Sort card template
     categorie: _widget/categorie
-    Paging template
+    # Paging template
     paginator: _widget/paginator
     # Return to top template
     back_to_top: _widget/back-to-top
-    Fixed button template
+    # Fixed button template
     fixed_btn: _widget/fixed-btn
     # Sidebar
     sidebar_user: _partial/sidebar/card/user
