@@ -46,6 +46,7 @@ favicon:
   
 search:
   placeholder: Searching...
+  result_placeholder: Please enter keywords to search
   empty: 'We didn''t find any results for the search: ${query}.'
   hits: '${hits} results found'
   hits_time: '${hits} results found in ${time} ms'

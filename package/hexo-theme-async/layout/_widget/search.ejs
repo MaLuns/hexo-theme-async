@@ -2,12 +2,19 @@
     <div class="trm-search-popup">
         <div class="trm-search-wrapper">
             <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <%- icon(theme.icons.search) %>
+                </div>
                 <input class="trm-search-input" type="text" placeholder="<%- __('search.placeholder') %>">
                 <div class="trm-search-btn-close">
                     <%- icon(theme.icons.close)%>
                 </div>
             </div>
-            <div class="trm-search-result-container"> </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    <%- __('search.result_placeholder') %>
+                </div>
+            </div>
             <div class="trm-search-footer">
                 <div class="trm-search-stats"></div>
                 <ul class="trm-search-commands">
