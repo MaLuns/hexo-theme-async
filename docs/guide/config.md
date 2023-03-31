@@ -197,7 +197,7 @@ assets:
 ::: warning
 当您覆盖内置图标资源时，因为博客 UI 中一些固定的图标使用到了，所以您需要将 [固定图标](#自定义图标-icon) 进行修改。
 
-单色图标 和 多色图标是可以同时使用的，但是博客 UI 固定图标只能根据 `type` 决定使用哪一种。
+单色图标 和 多色图标是可以同时使用的，但是博客 UI 的**固定图标**只能根据 `type` 决定使用哪一种。
 :::
 
 ## 用户信息 User
@@ -332,6 +332,22 @@ banner:
 ## 页脚 Footer
 
 此配置在 `v1.1.7+` 新增，以前版本在 [用户信息-user](#用户信息-user) 配置。
+
+页脚所有配置预览：
+```yaml
+footer:
+  powered:
+    enable: true
+  beian:
+    enable: false
+    icp: 
+  copyrightYear:
+  live_time:
+    enable: false
+    prefix: footer.tips
+    start_time: 04/10/2022 17:00:00
+  custom_text:
+```
 
 ### 起始年份
 
@@ -763,8 +779,8 @@ icons:
 
 ### `1.1.x` 版本
 
--   新建 `source/_data/style/dark.less`、`source/_data/style/light.less`，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
--   如果需要覆盖变量可以添加 `source/_data/style/dark.variables.less`、`source/_data/style/light.variables.less`，进行覆盖。
+-   新建 **source/_data/style/dark.less**、**source/_data/style/light.less**，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
+-   如果需要覆盖变量可以添加 **source/_data/style/dark.variables.less**、**source/_data/style/light.variables.less**，进行覆盖。
 
 ```text {4,5,6,7,8}
 ┌── blog

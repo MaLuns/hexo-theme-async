@@ -24,11 +24,11 @@ export default defineConfig({
 
 	themeConfig: {
 		logo: "/logo.svg",
-		algolia: {
+		/* algolia: {
 			appId: "GER60TPC08",
 			apiKey: "993137f59d71d252c8bafbce33bda9c2",
 			indexName: "hexo_theme_async_docs",
-		},
+		}, */
 		editLink: {
 			pattern: "https://github.com/Maluns/hexo-theme-async/edit/master/docs/:path",
 			text: "帮助改善此页面！( ￣□￣)/",
