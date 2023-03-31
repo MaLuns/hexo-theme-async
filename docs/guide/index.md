@@ -137,5 +137,4 @@ theme:
 ## 安装演示视频 Demo Video
 
 安装示例视频
-
-<iframe src="//player.bilibili.com/player.html?aid=951745537&bvid=BV18s4y1J74g&cid=1073714902&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=951750989&bvid=BV1Cs4y1J7vv&cid=1077514563&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"> </iframe>
