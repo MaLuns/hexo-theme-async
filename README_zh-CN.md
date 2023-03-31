@@ -116,13 +116,6 @@ npm install hexo-theme-async@latest
             </a>
         </td>
         <td>
-            <a href="https://blog.wzwzx.cn" target="_blank">
-                <img width="80px" src="https://blog.wzwzx.cn/img/tx.jpg" />
-                <br />
-                <sub title="希望运气好一些">wzwzx</sub>
-            </a>
-        </td>
-        <td>
             <a href="https://www.bio-w.cn" target="_blank">
                 <img width="80px" src="https://bu.dusays.com/2022/10/17/634d313602a1e.png" />
                 <br />
@@ -150,13 +143,20 @@ npm install hexo-theme-async@latest
                 <sub title="Creativity,起飞！">31100Cafe</sub>
             </a>
         </td>
-    </tr>
-    <tr align="center">
         <td>
             <a href="https://hexo.yahoo94.love" target="_blank">
                 <img width="80px" src="https://yahoo94.love/upload/2022/11/11.png" />
                 <br />
                 <sub title="再过十年，我们还是过着今天。">乌冬</sub>
+            </a>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <a href="https://blog.gfxgy.cn/" target="_blank">
+                <img width="80px" src="https://blog.gfxgy.cn/img/my.jpg" />
+                <br />
+                <sub title="桃之夭夭，灼灼其华。">怵.</sub>
             </a>
         </td>
       </tr>
