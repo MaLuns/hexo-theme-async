@@ -3,7 +3,7 @@
     let ccVersion = (theme.creative_commons.license == 'zero') ? '1.0' : '4.0';
     let ccPrefix = (theme.creative_commons.license == 'zero') ? 'publicdomain' : 'licenses';
     let ccURL = 'https://creativecommons.org/' + ccPrefix + '/' + theme.creative_commons.license + '/' + ccVersion + '/' + theme.creative_commons.language;
-    let postURL = page.originalLink || page.permalink;
+    let postURL = decodeURI(page.originalLink || page.permalink);
 %>
 
 <ul class="trm-post-copyright">
