@@ -3,13 +3,14 @@
     <div class="row hidden-sm">
         <% 
             let cards = [] 
+            let categories = site.categories.toArray()
             if (Array.isArray(theme.categorie_card.list)) {
                 theme.categorie_card.list.forEach(title => {
-                    let categorie = site.categories.data.find(item=> item.name === title)
+                    let categorie = categories.find(item=> item.name === title)
                     if(categorie) cards.push(categorie)
                 })
             } else {
-                cards = site.categories.data.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
+                cards = categories.sort((a,b)=>b.length-a.length).slice(0,theme.categorie_card.len)
             }
         %>
         <% cards.forEach((item,index) => {  %>
