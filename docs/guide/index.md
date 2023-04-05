@@ -136,5 +136,5 @@ theme:
 
 ## 安装演示视频 Demo Video
 
-安装示例视频
+安装示例视频，更多视频前往[这里](https://space.bilibili.com/12763040/channel/seriesdetail?sid=3170241)
 <iframe src="//player.bilibili.com/player.html?aid=951750989&bvid=BV1Cs4y1J7vv&cid=1077514563&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"> </iframe>
