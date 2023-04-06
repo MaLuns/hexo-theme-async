@@ -52,5 +52,11 @@
         "url": "https://blog.gfxgy.cn/",
         "avatar": "https://blog.gfxgy.cn/img/my.jpg",
         "desc": "桃之夭夭，灼灼其华。"
+    },
+    {
+        "name": "TACG",
+        "url": "https://www.tacg.ink/",
+        "avatar": "https://cdn.jsdelivr.net/gh/TACGqwq/TACGstorage/Blog/TACG.jpg",
+        "desc": "记录生活，找寻生活的方向"
     }
 ]
