@@ -46,7 +46,9 @@ A detailed usage document can solve most of your unclear points 🤣
 - Chinese documentation: 
     - <https://hexo-theme-async.imalun.com> (dev)
     - <https://async-docs.imalun.com> (master)
-- English documentation: None
+- English documentation: 
+    - <https://hexo-theme-async.imalun.com/en/guide/> (dev)
+    - <https://async-docs.imalun.com/en/guide/> (master)
 
 ## Installation
 In your hexo folder:

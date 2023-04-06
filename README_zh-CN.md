@@ -46,7 +46,9 @@
 - 中文文档：
     - <https://hexo-theme-async.imalun.com> (dev)
     - <https://async-docs.imalun.com> (master)
-- 英文文档：无
+- 英文文档：
+    - <https://hexo-theme-async.imalun.com/en/guide/> (dev)
+    - <https://async-docs.imalun.com/en/guide/> (master)
 
 ## 安装
 
