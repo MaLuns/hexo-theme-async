@@ -721,6 +721,10 @@ icons:
     # 右下角固定按钮 v1.2.11+
     read: fas fa-book-reader
     arrows: fas fa-arrows-alt-h
+    # 代码高亮折叠 v2.0.0+
+    double_arrows: fas fa-angle-double-down
+    # 代码复制
+    copy: fas fa-copy
 ```
 
 ## 自定义样式 Style
@@ -779,8 +783,8 @@ icons:
 
 ### `1.1.x` 版本
 
--   新建 **source/_data/style/dark.less**、**source/_data/style/light.less**，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
--   如果需要覆盖变量可以添加 **source/_data/style/dark.variables.less**、**source/_data/style/light.variables.less**，进行覆盖。
+-   新建 source/_data/style/dark.less、source/_data/style/light.less，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
+-   如果需要覆盖变量可以添加 source/_data/style/dark.variables.less、source/_data/style/light.variables.less，进行覆盖。
 
 ```text {4,5,6,7,8}
 ┌── blog
@@ -909,7 +913,7 @@ layout:
     footer: async/footer
 ```
 
-可以前往 [演示站点](https://hexo-theme-async.imalun.com/demo/) 查看效果，首页 footer 和 页面切换已是自定义效果了。
+可以前往 [演示站点](https://hexo-theme-async.imalun.com/demosite/) 查看效果，首页 footer 和 页面切换已是自定义效果了。
 
 ::: tip
 您在 `footer.ejs` 可以访问到所有配置，全局变量，和辅助函数等，和主题模板一致。

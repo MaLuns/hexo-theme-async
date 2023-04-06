@@ -23,18 +23,18 @@ favicon:
 
 # Theme resource files or plug-ins
 assets:
-  # 主題內部 js 的 cdn 配置
+  # The cdn configuration of the js inside the theme
   internal_provider: local
-  # 第三方 js 的 cdn 配置
+  # cdn configuration of third-party js
   third_party_provider: unpkg
-  # 主题使用到的插件
+  # The plug-in used by the theme
   plugin:
     hexo_theme_async:
       rowcss: css/plugins/bootstrap.row.css
       typing: js/plugins/typing.js
       search: js/plugins/local_search.js
       main: js/main.js
-  # 图标配置
+  # Icon configuration
   icons: 
     type: font # font symbol
     css:  css/plugins/font-awesome.min.css
@@ -51,23 +51,38 @@ cdn:
 
 # The icon used by the theme
 icons:
+  # Theme switch icon
   sun: far fa-sun
   moon: far fa-moon
+  # Home video play
   play: fas fa-play
+  # email icon
   email: far fa-envelope
+  # Category entry icon
   next: fas fa-arrow-right
+  # Date of article details
   calendar: far fa-calendar-alt
+  # Article details time
   clock: far fa-clock
+  # Author of article details
   user: far fa-user
+  # Return to the top icon
   back_top: fas fa-arrow-up
+  # close icon
   close: fas fa-times
+  # search icon
   search: fas fa-search
+  # reward icon
   reward: fas fa-hand-holding-usd
+  # User information and article directory switch
   user_tag: fas fa-user-alt
   toc_tag: fas fa-th-list
+  # Secure the button in the lower right corner
   read: fas fa-book-reader
   arrows: fas fa-arrows-alt-h
+  # Code highlight fold icon
   double_arrows: fas fa-angle-double-down
+  # Code copy icon
   copy: fas fa-copy
 
 # Top navigation menu

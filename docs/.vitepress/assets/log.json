@@ -4,6 +4,16 @@
         "children": [
             {
                 "version": "2.0.5",
+                "date": "2023-04-04",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复在 Hexo 7.0.0-rc 上错误"
+                    }
+                ]
+            },
+            {
+                "version": "2.0.5",
                 "date": "2023-03-31",
                 "logs": [
                     {
