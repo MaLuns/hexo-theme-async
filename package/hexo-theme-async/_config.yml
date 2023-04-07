@@ -1,4 +1,7 @@
-# user info
+# Open Graph protocol
+open_graph: true
+
+# User info
 user:
   name: ThemeAsync
   first_name: Theme

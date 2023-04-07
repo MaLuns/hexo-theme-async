@@ -3,7 +3,7 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<%- open_graph() %>
+<%- theme.open_graph ? open_graph() : ''%>
 <% if(page.keywords){%>
     <meta name="keywords" content="<%= page.keywords %>">
 <%}else if(config.keywords){%>
