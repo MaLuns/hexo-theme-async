@@ -16,7 +16,7 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "generate:demo-sites": "node ./script/sites-check",
-    "soft-lisks": "node ./script/soft-links"
+    "soft-links": "node ./script/soft-links"
   },
   "bugs": {
     "url": "https://github.com/MaLuns/hexo-theme-async/issues"

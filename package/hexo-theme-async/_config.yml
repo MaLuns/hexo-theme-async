@@ -97,6 +97,7 @@ top_bars:
 
 # Banner settings
 banner:
+  use_cover: false
   default:
     type: img
     bgurl: /img/banner.png

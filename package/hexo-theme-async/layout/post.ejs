@@ -1,10 +1,20 @@
-<% let banner = page.banner || {}; %>
-<%- partial(theme.layout.main,  {
-    banner: partial(theme.layout.banner,  {
+<% 
+    let banner = page.banner || {};
+    banner = {
         ...theme.banner.default,
         bannerText: 'NEWS LETTER',
         ...banner,
         bannerTitle: page.title
-    }),
+    }
+    if(banner.type === 'img' && theme.banner.use_cover && page.cover){
+        if(Array.isArray(page.cover)){
+            banner.bgurl = page.cover[0]
+        }else {
+            banner.bgurl = page.cover
+        }
+    }
+ %>
+<%- partial(theme.layout.main,  {
+    banner: partial(theme.layout.banner, banner),
     content: partial(theme.layout.page_post)
 }) %>
