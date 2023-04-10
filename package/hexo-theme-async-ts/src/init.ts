@@ -538,7 +538,7 @@ export function InitChangeTitle() {
 export function AddPostOutdateNotice() {
 	let { notice_outdate: data, i18n } = window.ASYNC_CONFIG;
 	if (data) {
-		const diffDay = utils.diffDate(window.PAGE_CONFIG.postUpdate);
+		const diffDay = <number>utils.diffDate(window.PAGE_CONFIG.postUpdate);
 		if (diffDay >= data.limit_day) {
 			const ele = document.createElement("div");
 			ele.className = `post-outdate-notice ${data.position}`;
@@ -558,11 +558,18 @@ export function AddPostOutdateNotice() {
  */
 export function InitRandomCovers() {
 	if (window.ASYNC_CONFIG.covers && window.PAGE_CONFIG.isHome) {
-		const imgs = utils.qa("img[data-random-img]");
 		const convers = window.ASYNC_CONFIG.covers;
+
+		const imgs = utils.qa("img[data-random-img]");
 		imgs.forEach((item) => {
 			const src = utils.getRandomItem<string>(convers);
 			src && (item.src = src);
+		});
+
+		const divs = utils.qa("div[data-random-img]");
+		divs.forEach((item) => {
+			const src = utils.getRandomItem<string>(convers);
+			src && (item.style.backgroundImage = `url(${src})`);
 		});
 	}
 }

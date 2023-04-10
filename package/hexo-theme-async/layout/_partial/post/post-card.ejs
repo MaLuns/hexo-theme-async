@@ -12,7 +12,7 @@
                     <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
                 </div>
             <% } else if(coverURl === 'random' ) { %>
-                <img data-random-img alt="cover" class="no-fancybox" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPSURBVBhXY/gPBVDG//8Aj4IP8dFqTzkAAAAASUVORK5CYII=">
+                <div class="trm-cover-img" data-random-img></div>
             <% } else if(coverURl) { %>
                 <%- swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" }) %>
             <% } %>

@@ -9,7 +9,7 @@ mixin conver(type)
                 div.trm-cover-day !{date(post.date, theme.datetime_foramt.post_card.cover_date)}
                 div.trm-cover-month !{date(post.date, theme.datetime_foramt.post_card.cover_date2)}
         else if coverURl === 'random'
-            <img data-random-img alt="cover" class="no-fancybox" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAPSURBVBhXY/gPBVDG//8Aj4IP8dFqTzkAAAAASUVORK5CYII=">
+            div.trm-cover-img(data-random-img)
         else if coverURl
             div !{swich_imgs(coverURl, { alt: "cover", class:"no-fancybox" })}
 

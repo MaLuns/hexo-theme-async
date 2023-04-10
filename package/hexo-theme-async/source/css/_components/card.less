@@ -396,6 +396,7 @@
         overflow      : hidden;
 
         .trm-cover-date,
+        .trm-cover-img,
         img {
             position       : absolute;
             top            : 0;
@@ -425,6 +426,12 @@
             .trm-cover-month {
                 font-size: 20px;
             }
+        }
+
+        .trm-cover-img {
+            background-repeat  : no-repeat;
+            background-position: center;
+            background-size    : cover;
         }
     }
 
@@ -457,6 +464,8 @@
 
     &:hover {
         .trm-cover-frame {
+
+            .trm-cover-img,
             img {
                 transform: scale(1);
             }
