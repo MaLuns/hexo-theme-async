@@ -3,6 +3,20 @@
         "large_version": "v2.0.x",
         "children": [
             {
+                "version": "2.0.7",
+                "date": "2023-04-12",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "封面图支持随机壁纸 api"
+                    },
+                    {
+                        "type": "feat",
+                        "text": "允许将文章横幅背景使用封面图"
+                    }
+                ]
+            },
+            {
                 "version": "2.0.6",
                 "date": "2023-04-04",
                 "logs": [

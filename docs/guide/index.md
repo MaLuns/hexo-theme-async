@@ -136,5 +136,18 @@ theme:
 
 ## 安装演示视频 Demo Video
 
+-   安装
+    -   [npm 安装演示](https://www.bilibili.com/video/BV1Cs4y1J7vv/)
+    -   [下载到 themes 目录演示](https://www.bilibili.com/video/BV1mg4y137Zi/)
+-   配置
+    -   [常用配置演示](https://www.bilibili.com/video/BV1cm4y1z7tQ/)
+    -   [主题自定义图标、自定义代码高亮演示](https://www.bilibili.com/video/BV1Da4y1M7UF/)
+    -   [随机封面、友链页、相册页面配置演示](https://www.bilibili.com/video/BV1cs4y1m7RT/)
+-   运行源码
+    -   [hexo-theme-async 源码运行演示](https://www.bilibili.com/video/BV19L41127LH/)
+-   在线体验
+    -   [stackblitz](https://stackblitz.com/edit/node-tshsxq?embed=1&file=README.md)
+
 安装示例视频，更多视频前往[这里](https://space.bilibili.com/12763040/channel/seriesdetail?sid=3170241)
+
 <iframe src="//player.bilibili.com/player.html?aid=951750989&bvid=BV1Cs4y1J7vv&cid=1077514563&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"> </iframe>

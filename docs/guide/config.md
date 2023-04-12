@@ -306,6 +306,7 @@ sidebar:
 
 每个页面横幅都可以自定义不同背景图、标语等，当您需要视频背景的时候，您的视频格式需要为 MP4、WebM 、Ogg 等格式。
 
+-   `use_cover`：文章详情页 banner 是否使用文章封面图，默认 false
 -   `default`：默认配置
     -   `type`：横幅类型 img、slideshow、video
     -   `bgurl`：背景图地址，如果 type 是 slideshow，必须为数组。如果 type 是 img 时，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
@@ -315,10 +316,10 @@ sidebar:
     -   `fit`：同 CSS object-fit
 -   `index`：首页 (属性字段和上面保持一致)
     -   `videoUrl`：视频地址 (仅首页有)
--   `archive`：分类页
--   `links`：友链页
--   `comment`：评论页
--   `about`：关于
+-   `archive`：分类页 (属性字段和上面保持一致)
+-   `links`：友链页 (属性字段和上面保持一致)
+-   `comment`：评论页 (属性字段和上面保持一致)
+-   `about`：关于 (属性字段和上面保持一致)
 
 ```yaml
 banner:

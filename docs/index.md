@@ -10,8 +10,8 @@ hero:
   actions:
     - text: 🚀 Get Started
       link: /guide/
-    - text: 💻 Demo Sites
-      link: /demo/
+    - text: 💻 Online demo
+      link: https://stackblitz.com/edit/node-tshsxq?embed=1&theme=dark&view=editor
       theme: alt
 
 features:
