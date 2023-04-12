@@ -1500,6 +1500,7 @@ blockquote:after {
   overflow: hidden;
 }
 .trm-blog-card .trm-cover-frame .trm-cover-date,
+.trm-blog-card .trm-cover-frame .trm-cover-img,
 .trm-blog-card .trm-cover-frame img {
   position: absolute;
   top: 0;
@@ -1527,6 +1528,11 @@ blockquote:after {
 .trm-blog-card .trm-cover-frame .trm-cover-date .trm-cover-month {
   font-size: 20px;
 }
+.trm-blog-card .trm-cover-frame .trm-cover-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .trm-blog-card .trm-card-descr {
   padding: var(--card-padding, 40px);
 }
@@ -1546,6 +1552,7 @@ blockquote:after {
   opacity: 1;
   color: var(--primary, #afb42b);
 }
+.trm-blog-card:hover .trm-cover-frame .trm-cover-img,
 .trm-blog-card:hover .trm-cover-frame img {
   transform: scale(1);
 }
