@@ -559,16 +559,10 @@ export function AddPostOutdateNotice() {
 export function InitRandomCovers() {
 	if (window.ASYNC_CONFIG.covers && window.PAGE_CONFIG.isHome) {
 		const convers = window.ASYNC_CONFIG.covers;
-
-		const imgs = utils.qa("img[data-random-img]");
-		imgs.forEach((item) => {
-			const src = utils.getRandomItem<string>(convers);
-			src && (item.src = src);
-		});
-
 		const divs = utils.qa("div[data-random-img]");
 		divs.forEach((item) => {
-			const src = utils.getRandomItem<string>(convers);
+			let src = utils.getRandomItem<string>(convers);
+			src += src.includes('?') ? `&v=${Math.random()}` : `?v=${Math.random()}`
 			src && (item.style.backgroundImage = `url(${src})`);
 		});
 	}
