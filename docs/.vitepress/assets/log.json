@@ -3,6 +3,26 @@
         "large_version": "v2.0.x",
         "children": [
             {
+                "version": "2.0.9",
+                "date": "2023-04-25",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "katex 样式异常"
+                    }
+                ]
+            },
+            {
+                "version": "2.0.8",
+                "date": "2023-04-16",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "修复随机壁纸缓存问题"
+                    }
+                ]
+            },
+            {
                 "version": "2.0.7",
                 "date": "2023-04-12",
                 "logs": [
