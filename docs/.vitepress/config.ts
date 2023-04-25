@@ -24,6 +24,9 @@ export default defineConfig({
 
 	themeConfig: {
 		logo: "/logo.svg",
+		search: {
+			provider: 'local'
+		},
 		/* algolia: {
 			appId: "GER60TPC08",
 			apiKey: "993137f59d71d252c8bafbce33bda9c2",
