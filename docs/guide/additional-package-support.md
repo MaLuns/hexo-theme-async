@@ -113,3 +113,47 @@ $E = mc^2$
 ```html
 <div>\[ E = mc^2 \]</div>
 ```
+
+## live2d
+安装 [hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
+
+``` bash
+npm install hexo-helper-live2d
+# or
+yarn add hexo-helper-live2d
+```
+
+在 Hexo 根目录的 `_config.yml` 中进行配置：
+
+> 更多选项含义请参见 [hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
+
+``` yaml
+live2d:
+  enable: true
+  # 推荐使用 CDN 来加载
+  scriptFrom: unpkg
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    # 推荐使用 CDN 来加载模型
+    use: https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
+  display:
+    position: left
+    width: 150
+    height: 300
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+```
+
+## pjax
+
+使用 [swup](https://swup.js.org/getting-started/) 实现，默认为开启的。
+
+``` yaml
+swup: true
+```

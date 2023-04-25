@@ -68,7 +68,7 @@ body:
     id: website
     attributes:
       label: 出现问题网站 | Website
-      description: 请提供下可复现网站地址 | Please supply a website url which can reproduce problem.
+      description: 请提供下可复现网站地址，可前往 https://stackblitz.com/edit/node-tshsxq fork 一份提供可复现最小 demo | Please supply a website url which can reproduce problem.
       placeholder:
     validations:
       required: true
