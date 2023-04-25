@@ -139,26 +139,33 @@ npm install hexo-theme-async@latest
             </a>
         </td>
         <td>
-            <a href="https://www.biuling.top" target="_blank">
-                <img width="80px" src="https://cdn.staticaly.com/gh/CheckingChen/image-hosting@master/avatar.6awsc8i38s80.webp" />
-                <br />
-                <sub title="Creativity,起飞！">31100Cafe</sub>
-            </a>
-        </td>
-        <td>
             <a href="https://hexo.yahoo94.love" target="_blank">
                 <img width="80px" src="https://yahoo94.love/upload/2022/11/11.png" />
                 <br />
                 <sub title="再过十年，我们还是过着今天。">乌冬</sub>
             </a>
         </td>
-    </tr>
-    <tr align="center">
         <td>
             <a href="https://blog.gfxgy.cn/" target="_blank">
                 <img width="80px" src="https://blog.gfxgy.cn/img/my.jpg" />
                 <br />
                 <sub title="桃之夭夭，灼灼其华。">怵.</sub>
+            </a>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <a href="https://www.tacg.ink/" target="_blank">
+                <img width="80px" src="https://cdn.jsdelivr.net/gh/TACGqwq/TACGstorage/Blog/TACG.jpg" />
+                <br />
+                <sub title="记录生活，找寻生活的方向">TACG</sub>
+            </a>
+        </td>
+        <td>
+            <a href="https://blog.shawn404.top/" target="_blank">
+                <img width="80px" src="https://blog.shawn404.top/img/logo.svg" />
+                <br />
+                <sub title="Strive hard and work novelty">Shawn's Blog</sub>
             </a>
         </td>
       </tr>

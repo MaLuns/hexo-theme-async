@@ -36,12 +36,6 @@
         "desc": "现充爆炸吧"
     },
     {
-        "name": "31100Cafe",
-        "url": "https://www.biuling.top",
-        "avatar": "https://cdn.staticaly.com/gh/CheckingChen/image-hosting@master/avatar.6awsc8i38s80.webp",
-        "desc": "Creativity,起飞！"
-    },
-    {
         "name": "乌冬",
         "url": "https://hexo.yahoo94.love",
         "avatar": "https://yahoo94.love/upload/2022/11/11.png",
@@ -58,5 +52,11 @@
         "url": "https://www.tacg.ink/",
         "avatar": "https://cdn.jsdelivr.net/gh/TACGqwq/TACGstorage/Blog/TACG.jpg",
         "desc": "记录生活，找寻生活的方向"
+    },
+    {
+        "name": "Shawn's Blog",
+        "url": "https://blog.shawn404.top/",
+        "avatar": "https://blog.shawn404.top/img/logo.svg",
+        "desc": "Strive hard and work novelty"
     }
 ]
