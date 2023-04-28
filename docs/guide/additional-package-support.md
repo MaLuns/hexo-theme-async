@@ -113,6 +113,7 @@ $E = mc^2$
 ```html
 <div>\[ E = mc^2 \]</div>
 ```
+:::
 
 ## live2d
 安装 [hexo-helper-live2d](https://github.com/EYHN/hexo-helper-live2d)
