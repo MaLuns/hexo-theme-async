@@ -18,6 +18,18 @@
     ],
     "logs": [
         {
+            "name": "**俊",
+            "money": 20,
+            "type": "alipay",
+            "date": "2023-07-04"
+        },
+        {
+            "name": "**锋",
+            "money": 1,
+            "type": "alipay",
+            "date": "2023-04-29"
+        },
+        {
             "name": "**伟",
             "money": 6.66,
             "type": "alipay",
