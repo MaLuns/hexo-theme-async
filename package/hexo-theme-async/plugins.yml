@@ -1,7 +1,4 @@
 swup: /swup@2.0.19/dist/swup.min.js
-locomotive_scroll:
-  css: /locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
-  js: /locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
 fancybox: 
   css: /@fancyapps/ui@4.0/dist/fancybox.css
   js: /@fancyapps/ui@4.0/dist/fancybox.umd.js

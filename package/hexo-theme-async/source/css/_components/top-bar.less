@@ -3,8 +3,9 @@
     left            : 0;
     right           : 0;
     z-index         : 9;
-    width           : 100%;
+    width           : calc(100% - 20px);
     height          : 80px;
+    margin          : 0 auto;
     border-radius   : var(--card-border-radius, 10px);
     box-shadow      : var(--top-bar-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.15));
     background-color: var(--theme-bg-color, #fcfcfe);
@@ -74,9 +75,15 @@
     }
 }
 
-@media(max-width:1200px) {
+@media(max-width:992px) {
     .trm-top-bar {
         border-radius: 0;
+        width        : 100%;
+    }
+}
+
+@media(max-width:1200px) {
+    .trm-top-bar {
 
         .trm-logo-text {
             display: none;

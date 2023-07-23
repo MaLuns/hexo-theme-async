@@ -1,6 +1,6 @@
 <div class="row trm-mb-40">
     <div class="col-lg-12">
-        <blockquote class="trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <blockquote class="trm-scroll-animation">
             <%-__('site.ruleText')%>：
             <br>
             <%- theme.user.ruleText %>
@@ -13,7 +13,7 @@
         <h5 class="trm-title-with-divider"><%-__('site.title')%><span data-number="01"></span></h5>
     </div>
     <div class="col-lg-12">
-        <div class="trm-service-icon-box trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-active-el">
             <ul class="trm-list">
                 <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
                 <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
@@ -35,7 +35,7 @@
     <%  theme.links.forEach(item=>{%>
         <div class="col-lg-6">
             <a href='<%- item.url %>' target='_blank' rel="nofollow">
-                <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+                <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
                     <div class="trm-service-content">
                         <div class="trm-icon">
                             <img draggable="false" <%- onerror('flink') %> alt="<%- item.name %>" src="<%- item.image %>">

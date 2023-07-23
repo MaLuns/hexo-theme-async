@@ -1,5 +1,5 @@
 export const utils = {
-	q: (selectors) => document.querySelector(selectors),
+	q: <T extends Element>(selectors) => document.querySelector<T>(selectors),
 	qa: (selectors) => document.querySelectorAll(selectors),
 	gId: (id: string) => document.getElementById(id),
 	/**
@@ -202,5 +202,30 @@ export const utils = {
 			return array[index];
 		}
 		return array;
+	},
+	/**
+	 * 获取滚动条宽度
+	 * @returns
+	 */
+	scrollBarWidth() {
+		const outer = document.createElement("div");
+		outer.className = "async-scrollbar__wrap";
+		outer.style.visibility = "hidden";
+		outer.style.width = "100px";
+		outer.style.position = "absolute";
+		outer.style.top = "-9999px";
+		document.body.appendChild(outer);
+
+		const widthNoScroll = outer.offsetWidth;
+		outer.style.overflow = "scroll";
+
+		const inner = document.createElement("div");
+		inner.style.width = "100%";
+		outer.appendChild(inner);
+
+		const widthWithScroll = inner.offsetWidth;
+		outer.parentNode.removeChild(outer);
+
+		return widthNoScroll - widthWithScroll;
 	},
 };

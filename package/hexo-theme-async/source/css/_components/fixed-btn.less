@@ -2,14 +2,14 @@
     @height        : 200px;
     position       : fixed;
     z-index        : 10;
-    right          : 20px;
-    height         : @height;
-    top            : calc(100vh - @height + 6px);
+    right          : 30px;
+    bottom         : calc(26px - 2.5rem);
+    /* height         : @height; */
     display        : flex;
     flex-direction : column;
     justify-content: flex-end;
     align-items    : center;
-    .transition-mixin(top);
+    .transition-mixin(bottom);
 
     .trm-fixed-btn {
         position        : relative;
@@ -69,7 +69,7 @@
     }
 
     &.offset {
-        top: calc(100vh - @height - 2.5rem);
+        bottom: 30px;
 
         #trm-back-top {
             opacity  : 1;

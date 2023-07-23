@@ -12,7 +12,6 @@ plugin = theme.assets.plugin;
 <% if(loadtype ==='css') {%>
 
     <%- css(plugin.hexo_theme_async.rowcss) %>
-    <%- css(plugin.locomotive_scroll.css) %>
     <%- css(plugin.fancybox.css) %>
     <%- isSwiper ? css(plugin.swiper.css) : '' %>
     <%- isKatex ? css(plugin.katex.css) : '' %>
@@ -20,7 +19,6 @@ plugin = theme.assets.plugin;
 <% } else { %>
 
     <%- theme.swup ? js(plugin.swup) : '' %>
-    <%- js(plugin.locomotive_scroll.js) %>
     <%- js(plugin.fancybox.js) %>
     <%- isSwiper ? js(plugin.swiper.js) : '' %>
 

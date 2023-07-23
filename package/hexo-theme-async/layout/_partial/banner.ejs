@@ -1,4 +1,4 @@
-<div class="trm-banner" data-scroll data-scroll-direction="vertical">
+<div class="trm-banner" data-rellax data-rellax-direction="vertical">
     <% if(type === 'img'){ 
         let style = `object-position:${position || 'top'};object-fit:${fit || 'cover'};` %>
     <!-- banner cover -->
@@ -6,14 +6,14 @@
         style:style,
         alt:"banner",
         class:"trm-banner-cover",
-        "data-scroll":true,
-        "data-scroll-direction":"vertical",
-        "data-scroll-speed":"-3"
+        "data-rellax":true,
+        "data-rellax-direction":"vertical",
+        "data-rellax-speed":"-10"
     }) %>
     <!-- banner cover end -->
     <% } else if(type === 'slideshow' && Array.isArray(bgurl)) { %>
     <!-- banner slideshow cover-->
-    <div class="swiper-container trm-slideshow" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+    <div class="swiper-container trm-slideshow" data-rellax data-rellax-direction="vertical" data-rellax-speed="-10">
         <div class="swiper-wrapper">
             <%  bgurl.forEach((item,index) => {  
                 let style = `object-position:${(Array.isArray(position) ? position[index]  : position) || 'top'};object-fit:${(Array.isArray(fit) ? fit[index]  : fit) || 'cover'}` %>
@@ -26,7 +26,7 @@
     <!-- banner slideshow cover end -->
     <% } else if(type === 'video'){ %>
     <!-- banner video cover -->
-    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-rellax data-rellax-direction="vertical" data-rellax-speed="-10">
         <source src="<%= url_for(bgurl) %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
         Your browser does not support HTML5 video.
     </video>
@@ -35,7 +35,7 @@
 
     <!-- banner content -->
     <div class="trm-banner-content trm-overlay">
-        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+        <div class="container">
             <div class="row">
                 <% if(!page.single_column) { %>
                 <div class="col-lg-4"></div>
@@ -71,7 +71,7 @@
                     <!-- banner title end -->
 
                     <!-- scroll hint -->
-                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                    <a href="#about-triger" data-rellax-to="#about-triger" data-rellax-offset="-130" class="trm-scroll-hint-frame">
                         <div class="trm-scroll-hint"></div>
                         <span class="trm-label">Scroll down</span>
                     </a>

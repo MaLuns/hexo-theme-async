@@ -1,4 +1,4 @@
-<div class="row trm-mb-40 trm-scroll-animation" data-scroll data-scroll-offset="40">
+<div class="row trm-mb-40 trm-scroll-animation">
     <div class="col-lg-12">
         <blockquote>
             <%- page.title %>
@@ -14,7 +14,7 @@
             </div>
             <% item.children.forEach((project,index)=>{ %>
                 <div class="<%- !page.single_column ? 'col-lg-6':'col-lg-4' %>">
-                    <div class="trm-project-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+                    <div class="trm-project-card trm-scroll-animation trm-active-el">
                         <div class="trm-project-content">
                             <h6 class="trm-mb-20"><%- project.name %></h6>
                             <div class="trm-mb-20 trm-project-desc"><%- project.desc %></div>

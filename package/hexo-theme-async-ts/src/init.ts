@@ -90,7 +90,7 @@ export function InitSwup() {
  * @returns
  */
 export function InitThemeMode(init = false) {
-	const swich_input = utils.q("#trm-swich");
+	const swich_input = utils.q<HTMLInputElement>("#trm-swich");
 
 	/* Animated mask layers */
 	const mode_swich_animation = utils.q(".trm-mode-swich-animation");
@@ -118,61 +118,72 @@ export function InitThemeMode(init = false) {
  * 初始化滚动插件 LocomotiveScroll
  * @returns
  */
-export function InitLocomotiveScroll() {
-	const container = utils.q("#trm-scroll-container");
-	const backtop = utils.q("#trm-back-top");
+export function InitScroll() {
+	const scrollBarWidth = utils.scrollBarWidth();
+	const container = utils.q<HTMLDivElement>("#trm-scroll-container");
+	const sidebar = utils.q<HTMLDivElement>(".trm-sidebar");
+	const backtop = utils.q<HTMLDivElement>("#trm-back-top");
 	const fixedContainer = utils.q(".trm-fixed-container");
 
-	const scroll = new window.LocomotiveScroll({
-		el: utils.q("#trm-scroll-container"),
-		smooth: true,
-		lerp: 0.1,
-		reloadOnContextChange: true,
-		class: "trm-active-el",
-	});
+	sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+	container.style.marginRight = `-${scrollBarWidth}px`;
 
-	const update = utils.debounce(() => scroll.update(), 150);
+	const intersectionObserver = new IntersectionObserver(
+		(entries, observe) => {
+			entries.forEach(({ isIntersecting, target }: any) => {
+				if (isIntersecting) {
+					target.classList.add("trm-active-el");
+					intersectionObserver.unobserve(target);
+				}
+			});
+		},
+		{ root: container, threshold: [0, 1] }
+	);
 
-	// The height is not updated when handling the dynamic addition of DOM elements
-	const ro = new ResizeObserver(() => scroll.update());
-	ro.observe(container);
-
-	window.addEventListener("resize", update);
-
-	scroll.on("scroll", ({ scroll, limit }) => {
-		const b = parseInt(((scroll.y / limit.y) * 100).toString());
-		if (backtop) backtop.style.backgroundSize = `100% ${b}%`;
-		const fun = scroll.y > 500 ? "add" : "remove";
-		fixedContainer?.classList[fun]("offset");
+	const sections = utils.qa(".trm-scroll-animation");
+	sections.forEach((element) => {
+		element && intersectionObserver.observe(element);
 	});
 
 	const back_fun = function () {
-		scroll.scrollTo(0);
+		container.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	};
-	backtop?.addEventListener("click", back_fun);
 
-	const desktop = window.matchMedia("screen and (min-width: 768px)");
-	const mobile = window.matchMedia("screen and (max-width: 767px)");
+	const scroll_fun = function () {
+		const { scrollTop, scrollHeight, clientHeight } = this;
+		const fun = scrollTop > 500 ? "add" : "remove";
+		fixedContainer?.classList[fun]("offset");
 
-	const reload = function (e) {
-		if (e.matches) {
-			location.reload();
+		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString());
+		if (backtop) {
+			backtop.style.backgroundSize = `100% ${ratio}%`;
+		}
+
+		/* sidebar.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${scrollTop - 410}, 0, 1)`; */
+		if (scrollTop > 80) {
+			sidebar.classList.add("fixed");
+		} else {
+			sidebar.classList.remove("fixed");
 		}
 	};
 
-	desktop.addListener(reload);
-	mobile.addListener(reload);
+	const setSidebarWidth = () => {
+		sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+	};
+
+	backtop?.addEventListener("click", back_fun);
+	container.addEventListener("scroll", scroll_fun);
+	window.addEventListener("resize", setSidebarWidth);
 
 	document.addEventListener("swup:contentReplaced", (event) => {
+		container.removeEventListener("scroll", scroll_fun);
 		backtop?.removeEventListener("click", back_fun);
-		window.removeEventListener("resize", update);
-		ro.unobserve(container);
-		desktop.removeListener(reload);
-		mobile.removeListener(reload);
-		scroll.destroy();
+		intersectionObserver.disconnect();
+		window.removeEventListener("resize", setSidebarWidth);
 	});
-
-	return scroll;
 }
 
 /**
@@ -215,12 +226,12 @@ export function InitCounter(duration = 2000) {
  * 初始化目录
  */
 export function InitToc() {
-	let tabs = document.getElementById("trm-tabs-nav");
+	const tabs = document.getElementById("trm-tabs-nav");
 	if (tabs) {
 		tabs.addEventListener("click", function (e) {
-			var element = e.target as HTMLElement;
-			let to = element.dataset.to || element.parentElement.dataset.to;
-			let isAcive = element.classList.contains("active") || element.parentElement.classList.contains("active");
+			const element = e.target as HTMLElement;
+			const to = element.dataset.to || element.parentElement.dataset.to;
+			const isAcive = element.classList.contains("active") || element.parentElement.classList.contains("active");
 			if (to && !isAcive) {
 				document.querySelectorAll(".trm-tabs-nav-item").forEach((item) => {
 					item.classList.toggle("active");
@@ -239,7 +250,7 @@ export function InitToc() {
 			const appFrame = document.querySelector(".trm-app-frame");
 			if (!appFrame) return;
 			const topBar = document.querySelector(".trm-top-bar");
-			let { bottom } = topBar.getBoundingClientRect();
+			const { bottom } = topBar.getBoundingClientRect();
 
 			function activateNavByIndex(target) {
 				target = target.parentNode;
@@ -288,7 +299,7 @@ export function InitToc() {
 					},
 					{
 						root: appFrame,
-						rootMargin: `${marginTop}px 0px -${appFrame.clientHeight - bottom - 20}px 0px`,
+						rootMargin: `${marginTop}px 0px -${appFrame.clientHeight - bottom + 80}px 0px`,
 						threshold: [0, 1],
 					}
 				);
@@ -562,7 +573,7 @@ export function InitRandomCovers() {
 		const divs = utils.qa("div[data-random-img]");
 		divs.forEach((item) => {
 			let src = utils.getRandomItem<string>(convers);
-			src += src.includes('?') ? `&v=${Math.random()}` : `?v=${Math.random()}`
+			src += src.includes("?") ? `&v=${Math.random()}` : `?v=${Math.random()}`;
 			src && (item.style.backgroundImage = `url(${src})`);
 		});
 	}
@@ -619,8 +630,8 @@ export function ready() {
 	/* counters */
 	InitCounter();
 
-	/* locomotive scroll */
-	window.locomotiveScrollInstance = InitLocomotiveScroll();
+	/* Initialize scroll */
+	InitScroll();
 
 	/* swiper */
 	InitSwiper();
@@ -666,7 +677,7 @@ export function ready() {
 			InitTabs();
 
 			/* preloader */
-			utils.q(".trm-scroll-container").style.opacity = 1;
+			utils.q<HTMLDivElement>(".trm-scroll-container").style.opacity = "1";
 
 			/* menu */
 			InitMenu();
@@ -677,8 +688,8 @@ export function ready() {
 			/* counters */
 			InitCounter();
 
-			/* locomotive scroll */
-			window.locomotiveScrollInstance = InitLocomotiveScroll();
+			/* Initialize scroll */
+			InitScroll();
 
 			/* swiper */
 			InitSwiper();
