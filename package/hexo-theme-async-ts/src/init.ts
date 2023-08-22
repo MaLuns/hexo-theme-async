@@ -193,18 +193,6 @@ export function InitScroll() {
 }
 
 /**
- * 初始化 Toc、User 切换
- */
-export function InitMenu() {
-	utils.q(".trm-menu-btn").addEventListener("click", function () {
-		utils.q(".trm-menu-btn,.trm-right-side").classList.toggle("trm-active");
-	});
-	utils.q(".trm-menu ul li a").addEventListener("click", function () {
-		utils.q(".trm-menu-btn,.trm-right-side").classList.remove("trm-active");
-	});
-}
-
-/**
  * 初始化 counter
  * @param duration
  */
@@ -232,92 +220,34 @@ export function InitCounter(duration = 2000) {
  * 初始化目录
  */
 export function InitToc() {
-	const tabs = document.getElementById("trm-tabs-nav");
-	if (tabs) {
-		tabs.addEventListener("click", function (e) {
-			const element = e.target as HTMLElement;
-			const to = element.dataset.to || element.parentElement.dataset.to;
-			const isAcive = element.classList.contains("active") || element.parentElement.classList.contains("active");
-			if (to && !isAcive) {
-				document.querySelectorAll(".trm-tabs-nav-item").forEach((item) => {
-					item.classList.toggle("active");
-				});
-				document.querySelectorAll(".trm-tabs-item").forEach((item) => {
-					item.classList.toggle("active");
-				});
-			}
-		});
-
-		const listenSidebarTOC = () => {
-			const toc = utils.q(".post-toc");
-			const links = Array.from(toc.querySelectorAll("a.toc-link"));
-			if (!links.length) return;
-			const sections = links.map((item: HTMLLinkElement) => utils.gId(decodeURI(item.getAttribute("href").replace("#", ""))));
-			const appFrame = document.querySelector(".trm-app-frame");
-			if (!appFrame) return;
-			const topBar = document.querySelector(".trm-top-bar");
-			const { bottom } = topBar.getBoundingClientRect();
-
-			function activateNavByIndex(target) {
-				target = target.parentNode;
-				if (target.classList.contains("active-current")) return;
-
-				utils.qa(".post-toc .active").forEach((element) => {
-					element.classList.remove("active", "active-current");
-				});
-				target.classList.add("active", "active-current");
-				let parent = target.parentNode;
-				while (!parent.matches(".post-toc")) {
-					if (parent.matches("li")) parent.classList.add("active");
-					parent = parent.parentNode;
+	const postToc = utils.q('#post-toc')
+	const tocBtn = utils.q('.post-toc-btn')
+	if (postToc) {
+		document.addEventListener('click', (e) => {
+			const isElOut = (target: HTMLElement) => {
+				if (target === postToc || target === tocBtn) {
+					return true
+				} else {
+					return target.parentElement ? isElOut(target.parentElement) : false
 				}
 			}
-
-			function findIndex(entries: IntersectionObserverEntry[]) {
-				let index = 0;
-				let entry = entries[index];
-				if (entry.intersectionRatio <= 0) {
-					index = sections.indexOf(entry.target as HTMLElement);
-					return index === 0 ? 0 : index - 1;
-				}
-				for (; index < entries.length; index++) {
-					// 存在相交区域,表示进入该 标题-段落
-					if (entries[index].intersectionRatio > 0) entry = entries[index];
-					else return sections.indexOf(entry.target as HTMLElement);
-				}
-				return sections.indexOf(entry.target as HTMLElement);
-			}
-
-			function createIntersectionObserver(marginTop) {
-				// 扩大上面区域 避免图片懒加载等导致高度超出
-				marginTop = Math.floor(marginTop + 10000);
-				const intersectionObserver = new IntersectionObserver(
-					(entries, observe) => {
-						const scrollHeight = document.documentElement.scrollHeight + 100;
-						if (scrollHeight > marginTop) {
-							// 内容高度超出后监听区域后，重新添加监听
-							observe.disconnect();
-							createIntersectionObserver(scrollHeight);
-							return;
-						}
-						const index = findIndex(entries);
-						activateNavByIndex(links[index]);
-					},
-					{
-						root: appFrame,
-						rootMargin: `${marginTop}px 0px -${appFrame.clientHeight - bottom + 80}px 0px`,
-						threshold: [0, 1],
-					}
-				);
-				sections.forEach((element) => {
-					element && intersectionObserver.observe(element);
-				});
-			}
-
-			createIntersectionObserver(document.documentElement.scrollHeight);
-		};
-
-		listenSidebarTOC();
+			isElOut(<HTMLElement>e.target) ? postToc.classList.add('active') : postToc.classList.remove('active')
+		})
+		// postToc.addEventListener('click', function (e) {
+		// 	const link = e.target as HTMLElement
+		// 	let url = link.getAttribute('href')
+		// 	if (!url) {
+		// 		url = link.parentElement.getAttribute('href')
+		// 	}
+		// 	if (url) {
+		// 		const scroll = document.querySelector(url)
+		// 		if (scroll) { 
+		// 			// 滚动到指定位置
+		// 		}
+		// 	}
+		// 	e.preventDefault();
+		// 	return false
+		// })
 	}
 }
 
@@ -627,9 +557,6 @@ export function ready() {
 	/* swup */
 	window.ASYNC_CONFIG.swup && InitSwup();
 
-	/* menu */
-	InitMenu();
-
 	/* theme mode switch */
 	InitThemeMode(true);
 
@@ -684,9 +611,6 @@ export function ready() {
 
 			/* preloader */
 			utils.q<HTMLDivElement>(".trm-scroll-container").style.opacity = "1";
-
-			/* menu */
-			InitMenu();
 
 			/* theme mode switch */
 			InitThemeMode(true);

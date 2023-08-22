@@ -71,6 +71,7 @@ post:
   notice_outdate_message: 'It has been %s days since the last update, the content of the article may be outdated.'
 
 rightside:
+  toc_title: Open toc
   readmode_title: Read Mode
   back_to_top: Back To Top
   aside: Toggle between single-column and double-column

@@ -357,6 +357,7 @@ layout:
   categorie: _widget/categorie
   paginator: _widget/paginator
   fixed_btn: _widget/fixed-btn
+  post_toc: _widget/post_toc
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social
   sidebar_info: _partial/sidebar/card/info

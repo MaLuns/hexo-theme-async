@@ -1,0 +1,13 @@
+<%
+let toc_content = '';
+let is_toc = is_post() && (theme.toc.enable && page.toc !== false )
+if(is_toc){
+  toc_content = toc(page.content, {list_number: theme.toc.list_number, max_depth: theme.toc.max_depth, min_depth: theme.toc.min_depth});
+  is_toc = is_toc  && toc_content.length > 1;
+}
+%>
+<% if(is_toc){ %>
+    <div id="post-toc" class="post-toc">
+        <%- toc_content %>
+    </div>
+<% } %>

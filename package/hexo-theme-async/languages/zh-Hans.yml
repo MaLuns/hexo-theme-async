@@ -71,6 +71,7 @@ post:
   notice_outdate_message: '距离上次更新已经 %s 天了, 文章内容可能已经过时。'
 
 rightside:
+  toc_title: 目录
   readmode_title: 阅读模式
   back_to_top: 回到顶部
   aside: 单栏和双栏切换

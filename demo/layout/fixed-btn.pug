@@ -1,3 +1,11 @@
+-
+    let is_toc = is_post() && (theme.toc.enable && page.toc !== false )
+    let toc_content = '';
+    if(is_toc){
+        toc_content = toc(page.content, {list_number: theme.toc.list_number, max_depth: theme.toc.max_depth, min_depth: theme.toc.min_depth});
+        is_toc = is_toc  && toc_content.length > 1;
+    }
+
 div(
     class="trm-fixed-container"
     data-scroll 
@@ -5,6 +13,11 @@ div(
     data-scroll-target=".locomotive-scroll__sticky-target" 
     data-scroll-offset="-10"
 )
+    if is_toc
+        div(
+            class="trm-fixed-btn post-toc-btn"
+            data-title=`${__('rightside.toc_title')}`
+        ) !{icon(theme.icons.toc_tag)}
     if theme.search.enable
         if theme.search.type === 'local'
             div#trm-search-btn(

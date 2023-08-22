@@ -102,6 +102,14 @@ const setThemeColor = function (colorVal = "--theme-bg-color") {
 	}
 };
 
+/**
+ * 显示 Toc 面板
+ */
+const showToc = function () {
+	const postToc = utils.q('#post-toc')
+	postToc && postToc.classList.toggle('active')
+}
+
 export default {
 	pageLoading,
 	themeLoading,
@@ -109,4 +117,5 @@ export default {
 	switchReadMode,
 	switchThemeMode,
 	setThemeColor,
+	showToc
 };

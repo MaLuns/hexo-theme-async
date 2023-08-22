@@ -1,39 +1,8 @@
-<%
-let toc_content = '';
-let is_toc = is_post() && (theme.toc.enable && page.toc !== false )
-if(is_toc){
-  toc_content = toc(page.content, {list_number: theme.toc.list_number, max_depth: theme.toc.max_depth, min_depth: theme.toc.min_depth});
-  is_toc = is_toc  && toc_content.length > 1;
-}
-%>
-
 <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card"> 
-    <% if(is_toc){ %>
-        <div class="trm-user-tabs" id="sidebar-tabs">
-           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
-                <div data-to="tabs-user" class="trm-tabs-nav-item">
-                    <%- icon(theme.icons.user_tag) %>
-                </div>
-                <div data-to="tabs-toc" class="trm-tabs-nav-item active">
-                    <%- icon(theme.icons.toc_tag) %>
-                </div>
-           </div>
-            <div name="tabs-user" class="trm-tabs-item">
-                <%- partial(theme.layout.sidebar_user) %>
-                <%- partial(theme.layout.sidebar_social) %>
-                <%- partial(theme.layout.sidebar_info) %>
-                <%- partial(theme.layout.sidebar_email) %>
-            </div>
-            <div name="tabs-toc" class="trm-tabs-item active">
-                <%- partial('./card/toc', { toc_content }) %>
-            </div>
-        </div>
-    <% } else { %>
         <%- partial(theme.layout.sidebar_user) %>
         <%- partial(theme.layout.sidebar_social) %>
         <%- partial(theme.layout.sidebar_info) %>
         <%- partial(theme.layout.sidebar_email) %>
-    <% } %>
     </div>
 </div>
