@@ -115,7 +115,7 @@ export function InitThemeMode(init = false) {
 }
 
 /**
- * 初始化滚动插件 LocomotiveScroll
+ * 初始化滚动监听
  * @returns
  */
 export function InitScroll() {
@@ -125,7 +125,9 @@ export function InitScroll() {
 	const backtop = utils.q<HTMLDivElement>("#trm-back-top");
 	const fixedContainer = utils.q(".trm-fixed-container");
 
-	sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+	if (sidebar) {
+		sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+	}
 	container.style.marginRight = `-${scrollBarWidth}px`;
 
 	const intersectionObserver = new IntersectionObserver(
@@ -163,15 +165,19 @@ export function InitScroll() {
 		}
 
 		/* sidebar.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${scrollTop - 410}, 0, 1)`; */
-		if (scrollTop > 80) {
-			sidebar.classList.add("fixed");
-		} else {
-			sidebar.classList.remove("fixed");
+		if (sidebar) {
+			if (scrollTop > 80) {
+				sidebar.classList.add("fixed");
+			} else {
+				sidebar.classList.remove("fixed");
+			}
 		}
 	};
 
 	const setSidebarWidth = () => {
-		sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+		if (sidebar) {
+			sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+		}
 	};
 
 	backtop?.addEventListener("click", back_fun);
