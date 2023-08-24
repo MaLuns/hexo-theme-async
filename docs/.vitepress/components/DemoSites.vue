@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import sites from "../assets/sites.json";
 
-const siteUseThemes = sites.filter((item) => item.type === undefined);
+const siteUseThemes = sites.filter((item) => !item.type);
 const numOfRow = ref(6);
 </script>
 

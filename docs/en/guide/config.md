@@ -30,7 +30,7 @@ With convention over configuration, you only need to customize the languages you
 
 For details, see the following example:
 
-> See the corresponding language attributes and content [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/languages/), covering the corresponding item.
+> See the corresponding language attributes and content [languages | hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/languages/), covering the corresponding item.
 
 ```yaml
 # Language to be covered
@@ -931,4 +931,4 @@ Manifest file structure
 
 ## More configuration
 
-You can directly see [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml) file and related comments.
+You can directly see [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) file and related comments.

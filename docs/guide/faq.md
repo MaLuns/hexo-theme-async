@@ -38,7 +38,7 @@ root: /
 
 ## 配置项不生效？
 
-你可以参考查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/package/hexo-theme-async/_config.yml) 文件及相关注释，确保你配置正确性。
+你可以参考查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) 文件及相关注释，确保你配置正确性。
 
 -   初始安装后不生效？
 

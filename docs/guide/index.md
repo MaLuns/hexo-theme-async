@@ -66,7 +66,7 @@ npm i hexo-theme-async@latest
 
 ::: details v1.1.0 至 v2.0.0 版本
 
-从 v1.1.0 后，由于项目结构调整，不再需要整个仓库文件了。clone 项目后，只需要将 `package/hexo-theme-async` 复制到 `themes/async` 目录下即可。
+从 v1.1.0 后，由于项目结构调整，不再需要整个仓库文件了。clone 项目后，只需要将 `packages/hexo-theme-async` 复制到 `themes/async` 目录下即可。
 
 您的项目结构应该是这样
 

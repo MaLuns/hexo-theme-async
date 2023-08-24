@@ -25,18 +25,18 @@ jobs:
 
       - name: Build
         run: |
-          cp ./README_zh-CN.md ./package/hexo-theme-async
-          cp ./README.md ./package/hexo-theme-async
-          node ./script/publish
+          cp ./README_zh-CN.md ./packages/hexo-theme-async
+          cp ./README.md ./packages/hexo-theme-async
+          node ./scripts/publish
           yarn lib:build
-          zip -r hexo-theme-async ./package/hexo-theme-async
+          zip -r hexo-theme-async ./packages/hexo-theme-async
         env:
           RELEASE_VERSION: ${{ github.ref }}
       
       - name: Beta Publish
         if: ${{ contains(github.ref,'beta') }}
         run: |
-          cd ./package/hexo-theme-async
+          cd ./packages/hexo-theme-async
           npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
       - name: Publish
         if: ${{ !contains(github.ref,'beta') }}
         run: |
-          cd ./package/hexo-theme-async
+          cd ./packages/hexo-theme-async
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

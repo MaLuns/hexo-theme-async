@@ -51,7 +51,7 @@ If you still want to use this method, clone the project and manually run `yarn` 
 
 ::: details v1.1.0 to v2.0.0
 
-Since v1.1.0, the entire repository file is no longer required due to project restructuring. After the clone project, just copy `package/hexo-theme-async` to the `themes/async` directory.
+Since v1.1.0, the entire repository file is no longer required due to project restructuring. After the clone project, just copy `packages/hexo-theme-async` to the `themes/async` directory.
 
 Your project structure should look like this
 
