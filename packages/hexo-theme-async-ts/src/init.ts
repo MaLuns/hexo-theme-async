@@ -516,6 +516,15 @@ export function InitRandomCovers() {
 }
 
 /**
+ * 初始化 Menu 切换
+ */
+export function InitMenu() {
+	utils.q(".trm-menu-btn").addEventListener("click", function () {
+		utils.q(".trm-menu-btn,.trm-right-side").classList.toggle("trm-active");
+	});
+}
+
+/**
  * 显示版权
  */
 export function PrintCopyright() {
@@ -557,6 +566,9 @@ export function ready() {
 	/* swup */
 	window.ASYNC_CONFIG.swup && InitSwup();
 
+	/* menu */
+	InitMenu();
+
 	/* theme mode switch */
 	InitThemeMode(true);
 
@@ -590,6 +602,9 @@ export function ready() {
 			if (window.PAGE_CONFIG.isPost) {
 				AddPostOutdateNotice();
 			}
+
+			/* menu */
+			InitMenu();
 
 			/* Launch reading mode */
 			document.body.classList.remove("trm-read-mode");

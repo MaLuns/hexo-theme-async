@@ -92,7 +92,6 @@ declare interface Window {
 	show_date_time: () => void;
 
 	// 三方插件
-	Rellax: any;
 	Fancybox: any;
 	Swiper: any;
 	Swup: any;
