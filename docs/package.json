@@ -2,6 +2,7 @@
   "name": "hexo-theme-async-docs",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.74",
     "less": "^4.1.3",

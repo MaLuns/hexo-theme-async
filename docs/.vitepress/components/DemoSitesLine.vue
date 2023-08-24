@@ -1,6 +1,6 @@
 <script setup>
 import sites from '../assets/sites.json'
-const lessSites = sites.slice(0, 20)
+const lessSites = sites.slice(0, 20).filter((item) => !item.type)
 const list = [...lessSites, ...lessSites]
 
 const props = defineProps({
