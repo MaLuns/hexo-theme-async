@@ -121,14 +121,15 @@ export function InitThemeMode(init = false) {
 export function InitScroll() {
 	const scrollBarWidth = utils.scrollBarWidth();
 	const container = utils.q<HTMLDivElement>("#trm-scroll-container");
+	const banner = utils.q<HTMLElement>(".trm-banner-cover")
 	const sidebar = utils.q<HTMLDivElement>(".trm-sidebar");
 	const backtop = utils.q<HTMLDivElement>("#trm-back-top");
 	const fixedContainer = utils.q(".trm-fixed-container");
 
+	container.style.marginRight = `-${scrollBarWidth}px`;
 	if (sidebar) {
 		sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
 	}
-	container.style.marginRight = `-${scrollBarWidth}px`;
 
 	const intersectionObserver = new IntersectionObserver(
 		(entries, observe) => {
@@ -160,18 +161,12 @@ export function InitScroll() {
 		fixedContainer?.classList[fun]("offset");
 
 		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString());
-		if (backtop) {
-			backtop.style.backgroundSize = `100% ${ratio}%`;
-		}
+		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`)
 
-		/* sidebar.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${scrollTop - 410}, 0, 1)`; */
-		if (sidebar) {
-			if (scrollTop > 80) {
-				sidebar.classList.add("fixed");
-			} else {
-				sidebar.classList.remove("fixed");
-			}
-		}
+		const sidebarFun = scrollTop > 80 ? "add" : "remove";
+		sidebar && sidebar.classList[sidebarFun]("fixed");
+
+		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 4, 80)}, 0, 1)`)
 	};
 
 	const setSidebarWidth = () => {
