@@ -9,11 +9,23 @@ body {
     color                 : var(--body-color, #7B7B7D);
     background-color      : #00151f;
     letter-spacing        : .05em;
-    overflow              : hidden;
+    overflow-x            : hidden;
     margin                : 0;
     padding               : 10px;
     height                : 100vh;
     -webkit-font-smoothing: antialiased;
+
+    &::before {
+        content         : '';
+        position        : fixed;    
+        left            : 0;
+        top             : 0;
+        width           : 100vw;
+        height          : 100vh;
+        border          : 10px solid #00151f;
+        z-index         : 9999;
+        pointer-events  : none;
+    }
 }
 
 a,
@@ -250,12 +262,8 @@ html {
     height: 100%;
 }
 
-// trm-scroll-container
 .trm-scroll-container {
     transition      : opacity .6s;
-    height          : 100%;
-    overflow-y      : scroll;
-    scroll-behavior : smooth;
 }
 
 // scroll bar

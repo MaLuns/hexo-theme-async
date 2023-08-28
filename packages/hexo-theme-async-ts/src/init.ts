@@ -149,21 +149,20 @@ export function InitScroll() {
 	});
 
 	const back_fun = function () {
-		container.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const scroll_fun = function () {
-		const { scrollTop, scrollHeight, clientHeight } = this;
+		const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
+		const { scrollHeight, clientHeight } = document.documentElement;
+
 		const fun = scrollTop > 500 ? "add" : "remove";
 		fixedContainer?.classList[fun]("offset");
 
 		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString());
 		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`)
 
-		const sidebarFun = scrollTop > 80 ? "add" : "remove";
+		const sidebarFun = scrollTop >= 90 ? "add" : "remove";
 		sidebar && sidebar.classList[sidebarFun]("fixed");
 
 		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 4, 80)}, 0, 1)`)
@@ -176,13 +175,13 @@ export function InitScroll() {
 	};
 
 	backtop?.addEventListener("click", back_fun);
-	container.addEventListener("scroll", scroll_fun);
+	window.addEventListener("scroll", scroll_fun);
 	window.addEventListener("resize", setSidebarWidth);
 
 	document.addEventListener("swup:contentReplaced", (event) => {
-		container.removeEventListener("scroll", scroll_fun);
 		backtop?.removeEventListener("click", back_fun);
 		intersectionObserver.disconnect();
+		window.removeEventListener("scroll", scroll_fun);
 		window.removeEventListener("resize", setSidebarWidth);
 	});
 }
@@ -218,7 +217,7 @@ export function InitToc() {
 	const postToc = utils.q('#post-toc')
 	const tocBtn = utils.q('.post-toc-btn')
 	if (postToc) {
-		document.addEventListener('click', (e) => {
+		const elOut = (e: MouseEvent) => {
 			const isElOut = (target: HTMLElement) => {
 				if (target === postToc || target === tocBtn) {
 					return true
@@ -227,7 +226,13 @@ export function InitToc() {
 				}
 			}
 			isElOut(<HTMLElement>e.target) ? postToc.classList.add('active') : postToc.classList.remove('active')
+		}
+
+		window.addEventListener('click', elOut)
+		document.addEventListener("swup:contentReplaced", (event) => {
+			window.removeEventListener('click', elOut)
 		})
+
 		// postToc.addEventListener('click', function (e) {
 		// 	const link = e.target as HTMLElement
 		// 	let url = link.getAttribute('href')
@@ -236,7 +241,7 @@ export function InitToc() {
 		// 	}
 		// 	if (url) {
 		// 		const scroll = document.querySelector(url)
-		// 		if (scroll) { 
+		// 		if (scroll) {
 		// 			// 滚动到指定位置
 		// 		}
 		// 	}
