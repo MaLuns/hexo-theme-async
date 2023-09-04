@@ -124,12 +124,9 @@ export function InitScroll() {
 	const banner = utils.q<HTMLElement>(".trm-banner-cover")
 	const sidebar = utils.q<HTMLDivElement>(".trm-sidebar");
 	const backtop = utils.q<HTMLDivElement>("#trm-back-top");
+	const scrollTriger = utils.q<HTMLSpanElement>('#scroll-triger')
 	const fixedContainer = utils.q(".trm-fixed-container");
 
-	container.style.marginRight = `-${scrollBarWidth}px`;
-	if (sidebar) {
-		sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
-	}
 
 	const intersectionObserver = new IntersectionObserver(
 		(entries, observe) => {
@@ -143,13 +140,8 @@ export function InitScroll() {
 		{ root: container, threshold: [0, 1] }
 	);
 
-	const sections = utils.qa(".trm-scroll-animation");
-	sections.forEach((element) => {
-		element && intersectionObserver.observe(element);
-	});
-
-	const back_fun = function () {
-		window.scrollTo({ top: 0, behavior: "smooth" });
+	const back_fun = function (e?: unknown) {
+		window.scrollTo({ top: 0, behavior: e ? "smooth" : "auto" });
 	};
 
 	const scroll_fun = function () {
@@ -162,27 +154,45 @@ export function InitScroll() {
 		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString());
 		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`)
 
-		const sidebarFun = scrollTop >= 90 ? "add" : "remove";
+		const sidebarFun = scrollTop >= 70 ? "add" : "remove";
 		sidebar && sidebar.classList[sidebarFun]("fixed");
 
-		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 4, 80)}, 0, 1)`)
+		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`)
 	};
 
-	const setSidebarWidth = () => {
+	const setSidebarWidth = function () {
 		if (sidebar) {
 			sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
 		}
 	};
 
+	const scrollToTriger = function () {
+		const container = utils.q<HTMLDivElement>('.trm-banner')
+		container && window.scrollTo({ top: container.clientHeight - 20, behavior: "smooth" });
+	}
+
+	const init = () => {
+		const sections = utils.qa(".trm-scroll-animation");
+		sections.forEach((element) => {
+			element && intersectionObserver.observe(element);
+		});
+		scroll_fun()
+		setSidebarWidth()
+	}
+
+	init()
 	backtop?.addEventListener("click", back_fun);
+	scrollTriger?.addEventListener("click", scrollToTriger)
 	window.addEventListener("scroll", scroll_fun);
 	window.addEventListener("resize", setSidebarWidth);
 
 	document.addEventListener("swup:contentReplaced", (event) => {
-		backtop?.removeEventListener("click", back_fun);
 		intersectionObserver.disconnect();
+		backtop?.removeEventListener("click", back_fun);
+		scrollTriger?.removeEventListener("click", scrollToTriger)
 		window.removeEventListener("scroll", scroll_fun);
 		window.removeEventListener("resize", setSidebarWidth);
+		back_fun()
 	});
 }
 
@@ -217,6 +227,21 @@ export function InitToc() {
 	const postToc = utils.q('#post-toc')
 	const tocBtn = utils.q('.post-toc-btn')
 	if (postToc) {
+		postToc.addEventListener('click', function (e) {
+			const link = e.target as HTMLElement
+			let url = link.getAttribute('href')
+			if (!url) url = link.parentElement.getAttribute('href')
+			if (url) {
+				const scroll = document.querySelector(url)
+				if (scroll) {
+					const elementTop = scroll.getBoundingClientRect().top + (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)
+					window.scrollTo({ top: elementTop - 100, behavior: "smooth" });
+				}
+			}
+			e.preventDefault();
+			return false
+		})
+
 		const elOut = (e: MouseEvent) => {
 			const isElOut = (target: HTMLElement) => {
 				if (target === postToc || target === tocBtn) {
@@ -232,22 +257,6 @@ export function InitToc() {
 		document.addEventListener("swup:contentReplaced", (event) => {
 			window.removeEventListener('click', elOut)
 		})
-
-		// postToc.addEventListener('click', function (e) {
-		// 	const link = e.target as HTMLElement
-		// 	let url = link.getAttribute('href')
-		// 	if (!url) {
-		// 		url = link.parentElement.getAttribute('href')
-		// 	}
-		// 	if (url) {
-		// 		const scroll = document.querySelector(url)
-		// 		if (scroll) {
-		// 			// 滚动到指定位置
-		// 		}
-		// 	}
-		// 	e.preventDefault();
-		// 	return false
-		// })
 	}
 }
 
@@ -397,7 +406,7 @@ export function InitHighlightTool() {
  */
 export function InitTabs() {
 	utils.qa(".trm-tabs .trm-tab > button").forEach(function (item) {
-		item.addEventListener("click", function (e) {
+		item.addEventListener("click", function (e: any) {
 			const $this = this;
 			const $tabItem = $this.parentNode;
 
@@ -456,7 +465,7 @@ export function InitJustifiedGallery() {
 export function InitChangeTitle() {
 	if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.favicon.visibilitychange) {
 		window.originTitle = document.title;
-		let titleTime;
+		let titleTime: string | number | NodeJS.Timeout;
 		let iconEls = Array.from(utils.qa('[rel="icon"]'));
 		let icons = iconEls.map((item) => item.href);
 		document.addEventListener("visibilitychange", function () {

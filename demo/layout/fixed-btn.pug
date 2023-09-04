@@ -6,13 +6,7 @@
         is_toc = is_toc  && toc_content.length > 1;
     }
 
-div(
-    class="trm-fixed-container"
-    data-scroll 
-    data-scroll-sticky 
-    data-scroll-target=".locomotive-scroll__sticky-target" 
-    data-scroll-offset="-10"
-)
+div(class="trm-fixed-container")
     if is_toc
         div(
             class="trm-fixed-btn post-toc-btn"
