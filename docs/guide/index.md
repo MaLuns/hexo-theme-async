@@ -53,7 +53,7 @@ npm i hexo-theme-async@latest
 -   通过克隆本仓库安装（不推荐）
 
 ::: danger
-不推荐直接使用这种方式安装，直接拉取不会显示主题版本号（你也可以手动补齐 package.json 的 version），会导致 bug 版本定位和后续升级比较麻烦。只有当你需要修改源码文件，且不在需要升级时才可通过这种方式安装。
+不推荐直接使用这种方式安装，会导致 bug 版本定位和后续升级比较麻烦。如果您需要自定义样式和页面模块，可以优先使用 [自定义样式](./config.html#自定义样式-style) 和 [自定义模板](./config.html#自定义模板-layout) 配置来个性话您的博客，如果以上方式无法满足您的需求时，且不在需要升级时可选择通过这种方式安装。
 :::
 
 ::: details v2.0.0 后版本
@@ -123,7 +123,7 @@ theme:
     default: style-light # style-light style-dark
 ```
 
-你可以在 `_config.async.yml` 中仅定义（当然，全部覆盖也是可以的）
+你可以在 `_config.async.yml` 中仅定义（当然，全部覆盖也是可以的）需要覆盖配置
 
 ```yaml
 theme:

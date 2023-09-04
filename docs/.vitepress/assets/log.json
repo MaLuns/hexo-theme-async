@@ -1,4 +1,20 @@
 [
+    
+    {
+        "large_version": "v2.1.x",
+        "children":[
+            {
+                "version": "2.1.0-beta",
+                "date": "2023-08-30",
+                "logs": [
+                    {
+                        "type": "perf",
+                        "text": "移除 locomotive-scroll 插件, 采用浏览器默认滚动行为"
+                    }
+                ]
+            }
+        ]
+    },
     {
         "large_version": "v2.0.x",
         "children": [

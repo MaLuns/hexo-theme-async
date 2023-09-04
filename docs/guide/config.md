@@ -903,11 +903,9 @@ layout:
 │   └── themes
 ```
 
+上面 `footer.ejs` 的目录是 `layout/footer.ejs` 则为 `async/footer`， 如果 `footer.ejs` 的目录是 `layout/demo/footer.ejs` 则为 `async/demo/footer`， 必须已 `async/` 作为根（以免和主题冲突）。
+
 编写好 `footer.ejs` 后，修改配置如下：
-
-上面 `footer.ejs` 的目录是 `layout/footer.ejs` 则为 `async/footer`， 如果 `footer.ejs` 的目录是 `layout/demo/footer.ejs` 则为 `async/demo/footer`。
-
-必须已 `async/` 作为根（以免和主题冲突）。
 
 ```yaml
 layout:
@@ -937,7 +935,7 @@ sw: true
 
 -   站点必须为 HTTPS。
 -   添加一个清单文件（manifest)，直接在 `source` 下新增。
-    :::
+:::
 
 清单文件 结构
 
