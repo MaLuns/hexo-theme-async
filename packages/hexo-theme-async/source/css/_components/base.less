@@ -7,24 +7,27 @@
 body {
     font-weight           : 500;
     color                 : var(--body-color, #7B7B7D);
-    background-color      : #00151f;
+    background-color      : var(--body-bg-color);
     letter-spacing        : .05em;
     overflow-x            : hidden;
     margin                : 0;
     padding               : 10px;
     height                : 100vh;
+    scroll-behavior       : smooth;
     -webkit-font-smoothing: antialiased;
 
     &::before {
         content         : '';
         position        : fixed;    
-        left            : 0;
-        top             : 0;
-        width           : 100vw;
-        height          : 100vh;
-        border          : 10px solid #00151f;
+        left            : 10px;
+        top             : 10px;
+        width           : calc(100% - 20px);
+        height          : calc(100% - 20px);
         z-index         : 9999;
         pointer-events  : none;
+        box-shadow      : 0 0 0 20px var(--body-bg-color);
+        border-radius   : 10px;
+        outline         : var(--body-bg-color) solid 10px;
     }
 }
 
@@ -263,7 +266,7 @@ html {
 }
 
 .trm-scroll-container {
-    transition      : opacity .6s;
+    transition: opacity .6s;
 }
 
 // scroll bar
@@ -327,5 +330,5 @@ html {
 
 ::-webkit-scrollbar-track {
     border-radius   : 2px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--body-bg-color);
 }
