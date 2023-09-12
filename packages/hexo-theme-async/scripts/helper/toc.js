@@ -114,7 +114,7 @@ function tocHelper(str, options = {}) {
   options = Object.assign({
     min_depth: 1,
     max_depth: 6,
-    class: 'toc',
+    class: 'trm-toc',
     class_item: '',
     class_link: '',
     class_text: '',

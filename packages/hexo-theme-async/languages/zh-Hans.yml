@@ -69,6 +69,7 @@ post:
     open: 进入阅读模式
     exit: 退出阅读模式
   notice_outdate_message: '距离上次更新已经 %s 天了, 文章内容可能已经过时。'
+  toc: 目录导航
 
 rightside:
   toc_title: 目录

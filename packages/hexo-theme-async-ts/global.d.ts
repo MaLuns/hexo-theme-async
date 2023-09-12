@@ -69,6 +69,9 @@ declare interface Window {
 			just: string;
 		};
 		covers?: string | string[];
+		toc?: {
+			post_title?: boolean
+		}
 	};
 
 	PAGE_CONFIG: {

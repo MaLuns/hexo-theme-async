@@ -7,7 +7,12 @@ if(is_toc){
 }
 %>
 <% if(is_toc){ %>
-    <div id="post-toc" class="post-toc">
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        <%- __('post.toc')%>
+      </div>
+      <div class="trm-post-toc-content">
         <%- toc_content %>
+      </div>
     </div>
 <% } %>

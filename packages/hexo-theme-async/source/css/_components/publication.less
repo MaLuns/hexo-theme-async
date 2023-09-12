@@ -52,7 +52,7 @@
             margin        : 0
         }
     }
-    
+
     .katex {
         svg {
             margin: unset;
@@ -126,6 +126,27 @@
         margin-bottom: 1rem;
         font-weight  : bold;
         font-size    : initial;
+        display      : flex;
+        align-items  : center;
+        cursor       : pointer;
+
+        .trm-toc-icon {
+            display       : inline-block;
+            opacity       : 0;
+            font-size     : 16px;
+            margin-left   : 0.5rem;
+            transform     : translateX(4px);
+            pointer-events: none;
+            .transition-mixin();
+        }
+
+        &:hover {
+            .trm-toc-icon {
+                opacity       : 1;
+                transform     : translateX(0);
+                pointer-events: all;
+            }
+        }
     }
 
     h4:before,

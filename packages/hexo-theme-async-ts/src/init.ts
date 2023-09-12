@@ -158,6 +158,8 @@ export function InitScroll() {
 		sidebar && sidebar.classList[sidebarFun]("fixed");
 
 		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`)
+
+		globalFun.switchToc(false)
 	};
 
 	const setSidebarWidth = function () {
@@ -228,29 +230,46 @@ export function InitToc() {
 	const tocBtn = utils.q('.post-toc-btn')
 	if (postToc) {
 		postToc.addEventListener('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation()
 			const link = e.target as HTMLElement
 			let url = link.getAttribute('href')
 			if (!url) url = link.parentElement.getAttribute('href')
-			if (url) {
-				const scroll = document.querySelector(url)
-				if (scroll) {
-					const elementTop = scroll.getBoundingClientRect().top + (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)
-					window.scrollTo({ top: elementTop - 100, behavior: "smooth" });
-				}
-			}
-			e.preventDefault();
+			if (!url) return
+			const scroll = document.querySelector(url)
+			if (!scroll) return
+			const elementTop = scroll.getBoundingClientRect().top + (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)
+			window.scrollTo({ top: elementTop - 110, behavior: "smooth" });
 			return false
 		})
+
+		if (window.ASYNC_CONFIG.toc.post_title) {
+			postToc.querySelectorAll('.trm-toc-link').forEach(item => {
+				const id = item.getAttribute('href');
+				const title = utils.q(id)
+				if (!title) return
+				const span = document.createElement('span')
+				span.className = 'trm-toc-icon'
+				span.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.toc_tag)
+				span.onclick = function (e) {
+					globalFun.switchToc(true, e.clientX, e.clientY)
+					e.preventDefault()
+					e.stopPropagation()
+					return false
+				}
+				title.appendChild(span)
+			})
+		}
 
 		const elOut = (e: MouseEvent) => {
 			const isElOut = (target: HTMLElement) => {
 				if (target === postToc || target === tocBtn) {
-					return true
+					return false
 				} else {
-					return target.parentElement ? isElOut(target.parentElement) : false
+					return target.parentElement ? isElOut(target.parentElement) : true
 				}
 			}
-			isElOut(<HTMLElement>e.target) ? postToc.classList.add('active') : postToc.classList.remove('active')
+			isElOut(<HTMLElement>e.target) ? postToc.classList.remove('active') : globalFun.switchToc()
 		}
 
 		window.addEventListener('click', elOut)

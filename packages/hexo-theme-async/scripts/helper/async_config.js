@@ -52,6 +52,9 @@ hexo.extend.helper.register('async_config', function () {
             lang: theme.highlight.lang,
             title: theme.highlight.title,
             height_limit: theme.highlight.height_limit
+        },
+        toc: {
+            post_title: theme.toc.post_title
         }
     }
 

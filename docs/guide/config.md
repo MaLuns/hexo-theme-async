@@ -459,6 +459,7 @@ reward: true
 -   `list_number`：是否显示编号
 -   `max_depth`：生成 TOC 的最大深度
 -   `min_depth`：生成 TOC 的最小深度
+-   `post_title`：文章中标题可以快速点击打开目录
 
 ```yaml
 toc:
@@ -466,6 +467,7 @@ toc:
     list_number: true
     max_depth: 3
     min_depth: 1
+    post_title: false
 ```
 
 ### 图片懒加载

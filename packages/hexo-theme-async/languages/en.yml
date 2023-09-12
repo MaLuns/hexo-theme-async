@@ -69,6 +69,7 @@ post:
     open: Enter reading mode
     exit: Exit reading mode
   notice_outdate_message: 'It has been %s days since the last update, the content of the article may be outdated.'
+  toc: Article table of contents
 
 rightside:
   toc_title: Open toc

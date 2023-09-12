@@ -180,6 +180,7 @@ reward:
 toc:
   enable: false
   list_number: true
+  post_title: true
   max_depth: 3
   min_depth: 1
 

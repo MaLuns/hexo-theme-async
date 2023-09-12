@@ -104,10 +104,40 @@ const setThemeColor = function (colorVal = "--theme-bg-color") {
 
 /**
  * 显示 Toc 面板
+ * @param show 
+ * @param x 
+ * @param y 
  */
-const showToc = function () {
-	const postToc = utils.q('#post-toc')
-	postToc && postToc.classList.toggle('active')
+const switchToc = function (show?: boolean, x?: number, y?: number) {
+	const postToc = utils.q<HTMLElement>('#post-toc')
+	if (postToc) {
+		if (show === undefined) {
+			show = !postToc.classList.contains('active')
+		}
+
+		if (show) {
+			if (x && y) {
+				if (y + postToc.clientHeight > window.innerHeight) {
+					y = Math.max(window.innerHeight - postToc.clientHeight, 0)
+				}
+				if (x + postToc.clientWidth > window.innerWidth) {
+					x = Math.max(window.innerWidth - postToc.clientWidth, 0)
+				}
+
+				postToc.style.left = `${x}px`
+				postToc.style.top = `${y}px`
+				postToc.style.right = 'unset'
+				postToc.style.bottom = 'unset'
+			} else {
+				postToc.style.removeProperty('left')
+				postToc.style.removeProperty('top')
+				postToc.style.removeProperty('right')
+				postToc.style.removeProperty('bottom')
+			}
+		}
+
+		show ? postToc.classList.add('active') : postToc.classList.remove('active')
+	}
 }
 
 export default {
@@ -117,5 +147,5 @@ export default {
 	switchReadMode,
 	switchThemeMode,
 	setThemeColor,
-	showToc
+	switchToc
 };
