@@ -262,14 +262,7 @@ export function InitToc() {
 		}
 
 		const elOut = (e: MouseEvent) => {
-			const isElOut = (target: HTMLElement) => {
-				if (target === postToc || target === tocBtn) {
-					return false
-				} else {
-					return target.parentElement ? isElOut(target.parentElement) : true
-				}
-			}
-			isElOut(<HTMLElement>e.target) ? postToc.classList.remove('active') : globalFun.switchToc()
+			utils.clickoutside(<Element>e.target, [postToc, tocBtn]) ? postToc.classList.remove('active') : globalFun.switchToc()
 		}
 
 		window.addEventListener('click', elOut)

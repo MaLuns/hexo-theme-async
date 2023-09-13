@@ -26,6 +26,7 @@ function InitSearch() {
 			return;
 		}
 
+		const searchPopup = document.querySelector(".trm-search-popup")
 		const searchBtn = document.querySelector("#trm-search-btn");
 		const closeBtn = document.querySelector(".trm-search-btn-close");
 		const input = <HTMLInputElement>document.querySelector(".trm-search-input");
@@ -63,14 +64,15 @@ function InitSearch() {
 		};
 
 		const openPopup = () => {
-			document.querySelector(".trm-search-popup").classList.toggle("show");
+			searchPopup.classList.toggle("show");
 			setTimeout(() => input.focus(), 500);
 			if (!localSearch.isfetched) localSearch.fetchData();
 		};
 
 		const colsePopup = function () {
-			document.querySelector(".trm-search-popup").classList.toggle("show");
+			searchPopup.classList.toggle("show");
 		};
+
 		const escClose = function (e: KeyboardEvent) {
 			if (e.key === "Escape") {
 				colsePopup();
@@ -79,7 +81,7 @@ function InitSearch() {
 			}
 		};
 
-		const keypressEventFunction = function (e) {
+		const keypressEventFunction = function (e: KeyboardEvent) {
 			if (e.key === "Enter") inputEventFunction();
 		};
 
@@ -89,9 +91,16 @@ function InitSearch() {
 			input.addEventListener("keypress", keypressEventFunction);
 		}
 
+		const mask = (e: MouseEvent) => {
+			if (<Element>e.target === searchPopup) {
+				colsePopup()
+			}
+		}
+
 		closeBtn.addEventListener("click", colsePopup);
 		searchBtn.addEventListener("click", openPopup);
 		window.addEventListener("keydown", escClose);
+		searchPopup.addEventListener('click', mask)
 
 		document.addEventListener("swup:contentReplaced", (event) => {
 			searchBtn.removeEventListener("click", openPopup);
@@ -99,6 +108,7 @@ function InitSearch() {
 			input.removeEventListener("input", inputEventFunction);
 			input.removeEventListener("keypress", keypressEventFunction);
 			window.removeEventListener("keydown", escClose);
+			searchPopup.removeEventListener('click', mask)
 		});
 	}
 }

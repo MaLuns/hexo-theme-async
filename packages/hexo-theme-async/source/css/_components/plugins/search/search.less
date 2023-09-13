@@ -1,17 +1,22 @@
 .trm-search-popup {
-    position           : fixed;
-    top                : 0;
-    width              : 100vw;
-    height             : 100vh;
-    display            : none;
-    background-color   : #0000008a;
-    /* backdrop-filter : blur(20px); */
-    z-index            : 99;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    z-index         : 99;
+    opacity         : 0;
+    transform       : scale(1.1);
+    pointer-events  : none;
+    background-color: #0000008a;
+    overflow        : hidden;
+    transition      : opacity .3s ease-in-out, transform .3s ease-in-out;
 
     &.show {
-        display: block;
+        opacity       : 1;
+        transform     : scale(1);
+        pointer-events: all;
     }
-
 
     .trm-search-wrapper {
         position     : absolute;
@@ -81,9 +86,12 @@
         overflow-y: auto;
 
         .trm-search-empty {
-            margin    : 10px;
-            padding   : 10px;
-            text-align: center;
+            margin       : 10px;
+            padding      : 10px;
+            text-align   : center;
+            overflow     : hidden;
+            white-space  : nowrap;
+            text-overflow: ellipsis;
         }
 
         .search-result-list {
@@ -107,6 +115,12 @@
                     background-color: var(--primary-30);
                 }
             }
+        }
+
+        mark {
+            color      : var(--theme-color, #00283a);
+            background : var(--primary-50, #afb42b);
+            font-weight: 600;
         }
     }
 
@@ -149,6 +163,14 @@
     }
 }
 
+
+@supports (backdrop-filter: blur(1px)) {
+    .trm-search-popup {
+        backdrop-filter : blur(10px);
+        background-color: #0000002e;
+    }
+}
+
 @media(max-width:768px) {
     .trm-search-popup {
 
@@ -165,8 +187,8 @@
         }
 
         .trm-search-result-container {
-            height    : calc(100vh - 114px);
-            max-height: calc(100vh - 114px);
+            height    : calc(100% - 114px);
+            max-height: calc(100% - 114px);
         }
     }
 }

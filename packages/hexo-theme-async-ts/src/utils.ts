@@ -1,6 +1,8 @@
+let _message: HTMLElement[] = []
+
 export const utils = {
 	q: <T extends Element>(selectors) => document.querySelector<T>(selectors),
-	qa: (selectors) => document.querySelectorAll(selectors),
+	qa: (selectors: any) => document.querySelectorAll(selectors),
 	gId: (id: string) => document.getElementById(id),
 	/**
 	 * 防抖
@@ -23,7 +25,7 @@ export const utils = {
 		};
 	},
 	/**
-	 *
+	 * 包裹元素
 	 * @param el
 	 * @param wrapper
 	 * @param options
@@ -63,7 +65,6 @@ export const utils = {
 			return child !== ele;
 		});
 	},
-	_message: [],
 	/**
 	 * 消息弹窗
 	 * @param title
@@ -72,14 +73,14 @@ export const utils = {
 	message(title: string, type = "success") {
 		let message = document.createElement("div");
 		message.className = `trm-message ${type}`;
-		message.style.top = `${30 + utils._message.length * 60}px`;
+		message.style.top = `${30 + _message.length * 60}px`;
 		message.innerText = title;
 		document.body.append(message);
-		utils._message.push(message);
+		_message.push(message);
 		setTimeout(() => {
-			utils._message = utils._message.filter((item) => item !== message);
+			_message = _message.filter((item) => item !== message);
 			document.body.removeChild(message);
-			utils._message.forEach((item, index) => {
+			_message.forEach((item, index) => {
 				item.style.top = `${30 + index * 60}px`;
 			});
 		}, 2000);
@@ -228,4 +229,17 @@ export const utils = {
 
 		return widthNoScroll - widthWithScroll;
 	},
+	/**
+	 * 判断当前点击是否在 元素之外
+	 * @param el 
+	 * @param els 
+	 * @returns 
+	 */
+	clickoutside(el: Element, els: Element[]): boolean {
+		if (els.includes(el)) {
+			return false
+		} else {
+			return el.parentElement ? utils.clickoutside(el.parentElement, els) : true
+		}
+	}
 };
