@@ -1,4 +1,10 @@
 .trm-read-mode {
+    padding: 0;
+
+    &::before {
+        content: unset;
+    }
+
     .trm-app-frame {
         border          : none;
         border-radius   : 0;
@@ -6,9 +12,9 @@
     }
 
     .trm-top-bar,
-    #page-sidebar,
-    #post-info,
-    #post-next-prev,
+    .trm-page-sidebar,
+    .trm-post-info,
+    .trm-post-next-prev,
     .footer-divider,
     .trm-fixed-container,
     footer {
@@ -16,7 +22,8 @@
     }
 
     .trm-banner {
-        height: 60px;
+        height : 40px;
+        z-index: 10;
 
         .trm-banner-content.trm-overlay {
             padding-top     : 0;
@@ -24,13 +31,16 @@
 
             .trm-banner-text {
                 h1 {
-                    color    : var(--theme-color, #00283a);
-                    position : fixed;
-                    left     : 0;
-                    right    : 0;
-                    width    : fit-content;
-                    margin   : auto;
-                    font-size: x-large;
+                    position        : fixed;
+                    top             : 0;
+                    left            : 0;
+                    right           : 0;
+                    width           : 100%;
+                    line-height     : 40px;
+                    font-size       : 22px;
+                    text-align      : center;
+                    color           : var(--theme-color, #00283a);
+                    background-color: var(--theme-bg-color, #fcfcfe);
                 }
 
                 div,
@@ -47,12 +57,16 @@
         }
     }
 
-    #page-content {
+    .trm-page-content {
         flex     : 0 0 100%;
         max-width: 100%;
 
         .trm-content {
             margin: 0;
+
+            >.trm-card {
+                padding: 10px 0 0;
+            }
         }
     }
 

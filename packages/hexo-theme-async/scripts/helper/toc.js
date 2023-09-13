@@ -96,7 +96,7 @@ function tocHelper(str, options = {}) {
 
         result += `<li class="${className}-item ${className}-level-${level}">`;
         if (href) {
-            result += `<a rel="nofollow" class="${className}-link" href="${href}" data-scroll-to="${href}"><span class="${className}-tips">${text}</span></a>`;
+            result += `<a rel="nofollow" class="${className}-link" href="${href}"><span class="${className}-tips">${text}</span></a>`;
         } else {
             result += `<a rel="nofollow" class="${className}-link"><span class="${className}-tips">${text}</span></a>`;
         }
@@ -172,7 +172,7 @@ function tocHelper(str, options = {}) {
 
     result += `<li class="${itemClassName} ${levelClassName}-${level}">`;
     if (href) {
-      result += `<a rel="nofollow" class="${linkClassName}" href="${href}"  data-scroll-to="${href}">`;
+      result += `<a rel="nofollow" class="${linkClassName}" href="${href}">`;
     } else {
       result += `<a class="${linkClassName}">`;
     }

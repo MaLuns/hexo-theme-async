@@ -175,9 +175,10 @@
     .trm-search-popup {
 
         .trm-search-wrapper {
-            width        : 100vw;
             top          : 0;
             border-radius: 0;
+            width        : 100%;
+            height       : 100%;
         }
 
         .trm-search-form {
@@ -189,6 +190,7 @@
         .trm-search-result-container {
             height    : calc(100% - 114px);
             max-height: calc(100% - 114px);
+            word-wrap : break-word;
         }
     }
 }

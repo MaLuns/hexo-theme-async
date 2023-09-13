@@ -22,6 +22,7 @@
         text-align      : center;
         background-color: var(--fixed-button-bg-color);
         color           : var(--fixed-button-color);
+        box-shadow      : var(--box-shadow);
 
         .transition-mixin(color);
 
@@ -68,6 +69,10 @@
                 transform: translate(0, -50%) scale(1);
             }
         }
+    }
+
+    @media(max-width:768px) {
+        right: 10px;
     }
 
     &.offset {

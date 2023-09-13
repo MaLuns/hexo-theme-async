@@ -103,10 +103,10 @@ comment:
 
 第一部分：
 
-你需要`layout/_third-party/comment/twikoo.ejs` 文件，在里面编写评论插件使用的 HTML 相关代码。
+您需要`layout/_third-party/comment/twikoo.ejs` 文件，在里面编写评论插件使用的 HTML 相关代码。
 
 ``` html 
-<div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
+<div class="trm-card trm-scroll-animation comment-container">
     <div id="tcomment"></div>
 </div>
 ```
@@ -154,7 +154,7 @@ assets:
 
 ### 引擎搜索
 
-跳转搜索引擎搜索你的网站内容
+跳转搜索引擎搜索您的网站内容
 
 可通过 `site:www.imalun.com 想要搜索的内容` 进行搜索
 

@@ -109,7 +109,7 @@ Part I:
 You'll need a `layout/_third-party/comment/twikoo.ejs` file where you'll write the HTML-related code used by the comment plug-in.
 
 ```html
-<div class="trm-card trm-scroll-animation comment-container" data-scroll data-scroll-offset="50">
+<div class="trm-card trm-scroll-animation comment-container">
 	<div id="tcomment"></div>
 </div>
 ```

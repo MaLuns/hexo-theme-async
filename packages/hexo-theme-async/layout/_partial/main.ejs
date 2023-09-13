@@ -5,14 +5,14 @@
     <div class="container">
         <div class="row">
             <% if(!page.single_column) { %>
-                <div id="page-sidebar" class="col-lg-4 hidden-sm">
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
                     <!-- main card -->
                     <%- partial(theme.layout.sidebar) %>
                     <!-- main card end -->
                 </div>
             <% } %>
-            <div id="page-content" class="<%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
-                <div class="trm-content" id="trm-content">
+            <div class="trm-page-content <%- !page.single_column ? 'col-lg-8':'col-lg-12' %>">
+                <div id="trm-content" class="trm-content">
                     <%- content %>
 
                     <div class="trm-divider footer-divider"></div>

@@ -18,7 +18,7 @@ if(is_toc){
         </div>
     <% } %>
     <% if(theme.rightside.aside && !page.single_column) { %>
-        <div class="trm-fixed-btn" data-title="<%- __('rightside.aside') %>" onclick="asyncFun.switchSingleColumn()">
+        <div class="trm-fixed-btn hidden-md" data-title="<%- __('rightside.aside') %>" onclick="asyncFun.switchSingleColumn()">
             <%- icon(theme.icons.arrows) %>
         </div>
     <% } %>

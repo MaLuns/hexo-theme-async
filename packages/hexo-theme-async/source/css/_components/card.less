@@ -243,13 +243,15 @@
         }
     }
 
-    &.fixed {
-        position : fixed;
-        top      : 90px;
-        transform: translateY(0);
+    @media (min-width:992px) {
+        &.fixed {
+            position : fixed;
+            top      : 90px;
+            transform: translateY(0);
 
-        .trm-main-card {
-            border-radius: 0;
+            .trm-main-card {
+                border-radius: 0;
+            }
         }
     }
 }

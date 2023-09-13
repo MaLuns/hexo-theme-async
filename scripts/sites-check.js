@@ -26,7 +26,7 @@ const generateDemoSiteHtml = (data) => {
       </tr>
 </table>
 <!-- demo-end -->`
-    return str;
+    return str
 }
 
 const updateReadme = (sites) => {
@@ -49,15 +49,15 @@ const check = (data) => {
                 })
                 res.on("end", () => {
                     if (!/ASYNC_CONFIG/.test(html)) {
-                        console.log('校验失败: ', data.url);
+                        console.log('校验失败: ', data.url)
                         data.type = -2
                     } else {
-                        console.log('校验通过: ', data.url);
+                        console.log('校验通过: ', data.url)
                         delete data.type
                     }
                 })
             } else {
-                console.log('站点无法访问: ', data.url);
+                console.log('站点无法访问: ', data.url)
                 data.type = -1
             }
         })
@@ -65,7 +65,7 @@ const check = (data) => {
             resolve()
         })
         req.on("error", () => {
-            console.log('站点无法访问: ', data.url);
+            console.log('站点无法访问: ', data.url)
             data.type = -1
             resolve()
         })

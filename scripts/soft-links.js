@@ -13,7 +13,7 @@ if (!existsSync(themePath)) {
 
 if (!existsSync(targetPath)) {
     symlink(sourcePath, targetPath, 'dir').catch(err => {
-        log.i('软链接创建失败,请手动为 packages/hexo-theme-async 目录创建软链接到 demo/themes/async');
+        log.i('软链接创建失败,请手动为 packages/hexo-theme-async 目录创建软链接到 demo/themes/async')
         if (process.platform === "win32") {
             log.i(`命令: mklink /j ${targetPath} ${sourcePath}`)
         } else {

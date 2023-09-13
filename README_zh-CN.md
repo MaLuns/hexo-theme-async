@@ -21,6 +21,7 @@
   <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/">
     <img src="https://img.shields.io/badge/hexo-6.3.0+-0e83c?logo=hexo" alt="hexo version">
   </a>
+	<img src="https://img.shields.io/badge/v14.x-x?logo=node.js&label=node" alt="node version">
   <img src="https://img.shields.io/github/languages/code-size/MaLuns/hexo-theme-async?logo=Visual Studio Code&logoColor=blue" alt="GitHub code size in bytes">
   <a title="GitHub Discussions" target="_blank" href="https://github.com/MaLuns/hexo-theme-async/discussions">
     <img src="https://img.shields.io/github/discussions/MaLuns/hexo-theme-async?color=9cf&logo=github" alt="GitHub Discussions">

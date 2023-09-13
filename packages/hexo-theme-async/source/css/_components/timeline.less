@@ -98,4 +98,28 @@
             padding    : 20px;
         }
     }
+
+    @media (max-width:768px) {
+        padding: 0;
+
+        &::before {
+            content: unset;
+        }
+
+        .trm-timeline-content {
+            margin-left: 0;
+
+            &::after {
+                content: unset;
+            }
+        }
+
+        .trm-timeline-item {
+
+            .trm-timeline-mark-light,
+            .trm-timeline-mark {
+                display: none;
+            }
+        }
+    }
 }

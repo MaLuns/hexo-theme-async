@@ -58,7 +58,7 @@ layout: category
 
 > [分类和标签](https://hexo.io/zh-cn/docs/front-matter.html#%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE)
 
-尽管 Hexo 支持了为一篇文章设置多个分类，但我个人更建议你一篇文章只放在一个分类下，而使用标签来为它进行多个描述。
+尽管 Hexo 支持了为一篇文章设置多个分类，但我个人更建议您一篇文章只放在一个分类下，而使用标签来为它进行多个描述。
 
 同时太多的分类与标签，既不方便整理，也不利于移动端的展示。
 
@@ -162,7 +162,7 @@ about:
   blog:         # 博客信息
   privacy:      # 隐私权说明    
 ```
-你也可以直接在 `source/about/index.md` 编写你的关于页面， 如果 `about/index.md` 有内容则优先使用自定义内容，否则使用配置项内容。
+您也可以直接在 `source/about/index.md` 编写您的关于页面， 如果 `about/index.md` 有内容则优先使用自定义内容，否则使用配置项内容。
 
 ## 404 Not Found
 可以直接在 `source` 目录下新建 `404.md`。
@@ -172,12 +172,12 @@ layout: 404
 ---
 ```
 
-在本地，你也可以直接访问 `/404.html` 查看效果。只有当你将其部署到 `GitHub Pages` 上，你访问不存在的页面才会显示。
+在本地，您也可以直接访问 `/404.html` 查看效果。只有当您将其部署到 `GitHub Pages` 上，您访问不存在的页面才会显示。
 
 
 ## 自定义页面 Customize Page
 
-新建自定义页面。像上面 友链、关于等页面也属于自定义页面，主要区别是它们可以通过约定配置，就可以输出主题内置页面样式，当然如果你想要个性化这些页面，也可以通过自定也页面覆盖主题的默认信行为。
+新建自定义页面。像上面 友链、关于等页面也属于自定义页面，主要区别是它们可以通过约定配置，就可以输出主题内置页面样式，当然如果您想要个性化这些页面，也可以通过自定也页面覆盖主题的默认信行为。
 
 ```bash
 hexo new page xxxxx
@@ -196,7 +196,7 @@ single_column: true
 
 ### 相册页
 
-相册页面只是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+相册页面只是普通的页面，您只需要 hexo new page xxxxx 创建您的页面就行
 
 然后使用标签外挂 [gallery](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
 
@@ -211,7 +211,7 @@ single_column: true
 
 ### 相册详情页
 
-相册详情页面也是普通的页面，你只需要 hexo new page xxxxx 创建你的页面就行
+相册详情页面也是普通的页面，您只需要 hexo new page xxxxx 创建您的页面就行
 
 然后使用标签外挂 [galleryGroup](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
 

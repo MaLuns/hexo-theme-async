@@ -48,7 +48,7 @@ function gallery(args) {
 
     return `
 <div class="col-lg-${col}">
-    <a href="${url}" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="${url}" class="trm-portfolio-item trm-scroll-animation">
         <div class="trm-cover-frame" style="padding-bottom:${ratio}%">
             <img class="trm-cover no-fancybox" src="${img}" alt="Group Image Gallery">
         </div>

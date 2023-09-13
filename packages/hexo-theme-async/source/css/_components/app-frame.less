@@ -12,29 +12,17 @@
     .trm-content-start {
         margin: 0 40px;
 
-        &:before {
-            content         : '';
-            position        : absolute;
-            left            : 30px;
-            top             : -8px;
-            height          : 8px;
-            width           : calc(100% - 60px);
-            background-color: var(--theme-color, #00283a);
-            border-radius   : 5px 5px 0 0;
-            opacity         : .3;
+        .container {
+            position: relative;
+
+            .trm-content {
+                margin-top: -40px;
+                padding   : 0 0 60px;
+                z-index   : 0;
+                position  : relative;
+                z-index   : 1;
+            }
         }
-    }
-
-    .trm-content {
-        margin-top: -40px;
-        padding   : 0 0 60px;
-        z-index   : 0;
-        position  : relative;
-        z-index   : 1;
-    }
-
-    .container {
-        position: relative;
     }
 }
 
@@ -53,23 +41,28 @@
         .trm-content-start {
             margin : 0;
             z-index: 999;
-        }
 
-        .trm-content {
-            margin-top: 40px;
-            padding   : 0 0 40px;
+            .container {
+                .trm-content {
+                    margin-top: 0px;
+                    padding   : 0 0 40px;
+                }
+            }
         }
     }
 }
 
 @media(max-width:768px) {
     .trm-app-frame {
-        .container {
-            padding: 0 10px;
-        }
+        .trm-content-start {
+            .container {
+                padding: 0 10px;
 
-        .trm-content {
-            margin-top: 20px;
+                .trm-content {
+                    margin-top: 10px;
+                    padding   : 0 0 20px;
+                }
+            }
         }
     }
 }

@@ -1,0 +1,17 @@
+# 通用配置
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+indent_size = 2
+tab_width = 2
+
+[*.js]
+[*.ts]
+quote_type = single 
+
+[*.less]
+indent_style = space
+indent_size = 4

@@ -18,17 +18,17 @@ body {
     -webkit-font-smoothing: antialiased;
 
     &::before {
-        content         : '';
-        position        : fixed;    
-        left            : 10px;
-        top             : 10px;
-        width           : calc(100% - 20px);
-        height          : calc(100% - 20px);
-        z-index         : 9999;
-        pointer-events  : none;
-        box-shadow      : 0 0 0 20px var(--body-bg-color);
-        border-radius   : 10px;
-        outline         : var(--body-bg-color) solid 10px;
+        content       : '';
+        position      : fixed;
+        left          : 10px;
+        top           : 10px;
+        width         : calc(100% - 20px);
+        height        : calc(100% - 20px);
+        z-index       : 9999;
+        pointer-events: none;
+        box-shadow    : 0 0 0 20px var(--body-bg-color);
+        border-radius : 10px;
+        outline       : var(--body-bg-color) solid 10px;
     }
 }
 
@@ -192,54 +192,6 @@ html {
     }
 }
 
-.trm-p-10 {
-    padding: 10px !important;
-}
-
-.trm-p-20 {
-    padding: 20px !important;
-}
-
-.trm-p-30 {
-    padding: 30px !important;
-}
-
-.trm-mb-10 {
-    margin-bottom: 10px
-}
-
-.trm-mb-15 {
-    margin-bottom: 15px
-}
-
-.trm-mb-20 {
-    margin-bottom: 20px
-}
-
-.trm-mb-30 {
-    margin-bottom: 30px
-}
-
-.trm-mb-40 {
-    margin-bottom: 40px
-}
-
-.trm-mt-10 {
-    margin-top: 10px
-}
-
-.trm-mt-15 {
-    margin-top: 15px
-}
-
-.trm-mt-20 {
-    margin-top: 20px
-}
-
-.trm-mt-40 {
-    margin-top: 40px
-}
-
 .trm-just-img {
     width        : 100%;
     border-radius: 5px
@@ -323,3 +275,27 @@ html {
     border-radius   : 2px;
     background-color: var(--body-bg-color);
 }
+
+@media(max-width:768px) {
+    body::before {
+        content: unset;
+    }
+}
+
+// 定义 margin padding 变量
+@marginKey: 10, 15, 20, 25, 30, 35, 40;
+each(@marginKey, {
+        .trm-p-@{value} {
+            padding: unit(@value, px) !important;
+        }
+
+        .trm-mb-@{value} {
+            margin-bottom: unit(@value, px);
+        }
+
+        .trm-mt-@{value} {
+            margin-top: unit(@value, px);
+        }
+    }
+
+);

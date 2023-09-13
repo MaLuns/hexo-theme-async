@@ -19,6 +19,22 @@
     transition: @type @time ease-in-out;
 }
 
+//
+.ellipsis() {
+    overflow     : hidden;
+    white-space  : nowrap;
+    text-overflow: ellipsis;
+}
+
+// 
+.line-ellipsis(@line: 2) {
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    display           : -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @line;
+}
+
 @import './_variables/index.less';
 @import './_components/index.less';
 @import (optional) '../../../../source/_data/style/index.less';

@@ -7,28 +7,28 @@ comments: false
 
 <div class="row">
   <div class="col-lg-3"><!-- counter -->
-    <div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-counter-up trm-scroll-animation">
       <div class="trm-counter-number"><span class="trm-counter">74</span><span class="trm-counter-symbol">+</span></div>
       <div class="trm-divider trm-mb-20 trm-mt-20"></div>
       <div class="trm-label">Completed projects</div>
     </div>
     <!-- counter end --></div>
   <div class="col-lg-3"><!-- counter -->
-    <div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-counter-up trm-scroll-animation">
       <div class="trm-counter-number"><span class="trm-counter">50</span><span class="trm-counter-symbol">+</span></div>
       <div class="trm-divider trm-mb-20 trm-mt-20"></div>
       <div class="trm-label">Completed projects</div>
     </div>
     <!-- counter end --></div>
   <div class="col-lg-3"><!-- counter -->
-    <div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-counter-up trm-scroll-animation">
       <div class="trm-counter-number"><span class="trm-counter">14</span><span class="trm-counter-symbol">+</span></div>
       <div class="trm-divider trm-mb-20 trm-mt-20"></div>
       <div class="trm-label">Honors and Awards</div>
     </div>
     <!-- counter end --></div>
   <div class="col-lg-3"><!-- counter -->
-    <div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-counter-up trm-scroll-animation">
       <div class="trm-counter-number"><span class="trm-counter">140</span><span class="trm-counter-symbol">+</span></div>
       <div class="trm-divider trm-mb-20 trm-mt-20"></div>
       <div class="trm-label">Honors and Awards</div>
@@ -38,7 +38,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html
-<div class="trm-counter-up trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+<div class="trm-counter-up trm-scroll-animation">
   <div class="trm-counter-number">
     <span class="trm-counter">140</span>
     <span class="trm-counter-symbol">+</span>
@@ -56,7 +56,7 @@ comments: false
   <div class="col-lg-4">
     <!-- portfolio item -->
     <a data-fancybox="portfolio" href="/demosite/img/1.jpg"
-      class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+      class="trm-portfolio-item trm-scroll-animation">
       <div class="trm-cover-frame">
         <img class="trm-cover" src="/demosite/img/1.jpg" alt="item">
       </div>
@@ -70,7 +70,7 @@ comments: false
   <div class="col-lg-4">
     <!-- portfolio item -->
     <a data-fancybox="portfolio" href="/demosite/img/2.jpg"
-      class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+      class="trm-portfolio-item trm-scroll-animation">
       <div class="trm-cover-frame">
         <img class="trm-cover" src="/demosite/img/2.jpg" alt="item">
       </div>
@@ -84,7 +84,7 @@ comments: false
   <div class="col-lg-4">
     <!-- portfolio item -->
     <a data-fancybox="portfolio" href="/demosite/img/3.gif"
-      class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+      class="trm-portfolio-item trm-scroll-animation">
       <div class="trm-cover-frame">
         <img class="trm-cover" src="/demosite/img/3.gif" alt="item">
       </div>
@@ -99,7 +99,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html 这是标题 https://www.imalun.com 地址
-<a data-fancybox="portfolio" href="/demosite/img/1.jpg" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+<a data-fancybox="portfolio" href="/demosite/img/1.jpg" class="trm-portfolio-item trm-scroll-animation">
   <div class="trm-cover-frame">
     <img class="trm-cover" src="/demosite/img/1.jpg" alt="item">
   </div>
@@ -116,7 +116,7 @@ comments: false
     <h5 class="trm-mb-40 trm-mt-20  trm-title-with-divider">订单卡片 <span data-number="02"></span></h5>
   </div>
   <div class="col-lg-4"><!-- price table -->
-    <div class="trm-price trm-popular trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40"><!-- card header -->
+    <div class="trm-price trm-popular trm-scroll-animation"><!-- card header -->
       <div class="trm-price-header">
         <h6>Hourly Payment</h6>
       </div>
@@ -134,7 +134,7 @@ comments: false
       <!-- price list end --><a href="#trm-order" class="trm-btn">Order now <i class="fas fa-arrow-right"></i></a></div>
     <!-- price table --></div>
    <div class="col-lg-4"><!-- price table -->
-    <div class="trm-price trm-popular trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40"><!-- card header -->
+    <div class="trm-price trm-popular trm-scroll-animation"><!-- card header -->
       <div class="trm-price-header">
         <h6>Hourly Payment</h6>
       </div>
@@ -152,7 +152,7 @@ comments: false
       <!-- price list end --><a href="#trm-order" class="trm-btn">Order now <i class="fas fa-arrow-right"></i></a></div>
     <!-- price table --></div>
   <div class="col-lg-4"><!-- price table -->
-    <div class="trm-price trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40"><!-- card header -->
+    <div class="trm-price trm-scroll-animation"><!-- card header -->
       <div class="trm-price-header">
         <h6>Full Time</h6>
       </div>
@@ -173,7 +173,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html
-<div class="trm-price trm-popular trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+<div class="trm-price trm-popular trm-scroll-animation">
   <!-- card header -->
   <div class="trm-price-header">
     <h6>Hourly Payment</h6>
@@ -201,7 +201,7 @@ comments: false
     <h5 class="trm-mb-40 trm-mt-20 trm-title-with-divider">百分比卡片 <span data-number="03"></span></h5>
   </div>
   <div class="col-lg-8">
-    <div class="trm-skill-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-skill-card trm-scroll-animation">
       <div class="trm-mb-40">
         <div class="trm-skill-header">
           <h6 class="trm-mb-15">Html</h6>
@@ -229,7 +229,7 @@ comments: false
     </div>
   </div>
   <div class="col-lg-4">
-    <div class="trm-skill-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-skill-card trm-scroll-animation">
       <div class="trm-mb-40">
         <div class="trm-skill-header">
           <h6 class="trm-mb-15">jQuery</h6>
@@ -260,7 +260,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html
-<div class="trm-skill-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+<div class="trm-skill-card trm-scroll-animation">
   <div class="trm-mb-40">
     <div class="trm-skill-header">
       <h6 class="trm-mb-15">Html</h6>
@@ -294,7 +294,7 @@ comments: false
     <h5 class="trm-mb-40 trm-mt-20 trm-title-with-divider">文章列表卡片<span data-number="04"></span></h5>
   </div>
   <div class="col-lg-4">
-    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-older-publications-card trm-scroll-animation">
       <div class="trm-older-publication trm-mb-20"><a class="trm-op-top trm-anima-link" href="publication.html"><span class="trm-op-cover"><img src="/demosite/img/1.jpg" alt="cover"></span>
         <h6 class="trm-op-title">Make a resume for yourself today</h6>
         </a>
@@ -328,7 +328,7 @@ comments: false
     </div>
   </div>
   <div class="col-lg-8">
-    <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-older-publications-card trm-scroll-animation">
       <div class="trm-older-publication trm-mb-20"><a class="trm-op-top trm-anima-link" href="publication.html"><span class="trm-op-cover"><img src="/demosite/img/1.jpg" alt="cover"></span>
         <h6 class="trm-op-title">Make a resume for yourself today</h6>
         </a>
@@ -365,7 +365,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html
- <div class="trm-older-publications-card trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+ <div class="trm-older-publications-card trm-scroll-animation">
   <div class="trm-older-publication trm-mb-20">
     <a class="trm-op-top trm-anima-link" href="publication.html">
       <span class="trm-op-cover">
@@ -417,7 +417,7 @@ comments: false
     <h5 class="trm-mb-40 trm-mt-20 trm-title-with-divider">视频卡片<span data-number="05"></span></h5>
   </div>
   <div class="col-lg-12"><!-- video -->
-    <div class="trm-video trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+    <div class="trm-video trm-scroll-animation">
       <div class="trm-video-content trm-overlay"><img src="/demosite/img/3.gif" alt="video-cover">
         <div class="trm-button-puls"></div>
         <a data-fancybox="" href="https://cdn.moji.com/websrc/video/autumn20190924.mp4" class="trm-play-button"><i class="fas fa-play"></i></a></div>
@@ -427,7 +427,7 @@ comments: false
 
 <div class="trm-publication">
 ``` html
-<div class="trm-video trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
+<div class="trm-video trm-scroll-animation">
   <div class="trm-video-content trm-overlay">
     <img src="/demosite/img/3.gif" alt="video-cover">
     <div class="trm-button-puls"></div>

@@ -148,22 +148,8 @@
             }
         }
     }
-}
 
-@keyframes mouse {
-    0% {
-        opacity  : 1;
-        transform: translateY(0)
-    }
-
-    100% {
-        opacity  : 0;
-        transform: translateY(8px)
-    }
-}
-
-@media(max-width:992px) {
-    .trm-banner {
+    @media(max-width:992px) {
         height       : 350px;
         border-radius: 0 0 10px 10px;
 
@@ -174,7 +160,8 @@
 
         .trm-banner-content {
             .trm-banner-text {
-                text-align: center;
+                text-align   : center;
+                padding-right: 0;
 
                 &.trm-text-center {
                     text-align: center;
@@ -191,5 +178,32 @@
             }
         }
 
+    }
+
+    @media(max-width:768px) {
+        height       : 250px;
+        border-radius: 0;
+
+        .trm-banner-content {
+            .trm-banner-text {
+                .trm-hsmb-font {
+                    font-size: 1.8rem;
+                    padding  : 0 10px;
+                    .ellipsis()
+                }
+            }
+        }
+    }
+}
+
+@keyframes mouse {
+    0% {
+        opacity  : 1;
+        transform: translateY(0)
+    }
+
+    100% {
+        opacity  : 0;
+        transform: translateY(8px)
     }
 }

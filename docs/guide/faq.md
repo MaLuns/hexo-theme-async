@@ -38,7 +38,7 @@ root: /
 
 ## 配置项不生效？
 
-你可以参考查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) 文件及相关注释，确保你配置正确性。
+您可以参考查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) 文件及相关注释，确保您配置正确性。
 
 -   初始安装后不生效？
 
@@ -53,7 +53,7 @@ root: /
 如图：
 ![示例](/imgs/node.png)
 
-说明您 Node 版本低于 14.x，请升级你的 Node 版本。
+说明您 Node 版本低于 14.x，请升级您的 Node 版本。
 
 ## About 页面不显示？
 

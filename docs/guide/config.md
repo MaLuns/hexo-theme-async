@@ -41,7 +41,7 @@ en:
 zh-Hans:
     site:
         title: 本站信息
-# 你也可以扩展其他语言
+# 您也可以扩展其他语言
 ```
 
 如果仅使用中文语言，除 `zh-Hans` 项均可删除。
@@ -424,8 +424,8 @@ footer:
 开启后，将在每篇文章 `post` 末尾显示打赏按钮。
 
 -   `enable`: 开启打赏
--   `comment`: 在打赏按钮下显示你想说的话
--   `url`: 你的打赏链接（当你开启打赏链接时，将自动跳转你的外部链接而不是展开二维码）
+-   `comment`: 在打赏按钮下显示您想说的话
+-   `url`: 您的打赏链接（当您开启打赏链接时，将自动跳转您的外部链接而不是展开二维码）
 -   `methods`: 数组，打赏方式
 
 #### 打赏二维码
@@ -510,7 +510,7 @@ creative_commons:
     clipboard: false
 ```
 
-> 你的 `url` 请在 Hexo 工作目录下的 `_config.yml` 中设置。
+> 您的 `url` 请在 Hexo 工作目录下的 `_config.yml` 中设置。
 > [配置｜ Hexo](https://hexo.io/zh-cn/docs/configuration#%E7%BD%91%E5%9D%80)
 
 ```yaml
@@ -585,7 +585,7 @@ error_img:
 
 -   `enable`: 是否开启
 -   `len`: 需要显示分类数量，默认为 2 个
--   `list`: 如果你需要固定显示分类，可以通过这个字段配置
+-   `list`: 如果您需要固定显示分类，可以通过这个字段配置
 
 ```yaml
 categorie_card:
@@ -740,7 +740,7 @@ icons:
 
 ### `1.2.x` 版本
 
--   新建 `source/_data/style/index.less`，开始编写你的自定义样式了。
+-   新建 `source/_data/style/index.less`，开始编写您的自定义样式了。
 
 ```text {5}
 ┌── blog
@@ -786,7 +786,7 @@ icons:
 
 ### `1.1.x` 版本
 
--   新建 source/_data/style/dark.less、source/_data/style/light.less，开始编写你的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
+-   新建 source/_data/style/dark.less、source/_data/style/light.less，开始编写您的自定义样式了。他们分别默认会合并到 `dark`、`light` 两种模式中去。
 -   如果需要覆盖变量可以添加 source/_data/style/dark.variables.less、source/_data/style/light.variables.less，进行覆盖。
 
 ```text {4,5,6,7,8}
@@ -968,4 +968,4 @@ sw: true
 
 ## 更多配置
 
-你可以直接查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) 文件及相关注释。
+您可以直接查看 [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) 文件及相关注释。

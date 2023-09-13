@@ -1,4 +1,5 @@
 .trm-publication {
+    word-break: break-all;
 
     >p:first-of-type {
         color  : var(--theme-color, #00283a) !important;
@@ -140,11 +141,13 @@
             .transition-mixin();
         }
 
-        &:hover {
-            .trm-toc-icon {
-                opacity       : 1;
-                transform     : translateX(0);
-                pointer-events: all;
+        @media (any-hover: hover) {
+            &:hover {
+                .trm-toc-icon {
+                    opacity       : 1;
+                    transform     : translateX(0);
+                    pointer-events: all;
+                }
             }
         }
     }

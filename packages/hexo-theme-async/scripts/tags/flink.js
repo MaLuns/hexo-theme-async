@@ -30,7 +30,7 @@ const flinkFn = (args, content) => {
         listResult += `
 <div class="col-lg-${col}">
     <a href='${item.url}' target='_blank' rel="nofollow">
-        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
             <div class="trm-service-content">
                 <div class="trm-icon">
                     <img class="no-fancybox" draggable="false" ${onerror('flink')} alt="${item.name}" src="${item.image}">
