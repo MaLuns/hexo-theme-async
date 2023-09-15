@@ -285,7 +285,7 @@ $$
 <div class="row">
 
 <div class="col-lg-6">
-    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation">
         <div class="trm-cover-frame" style="padding-bottom:60%">
             <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/z8/z8dg9y.jpg" alt="Group Image Gallery" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
         </div>
@@ -299,7 +299,7 @@ $$
 </div>
 
 <div class="col-lg-6">
-    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation" data-scroll data-scroll-offset="40">
+    <a href="/demosite/gallery/wallpaper" class="trm-portfolio-item trm-scroll-animation">
         <div class="trm-cover-frame" style="padding-bottom:60%">
             <img class="trm-cover no-fancybox" src="https://th.wallhaven.cc/lg/rd/rddgwm.jpg" alt="Group Image Gallery" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
         </div>
@@ -343,7 +343,7 @@ $$
 <div class="trm-flink row">
 <div class="col-lg-12">
     <a href='//hexo.io/' target='_blank' rel="nofollow">
-        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
             <div class="trm-service-content">
                 <div class="trm-icon">
                     <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
@@ -358,7 +358,7 @@ $$
 </div>
 <div class="col-lg-12">
     <a href='//www.imalun.com/' target='_blank' rel="nofollow">
-        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
             <div class="trm-service-content">
                 <div class="trm-icon">
                     <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar12312.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
@@ -378,7 +378,7 @@ $$
 <div class="trm-flink row">
 <div class="col-lg-12">
     <a href='//hexo.io/' target='_blank' rel="nofollow">
-        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
             <div class="trm-service-content">
                 <div class="trm-icon">
                     <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="Hexo" src="//d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
@@ -393,7 +393,7 @@ $$
 </div>
 <div class="col-lg-12">
     <a href='//www.imalun.com/' target='_blank' rel="nofollow">
-        <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+        <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
             <div class="trm-service-content">
                 <div class="trm-icon">
                     <img class="no-fancybox" draggable="false" onerror='this.onerror=null;this.src="/demosite/img/friend_404.gif"' alt="白云苍狗" src="//www.imalun.com/images/avatar.jpg" loading="lazy" onerror='this.onerror=null;this.src="/demosite/img/404.jpg"'>
