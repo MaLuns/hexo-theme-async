@@ -153,7 +153,7 @@ live2d:
 
 ## pjax
 
-使用 [swup](https://swup.js.org/getting-started/) 实现，默认为开启的。
+使用 [swup](https://swup.js.org/getting-started/) 实现，默认为关闭的。
 
 ``` yaml
 swup: true

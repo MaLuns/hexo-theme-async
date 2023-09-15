@@ -13,5 +13,6 @@ tab_width = 2
 quote_type = single 
 
 [*.less]
+[*.json]
 indent_style = space
 indent_size = 4
