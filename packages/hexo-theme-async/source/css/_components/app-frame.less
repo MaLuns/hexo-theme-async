@@ -1,6 +1,7 @@
 .trm-app-frame {
     border-radius   : 10px;
     width           : 100%;
+    overflow        : hidden;
     background-color: var(--theme-bg2-color, #f4f5f7);
     box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
     .transition-mixin();
@@ -13,11 +14,10 @@
         margin: 0 40px;
 
         .container {
-            position: relative;
 
             .trm-content {
                 margin-top: -40px;
-                padding   : 0 0 60px;
+                padding   : 0 0 40px;
                 z-index   : 0;
                 position  : relative;
                 z-index   : 1;
@@ -45,7 +45,6 @@
             .container {
                 .trm-content {
                     margin-top: 0px;
-                    padding   : 0 0 40px;
                 }
             }
         }

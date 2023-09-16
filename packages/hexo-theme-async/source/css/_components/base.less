@@ -10,8 +10,8 @@ body {
     background-color      : var(--body-bg-color);
     letter-spacing        : .05em;
     overflow-x            : hidden;
-    overflow-y            : overlay;
     margin                : 0;
+    margin-right          : calc(100% - 100vw);
     padding               : 10px;
     height                : 100vh;
     scroll-behavior       : smooth;
@@ -284,6 +284,7 @@ html {
 
 // 定义 margin padding 变量
 @marginKey: 10, 15, 20, 25, 30, 35, 40;
+
 each(@marginKey, {
         .trm-p-@{value} {
             padding: unit(@value, px) !important;
