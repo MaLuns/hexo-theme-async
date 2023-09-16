@@ -70,7 +70,7 @@ npm i hexo-theme-async@latest
 
 您的项目结构应该是这样
 
-```text {4,7}
+```txt {4,7}
 ┌── blog
 │   ├── source
 │   └── themes

@@ -8,11 +8,9 @@ indent_style = tab
 indent_size = 2
 tab_width = 2
 
-[*.js]
-[*.ts]
+[*.{js,ts}]
 quote_type = single 
 
-[*.less]
-[*.json]
+[*.{json,less,js}]
 indent_style = space
 indent_size = 4

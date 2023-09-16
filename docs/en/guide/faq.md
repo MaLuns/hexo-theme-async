@@ -42,11 +42,3 @@ Check the version of the installation theme, and then check the update log for c
 ## The About page is not displayed?
 
 Check for conflicts with other plugins, resolve them, and write your About page in the md file instead of using the configuration.
-
-## Slow page load? Or the page display is incomplete, unable to scroll, etc.
-
-As shown below:
-
-![示例](/imgs/cdn_err.png)
-
-Check whether the plug-in CDN are loaded properly and replace the available CND.

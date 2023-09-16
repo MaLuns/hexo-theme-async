@@ -702,7 +702,7 @@ In `1.2.x +`, the implementation method of theme switching was changed from mult
 
 -   Newly built `source/_data/style/index.less` to start writing your custom styles.
 
-```text {5}
+```txt {5}
 ┌── blog
 │   └── source
 │       └── _data
@@ -749,7 +749,7 @@ Follow the operating system to select a theme example:
 -   Newly built` source/_data/style/dark.less`,`source/_data/style/light.less` To start writing your custom styles. They will merge todark,lightGo between the two modes.
 -   You can add variables if you need to override them `source/_data/style/dark.variables.less`,`source/_data/style/light.variables.less`, overwrite.
 
-```text {4,5,6,7,8}
+```txt {4,5,6,7,8}
 ┌── blog
 │   └── source
 │       └── _data
@@ -856,7 +856,7 @@ An example would be overriding footer:
 
 Without changing `layout.path`, you have the following directory structure and add `footer.ejs`
 
-```text {2,3}
+```txt {2,3}
 ┌── blog
 │   └── layout
 │          └── footer.ejs
@@ -932,3 +932,11 @@ Manifest file structure
 ## More configuration
 
 You can directly see [\_config.yml ｜ hexo-theme-async](https://github.com/MaLuns/hexo-theme-async/blob/master/packages/hexo-theme-async/_config.yml) file and related comments.
+
+```yaml-vue
+{{ config }}
+```
+
+<script setup>
+import config from "../../packages/hexo-theme-async/_config.yml?raw"
+</script>

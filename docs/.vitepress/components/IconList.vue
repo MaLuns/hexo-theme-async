@@ -1,10 +1,11 @@
 <script setup>
-import { ref, reactive, watch } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps({
     title: String,
     prefix: String,
-    icons: Array
+    icons: Array,
+		h2: Boolean
 })
 
 let iconList = ref(props.icons)
@@ -34,7 +35,13 @@ watch(searchVal, (newVal) => {
 </script>
     
 <template>
-    <h2 class="title" :id="title">
+	  <div class="title" :id="title" v-if="!h2">
+        <span @click="change">
+            <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }})
+        </span>
+        <input class="search-input" v-model="searchVal" placeholder="Search Icon" />
+    </div>
+    <h2 class="title" :id="title" v-else>
         <span @click="change">
             <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }})
         </span>
@@ -52,6 +59,7 @@ watch(searchVal, (newVal) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+		margin-bottom: 20px;
 
     span {
         cursor: pointer;

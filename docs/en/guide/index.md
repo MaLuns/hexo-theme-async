@@ -55,7 +55,7 @@ Since v1.1.0, the entire repository file is no longer required due to project re
 
 Your project structure should look like this
 
-```text {4,7}
+```txt {4,7}
 ┌── blog
 │   ├── source
 │   └── themes
