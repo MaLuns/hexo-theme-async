@@ -41,7 +41,8 @@ en:
 zh-Hans:
     site:
         title: 本站信息
-You can also extend other languages
+
+# You can also extend other languages
 ```
 
 If only Chinese language is used, all entries except `zh-Hans` can be deleted.
@@ -938,5 +939,5 @@ You can directly see [\_config.yml ｜ hexo-theme-async](https://github.com/MaLu
 ```
 
 <script setup>
-import config from "../../packages/hexo-theme-async/_config.yml?raw"
+import config from "../../../packages/hexo-theme-async/_config.yml?raw"
 </script>
