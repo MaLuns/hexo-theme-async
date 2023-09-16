@@ -110,8 +110,8 @@ body {
   background-color: var(--body-bg-color);
   letter-spacing: 0.05em;
   overflow-x: hidden;
-  overflow-y: overlay;
   margin: 0;
+  margin-right: calc(100% - 100vw);
   padding: 10px;
   height: 100vh;
   scroll-behavior: smooth;
@@ -681,6 +681,7 @@ html.is-animating .trm-swup-animation {
 .trm-app-frame {
   border-radius: 10px;
   width: 100%;
+  overflow: hidden;
   background-color: var(--theme-bg2-color, #f4f5f7);
   box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
   transition: all 0.4s ease-in-out;
@@ -691,12 +692,9 @@ html.is-animating .trm-swup-animation {
 .trm-app-frame .trm-content-start {
   margin: 0 40px;
 }
-.trm-app-frame .trm-content-start .container {
-  position: relative;
-}
 .trm-app-frame .trm-content-start .container .trm-content {
   margin-top: -40px;
-  padding: 0 0 60px;
+  padding: 0 0 40px;
   z-index: 0;
   position: relative;
   z-index: 1;
@@ -717,7 +715,6 @@ html.is-animating .trm-swup-animation {
   }
   .trm-app-frame .trm-content-start .container .trm-content {
     margin-top: 0px;
-    padding: 0 0 40px;
   }
 }
 @media (max-width: 768px) {
@@ -734,9 +731,7 @@ html.is-animating .trm-swup-animation {
   left: 0;
   right: 0;
   z-index: 9;
-  width: calc(100% - 20px);
   height: 80px;
-  margin: 0 auto;
   border-radius: var(--card-border-radius, 10px);
   box-shadow: var(--top-bar-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.15));
   background-color: var(--theme-bg-color, #fcfcfe);
