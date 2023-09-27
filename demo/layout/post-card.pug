@@ -6,8 +6,8 @@ mixin conver(type)
     a.trm-cover-frame.trm-anima-link(href=url_for(post.path), style= { width:"40%", "padding-bottom": 0 ,"clip-path": t })
         if coverURl === 'date'
             div.trm-cover-date
-                div.trm-cover-day !{date(post.date, theme.datetime_foramt.post_card.cover_date)}
-                div.trm-cover-month !{date(post.date, theme.datetime_foramt.post_card.cover_date2)}
+                div.trm-cover-day !{date(post[theme.datetime_foramt.post_card.type], theme.datetime_foramt.post_card.cover_date)}
+                div.trm-cover-month !{date(post[theme.datetime_foramt.post_card.type], theme.datetime_foramt.post_card.cover_date2)}
         else if coverURl === 'random'
             div.trm-cover-img(data-random-img)
         else if coverURl
@@ -30,8 +30,8 @@ div.col-lg-12
                 a.trm-anima-link(href=url_for(post.path)) !{post.title}
             div.trm-divider.trm-mb-20.trm-mt-20
             ul.trm-card-data.trm-label
-                li !{date(post.date,theme.datetime_foramt.post_card.date)}
-                li !{date(post.date,theme.datetime_foramt.post_card.time)}
+                li !{date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.date)}
+                li !{date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.time)}
                 if theme.wordcount.enable && theme.wordcount.count
                     li !{wordcount(post.content)}
                 if theme.wordcount.enable && theme.wordcount.time

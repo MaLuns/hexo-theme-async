@@ -297,14 +297,17 @@ swup: false
 # Datetime formatting
 datetime_foramt:
   post_card:
+    type: date # date || updated
     date: YY/MM/DD
     time: HH:mm
     cover_date: DD
     cover_date2: YYYY/MM
   post_info:
+    type: date
     date: MM/DD
     time: HH:mm
   archive:
+    type: date
     date: MM/DD
     time: HH:mm
 

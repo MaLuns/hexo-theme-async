@@ -3,6 +3,26 @@
         "large_version": "v2.1.x",
         "children": [
             {
+                "version": "2.1.2",
+                "date": "2023-09-27",
+                "logs": [
+                    {
+                        "type": "feat",
+                        "text": "支持文章展示日期可配置"
+                    }
+                ]
+            },
+            {
+                "version": "2.1.1",
+                "date": "2023-09-16",
+                "logs": [
+                    {
+                        "type": "fix",
+                        "text": "移动端出现横向滚动条, pc 端滚动条占位抖动"
+                    }
+                ]
+            },
+            {
                 "version": "2.1.0",
                 "date": "2023-09-15",
                 "logs": [

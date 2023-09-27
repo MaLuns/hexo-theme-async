@@ -12,8 +12,8 @@
             </a>
             <div class="trm-divider trm-mb-15 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li><%= date(post.date,theme.datetime_foramt.post_card.date) %></li>
-                <li><%= date(post.date,theme.datetime_foramt.post_card.time) %></li>
+                <li><%= date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.date) %></li>
+                <li><%= date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.time) %></li>
                 <li><%- post.categories && post.categories.length ? post.categories.data[0].name :__('title.unclassified')  %></li>
             </ul>
         </div>

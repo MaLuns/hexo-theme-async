@@ -8,8 +8,8 @@
             %>
             <% if(coverURl === 'date' ) { %>
                 <div class="trm-cover-date">
-                    <div class="trm-cover-day"><%= date(post.date, theme.datetime_foramt.post_card.cover_date) %></div>
-                    <div class="trm-cover-month"><%= date(post.date, theme.datetime_foramt.post_card.cover_date2) %></div>
+                    <div class="trm-cover-day"><%= date(post[theme.datetime_foramt.post_card.type], theme.datetime_foramt.post_card.cover_date) %></div>
+                    <div class="trm-cover-month"><%= date(post[theme.datetime_foramt.post_card.type], theme.datetime_foramt.post_card.cover_date2) %></div>
                 </div>
             <% } else if(coverURl === 'random' ) { %>
                 <div class="trm-cover-img" data-random-img></div>
@@ -33,8 +33,8 @@
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li><%= date(post.date,theme.datetime_foramt.post_card.date) %></li>
-                <li><%= date(post.date,theme.datetime_foramt.post_card.time) %></li>
+                <li><%= date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.date) %></li>
+                <li><%= date(post[theme.datetime_foramt.post_card.type],theme.datetime_foramt.post_card.time) %></li>
                 <% if(theme.wordcount.enable && theme.wordcount.count){ %>
                     <li><%= wordcount(post.content) %></li>
                 <% } %>

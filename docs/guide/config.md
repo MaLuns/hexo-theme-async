@@ -775,6 +775,9 @@ rightside:
 - `post_card`：文章卡片的格式
 - `post_info`：文章详情页里的格式
 - `archive`：归档分类页的格式
+  - `type`： 文章日期取值类型，`date`(创建日期) | `updated` (修改日期)
+  - `date`：日期格式
+  - `time`：时间格式
 
 ::: code-group
 
@@ -784,6 +787,7 @@ datetime_foramt:
     date: YY/MM/DD
     time: HH:mm
   post_info:
+    type: updated
     date: MM/DD
     time: HH:mm
   archive:
