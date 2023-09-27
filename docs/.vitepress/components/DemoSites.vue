@@ -11,7 +11,7 @@ const numOfRow = ref(6);
 		<tr v-for="row in Math.ceil(siteUseThemes.length / numOfRow)" :key="row" align="center">
 			<template v-for="col in numOfRow">
 				<td v-if="siteUseThemes[(row - 1) * numOfRow + col - 1]" :key="col" class="px-1 py-2">
-					<demo-site :site="sites[(row - 1) * numOfRow + col - 1]" />
+					<demo-site :site="siteUseThemes[(row - 1) * numOfRow + col - 1]" />
 				</td>
 			</template>
 		</tr>

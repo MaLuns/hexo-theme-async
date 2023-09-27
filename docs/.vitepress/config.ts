@@ -1,4 +1,4 @@
-import { defineConfig } from "vitepress";
+import { defineConfig } from "vitepress"
 
 export default defineConfig({
 	lang: "zh-CN",
@@ -6,35 +6,22 @@ export default defineConfig({
 	description: "🎈 A simple, lightweight Hexo theme",
 	lastUpdated: true,
 	head: [["link", { rel: "icon", href: "/favicon.svg" }]],
-
 	locales: {
 		"/en/": {
 			lang: "en-US",
 			label: "English",
 			description: "A simple & lightweight theme for Hexo.",
-			selectText: "English",
 		},
 		"/": {
 			lang: "zh-CN",
 			label: "简体中文",
 			description: "A simple & lightweight theme for Hexo.",
-			selectText: "简体中文",
 		},
 	},
-
 	themeConfig: {
 		logo: "/logo.svg",
 		search: {
 			provider: 'local'
-		},
-		/* algolia: {
-			appId: "GER60TPC08",
-			apiKey: "993137f59d71d252c8bafbce33bda9c2",
-			indexName: "hexo_theme_async_docs",
-		}, */
-		editLink: {
-			pattern: "https://github.com/Maluns/hexo-theme-async/edit/master/docs/:path",
-			text: "帮助改善此页面！( ￣□￣)/",
 		},
 		socialLinks: [
 			{
@@ -48,22 +35,29 @@ export default defineConfig({
 				link: "https://gitee.com/ml13/hexo-theme-async",
 			},
 		],
+		editLink: {
+			pattern: "https://github.com/Maluns/hexo-theme-async/edit/master/docs/:path",
+			text: "帮助改善此页面！( ￣□￣)/",
+		},
 		nav: [
-			{ text: "Guide", link: "/guide/" },
+			{ text: "Guide", link: "/en/guide/" },
 			{ text: "DemoSites", link: "/demo/" },
-			{ text: "HexoEditor", link: "https://web-hexo-editor.imalun.com/" },
 			{ text: "Sponsors", link: "/sponsors/" },
+			{
+				text: "Languages",
+				items: [
+					{ text: "简体中文", link: "/guide/" },
+					{ text: "English", link: "/en/guide/" },
+				],
+			},
 			{
 				text: "Docs",
 				items: [
-					{
-						items: [
-							{ text: "Preview", link: "http://hexo-theme-async.imalun.com/" },
-							{ text: "Laster", link: "http://async-docs.imalun.com/" },
-						],
-					},
+					{ text: "Preview", link: "http://hexo-theme-async.imalun.com/" },
+					{ text: "Laster", link: "http://async-docs.imalun.com/" },
 				],
 			},
+			{ text: "HexoEditor", link: "https://web-hexo-editor.imalun.com/" },
 		],
 		sidebar: {
 			"/": [
@@ -163,16 +157,9 @@ export default defineConfig({
 				},
 			],
 		},
-		localeLinks: {
-			text: "language",
-			items: [
-				{ text: "简体中文", link: "/guide/" },
-				{ text: "English", link: "/en/guide/" },
-			],
-		},
 		footer: {
 			message: "Released under the SATA | MIT License.",
 			copyright: "Copyright © 2020-PRESENT MaLuns",
 		},
 	},
-});
+})

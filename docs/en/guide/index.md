@@ -24,7 +24,7 @@ yarn add -D hexo-renderer-less hexo-renderer-ejs
 
 ## Install
 
--   npm install (recommended)
+- npm install (recommended)
 
 ![npm (tag)](https://img.shields.io/npm/v/hexo-theme-async/latest?color=red&label=hexo-theme-async%40latest&logo=npm&style=for-the-badge)
 
@@ -34,7 +34,7 @@ Go to your Hexo blog root and do:
 npm i hexo-theme-async@latest
 ```
 
--   Install through Clone repository (not recommended)
+- Install through Clone repository (not recommended)
 
 ::: danger
 It is not recommended to install the theme in this way. The theme version number will not be displayed by pulling the theme version (you can also manually complete the version of package.json), which will cause trouble in locating the bug version and subsequent upgrade. Install this way only if you need to modify the source files and no longer need to upgrade.
@@ -67,7 +67,7 @@ Your project structure should look like this
 
 :::
 
--   Install the preview via npm
+- Install the preview via npm
 
 ![npm (tag)](https://img.shields.io/npm/v/hexo-theme-async/beta?color=red&label=hexo-theme-async%40beta&logo=npm&style=for-the-badge)
 
@@ -104,17 +104,31 @@ The complete configuration of the theme schema is as follows
 
 ```yaml
 theme:
-    switch: true
-    default: style-light # style-light style-dark
+  switch: true
+  default: style-light # style-light style-dark
 ```
 
 You can define only in `_config.async.yml` (of course, it is possible to override all of them).
 
 ```yaml
 theme:
-    default: style-dark
+  default: style-dark
 ```
 
 :::
 
 See [here](./config) for more theme configurations
+
+## Demo Video
+
+- installation
+  - [npm installation demo](https://www.bilibili.com/video/BV1Cs4y1J7vv/)
+  - [download the themes catalog demo](https://www.bilibili.com/video/BV1mg4y137Zi/)
+- configuration
+  - [common configuration demonstrations](https://www.bilibili.com/video/BV1cm4y1z7tQ/)
+  - [theme custom icons custom code highlighting demonstration](https://www.bilibili.com/video/BV1Da4y1M7UF/)
+  - [random cover link page album page configuration demonstration](https://www.bilibili.com/video/BV1cs4y1m7RT/)
+- run the source code
+  - [hexo theme async source code runs the demo](https://www.bilibili.com/video/BV19L41127LH/)
+- online experience
+  - [stackblitz](https://stackblitz.com/edit/node-tshsxq?embed=1&file=README.md)

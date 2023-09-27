@@ -1,5 +1,5 @@
 ---
-title: 主页
+title: Home
 layout: home
 
 hero:
@@ -10,8 +10,8 @@ hero:
   actions:
     - text: 🚀 Get Started
       link: /en/guide/
-    - text: 💻 Demo Sites
-      link: /demo/
+    - text: 💻 Online demo
+      link: https://stackblitz.com/edit/node-tshsxq?embed=1&theme=dark&view=editor
       theme: alt
 
 features:
@@ -32,3 +32,5 @@ footer:
     name: MaLuns
     url: https://www.imalun.com
 ---
+
+<DemoSitesLine title="📢 Sites that use themes" />
