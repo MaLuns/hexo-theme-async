@@ -1,0 +1,92 @@
+site:
+  title: 本站信息
+  webmaster: 网站名称
+  domain: 网站链接
+  avatar: 网站头像
+  describe: 网站简介
+  ruleText: 友链要求
+
+sidebar:
+  residence: 地址
+  city: 城市
+  age: 年龄
+  contact: 联系我
+
+footer:
+  powered: '由 %s 驱动'
+  theme: 主题
+  tips: '博客已萌萌哒运行 %s 天'
+  day: 天
+  hour: 时
+  minute: 分
+  seconds: 秒
+
+title:
+  links: 友情链接
+  new_publish: 最近发布
+  comment: 留言板
+  author: 作者
+  blog: 博客
+  privacy: 隐私权及评论
+  more: 查看分类
+  all_archives: 所有归档
+  year_archives: '%s 年的归档'
+  other_articles: 其他文章
+  unclassified: 未分类
+
+menu:
+  home: 首页
+  archives: 归档
+  links: 友链
+  about: 关于
+
+favicon:
+  showText: (/≧▽≦/)咦！又好了！
+  hideText: (●—●)喔哟，崩溃啦！
+
+search:
+  placeholder: 搜索文章...
+  result_placeholder: 请输入关键词进行搜索
+  empty: '找不到您查询的内容: ${query}'
+  hits: '找到 ${hits} 条结果'
+  hits_time: '找到 ${hits} 条结果（用时 ${time} 毫秒）'
+
+reward:
+  comment: 我很可爱，请给我钱
+
+post:
+  sticky: 置顶
+  more: 更多
+  copyright:
+    author: 本文作者
+    link: 本文链接
+    license_title: 版权声明
+    license_content: '本博客所有文章除特别声明外，均默认采用 %s 许可协议。'
+  copy:
+    success: 复制成功
+    failure: 复制失败
+  read_mode:
+    open: 进入阅读模式
+    exit: 退出阅读模式
+  notice_outdate_message: '距离上次更新已经 %s 天了, 文章内容可能已经过时。'
+  toc: 目录导航
+
+rightside:
+  toc_title: 目录
+  readmode_title: 阅读模式
+  back_to_top: 回到顶部
+  aside: 单栏和双栏切换
+
+date_suffix:
+  just: 刚刚
+  min: 分钟前
+  hour: 小时前
+  day: 天前
+  month: 个月前
+
+symbol:
+  comma: ，
+  period: 。
+  colon: ：
+
+ieTips: 为了更好的体验,请使用非IE浏览器
