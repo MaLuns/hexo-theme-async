@@ -1040,13 +1040,13 @@ layout:
   # 文章卡片信息模板
   post_card_mini: _partial/post/post-card-mini
   # 顶部菜单-logo部分
-  header_logo: _widget/header_logo
+  header_logo: _widget/header-logo
   # 顶部菜单-菜单部分
-  header_menu: _widget/header_menu
+  header_menu: _widget/header-menu
   # 顶部菜单-主题切换部分
-  header_theme: _widget/header_theme
+  header_theme: _widget/header-theme
   # 顶部菜单-查询部分
-  header_search: _widget/header_search
+  header_search: _widget/header-search
   # 分类卡片模板
   categorie: _widget/categorie
   # 分页模板

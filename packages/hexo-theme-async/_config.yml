@@ -135,6 +135,7 @@ sidebar:
 
 # About page settings
 about:
+	insert: none # before | after | none
   title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
   introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
   blog: 
@@ -354,14 +355,15 @@ layout:
   post_card: _partial/post/post-card
   post_card_mini: _partial/post/post-card-mini
   # widget
-  header_logo: _widget/header_logo
-  header_menu: _widget/header_menu
-  header_theme: _widget/header_theme
-  header_search: _widget/header_search
+  header_logo: _widget/header-logo
+  header_menu: _widget/header-menu
+  header_theme: _widget/header-theme
+  header_search: _widget/header-search
   categorie: _widget/categorie
   paginator: _widget/paginator
   fixed_btn: _widget/fixed-btn
-  post_toc: _widget/post_toc
+  post_toc: _widget/post-toc
+	about_card: _widget/about-card
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social
   sidebar_info: _partial/sidebar/card/info
