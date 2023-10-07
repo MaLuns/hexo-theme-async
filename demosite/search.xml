@@ -251,7 +251,7 @@ $$
     <content><![CDATA[<p>主题内置的一些标签插件说明和示例。</p>
 <span id="more"></span>
 
-<h2 id="Imgs-照片"><a href="#Imgs-照片" class="headerlink" title="Imgs 照片"></a>Imgs 照片</h2><p>用于适配黑白两种主题时显示图片，切换主题样式查看效果</p>
+<h2 id="Imgs-照片"><a href="#Imgs-照片" class="headerlink" title="Imgs 照片"></a>Imgs 照片</h2><p>用于适配黑白两种主题时显示图片，切换主题样式查看效果。</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">imgs</span> [<span class="string">class</span> <span class="string">names</span>] [<span class="string">src1</span>] [<span class="string">src2</span>] [<span class="string">width</span>] [<span class="string">height</span>] [<span class="string">alt</span> <span class="string">text&#x27;title</span> <span class="string">text</span>] <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">src1</span>]          <span class="string">:</span> <span class="string">亮色主题时显示图片路径</span></span><br><span class="line">[<span class="string">src2</span>]          <span class="string">:</span> <span class="string">暗色主题时显示图片路径</span></span><br><span class="line">[<span class="string">width</span>]         <span class="string">:</span> <span class="string">宽</span></span><br><span class="line">[<span class="string">height</span>]        <span class="string">:</span> <span class="string">高</span></span><br><span class="line">[<span class="string">alt</span> <span class="string">text</span>]      <span class="string">:</span> <span class="string">alt</span> <span class="string">属性</span></span><br><span class="line">[<span class="string">title</span> <span class="string">text</span>]    <span class="string">:</span> <span class="string">title</span> <span class="string">属性</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>使用方式</p>
@@ -337,6 +337,7 @@ $$
 <h2 id="Flink-链接列表"><a href="#Flink-链接列表" class="headerlink" title="Flink 链接列表"></a>Flink 链接列表</h2><p>可在任何界面插入类似友情链接列表效果</p>
 <p>内容格式与友情链接界面一样，支持 yml 格式</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">flink</span> [<span class="string">key</span>] [<span class="string">col</span>] <span class="string">%</span>&#125;</span><br><span class="line">[<span class="string">content</span>]</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endflink</span> <span class="string">%</span>&#125;</span><br><span class="line"></span><br><span class="line">[<span class="string">content</span>]   <span class="string">:</span> <span class="string">可选参数。链接数据，格式为</span> <span class="string">yaml。</span></span><br><span class="line">[<span class="string">key</span>]       <span class="string">:</span> <span class="string">可选参数。Hexo</span> <span class="string">数据文件的</span> <span class="string">key，如果</span> <span class="string">content</span> <span class="string">为空，则会加载指定</span> <span class="string">key</span> <span class="string">数据。[content]</span> <span class="string">和</span> [<span class="string">key</span>] <span class="string">需要二选一。</span></span><br><span class="line">[<span class="string">col</span>]       <span class="string">:</span> <span class="string">可选参数。链接列宽</span> <span class="number">1</span><span class="number">-12</span> <span class="string">，默认为</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+
 <p>示例</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% flink 12 %&#125;</span><br><span class="line">- name: Hexo</span><br><span class="line">  url: //hexo.io/</span><br><span class="line">  image: //d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg</span><br><span class="line">  desc: 快速、简洁且高效的博客框架</span><br><span class="line">- name: 白云苍狗</span><br><span class="line">  url: //www.imalun.com/</span><br><span class="line">  image: //www.imalun.com/images/avatar.jpg</span><br><span class="line">  desc: 醒，亦在人间；梦，亦在人间</span><br><span class="line">&#123;% endflink %&#125;</span><br></pre></td></tr></table></figure>
 
@@ -407,7 +408,27 @@ $$
     </a>
 </div></div>
 
-]]></content>
+
+<h2 id="Note-便签"><a href="#Note-便签" class="headerlink" title="Note 便签"></a>Note 便签</h2><p>快速插入便签。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">note</span> [<span class="string">type</span>] [<span class="string">title</span>] <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">文字或者</span> <span class="string">`markdown`</span> <span class="string">均可</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endnote</span> <span class="string">%</span>&#125; </span><br><span class="line"></span><br><span class="line">[<span class="string">type</span>]				<span class="string">:</span> <span class="string">可选参数。便签类型</span> <span class="string">info,</span> <span class="string">tip,</span> <span class="string">warning,</span> <span class="string">danger,</span> <span class="string">details</span></span><br><span class="line">[<span class="string">title</span>]				<span class="string">:</span> <span class="string">可选参数。标题。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% note info %&#125;</span><br><span class="line">This is an info box.</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note tip %&#125;</span><br><span class="line">This is a tip.</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">This is a warning.</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">This is a dangerous warning.</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note details %&#125;</span><br><span class="line">This is a details block.</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="trm-note info"><div class="trm-note-title">INFO</div><p>This is an info box.</p>
+</div>
+
+<div class="trm-note tip"><div class="trm-note-title">TIP</div><p>This is a tip.</p>
+</div>
+
+<div class="trm-note warning"><div class="trm-note-title">WARNING</div><p>This is a warning.</p>
+</div>
+
+<div class="trm-note danger"><div class="trm-note-title">DANGER</div><p>This is a dangerous warning.</p>
+</div>
+
+<details><summary>DETAILS</summary><p>This is a details block.</p>
+</details>]]></content>
       <categories>
         <category>Plugins</category>
       </categories>

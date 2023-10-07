@@ -47,6 +47,10 @@
   --notice-outdate-color: #ff6666;
   --notice-outdate-border: #ff8080;
   --scroll-progress-bg-color: linear-gradient(#ffdddd, #e9ddff);
+  --note-info-bg-color: #65758529;
+  --note-tip-bg-color: #646cff29;
+  --note-warning-bg-color: #eab30829;
+  --note-danger-bg-color: #f43f5e29;
 }
 :root.dark {
   --primary: #afb42b;
@@ -2768,21 +2772,6 @@ footer .footer-separator::before {
   border: 1px solid var(--tabele-thead-border-color);
   padding: 5px 10px;
 }
-.trm-publication details {
-  padding: 10px;
-  border: 1px solid var(--tab-border-color);
-}
-.trm-publication details[open] summary {
-  margin: -10px -10px 10px;
-}
-.trm-publication details summary {
-  background: var(--tab-botton-bg-color);
-  color: var(--tab-botton-color);
-  padding: 10px 20px;
-  margin: -10px;
-  cursor: pointer;
-  user-select: none;
-}
 .trm-publication a {
   background: linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
   background-size: 100% 0.4em;
@@ -3013,6 +3002,52 @@ footer .footer-separator::before {
   width: 100%;
   height: auto;
   border-radius: 0;
+}
+/* 自定义块 */
+.trm-note {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 16px 16px 8px;
+  background-color: var(--note-info-bg-color);
+  margin: 1rem 0;
+}
+.trm-note .trm-note-title {
+  font-weight: 600;
+}
+.trm-note.info {
+  background-color: var(--note-info-bg-color);
+}
+.trm-note.tip {
+  background-color: var(--note-tip-bg-color);
+}
+.trm-note.warning {
+  background-color: var(--note-warning-bg-color);
+}
+.trm-note.danger {
+  background-color: var(--note-danger-bg-color);
+}
+.trm-note p {
+  margin: 8px 0;
+}
+details {
+  margin: 1rem 0;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--tab-border-color);
+}
+details[open] summary {
+  margin: -16px -16px 16px;
+}
+details summary {
+  background: var(--tab-botton-bg-color);
+  color: var(--tab-botton-color);
+  padding: 16px 16px;
+  margin: -16px;
+  cursor: pointer;
+  user-select: none;
+}
+details p {
+  margin: 8px 0;
 }
 .fancybox-slide--video .fancybox__content {
   max-width: 80% !important;
