@@ -96,3 +96,62 @@
         }
     }
 }
+
+/* 自定义块 */
+.trm-note {
+    border-radius   : 4px;
+    border          : 1px solid transparent;
+    padding         : 16px 16px 8px;
+    background-color: var(--note-info-bg-color);
+    margin          : 1rem 0;
+
+    .trm-note-title {
+        font-weight: 600;
+    }
+
+    &.info {
+        background-color: var(--note-info-bg-color);
+    }
+
+    &.tip {
+        background-color: var(--note-tip-bg-color);
+    }
+
+    &.warning {
+        background-color: var(--note-warning-bg-color);
+    }
+
+    &.danger {
+        background-color: var(--note-danger-bg-color);
+    }
+
+    p {
+        margin: 8px 0;
+    }
+}
+
+details {
+    margin       : 1rem 0;
+    padding      : 16px 16px 8px;
+    border-radius: 4px;
+    border       : 1px solid var(--tab-border-color);
+
+    &[open] {
+        summary {
+            margin: -16px -16px 16px;
+        }
+    }
+
+    summary {
+        background : var(--tab-botton-bg-color);
+        color      : var(--tab-botton-color);
+        padding    : 16px 16px;
+        margin     : -16px;
+        cursor     : pointer;
+        user-select: none;
+    }
+
+    p {
+        margin: 8px 0;
+    }
+}

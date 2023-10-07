@@ -9,7 +9,7 @@ categories: Plugins
 
 ## Imgs 照片
 
-用于适配黑白两种主题时显示图片，切换主题样式查看效果
+用于适配黑白两种主题时显示图片，切换主题样式查看效果。
 
 ``` yaml
 {% imgs [class names] [src1] [src2] [width] [height] [alt text'title text] %}
@@ -282,6 +282,7 @@ feature     : 在https://caniuse.com上搜索您想要的特性，然后单击�
 [key]       : 可选参数。Hexo 数据文件的 key，如果 content 为空，则会加载指定 key 数据。[content] 和 [key] 需要二选一。
 [col]       : 可选参数。链接列宽 1-12 ，默认为 6
 ```
+
 示例
 
 ```
@@ -318,3 +319,60 @@ feature     : 在https://caniuse.com上搜索您想要的特性，然后单击�
 {% flink links 12 %}
 {% endflink %}
 
+
+## Note 便签
+
+快速插入便签。
+
+``` yaml
+{% note [type] [title] %}
+文字或者 `markdown` 均可
+{% endnote %} 
+
+[type]				: 可选参数。便签类型 info, tip, warning, danger, details
+[title]				: 可选参数。标题。
+```
+
+示例
+
+``` markdown
+{% note info %}
+This is an info box.
+{% endnote %}
+
+{% note tip %}
+This is a tip.
+{% endnote %}
+
+{% note warning %}
+This is a warning.
+{% endnote %}
+
+{% note danger %}
+This is a dangerous warning.
+{% endnote %}
+
+{% note details %}
+This is a details block.
+{% endnote %}
+```
+
+{% note info %}
+This is an info box.
+{% endnote %}
+
+{% note tip %}
+This is a tip.
+{% endnote %}
+
+{% note warning %}
+This is a warning.
+{% endnote %}
+
+{% note danger %}
+This is a dangerous warning.
+{% endnote %}
+
+{% note details %}
+This is a details block.
+{% endnote %}
