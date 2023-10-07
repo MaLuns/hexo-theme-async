@@ -1,5 +1,6 @@
 <% if(theme.about.insert === 'before'){ %>
 	<%- partial(theme.layout.about_card) %>
+	<%- page.content %>
 <% } %>
 
 <% if(theme.about.insert === 'none'){ %>
@@ -7,6 +8,7 @@
 <% } %>
 
 <% if(theme.about.insert === 'after'){ %>
+	<%- page.content %>
 	<%- partial(theme.layout.about_card) %>
 <% } %>
 

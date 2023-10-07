@@ -1055,6 +1055,8 @@ layout:
   back_to_top: _widget/back-to-top
   # 固定按钮模板
   fixed_btn: _widget/fixed-btn
+  # 关于页面配置卡片
+  about_card: _widget/about-card
   # 侧栏
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social

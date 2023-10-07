@@ -40,7 +40,7 @@ export default defineConfig({
 			text: "帮助改善此页面！( ￣□￣)/",
 		},
 		nav: [
-			{ text: "Guide", link: "/en/guide/" },
+			{ text: "Guide", link: "/guide/" },
 			{ text: "DemoSites", link: "/demo/" },
 			{ text: "Sponsors", link: "/sponsors/" },
 			{
@@ -53,8 +53,8 @@ export default defineConfig({
 			{
 				text: "Docs",
 				items: [
-					{ text: "Preview", link: "http://hexo-theme-async.imalun.com/" },
-					{ text: "Laster", link: "http://async-docs.imalun.com/" },
+					{ text: "Preview", link: "https://hexo-theme-async.imalun.com/" },
+					{ text: "Laster", link: "https://async-docs.imalun.com/" },
 				],
 			},
 			{ text: "HexoEditor", link: "https://web-hexo-editor.imalun.com/" },

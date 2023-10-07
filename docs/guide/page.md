@@ -14,16 +14,15 @@
 - `author`：文章作者
 - `originalLink`：文章源链接（用于转载）
 
-
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 
-``` yaml
+```yaml
 ---
 title: 从零开始搭建一个后台模板
 keywords: admin-template,vue,element,后台模板
 cover: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
 sticky: 10
-banner: 
+banner:
   type: img
   bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
   bannerText: Hi my new friend!
@@ -31,11 +30,12 @@ toc: false # 无需显示目录
 ---
 ```
 
-
 ## 归档 Archives
+
 Hexo 默认支持。
 
 ## 分类 Categories
+
 如果您尚未安装 `hexo-generator-category`，请输入 `npm install hexo-generator-category`。
 
 新建 `categories` 页面，在博客根目录下输入：
@@ -91,14 +91,16 @@ layout: tag
 ```bash
 hexo new page links
 ```
+
 进入 `source/links/index.md`，设置 `layout` 字段。
 
-``` yaml {3}
+```yaml {3}
 ---
 title: 友情链接
 layout: links
 ---
 ```
+
 在 `_config.async.yml` 中的添加 `links` 配置信息。
 
 提示：（❌）不是在 `banner.links` 添加，（✔）是直接在配置文件添加新的 `links` 属性。
@@ -108,7 +110,7 @@ layout: links
 - `image`：头像图片链接
 - `desc`：一句话描述
 
-``` yaml
+```yaml
 links:
   - name: 白云苍狗
     url: //www.imalun.com/
@@ -118,7 +120,7 @@ links:
 
 如果您的友链比较多，可能会导致 `_config.async.yml` 过长，您可以将 links 配置拆分出来。在 Hexo 工作目录下新建 `source/_data/links.yml` 文件，字段和 `_config.async.yml` 中的一致，只是不再需要 `links` 字段。
 
-``` yaml
+```yaml
 - name: 白云苍狗
   url: //www.imalun.com/
   image: //www.imalun.com/images/avatar.jpg
@@ -127,18 +129,19 @@ links:
 
 也可以是 `source/_data/links.json` 文件
 
-``` json
+```json
 [
-  {
-    "name": "白云苍狗",
-    "url": "//www.imalun.com/",
-    "image": "//www.imalun.com/images/avatar.jpg",
-    "desc": "醒，亦在人间；梦，亦在人间"
-  }
+	{
+		"name": "白云苍狗",
+		"url": "//www.imalun.com/",
+		"image": "//www.imalun.com/images/avatar.jpg",
+		"desc": "醒，亦在人间；梦，亦在人间"
+	}
 ]
 ```
 
 ## 关于 About
+
 新建关于页面。
 
 ```bash
@@ -147,7 +150,7 @@ hexo new page about
 
 进入 `source/about/index.md`，设置 `layout` 字段。
 
-``` yaml {3}
+```yaml {3}
 ---
 title: 关于
 layout: about
@@ -155,25 +158,29 @@ layout: about
 ```
 
 如果使用内置模板，可以设置 `_config.async.yml` 中的 `about`。
-``` yaml
+
+```yaml
 about:
-  title:        # 标题
+  insert: none # 插入规则 before（插入在内容前） | after（插入在内容后） | none（不插入）
+  title: # 标题
   introduction: # 个人简单描述
-  blog:         # 博客信息
-  privacy:      # 隐私权说明    
+  blog: # 博客信息
+  privacy: # 隐私权说明
 ```
+
 您也可以直接在 `source/about/index.md` 编写您的关于页面， 如果 `about/index.md` 有内容则优先使用自定义内容，否则使用配置项内容。
 
 ## 404 Not Found
+
 可以直接在 `source` 目录下新建 `404.md`。
-``` yaml
+
+```yaml
 ---
 layout: 404
 ---
 ```
 
 在本地，您也可以直接访问 `/404.html` 查看效果。只有当您将其部署到 `GitHub Pages` 上，您访问不存在的页面才会显示。
-
 
 ## 自定义页面 Customize Page
 
@@ -185,14 +192,14 @@ hexo new page xxxxx
 
 自定义页面只会保留顶部菜单、背景区域、左侧个人信息（如果不想要个人信息，可以将页面设置为单栏 `single_column: true`）。
 
-``` yaml
+```yaml
 ---
 title: 自定义页面
 single_column: true
 ---
 ```
-在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)，以及主题内置的  [Tag Plugins](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)
 
+在自定义页面时，可以直接复制主题中 HTML 代码使用，增加编写自定义页面效率，除了复用默认主题代码，还有其他内置卡片样式可以参考 [自定义页面演示](https://hexo-theme-async.imalun.com/demosite/customize_page/)，以及主题内置的 [Tag Plugins](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)
 
 ### 相册页
 
@@ -200,12 +207,13 @@ single_column: true
 
 然后使用标签外挂 [gallery](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
 
-``` markdown
+```markdown
 <div class="row">
 {% gallery '壁纸' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/z8/z8dg9y.jpg %}
 {% gallery '图库' '收藏的一些壁纸' '/gallery/wallpaper' https://th.wallhaven.cc/lg/rd/rddgwm.jpg %}
 </div>
 ```
+
 <VersionBlock version="1.2.12">
 </VersionBlock>
 
@@ -215,7 +223,7 @@ single_column: true
 
 然后使用标签外挂 [galleryGroup](https://hexo-theme-async.imalun.com/demosite/2022/12/30/tag_plugins/)，具体用法请查看对应的内容。
 
-``` markdown
+```markdown
 {% galleryGroup %}
 {% galleryItem https://th.wallhaven.cc/orig/85/85oy2j.jpg https://w.wallhaven.cc/full/85/wallhaven-85oy2j.png %}
 ![](https://w.wallhaven.cc/full/jx/wallhaven-jx3z65.jpg)
