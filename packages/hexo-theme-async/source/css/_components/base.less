@@ -1,7 +1,10 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
+    box-sizing     : border-box;
+    // firefox scroll bar 
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-50, #afb42b) transparent;
 }
 
 body {
@@ -100,7 +103,6 @@ p {
     margin: 0
 }
 
-
 .trm-text-sm {
     font-size: 12px
 }
@@ -113,7 +115,6 @@ p {
     color  : var(--theme-color, #00283a) !important;
     opacity: 1 !important
 }
-
 
 .trm-accent-color {
     color: var(--primary, #afb42b)
@@ -220,23 +221,6 @@ html {
 
 .trm-scroll-container {
     transition: opacity .6s;
-}
-
-// scroll bar
-
-.c-scrollbar {
-    width : 10px;
-    top   : 8px;
-    bottom: 10px;
-    height: calc(100vh - 20px)
-}
-
-.c-scrollbar_thumb {
-    width           : 4px;
-    right           : 1px;
-    border-radius   : 10px;
-    background-color: var(--primary, #afb42b);
-    opacity         : 1
 }
 
 // incofont symbol
