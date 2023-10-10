@@ -11,6 +11,6 @@ tab_width = 2
 [*.{js,ts}]
 quote_type = single 
 
-[*.{json,less,js}]
+[*.{json,less,js,vue}]
 indent_style = space
 indent_size = 4

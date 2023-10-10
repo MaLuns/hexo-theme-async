@@ -1,50 +1,42 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch } from "vue";
 
 const props = defineProps({
     title: String,
     prefix: String,
     icons: Array,
-		h2: Boolean
-})
+    h2: Boolean,
+});
 
-let iconList = ref(props.icons)
-const show = ref(true)
-const searchVal = ref('')
+let iconList = ref(props.icons);
+const show = ref(true);
+const searchVal = ref("");
+const toast = ref();
 
 function change() {
     show.value = !show.value;
 }
 
 function copyIcon(icon) {
-    navigator.clipboard.writeText(`<i class="${props.prefix} ${icon}"></i>`)
-
-    const toast = document.getElementById('toast')
-    toast.classList.add('show')
-    setTimeout(() => {
-        toast.classList.remove('show')
-    }, 3000)
+    navigator.clipboard.writeText(`<i class="${props.prefix} ${icon}"></i>`);
+    toast.value.show(`<${icon}> 复制成功！`);
 }
 
-watch(searchVal, (newVal) => {
+watch(searchVal, newVal => {
     iconList.value = props.icons.filter(item => {
-        return item.includes(newVal)
-    })
-})
-
+        return item.includes(newVal);
+    });
+});
 </script>
-    
+
 <template>
-	  <div class="title" :id="title" v-if="!h2">
-        <span @click="change">
-            <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }})
-        </span>
+    <info-toast ref="toast"></info-toast>
+    <div class="title" :id="title" v-if="!h2">
+        <span @click="change"> <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }}) </span>
         <input class="search-input" v-model="searchVal" placeholder="Search Icon" />
     </div>
     <h2 class="title" :id="title" v-else>
-        <span @click="change">
-            <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }})
-        </span>
+        <span @click="change"> <i :class="`fas fa-angle-${show ? 'down' : 'right'}`"></i>&nbsp;&nbsp;{{ title }} ({{ iconList.length }}) </span>
         <input class="search-input" v-model="searchVal" placeholder="Search Icon" />
     </h2>
     <ul class="icon-list" v-show="show">
@@ -59,7 +51,7 @@ watch(searchVal, (newVal) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-		margin-bottom: 20px;
+    margin-bottom: 20px;
 
     span {
         cursor: pointer;
@@ -94,7 +86,7 @@ watch(searchVal, (newVal) => {
         border-radius: 3px;
         margin: 0px !important;
         padding: 20px !important;
-        transition: background-color .2s, transform .2s;
+        transition: background-color 0.2s, transform 0.2s;
 
         i {
             width: 40px;
@@ -109,4 +101,3 @@ watch(searchVal, (newVal) => {
     }
 }
 </style>
-

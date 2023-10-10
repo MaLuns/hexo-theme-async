@@ -45,7 +45,9 @@ declare interface Window {
 		}
 		swup: boolean
 		plugin: any
-		icons: any
+		icons: {
+			[k: string]: string
+		}
 		icontype: 'symbol' | 'font'
 		highlight: {
 			plugin: 'highlighjs' | 'prismjs'

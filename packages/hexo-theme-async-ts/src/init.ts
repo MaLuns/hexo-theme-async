@@ -119,7 +119,7 @@ export function InitThemeMode(init = false) {
  * @returns
  */
 export function InitScroll() {
-	const scrollBarWidth = utils.scrollBarWidth()
+	// const scrollBarWidth = utils.scrollBarWidth()
 	const banner = utils.q<HTMLElement>('.trm-banner-cover')
 	const sidebar = utils.q<HTMLDivElement>('.trm-sidebar')
 	const backtop = utils.q<HTMLDivElement>('#trm-back-top')
@@ -224,9 +224,22 @@ export function InitCounter(duration = 2000) {
  * 初始化目录
  */
 export function InitToc() {
-	const postToc = utils.q('#post-toc')
+	const postToc = utils.q<HTMLDivElement>('#post-toc')
 	const tocBtn = utils.q('.post-toc-btn')
 	if (postToc) {
+		const tocTopBtn = postToc.querySelector<HTMLSpanElement>('#post-toc-top')
+		const tocHeader = postToc.querySelector<HTMLDivElement>('.trm-post-toc-header')
+
+		tocTopBtn.addEventListener('click', function (e) {
+			if (postToc.classList.contains('fixed')) {
+				postToc.classList.remove('fixed', 'active')
+				tocTopBtn.innerHTML = '置顶'
+			} else {
+				postToc.classList.add('fixed')
+				tocTopBtn.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.close)
+			}
+		})
+
 		postToc.addEventListener('click', function (e) {
 			e.preventDefault()
 			e.stopPropagation()
@@ -239,6 +252,33 @@ export function InitToc() {
 			const elementTop = scroll.getBoundingClientRect().top + (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)
 			window.scrollTo({ top: elementTop - 110, behavior: 'smooth' })
 			return false
+		})
+
+		tocHeader.addEventListener('mousedown', function (e) {
+			if (!postToc.classList.contains('fixed')) {
+				return
+			}
+			let rect = tocHeader.getBoundingClientRect()
+			let x = e.clientX
+			let y = e.clientY
+			let isDown = true
+
+			document.onmousemove = function (e) {
+				if (isDown) {
+					let nx = e.clientX
+					let ny = e.clientY
+					postToc.style.left = `${nx - (x - rect.x)}px`
+					postToc.style.top = `${ny - (y - rect.y)}px`
+					postToc.style.right = 'unset'
+					postToc.style.bottom = 'unset'
+				}
+			}
+
+			document.onmouseup = function () {
+				isDown = false
+				document.onmousemove = null
+				document.onmouseup = null
+			}
 		})
 
 		if (window.ASYNC_CONFIG.toc.post_title) {
@@ -260,6 +300,9 @@ export function InitToc() {
 		}
 
 		const elOut = (e: MouseEvent) => {
+			if (postToc.classList.contains('fixed')) {
+				return
+			}
 			utils.clickoutside(<Element>e.target, [postToc, tocBtn]) ? postToc.classList.remove('active') : globalFun.switchToc()
 		}
 

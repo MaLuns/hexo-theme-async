@@ -170,7 +170,7 @@ function tocHelper(str, options = {}) {
       firstLevel = level;
     }
 
-    result += `<li class="${itemClassName} ${levelClassName}-${level}">`;
+    result += `<li class="${itemClassName} ${levelClassName}-${level}" title="${text}">`;
     if (href) {
       result += `<a rel="nofollow" class="${linkClassName}" href="${href}">`;
     } else {

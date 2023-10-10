@@ -65,8 +65,8 @@ const switchReadMode = function () {
 
 	function clickFn() {
 		$body.classList.remove('trm-read-mode')
-		newEle.remove()
 		newEle.removeEventListener('click', clickFn)
+		newEle.remove()
 	}
 
 	newEle.addEventListener('click', clickFn)
@@ -110,7 +110,7 @@ const setThemeColor = function (colorVal = '--theme-bg-color') {
  */
 const switchToc = function (show?: boolean, x?: number, y?: number) {
 	const postToc = utils.q<HTMLElement>('#post-toc')
-	if (postToc) {
+	if (postToc && !postToc.classList.contains('fixed')) {
 		if (show === undefined) {
 			show = !postToc.classList.contains('active')
 		}

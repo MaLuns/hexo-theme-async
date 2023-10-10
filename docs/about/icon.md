@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="/font-awesome.min.css">
 <icon-list v-for="(item, key) in icons" v-bind="item" h2></icon-list>
-<info-toast>复制成功！</info-toast>
 
 <script setup>
 import icons from "../.vitepress/assets/icon.json"
