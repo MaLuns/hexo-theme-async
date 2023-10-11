@@ -383,24 +383,15 @@ export function InitHighlightTool() {
 	}
 
 	const expandCode = function () {
-		let flag: boolean, oldHeight: number, newHeight: number, scrollTop: number
-		let scroll = window?.locomotiveScrollInstance?.scroll
-
-		flag = this.classList.contains('expand-done')
-		newHeight = this.parentElement.clientHeight
-
-		scrollTop = scroll?.instance?.scroll?.y // 记录滚动高度
-
+		const flag = this.classList.contains('expand-done')
+		const scrollTop = utils.scrollTop() // record the scroll height
+		const newHeight = this.parentElement.clientHeight
 		this.classList.toggle('expand-done')
-		oldHeight = this.parentElement.clientHeight
-
-		if (flag && scroll) {
+		const oldHeight = this.parentElement.clientHeight
+		if (flag) {
 			const expandHeight = newHeight - oldHeight
-			if (expandHeight < scroll.scrollbarHeight) return // 展开高度低于屏幕高度不滚动
-
-			window.locomotiveScrollInstance.setScroll(scroll.instance.delta.x, scrollTop - expandHeight)
-
-			/* window.locomotiveScrollInstance.scrollTo(scrollTop - expandHeight, { duration: 0 }) */
+			if (expandHeight < utils.viewPortHeight()) return // the unfolded height is lower than the screen height and does not scroll
+			window.scrollTo({ top: scrollTop - expandHeight })
 		}
 	}
 

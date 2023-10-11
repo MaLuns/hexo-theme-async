@@ -248,7 +248,7 @@ export const utils = {
 	 * @returns 
 	 */
 	isInViewPortOfOne(el: HTMLElement) {
-		const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+		const viewPortHeight = utils.viewPortHeight()
 		const scrollTop = utils.scrollTop()
 		const viewPortBottom = scrollTop + viewPortHeight
 		const { bottom, top, height } = el.getBoundingClientRect()
@@ -277,5 +277,12 @@ export const utils = {
 			: isCSS1Compat
 				? document.documentElement.scrollTop
 				: document.body.scrollTop
+	},
+	/**
+	 * 窗体高度
+	 * @returns 
+	 */
+	viewPortHeight() {
+		return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 	}
 }
