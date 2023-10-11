@@ -17,7 +17,7 @@ export const utils = {
 			let context = this,
 				args = arguments
 			clearTimeout(timeout)
-			timeout = setTimeout(function () {
+			timeout = setTimeout(() => {
 				timeout = null
 				if (!immediate) func.apply(context, args)
 			}, wait)
@@ -242,4 +242,40 @@ export const utils = {
 			return el.parentElement ? utils.clickoutside(el.parentElement, els) : true
 		}
 	},
+	/**
+	 * 判断是否在可视范围内
+	 * @param el 
+	 * @returns 
+	 */
+	isInViewPortOfOne(el: HTMLElement) {
+		const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+		const scrollTop = utils.scrollTop()
+		const viewPortBottom = scrollTop + viewPortHeight
+		const { bottom, top, height } = el.getBoundingClientRect()
+		const isIn = bottom > 0 && top < viewPortBottom
+
+		if (isIn) {
+			return {
+				is: true,
+				ratio: top < 0 ? Math.abs(top / height) : 0
+			}
+		} else {
+			return {
+				is: false
+			}
+		}
+	},
+	/**
+	 * 窗体已滚动距离
+	 * @returns 
+	 */
+	scrollTop() {
+		const supportPageOffset = window.pageXOffset !== undefined
+		const isCSS1Compat = (document.compatMode || "") === "CSS1Compat"
+		return supportPageOffset
+			? window.pageYOffset
+			: isCSS1Compat
+				? document.documentElement.scrollTop
+				: document.body.scrollTop
+	}
 }

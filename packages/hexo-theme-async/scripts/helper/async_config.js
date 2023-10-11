@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
-const url = require('url');
-const { url_for } = require('hexo-util');
+const url = require('url')
+const { url_for } = require('hexo-util')
 const { toI18n } = require('../utils')
 
 const urlFor = url_for.bind(hexo)
@@ -32,6 +32,7 @@ hexo.extend.helper.register('async_config', function () {
             open_read_mode: __('post.read_mode.open'),
             exit_read_mode: __('post.read_mode.exit'),
             notice_outdate_message: __('post.notice_outdate_message'),
+            sticky: __('post.sticky'),
 
             just: __('date_suffix.just'),
             min: __('date_suffix.min'),
@@ -83,22 +84,22 @@ hexo.extend.helper.register('async_config', function () {
         exportConfig.search = theme.search
 
         if (config.search) {
-            exportConfig.search.path = config.search.path;
+            exportConfig.search.path = config.search.path
         }
     }
 
-    return `<script>window.ASYNC_CONFIG = ${JSON.stringify(exportConfig)};</script>`;
+    return `<script>window.ASYNC_CONFIG = ${JSON.stringify(exportConfig)};</script>`
 })
 
 hexo.extend.helper.register('page_config', function () {
-    const is_post = hexo.extend.helper.get('is_post').bind(this);
-    const is_home = hexo.extend.helper.get('is_home').bind(this);
-    const full_date = hexo.extend.helper.get('full_date').bind(this);
+    const is_post = hexo.extend.helper.get('is_post').bind(this)
+    const is_home = hexo.extend.helper.get('is_home').bind(this)
+    const full_date = hexo.extend.helper.get('full_date').bind(this)
 
     let exportConfig = {
         isPost: is_post(),
         isHome: is_home(),
         postUpdate: full_date(this.page.updated)
     }
-    return `<script id="async-page-config">window.PAGE_CONFIG = ${JSON.stringify(exportConfig)};</script>`;
+    return `<script id="async-page-config">window.PAGE_CONFIG = ${JSON.stringify(exportConfig)};</script>`
 })

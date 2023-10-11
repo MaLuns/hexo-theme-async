@@ -33,6 +33,7 @@ declare interface Window {
 			open_read_mode: string
 			exit_read_mode: string
 			notice_outdate_message: string
+			sticky: string
 			just: string
 			min: string
 			hour: string

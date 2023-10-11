@@ -143,7 +143,7 @@ export function InitScroll() {
 	}
 
 	const scroll_fun = function () {
-		const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
+		const scrollTop = utils.scrollTop()
 		const { scrollHeight, clientHeight } = document.documentElement
 
 		const fun = scrollTop > 500 ? 'add' : 'remove'
@@ -224,6 +224,7 @@ export function InitCounter(duration = 2000) {
  * 初始化目录
  */
 export function InitToc() {
+	const { i18n, toc, icons, icontype } = window.ASYNC_CONFIG
 	const postToc = utils.q<HTMLDivElement>('#post-toc')
 	const tocBtn = utils.q('.post-toc-btn')
 	if (postToc) {
@@ -233,10 +234,10 @@ export function InitToc() {
 		tocTopBtn.addEventListener('click', function (e) {
 			if (postToc.classList.contains('fixed')) {
 				postToc.classList.remove('fixed', 'active')
-				tocTopBtn.innerHTML = '置顶'
+				tocTopBtn.innerHTML = i18n.sticky
 			} else {
 				postToc.classList.add('fixed')
-				tocTopBtn.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.close)
+				tocTopBtn.innerHTML = utils.icons(icons.close, icontype)
 			}
 		})
 
@@ -249,7 +250,7 @@ export function InitToc() {
 			if (!url) return
 			const scroll = document.querySelector(url)
 			if (!scroll) return
-			const elementTop = scroll.getBoundingClientRect().top + (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)
+			const elementTop = scroll.getBoundingClientRect().top + utils.scrollTop()
 			window.scrollTo({ top: elementTop - 110, behavior: 'smooth' })
 			return false
 		})
@@ -271,6 +272,7 @@ export function InitToc() {
 					postToc.style.top = `${ny - (y - rect.y)}px`
 					postToc.style.right = 'unset'
 					postToc.style.bottom = 'unset'
+					postToc.style.opacity = '.6'
 				}
 			}
 
@@ -278,17 +280,18 @@ export function InitToc() {
 				isDown = false
 				document.onmousemove = null
 				document.onmouseup = null
+				postToc.style.opacity = 'unset'
 			}
 		})
 
-		if (window.ASYNC_CONFIG.toc.post_title) {
+		if (toc.post_title) {
 			postToc.querySelectorAll('.trm-toc-link').forEach((item) => {
 				const id = item.getAttribute('href')
 				const title = utils.q(id)
 				if (!title) return
 				const span = document.createElement('span')
 				span.className = 'trm-toc-icon'
-				span.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.toc_tag)
+				span.innerHTML = utils.icons(icons.toc_tag, icontype)
 				span.onclick = function (e) {
 					globalFun.switchToc(true, e.clientX, e.clientY)
 					e.preventDefault()

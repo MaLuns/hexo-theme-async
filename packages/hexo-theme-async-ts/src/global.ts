@@ -5,11 +5,11 @@ import { utils } from './utils'
  * @param wait
  * @returns
  */
-const pageLoading = function (wait: number = 600): Promise<void> {
+const pageLoading = (wait: number = 600): Promise<void> => {
 	return new Promise((resolve) => {
 		utils.q('html').classList.add('is-animating')
 		utils.q<HTMLDivElement>('.trm-scroll-container').style.opacity = '0'
-		setTimeout(function () {
+		setTimeout(() => {
 			utils.q('html').classList.remove('is-animating')
 			utils.q<HTMLDivElement>('.trm-scroll-container').style.opacity = '1'
 			resolve()
@@ -22,7 +22,7 @@ const pageLoading = function (wait: number = 600): Promise<void> {
  * @param wait
  * @returns
  */
-const themeLoading = function (wait: number = 600): Promise<void> {
+const themeLoading = (wait: number = 600): Promise<void> => {
 	/* Content area */
 	const scroll_container = utils.q<HTMLDivElement>('#trm-scroll-container')
 	/* Animated mask layers */
@@ -46,37 +46,77 @@ const themeLoading = function (wait: number = 600): Promise<void> {
 /**
  * 切换单双栏
  */
-const switchSingleColumn = function () {
+const switchSingleColumn = () => {
 	document.body.classList.toggle('trm-single-column')
 }
 
 /**
  * 阅读模式切换
  */
-const switchReadMode = function () {
+const switchReadMode = () => {
 	const $body = document.body
-	$body.classList.add('trm-read-mode')
+
 	const newEle = document.createElement('button')
 	newEle.type = 'button'
 	newEle.title = window.ASYNC_CONFIG.i18n.exit_read_mode
 	newEle.className = `trm-exit-readmode trm-glow`
 	newEle.innerHTML = utils.icons(window.ASYNC_CONFIG.icons.close, window.ASYNC_CONFIG.icontype)
-	$body.appendChild(newEle)
 
-	function clickFn() {
-		$body.classList.remove('trm-read-mode')
-		newEle.removeEventListener('click', clickFn)
-		newEle.remove()
+	type Flag = { el: HTMLElement, ratio?: number } | void
+
+	const getScrollFlag = () => {
+		return new Promise<Flag>((resolve) => {
+			const article = document.getElementById('article-container') as HTMLDivElement
+			if (article) {
+				const list = Array.from(article.children)
+				for (let i = 0; i < list.length; i++) {
+					const el = <HTMLElement>list[i]
+					const flag = utils.isInViewPortOfOne(el)
+					if (flag.is) {
+						resolve({
+							el,
+							ratio: flag.ratio
+						})
+						return
+					}
+				}
+				resolve()
+			} else {
+				resolve()
+			}
+		})
 	}
 
-	newEle.addEventListener('click', clickFn)
+	const setScroll = (data: Flag) => {
+		if (data && data.ratio > 0) {
+			const { top, height } = data.el.getBoundingClientRect()
+			const elementTop = (data.ratio * height) + top + utils.scrollTop()
+			window.scrollTo({ top: elementTop })
+		}
+	}
+
+	const clickFn = () => {
+		getScrollFlag().then(data => {
+			$body.classList.remove('trm-read-mode')
+			newEle.removeEventListener('click', clickFn)
+			newEle.remove()
+			setScroll(data)
+		})
+	}
+
+	getScrollFlag().then(data => {
+		$body.classList.add('trm-read-mode')
+		$body.appendChild(newEle)
+		newEle.addEventListener('click', clickFn)
+		setScroll(data)
+	})
 }
 
 /**
  * 主题切换
  * @param type
  */
-const switchThemeMode = function (type: 'style-dark' | 'style-light') {
+const switchThemeMode = (type: 'style-dark' | 'style-light') => {
 	themeLoading().then(() => {
 		const fun = type === 'style-dark' ? 'add' : 'remove'
 		utils.q('.trm-mode-swich-animation').classList[fun]('trm-active')
@@ -94,7 +134,7 @@ const switchThemeMode = function (type: 'style-dark' | 'style-light') {
  * 设置移动端-状态栏主题
  * @param colorVal
  */
-const setThemeColor = function (colorVal = '--theme-bg-color') {
+const setThemeColor = (colorVal = '--theme-bg-color') => {
 	let themeColor = getComputedStyle(document.documentElement).getPropertyValue(colorVal)
 	let themeColorDom = utils.q<HTMLMetaElement>('meta[name="theme-color"]')
 	if (themeColor && themeColorDom) {
@@ -108,7 +148,7 @@ const setThemeColor = function (colorVal = '--theme-bg-color') {
  * @param x
  * @param y
  */
-const switchToc = function (show?: boolean, x?: number, y?: number) {
+const switchToc = (show?: boolean, x?: number, y?: number) => {
 	const postToc = utils.q<HTMLElement>('#post-toc')
 	if (postToc && !postToc.classList.contains('fixed')) {
 		if (show === undefined) {
