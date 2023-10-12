@@ -3,6 +3,36 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.4",
+				"date": "2023-10-12",
+				"logs": [
+					{
+						"type": "feat",
+						"text": "阅读模式切换时保存阅读进度"
+					},
+					{
+						"type": "feat",
+						"text": "toc 增加置顶可拖拽"
+					},
+					{
+						"type": "style",
+						"text": "鼠标选择文本样式调整"
+					},
+					{
+						"type": "style",
+						"text": "firefox 下滚动条宽度调整"
+					},
+					{
+						"type": "style",
+						"text": "文章摘要字体颜色与正文保持一致"
+					},
+					{
+						"type": "fix",
+						"text": "修复代码块展开收起失效"
+					}
+				]
+			},
+			{
 				"version": "2.1.3",
 				"date": "2023-10-07",
 				"logs": [
