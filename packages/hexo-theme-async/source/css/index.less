@@ -1,40 +1,40 @@
 :root {
-    .trm-dark-icon {
-        display: none
-    }
+	.trm-dark-icon {
+		display: none;
+	}
 
-    &.dark {
-        .trm-dark-icon {
-            display: block
-        }
+	&.dark {
+		.trm-dark-icon {
+			display: block;
+		}
 
-        .trm-light-icon {
-            display: none
-        }
-    }
+		.trm-light-icon {
+			display: none;
+		}
+	}
 }
 
 // transition mixin
-.transition-mixin(@type: all; @time: .4s) {
-    transition: @type @time ease-in-out;
+.transition-mixin(@type: all; @time: 0.4s) {
+	transition: @type @time ease-in-out;
 }
 
 //
 .ellipsis() {
-    overflow     : hidden;
-    white-space  : nowrap;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
-// 
+//
 .line-ellipsis(@line: 2) {
-    overflow          : hidden;
-    text-overflow     : ellipsis;
-    display           : -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: @line;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: @line;
 }
 
-@import './_variables/index.less';
-@import './_components/index.less';
-@import (optional) '../../../../source/_data/style/index.less';
+@import "./_variables/index.less";
+@import "./_components/index.less";
+@import (optional) "../../../../source/_data/style/index.less";

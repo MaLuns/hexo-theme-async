@@ -1,15 +1,16 @@
 {
-    "name": "hexo-theme-async-ts",
-    "type": "module",
-    "private": true,
-    "files": [
-        "source"
-    ],
-    "engines": {
-        "node": ">=14.0.0"
-    },
-    "scripts": {
-        "build": "tsup",
-        "dev": "tsup --watch"
-    }
+	"name": "hexo-theme-async-ts",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"files": [
+		"source"
+	],
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch"
+	}
 }

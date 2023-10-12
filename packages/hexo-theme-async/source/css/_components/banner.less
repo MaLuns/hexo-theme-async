@@ -1,209 +1,208 @@
 .trm-banner {
-    width        : 100%;
-    height       : 560px;
-    position     : relative;
-    z-index      : 1;
-    overflow     : hidden;
-    border-radius: 0 0 20px 20px;
-    box-shadow   : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	width: 100%;
+	height: 560px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	border-radius: 0 0 20px 20px;
+	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 
-    .trm-slideshow {
-        position: absolute;
-        top     : 0;
-        left    : 0;
-        height  : 100%;
-        width   : 100%;
-    }
+	.trm-slideshow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
 
-    .trm-banner-cover {
-        z-index        : -1;
-        position       : absolute;
-        width          : 100%;
-        height         : 100%;
-        object-fit     : cover;
-        object-position: top;
-    }
+	.trm-banner-cover {
+		z-index: -1;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
 
-    .trm-publication-cover {
-        z-index        : -1;
-        position       : absolute;
-        width          : 100%;
-        height         : 100%;
-        object-fit     : cover;
-        object-position: center;
-    }
+	.trm-publication-cover {
+		z-index: -1;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 
-    .trm-banner-content {
-        padding-top: 80px;
-        z-index    : 999;
-        position   : absolute;
-        bottom     : 0;
-        width      : 100%;
-        height     : 100%;
-        display    : flex;
-        align-items: center;
+	.trm-banner-content {
+		padding-top: 80px;
+		z-index: 999;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
 
-        &.trm-overlay {
-            background-color: rgba(10, 15, 20, 0.2);
-        }
+		&.trm-overlay {
+			background-color: rgba(10, 15, 20, 0.2);
+		}
 
-        .trm-banner-text {
-            padding-right: 10px;
+		.trm-banner-text {
+			padding-right: 10px;
 
-            * {
-                color      : #fcfcfe;
-                text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-            }
+			* {
+				color: #fcfcfe;
+				text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+			}
 
-            .trm-breadcrumbs {
-                margin          : 0;
-                padding         : 0;
-                display         : inline-flex;
-                border          : solid 2px #fcfcfe;
-                background-color: transparent;
-                padding         : 0 35px;
-                height          : 45px;
-                align-items     : center;
-                border-radius   : 30px;
+			.trm-breadcrumbs {
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+				border: solid 2px #fcfcfe;
+				background-color: transparent;
+				padding: 0 35px;
+				height: 45px;
+				align-items: center;
+				border-radius: 30px;
 
-                li {
-                    padding-right  : 20px;
-                    list-style-type: none;
-                    position       : relative;
+				li {
+					padding-right: 20px;
+					list-style-type: none;
+					position: relative;
 
-                    &:after {
-                        content : '/';
-                        position: absolute;
-                        top     : 0;
-                        right   : 8px;
-                    }
+					&:after {
+						content: "/";
+						position: absolute;
+						top: 0;
+						right: 8px;
+					}
 
-                    &:last-child {
-                        padding-right: 0;
+					&:last-child {
+						padding-right: 0;
 
-                        &:after {
-                            display: none;
-                        }
-                    }
+						&:after {
+							display: none;
+						}
+					}
 
-                    a {
-                        .transition-mixin();
+					a {
+						.transition-mixin();
 
-                        &:hover {
-                            color: var(--primary, #afb42b);
-                        }
-                    }
+						&:hover {
+							color: var(--primary, #afb42b);
+						}
+					}
 
-                    span {
-                        opacity: .8;
-                        cursor : not-allowed;
-                    }
-                }
-            }
+					span {
+						opacity: 0.8;
+						cursor: not-allowed;
+					}
+				}
+			}
 
-            &.trm-text-center {
-                text-align: center;
-                margin-top: -50px;
-            }
-        }
+			&.trm-text-center {
+				text-align: center;
+				margin-top: -50px;
+			}
+		}
 
-        .trm-scroll-hint-frame {
-            position       : absolute;
-            right          : 20px;
-            bottom         : 0;
-            height         : 250px;
-            display        : flex;
-            flex-direction : column;
-            justify-content: center;
-            align-items    : center;
+		.trm-scroll-hint-frame {
+			position: absolute;
+			right: 20px;
+			bottom: 0;
+			height: 250px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
-            .trm-label {
-                display    : block;
-                white-space: nowrap;
-                position   : absolute;
-                bottom     : 40px;
-                color      : #fcfcfe;
-                transform  : rotate(90deg);
-            }
+			.trm-label {
+				display: block;
+				white-space: nowrap;
+				position: absolute;
+				bottom: 40px;
+				color: #fcfcfe;
+				transform: rotate(90deg);
+			}
 
-            .trm-scroll-hint {
-                margin-bottom: 20px;
-                position     : relative;
-                height       : 38px;
-                width        : 24px;
-                border       : solid 2px #fcfcfe;
-                border-radius: 15px;
+			.trm-scroll-hint {
+				margin-bottom: 20px;
+				position: relative;
+				height: 38px;
+				width: 24px;
+				border: solid 2px #fcfcfe;
+				border-radius: 15px;
 
-                &:after {
-                    content         : '';
-                    height          : 4px;
-                    width           : 4px;
-                    border-radius   : 50%;
-                    background-color: #fcfcfe;
-                    position        : absolute;
-                    top             : 8px;
-                    left            : calc(50% - 2px);
-                    animation       : mouse 1s infinite;
-                }
-            }
-        }
-    }
+				&:after {
+					content: "";
+					height: 4px;
+					width: 4px;
+					border-radius: 50%;
+					background-color: #fcfcfe;
+					position: absolute;
+					top: 8px;
+					left: calc(50% - 2px);
+					animation: mouse 1s infinite;
+				}
+			}
+		}
+	}
 
-    @media(max-width:992px) {
-        height       : 350px;
-        border-radius: 0 0 10px 10px;
+	@media (max-width: 992px) {
+		height: 350px;
+		border-radius: 0 0 10px 10px;
 
-        .trm-banner-cover {
-            top   : 0;
-            height: 100%;
-        }
+		.trm-banner-cover {
+			top: 0;
+			height: 100%;
+		}
 
-        .trm-banner-content {
-            .trm-banner-text {
-                text-align   : center;
-                padding-right: 0;
+		.trm-banner-content {
+			.trm-banner-text {
+				text-align: center;
+				padding-right: 0;
 
-                &.trm-text-center {
-                    text-align: center;
-                    margin-top: 0;
-                }
+				&.trm-text-center {
+					text-align: center;
+					margin-top: 0;
+				}
 
-                .trm-breadcrumbs {
-                    display: none;
-                }
-            }
+				.trm-breadcrumbs {
+					display: none;
+				}
+			}
 
-            .trm-scroll-hint-frame {
-                display: none;
-            }
-        }
+			.trm-scroll-hint-frame {
+				display: none;
+			}
+		}
+	}
 
-    }
+	@media (max-width: 768px) {
+		height: 250px;
+		border-radius: 0;
 
-    @media(max-width:768px) {
-        height       : 250px;
-        border-radius: 0;
-
-        .trm-banner-content {
-            .trm-banner-text {
-                .trm-hsmb-font {
-                    font-size: 1.8rem;
-                    padding  : 0 10px;
-                    .ellipsis()
-                }
-            }
-        }
-    }
+		.trm-banner-content {
+			.trm-banner-text {
+				.trm-hsmb-font {
+					font-size: 1.8rem;
+					padding: 0 10px;
+					.ellipsis();
+				}
+			}
+		}
+	}
 }
 
 @keyframes mouse {
-    0% {
-        opacity  : 1;
-        transform: translateY(0)
-    }
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 
-    100% {
-        opacity  : 0;
-        transform: translateY(8px)
-    }
+	100% {
+		opacity: 0;
+		transform: translateY(8px);
+	}
 }

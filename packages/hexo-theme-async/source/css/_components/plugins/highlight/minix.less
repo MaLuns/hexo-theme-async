@@ -1,180 +1,184 @@
 .tools() {
-    &::before {
-        content         : " ";
-        position        : absolute;
-        top             : 0;
-        left            : 0;
-        width           : 100%;
-        height          : 31px;
-        background-color: var(--highlight-tools-bg-color);
-    }
+	&::before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 31px;
+		background-color: var(--highlight-tools-bg-color);
+	}
 
-    .code-tools {
-        position   : absolute;
-        top        : 0;
-        right      : 10px;
-        height     : 30px;
-        line-height: 30px;
-        user-select: none;
-        color      : var(--highlight-tools-color);
+	.code-tools {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		height: 30px;
+		line-height: 30px;
+		user-select: none;
+		color: var(--highlight-tools-color);
 
-        .code-lang {
-            font-weight   : bolder;
-            font-size     : 1.05em;
-            text-transform: uppercase;
-        }
+		.code-lang {
+			font-weight: bolder;
+			font-size: 1.05em;
+			text-transform: uppercase;
+		}
 
-        .copy-button {
-            cursor     : pointer;
-            font-weight: bolder;
-            font-size  : 1.05em;
-            .transition-mixin();
+		.copy-button {
+			cursor: pointer;
+			font-weight: bolder;
+			font-size: 1.05em;
+			.transition-mixin();
 
-            &:hover {
-                color: var(--primary);
-            }
-        }
+			&:hover {
+				color: var(--primary);
+			}
+		}
 
-        &.mac-style {
-            .code-lang+.copy-button {
-                display: none;
-            }
-        }
+		&.mac-style {
+			.code-lang + .copy-button {
+				display: none;
+			}
+		}
 
-        &.default-style {
-            left: 10px;
+		&.default-style {
+			left: 10px;
 
-            .code-lang {
-                float: left;
-            }
+			.code-lang {
+				float: left;
+			}
 
-            .copy-button {
-                float: right;
-            }
-        }
-    }
+			.copy-button {
+				float: right;
+			}
+		}
+	}
 
-    &:hover {
-        /* box-shadow: 1px 1px 4px 0 #0000000e; */
+	&:hover {
+		/* box-shadow: 1px 1px 4px 0 #0000000e; */
 
-        .code-tools.mac-style {
-            .code-lang {
-                display: none;
-            }
+		.code-tools.mac-style {
+			.code-lang {
+				display: none;
+			}
 
-            .copy-button {
-                display: inherit;
-            }
-        }
-    }
+			.copy-button {
+				display: inherit;
+			}
+		}
+	}
 }
 
 /* code title */
 .caption() {
-    position      : absolute;
-    top           : 0;
-    right         : 0;
-    left          : 0;
-    margin        : 0 auto;
-    line-height   : 30px;
-    width         : fit-content;
-    font-weight   : bold;
-    user-select   : none;
-    letter-spacing: 0;
-    color         : var(--highlight-tools-color);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	line-height: 30px;
+	width: fit-content;
+	font-weight: bold;
+	user-select: none;
+	letter-spacing: 0;
+	color: var(--highlight-tools-color);
 
-    a {
-        background : transparent !important;
-        margin-left: 4px;
+	a {
+		background: transparent !important;
+		margin-left: 4px;
 
-        &::before {
-            content: '[';
-        }
+		&::before {
+			content: "[";
+		}
 
-        &::after {
-            content: ']';
-        }
-    }
+		&::after {
+			content: "]";
+		}
+	}
 }
 
 /* mac style title */
 .mac() {
-    & when (@highlightTitleStyle=mac) {
-        &::after {
-            content           : " ";
-            position          : absolute;
-            border-radius     : 50%;
-            background        : #ff5f56;
-            width             : 12px;
-            height            : 12px;
-            top               : 9px;
-            left              : 12px;
-            -webkit-box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
-            box-shadow        : 20px 0 #ffbd2e, 40px 0 #27c93f;
-        }
-    }
+	& when (@highlightTitleStyle=mac) {
+		&::after {
+			content: " ";
+			position: absolute;
+			border-radius: 50%;
+			background: #ff5f56;
+			width: 12px;
+			height: 12px;
+			top: 9px;
+			left: 12px;
+			-webkit-box-shadow:
+				20px 0 #ffbd2e,
+				40px 0 #27c93f;
+			box-shadow:
+				20px 0 #ffbd2e,
+				40px 0 #27c93f;
+		}
+	}
 }
 
 /* max height */
 .height_limit() {
-    /* & when(isnumber(@highlightHeightLimit)) {
+	/* & when(isnumber(@highlightHeightLimit)) {
         max-height: unit(@highlightHeightLimit, px);
     } */
 
-    .code-expand-btn {
-        @height    : 24px;
-        position   : absolute;
-        z-index    : 10;
-        bottom     : 0;
-        left       : 0;
-        font-size  : 16px;
-        height     : @height;
-        line-height: @height;
-        font-weight: bold;
-        width      : 100%;
-        color      : var(--highlight-foreground);
-        background : linear-gradient(0, var(--highlight-gutter-bg-color), transparent);
-        text-align : center;
-        cursor     : pointer;
-        animation  : code-expand-key 2s infinite;
+	.code-expand-btn {
+		@height: 24px;
+		position: absolute;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		font-size: 16px;
+		height: @height;
+		line-height: @height;
+		font-weight: bold;
+		width: 100%;
+		color: var(--highlight-foreground);
+		background: linear-gradient(0, var(--highlight-gutter-bg-color), transparent);
+		text-align: center;
+		cursor: pointer;
+		animation: code-expand-key 2s infinite;
 
-        &~pre,
-        &~table {
-            margin-bottom: @height;
-        }
+		& ~ pre,
+		& ~ table {
+			margin-bottom: @height;
+		}
 
-        &.expand-done {
-            background: linear-gradient(0, transparent, var(--highlight-gutter-bg-color));
-            transform : rotate(180deg);
-        }
+		&.expand-done {
+			background: linear-gradient(0, transparent, var(--highlight-gutter-bg-color));
+			transform: rotate(180deg);
+		}
 
-        &:not(.expand-done)~pre,
-        &:not(.expand-done)~table {
-            margin-bottom: 0;
-            overflow     : hidden;
+		&:not(.expand-done) ~ pre,
+		&:not(.expand-done) ~ table {
+			margin-bottom: 0;
+			overflow: hidden;
 
-            & when(isnumber(@highlightHeightLimit)) {
-                height: unit(@highlightHeightLimit, px);
-            }
-        }
+			& when(isnumber(@highlightHeightLimit)) {
+				height: unit(@highlightHeightLimit, px);
+			}
+		}
 
-        svg {
-            margin : 0;
-            display: initial;
-        }
-    }
+		svg {
+			margin: 0;
+			display: initial;
+		}
+	}
 
-    @keyframes code-expand-key {
-        0% {
-            opacity: .6
-        }
+	@keyframes code-expand-key {
+		0% {
+			opacity: 0.6;
+		}
 
-        50% {
-            opacity: .1
-        }
+		50% {
+			opacity: 0.1;
+		}
 
-        100% {
-            opacity: .6
-        }
-    }
+		100% {
+			opacity: 0.6;
+		}
+	}
 }

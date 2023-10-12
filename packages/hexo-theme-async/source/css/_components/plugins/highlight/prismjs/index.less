@@ -1,17 +1,17 @@
-pre[class*='language-'] {
-    code[class*='language-'] {
-        font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
-        padding    : 10px;
-        width      : 100%;
-        overflow-x : auto;
-        display    : block;
+pre[class*="language-"] {
+	code[class*="language-"] {
+		font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+		padding: 10px;
+		width: 100%;
+		overflow-x: auto;
+		display: block;
 
-        &::-webkit-scrollbar-thumb {
-            background: var(--highlight-scrollbar)
-        }
+		&::-webkit-scrollbar-thumb {
+			background: var(--highlight-scrollbar);
+		}
 
-        & when(@highlightCodeWordWrap),(@prismjsLineNumber=false) {
-            white-space: pre-wrap;
-        }
-    }
+		& when(@highlightCodeWordWrap),(@prismjsLineNumber=false) {
+			white-space: pre-wrap;
+		}
+	}
 }

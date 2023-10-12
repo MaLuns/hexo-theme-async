@@ -1,97 +1,97 @@
 .trm-read-mode {
-    padding: 0;
+	padding: 0;
 
-    &::before {
-        content: unset;
-    }
+	&::before {
+		content: unset;
+	}
 
-    .trm-app-frame {
-        border          : none;
-        border-radius   : 0;
-        background-color: var(--theme-bg-color, #fcfcfe);
-    }
+	.trm-app-frame {
+		border: none;
+		border-radius: 0;
+		background-color: var(--theme-bg-color, #fcfcfe);
+	}
 
-    .trm-top-bar,
-    .trm-page-sidebar,
-    .trm-post-info,
-    .trm-post-next-prev,
-    .footer-divider,
-    .trm-fixed-container,
-    footer {
-        display: none
-    }
+	.trm-top-bar,
+	.trm-page-sidebar,
+	.trm-post-info,
+	.trm-post-next-prev,
+	.footer-divider,
+	.trm-fixed-container,
+	footer {
+		display: none;
+	}
 
-    .trm-banner {
-        height : 40px;
-        z-index: 10;
+	.trm-banner {
+		height: 40px;
+		z-index: 10;
 
-        .trm-banner-content.trm-overlay {
-            padding-top     : 0;
-            background-color: var(--theme-bg-color, #fcfcfe);
+		.trm-banner-content.trm-overlay {
+			padding-top: 0;
+			background-color: var(--theme-bg-color, #fcfcfe);
 
-            .trm-banner-text {
-                h1 {
-                    position        : fixed;
-                    top             : 0;
-                    left            : 0;
-                    right           : 0;
-                    width           : 100%;
-                    line-height     : 40px;
-                    font-size       : 22px;
-                    text-align      : center;
-                    color           : var(--theme-color, #00283a);
-                    background-color: var(--theme-bg-color, #fcfcfe);
-                }
+			.trm-banner-text {
+				h1 {
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					width: 100%;
+					line-height: 40px;
+					font-size: 22px;
+					text-align: center;
+					color: var(--theme-color, #00283a);
+					background-color: var(--theme-bg-color, #fcfcfe);
+				}
 
-                div,
-                .trm-breadcrumbs {
-                    display: none;
-                }
-            }
-        }
+				div,
+				.trm-breadcrumbs {
+					display: none;
+				}
+			}
+		}
 
-        .trm-banner-cover,
-        .trm-slideshow,
-        .trm-scroll-hint-frame {
-            display: none
-        }
-    }
+		.trm-banner-cover,
+		.trm-slideshow,
+		.trm-scroll-hint-frame {
+			display: none;
+		}
+	}
 
-    .trm-page-content {
-        flex     : 0 0 100%;
-        max-width: 100%;
+	.trm-page-content {
+		flex: 0 0 100%;
+		max-width: 100%;
 
-        .trm-content {
-            margin: 0;
+		.trm-content {
+			margin: 0;
 
-            >.trm-card {
-                padding: 10px 0 0;
-            }
-        }
-    }
+			> .trm-card {
+				padding: 10px 0 0;
+			}
+		}
+	}
 
-    .trm-card {
-        box-shadow: none;
-    }
+	.trm-card {
+		box-shadow: none;
+	}
 }
 
 .trm-exit-readmode {
-    position        : fixed;
-    bottom          : 30px;
-    right           : 20px;
-    z-index         : 100;
-    font-size       : 1.2rem;
-    width           : 2.5rem;
-    height          : 2.5rem;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-    border-radius   : 6px;
-    border          : none;
-    background-color: var(--fixed-button-bg-color);
-    color           : var(--fixed-button-color);
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	z-index: 100;
+	font-size: 1.2rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;
+	border: none;
+	background-color: var(--fixed-button-bg-color);
+	color: var(--fixed-button-color);
 
-    &:hover {
-        color: var(--primary);
-    }
+	&:hover {
+		color: var(--primary);
+	}
 }

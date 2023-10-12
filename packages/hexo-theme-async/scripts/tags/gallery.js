@@ -3,50 +3,53 @@
  * transplant from hexo-theme-butterfly
  */
 
-'use strict'
-const { url_for, htmlTag } = require('hexo-util')
-const urlFor = url_for.bind(hexo)
+'use strict';
+const { url_for, htmlTag } = require('hexo-util');
+const urlFor = url_for.bind(hexo);
 
 /**
  * 相册
- * @param {*} args 
- * @param {*} content 
- * @returns 
+ * @param {*} args
+ * @param {*} content
+ * @returns
  */
 function galleryGroup(args, content) {
-    return `<div class="fj-gallery no-fancybox">
-    ${content.split('\n').map(md => {
-        return hexo.render.renderSync({ text: md, engine: 'markdown' })
-    }).join('')}
-</div>`
+	return `<div class="fj-gallery no-fancybox">
+    ${content
+			.split('\n')
+			.map(md => {
+				return hexo.render.renderSync({ text: md, engine: 'markdown' });
+			})
+			.join('')}
+</div>`;
 }
 
 /**
  * 相册图片
- * @param {*} args 
- * @returns 
+ * @param {*} args
+ * @returns
  */
 function galleryItem(args) {
-    return htmlTag('img', {
-        src: urlFor(args[0]),
-        'data-src': urlFor(args[1])
-    })
+	return htmlTag('img', {
+		src: urlFor(args[0]),
+		'data-src': urlFor(args[1]),
+	});
 }
 
 /**
  * 相册库
- * @param {*} args 
- * @returns 
+ * @param {*} args
+ * @returns
  */
 function gallery(args) {
-    const name = args[0]
-    const desrc = args[1]
-    const url = urlFor(args[2])
-    const img = urlFor(args[3])
-    const col = args[4] || 6
-    const ratio = args[5] || 80
+	const name = args[0];
+	const desrc = args[1];
+	const url = urlFor(args[2]);
+	const img = urlFor(args[3]);
+	const col = args[4] || 6;
+	const ratio = args[5] || 80;
 
-    return `
+	return `
 <div class="col-lg-${col}">
     <a href="${url}" class="trm-portfolio-item trm-scroll-animation">
         <div class="trm-cover-frame" style="padding-bottom:${ratio}%">
@@ -59,10 +62,9 @@ function gallery(args) {
             </div>
         </div>
     </a>
-</div>`
+</div>`;
 }
 
-hexo.extend.tag.register('galleryGroup', galleryGroup, { ends: true })
-hexo.extend.tag.register('galleryItem', galleryItem)
-hexo.extend.tag.register('gallery', gallery)
-
+hexo.extend.tag.register('galleryGroup', galleryGroup, { ends: true });
+hexo.extend.tag.register('galleryItem', galleryItem);
+hexo.extend.tag.register('gallery', gallery);

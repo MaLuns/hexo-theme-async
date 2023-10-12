@@ -1,21 +1,21 @@
-import { utils } from './utils'
-import globalFun from './global'
-import SwupHeadPlugin from './swup/head'
-import SwupScriptsPlugin from './swup/script'
+import { utils } from './utils';
+import globalFun from './global';
+import SwupHeadPlugin from './swup/head';
+import SwupScriptsPlugin from './swup/script';
 
 /**
  * 初始化预览图片
  */
 export function InitFancybox() {
 	if (window.Fancybox) {
-		window.Fancybox.bind('[data-fancybox]')
+		window.Fancybox.bind('[data-fancybox]');
 		window.Fancybox.bind('[data-fancybox="light"],[data-fancybox="article"]', {
 			groupAll: true,
-		})
+		});
 		window.Fancybox.bind('[data-fancybox="dark"],[data-fancybox="article"]', {
 			groupAll: true,
-		})
-		window.Fancybox.defaults.Hash = false
+		});
+		window.Fancybox.defaults.Hash = false;
 	}
 }
 
@@ -25,13 +25,13 @@ export function InitFancybox() {
 export function InitSwiper() {
 	if (window.Swiper) {
 		/* slideshow */
-		var swiper = new window.Swiper('.trm-slideshow', {
+		new window.Swiper('.trm-slideshow', {
 			slidesPerView: 1,
 			effect: 'fade',
 			parallax: true,
 			autoplay: true,
 			speed: 1400,
-		})
+		});
 	}
 }
 
@@ -41,21 +41,21 @@ export function InitSwiper() {
 export function InitPictures() {
 	if (window.Fancybox) {
 		// 仅查找文章内图片
-		utils.qa('#article-container img:not(.no-fancybox)').forEach((img) => {
+		utils.qa('#article-container img:not(.no-fancybox)').forEach(img => {
 			if (!img.parentNode.dataset.fancybox) {
-				let fancybox = 'article'
+				let fancybox = 'article';
 				if (img.classList.contains('trm-light-icon')) {
-					fancybox = 'light'
+					fancybox = 'light';
 				} else if (img.classList.contains('trm-dark-icon')) {
-					fancybox = 'dark'
+					fancybox = 'dark';
 				}
 
 				utils.wrap(img, 'div', {
 					'data-src': img.dataset.src || img.src,
 					'data-fancybox': fancybox,
-				})
+				});
 			}
-		})
+		});
 	}
 }
 
@@ -64,15 +64,15 @@ export function InitPictures() {
  * @returns
  */
 export function InitSwup() {
-	let plugins = []
+	const plugins = [];
 
 	plugins.push(
 		new SwupHeadPlugin({
 			specialTags: '#trm-switch-style', // 忽略样式标签 避免重复添加
-		})
-	)
+		}),
+	);
 
-	plugins.push(new SwupScriptsPlugin())
+	plugins.push(new SwupScriptsPlugin());
 
 	const options = {
 		containers: ['#trm-dynamic-content'],
@@ -80,8 +80,8 @@ export function InitSwup() {
 		linkSelector: '.trm-menu a:not([data-no-swup]), .trm-anima-link:not([data-no-swup])',
 		animationSelector: '[class="trm-swup-animation"]',
 		plugins,
-	}
-	return new window.Swup(options)
+	};
+	return new window.Swup(options);
 }
 
 /**
@@ -90,28 +90,28 @@ export function InitSwup() {
  * @returns
  */
 export function InitThemeMode(init = false) {
-	const swich_input = utils.q<HTMLInputElement>('#trm-swich')
+	const swich_input = utils.q<HTMLInputElement>('#trm-swich');
 
 	/* Animated mask layers */
-	const mode_swich_animation = utils.q('.trm-mode-swich-animation')
-	const mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame')
+	const mode_swich_animation = utils.q('.trm-mode-swich-animation');
+	const mode_swich_animation_frame = utils.q('.trm-mode-swich-animation-frame');
 
 	/* Sets the cache value */
 	if (init) {
-		const checked = (localStorage.getItem('theme-mode') || window.ASYNC_CONFIG.theme.default) == 'style-dark'
-		const type = checked ? 'add' : 'remove'
+		const checked = (localStorage.getItem('theme-mode') || window.ASYNC_CONFIG.theme.default) == 'style-dark';
+		const type = checked ? 'add' : 'remove';
 
-		mode_swich_animation.classList[type]('trm-active')
-		mode_swich_animation_frame.classList.remove('trm-active')
+		mode_swich_animation.classList[type]('trm-active');
+		mode_swich_animation_frame.classList.remove('trm-active');
 
-		globalFun.setThemeColor()
-		if (swich_input) swich_input.checked = checked
+		globalFun.setThemeColor();
+		if (swich_input) swich_input.checked = checked;
 	}
 
 	swich_input &&
 		swich_input.addEventListener('change', function () {
-			globalFun.switchThemeMode(this.checked ? 'style-dark' : 'style-light')
-		})
+			globalFun.switchThemeMode(this.checked ? 'style-dark' : 'style-light');
+		});
 }
 
 /**
@@ -120,80 +120,80 @@ export function InitThemeMode(init = false) {
  */
 export function InitScroll() {
 	// const scrollBarWidth = utils.scrollBarWidth()
-	const banner = utils.q<HTMLElement>('.trm-banner-cover')
-	const sidebar = utils.q<HTMLDivElement>('.trm-sidebar')
-	const backtop = utils.q<HTMLDivElement>('#trm-back-top')
-	const scrollTriger = utils.q<HTMLSpanElement>('#scroll-triger')
-	const fixedContainer = utils.q('.trm-fixed-container')
+	const banner = utils.q<HTMLElement>('.trm-banner-cover');
+	const sidebar = utils.q<HTMLDivElement>('.trm-sidebar');
+	const backtop = utils.q<HTMLDivElement>('#trm-back-top');
+	const scrollTriger = utils.q<HTMLSpanElement>('#scroll-triger');
+	const fixedContainer = utils.q('.trm-fixed-container');
 
 	const intersectionObserver = new IntersectionObserver(
-		(entries, observe) => {
-			entries.forEach(({ isIntersecting, target }: any) => {
+		entries => {
+			entries.forEach(({ isIntersecting, target }) => {
 				if (isIntersecting) {
-					target.classList.add('trm-active-el')
-					intersectionObserver.unobserve(target)
+					target.classList.add('trm-active-el');
+					intersectionObserver.unobserve(target);
 				}
-			})
+			});
 		},
-		{ threshold: [0, 1], rootMargin: '0px 0px -40px 0px' }
-	)
+		{ threshold: [0, 1], rootMargin: '0px 0px -40px 0px' },
+	);
 
 	const back_fun = function (e?: unknown) {
-		window.scrollTo({ top: 0, behavior: e ? 'smooth' : 'auto' })
-	}
+		window.scrollTo({ top: 0, behavior: e ? 'smooth' : 'auto' });
+	};
 
 	const scroll_fun = function () {
-		const scrollTop = utils.scrollTop()
-		const { scrollHeight, clientHeight } = document.documentElement
+		const scrollTop = utils.scrollTop();
+		const { scrollHeight, clientHeight } = document.documentElement;
 
-		const fun = scrollTop > 500 ? 'add' : 'remove'
-		fixedContainer?.classList[fun]('offset')
+		const fun = scrollTop > 500 ? 'add' : 'remove';
+		fixedContainer?.classList[fun]('offset');
 
-		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString())
-		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`)
+		const ratio = parseInt(((scrollTop / (scrollHeight - clientHeight)) * 100).toString());
+		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`);
 
-		const sidebarFun = scrollTop >= 70 ? 'add' : 'remove'
-		sidebar && sidebar.classList[sidebarFun]('fixed')
+		const sidebarFun = scrollTop >= 70 ? 'add' : 'remove';
+		sidebar && sidebar.classList[sidebarFun]('fixed');
 
-		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`)
+		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`);
 
-		globalFun.switchToc(false)
-	}
+		globalFun.switchToc(false);
+	};
 
 	const setSidebarWidth = function () {
 		if (sidebar) {
-			sidebar.style.width = window.innerWidth > 992 ? `${sidebar.parentElement.clientWidth - 40}px` : 'auto'
+			sidebar.style.width = window.innerWidth > 992 ? `${sidebar.parentElement.clientWidth - 40}px` : 'auto';
 		}
-	}
+	};
 
 	const scrollToTriger = function () {
-		const container = utils.q<HTMLDivElement>('.trm-banner')
-		container && window.scrollTo({ top: container.clientHeight - 20, behavior: 'smooth' })
-	}
+		const container = utils.q<HTMLDivElement>('.trm-banner');
+		container && window.scrollTo({ top: container.clientHeight - 20, behavior: 'smooth' });
+	};
 
 	const init = () => {
-		const sections = utils.qa('.trm-scroll-animation')
-		sections.forEach((element) => {
-			element && intersectionObserver.observe(element)
-		})
-		scroll_fun()
-		setSidebarWidth()
-	}
+		const sections = utils.qa('.trm-scroll-animation');
+		sections.forEach(element => {
+			element && intersectionObserver.observe(element);
+		});
+		scroll_fun();
+		setSidebarWidth();
+	};
 
-	init()
-	backtop?.addEventListener('click', back_fun)
-	scrollTriger?.addEventListener('click', scrollToTriger)
-	window.addEventListener('scroll', scroll_fun)
-	window.addEventListener('resize', setSidebarWidth)
+	init();
+	backtop?.addEventListener('click', back_fun);
+	scrollTriger?.addEventListener('click', scrollToTriger);
+	window.addEventListener('scroll', scroll_fun);
+	window.addEventListener('resize', setSidebarWidth);
 
-	document.addEventListener('swup:contentReplaced', (event) => {
-		intersectionObserver.disconnect()
-		backtop?.removeEventListener('click', back_fun)
-		scrollTriger?.removeEventListener('click', scrollToTriger)
-		window.removeEventListener('scroll', scroll_fun)
-		window.removeEventListener('resize', setSidebarWidth)
-		back_fun()
-	})
+	document.addEventListener('swup:contentReplaced', () => {
+		intersectionObserver.disconnect();
+		backtop?.removeEventListener('click', back_fun);
+		scrollTriger?.removeEventListener('click', scrollToTriger);
+		window.removeEventListener('scroll', scroll_fun);
+		window.removeEventListener('resize', setSidebarWidth);
+		back_fun();
+	});
 }
 
 /**
@@ -202,117 +202,117 @@ export function InitScroll() {
  */
 export function InitCounter(duration = 2000) {
 	const numRun = (item: HTMLElement, step: number, count: number, num: number) => {
-		count += step
+		count += step;
 		if (count >= num) {
-			item.innerText = num.toString()
+			item.innerText = num.toString();
 		} else {
-			item.innerText = parseInt(count.toString()).toString()
-			requestAnimationFrame(() => numRun(item, step, count, num))
+			item.innerText = parseInt(count.toString()).toString();
+			requestAnimationFrame(() => numRun(item, step, count, num));
 		}
-	}
+	};
 
-	utils.qa('.trm-counter').forEach((item) => {
-		let num = Number(item.innerText)
+	utils.qa('.trm-counter').forEach(item => {
+		const num = Number(item.innerText);
 		if (!isNaN(num)) {
-			let setp = num / (duration / 16)
-			numRun(item, setp, 0, num)
+			const setp = num / (duration / 16);
+			numRun(item, setp, 0, num);
 		}
-	})
+	});
 }
 
 /**
  * 初始化目录
  */
 export function InitToc() {
-	const { i18n, toc, icons, icontype } = window.ASYNC_CONFIG
-	const postToc = utils.q<HTMLDivElement>('#post-toc')
-	const tocBtn = utils.q('.post-toc-btn')
+	const { i18n, toc, icons, icontype } = window.ASYNC_CONFIG;
+	const postToc = utils.q<HTMLDivElement>('#post-toc');
+	const tocBtn = utils.q('.post-toc-btn');
 	if (postToc) {
-		const tocTopBtn = postToc.querySelector<HTMLSpanElement>('#post-toc-top')
-		const tocHeader = postToc.querySelector<HTMLDivElement>('.trm-post-toc-header')
+		const tocTopBtn = postToc.querySelector<HTMLSpanElement>('#post-toc-top');
+		const tocHeader = postToc.querySelector<HTMLDivElement>('.trm-post-toc-header');
 
-		tocTopBtn.addEventListener('click', function (e) {
+		tocTopBtn.addEventListener('click', function () {
 			if (postToc.classList.contains('fixed')) {
-				postToc.classList.remove('fixed', 'active')
-				tocTopBtn.innerHTML = i18n.sticky
+				postToc.classList.remove('fixed', 'active');
+				tocTopBtn.innerHTML = i18n.sticky;
 			} else {
-				postToc.classList.add('fixed')
-				tocTopBtn.innerHTML = utils.icons(icons.close, icontype)
+				postToc.classList.add('fixed');
+				tocTopBtn.innerHTML = utils.icons(icons.close, icontype);
 			}
-		})
+		});
 
 		postToc.addEventListener('click', function (e) {
-			e.preventDefault()
-			e.stopPropagation()
-			const link = e.target as HTMLElement
-			let url = link.getAttribute('href')
-			if (!url) url = link.parentElement.getAttribute('href')
-			if (!url) return
-			const scroll = document.querySelector(url)
-			if (!scroll) return
-			const elementTop = scroll.getBoundingClientRect().top + utils.scrollTop()
-			window.scrollTo({ top: elementTop - 110, behavior: 'smooth' })
-			return false
-		})
+			e.preventDefault();
+			e.stopPropagation();
+			const link = e.target as HTMLElement;
+			let url = link.getAttribute('href');
+			if (!url) url = link.parentElement.getAttribute('href');
+			if (!url) return;
+			const scroll = document.querySelector(url);
+			if (!scroll) return;
+			const elementTop = scroll.getBoundingClientRect().top + utils.scrollTop();
+			window.scrollTo({ top: elementTop - 110, behavior: 'smooth' });
+			return false;
+		});
 
 		tocHeader.addEventListener('mousedown', function (e) {
 			if (!postToc.classList.contains('fixed')) {
-				return
+				return;
 			}
-			let rect = tocHeader.getBoundingClientRect()
-			let x = e.clientX
-			let y = e.clientY
-			let isDown = true
+			const rect = tocHeader.getBoundingClientRect();
+			const x = e.clientX;
+			const y = e.clientY;
+			let isDown = true;
 
 			document.onmousemove = function (e) {
 				if (isDown) {
-					let nx = e.clientX
-					let ny = e.clientY
-					postToc.style.left = `${nx - (x - rect.x)}px`
-					postToc.style.top = `${ny - (y - rect.y)}px`
-					postToc.style.right = 'unset'
-					postToc.style.bottom = 'unset'
-					postToc.style.opacity = '.6'
+					const nx = e.clientX;
+					const ny = e.clientY;
+					postToc.style.left = `${nx - (x - rect.x)}px`;
+					postToc.style.top = `${ny - (y - rect.y)}px`;
+					postToc.style.right = 'unset';
+					postToc.style.bottom = 'unset';
+					postToc.style.opacity = '.6';
 				}
-			}
+			};
 
 			document.onmouseup = function () {
-				isDown = false
-				document.onmousemove = null
-				document.onmouseup = null
-				postToc.style.opacity = 'unset'
-			}
-		})
+				isDown = false;
+				document.onmousemove = null;
+				document.onmouseup = null;
+				postToc.style.opacity = 'unset';
+			};
+		});
 
 		if (toc.post_title) {
-			postToc.querySelectorAll('.trm-toc-link').forEach((item) => {
-				const id = item.getAttribute('href')
-				const title = utils.q(id)
-				if (!title) return
-				const span = document.createElement('span')
-				span.className = 'trm-toc-icon'
-				span.innerHTML = utils.icons(icons.toc_tag, icontype)
+			postToc.querySelectorAll('.trm-toc-link').forEach(item => {
+				const id = item.getAttribute('href');
+				const title = utils.q(id);
+				if (!title) return;
+				const span = document.createElement('span');
+				span.className = 'trm-toc-icon';
+				span.innerHTML = utils.icons(icons.toc_tag, icontype);
 				span.onclick = function (e) {
-					globalFun.switchToc(true, e.clientX, e.clientY)
-					e.preventDefault()
-					e.stopPropagation()
-					return false
-				}
-				title.appendChild(span)
-			})
+					globalFun.switchToc(true, e.clientX, e.clientY);
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
+				};
+				title.appendChild(span);
+			});
 		}
 
 		const elOut = (e: MouseEvent) => {
 			if (postToc.classList.contains('fixed')) {
-				return
+				return;
 			}
-			utils.clickoutside(<Element>e.target, [postToc, tocBtn]) ? postToc.classList.remove('active') : globalFun.switchToc()
-		}
+			utils.clickoutside(<Element>e.target, [postToc, tocBtn]) ? postToc.classList.remove('active') : globalFun.switchToc();
+		};
 
-		window.addEventListener('click', elOut)
-		document.addEventListener('swup:contentReplaced', (event) => {
-			window.removeEventListener('click', elOut)
-		})
+		window.addEventListener('click', elOut);
+		document.addEventListener('swup:contentReplaced', () => {
+			window.removeEventListener('click', elOut);
+		});
 	}
 }
 
@@ -321,30 +321,34 @@ export function InitToc() {
  */
 export function InitCopyright() {
 	if (window.ASYNC_CONFIG.creative_commons) {
-		let { author, i18n, creative_commons } = window.ASYNC_CONFIG
+		let { author } = window.ASYNC_CONFIG;
+		const { i18n, creative_commons } = window.ASYNC_CONFIG;
 		const copyFn = function (event: ClipboardEvent) {
-			const clipboardData = event.clipboardData || window.clipboardData
+			const clipboardData = event.clipboardData || window.clipboardData;
 			if (!clipboardData) {
-				return
+				return;
 			}
-			const text = window.getSelection().toString()
+			const text = window.getSelection().toString();
 			if (text) {
-				event.preventDefault()
-				const authorEl = document.getElementById('post-author')
+				event.preventDefault();
+				const authorEl = document.getElementById('post-author');
 				if (authorEl) {
-					author = authorEl.innerText.replace('\n', '')
+					author = authorEl.innerText.replace('\n', '');
 				}
 
-				let originalLink = location.href
-				const originalLinkEl = document.getElementById('original-link')
+				let originalLink = location.href;
+				const originalLinkEl = document.getElementById('original-link');
 				if (originalLinkEl) {
-					originalLink = originalLinkEl.innerText.replace('\n', '')
+					originalLink = originalLinkEl.innerText.replace('\n', '');
 				}
-				let copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${originalLink}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace('undefined', 'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'))}`
-				clipboardData.setData('text/plain', text + copyrightText)
+				const copyrightText = `\n\n${i18n.author}${author}\n${i18n.copyright_link}${originalLink}\n${i18n.copyright_license_title}${i18n.copyright_license_content.replace(
+					'undefined',
+					'CC' + creative_commons.license.toUpperCase() + ' ' + (creative_commons.license == 'zero' ? '1.0' : '4.0'),
+				)}`;
+				clipboardData.setData('text/plain', text + copyrightText);
 			}
-		}
-		document.addEventListener('copy', copyFn)
+		};
+		document.addEventListener('copy', copyFn);
 	}
 }
 
@@ -352,100 +356,100 @@ export function InitCopyright() {
  * 初始化代码片段-工具栏
  */
 export function InitHighlightTool() {
-	const { i18n, highlight, icons, icontype } = window.ASYNC_CONFIG
+	const { i18n, highlight, icons, icontype } = window.ASYNC_CONFIG;
 	// highlight prismjs
-	const isHighlightCopy = highlight.copy
-	const isHighlightLang = highlight.lang
-	const isHighlightHeightLimit = highlight.height_limit
-	const isShowTool = isHighlightCopy || isHighlightLang
-	const isPrismjs = highlight.plugin === 'prismjs'
-	const isMacTitle = highlight.title === 'mac'
+	const isHighlightCopy = highlight.copy;
+	const isHighlightLang = highlight.lang;
+	const isHighlightHeightLimit = highlight.height_limit;
+	const isShowTool = isHighlightCopy || isHighlightLang;
+	const isPrismjs = highlight.plugin === 'prismjs';
+	const isMacTitle = highlight.title === 'mac';
 
-	const selector = isPrismjs ? 'pre[class*="language-"]' : 'figure.highlight'
-	const $figureHighlight = utils.qa(selector)
+	const selector = isPrismjs ? 'pre[class*="language-"]' : 'figure.highlight';
+	const $figureHighlight = utils.qa(selector);
 
-	if (!(isShowTool || isHighlightHeightLimit || $figureHighlight.length)) return
+	if (!(isShowTool || isHighlightHeightLimit || $figureHighlight.length)) return;
 
 	const copyCode = function () {
 		try {
-			const element = this.parentNode.parentNode
+			const element = this.parentNode.parentNode;
 			// highlight
-			let code = element.querySelector('.code')
-			if (!code) code = element.querySelector('table')
+			let code = element.querySelector('.code');
+			if (!code) code = element.querySelector('table');
 			// prismjs
-			if (!code) code = element.querySelector('code')
-			if (!code) return
-			navigator.clipboard.writeText(code.innerText)
-			utils.message(i18n.copy_success)
+			if (!code) code = element.querySelector('code');
+			if (!code) return;
+			navigator.clipboard.writeText(code.innerText);
+			utils.message(i18n.copy_success);
 		} catch (error) {
-			utils.message(i18n.copy_failure, 'warning')
+			utils.message(i18n.copy_failure, 'warning');
 		}
-	}
+	};
 
 	const expandCode = function () {
-		const flag = this.classList.contains('expand-done')
-		const scrollTop = utils.scrollTop() // record the scroll height
-		const newHeight = this.parentElement.clientHeight
-		this.classList.toggle('expand-done')
-		const oldHeight = this.parentElement.clientHeight
+		const flag = this.classList.contains('expand-done');
+		const scrollTop = utils.scrollTop(); // record the scroll height
+		const newHeight = this.parentElement.clientHeight;
+		this.classList.toggle('expand-done');
+		const oldHeight = this.parentElement.clientHeight;
 		if (flag) {
-			const expandHeight = newHeight - oldHeight
-			if (expandHeight < utils.viewPortHeight()) return // the unfolded height is lower than the screen height and does not scroll
-			window.scrollTo({ top: scrollTop - expandHeight })
+			const expandHeight = newHeight - oldHeight;
+			if (expandHeight < utils.viewPortHeight()) return; // the unfolded height is lower than the screen height and does not scroll
+			window.scrollTo({ top: scrollTop - expandHeight });
 		}
-	}
+	};
 
-	utils.qa(selector).forEach((element) => {
-		const fragment = document.createDocumentFragment()
-		const tools = document.createElement('div')
-		tools.className = `code-tools ${isShowTool && isMacTitle ? 'mac-style' : 'default-style'}`
+	utils.qa(selector).forEach(element => {
+		const fragment = document.createDocumentFragment();
+		const tools = document.createElement('div');
+		tools.className = `code-tools ${isShowTool && isMacTitle ? 'mac-style' : 'default-style'}`;
 
 		/* Show Lang */
 		if (isHighlightLang) {
-			let langName = ''
+			let langName = '';
 			if (isPrismjs) {
-				langName = element.getAttribute('data-language') ? element.getAttribute('data-language') : 'Code'
+				langName = element.getAttribute('data-language') ? element.getAttribute('data-language') : 'Code';
 			} else {
-				langName = element.getAttribute('class').split(' ')[1]
-				if (langName === 'plain' || langName === undefined) langName = 'Code'
+				langName = element.getAttribute('class').split(' ')[1];
+				if (langName === 'plain' || langName === undefined) langName = 'Code';
 			}
 
-			const span = document.createElement('span')
-			span.className = 'code-lang'
-			span.innerText = langName
+			const span = document.createElement('span');
+			span.className = 'code-lang';
+			span.innerText = langName;
 
-			tools.append(span)
+			tools.append(span);
 		}
 
 		/* Copy Button */
 		if (isHighlightCopy) {
-			const span = document.createElement('span')
-			span.className = 'copy-button'
-			span.innerHTML = utils.icons(icons.copy, icontype)
-			span.addEventListener('click', copyCode)
-			tools.append(span)
+			const span = document.createElement('span');
+			span.className = 'copy-button';
+			span.innerHTML = utils.icons(icons.copy, icontype);
+			span.addEventListener('click', copyCode);
+			tools.append(span);
 		}
 
 		/* height limit */
 		if (isHighlightHeightLimit && element.offsetHeight > <number>highlight.height_limit + 50) {
-			const expand = document.createElement('div')
-			expand.innerHTML = utils.icons(icons.double_arrows, icontype)
-			expand.className = 'code-expand-btn'
-			expand.addEventListener('click', expandCode)
-			fragment.append(expand)
+			const expand = document.createElement('div');
+			expand.innerHTML = utils.icons(icons.double_arrows, icontype);
+			expand.className = 'code-expand-btn';
+			expand.addEventListener('click', expandCode);
+			fragment.append(expand);
 		}
 
-		fragment.append(tools)
+		fragment.append(tools);
 
 		if (isPrismjs) {
-			utils.wrap(element, 'figure', { class: 'highlight' })
-			element.parentNode.insertBefore(fragment, element)
-			const caption = element.querySelector('.caption,caption')
-			if (caption) element.parentNode.appendChild(caption)
+			utils.wrap(element, 'figure', { class: 'highlight' });
+			element.parentNode.insertBefore(fragment, element);
+			const caption = element.querySelector('.caption,caption');
+			if (caption) element.parentNode.appendChild(caption);
 		} else {
-			element.insertBefore(fragment, element.querySelector('table'))
+			element.insertBefore(fragment, element.querySelector('table'));
 		}
-	})
+	});
 }
 
 /**
@@ -453,56 +457,55 @@ export function InitHighlightTool() {
  */
 export function InitTabs() {
 	utils.qa('.trm-tabs .trm-tab > button').forEach(function (item) {
-		item.addEventListener('click', function (e: any) {
-			const $this = this
-			const $tabItem = $this.parentNode
+		item.addEventListener('click', function () {
+			const $tabItem = this.parentNode;
 
 			if (!$tabItem.classList.contains('active')) {
-				const $tabContent = $tabItem.parentNode.nextElementSibling
-				const $siblings = utils.siblings($tabItem, '.active')[0]
-				$siblings && $siblings.classList.remove('active')
-				$tabItem.classList.add('active')
-				const tabId = $this.getAttribute('data-href').replace('#', '')
-				const childList = [...$tabContent.children]
-				childList.forEach((item) => {
-					if (item.id === tabId) item.classList.add('active')
-					else item.classList.remove('active')
-				})
+				const $tabContent = $tabItem.parentNode.nextElementSibling;
+				const $siblings = utils.siblings($tabItem, '.active')[0];
+				$siblings && $siblings.classList.remove('active');
+				$tabItem.classList.add('active');
+				const tabId = this.getAttribute('data-href').replace('#', '');
+				const childList = [...$tabContent.children];
+				childList.forEach(item => {
+					if (item.id === tabId) item.classList.add('active');
+					else item.classList.remove('active');
+				});
 			}
-		})
-	})
+		});
+	});
 }
 
 /**
  * 初始化图库排版
  */
 export function InitJustifiedGallery() {
-	const gallerys = utils.qa('.fj-gallery')
+	const gallerys = utils.qa('.fj-gallery');
 	if (gallerys.length) {
-		gallerys.forEach((item) => {
-			const imgList = item.querySelectorAll('img')
+		gallerys.forEach(item => {
+			const imgList = item.querySelectorAll('img');
 			imgList.forEach((i: HTMLImageElement) => {
-				i.loading = 'eager'
+				i.loading = 'eager';
 				utils.wrap(i, 'div', {
 					class: 'fj-gallery-item',
 					'data-src': i.dataset.src || i.src,
 					'data-fancybox': 'gallery',
-				})
-			})
-		})
+				});
+			});
+		});
 
 		utils.loadScript(window.ASYNC_CONFIG.plugin.flickr_justified_gallery, window.fjGallery).then(() => {
-			gallerys.forEach((selector) => {
+			gallerys.forEach(selector => {
 				window.fjGallery(selector, {
 					itemSelector: '.fj-gallery-item',
 					rowHeight: 220,
 					gutter: 4,
 					onJustify: function () {
-						this.$container.style.opacity = '1'
+						this.$container.style.opacity = '1';
 					},
-				})
-			})
-		})
+				});
+			});
+		});
 	}
 }
 
@@ -511,27 +514,27 @@ export function InitJustifiedGallery() {
  */
 export function InitChangeTitle() {
 	if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.favicon.visibilitychange) {
-		window.originTitle = document.title
-		let titleTime: string | number | NodeJS.Timeout
-		let iconEls = Array.from(utils.qa('[rel="icon"]'))
-		let icons = iconEls.map((item) => item.href)
+		window.originTitle = document.title;
+		let titleTime: string | number | NodeJS.Timeout;
+		const iconEls = Array.from(utils.qa('[rel="icon"]'));
+		const icons = iconEls.map(item => item.href);
 		document.addEventListener('visibilitychange', function () {
 			if (document.hidden) {
-				iconEls.forEach((item) => {
-					item.href = utils.urlFor(window.ASYNC_CONFIG.favicon.hidden)
-				})
-				document.title = window.ASYNC_CONFIG.favicon.hideText
-				clearTimeout(titleTime)
+				iconEls.forEach(item => {
+					item.href = utils.urlFor(window.ASYNC_CONFIG.favicon.hidden);
+				});
+				document.title = window.ASYNC_CONFIG.favicon.hideText;
+				clearTimeout(titleTime);
 			} else {
 				iconEls.forEach((item, index) => {
-					item.href = icons[index]
-				})
-				document.title = window.ASYNC_CONFIG.favicon.showText + window.originTitle
+					item.href = icons[index];
+				});
+				document.title = window.ASYNC_CONFIG.favicon.showText + window.originTitle;
 				titleTime = setTimeout(function () {
-					document.title = window.originTitle
-				}, 2000)
+					document.title = window.originTitle;
+				}, 2000);
 			}
-		})
+		});
 	}
 }
 
@@ -539,18 +542,18 @@ export function InitChangeTitle() {
  * 添加过期提醒
  */
 export function AddPostOutdateNotice() {
-	let { notice_outdate: data, i18n } = window.ASYNC_CONFIG
+	const { notice_outdate: data, i18n } = window.ASYNC_CONFIG;
 	if (data) {
-		const diffDay = <number>utils.diffDate(window.PAGE_CONFIG.postUpdate)
+		const diffDay = <number>utils.diffDate(window.PAGE_CONFIG.postUpdate);
 		if (diffDay >= data.limit_day) {
-			const ele = document.createElement('div')
-			ele.className = `post-outdate-notice ${data.position}`
-			ele.textContent = i18n.notice_outdate_message.replace('undefined', diffDay.toString())
-			const $targetEle = document.getElementById('article-container')
+			const ele = document.createElement('div');
+			ele.className = `post-outdate-notice ${data.position}`;
+			ele.textContent = i18n.notice_outdate_message.replace('undefined', diffDay.toString());
+			const $targetEle = document.getElementById('article-container');
 			if (data.position === 'top') {
-				$targetEle.insertBefore(ele, $targetEle.firstChild)
+				$targetEle.insertBefore(ele, $targetEle.firstChild);
 			} else {
-				$targetEle.appendChild(ele)
+				$targetEle.appendChild(ele);
 			}
 		}
 	}
@@ -561,13 +564,13 @@ export function AddPostOutdateNotice() {
  */
 export function InitRandomCovers() {
 	if (window.ASYNC_CONFIG.covers && window.PAGE_CONFIG.isHome) {
-		const convers = window.ASYNC_CONFIG.covers
-		const divs = utils.qa('div[data-random-img]')
-		divs.forEach((item) => {
-			let src = utils.getRandomItem<string>(convers)
-			src += src.includes('?') ? `&v=${Math.random()}` : `?v=${Math.random()}`
-			src && (item.style.backgroundImage = `url(${src})`)
-		})
+		const convers = window.ASYNC_CONFIG.covers;
+		const divs = utils.qa('div[data-random-img]');
+		divs.forEach(item => {
+			let src = utils.getRandomItem<string>(convers);
+			src += src.includes('?') ? `&v=${Math.random()}` : `?v=${Math.random()}`;
+			src && (item.style.backgroundImage = `url(${src})`);
+		});
 	}
 }
 
@@ -576,133 +579,138 @@ export function InitRandomCovers() {
  */
 export function InitMenu() {
 	utils.q('.trm-menu-btn').addEventListener('click', function () {
-		utils.q('.trm-menu-btn,.trm-right-side').classList.toggle('trm-active')
-	})
+		utils.q('.trm-menu-btn,.trm-right-side').classList.toggle('trm-active');
+	});
 }
 
 /**
  * 显示版权
  */
 export function PrintCopyright() {
-	const log = (str: string) => console.log(str, 'color: white; background: #0078E7; padding:5px 0;margin: 0 0 2px 0;border-radius: 4px 0 0 4px;', 'padding: 4px;border:1px solid #0078E7;border-radius: 0 4px 4px 0; background: linear-gradient(70deg, #e3f9eb, #d1dbff);')
-	log(`%c 🚀 Hexo-Theme-Async ${window.ASYNC_CONFIG.theme_version == '0.0.0' ? 'Github' : window.ASYNC_CONFIG.theme_version} %c https://github.com/MaLuns/hexo-theme-async `)
-	log(`%c 📑 Hexo-Theme-Async Docs %c https://hexo-theme-async.imalun.com `)
+	const log = (str: string) =>
+		console.log(
+			str,
+			'color: white; background: #0078E7; padding:5px 0;margin: 0 0 2px 0;border-radius: 4px 0 0 4px;',
+			'padding: 4px;border:1px solid #0078E7;border-radius: 0 4px 4px 0; background: linear-gradient(70deg, #e3f9eb, #d1dbff);',
+		);
+	log(`%c 🚀 Hexo-Theme-Async ${window.ASYNC_CONFIG.theme_version == '0.0.0' ? 'Github' : window.ASYNC_CONFIG.theme_version} %c https://github.com/MaLuns/hexo-theme-async `);
+	log(`%c 📑 Hexo-Theme-Async Docs %c https://hexo-theme-async.imalun.com `);
 }
 
 /**
  * 初始化
  */
 export function ready() {
-	window.asyncFun = globalFun
+	window.asyncFun = globalFun;
 
-	PrintCopyright()
+	PrintCopyright();
 
 	/* loading animate */
-	globalFun.pageLoading()
+	globalFun.pageLoading();
 
 	/* window title */
-	InitChangeTitle()
+	InitChangeTitle();
 
 	if (window.PAGE_CONFIG.isPost) {
-		AddPostOutdateNotice()
+		AddPostOutdateNotice();
 	}
 
 	/* Initialize album */
-	InitJustifiedGallery()
+	InitJustifiedGallery();
 
 	/* Initialize with pictures in articles */
-	InitPictures()
+	InitPictures();
 
 	/* Initialize with code blocks in articles */
-	InitHighlightTool()
+	InitHighlightTool();
 
 	/* Initialize the tabs in the article */
-	InitTabs()
+	InitTabs();
 
 	/* swup */
-	window.ASYNC_CONFIG.swup && InitSwup()
+	window.ASYNC_CONFIG.swup && InitSwup();
 
 	/* menu */
-	InitMenu()
+	InitMenu();
 
 	/* theme mode switch */
-	InitThemeMode(true)
+	InitThemeMode(true);
 
 	/* counters */
-	InitCounter()
+	InitCounter();
 
 	/* Initialize scroll */
-	InitScroll()
+	InitScroll();
 
 	/* swiper */
-	InitSwiper()
+	InitSwiper();
 
 	/* fancybox */
-	InitFancybox()
+	InitFancybox();
 
 	/* toc */
-	InitToc()
+	InitToc();
 
 	/* copyright */
-	InitCopyright()
+	InitCopyright();
 
 	/* random covers */
-	InitRandomCovers()
+	InitRandomCovers();
 
 	if (window.ASYNC_CONFIG.swup) {
 		document.addEventListener('swup:contentReplaced', function () {
 			/* Update page configuration */
-			const site = <HTMLScriptElement>utils.gId('async-page-config')
-			site && utils.runScriptBlock(site)
+			const site = <HTMLScriptElement>utils.gId('async-page-config');
+			site && utils.runScriptBlock(site);
 
 			if (window.PAGE_CONFIG.isPost) {
-				AddPostOutdateNotice()
+				AddPostOutdateNotice();
 			}
 
 			/* menu */
-			InitMenu()
+			InitMenu();
 
 			/* Launch reading mode */
-			document.body.classList.remove('trm-read-mode')
+			document.body.classList.remove('trm-read-mode');
 
 			/* The blog runs long */
-			window.show_date_time && window.show_date_time()
+			window.show_date_time && window.show_date_time();
 
 			/* Initialize album */
-			InitJustifiedGallery()
+			InitJustifiedGallery();
 
 			/* Initialize with pictures in articles */
-			InitPictures()
+			InitPictures();
 
 			/* Initialize with code blocks in articles */
-			InitHighlightTool()
+			InitHighlightTool();
 
 			/* Initialize with tabs in articles */
-			InitTabs()
+			InitTabs();
 
 			/* preloader */
-			utils.q<HTMLDivElement>('.trm-scroll-container').style.opacity = '1'
+			utils.q<HTMLDivElement>('.trm-scroll-container').style.opacity = '1';
 
 			/* theme mode switch */
-			InitThemeMode(true)
+			InitThemeMode(true);
 
 			/* counters */
-			InitCounter()
+			InitCounter();
 
 			/* Initialize scroll */
-			InitScroll()
+			InitScroll();
 
 			/* swiper */
-			InitSwiper()
+			InitSwiper();
 
 			/* fancybox */
-			InitFancybox()
+			InitFancybox();
 
 			/* toc */
-			InitToc()
+			InitToc();
 
 			/* random covers */
-			InitRandomCovers()
-		})
+			InitRandomCovers();
+		});
 	}
 }

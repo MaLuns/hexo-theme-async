@@ -1,82 +1,82 @@
 .trm-btn {
-    white-space     : nowrap;
-    background-color: var(--primary, #afb42b);
-    height          : 45px;
-    border          : solid 2px var(--primary, #afb42b);
-    color           : #fcfcfe;
-    text-transform  : uppercase;
-    font-size       : 11px;
-    font-weight     : 700;
-    letter-spacing  : 2px;
-    border-radius   : 30px;
-    display         : inline-flex;
-    padding         : 0 35px;
-    justify-content : center;
-    align-items     : center;
-    .transition-mixin();
+	white-space: nowrap;
+	background-color: var(--primary, #afb42b);
+	height: 45px;
+	border: solid 2px var(--primary, #afb42b);
+	color: #fcfcfe;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	border-radius: 30px;
+	display: inline-flex;
+	padding: 0 35px;
+	justify-content: center;
+	align-items: center;
+	.transition-mixin();
 
-    svg,
-    i {
-        margin-left: 10px;
-    }
+	svg,
+	i {
+		margin-left: 10px;
+	}
 
-    .arrow-right {
-        margin-left: 10px;
-        .transition-mixin();
-    }
+	.arrow-right {
+		margin-left: 10px;
+		.transition-mixin();
+	}
 
-    .arrow-left {
-        margin-right: 10px;
-        .transition-mixin();
-    }
+	.arrow-left {
+		margin-right: 10px;
+		.transition-mixin();
+	}
 
-    &.trm-btn-sm {
-        height : 40px;
-        padding: 0 25px;
-    }
+	&.trm-btn-sm {
+		height: 40px;
+		padding: 0 25px;
+	}
 
-    &:hover {
-        transform       : scale(1.03);
-        color           : #fcfcfe;
-        background-color: var(--primary-weak, #afb42b);
-        border          : solid 2px var(--primary-weak, #afb42b);
+	&:hover {
+		transform: scale(1.03);
+		color: #fcfcfe;
+		background-color: var(--primary-weak, #afb42b);
+		border: solid 2px var(--primary-weak, #afb42b);
 
-        .arrow-right {
-            transform: translateX(5px);
-        }
+		.arrow-right {
+			transform: translateX(5px);
+		}
 
-        .arrow-left {
-            transform: translateX(-5px);
-        }
-    }
+		.arrow-left {
+			transform: translateX(-5px);
+		}
+	}
 
-    &.trm-btn-border {
-        border          : solid 2px #fcfcfe;
-        background-color: transparent;
+	&.trm-btn-border {
+		border: solid 2px #fcfcfe;
+		background-color: transparent;
 
-        &:hover {
-            border          : solid 2px #fcfcfe;
-            background-color: transparent;
-        }
-    }
+		&:hover {
+			border: solid 2px #fcfcfe;
+			background-color: transparent;
+		}
+	}
 
-    &.trm-btn-circle {
-        padding      : 0;
-        width        : 45px;
-        border-radius: 50%;
+	&.trm-btn-circle {
+		padding: 0;
+		width: 45px;
+		border-radius: 50%;
 
-        &.trm-btn-sm {
-            width: 40px;
-        }
+		&.trm-btn-sm {
+			width: 40px;
+		}
 
-        svg,
-        i {
-            font-size: 13px;
-            margin   : 0;
-        }
-    }
+		svg,
+		i {
+			font-size: 13px;
+			margin: 0;
+		}
+	}
 
-    &:focus {
-        outline: inherit;
-    }
+	&:focus {
+		outline: inherit;
+	}
 }

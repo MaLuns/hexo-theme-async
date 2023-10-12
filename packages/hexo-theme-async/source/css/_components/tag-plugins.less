@@ -1,157 +1,156 @@
 /* 标签页 */
 .trm-tabs {
-    position     : relative;
-    margin       : 0 0 20px;
-    border-right : 1px solid var(--tab-border-color);
-    border-bottom: 1px solid var(--tab-border-color);
-    border-left  : 1px solid var(--tab-border-color);
+	position: relative;
+	margin: 0 0 20px;
+	border-right: 1px solid var(--tab-border-color);
+	border-bottom: 1px solid var(--tab-border-color);
+	border-left: 1px solid var(--tab-border-color);
 
-    .trm-nav-tabs {
-        background: var(--tab-botton-bg-color);
-        display   : flex;
-        flex-wrap : wrap;
-        margin    : 0;
-        padding   : 0;
+	.trm-nav-tabs {
+		background: var(--tab-botton-bg-color);
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
 
-        .trm-tab {
-            margin : 0;
-            padding: 0;
+		.trm-tab {
+			margin: 0;
+			padding: 0;
 
+			button {
+				border: none;
+				background: var(--tab-botton-bg-color);
+				border-top: 2px solid var(--tab-border-color);
+				color: var(--tab-botton-color);
+				display: block;
+				line-height: 2;
+				padding: 8px 18px;
+				width: 100%;
+				.transition-mixin();
 
-            button {
-                border     : none;
-                background : var(--tab-botton-bg-color);
-                border-top : 2px solid var(--tab-border-color);
-                color      : var(--tab-botton-color);
-                display    : block;
-                line-height: 2;
-                padding    : 8px 18px;
-                width      : 100%;
-                .transition-mixin();
+				i {
+					width: 1.5em;
+				}
+			}
 
-                i {
-                    width: 1.5em;
-                }
-            }
+			&::before {
+				content: none;
+			}
 
-            &::before {
-                content: none;
-            }
+			&:not(.active) {
+				button {
+					&:hover {
+						background: var(--tab-button-hover-bg-color);
+						border-top: 2px solid var(--tab-button-hover-bg-color);
+					}
+				}
+			}
 
-            &:not(.active) {
-                button {
-                    &:hover {
-                        background: var(--tab-button-hover-bg-color);
-                        border-top: 2px solid var(--tab-button-hover-bg-color);
-                    }
-                }
-            }
+			&.active {
+				button {
+					background: var(--tab-button-active-bg-color);
+					border-top: 2px solid var(--primary);
+					cursor: default;
+				}
+			}
+		}
+	}
 
-            &.active {
-                button {
-                    background: var(--tab-button-active-bg-color);
-                    border-top: 2px solid var(--primary);
-                    cursor    : default;
-                }
-            }
-        }
-    }
+	.trm-tab-contents {
+		background: var(--tab-button-active-bg-color);
 
-    .trm-tab-contents {
-        background: var(--tab-button-active-bg-color);
+		.trm-tab-item-content {
+			display: none;
+			padding: 20px;
+			position: relative;
 
-        .trm-tab-item-content {
-            display : none;
-            padding : 20px;
-            position: relative;
-
-            &.active {
-                display: block;
-            }
-        }
-    }
+			&.active {
+				display: block;
+			}
+		}
+	}
 }
 
 /* 相册排版 */
 .fj-gallery {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 
-    &::after {
-        content: "";
-        display: block;
-        clear  : both;
-    }
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 
-    .fj-gallery-item {
-        float: left;
-        top  : 0;
-        left : 0;
+	.fj-gallery-item {
+		float: left;
+		top: 0;
+		left: 0;
 
-        >img {
-            display      : block;
-            width        : 100%;
-            height       : auto;
-            border-radius: 0;
-        }
-    }
+		> img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 0;
+		}
+	}
 }
 
 /* 自定义块 */
 .trm-note {
-    border-radius   : 4px;
-    border          : 1px solid transparent;
-    padding         : 16px 16px 8px;
-    background-color: var(--note-info-bg-color);
-    margin          : 1rem 0;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	padding: 16px 16px 8px;
+	background-color: var(--note-info-bg-color);
+	margin: 1rem 0;
 
-    .trm-note-title {
-        font-weight: 600;
-    }
+	.trm-note-title {
+		font-weight: 600;
+	}
 
-    &.info {
-        background-color: var(--note-info-bg-color);
-    }
+	&.info {
+		background-color: var(--note-info-bg-color);
+	}
 
-    &.tip {
-        background-color: var(--note-tip-bg-color);
-    }
+	&.tip {
+		background-color: var(--note-tip-bg-color);
+	}
 
-    &.warning {
-        background-color: var(--note-warning-bg-color);
-    }
+	&.warning {
+		background-color: var(--note-warning-bg-color);
+	}
 
-    &.danger {
-        background-color: var(--note-danger-bg-color);
-    }
+	&.danger {
+		background-color: var(--note-danger-bg-color);
+	}
 
-    p {
-        margin: 8px 0;
-    }
+	p {
+		margin: 8px 0;
+	}
 }
 
 details {
-    margin       : 1rem 0;
-    padding      : 16px 16px 8px;
-    border-radius: 4px;
-    border       : 1px solid var(--tab-border-color);
+	margin: 1rem 0;
+	padding: 16px 16px 8px;
+	border-radius: 4px;
+	border: 1px solid var(--tab-border-color);
 
-    &[open] {
-        summary {
-            margin: -16px -16px 16px;
-        }
-    }
+	&[open] {
+		summary {
+			margin: -16px -16px 16px;
+		}
+	}
 
-    summary {
-        background : var(--tab-botton-bg-color);
-        color      : var(--tab-botton-color);
-        padding    : 16px 16px;
-        margin     : -16px;
-        cursor     : pointer;
-        user-select: none;
-    }
+	summary {
+		background: var(--tab-botton-bg-color);
+		color: var(--tab-botton-color);
+		padding: 16px 16px;
+		margin: -16px;
+		cursor: pointer;
+		user-select: none;
+	}
 
-    p {
-        margin: 8px 0;
-    }
+	p {
+		margin: 8px 0;
+	}
 }

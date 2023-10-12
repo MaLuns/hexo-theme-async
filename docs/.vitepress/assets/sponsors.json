@@ -1,75 +1,75 @@
 {
-    "modes": [
-        {
-            "type": "alipay",
-            "title": "支付宝",
-            "path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/a21e9954-22f2-43fe-b3b0-3dba1fdde3ed.jpg"
-        },
-        {
-            "type": "wechat",
-            "title": "微信",
-            "path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/61a57135-2e65-4d51-8be1-03b8bd1c595e.jpg"
-        },
-        {
-            "type": "qq",
-            "title": "QQ",
-            "path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/69fb1903-d0dc-4169-9a02-1e76ec8e7761.jpg"
-        }
-    ],
-    "logs": [
-        {
-            "name": "**俊",
-            "money": 20,
-            "type": "alipay",
-            "date": "2023-07-04"
-        },
-        {
-            "name": "**锋",
-            "money": 1,
-            "type": "alipay",
-            "date": "2023-04-29"
-        },
-        {
-            "name": "**伟",
-            "money": 6.66,
-            "type": "alipay",
-            "date": "2023-04-20"
-        },
-        {
-            "name": "Jesse",
-            "money": 66.66,
-            "type": "alipay",
-            "date": "2023-03-23"
-        },
-        {
-            "name": "对*.",
-            "money": 10.00,
-            "type": "wechat",
-            "date": "2023-01-11"
-        },
-        {
-            "name": "*负能量",
-            "money": 5.00,
-            "type": "wechat",
-            "date": "2022-12-30"
-        },
-        {
-            "name": "*羊",
-            "money": 1.00,
-            "type": "wechat",
-            "date": "2022-12-11"
-        },
-        {
-            "name": "*奶",
-            "money": 1.88,
-            "type": "wechat",
-            "date": "2022-10-27"
-        },
-        {
-            "name": "*洋",
-            "money": 1.00,
-            "type": "wechat",
-            "date": "2022-10-18"
-        }
-    ]
+	"modes": [
+		{
+			"type": "alipay",
+			"title": "支付宝",
+			"path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/a21e9954-22f2-43fe-b3b0-3dba1fdde3ed.jpg"
+		},
+		{
+			"type": "wechat",
+			"title": "微信",
+			"path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/61a57135-2e65-4d51-8be1-03b8bd1c595e.jpg"
+		},
+		{
+			"type": "qq",
+			"title": "QQ",
+			"path": "https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/69fb1903-d0dc-4169-9a02-1e76ec8e7761.jpg"
+		}
+	],
+	"logs": [
+		{
+			"name": "**俊",
+			"money": 20,
+			"type": "alipay",
+			"date": "2023-07-04"
+		},
+		{
+			"name": "**锋",
+			"money": 1,
+			"type": "alipay",
+			"date": "2023-04-29"
+		},
+		{
+			"name": "**伟",
+			"money": 6.66,
+			"type": "alipay",
+			"date": "2023-04-20"
+		},
+		{
+			"name": "Jesse",
+			"money": 66.66,
+			"type": "alipay",
+			"date": "2023-03-23"
+		},
+		{
+			"name": "对*.",
+			"money": 10.0,
+			"type": "wechat",
+			"date": "2023-01-11"
+		},
+		{
+			"name": "*负能量",
+			"money": 5.0,
+			"type": "wechat",
+			"date": "2022-12-30"
+		},
+		{
+			"name": "*羊",
+			"money": 1.0,
+			"type": "wechat",
+			"date": "2022-12-11"
+		},
+		{
+			"name": "*奶",
+			"money": 1.88,
+			"type": "wechat",
+			"date": "2022-10-27"
+		},
+		{
+			"name": "*洋",
+			"money": 1.0,
+			"type": "wechat",
+			"date": "2022-10-18"
+		}
+	]
 }

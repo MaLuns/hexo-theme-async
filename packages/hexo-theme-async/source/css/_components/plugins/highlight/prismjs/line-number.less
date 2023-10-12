@@ -1,42 +1,41 @@
 pre[class*="language-"].line-numbers {
-    position     : relative;
-    counter-reset: linenumber;
+	position: relative;
+	counter-reset: linenumber;
 }
 
-pre[class*="language-"].line-numbers>code {
-    position   : relative;
-    white-space: inherit;
-    padding    : 10px 10px 10px 40px;
-    left       : 0px;
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+	padding: 10px 10px 10px 40px;
+	left: 0px;
 }
 
 .line-numbers .line-numbers-rows {
-    position        : absolute;
-    pointer-events  : none;
-    font-size       : 100%;
-    top             : 0px;
-    left            : 0px;
-    /* works for line-numbers below 1000 lines */
-    width           : 30px;
-    color           : var(--highlight-gutter-color);
-    background-color: var(--highlight-gutter-bg-color);
-    padding         : 10px 0;
+	position: absolute;
+	pointer-events: none;
+	font-size: 100%;
+	top: 0px;
+	left: 0px;
+	/* works for line-numbers below 1000 lines */
+	width: 30px;
+	color: var(--highlight-gutter-color);
+	background-color: var(--highlight-gutter-bg-color);
+	padding: 10px 0;
 
-    -webkit-user-select: none;
-    -moz-user-select   : none;
-    -ms-user-select    : none;
-    user-select        : none;
-
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-.line-numbers-rows>span {
-    display          : block;
-    counter-increment: linenumber;
+.line-numbers-rows > span {
+	display: block;
+	counter-increment: linenumber;
 }
 
-.line-numbers-rows>span:before {
-    content   : counter(linenumber);
-    color     : var(--highlight-gutter-color);
-    display   : block;
-    text-align: center;
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: var(--highlight-gutter-color);
+	display: block;
+	text-align: center;
 }

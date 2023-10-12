@@ -1,40 +1,59 @@
 {
-  "name": "@hexo-theme-async/monorepo",
-  "private": true,
-  "version": "1.0.9",
-  "author": "Maluns <admin@imalun.com>",
-  "description": "🎈 A simple, lightweight Hexo theme",
-  "scripts": {
-    "dev": "npm run lib:dev & npm run demo:dev",
-    "build": "npm run docs:build && npm run lib:build && npm run demo:build",
-    "lib:dev": "npm --prefix packages/hexo-theme-async-ts run dev",
-    "lib:build": "npm --prefix packages/hexo-theme-async-ts run build",
-    "demo:dev": "hexo --cwd ./demo clean && hexo server --cwd ./demo --debug",
-    "demo:build": "hexo --cwd ./demo clean && hexo --cwd ./demo generate",
-    "demo:down-plugin": "hexo --cwd ./demo plugin",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "generate:demo-sites": "node ./scripts/sites-check",
-    "soft-links": "node ./scripts/soft-links"
-  },
-  "bugs": {
-    "url": "https://github.com/MaLuns/hexo-theme-async/issues"
-  },
-  "homepage": "https://github.com/MaLuns/hexo-theme-async#readme",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
-  },
-  "devDependencies": {
-    "@types/node": "^18.8.2",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.4"
-  },
-  "workspaces": [
-    "packages/*",
-    "docs",
-    "demo"
-  ]
+	"name": "@hexo-theme-async/monorepo",
+	"private": true,
+	"version": "1.0.9",
+	"author": "Maluns <admin@imalun.com>",
+	"description": "🎈 A simple, lightweight Hexo theme",
+	"scripts": {
+		"dev": "npm run lib:dev & npm run demo:dev",
+		"build": "npm run docs:build && npm run lib:build && npm run demo:build",
+		"lib:dev": "npm --prefix packages/hexo-theme-async-ts run dev",
+		"lib:build": "npm --prefix packages/hexo-theme-async-ts run build",
+		"demo:dev": "hexo --cwd ./demo clean && hexo server --cwd ./demo --debug",
+		"demo:build": "hexo --cwd ./demo clean && hexo --cwd ./demo generate",
+		"demo:down-plugin": "hexo --cwd ./demo plugin",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:serve": "vitepress serve docs",
+		"generate:demo-sites": "node ./scripts/sites-check",
+		"lint": "eslint --cache --max-warnings 0  \"**/*.{js,jsx,vue,ts,tsx}\" --fix",
+		"prettier": "prettier --write \"**/*.{js,jsx,vue,ts,tsx,json,less}\"",
+		"prepare": "husky install",
+		"soft-links": "node ./scripts/soft-links"
+	},
+	"bugs": {
+		"url": "https://github.com/MaLuns/hexo-theme-async/issues"
+	},
+	"homepage": "https://github.com/MaLuns/hexo-theme-async#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+	},
+	"devDependencies": {
+		"@types/node": "^18.8.2",
+		"@typescript-eslint/eslint-plugin": "^6.7.5",
+		"@typescript-eslint/parser": "^6.7.5",
+		"eslint": "^8.51.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^14.0.1",
+		"prettier": "^3.0.3",
+		"tsup": "^6.2.3",
+		"typescript": "^4.8.4",
+		"vue-eslint-parser": "^9.3.2"
+	},
+	"workspaces": [
+		"packages/*",
+		"docs",
+		"demo"
+	],
+	"lint-staged": {
+		"**/*.{js,jsx,vue,ts,tsx}": [
+			"eslint --cache --max-warnings 0 --fix --ignore-pattern !.vitepress",
+			"prettier --write"
+		],
+		"**/*.{js,jsx,vue,ts,tsx,json,less}": "prettier --write"
+	}
 }
