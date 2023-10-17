@@ -1,0 +1,10 @@
+{
+	"printWidth": 200,
+	"semi": true,
+	"vueIndentScriptAndStyle": false,
+	"trailingComma": "all",
+	"proseWrap": "preserve",
+	"htmlWhitespaceSensitivity": "ignore",
+	"endOfLine": "lf",
+	"arrowParens": "avoid"
+}

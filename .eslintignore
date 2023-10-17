@@ -1,0 +1,7 @@
+.ejs
+.pug
+sw.js
+**/source/js/**/*.js
+**/source/sw.js
+!.vitepress
+**/cache/deps

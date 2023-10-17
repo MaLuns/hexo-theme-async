@@ -1,33 +1,33 @@
-'use strict'
+'use strict';
 
 /**
-* flink tag
-*
-* Syntax:
-*   {% flink [key] [col] %}
-*     xxxxxx
-*   {% endflink %}
-*/
+ * flink tag
+ *
+ * Syntax:
+ *   {% flink [key] [col] %}
+ *     xxxxxx
+ *   {% endflink %}
+ */
 
 const flinkFn = (args, content) => {
-    const truncate = hexo.extend.helper.get('truncate').bind(hexo);
-    const onerror = hexo.extend.helper.get('onerror').bind(hexo);
+	const truncate = hexo.extend.helper.get('truncate').bind(hexo);
+	const onerror = hexo.extend.helper.get('onerror').bind(hexo);
 
-    const key = /^[A-Za-z\-_]+$/.test(args[0]) ? args[0] : ''
-    const col = /^[0-9]+$/.test(args[0]) ? args[0] : (/^[0-9]+$/.test(args[1]) ? args[1] : 6)
+	const key = /^[A-Za-z\-_]+$/.test(args[0]) ? args[0] : '';
+	const col = /^[0-9]+$/.test(args[0]) ? args[0] : /^[0-9]+$/.test(args[1]) ? args[1] : 6;
 
-    content = hexo.render.renderSync({ text: content, engine: 'yaml' })
-    if (key && !content) {
-        const data = hexo.locals.get('data')
-        content = data[key]
-    }
+	content = hexo.render.renderSync({ text: content, engine: 'yaml' });
+	if (key && !content) {
+		const data = hexo.locals.get('data');
+		content = data[key];
+	}
 
-    if (!content) return;
+	if (!content) return;
 
-    let listResult = ''
+	let listResult = '';
 
-    content.forEach(item => {
-        listResult += `
+	content.forEach(item => {
+		listResult += `
 <div class="col-lg-${col}">
     <a href='${item.url}' target='_blank' rel="nofollow">
         <div class="trm-service-icon-box trm-scroll-animation trm-p-20">
@@ -42,10 +42,10 @@ const flinkFn = (args, content) => {
             </div>
         </div>
     </a>
-</div>`
-    })
+</div>`;
+	});
 
-    return `<div class="trm-flink row">${listResult}</div>`
-}
+	return `<div class="trm-flink row">${listResult}</div>`;
+};
 
-hexo.extend.tag.register('flink', flinkFn, { ends: true })
+hexo.extend.tag.register('flink', flinkFn, { ends: true });

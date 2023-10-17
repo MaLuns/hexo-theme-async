@@ -1,88 +1,88 @@
 .trm-video {
-    box-shadow    : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
-    border-radius : 10px;
-    position      : relative;
-    overflow      : hidden;
-    padding-bottom: 55%;
+	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 55%;
 
-    img {
-        border-radius  : 10px;
-        position       : absolute;
-        z-index        : -1;
-        top            : 0;
-        left           : 0;
-        object-fit     : cover;
-        object-position: top;
-        width          : 100%;
-        height         : 100%;
-    }
+	img {
+		border-radius: 10px;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		object-position: top;
+		width: 100%;
+		height: 100%;
+	}
 
-    .trm-video-content {
-        position: absolute;
-        top     : 0;
-        left    : 0;
-        width   : 100%;
-        height  : 100%;
+	.trm-video-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 
-        &.trm-overlay {
-            background-color: rgba(10, 15, 20, 0.2);
-        }
-    }
+		&.trm-overlay {
+			background-color: rgba(10, 15, 20, 0.2);
+		}
+	}
 
-    .trm-button-puls {
-        background-color: #fcfcfe;
-        position        : absolute;
-        z-index         : -1;
-        border-radius   : 50%;
-        height          : 70px;
-        width           : 70px;
-        top             : calc(50% - 35px);
-        left            : calc(50% - 35px);
-        display         : flex;
-        justify-content : center;
-        align-items     : center;
-        animation       : puls 1s infinite;
-    }
+	.trm-button-puls {
+		background-color: #fcfcfe;
+		position: absolute;
+		z-index: -1;
+		border-radius: 50%;
+		height: 70px;
+		width: 70px;
+		top: calc(50% - 35px);
+		left: calc(50% - 35px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: puls 1s infinite;
+	}
 
-    .trm-play-button {
-        position        : absolute;
-        z-index         : 39999;
-        background-color: var(--primary, #afb42b);
-        border-radius   : 50%;
-        box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
-        color           : var(--theme-bg-color, #fcfcfe);
-        height          : 60px;
-        width           : 60px;
-        top             : calc(50% - 30px);
-        left            : calc(50% - 30px);
-        display         : flex;
-        justify-content : center;
-        align-items     : center;
-        .transition-mixin();
+	.trm-play-button {
+		position: absolute;
+		z-index: 39999;
+		background-color: var(--primary, #afb42b);
+		border-radius: 50%;
+		box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+		color: var(--theme-bg-color, #fcfcfe);
+		height: 60px;
+		width: 60px;
+		top: calc(50% - 30px);
+		left: calc(50% - 30px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.transition-mixin();
 
-        svg,
-        i {
-            margin-left: 3px;
-        }
+		svg,
+		i {
+			margin-left: 3px;
+		}
 
-        &:focus {
-            outline: inherit;
-        }
+		&:focus {
+			outline: inherit;
+		}
 
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 }
 
 @keyframes puls {
-    0% {
-        opacity  : 1;
-        transform: scale(0.9)
-    }
+	0% {
+		opacity: 1;
+		transform: scale(0.9);
+	}
 
-    100% {
-        opacity  : 0;
-        transform: scale(1.3)
-    }
+	100% {
+		opacity: 0;
+		transform: scale(1.3);
+	}
 }

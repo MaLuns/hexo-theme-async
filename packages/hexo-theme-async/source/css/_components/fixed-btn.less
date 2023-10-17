@@ -1,86 +1,86 @@
 .trm-fixed-container {
-    @height           : 200px;
-    position          : fixed;
-    z-index           : 10;
-    right             : 30px;
-    bottom            : calc(26px - 2.5rem);
-    /* height         : @height; */
-    display           : flex;
-    flex-direction    : column;
-    justify-content   : flex-end;
-    align-items       : center;
-    .transition-mixin(bottom);
+	@height: 200px;
+	position: fixed;
+	z-index: 10;
+	right: 30px;
+	bottom: calc(26px - 2.5rem);
+	/* height         : @height; */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	.transition-mixin(bottom);
 
-    .trm-fixed-btn {
-        position        : relative;
-        cursor          : pointer;
-        font-size       : 1.2rem;
-        width           : 2.5rem;
-        height          : 2.5rem;
-        line-height     : 2.5rem;
-        border-radius   : 6px;
-        text-align      : center;
-        background-color: var(--fixed-button-bg-color);
-        color           : var(--fixed-button-color);
-        box-shadow      : var(--box-shadow);
+	.trm-fixed-btn {
+		position: relative;
+		cursor: pointer;
+		font-size: 1.2rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		border-radius: 6px;
+		text-align: center;
+		background-color: var(--fixed-button-bg-color);
+		color: var(--fixed-button-color);
+		box-shadow: var(--box-shadow);
 
-        .transition-mixin(color);
+		.transition-mixin(color);
 
-        +.trm-fixed-btn {
-            margin-top: 6px;
-        }
+		+ .trm-fixed-btn {
+			margin-top: 6px;
+		}
 
-        &::before {
-            content         : attr(data-title);
-            position        : absolute;
-            background-color: var(--fixed-button-bg-color);
-            color           : var(--fixed-button-color);
-            font-size       : 0.8rem;
-            width           : max-content;
-            right           : 50px;
-            line-height     : 2;
-            top             : 50%;
-            padding         : 4px 10px;
-            border-radius   : 4px;
-            transform       : translate(80%, -50%) scale(0);
-            opacity         : 0;
-            pointer-events  : none;
-            .transition-mixin(all, .2s);
-        }
+		&::before {
+			content: attr(data-title);
+			position: absolute;
+			background-color: var(--fixed-button-bg-color);
+			color: var(--fixed-button-color);
+			font-size: 0.8rem;
+			width: max-content;
+			right: 50px;
+			line-height: 2;
+			top: 50%;
+			padding: 4px 10px;
+			border-radius: 4px;
+			transform: translate(80%, -50%) scale(0);
+			opacity: 0;
+			pointer-events: none;
+			.transition-mixin(all, 0.2s);
+		}
 
-        &#trm-back-top {
-            transform: translateY(50px) scale(0);
-            opacity  : 0;
-            .transition-mixin();
+		&#trm-back-top {
+			transform: translateY(50px) scale(0);
+			opacity: 0;
+			.transition-mixin();
 
-            background-image   : var(--scroll-progress-bg-color);
-            background-repeat  : no-repeat;
-            background-size    : 100% 0;
-            background-position: bottom;
-        }
-    }
+			background-image: var(--scroll-progress-bg-color);
+			background-repeat: no-repeat;
+			background-size: 100% 0;
+			background-position: bottom;
+		}
+	}
 
-    @media (any-hover: hover) {
-        .trm-fixed-btn:hover {
-            color: var(--primary);
+	@media (any-hover: hover) {
+		.trm-fixed-btn:hover {
+			color: var(--primary);
 
-            &::before {
-                opacity  : 1;
-                transform: translate(0, -50%) scale(1);
-            }
-        }
-    }
+			&::before {
+				opacity: 1;
+				transform: translate(0, -50%) scale(1);
+			}
+		}
+	}
 
-    @media(max-width:768px) {
-        right: 10px;
-    }
+	@media (max-width: 768px) {
+		right: 10px;
+	}
 
-    &.offset {
-        bottom: 30px;
+	&.offset {
+		bottom: 30px;
 
-        #trm-back-top {
-            opacity  : 1;
-            transform: translateY(0) scale(1);
-        }
-    }
+		#trm-back-top {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const { tocObj, escapeHTML, encodeURL } = require('hexo-util');
+const { tocObj, escapeHTML } = require('hexo-util');
 
 // 获取树状数据
 
@@ -111,93 +111,95 @@ function tocHelper(str, options = {}) {
 } */
 
 function tocHelper(str, options = {}) {
-  options = Object.assign({
-    min_depth: 1,
-    max_depth: 6,
-    class: 'trm-toc',
-    class_item: '',
-    class_link: '',
-    class_text: '',
-    class_child: '',
-    class_number: '',
-    class_level: '',
-    list_number: true
-  }, options);
+	options = Object.assign(
+		{
+			min_depth: 1,
+			max_depth: 6,
+			class: 'trm-toc',
+			class_item: '',
+			class_link: '',
+			class_text: '',
+			class_child: '',
+			class_number: '',
+			class_level: '',
+			list_number: true,
+		},
+		options,
+	);
 
-  const data = tocObj(str, { min_depth: options.min_depth, max_depth: options.max_depth });
+	const data = tocObj(str, { min_depth: options.min_depth, max_depth: options.max_depth });
 
-  if (!data.length) return '';
+	if (!data.length) return '';
 
-  const className = escapeHTML(options.class);
-  const itemClassName = escapeHTML(options.class_item || options.class + '-item');
-  const linkClassName = escapeHTML(options.class_link || options.class + '-link');
-  const textClassName = escapeHTML(options.class_text || options.class + '-text');
-  const childClassName = escapeHTML(options.class_child || options.class + '-child');
-  const numberClassName = escapeHTML(options.class_number || options.class + '-number');
-  const levelClassName = escapeHTML(options.class_level || options.class + '-level');
-  const listNumber = options.list_number;
+	const className = escapeHTML(options.class);
+	const itemClassName = escapeHTML(options.class_item || options.class + '-item');
+	const linkClassName = escapeHTML(options.class_link || options.class + '-link');
+	const textClassName = escapeHTML(options.class_text || options.class + '-text');
+	const childClassName = escapeHTML(options.class_child || options.class + '-child');
+	const numberClassName = escapeHTML(options.class_number || options.class + '-number');
+	const levelClassName = escapeHTML(options.class_level || options.class + '-level');
+	const listNumber = options.list_number;
 
-  let result = `<ol class="${className}">`;
+	let result = `<ol class="${className}">`;
 
-  const lastNumber = [0, 0, 0, 0, 0, 0];
-  let firstLevel = 0;
-  let lastLevel = 0;
+	const lastNumber = [0, 0, 0, 0, 0, 0];
+	let firstLevel = 0;
+	let lastLevel = 0;
 
-  for (let i = 0, len = data.length; i < len; i++) {
-    const el = data[i];
-    const { level, id, text } = el;
-    const href = id ? `#${id}` : null;
+	for (let i = 0, len = data.length; i < len; i++) {
+		const el = data[i];
+		const { level, id, text } = el;
+		const href = id ? `#${id}` : null;
 
-    if (!el.unnumbered) {
-      lastNumber[level - 1]++;
-    }
+		if (!el.unnumbered) {
+			lastNumber[level - 1]++;
+		}
 
-    for (let i = level; i <= 5; i++) {
-      lastNumber[i] = 0;
-    }
+		for (let i = level; i <= 5; i++) {
+			lastNumber[i] = 0;
+		}
 
-    if (firstLevel) {
-      for (let i = level; i < lastLevel; i++) {
-        result += '</li></ol>';
-      }
+		if (firstLevel) {
+			for (let i = level; i < lastLevel; i++) {
+				result += '</li></ol>';
+			}
 
-      if (level > lastLevel) {
-        result += `<ol class="${childClassName}">`;
-      } else {
-        result += '</li>';
-      }
-    } else {
-      firstLevel = level;
-    }
+			if (level > lastLevel) {
+				result += `<ol class="${childClassName}">`;
+			} else {
+				result += '</li>';
+			}
+		} else {
+			firstLevel = level;
+		}
 
-    result += `<li class="${itemClassName} ${levelClassName}-${level}">`;
-    if (href) {
-      result += `<a rel="nofollow" class="${linkClassName}" href="${href}">`;
-    } else {
-      result += `<a class="${linkClassName}">`;
-    }
+		result += `<li class="${itemClassName} ${levelClassName}-${level}" title="${text}">`;
+		if (href) {
+			result += `<a rel="nofollow" class="${linkClassName}" href="${href}">`;
+		} else {
+			result += `<a class="${linkClassName}">`;
+		}
 
-    if (listNumber && !el.unnumbered) {
-      result += `<span class="${numberClassName}">`;
+		if (listNumber && !el.unnumbered) {
+			result += `<span class="${numberClassName}">`;
 
-      for (let i = firstLevel - 1; i < level; i++) {
-        result += `${lastNumber[i]}.`;
-      }
+			for (let i = firstLevel - 1; i < level; i++) {
+				result += `${lastNumber[i]}.`;
+			}
 
-      result += '</span> ';
-    }
+			result += '</span> ';
+		}
 
-    result += `<span class="${textClassName}">${text}</span></a>`;
+		result += `<span class="${textClassName}">${text}</span></a>`;
 
-    lastLevel = level;
-  }
+		lastLevel = level;
+	}
 
-  for (let i = firstLevel - 1; i < lastLevel; i++) {
-    result += '</li></ol>';
-  }
+	for (let i = firstLevel - 1; i < lastLevel; i++) {
+		result += '</li></ol>';
+	}
 
-  return result;
+	return result;
 }
 
-
-hexo.extend.helper.register('toc', tocHelper)
+hexo.extend.helper.register('toc', tocHelper);

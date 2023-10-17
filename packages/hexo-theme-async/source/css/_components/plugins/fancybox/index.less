@@ -1,118 +1,117 @@
 .fancybox-slide--video .fancybox__content {
-    max-width : 80% !important;
-    max-height: 80% !important
+	max-width: 80% !important;
+	max-height: 80% !important;
 }
 
 .fancybox__close-small {
-    margin: 0 !important
+	margin: 0 !important;
 }
 
 .fancybox__thumbs {
-    background-color       : var(--theme-bg-color, #fcfcfe);
-    border-radius          : 0 0 10px 10px;
-    width                  : calc(100% - 20px);
-    left                   : 10px;
-    bottom                 : 10px;
-    z-index                : 10;
-    --fancybox-accent-color: var(--primary);
+	background-color: var(--theme-bg-color, #fcfcfe);
+	border-radius: 0 0 10px 10px;
+	width: calc(100% - 20px);
+	left: 10px;
+	bottom: 10px;
+	z-index: 10;
+	--fancybox-accent-color: var(--primary);
 
-    .fancybox-thumbs__list {
-        background-color: var(--theme-bg-color, #fcfcfe)
-    }
+	.fancybox-thumbs__list {
+		background-color: var(--theme-bg-color, #fcfcfe);
+	}
 }
 
-
 .fancybox__thumbs-active:before {
-    border: solid 3px var(--primary, #afb42b) !important
+	border: solid 3px var(--primary, #afb42b) !important;
 }
 
 .fancybox__bg {
-    background-color: var(--body-bg-color, #00151f)
+	background-color: var(--body-bg-color, #00151f);
 }
 
 .fancybox__button {
-    margin-top      : 40px;
-    background-color: transparent;
-    color           : var(--theme-bg-color, #fcfcfe);
+	margin-top: 40px;
+	background-color: transparent;
+	color: var(--theme-bg-color, #fcfcfe);
 }
 
 .carousel__button.is-close {
-    color  : var(--theme-bg-color, #fcfcfe);
-    padding: 10px !important;
-    right  : 0 !important;
-    top    : 0 !important;
+	color: var(--theme-bg-color, #fcfcfe);
+	padding: 10px !important;
+	right: 0 !important;
+	top: 0 !important;
 
-    svg {
-        filter: none;
-        color : var(--theme-color, #00283a)
-    }
+	svg {
+		filter: none;
+		color: var(--theme-color, #00283a);
+	}
 }
 
 .fancybox__image {
-    transform: translateY(40px)
+	transform: translateY(40px);
 }
 
 .fancybox__toolbar {
-    position       : relative;
-    border-radius  : 10px 10px 0 0;
-    width          : calc(100% - 20px);
-    left           : 10px;
-    top            : 10px;
-    height         : 90px;
-    background     : var(--theme-bg-color, #fcfcfe);
-    display        : flex;
-    justify-content: flex-end;
-    align-items    : center;
-    padding        : 0 20px;
-    text-shadow    : none;
+	position: relative;
+	border-radius: 10px 10px 0 0;
+	width: calc(100% - 20px);
+	left: 10px;
+	top: 10px;
+	height: 90px;
+	background: var(--theme-bg-color, #fcfcfe);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 20px;
+	text-shadow: none;
 }
 
 .fancybox__counter {
-    color: var(--theme-color, #00283a);
+	color: var(--theme-color, #00283a);
 }
 
 .fancybox__toolbar .carousel__button {
-    margin-top: 0;
-    color     : var(--theme-color, #00283a);
+	margin-top: 0;
+	color: var(--theme-color, #00283a);
 
-    svg {
-        filter: none;
-        color : var(--theme-color, #00283a)
-    }
+	svg {
+		filter: none;
+		color: var(--theme-color, #00283a);
+	}
 }
 
 .fancybox__infobar {
-    mix-blend-mode: none;
-    left          : 40px;
-    top           : 28px;
-    z-index       : 99999;
-    opacity       : 1
+	mix-blend-mode: none;
+	left: 40px;
+	top: 28px;
+	z-index: 99999;
+	opacity: 1;
 }
 
-@media(max-width:992px) {
-    .fancybox__toolbar {
-        top  : 0;
-        left : 0;
-        width: 100%;
-    }
+@media (max-width: 992px) {
+	.fancybox__toolbar {
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 
-    .fancybox__thumbs {
-        left  : 0;
-        bottom: 0;
-        width : 100%;
-    }
+	.fancybox__thumbs {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
 
-    .fancybox__toolbar,
-    .fancybox__thumbs {
-        border-radius: 0;
-        padding      : 0 20px
-    }
+	.fancybox__toolbar,
+	.fancybox__thumbs {
+		border-radius: 0;
+		padding: 0 20px;
+	}
 
-    .fancybox__slide {
-        padding: 8px;
-    }
+	.fancybox__slide {
+		padding: 8px;
+	}
 
-    .fancybox__infobar {
-        left: 20px
-    }
+	.fancybox__infobar {
+		left: 20px;
+	}
 }

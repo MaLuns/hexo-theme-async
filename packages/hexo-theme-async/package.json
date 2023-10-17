@@ -1,33 +1,33 @@
 {
-  "name": "hexo-theme-async",
-  "version": "0.0.0",
-  "description": "🎈 A simple, lightweight Hexo theme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaLuns/hexo-theme-async.git"
-  },
-  "keywords": [
-    "hexo-theme",
-    "hexo",
-    "theme",
-    "blog",
-    "cms"
-  ],
-  "author": "Maluns <admin@imalun.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MaLuns/hexo-theme-async/issues"
-  },
-  "homepage": "https://hexo-theme-async.imalun.com",
-  "files": [
-    "languages",
-    "layout",
-    "scripts",
-    "source",
-    "src",
-    "_config.yml",
-    "plugins.yml",
-    "README_zh-CN.md",
-    "README.md"
-  ]
+	"name": "hexo-theme-async",
+	"version": "0.0.0",
+	"description": "🎈 A simple, lightweight Hexo theme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MaLuns/hexo-theme-async.git"
+	},
+	"keywords": [
+		"hexo-theme",
+		"hexo",
+		"theme",
+		"blog",
+		"cms"
+	],
+	"author": "Maluns <admin@imalun.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/MaLuns/hexo-theme-async/issues"
+	},
+	"homepage": "https://hexo-theme-async.imalun.com",
+	"files": [
+		"languages",
+		"layout",
+		"scripts",
+		"source",
+		"src",
+		"_config.yml",
+		"plugins.yml",
+		"README_zh-CN.md",
+		"README.md"
+	]
 }

@@ -1,67 +1,65 @@
 .trm-app-frame {
-    border-radius   : 10px;
-    width           : 100%;
-    overflow        : hidden;
-    background-color: var(--theme-bg2-color, #f4f5f7);
-    box-shadow      : var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
-    .transition-mixin();
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+	background-color: var(--theme-bg2-color, #f4f5f7);
+	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	.transition-mixin();
 
-    /* .trm-hidden-switcher {
+	/* .trm-hidden-switcher {
         display: none;
     } */
 
-    .trm-content-start {
-        margin: 0 40px;
+	.trm-content-start {
+		margin: 0 40px;
 
-        .container {
-
-            .trm-content {
-                margin-top: -40px;
-                padding   : 0 0 40px;
-                z-index   : 0;
-                position  : relative;
-                z-index   : 1;
-            }
-        }
-    }
+		.container {
+			.trm-content {
+				margin-top: -40px;
+				padding: 0 0 40px;
+				z-index: 0;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
+	body {
+		background-color: var(--theme-bg2-color, #f4f5f7);
+		overflow: hidden auto;
+		padding: 0;
+	}
 
-    body {
-        background-color: var(--theme-bg2-color, #f4f5f7);
-        overflow        : hidden auto;
-        padding         : 0;
-    }
+	.trm-app-frame {
+		height: unset;
+		border-radius: 0;
 
-    .trm-app-frame {
-        height       : unset;
-        border-radius: 0;
+		.trm-content-start {
+			margin: 0;
+			z-index: 999;
 
-        .trm-content-start {
-            margin : 0;
-            z-index: 999;
-
-            .container {
-                .trm-content {
-                    margin-top: 0px;
-                }
-            }
-        }
-    }
+			.container {
+				.trm-content {
+					margin-top: 0px;
+				}
+			}
+		}
+	}
 }
 
-@media(max-width:768px) {
-    .trm-app-frame {
-        .trm-content-start {
-            .container {
-                padding: 0 10px;
+@media (max-width: 768px) {
+	.trm-app-frame {
+		.trm-content-start {
+			.container {
+				padding: 0 10px;
 
-                .trm-content {
-                    margin-top: 10px;
-                    padding   : 0 0 20px;
-                }
-            }
-        }
-    }
+				.trm-content {
+					margin-top: 10px;
+					padding: 0 0 20px;
+				}
+			}
+		}
+	}
 }
