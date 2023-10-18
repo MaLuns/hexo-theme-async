@@ -1,6 +1,6 @@
-<div class="row trm-mb-40">
+<div class="row trm-scroll-animation" style="margin-bottom: var(--card-bottom-card);">
     <div class="col-lg-12">
-        <blockquote class="trm-scroll-animation">
+        <blockquote>
             <%-__('site.ruleText')%>：
             <br>
             <%- theme.user.ruleText %>
@@ -8,12 +8,12 @@
     </div>
 </div>
 
-<div class="row trm-mb-20">
+<div class="row trm-scroll-animation" >
     <div class="col-lg-12">
         <h5 class="trm-title-with-divider"><%-__('site.title')%><span data-number="01"></span></h5>
     </div>
     <div class="col-lg-12">
-        <div class="trm-service-icon-box trm-scroll-animation trm-active-el">
+        <div class="trm-card trm-scroll-animation trm-active-el">
             <ul class="trm-list">
                 <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
                 <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
@@ -25,7 +25,7 @@
 </div>
 
 <% if(Array.isArray(theme.links)){ %>
-<div class="row trm-mb-20">
+	<div class="row trm-scroll-animation" >
     <div class="col-lg-12">
         <h5 class="trm-title-with-divider">
             <%-__('title.links')%>
