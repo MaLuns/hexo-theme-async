@@ -153,7 +153,10 @@ export function InitScroll() {
 		backtop && (backtop.style.backgroundSize = `100% ${ratio}%`);
 
 		const sidebarFun = scrollTop >= 70 ? 'add' : 'remove';
-		sidebar && sidebar.classList[sidebarFun]('fixed');
+		if (sidebar) {
+			sidebar.classList[sidebarFun]('fixed');
+			setSidebarWidth();
+		} 
 
 		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`);
 
@@ -162,7 +165,7 @@ export function InitScroll() {
 
 	const setSidebarWidth = function () {
 		if (sidebar) {
-			sidebar.style.width = window.innerWidth > 992 ? `${sidebar.parentElement.clientWidth - 40}px` : 'auto';
+			sidebar.style.width = window.innerWidth > 992 && sidebar.classList.contains('fixed') ? `${sidebar.parentElement.clientWidth - 40}px` : 'auto';
 		}
 	};
 
@@ -171,6 +174,10 @@ export function InitScroll() {
 		container && window.scrollTo({ top: container.clientHeight - 20, behavior: 'smooth' });
 	};
 
+	const observer = new MutationObserver(() => {
+		setSidebarWidth()
+	});
+	
 	const init = () => {
 		const sections = utils.qa('.trm-scroll-animation');
 		sections.forEach(element => {
@@ -178,6 +185,7 @@ export function InitScroll() {
 		});
 		scroll_fun();
 		setSidebarWidth();
+		observer.observe(document.body, { attributeFilter: ['style', 'class'] });
 	};
 
 	init();
@@ -193,6 +201,7 @@ export function InitScroll() {
 		window.removeEventListener('scroll', scroll_fun);
 		window.removeEventListener('resize', setSidebarWidth);
 		back_fun();
+		observer.disconnect();
 	});
 }
 
