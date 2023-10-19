@@ -3,6 +3,16 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.6",
+				"date": "2023-10-18",
+				"logs": [
+					{
+						"type": "fix",
+						"text": "修复 sidebar 在切换单双栏后抖动"
+					}
+				]
+			},
+			{
 				"version": "2.1.4",
 				"date": "2023-10-12",
 				"logs": [

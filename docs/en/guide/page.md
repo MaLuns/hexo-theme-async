@@ -4,15 +4,15 @@ The following page types are supported and used by default for this theme.
 
 ## Article
 
--   `keywords`: keyword used for meta tags
--   `description`: Description for meta tags
--   `cover`: Article cover, which can be a string or array. If the array length is 2, it will automatically switch according to the theme.
--   `sticky`: home page sorting value
--   `banner`: Article page banner background, field reference [banner.default](/guide/config.html#横幅-banner) Field.
--   `toc`: Specifies whether to display directories. This parameter takes effect only when the value is false. Pass by default `_config.async.yaml` 的 `is_toc` Control.
--   `single_column`: Displays details in one column. This parameter takes effect when it is true.
--   `author`: Set the author will show
--   `originalLink`: Article source link
+- `keywords`: keyword used for meta tags
+- `description`: Description for meta tags
+- `cover`: Article cover, which can be a string or array. If the array length is 2, it will automatically switch according to the theme.
+- `sticky`: home page sorting value
+- `banner`: Article page banner background, field reference [banner.default](/guide/config.html#横幅-banner) Field.
+- `toc`: Specifies whether to display directories. This parameter takes effect only when the value is false. Pass by default `_config.async.yaml` 的 `toc` Control.
+- `single_column`: Displays details in one column. This parameter takes effect when it is true.
+- `author`: Set the author will show
+- `originalLink`: Article source link
 
 The built-in top script has been removed. Upgrade the `hexo-generator-index` to version `2.0.0+` or higher.
 
@@ -23,9 +23,9 @@ keywords: admin-template
 cover: [https://www.logosc.cn/uploads/resources/2018/11/29/1543459457_thumb.jpg]
 sticky: 10
 banner:
-    type: img
-    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
-    bannerText: Hi my new friend!
+  type: img
+  bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
+  bannerText: Hi my new friend!
 toc: false # No need to display directories
 ---
 ```
@@ -103,17 +103,17 @@ layout: links
 
 Add `links` configuration information in `_config.async.yml`.
 
--   `name`: their name
--   `url`: blog link
--   `image`: avatar image link
--   `desc`: one-sentence description
+- `name`: their name
+- `url`: blog link
+- `image`: avatar image link
+- `desc`: one-sentence description
 
 ```yaml
 links:
-    - name: 白云苍狗
-      url: //www.imalun.com/
-      image: //www.imalun.com/images/avatar.jpg
-      desc: 醒，亦在人间；梦，亦在人间
+  - name: 白云苍狗
+    url: //www.imalun.com/
+    image: //www.imalun.com/images/avatar.jpg
+    desc: 醒，亦在人间；梦，亦在人间
 ```
 
 If you have too many friend links, the `_config.async.yml` may be too long. You can split the links configuration. Create a new `source/_data/links.yml` file in the Hexo working directory with the same fields as in `_config.async.yml` except that the `links` field is no longer required.
@@ -159,10 +159,10 @@ If using a built-in template, you can set `about` in `_config.async.yml`.
 
 ```yaml
 about:
-    title: # Title
-    introduction: # Personal brief description
-    blog: # Blog message
-    privacy: # Privacy Note
+  title: # Title
+  introduction: # Personal brief description
+  blog: # Blog message
+  privacy: # Privacy Note
 ```
 
 You can also write your about page directly in `source/about/index.md`, using custom content if `about/index.md` has content, and configuration items if not.

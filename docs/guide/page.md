@@ -9,7 +9,7 @@
 - `cover`：文章封面图，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
 - `sticky`：首页排序值
 - `banner`：文章页横幅背景，字段参考 [横幅 banner.default](/guide/config.html#横幅-banner) 字段。
-- `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `is_toc` 控制。
+- `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `toc` 控制。
 - `single_column`：单栏显示详情页，为 true 时生效。
 - `author`：文章作者
 - `originalLink`：文章源链接（用于转载）
