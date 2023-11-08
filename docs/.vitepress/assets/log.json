@@ -3,6 +3,20 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.7",
+				"date": "2023-11-08",
+				"logs": [
+					{
+						"type": "fix",
+						"text": "修复加载动画事件穿透 #105"
+					},
+					{
+						"type": "fix",
+						"text": "修复分类, 分类页不可单独配置 banner"
+					}
+				]
+			},
+			{
 				"version": "2.1.6",
 				"date": "2023-10-18",
 				"logs": [
