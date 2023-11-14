@@ -156,7 +156,7 @@ export function InitScroll() {
 		if (sidebar) {
 			sidebar.classList[sidebarFun]('fixed');
 			setSidebarWidth();
-		} 
+		}
 
 		banner && (banner.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${Math.min(scrollTop / 3, 100)}, 0, 1)`);
 
@@ -175,9 +175,9 @@ export function InitScroll() {
 	};
 
 	const observer = new MutationObserver(() => {
-		setSidebarWidth()
+		setSidebarWidth();
 	});
-	
+
 	const init = () => {
 		const sections = utils.qa('.trm-scroll-animation');
 		sections.forEach(element => {
@@ -289,7 +289,8 @@ export function InitToc() {
 				isDown = false;
 				document.onmousemove = null;
 				document.onmouseup = null;
-				postToc.style.opacity = 'unset';
+				postToc.style.removeProperty('opacity');
+				// postToc.style.opacity = 'unset';
 			};
 		});
 
