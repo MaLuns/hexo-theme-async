@@ -87,9 +87,9 @@ const processLess = hexo => {
 	if (theme.config.reward.enable) less.options.globalVars.isReward = true;
 
 	// 代码高亮
-	less.options.globalVars.highlightEnable = highlight && highlight.enable;
+	less.options.globalVars.highlightEnable = (highlight && highlight.enable) || hexo.config.syntax_highlighter == 'highlight.js';
 	less.options.globalVars.highlightLineNumber = highlight && highlight.line_number;
-	less.options.globalVars.prismjsEnable = prismjs && prismjs.enable;
+	less.options.globalVars.prismjsEnable = (prismjs && prismjs.enable) || hexo.config.syntax_highlighter == 'prismjs';
 	less.options.globalVars.prismjsLineNumber = prismjs && prismjs.line_number;
 	less.options.globalVars.highlightTheme = theme.config.highlight.theme;
 	less.options.globalVars.highlightTitleStyle = theme.config.highlight.title;

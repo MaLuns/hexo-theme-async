@@ -47,7 +47,7 @@ hexo.extend.helper.register('async_config', function () {
 		icons: theme.icons,
 		icontype: theme.assets.icons.type,
 		highlight: {
-			plugin: config.highlight.enable ? 'highlighjs' : 'prismjs',
+			plugin: (config.highlight.enable || config.syntax_highlighter == 'highlight.js') ? 'highlighjs' : 'prismjs',
 			theme: theme.highlight.theme,
 			copy: theme.highlight.copy,
 			lang: theme.highlight.lang,
