@@ -138,11 +138,11 @@ export function InitScroll() {
 		{ threshold: [0, 1], rootMargin: '0px 0px -40px 0px' },
 	);
 
-	const back_fun = function (e?: unknown) {
-		window.scrollTo({ top: 0, behavior: e ? 'smooth' : 'auto' });
-	};
+	// 返回顶部
+	const backFun = (e?: unknown) => window.scrollTo({ top: 0, behavior: e ? 'smooth' : 'auto' });
 
-	const scroll_fun = function () {
+	// 滚动事件回调
+	const scrollFun = function () {
 		const scrollTop = utils.scrollTop();
 		const { scrollHeight, clientHeight } = document.documentElement;
 
@@ -163,9 +163,16 @@ export function InitScroll() {
 		globalFun.switchToc(false);
 	};
 
+	// 设置侧栏位置
 	const setSidebarWidth = function () {
 		if (sidebar) {
-			sidebar.style.width = window.innerWidth > 992 && sidebar.classList.contains('fixed') ? `${sidebar.parentElement.clientWidth - 40}px` : 'auto';
+			if (window.innerWidth > 992 && sidebar.classList.contains('fixed')) {
+				sidebar.style.left = sidebar.parentElement.offsetLeft + 20 + 'px';
+				sidebar.style.width = `${sidebar.parentElement.clientWidth - 40}px`;
+			} else {
+				sidebar.style.left = 'unset';
+				sidebar.style.width = 'auto';
+			}
 		}
 	};
 
@@ -174,33 +181,28 @@ export function InitScroll() {
 		container && window.scrollTo({ top: container.clientHeight - 20, behavior: 'smooth' });
 	};
 
-	const observer = new MutationObserver(() => {
-		setSidebarWidth();
-	});
+	const observer = new MutationObserver(() => setSidebarWidth());
 
 	const init = () => {
-		const sections = utils.qa('.trm-scroll-animation');
-		sections.forEach(element => {
-			element && intersectionObserver.observe(element);
-		});
-		scroll_fun();
+		utils.qa('.trm-scroll-animation').forEach(element => element && intersectionObserver.observe(element));
+		scrollFun();
 		setSidebarWidth();
 		observer.observe(document.body, { attributeFilter: ['style', 'class'] });
 	};
 
 	init();
-	backtop?.addEventListener('click', back_fun);
+	backtop?.addEventListener('click', backFun);
 	scrollTriger?.addEventListener('click', scrollToTriger);
-	window.addEventListener('scroll', scroll_fun);
+	window.addEventListener('scroll', scrollFun);
 	window.addEventListener('resize', setSidebarWidth);
 
 	document.addEventListener('swup:contentReplaced', () => {
 		intersectionObserver.disconnect();
-		backtop?.removeEventListener('click', back_fun);
+		backtop?.removeEventListener('click', backFun);
 		scrollTriger?.removeEventListener('click', scrollToTriger);
-		window.removeEventListener('scroll', scroll_fun);
+		window.removeEventListener('scroll', scrollFun);
 		window.removeEventListener('resize', setSidebarWidth);
-		back_fun();
+		backFun();
 		observer.disconnect();
 	});
 }
@@ -608,6 +610,24 @@ export function PrintCopyright() {
 }
 
 /**
+ * 计算博客时长
+ */
+export function ShowDateTime() {
+	const live_time = window.ASYNC_CONFIG.live_time;
+	if (live_time?.start_time) {
+		const birthDay = new Date(live_time.start_time);
+		const today = new Date();
+		const timeold = today.getTime() - birthDay.getTime();
+		const msPerDay = 24 * 60 * 60 * 1000;
+		const day = Math.floor(timeold / msPerDay);
+		const blogRunLongEl = document.querySelector('.blog-run-long');
+		if (blogRunLongEl) {
+			blogRunLongEl.innerHTML = live_time?.prefix?.replace('undefined', `<span class="trm-accent-color"> ${day} </span>`);
+		}
+	}
+}
+
+/**
  * 初始化
  */
 export function ready() {
@@ -667,6 +687,9 @@ export function ready() {
 	/* random covers */
 	InitRandomCovers();
 
+	/* The blog runs long */
+	ShowDateTime();
+
 	if (window.ASYNC_CONFIG.swup) {
 		document.addEventListener('swup:contentReplaced', function () {
 			/* Update page configuration */
@@ -684,7 +707,7 @@ export function ready() {
 			document.body.classList.remove('trm-read-mode');
 
 			/* The blog runs long */
-			window.show_date_time && window.show_date_time();
+			ShowDateTime();
 
 			/* Initialize album */
 			InitJustifiedGallery();

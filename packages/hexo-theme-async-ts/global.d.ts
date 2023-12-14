@@ -76,6 +76,10 @@ declare interface Window {
 		toc?: {
 			post_title?: boolean;
 		};
+		live_time?: {
+			start_time?: string;
+			prefix?: string;
+		};
 	};
 
 	PAGE_CONFIG: {

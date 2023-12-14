@@ -29,9 +29,7 @@
     <% } %>  
 
     <% if(theme.footer.live_time.enable) { %>
-        <div class="trm-footer-item">
-            <%-__('footer.tips','<span id="since" class="trm-accent-color"></span>')%>
-        </div>
+        <div class="trm-footer-item blog-run-long"></div>
     <% } %> 
 
     <% if(theme.footer.custom_text) { %>
@@ -40,16 +38,3 @@
         </div>
     <% } %> 
 </footer>
-<% if(theme.footer.live_time.enable) { %>
-<script>
-    function show_date_time () {
-        var BirthDay = new Date("<%- theme.footer.live_time.start_time %>");
-        var today = new Date();
-        var timeold = (today.getTime() - BirthDay.getTime());
-        var msPerDay = 24 * 60 * 60 * 1000
-        var day = Math.floor(timeold / msPerDay)
-        since.innerHTML = day
-    }
-    show_date_time()
-</script>
-<% } %> 

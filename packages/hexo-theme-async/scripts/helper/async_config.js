@@ -47,7 +47,7 @@ hexo.extend.helper.register('async_config', function () {
 		icons: theme.icons,
 		icontype: theme.assets.icons.type,
 		highlight: {
-			plugin: (config.highlight.enable || config.syntax_highlighter == 'highlight.js') ? 'highlighjs' : 'prismjs',
+			plugin: config.highlight.enable || config.syntax_highlighter == 'highlight.js' ? 'highlighjs' : 'prismjs',
 			theme: theme.highlight.theme,
 			copy: theme.highlight.copy,
 			lang: theme.highlight.lang,
@@ -56,6 +56,10 @@ hexo.extend.helper.register('async_config', function () {
 		},
 		toc: {
 			post_title: theme.toc.post_title,
+		},
+		live_time: {
+			start_time: theme.footer?.live_time?.enable ? theme.footer.live_time.start_time : '',
+			prefix: __(theme.footer.live_time.prefix),
 		},
 	};
 
