@@ -1,7 +1,7 @@
 .trm-top-bar {
 	position: fixed;
-	left: 0;
-	right: 0;
+	left: 10px;
+	right: 10px;
 	z-index: 9;
 	height: 80px;
 	border-radius: var(--card-border-radius, 10px);
@@ -112,5 +112,10 @@
 	@media (max-width: 992px) {
 		border-radius: 0;
 		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		left: 0;
+		right: 0;
 	}
 }
