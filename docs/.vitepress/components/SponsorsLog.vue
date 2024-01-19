@@ -18,16 +18,6 @@ modes.forEach(i => {
 			<div>{{ item.title }}</div>
 		</div>
 	</div>
-	<div class="sponsor-pay">
-		<div class="sponsor-pay-item">
-			<div class="pay-img-item">
-				<a href="https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/alipay_hd.jpg" target="_blank" rel="noopener noreferrer">
-					<img src="https://mp-8b005489-7724-4f8c-afdd-30192ff4f7ae.cdn.bspapp.com/cloudstorage/alipay_hd.jpg" />
-				</a>
-			</div>
-			<div>支付宝扫码领红包（免费）</div>
-		</div>
-	</div>
 	<div class="sponsor-content">
 		<slot></slot>
 	</div>
