@@ -1057,6 +1057,8 @@ layout:
   fixed_btn: _widget/fixed-btn
   # 关于页面配置卡片
   about_card: _widget/about-card
+	# 搜索卡片 v2.1.11 + 
+	search: _widget/search
   # 侧栏
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social
@@ -1076,6 +1078,10 @@ layout:
   page_links: _partial/page/links
   page_post: _partial/page/post
   page_tag: _partial/page/tag
+	# 其他 v2.1.11 + 
+	script: _partial/script
+	head: _partial/head
+
 ```
 
 用覆盖 footer 来举个例子：

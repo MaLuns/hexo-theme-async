@@ -159,6 +159,20 @@ If you are using this theme, welcome to leave your site in [Demo Sites | Example
                 <sub title="Strive hard and work novelty">Shawn's Blog</sub>
             </a>
         </td>
+				<td>
+            <a href="https://dracewang.github.io/" target="_blank">
+                <img width="80px" src="https://s2.loli.net/2023/10/09/XwlqZH67cJo2NC5.jpg" />
+                <br />
+                <sub title="江湖险恶，不行就撤">Hexagon</sub>
+            </a>
+        </td>
+				<td>
+            <a href="https://cyphersun.github.io/" target="_blank">
+                <img width="80px" src="https://hexo-theme-async.imalun.com/demosite/img/favicon.svg" />
+                <br />
+                <sub title="吾日百省，知行合一">Cypher Sun</sub>
+            </a>
+        </td>
       </tr>
 </table>
 <!-- demo-end -->
