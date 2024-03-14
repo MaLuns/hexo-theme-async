@@ -726,8 +726,8 @@ html.is-animating .trm-swup-animation {
 }
 .trm-top-bar {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
   z-index: 9;
   height: 80px;
   border-radius: var(--card-border-radius, 10px);
@@ -823,6 +823,12 @@ html.is-animating .trm-swup-animation {
   .trm-top-bar {
     border-radius: 0;
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .trm-top-bar {
+    left: 0;
+    right: 0;
   }
 }
 .trm-menu {
@@ -2402,13 +2408,13 @@ form textarea:focus,
   left: 10px;
   height: calc(100% - 20px);
   width: 4px;
-  background: var(--theme-bg-color, #fcfcfe);
+  background-color: var(--theme-bg-color, #fcfcfe);
 }
 .trm-timeline .trm-timeline-item {
   position: relative;
 }
 .trm-timeline .trm-timeline-item .trm-timeline-mark-light {
-  background: var(--primary-weak, #afb42b);
+  background-color: var(--primary-weak, #afb42b);
   position: absolute;
   top: 15px;
   left: -11px;
@@ -2426,7 +2432,7 @@ form textarea:focus,
   height: 20px;
   border-radius: 50%;
   border: solid 3px var(--primary, #afb42b);
-  background: var(--theme-bg-color, #fcfcfe);
+  background-color: var(--theme-bg-color, #fcfcfe);
 }
 .trm-timeline .trm-timeline-item:hover .trm-timeline-mark-light {
   animation: puls 1s infinite;
@@ -2435,7 +2441,7 @@ form textarea:focus,
   border-radius: var(--card-border-radius, 10px);
   position: relative;
   margin-left: 45px;
-  background: var(--theme-bg-color, #fcfcfe);
+  background-color: var(--theme-bg-color, #fcfcfe);
   padding: var(--card-padding, 40px);
   margin-bottom: var(--card-bottom-card, 40px);
   box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
@@ -2464,7 +2470,7 @@ form textarea:focus,
 .trm-timeline .trm-timeline-content .trm-card-header .trm-right-side .trm-date {
   color: var(--theme-color, #00283a);
   margin-left: auto;
-  background: var(--theme-bg2-color, #f4f5f7);
+  background-color: var(--theme-bg2-color, #f4f5f7);
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 10px;
@@ -3153,6 +3159,7 @@ details p {
 }
 .trm-read-mode {
   padding: 0;
+  background-color: var(--theme-bg-color, #fcfcfe);
 }
 .trm-read-mode::before {
   content: unset;
@@ -3205,7 +3212,7 @@ details p {
   max-width: 100%;
 }
 .trm-read-mode .trm-page-content .trm-content {
-  margin: 0;
+  margin: 0 !important;
 }
 .trm-read-mode .trm-page-content .trm-content > .trm-card {
   padding: 10px 0 0;
