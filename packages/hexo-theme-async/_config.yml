@@ -364,6 +364,7 @@ layout:
   fixed_btn: _widget/fixed-btn
   post_toc: _widget/post-toc
 	about_card: _widget/about-card
+	search: _widget/search
   sidebar_user: _partial/sidebar/card/user
   sidebar_social: _partial/sidebar/card/social
   sidebar_info: _partial/sidebar/card/info
@@ -382,3 +383,6 @@ layout:
   page_links: _partial/page/links
   page_post: _partial/page/post
   page_tag: _partial/page/tag
+	# other
+	script: _partial/script
+	head: _partial/head

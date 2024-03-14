@@ -2,7 +2,7 @@
 <html lang="<%- config.language %>">
 
 <head>
-  <%- partial('./_partial/head') %>
+  <%- partial(theme.layout.head) %>
 </head>
 
 <body>
@@ -37,8 +37,8 @@
   </div>
   <!-- app wrapper end -->
 
-  <%- partial('./_widget/search') %>
-  <%- partial('./_partial/script') %>
+  <%- partial(theme.layout.search) %>
+  <%- partial(theme.layout.script) %>
 
 </body>
 
