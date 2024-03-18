@@ -3,6 +3,16 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.12",
+				"date": "2024-03-18",
+				"logs": [
+					{
+						"type": "feat",
+						"text": "404 添加配置 <a href='https://github.com/MaLuns/hexo-theme-async/issues/117' target='_blank' rel='noreferrer'>#117</a>"
+					}
+				]
+			},
+			{
 				"version": "2.1.11",
 				"date": "2024-03-14",
 				"logs": [
