@@ -386,3 +386,8 @@ layout:
 	# other
 	script: _partial/script
 	head: _partial/head
+
+not_found: 
+	path: /
+	name: not_found.name
+	text: not_found.text

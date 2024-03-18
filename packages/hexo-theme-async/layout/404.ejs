@@ -1,17 +1,7 @@
 <div class="trm-content-start">
-    <style>
-        /*  .container {
-            height: 100vh;
-        } */
-
-        .align-self-center {
-            text-align: center;
-        }
-    </style>
-    <div class="container">
+    <div class="container" style="height: calc(100vh - 20px);max-width:100%;display: flex;justify-content: center;">
         <!-- content -->
-        <div style="height: 150px"></div>
-        <div class="row">
+        <div class="row" style="width: 60%">
             <div class="col-md-6 align-self-center"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 600">
                     <g>
@@ -210,9 +200,9 @@
             </div>
 
             <div class="col-md-6 align-self-center">
-                <h1>404</h1>
-                <p class="trm-mt-20 trm-mb-20">您正在查找的页面不存在。您是怎么到这里来的是个谜,但是您可以点击下面的按钮返回主页。</p>
-                <a class="trm-btn" href="/">HOME</a>
+                <h1 style="font-size: 6rem;">404</h1>
+                <p class="trm-mt-20 trm-mb-20"><%- __(theme.not_found.text) %></p>
+                <a class="trm-btn" href="<%= url_for(theme.not_found.path) %>"><%- __(theme.not_found.name) %></a>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>

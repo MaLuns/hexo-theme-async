@@ -90,3 +90,7 @@ symbol:
   colon: ': '
 
 ieTips: For a better experience, use a browser other than Internet Explorer
+
+not_found: 
+	name: HOME
+	text: The requested page does not exist. The method of arrival is unknown, but you can click the button below to navigate back to the homepage.
