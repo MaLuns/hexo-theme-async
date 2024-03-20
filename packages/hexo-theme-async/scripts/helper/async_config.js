@@ -61,6 +61,7 @@ hexo.extend.helper.register('async_config', function () {
 			start_time: theme.footer?.live_time?.enable ? theme.footer.live_time.start_time : '',
 			prefix: __(theme.footer.live_time.prefix),
 		},
+		danmu: theme.banner.danmu,
 	};
 
 	// 随便封面

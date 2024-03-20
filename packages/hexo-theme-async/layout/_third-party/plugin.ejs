@@ -83,4 +83,8 @@ plugin = theme.assets.plugin;
 
         <% } %>
     <% } %>
+
+		<% if(theme.banner.danmu.enable) {%>
+			<script src="<%= url_for(plugin.hexo_theme_async.danmu) %>?v=<%= theme.version %>"></script>
+		<% } %>
 <% } %>

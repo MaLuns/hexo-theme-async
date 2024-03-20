@@ -627,12 +627,12 @@ export function ShowDateTime() {
 	}
 }
 
+window.asyncFun = globalFun;
+
 /**
  * 初始化
  */
 export function ready() {
-	window.asyncFun = globalFun;
-
 	PrintCopyright();
 
 	/* loading animate */

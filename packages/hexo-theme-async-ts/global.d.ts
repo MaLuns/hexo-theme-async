@@ -80,6 +80,7 @@ declare interface Window {
 			start_time?: string;
 			prefix?: string;
 		};
+		danmu: DanMuOptions;
 	};
 
 	PAGE_CONFIG: {
@@ -98,6 +99,7 @@ declare interface Window {
 
 	changeGiscusTheme: () => void;
 	show_date_time: () => void;
+	danMu: (fun: DanMuFun) => void;
 
 	// 三方插件
 	Fancybox: any;
@@ -105,3 +107,26 @@ declare interface Window {
 	Swup: any;
 	fjGallery: any;
 }
+
+declare type DanMuData = {
+	id: string | number;
+	text: string;
+	url?: string;
+	avatar?: string;
+};
+
+declare type DanMuMode = 'half' | 'top' | 'full';
+
+declare type DanMuOptions = {
+	el: string;
+	speed?: number;
+	gapWidth?: number;
+	gapHeight?: number;
+	avatar?: boolean;
+	height?: number;
+	delayRange?: number;
+	mode?: DanMuMode;
+	align?: string;
+};
+
+declare type DanMuFun = () => Promise<DanMuData | DanMuData[]>;

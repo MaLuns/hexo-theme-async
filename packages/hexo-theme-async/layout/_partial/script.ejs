@@ -1,9 +1,6 @@
 <!-- Plugin -->
 <%- partial('../_third-party/plugin',{ loadtype: 'js' }) %>
 
-<!-- CDN -->
-<%- partial('../_third-party/cdn',{ cdntype: 'body' }) %>
-
 <% if(hexo_env('cmd') !== 'server'){ %>
     <!-- Service Worker -->
     <%- partial('../_third-party/sw') %>
@@ -12,3 +9,6 @@
 <% } %>
 
 <script id="async-script" src="<%= url_for(theme.assets.plugin.hexo_theme_async.main) %>?v=<%= theme.version %>"></script>
+
+<!-- CDN -->
+<%- partial('../_third-party/cdn',{ cdntype: 'body' }) %>

@@ -36,6 +36,7 @@ assets:
       rowcss: css/plugins/bootstrap.row.css
       typing: js/plugins/typing.js
       search: js/plugins/local_search.js
+			danmu: js/plugins/danmu.js
       main: js/main.js
   # Icon configuration
   icons: 
@@ -98,6 +99,9 @@ top_bars:
 # Banner settings
 banner:
   use_cover: false
+	danmu: 
+		enable: false
+		el: .trm-banner
   default:
     type: img
     bgurl: /img/banner.png
