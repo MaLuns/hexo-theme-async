@@ -410,6 +410,88 @@ banner:
 
 :::
 
+### 弹幕动画
+
+- `danmu`
+	- `enable`：是否开启弹幕动画插件
+  - `el`：弹幕填充区域，默认 banner 元素
+  - `avatar`：是否显示头像，默认 false 
+  - `speed`：弹幕每秒滚动距离，默认每秒滚动 20px
+  - `height`：弹幕高度，默认 36px
+  - `gapWidth`：弹幕前后间隔，默认 20px
+  - `gapHeight`：弹幕上下间隔，默认 20px
+  - `delayRange`：延时范围时间，默认 5000 ms
+  - `align`：弹幕对齐方式，参考 align-items
+  - `mode`：弹幕区域大小，'half' | 'top' | 'full'
+	
+开启弹幕示例：
+
+``` yaml
+banner:
+	danmu: 
+		enable: true
+		avatar: true
+		delayRange: 5000
+		speed: 80
+```
+
+开启后会在 window 挂载一个 danMu 方法，danMu 接收一个函数作为入参，函数调用返回需要加载弹幕数据
+
+``` ts
+declare type DanMuFun = ()=> Promise<DanMuData | DanMuData[]>;
+
+declare type DanMuData = {
+	id: string | number;
+	text: string;
+	url?: string;
+	avatar?: string;
+};
+
+```
+
+使用示例：
+
+``` js
+danMu(
+	() => [
+		'举杯邀明月，对影成三人',
+		'会当凌绝顶，一览众山小',
+		'云想衣裳花想容，春风拂槛露华浓',
+		'二十四桥明月夜，玉人何处教吹箫？',
+		'月落乌啼霜满天，江枫渔火对愁眠。',
+		'两岸猿声啼不住，轻舟已过万重山。',
+		'泠泠七弦上，静听松风寒。',
+		'举杯邀明月，对影成三人',
+		'会当凌绝顶，一览众山小',
+		'云想衣裳花想容，春风拂槛露华浓',
+		'二十四桥明月夜，玉人何处教吹箫？',
+		'月落乌啼霜满天，江枫渔火对愁眠。',
+		'两岸猿声啼不住，轻舟已过万重山。',
+		'泠泠七弦上，静听松风寒。'
+	].map((text, id) => ({ id, text }))
+)
+```
+
+加载 twikoo 评论示例：
+
+``` js
+twikoo && danMu(
+	() => twikoo.getRecentComments({
+		envId: 'id',
+		urls: [location.pathname].filter(i => i !== '/'),
+		pageSize: 30,
+		includeReply: false
+	}).then(function (res) {
+		return res.map((item, i) => ({
+			id: item.id,
+			url: item.url,
+			text: item.commentText,
+			avatar: item.avatar,
+		}))
+	})
+)
+```
+
 ## 页脚 Footer
 
 此配置在 `v1.1.7+` 新增，以前版本在 [用户信息-user](#用户信息-user) 配置。

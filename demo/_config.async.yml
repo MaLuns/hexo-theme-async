@@ -15,6 +15,9 @@ top_bars:
     url: /customize_page/
   - title: 相册
     url: /gallery/
+	- title: 日志
+		url: https://hexo-theme-async.imalun.com/guide/change-log
+		noswup: true
 
 sidebar:
   typedTextPrefix: I`m
@@ -142,3 +145,10 @@ layout:
   post_card: async/post-card
   fixed_btn: async/fixed-btn
   # header_search: async/empty
+
+banner:
+	danmu: 
+		enable: true
+		avatar: true
+		delayRange: 5000
+		speed: 80

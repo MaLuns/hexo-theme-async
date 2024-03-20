@@ -3,6 +3,20 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.13",
+				"date": "2024-03-20",
+				"logs": [
+					{
+						"type": "feat",
+						"text": "添加 banner 弹幕动画"
+					},
+					{
+						"type": "style",
+						"text": "最小字体由 11px 调整为 12px"
+					}
+				]
+			},
+			{
 				"version": "2.1.12",
 				"date": "2024-03-18",
 				"logs": [
