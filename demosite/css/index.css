@@ -212,7 +212,7 @@ p {
 }
 .trm-label {
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--theme-color, #00283a);
@@ -865,7 +865,7 @@ html.is-animating .trm-swup-animation {
   line-height: 80px;
   color: var(--theme-color, #00283a);
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 700;
   transition: all 0.4s ease-in-out;
@@ -1990,7 +1990,7 @@ blockquote:after {
   border: solid 2px var(--primary, #afb42b);
   color: #fcfcfe;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   border-radius: 30px;
@@ -2367,7 +2367,7 @@ form textarea:focus,
   content: attr(data-number);
   border-radius: 50%;
   position: absolute;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   color: var(--body-color, #7b7b7d);
