@@ -23,11 +23,15 @@ class DanMuKu {
 
 	animates = new Map(); // 动画执行元素
 	stageAnimates = new Map();
+	timeouts = new Map();
 
 	constructor(options: DanMuOptions) {
 		this.update(options);
 	}
 
+	/**
+	 * 计算区域比
+	 */
 	_divisor(mode: DanMuMode) {
 		let divisor = 0.5;
 		switch (mode) {
@@ -118,16 +122,9 @@ class DanMuKu {
 		danmuEl.className = 'danmu-item';
 		danmuEl.setAttribute(
 			'style',
-			`
-					height:${this.height}px;
-					display:inline-flex;
-					position: absolute;
-					right: 0;
-					background-color: var(--trm-danmu-bg-color,#fff);
-					color: var(--trm-danmu-color,#000);
-					border-radius: 32px;
-					padding: ${this.avatar ? `4px 8px 4px 4px` : '4px 8px'};
-					align-items: center; `,
+			` height:${this.height}px; padding: ${
+				this.avatar ? `4px 8px 4px 4px` : '4px 8px'
+			}; display:inline-flex; position: absolute; right: 0; background-color: var(--trm-danmu-bg-color,#fff); color: var(--trm-danmu-color,#000); border-radius: 32px; align-items: center; transform: translateX(100%);`,
 		);
 		danmuEl.innerHTML = `
 					${this.avatar ? `<img class="danmu-avatar" style="display: inline-block;width:${this.height - 8}px;height:${this.height - 8}px;border-radius:50%;margin-right:6px;" src="${item.avatar}">` : ''}
@@ -136,19 +133,21 @@ class DanMuKu {
 
 		const { width } = danmuEl.getBoundingClientRect();
 		danmuEl.style.width = `${width}px`;
+
+		// 计算动画所需时间
 		const allTime = ((this.boxSize.width + width) / this.speed) * 1000;
 		const pastTime = ((width + this.gapWidth) / (this.boxSize.width + width)) * allTime;
 
 		if (dataIndex < this.dataList[barrageIndex].length) {
-			const animate = danmuEl.animate({ transform: ['translateX(100%)', `translateX(-${this.gapWidth}px)`] }, { duration: pastTime, fill: 'forwards' });
-
-			this.stageAnimates.set(animate, animate);
+			const animate = danmuEl.animate({ transform: ['translateX(100%)', `translateX(-${this.gapWidth}px)`] }, { duration: pastTime });
 
 			animate.onfinish = () => {
 				this.stageAnimates.delete(animate);
 				this.indexs[barrageIndex] = dataIndex + 1;
 				this._dispatchItem(this.dataList[barrageIndex][dataIndex + 1], barrageIndex, dataIndex + 1);
 			};
+
+			this.stageAnimates.set(animate, animate);
 		}
 
 		const animate = danmuEl.animate({ transform: ['translateX(100%)', `translateX(-${this.boxSize.width}px)`] }, { duration: allTime, fill: 'forwards' });
@@ -175,7 +174,13 @@ class DanMuKu {
 				dataIndex = this.indexs[barrageIndex] = 0;
 			}
 
-			row[dataIndex] && setTimeout(() => this._dispatchItem(row[dataIndex], barrageIndex, dataIndex), Math.random() * this.delayRange);
+			if (row[dataIndex]) {
+				const timeout = setTimeout(() => {
+					this._dispatchItem(row[dataIndex], barrageIndex, dataIndex);
+					this.timeouts.delete(timeout);
+				}, Math.random() * this.delayRange);
+				this.timeouts.set(timeout, timeout);
+			}
 		}
 	}
 
@@ -198,20 +203,35 @@ class DanMuKu {
 	}
 
 	/**
-	 * 清除弹幕
+	 * 取消动画
 	 */
-	clear() {
+	cancel() {
+		this.animates.forEach(item => item.cancel());
+		this.stageAnimates.forEach(item => item.cancel());
+		this.timeouts.forEach(item => clearTimeout(item));
+		this.animates.clear();
+		this.stageAnimates.clear();
+		this.timeouts.clear();
+		return this;
+	}
+
+	/**
+	 * 重置弹幕
+	 */
+	reset() {
 		this.dataList = [];
 		this.indexs = [];
 		this.idMap = {};
-		this.animates.clear();
-		this.stageAnimates.clear();
+		this.cancel();
 		if (this.box.querySelector('.barrage-list')) {
 			this.box.removeChild(this.box.querySelector('.barrage-list'));
 		}
 		return this;
 	}
 
+	/**
+	 * 更新配置
+	 */
 	update(options: DanMuOptions) {
 		const box = document.querySelector(options.el);
 		if (box) {
@@ -226,7 +246,7 @@ class DanMuKu {
 			this.delayRange = options.delayRange ?? this.delayRange;
 			this.align = options.align ?? this.align;
 			this.rows = parseInt(((size.height * this._divisor(options.mode ?? 'half')) / (this.height + this.gapHeight)).toString());
-			this.clear();
+			this.reset();
 		} else {
 			throw new Error(`未找到容器 ${options.el}`);
 		}
