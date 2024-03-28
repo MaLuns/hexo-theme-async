@@ -5,8 +5,8 @@ layout: home
 hero:
   name: Hexo-Theme-Async
   image:
-    src: /logo.gif
-  tagline: 🎈 A simple & lightweight theme for Hexo.
+    src: /logo.svg
+  tagline: 🎈 A simple & lightweight theme for Hexo. <br> 一个简单而轻量级的 Hexo 主题。
   actions:
     - text: 🚀 Get Started
       link: /guide/
@@ -24,6 +24,15 @@ features:
   - title: PWA 
     icon: 🛠️
     details: 支持PWA，提升访问速度，可离线使用。
+  - title: 个性化
+    icon: 🌈
+    details: 高度可配置，可自定义主题色调
+  - title: 模块化
+    icon: 🧱
+    details: 所有模块皆可替代，快速个性化局部模块
+  - title: 示例
+    icon: 🌼
+    details: 提供完整文档，以及个性化示例
     
 footer:
   license: MIT Licensed

@@ -3,6 +3,16 @@
 		"large_version": "v2.1.x",
 		"children": [
 			{
+				"version": "2.1.14",
+				"date": "2024-03-28",
+				"logs": [
+					{
+						"type": "fix",
+						"text": "修复弹幕动画重叠问题"
+					}
+				]
+			},
+			{
 				"version": "2.1.13",
 				"date": "2024-03-20",
 				"logs": [

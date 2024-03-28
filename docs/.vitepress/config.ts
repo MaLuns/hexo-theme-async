@@ -5,7 +5,28 @@ export default defineConfig({
 	title: 'Hexo-Theme-Async',
 	description: '🎈 A simple, lightweight Hexo theme',
 	lastUpdated: true,
-	head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
+	head: [
+		['link', { rel: 'icon', href: '/favicon.svg' }],
+		['meta', { property: 'og:type', content: 'website' }],
+		['meta', { property: 'og:title', content: 'hexo-theme-async 主题' }],
+		['meta', { property: 'og:image', content: '/favicon.svg' }],
+		['meta', { property: 'og:url', content: 'https://www.imalun.com' }],
+		['meta', { property: 'og:description', content: '一个简单而轻量级的 Hexo 主题' }],
+		// 添加百度统计代码
+		[
+			'script',
+			{},
+			`
+				var _hmt = _hmt || [];
+				(function() {
+					var hm = document.createElement("script");
+					hm.src = "https://hm.baidu.com/hm.js?bfb308357e73d7e9c856af04a77e822d";
+					var s = document.getElementsByTagName("script")[0]; 
+					s.parentNode.insertBefore(hm, s);
+				})();
+				 `,
+		],
+	],
 	locales: {
 		'/en/': {
 			lang: 'en-US',
@@ -159,7 +180,7 @@ export default defineConfig({
 		},
 		footer: {
 			message: 'Released under the SATA | MIT License.',
-			copyright: 'Copyright © 2020-PRESENT MaLuns',
+			copyright: 'Copyright © 2022-PRESENT MaLuns',
 		},
 	},
 });

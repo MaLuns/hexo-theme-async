@@ -139,12 +139,12 @@ cover:
     - https://img1.wallspic.com/previews/8/8/7/8/5/158788/158788-e_mo_sha_shoukimetsu_no_yaiba-shnen_man_hua-tao-ka_tong-azure-500x.jpg
   type: random
 
-layout:
-  footer: async/footer
-  page_loading: async/page-loading
-  post_card: async/post-card
-  fixed_btn: async/fixed-btn
-  # header_search: async/empty
+# layout:
+#   footer: async/footer
+#   page_loading: async/page-loading
+#   post_card: async/post-card
+#   fixed_btn: async/fixed-btn
+#   header_search: async/empty
 
 banner:
 	danmu: 
