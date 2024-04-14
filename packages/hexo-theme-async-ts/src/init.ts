@@ -257,9 +257,10 @@ export function InitToc() {
 			e.stopPropagation();
 			const link = e.target as HTMLElement;
 			let url = link.getAttribute('href');
-			if (!url) url = link.parentElement.getAttribute('href');
+			if (!url) url = link.parentElement.getAttribute('href').replace(/^#/, '');
+			else url = url.replace(/^#/, '');
 			if (!url) return;
-			const scroll = document.querySelector(url);
+			const scroll = document.querySelector(`[id="${url}"]`);
 			if (!scroll) return;
 			const elementTop = scroll.getBoundingClientRect().top + utils.scrollTop();
 			window.scrollTo({ top: elementTop - 110, behavior: 'smooth' });
