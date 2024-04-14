@@ -298,8 +298,8 @@ export function InitToc() {
 
 		if (toc.post_title) {
 			postToc.querySelectorAll('.trm-toc-link').forEach(item => {
-				const id = item.getAttribute('href');
-				const title = utils.q(id);
+				const id = item.getAttribute('href').replace(/^#/, '');
+				const title = utils.q(`[id="${id}"]`);
 				if (!title) return;
 				const span = document.createElement('span');
 				span.className = 'trm-toc-icon';
