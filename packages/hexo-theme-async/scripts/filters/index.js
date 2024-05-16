@@ -1,16 +1,17 @@
 hexo.extend.filter.register('after_post_render', data => {
+	let replaceText = ` data-tag='post-image'`;
+
 	// img lazyload
 	if (hexo.theme.config.lazyload && hexo.theme.config.lazyload.enable) {
-		data.content = data.content.replace(/<img(.+?)(\/{0,1})>/gi, (str, p1) => {
-			return str.replace(p1, `${p1} loading="lazy"`);
-		});
+		replaceText += ` loading="lazy"`;
 	}
 
+	// img failed to load
 	if (hexo.theme.config.error_img.post_page) {
-		const onerror = hexo.extend.helper.get('onerror').bind(hexo);
-		data.content = data.content.replace(/<img(.+?)(\/{0,1})>/gi, (str, p1) => {
-			return str.replace(p1, `${p1} ${onerror('post_page')}`);
-		});
+		replaceText += ` ${hexo.extend.helper.get('onerror').bind(hexo)('post_page')}`;
 	}
+
+	data.content = data.content.replace(/<img(.+?)(\/{0,1})>/gi, (str, p1) => str.replace(p1, `${p1} ${replaceText}`));
+
 	return data;
 });

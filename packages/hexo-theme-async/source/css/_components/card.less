@@ -4,7 +4,7 @@
 	border-radius: var(--card-border-radius, 10px);
 	margin-bottom: var(--card-bottom-card, 40px);
 	padding: var(--card-padding, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	box-shadow: var(--box-shadow);
 
 	.trm-icon {
 		font-size: 22px;
@@ -14,14 +14,13 @@
 }
 
 // skill-card
-
 .trm-skill-card {
 	border-radius: var(--card-border-radius, 10px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	background-color: var(--theme-bg-color, #fcfcfe);
 	padding: var(--card-padding, 40px);
 	margin-bottom: var(--card-bottom-card, 40px);
 
+	.shadow();
 	.trm-skill-header {
 		display: flex;
 		justify-content: space-between;
@@ -33,7 +32,7 @@
 		background-color: var(--theme-bg2-color, #f4f5f7);
 		height: 5px;
 		width: 100%;
-		box-shadow: var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
+		box-shadow: var(--box-shadow);
 
 		.trm-progressbar {
 			width: 0;
@@ -135,21 +134,20 @@
 	}
 }
 
-// icon-box
-
-.trm-service-icon-box {
+// link-box
+.trm-link-box {
 	padding: var(--card-padding, 40px);
 	border-radius: var(--card-border-radius, 10px);
 	background-color: var(--theme-bg-color, #fcfcfe);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	margin-bottom: var(--card-bottom-card, 40px);
+	box-shadow: var(--box-shadow);
 
-	.trm-service-content {
+	.trm-link-content {
 		display: flex;
 		align-items: center;
 	}
 
-	.trm-service-text {
+	.trm-link-text {
 		flex: 1;
 
 		div {
@@ -170,10 +168,12 @@
 			padding: 2px;
 		}
 	}
+
+	.click-animation();
+	.shadow();
 }
 
 // main card
-
 .trm-main-card-frame {
 	position: relative;
 	z-index: 2;
@@ -287,7 +287,7 @@
 
 		.trm-avatar {
 			border: solid 3px var(--theme-bg-color, #fcfcfe);
-			box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+			box-shadow: var(--box-shadow);
 			width: 110px;
 			height: 110px;
 			border-radius: 50%;
@@ -314,11 +314,10 @@
 }
 
 // counter card
-
 .trm-counter-up {
 	text-align: center;
 	border-radius: var(--card-border-radius, 10px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	box-shadow: var(--box-shadow);
 	background-color: var(--theme-bg-color, #fcfcfe);
 	padding: var(--card-padding, 40px);
 	margin-bottom: var(--card-bottom-card, 40px);
@@ -350,12 +349,11 @@
 }
 
 // contact card
-
 .trm-contact-card {
 	border-radius: var(--card-border-radius, 10px);
 	background: var(--theme-bg-color, #fcfcfe);
 	padding: var(--card-padding, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	box-shadow: var(--box-shadow);
 
 	.trm-form-bottom {
 		display: flex;
@@ -380,14 +378,15 @@
 }
 
 //  blog card
-
 .trm-blog-card {
 	background-color: var(--theme-bg-color, #fcfcfe);
 	position: relative;
 	overflow: hidden;
 	border-radius: var(--card-border-radius, 10px);
 	margin-bottom: var(--card-bottom-card, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+
+	.click-animation();
+	.shadow();
 
 	.trm-top {
 		position: absolute;
@@ -511,7 +510,6 @@
 }
 
 // publications card
-
 .trm-older-publications-card {
 	background-color: var(--theme-bg-color, #fcfcfe);
 	position: relative;
@@ -519,7 +517,8 @@
 	border-radius: var(--card-border-radius, 10px);
 	padding: var(--card-padding, 40px);
 	margin-bottom: var(--card-bottom-card, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+
+	.shadow();
 
 	.trm-older-publication {
 		margin-bottom: var(--card-bottom-card, 40px);
@@ -622,7 +621,6 @@
 }
 
 //  categories card
-
 .trm-blog-categories {
 	text-align: center;
 	position: relative;
@@ -630,7 +628,8 @@
 	border-radius: var(--card-border-radius, 10px);
 	padding: var(--card-padding, 40px);
 	margin-bottom: var(--card-bottom-card, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+
+	.shadow();
 
 	&:before {
 		content: "";
@@ -666,8 +665,9 @@
 	background-color: var(--theme-bg-color, #fcfcfe);
 	border-radius: var(--card-border-radius, 10px);
 	padding: var(--card-padding, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	margin-bottom: var(--card-bottom-card, 40px);
+
+	.shadow();
 
 	&.trm-popular {
 		&:after {
@@ -729,8 +729,9 @@
 	position: relative;
 	overflow: hidden;
 	margin-bottom: var(--card-bottom-card, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	border-radius: var(--card-border-radius, 10px);
+
+	.shadow();
 
 	.trm-cover-frame {
 		padding-bottom: 100%;
@@ -761,7 +762,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+		box-shadow: var(--box-shadow);
 		opacity: 0;
 		transform: translateY(30px) scale(1.02);
 		.transition-mixin();
@@ -817,7 +818,6 @@
 // order card
 
 .trm-order {
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	background-color: var(--theme-bg-color, #fcfcfe);
 	border-radius: var(--card-border-radius, 10px);
 	overflow: hidden;
@@ -826,6 +826,7 @@
 	max-width: 800px;
 	padding: 0;
 
+	.shadow();
 	.trm-popup-content {
 		max-height: 550px;
 		display: flex;
@@ -911,7 +912,7 @@
 	padding: var(--card-padding, 40px);
 	background-color: var(--theme-bg-color, #fcfcfe);
 	border-radius: var(--card-border-radius, 10px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+	box-shadow: var(--box-shadow);
 
 	.trm-slider-author {
 		img {
@@ -922,7 +923,7 @@
 			object-position: center;
 			margin-bottom: 20px;
 			border: solid 3px var(--theme-bg-color, #fcfcfe);
-			box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
+			box-shadow: var(--box-shadow);
 		}
 	}
 
@@ -945,9 +946,9 @@
 	background-color: var(--theme-bg-color, #fcfcfe);
 	border-radius: var(--card-border-radius, 10px);
 	margin-bottom: var(--card-bottom-card, 40px);
-	box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
 	padding: var(--card-padding, 40px);
 
+	.shadow();
 	.trm-project-desc {
 		height: 3rem;
 		overflow: hidden;

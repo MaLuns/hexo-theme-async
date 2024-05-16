@@ -12,7 +12,7 @@
 
 	blockquote {
 		background-color: var(--theme-bg2-color, #f4f5f7);
-		box-shadow: var(--box-shadow2, inset 0 0 4px -1px rgba(0, 0, 0, 0.15));
+		box-shadow: var(--box-shadow);
 		margin-bottom: 1rem;
 
 		&::before {
@@ -53,6 +53,16 @@
 	.katex {
 		svg {
 			margin: unset;
+		}
+	}
+
+	[data-tag="post-image"] {
+		cursor: zoom-in;
+		transition: 0.2s;
+
+		&:hover {
+			filter: blur(0) brightness(0.75);
+			-webkit-filter: blur(0) brightness(0.75);
 		}
 	}
 

@@ -15,8 +15,8 @@
 }
 
 // transition mixin
-.transition-mixin(@type: all; @time: 0.4s) {
-	transition: @type @time ease-in-out;
+.transition-mixin(@type: all; @time: 0.4s; @easing: ease-in-out) {
+	transition: @type @time @easing;
 }
 
 //
@@ -33,6 +33,21 @@
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: @line;
+}
+
+.click-animation {
+	.transition-mixin(all, 0.3s, ease);
+	&:active {
+		transform: scale(0.97);
+	}
+}
+
+.shadow {
+	box-shadow: var(--box-shadow);
+
+	&:hover {
+		box-shadow: var(--box-shadow-hover);
+	}
 }
 
 @import "./_variables/index.less";
