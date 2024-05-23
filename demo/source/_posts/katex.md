@@ -3,6 +3,8 @@ title: KaTeX
 date: 2022-09-22 15:45:29
 katex: true
 toc: false
+categories: 测试分类二
+tags: [KaTeX]
 ---
 ## KaTeX
 

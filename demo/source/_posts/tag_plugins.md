@@ -2,6 +2,7 @@
 title: Tag Plugins
 date: 2022-12-30 15:08:29
 categories: Plugins
+tags: [plugins]
 ---
 主题内置的一些标签插件说明和示例。
 

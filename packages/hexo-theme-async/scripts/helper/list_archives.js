@@ -65,12 +65,12 @@ function listArchivesHelper(options = {}) {
 	};
 
 	if (style === 'list') {
-		result += `<ul class="${ulClassName}-list" style="margin-bottom: 0px;">`;
+		result += `<ul class="${ulClassName}-list">`;
 
 		for (let i = 0, len = data.length; i < len; i++) {
 			const item = data[i];
 
-			result += `<li class="${liClassName}-list-item" style="margin: 6px 0;">`;
+			result += `<li class="${liClassName}-list-item">`;
 
 			result += `<a class="${className}-list-link" href="${link(item)}">`;
 			result += transform ? transform(item.name) : item.name;
@@ -90,11 +90,11 @@ function listArchivesHelper(options = {}) {
 
 			if (i) result += separator;
 
-			result += `<a class="${className}-link" href="${link(item)}">`;
+			result += `<a class="${className}-tag-link" href="${link(item)}">`;
 			result += transform ? transform(item.name) : item.name;
 
 			if (showCount) {
-				result += `<span class="${className}-count">（${item.count}）</span>`;
+				result += `<span class="${className}-tag-count">（${item.count}）</span>`;
 			}
 
 			result += '</a>';

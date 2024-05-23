@@ -5,18 +5,18 @@
                 <% if(is_archive()){%>
                     <%- list_archives({
                         type: "yearly",
-                        ulclass: "row trm",
-                        liclass: "col-lg-4 trm"
+                        ulclass: "trm-tag",
+                        liclass: "trm-tag"
                     }) %>
                 <% } else if (is_category()){ %>
                     <%- list_categories({
-                        ulclass: "row trm",
-                        liclass: "col-lg-4 trm"
+                        ulclass: "trm-tag",
+                        liclass: "trm-tag"
                     }) %>
                 <% } else if (is_tag()) { %>
                     <%- list_tags({ class: {
-                        ul: "row trm-tag-list trm-list",
-                        li:"col-lg-4 trm-list-item"
+                        ul: "trm-tag-list",
+                        li:"trm-tag-list-item"
                     } }) %>
                 <% } %>
             </div>

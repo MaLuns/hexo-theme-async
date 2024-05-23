@@ -3,6 +3,7 @@ title: Markdown
 date: 2022-09-21 15:25:29
 categories: 测试分类
 katex: true
+tags: [Markdown]
 ---
 
 主题 Hexo-theme-async 文章页面适配预览。

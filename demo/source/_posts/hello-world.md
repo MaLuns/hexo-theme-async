@@ -3,6 +3,8 @@ title: Hello Theme Async
 date: 2022-09-21 15:08:29
 cover: [https://hexo-theme-async.imalun.com/imgs/demo2.png]
 sticky: 1
+categories: 测试分类三
+tags: [hexo-theme-async]
 ---
 ![1663833969157.png](https://hexo-theme-async.imalun.com/imgs/demo2.png)_示例图_
 

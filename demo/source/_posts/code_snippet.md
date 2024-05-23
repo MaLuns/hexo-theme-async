@@ -1,6 +1,8 @@
 ---
 title: Code Snippet
 date: 2023-01-05 15:08:29
+tags: [code]
+categories: 测试分类四
 ---
 
 {% include_code lang:yaml config.yml %}

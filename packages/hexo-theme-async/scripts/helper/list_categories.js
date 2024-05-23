@@ -62,7 +62,7 @@ function listCategoriesHelper(categories, options) {
 
 			const additionalClassName = child && childrenIndicator ? ` ${childrenIndicator}` : '';
 
-			result += `<li class="${liClassName}-list-item ${additionalClassName}" style="margin: 6px 0;">`;
+			result += `<li class="${liClassName}-list-item ${additionalClassName}">`;
 
 			result += `<a class="${className}-list-link${isCurrent ? ' current' : ''}" href="${url_for.call(this, cat.path)}${suffix}">`;
 			result += transform ? transform(cat.name) : cat.name;
