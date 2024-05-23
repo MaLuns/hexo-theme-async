@@ -36,17 +36,29 @@
 }
 
 .click-animation {
-	.transition-mixin(all, 0.3s, ease);
 	&:active {
-		transform: scale(0.97);
+		animation: linear 0.2s clickanimation forwards;
 	}
 }
 
 .shadow {
+	transition:
+		all 0.4s ease-in-out,
+		box-shadow 0.3s ease;
 	box-shadow: var(--box-shadow);
 
 	&:hover {
 		box-shadow: var(--box-shadow-hover);
+	}
+}
+
+@keyframes clickanimation {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.97);
 	}
 }
 
