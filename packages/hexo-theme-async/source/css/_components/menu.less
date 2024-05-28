@@ -49,10 +49,10 @@
 					pointer-events: none;
 					background-color: var(--theme-bg-color, #fcfcfe);
 					opacity: 0;
-					transform: translateY(20px);
+					transform: translateY(20px) translateX(-50%);
 					height: auto;
 					top: 80px;
-					left: -10px;
+					left: 50%;
 					border-radius: 0 0 10px 10px;
 					box-shadow: var(--box-shadow);
 					position: absolute;
@@ -81,7 +81,7 @@
 					ul {
 						pointer-events: all;
 						opacity: 1;
-						transform: translateY(0);
+						transform: translateY(0) translateX(-50%);
 					}
 				}
 
@@ -91,6 +91,60 @@
 				}
 			}
 		}
+	}
+}
+
+.trm-menu-btn {
+	transform: scale(1.3);
+	margin-top: 2px;
+	padding: 8px 7px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	display: none;
+	justify-content: center;
+	text-align: center;
+
+	span {
+		position: relative;
+		margin: 5px 0 0;
+
+		&:before {
+			position: absolute;
+			top: -5px;
+		}
+
+		&:after {
+			position: absolute;
+			top: 5px;
+		}
+	}
+
+	&.trm-active {
+		span {
+			transform: rotate(45deg);
+
+			&:before {
+				transform: translate(0px, 5px) rotate(-90deg);
+			}
+
+			&:after {
+				transform: translate(0px, -5px) rotate(-90deg);
+			}
+		}
+	}
+
+	span,
+	span:after,
+	span:before {
+		content: "";
+		display: block;
+		width: 15px;
+		height: 0.15em;
+		border-radius: 1px;
+		background: var(--theme-color, #00283a);
+		backface-visibility: hidden;
+		.transition-mixin();
 	}
 }
 
@@ -157,68 +211,14 @@
 		pointer-events: all;
 		max-height: 0;
 		box-shadow: var(--box-shadow);
+		transform: translateY(20px);
 	}
 
 	.trm-menu nav ul li:hover ul {
 		max-height: 300px;
-	}
-}
-
-.trm-menu-btn {
-	transform: scale(1.3);
-	margin-top: 2px;
-	padding: 8px 7px;
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-	display: none;
-	justify-content: center;
-	text-align: center;
-
-	span {
-		position: relative;
-		margin: 5px 0 0;
-
-		&:before {
-			position: absolute;
-			top: -5px;
-		}
-
-		&:after {
-			position: absolute;
-			top: 5px;
-		}
+		transform: translateY(0);
 	}
 
-	&.trm-active {
-		span {
-			transform: rotate(45deg);
-
-			&:before {
-				transform: translate(0px, 5px) rotate(-90deg);
-			}
-
-			&:after {
-				transform: translate(0px, -5px) rotate(-90deg);
-			}
-		}
-	}
-
-	span,
-	span:after,
-	span:before {
-		content: "";
-		display: block;
-		width: 15px;
-		height: 0.15em;
-		border-radius: 1px;
-		background: var(--theme-color, #00283a);
-		backface-visibility: hidden;
-		.transition-mixin();
-	}
-}
-
-@media (max-width: 1200px) {
 	.trm-menu-btn {
 		display: flex;
 	}
