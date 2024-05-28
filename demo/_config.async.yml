@@ -7,6 +7,11 @@ top_bars:
     url: /
   - title: menu.archives
     url: /archives/
+    children:
+      - title: 标签
+        url: /tags/
+      - title: 分类
+        url: /categories/
   - title: menu.links
     url: /links/
   - title: menu.about

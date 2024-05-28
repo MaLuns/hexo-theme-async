@@ -1,5 +1,30 @@
 [
 	{
+		"large_version": "v2.2.x",
+		"children": [
+			{
+				"version": "2.2.1",
+				"date": "2023-05-28",
+				"logs": [
+					{
+						"type": "style",
+						"text": "优化二级菜单居中 #d122"
+					}
+				]
+			},
+			{
+				"version": "2.2.0",
+				"date": "2023-05-23",
+				"logs": [
+					{
+						"type": "style",
+						"text": "卡片样式风格调整"
+					}
+				]
+			}
+		]
+	},
+	{
 		"large_version": "v2.1.x",
 		"children": [
 			{
@@ -32,7 +57,7 @@
 				"logs": [
 					{
 						"type": "feat",
-						"text": "404 添加配置 <a href='https://github.com/MaLuns/hexo-theme-async/issues/117' target='_blank' rel='noreferrer'>#117</a>"
+						"text": "404 添加配置 #117"
 					}
 				]
 			},
@@ -269,7 +294,7 @@
 				"logs": [
 					{
 						"type": "fix",
-						"text": "修复标题样式 (<a href='https://github.com/MaLuns/hexo-theme-async/issues/68'>#68</a>)"
+						"text": "修复标题样式 (#68)"
 					}
 				]
 			},
@@ -279,7 +304,7 @@
 				"logs": [
 					{
 						"type": "fix",
-						"text": "修复 Google Analytics 地址(<a href='https://github.com/MaLuns/hexo-theme-async/issues/64'>#64</a>)"
+						"text": "修复 Google Analytics 地址(#64)"
 					}
 				]
 			},
@@ -665,7 +690,7 @@
 					},
 					{
 						"type": "fix",
-						"text": "窗体大小变化时，滚动插件未刷新 （详情见：<a href='https://github.com/MaLuns/hexo-theme-async/issues/9' target='_blank' rel='noreferrer'>issues</a>）"
+						"text": "窗体大小变化时，滚动插件未刷新 （详情见：#9）"
 					}
 				]
 			},

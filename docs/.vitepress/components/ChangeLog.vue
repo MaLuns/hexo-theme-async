@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from "vue";
+
 const types = {
 	feat: "✨",
 	fix: "🐞",
@@ -7,12 +9,25 @@ const types = {
 	style: "🌈",
 	docs: "📃",
 };
-defineProps({
+
+const props = defineProps({
 	type: String,
 	text: {
 		type: String,
 		default: "",
 	},
+});
+
+const htmlstr = computed(() => {
+	return props.text
+		.replace(/#d\d{1,}/, p => {
+			const id = p.replace(/#d/, "");
+			return `<a href='https://github.com/MaLuns/hexo-theme-async/discussions/${id}' target='_blank' rel='noreferrer'>#${id}</a>`;
+		})
+		.replace(/#\d{1,}/, p => {
+			const id = p.replace(/#/, "");
+			return `<a href='https://github.com/MaLuns/hexo-theme-async/issues/${id}' target='_blank' rel='noreferrer'>#${id}</a>`;
+		});
 });
 </script>
 
@@ -20,7 +35,7 @@ defineProps({
 	<li class="log" :class="type" :title="type">
 		<slot>
 			<span class="type">{{ types[type] }}：</span>
-			<span v-html="text"></span>
+			<span v-html="htmlstr"></span>
 		</slot>
 	</li>
 </template>
