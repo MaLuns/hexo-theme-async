@@ -3,6 +3,16 @@
 		"large_version": "v2.2.x",
 		"children": [
 			{
+				"version": "2.2.2",
+				"date": "2023-05-31",
+				"logs": [
+					{
+						"type": "refactor",
+						"text": "统一配置命名风格"
+					}
+				]
+			},
+			{
 				"version": "2.2.1",
 				"date": "2023-05-28",
 				"logs": [
