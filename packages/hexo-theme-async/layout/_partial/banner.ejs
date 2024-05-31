@@ -42,14 +42,14 @@
                     <!-- banner title -->
                     <div class="<%- !page.single_column ? 'trm-banner-text':'trm-banner-text trm-text-center' %> ">
                         <div class="trm-label trm-mb-20">
-                            <%= bannerText %>
+                            <%= locals.bannerText || locals.banner_text %>
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            <%- bannerTitle %>
+                            <%- locals.bannerTitle || locals.banner_title %>
                         </h1>
 
-                        <% if(is_home() && videoUrl){ %>
-                            <a data-fancybox data-fancybox="gallery" href="<%- videoUrl %>" class="trm-btn trm-btn-border">
+                        <% if(is_home() && (locals.videoUrl || locals.video_url)){ %>
+                            <a data-fancybox data-fancybox="gallery" href="<%- locals.videoUrl || locals.video_url %>" class="trm-btn trm-btn-border">
                                 Video <%- icon(theme.icons.play) %>
                             </a>
                         <% } else { %>

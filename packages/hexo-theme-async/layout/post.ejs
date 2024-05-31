@@ -2,9 +2,9 @@
     let banner = page.banner || {};
     banner = {
         ...theme.banner.default,
-        bannerText: 'NEWS LETTER',
+        banner_text: 'NEWS LETTER',
         ...banner,
-        bannerTitle: page.title
+        banner_title: page.title
     }
     if(banner.type === 'img' && theme.banner.use_cover && page.cover){
         if(Array.isArray(page.cover)){

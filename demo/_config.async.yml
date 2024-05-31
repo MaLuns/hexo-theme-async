@@ -49,7 +49,7 @@ footer:
   beian:
     enable: false
     icp: 
-  copyrightYear: 2022
+  copyright_year: 2022
   live_time:
     enable: true
     prefix: footer.tips

@@ -29,9 +29,9 @@
         sizes: "32x32"
     }) %>
 <%}%>
-<% if(theme.favicon.appleTouchIcon){%>
+<% if(theme.favicon.appleTouchIcon || theme.favicon.apple_touch_icon){%>
     <%- tag("link", {
-        href: url_for(theme.favicon.appleTouchIcon) +'?v='+ theme.version,
+        href: url_for(theme.favicon.appleTouchIcon || theme.favicon.apple_touch_icon) +'?v='+ theme.version,
         rel: "apple-touch-icon",
         sizes: "180x180"
     }) %>

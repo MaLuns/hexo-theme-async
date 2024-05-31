@@ -12,7 +12,7 @@
 - `toc`：是否显示目录，仅当值为 false 生效。默认通过 `_config.async.yaml` 的 `toc` 控制。
 - `single_column`：单栏显示详情页，为 true 时生效。
 - `author`：文章作者
-- `originalLink`：文章源链接（用于转载）
+- `original_link`：文章源链接（用于转载）
 
 内置的置顶脚本已删除，将 `hexo-generator-index` 升级到 `2.0.0+` 以上版本即可。
 
@@ -25,7 +25,7 @@ sticky: 10
 banner:
   type: img
   bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
-  bannerText: Hi my new friend!
+  banner_text: Hi my new friend!
 toc: false # 无需显示目录
 ---
 ```

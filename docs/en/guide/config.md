@@ -69,24 +69,24 @@ Used to configure logo, icon, and PWA installation ICONS.
 -   `dark_logo`: Top logo, displayed in dark mode
 -   `icon16`：icon 16\*16
 -   `icon32`：icon 32\*32
--   `appleTouchIcon`: Displays icons when iOS is added to the desktop
+-   `apple_touch_icon`: Displays icons when iOS is added to the desktop
 -   `webmanifest`: Application manifest file
 -   `visibilitychange`: Whether to switch title display when leaving the window
 -   `hidden`: Displays the icon when leaving the window
--   `showText`: Displays text when activating the window
--   `hideText`: Leaves the window to display text
+-   `show_text`: Displays text when activating the window
+-   `hide_text`: Leaves the window to display text
 
 ```yaml
 favicon:
     logo: favicon-32x32.png
     icon16: favicon-16x16.png
     icon32: favicon-32x32.png
-    appleTouchIcon: apple-touch-icon.png
+    apple_touch_icon: apple-touch-icon.png
     webmanifest: /site.webmanifest
     visibilitychange: true
     hidden: failure.ico
-    showText: (/≧▽≦/)咦！又好了！
-    hideText: (●—●)喔哟，崩溃啦！
+    show_text: (/≧▽≦/)咦！又好了！
+    hide_text: (●—●)喔哟，崩溃啦！
 ```
 
 ## Plugins
@@ -213,7 +213,7 @@ Basic user information, used for blogger name, profile picture, link exchange ru
 -   `avatar`: avatar
 -   `dark_avatar`: Avatar, dark theme display
 -   `describe`: Website Introduction
--   `ruleText`: buddy link exchange rule
+-   `rule_text`: buddy link exchange rule
 -   ~~`birthDay`： Blog timing start time v1.1.7 deprecated~~
 -   ~~`copyrightYear`：Copyright date v1.1.7 deprecated~~
 
@@ -226,7 +226,7 @@ user:
     domain: https://www.imalun.com
     avatar: /img/avatar.jpg
     describe: 网站简介。
-    ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
+    rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
 ```
 
 ## Navigation bar
@@ -281,13 +281,13 @@ sidebar:
 
 ### Typing animation
 
--   `typedTextPrefix`: indicates a fixed prefix
--   `typedText`: To switch entries for typing effect, multiple entries can be set and switched in order.
+-   `typed_text_prefix`: indicates a fixed prefix
+-   `typed_text`: To switch entries for typing effect, multiple entries can be set and switched in order.
 
 ```yaml
 sidebar:
-    typedTextPrefix: I`m
-    typedText: ["Web Developer"]
+    typed_text_prefix: I`m
+    typed_text: ["Web Developer"]
 ```
 
 ### Sidebar info
@@ -310,12 +310,12 @@ Each page banner can be customized with different background images, slogans, et
 -   `default`: Default configuration
     -   `type`: Banner types img、slideshow、video
     -   `bgurl`: Background image address, if type is slideshow, must be an array. If type is img, it can be a string or an array. If the array length is 2, it will be switched automatically according to the theme.
-    -   `bannerTitle`: Banner title
-    -   `bannerText`: Banner description
+    -   `banner_title`: Banner title
+    -   `banner_text`: Banner description
     -   `position`: same as CSS object-position
     -   `fit`: Same as CSS object-fit
 -   `index`: Home page (property fields remain the same as above)
-    -   `videoUrl`: Video address (available on home page only)
+    -   `video_url`: Video address (available on home page only)
 -   `archive`: Category page
 -   `links`: Friend link page
 -   `comment`: Comment page
@@ -326,8 +326,8 @@ banner:
     index:
         type: img
         bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
-        bannerTitle: 树深时见鹿，<br>溪午不闻钟。
-        bannerText: Hi my new friend!
+        banner_title: 树深时见鹿，<br>溪午不闻钟。
+        banner_text: Hi my new friend!
 ```
 
 ## Footer
@@ -338,7 +338,7 @@ This configuration was added in `v1.1.7+`. In previous versions, it was configur
 
 ```yaml
 footer:
-    copyrightYear: 2020
+    copyright_year: 2020
 ```
 
 ### Powered

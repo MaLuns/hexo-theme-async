@@ -4,7 +4,7 @@ site:
   domain: 网站链接
   avatar: 网站头像
   describe: 网站简介
-  ruleText: 友链要求
+  rule_text: 友链要求
 
 sidebar:
   residence: 地址
@@ -41,8 +41,8 @@ menu:
   about: 关于
 
 favicon:
-  showText: (/≧▽≦/)咦！又好了！
-  hideText: (●—●)喔哟，崩溃啦！
+  show_text: (/≧▽≦/)咦！又好了！
+  hide_text: (●—●)喔哟，崩溃啦！
 
 search:
   placeholder: 搜索文章...

@@ -12,7 +12,7 @@ The following page types are supported and used by default for this theme.
 - `toc`: Specifies whether to display directories. This parameter takes effect only when the value is false. Pass by default `_config.async.yaml` 的 `toc` Control.
 - `single_column`: Displays details in one column. This parameter takes effect when it is true.
 - `author`: Set the author will show
-- `originalLink`: Article source link
+- `original_link`: Article source link
 
 The built-in top script has been removed. Upgrade the `hexo-generator-index` to version `2.0.0+` or higher.
 
@@ -25,7 +25,7 @@ sticky: 10
 banner:
   type: img
   bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg
-  bannerText: Hi my new friend!
+  banner_text: Hi my new friend!
 toc: false # No need to display directories
 ---
 ```

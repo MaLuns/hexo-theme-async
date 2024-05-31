@@ -84,12 +84,12 @@ theme:
 - `dark_logo`：顶部 logo，暗黑模式时显示
 - `icon16`：icon 16\*16
 - `icon32`：icon 32\*32
-- `appleTouchIcon`：iOS 添加到桌面时显示图标
+- `apple_touch_icon`：iOS 添加到桌面时显示图标
 - `webmanifest`：应用程序清单文件
 - `visibilitychange`：是否在离开窗口时切换标题显示
 - `hidden`：离开窗口时显示图标
-- `showText`：激活窗口时显示文字
-- `hideText`：离开窗口显示文字
+- `show_text`：激活窗口时显示文字
+- `hide_text`：离开窗口显示文字
 
 ::: code-group
 
@@ -98,12 +98,12 @@ favicon:
   logo: favicon-32x32.png
   icon16: favicon-16x16.png
   icon32: favicon-32x32.png
-  appleTouchIcon: apple-touch-icon.png
+  apple_touch_icon: apple-touch-icon.png
   webmanifest: /site.webmanifest
   visibilitychange: true
   hidden: failure.ico
-  showText: (/≧▽≦/)咦！又好了！
-  hideText: (●—●)喔哟，崩溃啦！
+  show_text: (/≧▽≦/)咦！又好了！
+  hide_text: (●—●)喔哟，崩溃啦！
 ```
 
 ```yaml-vue [主题默认配置]
@@ -260,7 +260,7 @@ assets:
 - `avatar`：头像
 - `dark_avatar`：头像，黑暗主题时显示
 - `describe`：网站简介
-- `ruleText`：友链交换规则
+- `rule_text`：友链交换规则
 - ~~`birthDay`：博客计时开始时间 v1.1.7 弃用~~
 - ~~`copyrightYear`：版权日期 v1.1.7 弃用~~
 
@@ -275,7 +275,7 @@ user:
   domain: https://www.imalun.com
   avatar: /img/avatar.jpg
   describe: 网站简介。
-  ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
+  rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
 ```
 
 ```yaml-vue [主题默认配置]
@@ -352,13 +352,13 @@ sidebar:
 
 ### 打字动画
 
-- `typedTextPrefix`：为固定前缀
-- `typedText`：为打字效果切换条目，可设置多条，按顺序切换。
+- `typed_text_prefix`：为固定前缀
+- `typed_text`：为打字效果切换条目，可设置多条，按顺序切换。
 
 ```yaml
 sidebar:
-  typedTextPrefix: I`m
-  typedText: ["Web Developer"]
+  typed_text_prefix: I`m
+  typed_text: ["Web Developer"]
 ```
 
 ### 侧栏信息
@@ -382,12 +382,12 @@ sidebar:
 - `default`：默认配置
   - `type`：横幅类型 img、slideshow、video
   - `bgurl`：背景图地址，如果 type 是 slideshow，必须为数组。如果 type 是 img 时，可为字符串或数组，如果数组长度为 2 则会根据主题自动切换。
-  - `bannerTitle`：横幅上标题
-  - `bannerText`：横幅描述
+  - `banner_title`：横幅上标题
+  - `banner_text`：横幅描述
   - `position`： 同 CSS object-position
   - `fit`：同 CSS object-fit
 - `index`：首页 (属性字段和上面保持一致)
-  - `videoUrl`：视频地址 (仅首页有)
+  - `video_url`：视频地址 (仅首页有)
 - `archive`：分类页 (属性字段和上面保持一致)
 - `links`：友链页 (属性字段和上面保持一致)
 - `comment`：评论页 (属性字段和上面保持一致)
@@ -400,8 +400,8 @@ banner:
   index:
     type: img
     bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
-    bannerTitle: 树深时见鹿，<br>溪午不闻钟。
-    bannerText: Hi my new friend!
+    banner_title: 树深时见鹿，<br>溪午不闻钟。
+    banner_text: Hi my new friend!
 ```
 
 ```yaml-vue [主题默认配置]
@@ -505,7 +505,7 @@ footer:
   beian:
     enable: false
     icp:
-  copyrightYear:
+  copyright_year:
   live_time:
     enable: false
     prefix: footer.tips
@@ -517,7 +517,7 @@ footer:
 
 ```yaml
 footer:
-  copyrightYear: 2020
+  copyright_year: 2020
 ```
 
 ### 驱动

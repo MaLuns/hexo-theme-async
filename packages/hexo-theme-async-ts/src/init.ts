@@ -536,13 +536,13 @@ export function InitChangeTitle() {
 				iconEls.forEach(item => {
 					item.href = utils.urlFor(window.ASYNC_CONFIG.favicon.hidden);
 				});
-				document.title = window.ASYNC_CONFIG.favicon.hideText;
+				document.title = window.ASYNC_CONFIG.favicon.hideText || window.ASYNC_CONFIG.favicon.hide_text;
 				clearTimeout(titleTime);
 			} else {
 				iconEls.forEach((item, index) => {
 					item.href = icons[index];
 				});
-				document.title = window.ASYNC_CONFIG.favicon.showText + window.originTitle;
+				document.title = (window.ASYNC_CONFIG.favicon.showText || window.ASYNC_CONFIG.favicon.show_text) + window.originTitle;
 				titleTime = setTimeout(function () {
 					document.title = window.originTitle;
 				}, 2000);

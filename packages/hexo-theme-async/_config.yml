@@ -10,19 +10,19 @@ user:
   domain: 站点域名
   avatar: /img/avatar.jpg
   describe: 网站简介。
-  ruleText: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
+  rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。
 
 # Configure the icon information of the site
 favicon:
   logo: /img/favicon.svg
   icon16: /img/favicon.svg
   icon32: /img/favicon.svg
-  appleTouchIcon: 
+  apple_touch_icon: 
   webmanifest:
   visibilitychange: false
   hidden: /failure.ico # Displays an icon when not visible
-  showText: favicon.showText
-  hideText: favicon.hideText
+  show_text: favicon.show_text
+  hide_text: favicon.hide_text
 
 # Theme resource files or plug-ins
 assets:
@@ -105,30 +105,30 @@ banner:
   default:
     type: img
     bgurl: /img/banner.png
-    bannerText: Hi my new friend!
+    banner_text: Hi my new friend!
     position: top
     fit: cover
   index:
-    bannerTitle: 树深时见鹿，<br>溪午不闻钟。
-    bannerText: Hi my new friend!
-    videoUrl: 
+    banner_title: 树深时见鹿，<br>溪午不闻钟。
+    banner_text: Hi my new friend!
+    video_url: 
   archive:
-    bannerTitle: 云间连下榻，<br>天上接行杯。
-    bannerText: The article archive
+    banner_title: 云间连下榻，<br>天上接行杯。
+    banner_text: The article archive
   links:
-    bannerTitle: 莫愁前路无知己，<br>天下谁人不识君。
-    bannerText: A link to a friend's website
+    banner_title: 莫愁前路无知己，<br>天下谁人不识君。
+    banner_text: A link to a friend's website
   comment:
-    bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
-    bannerText: The magic tree hole
+    banner_title: 醉后不知天在水，<br>满船清梦压星河。
+    banner_text: The magic tree hole
   about:
-    bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
-    bannerText: About me
+    banner_title: 醉后不知天在水，<br>满船清梦压星河。
+    banner_text: About me
 
 # Sidebar settings
 sidebar:
-  typedTextPrefix: I`m
-  typedText: 
+  typed_text_prefix: I`m
+  typed_text: 
   info: 
     - key: sidebar.residence
       val: Mars
@@ -161,7 +161,7 @@ footer:
     enable: false
     icp: 
   # Copyright date
-  copyrightYear:
+  copyright_year:
   # 
   live_time:
     enable: false

@@ -13,7 +13,7 @@ hexo.extend.helper.register('async_config', function () {
 		hostname: url.parse(config.url).hostname || config.url,
 		author: config.author,
 		root: config.root,
-		typed_text: theme.sidebar.typedText,
+		typed_text: theme.sidebar.typedText || theme.sidebar.typed_text,
 		theme_version: theme.version,
 		theme: theme.theme,
 		favicon: toI18n(theme.favicon, __),

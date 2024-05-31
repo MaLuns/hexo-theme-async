@@ -4,7 +4,7 @@ site:
   domain: Domain
   avatar: Avatar
   describe: Describe
-  ruleText: Friend chain requirements
+  rule_text: Friend chain requirements
 
 sidebar:
   residence: Residence
@@ -41,8 +41,8 @@ menu:
   about: About
 
 favicon:
-  showText: (/≧▽≦/)Hey! Good again!
-  hideText: (●—●)Oh, crash!
+  show_text: (/≧▽≦/)Hey! Good again!
+  hide_text: (●—●)Oh, crash!
   
 search:
   placeholder: Searching...

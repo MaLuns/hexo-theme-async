@@ -8,8 +8,10 @@ declare interface Window {
 		favicon: {
 			visibilitychange: boolean;
 			hidden: string;
-			showText: string;
-			hideText: string;
+			show_text: string;
+			showText?: string;
+			hide_text: string;
+			hideText?: string;
 		};
 		theme_version: string;
 		theme: Record<string, any>;

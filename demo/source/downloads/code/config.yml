@@ -19,8 +19,8 @@ banner:
     bgurl: [/img/bg.jpg,/img/banner.png]
 
 sidebar:
-  typedTextPrefix: I`m
-  typedText: [ 'Web Developer' ]
+  typed_text_prefix: I`m
+  typed_text: [ 'Web Developer' ]
   info: 
     - key: 文档地址
       val: <a href="https://hexo-theme-async.imalun.com/" target="_blank" rel="nofollow">查看</a>  
@@ -43,7 +43,7 @@ footer:
   beian:
     enable: false
     icp: 
-  copyrightYear: 2022
+  copyright_year: 2022
   live_time:
     enable: true
     prefix: footer.tips
