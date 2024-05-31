@@ -228,7 +228,7 @@ notice_outdate:
 #### Article configuration end ###
 
 # Page Visit Statistics
-webAnalytics:  
+web_analytics:  
   enable: false 
   baidu:   # Baidu key
   google:  # Tracking ID for Google statistics

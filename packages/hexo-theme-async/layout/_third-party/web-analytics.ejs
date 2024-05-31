@@ -1,29 +1,30 @@
-<% if(theme.webAnalytics.enable){ %>
-    <% if(theme.webAnalytics.baidu){ %>
+<% let webAnalytics = theme.webAnalytics || theme.web_analytics; %>
+<% if(webAnalytics.enable){ %>
+    <% if(webAnalytics.baidu){ %>
         <!-- Baidu Analytics -->
         <script defer>
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?<%- theme.webAnalytics.baidu %>";
+              hm.src = "https://hm.baidu.com/hm.js?<%- webAnalytics.baidu %>";
               var s = document.getElementsByTagName("script")[0]; 
               s.parentNode.insertBefore(hm, s);
             })();
         </script>
     <% } %> 
 
-    <% if (theme.webAnalytics.google){ %>
+    <% if (webAnalytics.google){ %>
         <!-- Google Analytics -->
-        <script async src='https://www.googletagmanager.com/gtag/js?id=<%- theme.webAnalytics.google %>'></script>
+        <script async src='https://www.googletagmanager.com/gtag/js?id=<%- webAnalytics.google %>'></script>
         <script defer>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '<%= theme.webAnalytics.google %>');
+          gtag('config', '<%= webAnalytics.google %>');
         </script>
     <% } %>
 
-    <% if(theme.webAnalytics.tencent && theme.webAnalytics.tencent.sid && theme.webAnalytics.tencent.cid) { %>
+    <% if(webAnalytics.tencent && webAnalytics.tencent.sid && webAnalytics.tencent.cid) { %>
         <!-- Tencent Analytics -->
         <script defer>
           let _mtac = {};
@@ -31,9 +32,9 @@
             var mta = document.createElement("script");
             mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
             mta.setAttribute("name", "MTAH5");
-            mta.setAttribute("sid", "<%= theme.webAnalytics.tencent.sid %>");
-            <% if(theme.webAnalytics.tencent.cid) { %>
-                mta.setAttribute("cid", "<%= theme.webAnalytics.tencent.cid %>");
+            mta.setAttribute("sid", "<%= webAnalytics.tencent.sid %>");
+            <% if(webAnalytics.tencent.cid) { %>
+                mta.setAttribute("cid", "<%= webAnalytics.tencent.cid %>");
             <% } %>
             let s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(mta, s);

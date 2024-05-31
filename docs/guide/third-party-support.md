@@ -15,7 +15,7 @@
     - `cid`:
 
 ``` yaml
-webAnalytics:  
+web_analytics:  
   enable: false
   baidu:   
   google:  
@@ -25,7 +25,7 @@ webAnalytics:
 ```
 以百度统计为例：
 ``` yaml
-webAnalytics:  
+web_analytics:  
   enable: true
   baidu:  百度统计Key
 ```

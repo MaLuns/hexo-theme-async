@@ -16,7 +16,7 @@ The default built-in Baidu, Google, Tencent three.
     -   `cid`:
 
 ```yaml
-webAnalytics:
+web_analytics:
     enable: false
     baidu:
     google:
@@ -28,7 +28,7 @@ webAnalytics:
 Take Baidu Statistics as an example:
 
 ```yaml
-webAnalytics:
+web_analytics:
     enable: true
     baidu: Baidu statistics Key
 ```
