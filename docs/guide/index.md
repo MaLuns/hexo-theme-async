@@ -143,6 +143,7 @@ theme:
 - [自定义文章卡片示例](https://stackblitz.com/edit/node-xxazk9?file=README.md)
 - [自定义加载动画示例](https://stackblitz.com/edit/node-symrnq?file=README.md)
 - [搜索、主题按钮调整示例](https://stackblitz.com/edit/node-ghpn8p?file=README.md)
+- [集成其他评论插件示例](https://stackblitz.com/edit/node-y18sm7?file=README.md)
 
 
 ## 安装演示视频 Demo Video

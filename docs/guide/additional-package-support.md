@@ -158,3 +158,20 @@ live2d:
 ``` yaml
 swup: true
 ```
+
+在使用 swup 插件后，打开新的页面时已经加载的 js 脚本并不会重新执行，如果您在自定义脚本时每次打开新的页面重新执行您的脚本，您可以在 script 标签上添加 `data-swup-reload-script` 属性标识。
+
+```html
+<script src data-swup-reload-script></script>
+```
+
+您也可以在脚本中监听 **swup:contentReplaced** 事件，当新的页面替换完成后会触发。
+
+``` js
+if (window.ASYNC_CONFIG.swup) {
+	document.addEventListener('swup:contentReplaced', function () {
+	 // 页面替换完成
+	});
+}
+
+```
