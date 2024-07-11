@@ -44,6 +44,7 @@ defineExpose({
 	transition: 0.4s;
 	opacity: 0;
 	transform: scale(0.3);
+	z-index: 999;
 
 	&.show {
 		transform: scale(1);

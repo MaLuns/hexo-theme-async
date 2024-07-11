@@ -39,7 +39,7 @@
 	--vp-home-hero-name-color: transparent;
 	--vp-home-hero-image-background-image: linear-gradient(-45deg, #85ff7e 50%, #e391ff 50%);
 	--vp-home-hero-image-filter: blur(72px);
-	/* --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+	/* --vp-home-hero-image-background-image   : linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
     --vp-home-hero-image-filter             : blur(80px); */
 
 	.VPImage.image-src {
@@ -67,5 +67,33 @@
 .VPLocalSearchBox {
 	.results {
 		min-height: 150px;
+	}
+}
+
+.box-input {
+	border-radius: 4px;
+	border: 1px solid var(--vp-c-border);
+	padding: 0.2em 0.6em;
+	background: transparent;
+	transition: border 0.3s;
+
+	&:focus {
+		border: 1px solid var(--vp-c-brand);
+	}
+}
+
+.par-button {
+	border: 1px solid var(--vp-c-divider);
+	color: var(--vp-c-indigo-2);
+	background-color: var(--vp-c-bg);
+	padding: 4px 16px;
+	display: inline-block;
+	border-radius: 6px;
+	cursor: pointer;
+	user-select: none;
+	transition: border-color 0.25s;
+
+	&:hover {
+		border: 1px solid var(--vp-c-indigo-2);
 	}
 }

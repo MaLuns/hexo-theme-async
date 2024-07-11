@@ -828,8 +828,6 @@ layout:
     categorie: _widget/categorie
     # Paging template
     paginator: _widget/paginator
-    # Return to top template
-    back_to_top: _widget/back-to-top
     # Fixed button template
     fixed_btn: _widget/fixed-btn
     # Sidebar

@@ -12,6 +12,12 @@ declare module '@vue/runtime-core' {
 		DemoSite: (typeof import('./components/DemoSite.vue'))['default'];
 		DemoSites: (typeof import('./components/DemoSites.vue'))['default'];
 		DemoSitesLine: (typeof import('./components/DemoSitesLine.vue'))['default'];
+		EditConfig: (typeof import('./components/EditConfig.vue'))['default'];
+		EditConfigArrayInput: (typeof import('./components/EditObjectArray.vue'))['default'];
+		EditConfigItem: (typeof import('./components/EditConfigItem.vue'))['default'];
+		EditConfigObjectArrayInput: (typeof import('./components/EditObjectArray.vue'))['default'];
+		EditInputs: (typeof import('./components/EditInputs.vue'))['default'];
+		EditObjectArray: (typeof import('./components/EditObjectArray.vue'))['default'];
 		IconList: (typeof import('./components/IconList.vue'))['default'];
 		InfoToast: (typeof import('./components/InfoToast.vue'))['default'];
 		OutLine: (typeof import('./components/OutLine.vue'))['default'];
