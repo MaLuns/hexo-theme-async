@@ -45,11 +45,8 @@ const editConfigs = configYaml.contents.items.filter(item => {
 	}
 });
 
-console.log(editConfigs, yaml);
-
 const onCopy = () => {
 	configYaml.contents.items = editConfigs;
-	console.log(yaml.stringify(configYaml));
 	navigator.clipboard.writeText(yaml.stringify(configYaml));
 	toast.value.show(`复制成功！`);
 };
@@ -65,7 +62,12 @@ const onCopy = () => {
 			复制配置
 		</button>
 	</div>
-	<p>提供主题中 90%+ 配置生成，根据您需求在下面表单进行修改，完成后点击 复制配置 将复制配置添加进入您 配置文件即可。</p>
+	<p>
+		提供主题中 90%+ 配置生成，根据您需求在下面表单进行修改，完成后点击 复制配置 将复制配置添加进入您 配置文件即可。
+		<br />
+		<br />
+		不支持配置主要为三方插件相关配置。
+	</p>
 	<EditConfigItem v-for="item in editConfigs" :key="item.key.value" :config="item" :title="item.key?.commentBefore" />
 	<info-toast ref="toast"></info-toast>
 </template>

@@ -162,9 +162,7 @@ assets:
 
 ::: details 主题使用三方插件列表
 
-```yaml-vue
-{{plugins}}
-```
+<<< ../../packages/hexo-theme-async/plugins.yml
 
 :::
 

@@ -6,7 +6,7 @@
 # 2. 枚举属性声明格式 eg:  <[enum,enum]>
 # 3. 编辑器中属性名称标注, 只需在属性字段后 添加注释
 # 4. 需要跳过当前属性, 只需要在注释上 添加两个 ## 
-# 5. 
+# 5. 字段默认没值时, 则必须在后面添加 备注信息
 
 
 # Open Graph protocol | OG 协议
@@ -35,10 +35,10 @@ favicon:
   show_text: favicon.show_text # Displays text when the window is activated | 激活窗口时显示文字
   hide_text: favicon.hide_text # Leave the window to display text | 离开窗口显示文字
 
-# Theme resource files or plug-ins | 主题插件配置
+# Theme resource files or plug-ins | 插件配置
 assets:
-  internal_provider: local # The cdn configuration of the js inside the theme | 主题中 js 的 CDN 配置
-  third_party_provider: unpkg # cdn configuration of third-party js | 第三方CDN配置
+  internal_provider: local # The cdn configuration of the js inside the theme | 主题脚本的 CDN 配置
+  third_party_provider: unpkg # cdn configuration of third-party js | 第三方插件 CDN 配置
   plugin: ## The plug-in used by the theme
     hexo_theme_async:
       rowcss: css/plugins/bootstrap.row.css
@@ -60,7 +60,7 @@ cdn:
     async:
     defer:
 
-# The icon used by the theme | 主题内置图标
+# The icon used by the theme | 主题图标
 icons:
   sun: far fa-sun # Theme switch icon | 主题切换明亮图标
   moon: far fa-moon # Theme switch icon | 主题切换暗黑图标
@@ -87,123 +87,120 @@ top_bars: # <object[]> {{"title":"标题","url":"地址","noswup":false,"childre
   - title: menu.archives
     url: /archives/
 
-## Banner settings | 横幅设置
+# Banner settings | 横幅配置
 banner:
   use_cover: false # Use the cover image for article details | 文章详情使用封面图
   danmu: # danmu | 弹幕
     enable: false # enable | 启用
     el: .trm-banner # el | 弹幕容器
-  default:
-    type: img
-    bgurl: /img/banner.png
-    banner_text: Hi my new friend!
-    position: top
-    fit: cover
-  index:
+  default: # 默认横幅配置
+    type: img # 横幅类型 <[img,slideshow,video]>
+    bgurl: /img/banner.png # 背景图地址
+    banner_text: Hi my new friend! # 横幅描述
+    position: top # 同 CSS object-position
+    fit: cover # 同 CSS object-fit
+  index: ## 首页横幅
     banner_title: 树深时见鹿，<br>溪午不闻钟。
     banner_text: Hi my new friend!
-    video_url:
-  archive:
+    video_url: # 视频地址
+  archive: ## 归档页横幅
     banner_title: 云间连下榻，<br>天上接行杯。
     banner_text: The article archive
-  links:
+  links: ## 友链页横幅
     banner_title: 莫愁前路无知己，<br>天下谁人不识君。
     banner_text: A link to a friend's website
-  comment:
+  comment: ## 评论页横幅
     banner_title: 醉后不知天在水，<br>满船清梦压星河。
     banner_text: The magic tree hole
-  about:
+  about: ## 关于页横幅
     banner_title: 醉后不知天在水，<br>满船清梦压星河。
     banner_text: About me
 
-## Sidebar settings
+# Sidebar settings | 侧栏
 sidebar:
-  typed_text_prefix: I`m
-  typed_text:
-  info:
+  typed_text_prefix: I`m # 打字动画固定前缀
+  typed_text: # 打字效果切换条目 <string[]>
+  info: # 侧栏信息 <object[]> {{"key":"名称","val":"值"}}
     - key: sidebar.residence
       val: Mars
-  social:
+  social: # 社交图标 <object[]> {{"name":"名称","icon":"图标","url":"地址"}}
     - name: Github
       icon: fab fa-github
       url: https://github.com
 
-## About page settings
+## About page settings | 关于页
 about:
-  insert: none # before | after | none
-  title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
-  introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
-  blog: <ul class="trm-list">
-    <li>程序：Hexo </li>
-    <li>主题：Hexo-theme-async </li>
-    </ul>
-  privacy: 本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
+  insert: none #  插入规则  <[before,after,none]>
+  title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。 # 标题
+  introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。 # 个人简单描述
+  blog: <ul class="trm-list"><li>程序：Hexo </li><li>主题：Hexo-theme-async </li></ul>  # 博客信息 
+  privacy: 本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。 # 隐私权说明
 
-## Footer settings
+# Footer settings | 页脚
 footer:
   # Hexo link (Powered by Hexo).
-  powered:
+  powered: # 程序驱动
     enable: true
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # https://beian.miit.gov.cn/
-  beian:
+  beian: # 备案
     enable: false
-    icp:
+    icp: # 备案号
   # Copyright date
-  copyright_year:
+  copyright_year: # 运行时间
   #
-  live_time:
+  live_time: # 运行时间
     enable: false
-    prefix: footer.tips
-    start_time: 04/10/2022 17:00:00
+    prefix: footer.tips # 计时文案
+    start_time: 04/10/2022 17:00:00 # 计时开始时间
   #
-  custom_text:
+  custom_text: ## 自定义内容
 
 # Here is a collection of articles related to configuration.
 #### Article configuration start ###
 
 # If enable true, reward would be displayed in every posts and pages by default.
 # You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
-## Reward (Donate)
+# Reward (Donate) | 打赏
 reward:
   enable: false
-  comment: reward.comment
-  # url:
-  methods:
+  comment: reward.comment # 打赏按钮下显示文字
+  url: # 打赏链接
+  methods: # 打赏二维码图片列表 <object[]> {{"name":"名称","path":"图片地址"}}
 
-## Article table of contents
+# Article table of contents | 文章目录
 toc:
   enable: false
-  list_number: true
-  post_title: true
-  max_depth: 3
-  min_depth: 1
+  list_number: true # 是否显示编号
+  post_title: true # 是否可以在文章标题点击打开目录
+  max_depth: 3 # 生成 TOC 的最大深度
+  min_depth: 1 # 生成 TOC 的最小深度
 
-## Archive page
+# Archive page | 归档页
 archive:
-  type: more # less more
+  type: more # 归档页时间轴卡片样式  <[less,more]>
 
 # Creative Commons 4.0 International License.
 # https://creativecommons.org/licenses/
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license.
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
-## Valid values of language: deed.zh, deed.en, deed.ja, etc.
+# Valid values of language: deed.zh, deed.en, deed.ja, etc. | 版权信息
 creative_commons:
-  license: by-nc-sa
-  language: deed.zh
-  post: false
-  clipboard: false
+  license: by-nc-sa # 设置证书
+  language: deed.zh # 设置语言
+  post: false # 在每篇文章末尾显示
+  clipboard: false # 复制时追加
 
-## Customize the cover image
+# Customize the cover image | 封面图
 cover:
-  default: /img/block.jpg
-  type: img # img || date || random
+  default: /img/block.jpg # 封面默认显示的图片
+  type: img # 封面显示类型 <[img,date,random]>
 
-## The previous and the next article
+# The previous and the next article | 上下篇文章
 post_pagination:
   enable: true
-  type: large # large || small
+  type: large # 卡片类型 <[large,small]>
 
 # img loading="lazy" | 图片懒加载
 lazyload:

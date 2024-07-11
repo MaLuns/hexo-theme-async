@@ -63,6 +63,7 @@ export default defineConfig({
 		nav: [
 			{ text: 'Guide', link: '/guide/' },
 			{ text: 'DemoSites', link: '/demo/' },
+			{ text: 'ConfigGenerator', link: '/guide/async-config' },
 			{ text: 'Sponsors', link: '/sponsors/' },
 			{
 				text: 'Languages',
