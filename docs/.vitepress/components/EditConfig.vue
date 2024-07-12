@@ -1,13 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import { ref, reactive, toRaw } from "vue";
 import yaml from "yaml";
 import config from "../../../packages/hexo-theme-async/_config.yml?raw";
 import EditConfigItem from "./EditConfigItem.vue";
+import { isType } from "../libs/utils";
 
 const toast = ref();
 
 const configYaml = yaml.parseAllDocuments(config)[0];
+const configJson = configYaml.toJSON();
 
+// 过滤深层属性
 const filterConfig = list => {
 	list = list.filter(item => {
 		if (item.comment) {
@@ -29,25 +32,54 @@ const filterConfig = list => {
 };
 
 // 过滤掉不支持生产配置
-const editConfigs = configYaml.contents.items.filter(item => {
-	if (item.key?.commentBefore) {
-		const comment = item.key.commentBefore.split("\n").reverse()[0];
-		const comments = comment.split("|");
-		item.key.commentBefore = comments[1] || comments[0];
+const editConfigs = reactive(
+	configYaml.contents.items.filter(item => {
+		if (item.key?.commentBefore) {
+			const comment = item.key.commentBefore.split("\n").reverse()[0];
+			const comments = comment.split("|");
+			item.key.commentBefore = comments[1] || comments[0];
 
-		if (item.value?.items) {
-			item.value.items = filterConfig(item.value.items);
+			if (item.value?.items) {
+				item.value.items = filterConfig(item.value.items);
+			}
+
+			return !/^#/.test(comment);
+		} else {
+			return false;
 		}
+	}),
+);
 
-		return !/^#/.test(comment);
+// 获取 json 改动内容
+const diffJson = (oldJson, newJson) => {
+	if (isType.isObject(oldJson) && isType.isObject(newJson)) {
+		// 对象
+		let diffVal;
+		for (const key in newJson) {
+			const diff = diffJson(oldJson[key], newJson[key]);
+			if (diff !== undefined) {
+				diffVal = diffVal ?? {};
+				diffVal[key] = diff;
+			}
+		}
+		return diffVal;
+	} else if (isType.isArray(oldJson) && isType.isArray(newJson)) {
+		// 数组
+		if (oldJson.length !== newJson.length || newJson.some((val, i) => diffJson(val, oldJson[i]) !== undefined)) {
+			return newJson;
+		}
 	} else {
-		return false;
+		// 基础类型
+		if (oldJson !== newJson) {
+			return newJson;
+		}
 	}
-});
+};
 
 const onCopy = () => {
-	configYaml.contents.items = editConfigs;
-	navigator.clipboard.writeText(yaml.stringify(configYaml));
+	configYaml.contents.items = toRaw(editConfigs);
+	const newConfigJson = configYaml.toJSON();
+	navigator.clipboard.writeText(yaml.stringify(diffJson(configJson, newConfigJson)));
 	toast.value.show(`复制成功！`);
 };
 </script>

@@ -18,7 +18,14 @@ const Title = defineComponent({
 			.replace(/<.*>/g, "")
 			.replace(/{{.*}}/g, "")
 			.trim();
-		return h(`h${Math.min(5, props.lev)}`, { id }, id);
+		return h(`h${Math.min(5, props.lev)}`, { id }, [
+			id,
+			h("a", {
+				class: "header-anchor",
+				href: `#${id}`,
+				ariaLabel: `Permalink to &quot;${id}&quot;`,
+			}),
+		]);
 	},
 });
 
@@ -44,7 +51,7 @@ const getTitle = item => {
 		</template>
 		<!-- 数组 -->
 		<template v-else-if="config.value?.type === 'SEQ'">
-			<EditInputs :config="config" :show-title="false" />
+			<EditInputs :config="config" :show-label="false" />
 		</template>
 	</div>
 </template>
