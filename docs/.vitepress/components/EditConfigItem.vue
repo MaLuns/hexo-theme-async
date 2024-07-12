@@ -18,14 +18,21 @@ const Title = defineComponent({
 			.replace(/<.*>/g, "")
 			.replace(/{{.*}}/g, "")
 			.trim();
-		return h(`h${Math.min(5, props.lev)}`, { id }, [
-			id,
-			h("a", {
-				class: "header-anchor",
-				href: `#${id}`,
-				ariaLabel: `Permalink to &quot;${id}&quot;`,
-			}),
-		]);
+		return h(
+			`h${Math.min(5, props.lev)}`,
+			{
+				id,
+				class: props.lev === 2 ? "sticky" : "",
+			},
+			[
+				id,
+				h("a", {
+					class: "header-anchor",
+					href: `#${id}`,
+					ariaLabel: `Permalink to &quot;${id}&quot;`,
+				}),
+			],
+		);
 	},
 });
 
@@ -41,7 +48,7 @@ const getTitle = item => {
 		</template>
 
 		<!-- 数据输入 -->
-		<EditInputs v-if="config.value?.type === 'PLAIN'" :config="config" />
+		<EditInputs v-if="['QUOTE_DOUBLE', 'PLAIN'].includes(config.value?.type)" :config="config" />
 
 		<!-- 对象 -->
 		<template v-else-if="config.value?.type === 'MAP'">
@@ -55,4 +62,16 @@ const getTitle = item => {
 		</template>
 	</div>
 </template>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+/* .sticky {
+	position: sticky;
+	top: 100px;
+	background-color: var(--vp-nav-bg-color);
+	z-index: 9;
+	padding: 16px 0 8px;
+
+	:deep(.header-anchor) {
+		top: 16px;
+	}
+} */
+</style>

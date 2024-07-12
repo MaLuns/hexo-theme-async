@@ -7,6 +7,8 @@ export {};
 
 declare module '@vue/runtime-core' {
 	export interface GlobalComponents {
+		ArrayInput: (typeof import('./components/edit/ArrayInput.vue'))['default'];
+		BaseInput: (typeof import('./components/edit/BaseInput.vue'))['default'];
 		ChangeLog: (typeof import('./components/ChangeLog.vue'))['default'];
 		ChangeLogs: (typeof import('./components/ChangeLogs.vue'))['default'];
 		DemoSite: (typeof import('./components/DemoSite.vue'))['default'];
@@ -18,9 +20,12 @@ declare module '@vue/runtime-core' {
 		EditConfigObjectArrayInput: (typeof import('./components/EditObjectArray.vue'))['default'];
 		EditInputs: (typeof import('./components/EditInputs.vue'))['default'];
 		EditObjectArray: (typeof import('./components/EditObjectArray.vue'))['default'];
+		EnumInput: (typeof import('./components/edit/EnumInput.vue'))['default'];
 		IconList: (typeof import('./components/IconList.vue'))['default'];
 		InfoToast: (typeof import('./components/InfoToast.vue'))['default'];
+		ObjectArrayInput: (typeof import('./components/edit/ObjectArrayInput.vue'))['default'];
 		OutLine: (typeof import('./components/OutLine.vue'))['default'];
 		SponsorsLog: (typeof import('./components/SponsorsLog.vue'))['default'];
+		SwitchInput: (typeof import('./components/edit/SwitchInput.vue'))['default'];
 	}
 }

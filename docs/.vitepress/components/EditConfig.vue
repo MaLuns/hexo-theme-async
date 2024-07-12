@@ -113,7 +113,7 @@ const onCopy = () => {
 
 	position: sticky;
 	top: var(--vp-nav-height);
-	z-index: 999;
+	z-index: 10;
 	background-color: var(--vp-nav-bg-color);
 	display: flex;
 	justify-content: space-between;

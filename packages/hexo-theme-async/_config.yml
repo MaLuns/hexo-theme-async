@@ -2,7 +2,7 @@
 #
 # 1. 数组类型需要 在行注释后添加 类型申明  eg: <string[]>  <object[]>
 #   1.1 如果元素是对象结构需要声明数据结构, 结构遵循 json 格式  {{"xx":"xx"}}
-#   1.2 如果元素对象是递归嵌套的 可以用空数组标识 {{"xx":"xx","ff":[]}} , ff 字段结构表示和 本身一致
+#   1.2 如果元素对象是递归嵌套的 可以用空数组标识 {{"xx:标题":"xx","ff:标题":[]}} , ff 字段结构表示和 本身一致
 # 2. 枚举属性声明格式 eg:  <[enum,enum]>
 # 3. 编辑器中属性名称标注, 只需在属性字段后 添加注释
 # 4. 需要跳过当前属性, 只需要在注释上 添加两个 ## 
@@ -10,7 +10,7 @@
 
 
 # Open Graph protocol | OG 协议
-open_graph: true
+open_graph: true # 启用
 
 # User info | 用户信息
 user:
@@ -23,7 +23,7 @@ user:
   describe: 网站简介。 # Describe | 网站简介
   rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 # 友链规则
 
-# Configure the icon information of the site | 网站图标
+# Site logo | 网站图标
 favicon:
   logo: /img/favicon.svg # logo | 顶部 logo
   icon16: /img/favicon.svg # icon 16*16
@@ -81,7 +81,7 @@ icons:
   copy: fas fa-copy # Code copy icon | 代码块复制图标
 
 # Top navigation menu | 导航栏  
-top_bars: # <object[]> {{"title":"标题","url":"地址","noswup":false,"children":[]}}
+top_bars: # <object[]> {{"title:标题":"","url:地址":"","noswup:不使用 Pjax":false,"children:子菜单":[]}}
   - title: menu.home
     url: /
   - title: menu.archives
@@ -120,10 +120,10 @@ banner:
 sidebar:
   typed_text_prefix: I`m # 打字动画固定前缀
   typed_text: # 打字效果切换条目 <string[]>
-  info: # 侧栏信息 <object[]> {{"key":"名称","val":"值"}}
+  info: # 侧栏信息 <object[]> {{"key:名称":"","val:值":""}}
     - key: sidebar.residence
       val: Mars
-  social: # 社交图标 <object[]> {{"name":"名称","icon":"图标","url":"地址"}}
+  social: # 社交图标 <object[]> {{"name:名称":"","icon:图标":"","url:地址":""}}
     - name: Github
       icon: fab fa-github
       url: https://github.com
@@ -139,18 +139,18 @@ about:
 # Footer settings | 页脚
 footer:
   # Hexo link (Powered by Hexo).
-  powered: # 程序驱动
-    enable: true
+  powered: # 程序驱动信息
+    enable: true # 启用
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # https://beian.miit.gov.cn/
-  beian: # 备案
-    enable: false
+  beian: # 备案信息
+    enable: false # 启用
     icp: # 备案号
   # Copyright date
-  copyright_year: # 运行时间
+  copyright_year: # 版权日期
   #
   live_time: # 运行时间
-    enable: false
+    enable: false # 启用
     prefix: footer.tips # 计时文案
     start_time: 04/10/2022 17:00:00 # 计时开始时间
   #
@@ -163,14 +163,14 @@ footer:
 # You can show or hide reward in a specific page throuth `reward: true | false` in Front Matter.
 # Reward (Donate) | 打赏
 reward:
-  enable: false
+  enable: false  # 启用
   comment: reward.comment # 打赏按钮下显示文字
   url: # 打赏链接
-  methods: # 打赏二维码图片列表 <object[]> {{"name":"名称","path":"图片地址"}}
+  methods: # 打赏二维码图片列表 <object[]> {{"name:名称":"","path:图片地址":""}}
 
 # Article table of contents | 文章目录
 toc:
-  enable: false
+  enable: false # 启用
   list_number: true # 是否显示编号
   post_title: true # 是否可以在文章标题点击打开目录
   max_depth: 3 # 生成 TOC 的最大深度
@@ -199,7 +199,7 @@ cover:
 
 # The previous and the next article | 上下篇文章
 post_pagination:
-  enable: true
+  enable: true # 启用
   type: large # 卡片类型 <[large,small]>
 
 # img loading="lazy" | 图片懒加载
@@ -253,14 +253,14 @@ theme:
   default: style-light # 主题默认模式 <[style-light,style-dark,auto]>
 
 # Service Worker | 渐进式应用
-sw: false
+sw: false # 启用
 
 # https://github.com/willin/hexo-wordcount
 # Post wordcount | 字数统计
 wordcount:
   enable: false # enable | 开启
-  count: true # count | 字数
-  time: true # read time | 阅读时间
+  count: true # count | 显示字数
+  time: true # read time | 显示阅读时间
 
 # That is it only render those page which has `katex: true` in Front-matter.
 # math fomula
@@ -272,19 +272,19 @@ katex:
   # In page katex options are also possible and will be merged
   options: {}
 
-## Blog search
+# Blog search | 搜索
 search:
-  enable: false
-  type: engine #local engine
-  href: "https://www.google.com/search?q=site:"
+  enable: false # 启用
+  type: engine # 搜索类型 <[local,engine]>
+  href: "https://www.google.com/search?q=site:" # 搜索引擎地址, type 为 engine 时填写
+  domain: # 域名地址, type 为 engine 时填写
   # href: "https://www.baidu.com/s?wd=site:"
   # href: "https://www.bing.com/search?q=site:"
-  domain:
 
 # Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries.
 # https://swup.js.org/
 # Whether swup is enabled | Swup 插件
-swup: false
+swup: false # 启用
 
 # Datetime formatting | 日期格式化
 datetime_foramt:
@@ -309,7 +309,7 @@ categorie_card:
   len: 2 # 长度
   list: # 固定显示分类 <string[]>
 
-# Lower right button | 固定按钮块
+# Lower right button | 功能按钮块
 rightside:
   readmode: true # 阅读模式按钮
   aside: false # 单双栏切换按钮
@@ -330,7 +330,7 @@ highlight:
 
 # Customize the template path | 自定义模块
 layout:
-  path: layout # Folder path | 模板存在路径
+  path: layout # Folder path | 模板存放目录
   # layout
   main: _partial/main # 整体布局结构模板
   header: _partial/header # 顶部菜单栏模板
