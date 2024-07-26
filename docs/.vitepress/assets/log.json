@@ -4,7 +4,7 @@
 		"children": [
 			{
 				"version": "2.2.2",
-				"date": "2023-05-31",
+				"date": "2024-05-31",
 				"logs": [
 					{
 						"type": "refactor",
@@ -14,7 +14,7 @@
 			},
 			{
 				"version": "2.2.1",
-				"date": "2023-05-28",
+				"date": "2024-05-28",
 				"logs": [
 					{
 						"type": "style",
@@ -24,7 +24,7 @@
 			},
 			{
 				"version": "2.2.0",
-				"date": "2023-05-23",
+				"date": "2024-05-23",
 				"logs": [
 					{
 						"type": "style",
