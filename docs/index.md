@@ -5,7 +5,7 @@ layout: home
 hero:
   name: Hexo-Theme-Async
   image:
-    src: /logo.svg
+    src: /logo@256x256.png
   tagline: 🎈 A simple & lightweight theme for Hexo. <br> 一个简单而轻量级的 Hexo 主题。
   actions:
     - text: 🚀 Get Started

@@ -6,10 +6,10 @@ export default defineConfig({
 	description: '🎈 A simple, lightweight Hexo theme',
 	lastUpdated: true,
 	head: [
-		['link', { rel: 'icon', href: '/favicon.svg' }],
+		['link', { rel: 'icon', href: '/logo@64x64.png' }],
 		['meta', { property: 'og:type', content: 'website' }],
 		['meta', { property: 'og:title', content: 'hexo-theme-async 主题' }],
-		['meta', { property: 'og:image', content: '/favicon.svg' }],
+		['meta', { property: 'og:image', content: '/logo@64x64.png' }],
 		['meta', { property: 'og:url', content: 'https://www.imalun.com' }],
 		['meta', { property: 'og:description', content: '一个简单而轻量级的 Hexo 主题' }],
 		// 添加百度统计代码
@@ -40,7 +40,7 @@ export default defineConfig({
 		},
 	},
 	themeConfig: {
-		logo: '/logo.svg',
+		logo: '/logo@128x128.png',
 		search: {
 			provider: 'local',
 		},
