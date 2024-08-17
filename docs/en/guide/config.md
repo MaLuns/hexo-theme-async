@@ -460,17 +460,17 @@ archive:
 Set the sharing copyright of your article
 
 > [About the license agreement](https://creativecommons.org/licenses/)
-> default uses attribution - Non-commercial - Same way Share [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)。
+> default uses attribution - Non-commercial - Same way Share [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)。
 
 -   `license`: set certificate (by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero)
--   `language`: set language (deed.zh | deed.en | deed.ja ｜ ...)
+-   `language`: set language (deed.zh-hans | deed.en | deed.ja ｜ ...)
 -   `post`: displayed at the end of each article
 -   `clipboard`: Whether to append copyright information to Clipboard when copying articles (default off)
 
 ```yaml
 creative_commons:
     license: by-nc-sa
-    language: deed.zh
+    language: deed.zh-hans
     post: false
     clipboard: false
 ```
