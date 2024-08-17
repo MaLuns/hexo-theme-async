@@ -680,10 +680,10 @@ archive:
 设置您的文章的分享版权
 
 > [关于许可协议](https://creativecommons.org/licenses/)
-> 默认使用 署名-非商业性使用-相同方式共享 4.0，即 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)。
+> 默认使用 署名-非商业性使用-相同方式共享 4.0，即 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)。
 
 - `license`：设置证书 (by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero)
-- `language`：设置语言 (deed.zh | deed.en | deed.ja ｜ ...)
+- `language`：设置语言 (deed.zh-hans | deed.en | deed.ja ｜ ...)
 - `post`：在每篇文章末尾显示
 - `clipboard`：是否在复制文章时，在剪贴板中追加版权信息（默认关闭）
 
@@ -692,7 +692,7 @@ archive:
 ```yaml{5} [修改示例]
 creative_commons:
   license: by-nc-sa
-  language: deed.zh
+  language: deed.zh-hans
   post: false
   clipboard: true
 ```
