@@ -1,0 +1,386 @@
+const n=`#   配置编辑器格式规则
+#
+# 1. 数组类型需要 在行注释后添加 类型申明  eg: <string[]>  <object[]>
+#   1.1 如果元素是对象结构需要声明数据结构, 结构遵循 json 格式  {{"xx":"xx"}}
+#   1.2 如果元素对象是递归嵌套的 可以用空数组标识 {{"xx:标题":"xx","ff:标题":[]}} , ff 字段结构表示和 本身一致
+# 2. 枚举属性声明格式 eg:  <[enum,enum]>
+# 3. 编辑器中属性名称标注, 只需在属性字段后 添加注释
+# 4. 需要跳过当前属性, 只需要在注释上 添加两个 ## 
+# 5. 字段默认没值时, 则必须在后面添加 备注信息
+
+
+# Open Graph protocol | OG 协议
+open_graph: true # 启用
+
+# User info | 用户信息
+user:
+  name: ThemeAsync # Nickname | 昵称
+  first_name: Theme # 名
+  last_name: Async # 姓
+  email: # email | 电子邮箱
+  domain: 站点域名 # Domain | 站点域名
+  avatar: /img/avatar.jpg # Avatar | 站点头像
+  describe: 网站简介。 # Describe | 网站简介
+  rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 # 友链规则
+
+# Site logo | 网站图标
+favicon:
+  logo: /img/favicon.svg # logo | 顶部 logo
+  icon16: /img/favicon.svg # icon 16*16
+  icon32: /img/favicon.svg # icon 32*32
+  apple_touch_icon: # Apple touch icon | iOS 添加到桌面时显示图标
+  webmanifest: # Webmanifest | 应用程序清单文件
+  visibilitychange: false # Enable toggle title display when leaving | 开启离开时切换标题显示
+  hidden: /failure.ico # Displays an icon when not visible | 离开窗口时显示图标
+  show_text: favicon.show_text # Displays text when the window is activated | 激活窗口时显示文字
+  hide_text: favicon.hide_text # Leave the window to display text | 离开窗口显示文字
+
+# Theme resource files or plug-ins | 插件配置
+assets:
+  internal_provider: local # The cdn configuration of the js inside the theme | 主题脚本的 CDN 配置
+  third_party_provider: unpkg # cdn configuration of third-party js | 第三方插件 CDN 配置
+  plugin: ## The plug-in used by the theme
+    hexo_theme_async:
+      rowcss: css/plugins/bootstrap.row.css
+      typing: js/plugins/typing.js
+      search: js/plugins/local_search.js
+      danmu: js/plugins/danmu.js
+      main: js/main.js
+  icons: ## Icon configuration
+    type: font # font symbol
+    css: css/plugins/font-awesome.min.css # icon css
+    js: # icon js
+
+## CDN User - defined plug-in
+cdn:
+  css:
+  js:
+    head:
+    base:
+    async:
+    defer:
+
+# The icon used by the theme | 主题图标
+icons:
+  sun: far fa-sun # Theme switch icon | 主题切换明亮图标
+  moon: far fa-moon # Theme switch icon | 主题切换暗黑图标
+  play: fas fa-play # Home video play | 首页播放按钮图标
+  email: far fa-envelope # email icon | 邮件图标
+  next: fas fa-arrow-right # Category entry icon | 分类卡片入口图标
+  calendar: far fa-calendar-alt # Date of article details | 文章详情日期图标
+  clock: far fa-clock # Article details time | 文章详情时间图标
+  user: far fa-user # Author of article details | 文章详情作者图标
+  back_top: fas fa-arrow-up # Return to the top icon | 返回顶部图标
+  close: fas fa-times # close icon | 关闭图标
+  search: fas fa-search # search icon | 查询图标
+  reward: fas fa-hand-holding-usd # reward icon | 打赏图标
+  toc_tag: fas fa-th-list # toc icon | 目录图标
+  read: fas fa-book-reader # Secure the button in the lower right corner | 阅读模式图标
+  arrows: fas fa-arrows-alt-h # Single bar and double bar toggle icon | 单栏和双栏切换图标
+  double_arrows: fas fa-angle-double-down # Code highlight fold icon | 代码块折叠图标
+  copy: fas fa-copy # Code copy icon | 代码块复制图标
+
+# Top navigation menu | 导航栏  
+top_bars: # <object[]> {{"title:标题":"","url:地址":"","noswup:不使用 Pjax":false,"children:子菜单":[]}}
+  - title: menu.home
+    url: /
+  - title: menu.archives
+    url: /archives/
+
+# Banner settings | 横幅配置
+banner:
+  use_cover: false # Use the cover image for article details | 文章详情使用封面图
+  danmu: # danmu | 弹幕
+    enable: false # enable | 启用
+    el: .trm-banner # el | 弹幕容器
+  default: # 默认横幅配置
+    type: img # 横幅类型 <[img,slideshow,video]>
+    bgurl: /img/banner.png # 背景图地址
+    banner_text: Hi my new friend! # 横幅描述
+    position: top # 同 CSS object-position
+    fit: cover # 同 CSS object-fit
+  index: ## 首页横幅
+    banner_title: 树深时见鹿，<br>溪午不闻钟。
+    banner_text: Hi my new friend!
+    video_url: # 视频地址
+  archive: ## 归档页横幅
+    banner_title: 云间连下榻，<br>天上接行杯。
+    banner_text: The article archive
+  links: ## 友链页横幅
+    banner_title: 莫愁前路无知己，<br>天下谁人不识君。
+    banner_text: A link to a friend's website
+  comment: ## 评论页横幅
+    banner_title: 醉后不知天在水，<br>满船清梦压星河。
+    banner_text: The magic tree hole
+  about: ## 关于页横幅
+    banner_title: 醉后不知天在水，<br>满船清梦压星河。
+    banner_text: About me
+
+# Sidebar settings | 侧栏
+sidebar:
+  typed_text_prefix: I\`m # 打字动画固定前缀
+  typed_text: # 打字效果切换条目 <string[]>
+  info: # 侧栏信息 <object[]> {{"key:名称":"","val:值":""}}
+    - key: sidebar.residence
+      val: Mars
+  social: # 社交图标 <object[]> {{"name:名称":"","icon:图标":"","url:地址":""}}
+    - name: Github
+      icon: fab fa-github
+      url: https://github.com
+
+## About page settings | 关于页
+about:
+  insert: none #  插入规则  <[before,after,none]>
+  title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。 # 标题
+  introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。 # 个人简单描述
+  blog: <ul class="trm-list"><li>程序：Hexo </li><li>主题：Hexo-theme-async </li></ul>  # 博客信息 
+  privacy: 本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。 # 隐私权说明
+
+# Footer settings | 页脚
+footer:
+  # Hexo link (Powered by Hexo).
+  powered: # 程序驱动信息
+    enable: true # 启用
+  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
+  # https://beian.miit.gov.cn/
+  beian: # 备案信息
+    enable: false # 启用
+    icp: # 备案号
+  # Copyright date
+  copyright_year: # 版权日期
+  #
+  live_time: # 运行时间
+    enable: false # 启用
+    prefix: footer.tips # 计时文案
+    start_time: 04/10/2022 17:00:00 # 计时开始时间
+  #
+  custom_text: ## 自定义内容
+
+# Here is a collection of articles related to configuration.
+#### Article configuration start ###
+
+# If enable true, reward would be displayed in every posts and pages by default.
+# You can show or hide reward in a specific page throuth \`reward: true | false\` in Front Matter.
+# Reward (Donate) | 打赏
+reward:
+  enable: false  # 启用
+  comment: reward.comment # 打赏按钮下显示文字
+  url: # 打赏链接
+  methods: # 打赏二维码图片列表 <object[]> {{"name:名称":"","path:图片地址":""}}
+
+# Article table of contents | 文章目录
+toc:
+  enable: false # 启用
+  list_number: true # 是否显示编号
+  post_title: true # 是否可以在文章标题点击打开目录
+  max_depth: 3 # 生成 TOC 的最大深度
+  min_depth: 1 # 生成 TOC 的最小深度
+
+# Archive page | 归档页
+archive:
+  type: more # 归档页时间轴卡片样式  <[less,more]>
+
+# Creative Commons 4.0 International License.
+# https://creativecommons.org/licenses/
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license.
+# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
+# Valid values of language: deed.zh-hans, deed.en, deed.ja, etc. | 版权信息
+creative_commons:
+  license: by-nc-sa # 设置证书
+  language: deed.zh-hans # 设置语言
+  post: false # 在每篇文章末尾显示
+  clipboard: false # 复制时追加
+
+# Customize the cover image | 封面图
+cover:
+  default: /img/block.jpg # 封面默认显示的图片
+  type: img # 封面显示类型 <[img,date,random]>
+
+# The previous and the next article | 上下篇文章
+post_pagination:
+  enable: true # 启用
+  type: large # 卡片类型 <[large,small]>
+
+# img loading="lazy" | 图片懒加载
+lazyload:
+  enable: true # 启用
+
+# Displays outdated notice for a post | 文章过期提醒
+notice_outdate:
+  enable: false # 启用
+  style: flat # style | 样式  <[simple,flat]>
+  limit_day: 365 # When will it be shown | 过期提醒天数
+  position: top # position | 位置 <[top,bottom]>
+#### Article configuration end ###
+
+## Page Visit Statistics
+web_analytics:
+  enable: false
+  baidu: # Baidu key
+  google: # Tracking ID for Google statistics
+  tencent: # Tencent statistics
+    sid:
+    cid:
+
+## comment
+comment:
+  bComments:
+    enable: false
+    env: # 腾讯云环境id
+  twikoo:
+    enable: false
+    envId: # 腾讯云环境id
+  # region: # 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数
+  # option: # 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+  giscus:
+    enable: false
+    repo:
+    repo-id:
+    category:
+    category-id:
+    mapping: pathname
+    reactions-enabled: 1
+    emit-metadata: 0
+    lang: zh-CN
+    theme:
+      light: light
+      dark: transparent_dark
+
+# Theme mode | 主题模式
+theme:
+  switch: true # 主题切换按钮
+  default: style-light # 主题默认模式 <[style-light,style-dark,auto]>
+
+# Service Worker | 渐进式应用
+sw: false # 启用
+
+# https://github.com/willin/hexo-wordcount
+# Post wordcount | 字数统计
+wordcount:
+  enable: false # enable | 开启
+  count: true # count | 显示字数
+  time: true # read time | 显示阅读时间
+
+# That is it only render those page which has \`katex: true\` in Front-matter.
+# math fomula
+## https://katex.org/
+katex:
+  copy_tex: true
+  global: false
+  # Options are for katex rendering options: https://katex.org/docs/options.html
+  # In page katex options are also possible and will be merged
+  options: {}
+
+# Blog search | 搜索
+search:
+  enable: false # 启用
+  type: engine # 搜索类型 <[local,engine]>
+  href: "https://www.google.com/search?q=site:" # 搜索引擎地址, type 为 engine 时填写
+  domain: # 域名地址, type 为 engine 时填写
+  # href: "https://www.baidu.com/s?wd=site:"
+  # href: "https://www.bing.com/search?q=site:"
+
+# Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries.
+# https://swup.js.org/
+# Whether swup is enabled | Swup 插件
+swup: false # 启用
+
+# Datetime formatting | 日期格式化
+datetime_foramt:
+  post_card: # 文章卡片的格式
+    type: date # 日期取值 <[date,updated]>
+    date: YY/MM/DD # 日期
+    time: HH:mm # 时间
+    cover_date: DD # 封面日期
+    cover_date2: YYYY/MM # 封面年月
+  post_info: # 文章详情页里的格式
+    type: date # 日期取值 <[date,updated]>
+    date: MM/DD # 日期
+    time: HH:mm # 时间
+  archive: # 归档分类页的格式
+    type: date # 日期取值 <[date,updated]>
+    date: MM/DD # 日期
+    time: HH:mm # 时间
+
+# Home page category card configuration | 首页分类卡片
+categorie_card:
+  enable: true # enable | 启用
+  len: 2 # 长度
+  list: # 固定显示分类 <string[]>
+
+# Lower right button | 功能按钮块
+rightside:
+  readmode: true # 阅读模式按钮
+  aside: false # 单双栏切换按钮
+
+# Replace Broken Images | 破图时默认图片
+error_img:
+  flink: /img/friend_404.gif # 友链头像破图时显示默认图片
+  post_page: /img/404.jpg # 文章破图时显示默认图片
+
+# Code highlighting configuration | 代码高亮配置
+highlight:
+  theme: true # 启用内置配色
+  title: default # Code title style | 代码块标题样式 <[mac,default]>
+  copy: true # Copy button | 复制按钮
+  lang: true # Show the code language | 代码块语言
+  code_word_wrap: false # Code word wrap | 强制换行
+  height_limit: false # unit: px | 代码块高度
+
+# Customize the template path | 自定义模块
+layout:
+  path: layout # Folder path | 模板存放目录
+  # layout
+  main: _partial/main # 整体布局结构模板
+  header: _partial/header # 顶部菜单栏模板
+  banner: _partial/banner # 顶部横幅模板
+  sidebar: _partial/sidebar/index # 侧栏模板
+  footer: _partial/footer # 页脚模板
+  # post
+  post_info: _partial/post/post-info # 文章信息模板
+  post_content: _partial/post/post-content # 文章内容模板
+  reward: _partial/post/reward # 文章信息里打赏模板
+  post_copyright: _partial/post/post-copyright # 文章详情版权信息模板
+  post_next_prev: _partial/post/post-next-prev # 文章详情上下篇文章模板
+  post_card: _partial/post/post-card # 文章卡片信息模板
+  post_card_mini: _partial/post/post-card-mini # 文章卡片信息模板
+  # widget
+  header_logo: _widget/header-logo # 顶部菜单-logo部分
+  header_menu: _widget/header-menu # 顶部菜单-菜单部分
+  header_theme: _widget/header-theme # 顶部菜单-主题切换部分
+  header_search: _widget/header-search # 顶部菜单-查询部分
+  categorie: _widget/categorie # 分类卡片模板
+  paginator: _widget/paginator # 分页模板
+  fixed_btn: _widget/fixed-btn # 固定按钮模板
+  post_toc: _widget/post-toc # 文章目录
+  about_card: _widget/about-card # 关于页面配置卡片模板
+  search: _widget/search # 搜索卡片模板 v2.1.11 +
+  sidebar_user: _partial/sidebar/card/user # 侧栏 - 用户头像模板
+  sidebar_social: _partial/sidebar/card/social # 侧栏 - 社交图标模块
+  sidebar_info: _partial/sidebar/card/info # 侧栏 - 用户信息模块
+  sidebar_email: _partial/sidebar/card/email # 侧栏 - 邮件模块
+  # third-party
+  comment: _third-party/comment/index # 评论插件模板
+  analytics: _third-party/web-analytics # 统计模板
+  # animation
+  page_loading: _partial/preloader/page-preloader # 页面切换动画模板
+  mode_change: _partial/preloader/change-mode-preloader # 主题切换动画模板
+  # page
+  page_about: _partial/page/about # 关于页面模块
+  page_archive: _partial/page/archive # 归档页面模块
+  page_category: _partial/page/category # 分类页面模块
+  page_index: _partial/page/index # 首页页面模块
+  page_links: _partial/page/links # 友链页面模块
+  page_post: _partial/page/post # 文章详情页面模块
+  page_tag: _partial/page/tag # 标签页面模块
+  # other
+  script: _partial/script # 脚本块 v2.1.11 +
+  head: _partial/head # head块 v2.1.11 +
+
+# 404 config | 404 配置
+not_found:
+  path: / # Return path | 返回路径
+  name: not_found.name # Button text 按钮显示文案
+  text: not_found.text # Tips | 提示文案
+`;export{n as c};
