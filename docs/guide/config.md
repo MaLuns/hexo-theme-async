@@ -1,6 +1,6 @@
 # 主题配置
 
-## 配置文件 async.yml
+## 配置文件
 
 约定 ＞ 配置
 
@@ -12,7 +12,7 @@
 请最好**不要**对**主题的任何文件**进行修改，除非您确认您拥有一定的开发能力或此后将不会对主题进行升级。
 :::
 
-## 语言 Language
+## 语言配置
 
 本主题内置了中英文两种语言，`zh-Hans` 和 `en`。
 
@@ -54,7 +54,7 @@ zh-Hans:
 
 如果仅使用中文语言，除 `zh-Hans` 项均可删除。
 
-## 主题模式 ThemeMode
+## 主题模式
 
 - `default`：设置主题默认模式
   - `style-light`：亮色模式
@@ -76,7 +76,7 @@ theme:
 
 :::
 
-## 网站图标 Favicon
+## 网站图标
 
 用于 logo、icon、PWA 安装图标配置。
 
@@ -112,7 +112,7 @@ favicon:
 
 :::
 
-## 插件 Plugins
+## 插件配置
 
 主题内置插件配置。
 
@@ -166,7 +166,7 @@ assets:
 
 :::
 
-## 加速静态资源 CDN
+## CDN 配置
 
 Content Delivery Network，统一加载网络资源，有利于提高网页加载速度。
 
@@ -197,7 +197,7 @@ cdn:
 
 :::
 
-## 字体图标 Icon
+## 字体图标
 
 本主题默认使用 Font Awesome 5 图标。
 
@@ -246,7 +246,7 @@ assets:
 单色图标 和 多色图标是可以同时使用的，但是博客 UI 的**固定图标**只能根据 `type` 决定使用哪一种。
 :::
 
-## 用户信息 User
+## 用户信息
 
 用户基本信息，用于博主名称、头像、友链交换规则、站点运行计时等等。
 
@@ -282,7 +282,7 @@ user:
 
 :::
 
-## 导航栏 TopBars
+## 导航栏
 
 顶部导航的 logo 在 [favicon](#favicon) 中配置，主题切换按钮在 [主题模式](#主题模式) 中配置。
 
@@ -312,7 +312,7 @@ top_bars:
 
 :::
 
-## 侧栏 Sidebar
+## 侧栏
 
 ### 社交图标
 
@@ -372,7 +372,7 @@ sidebar:
       val: 18
 ```
 
-## 横幅 Banner
+## 横幅
 
 每个页面横幅都可以自定义不同背景图、标语等，当您需要视频背景的时候，您的视频格式需要为 MP4、WebM 、Ogg 等格式。
 
@@ -490,7 +490,7 @@ twikoo && danMu(
 )
 ```
 
-## 页脚 Footer
+## 页脚
 
 此配置在 `v1.1.7+` 新增，以前版本在 [用户信息-user](#用户信息-user) 配置。
 
@@ -576,11 +576,11 @@ footer:
   custom_text: Hosted by <a href="https://github.com" rel="noopener" target="_blank">Github Pages</a>
 ```
 
-## 文章 Article
+## 文章
 
 这里是一些关于文章相关配置合集。
 
-### 打赏 Reward
+### 打赏
 
 开启后，将在每篇文章 `post` 末尾显示打赏按钮。
 
@@ -798,7 +798,7 @@ error_img:
 
 :::
 
-## 其他配置 Other
+## 其他配置
 
 这里是一些关于页面中杂项配置合集。
 
@@ -848,7 +848,7 @@ rightside:
 
 :::
 
-### 日期格式化 Date Format
+### 日期格式化
 
 用于配置主题中使用日期的格式。
 
@@ -881,7 +881,7 @@ datetime_foramt:
 
 :::
 
-### 代码高亮 Highlight
+### 代码高亮
 
 代码块中的所有功能只适用于 Hexo 自带的代码渲染，如果使用第三方的渲染器，不一定会有效
 
@@ -948,7 +948,7 @@ highlight:
   theme: false
 ```
 
-## 自定义图标 Icon
+## 自定义图标
 
 博客中存在一些固定的图标，譬如主题切换图标、分类图标等。
 
@@ -994,7 +994,7 @@ icons:
 <link rel="stylesheet" href="/font-awesome.min.css">
 <icon-list title="主题使用图标预览" prefix="" :icons="themeIcons"></icon-list>
 
-## 自定义样式 Style
+## 自定义样式
 
 相比 `head` 引入，您可以直接编写 `less` 文件，并使用主题已有的变量，且将和主题样式文件一起编译。
 
@@ -1079,7 +1079,7 @@ icons:
 @primary-weak: #7a89df;
 ```
 
-## 自定义模板 Layout
+## 自定义模板
 
 主题允许您自定义模板来替换主题模板，此功能需要您的版本 v2.0.0+ 。
 
@@ -1127,7 +1127,7 @@ layout:
 比如使用 pug ，您只需要安装 `hexo-render-pug` 后即可使用。
 :::
 
-## 渐进式应用 PWA
+## 渐进式应用
 
 开始 PWA 只需要设置 sw 为 true 即可，本主题已添加 Server Worker 相关操作 。
 
