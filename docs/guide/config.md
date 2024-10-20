@@ -1139,7 +1139,7 @@ sw: true
 使用 PWA 要求
 
 - 站点必须为 HTTPS。
-- 添加一个清单文件（manifest)，直接在 `source` 下新增。
+- 添加一个清单文件（ [manifest.json](https://developer.mozilla.org/zh-CN/docs/Web/Manifest) ），直接在 `source` 下新增。
   :::
 
 清单文件 结构
