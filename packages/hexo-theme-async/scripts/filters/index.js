@@ -1,5 +1,5 @@
 hexo.extend.filter.register('after_post_render', data => {
-	let replaceText = ` data-tag='post-image'`;
+	let replaceText = ` data-tag='post-image' onload='this.onload=null;this.style.opacity=1;'`;
 
 	// img lazyload
 	if (hexo.theme.config.lazyload && hexo.theme.config.lazyload.enable) {
