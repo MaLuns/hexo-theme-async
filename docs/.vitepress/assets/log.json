@@ -3,6 +3,16 @@
 		"large_version": "v2.2.x",
 		"children": [
 			{
+				"version": "2.2.4",
+				"date": "2024-11-11",
+				"logs": [
+					{
+						"type": "style",
+						"text": "文章图片加载过渡动画"
+					}
+				]
+			},
+			{
 				"version": "2.2.3",
 				"date": "2024-08-20",
 				"logs": [
