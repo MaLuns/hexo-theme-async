@@ -2710,6 +2710,7 @@ form textarea:focus,
 .trm-publication [data-tag="post-image"] {
   cursor: zoom-in;
   transition: 0.2s;
+  opacity: 0;
 }
 .trm-publication [data-tag="post-image"]:hover {
   filter: blur(0) brightness(0.75);
