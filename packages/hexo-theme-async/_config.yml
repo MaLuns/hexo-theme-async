@@ -23,6 +23,14 @@ user:
   describe: 网站简介。 # Describe | 网站简介
   rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 # 友链规则
 
+# Individually configured friend link information | 单独配置的友链信息
+links_info:
+  overwrite: false # 启用
+  name: ThemeAsync # Site title | 站点标题
+  url: 站点URL # Site url | 站点地址
+  avatar: /img/avatar.jpg # Site avatar | 站点头像
+  describe: 网站简介。 # Describe | 网站简介
+
 # Site logo | 网站图标
 favicon:
   logo: /img/favicon.svg # logo | 顶部 logo

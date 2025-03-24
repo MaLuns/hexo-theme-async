@@ -15,10 +15,18 @@
     <div class="col-lg-12">
         <div class="trm-card trm-scroll-animation trm-active-el">
             <ul class="trm-list">
-                <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
-                <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
-                <li><%-__('site.avatar')%>：<%- full_url_for(theme.user.avatar) %></li>
-                <li><%-__('site.describe')%>：<%- theme.user.describe %></li>
+                <% if(theme.links_info.overwrite) { %>
+                    <li><%-__('site.webmaster')%>：<%- theme.links_info.name %></li>
+                    <li><%-__('site.domain')%>：<%- theme.links_info.url %></li>
+                    <li><%-__('site.avatar')%>：<%- full_url_for(theme.links_info.avatar) %></li>
+                    <li><%-__('site.describe')%>：<%- theme.links_info.describe %></li>
+                <% } %>
+                <% if(!theme.links_info.overwrite) { %>
+                    <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
+                    <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
+                    <li><%-__('site.avatar')%>：<%- full_url_for(theme.user.avatar) %></li>
+                    <li><%-__('site.describe')%>：<%- theme.user.describe %></li>
+                <% } %>
             </ul>
         </div>
     </div>    
