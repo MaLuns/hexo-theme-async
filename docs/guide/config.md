@@ -258,7 +258,7 @@ assets:
 - `avatar`：头像
 - `dark_avatar`：头像，黑暗主题时显示
 - `describe`：网站简介
-- `rule_text`：友链交换规则
+- ~~`rule_text`：友链交换规则，v2.2.5 采用单独配置方式，弃用这里配置~~
 - ~~`birthDay`：博客计时开始时间 v1.1.7 弃用~~
 - ~~`copyrightYear`：版权日期 v1.1.7 弃用~~
 
@@ -947,6 +947,28 @@ highlight:
 highlight:
   theme: false
 ```
+
+### 友链信息配置
+
+v2.2.5+ 将友链基础信息配置独立出来，可以单独设置。需要注意是 友情链接列表 配置并未修改，依旧按照原方式配置。
+
+::: code-group
+
+```yaml{2,3} [修改示例]
+links_info:
+  name: 小白的小站 
+  url: https://hexo-theme-async.imalun.com 
+  avatar: /img/avatar.jpg
+  describe: 简单又好用的主题插件。 
+  rule_text: 暂不接受个人博客以外的友链申请，确保您的网站内容积极向上，文章至少30篇，原创70%以上，部署HTTPS。 
+```
+
+```yaml-vue [主题默认配置]
+{{ getConfig('links_info') }}
+```
+
+:::
+
 
 ## 自定义图标
 

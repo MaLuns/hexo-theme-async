@@ -3,6 +3,16 @@
 		"large_version": "v2.2.x",
 		"children": [
 			{
+				"version": "2.2.5",
+				"date": "2025-03-25",
+				"logs": [
+					{
+						"type": "feat",
+						"text": "添加友链信息独立配置"
+					}
+				]
+			},
+			{
 				"version": "2.2.4",
 				"date": "2024-11-11",
 				"logs": [
