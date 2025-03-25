@@ -3,7 +3,7 @@
         <blockquote>
             <%-__('site.rule_text')%>：
             <br>
-            <%- theme.user.ruleText || theme.user.rule_text %>
+            <%- theme.links_info.rule_text || theme.user.ruleText || theme.user.rule_text %>
         </blockquote>
     </div>
 </div>
@@ -15,18 +15,10 @@
     <div class="col-lg-12">
         <div class="trm-card trm-scroll-animation trm-active-el">
             <ul class="trm-list">
-                <% if(theme.links_info.overwrite) { %>
-                    <li><%-__('site.webmaster')%>：<%- theme.links_info.name %></li>
-                    <li><%-__('site.domain')%>：<%- theme.links_info.url %></li>
-                    <li><%-__('site.avatar')%>：<%- full_url_for(theme.links_info.avatar) %></li>
-                    <li><%-__('site.describe')%>：<%- theme.links_info.describe %></li>
-                <% } %>
-                <% if(!theme.links_info.overwrite) { %>
-                    <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
-                    <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
-                    <li><%-__('site.avatar')%>：<%- full_url_for(theme.user.avatar) %></li>
-                    <li><%-__('site.describe')%>：<%- theme.user.describe %></li>
-                <% } %>
+								<li><%-__('site.webmaster')%>：<%- theme.links_info.name || theme.user.name %></li>
+								<li><%-__('site.domain')%>：<%- theme.links_info.url || theme.user.domain %></li>
+								<li><%-__('site.avatar')%>：<%- full_url_for(theme.links_info.avatar) || full_url_for(theme.user.avatar) %></li>
+								<li><%-__('site.describe')%>：<%- theme.links_info.describe || theme.user.describe %></li>
             </ul>
         </div>
     </div>    
