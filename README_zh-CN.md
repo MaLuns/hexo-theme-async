@@ -105,24 +105,10 @@ npm install hexo-theme-async@latest
             </a>
         </td>
         <td>
-            <a href="https://www.imalun.com" target="_blank">
-                <img width="80px" src="https://www.imalun.com/images/avatar.jpg" />
-                <br />
-                <sub title="醒，亦在人间；梦，亦在人间。">白云苍狗</sub>
-            </a>
-        </td>
-        <td>
             <a href="https://yxy.imalun.com" target="_blank">
                 <img width="80px" src="https://yxy.imalun.com/images/avatar.gif" />
                 <br />
                 <sub title="两人对酌山花开，一杯一杯复一杯。我醉欲眠卿且去，明朝有意抱琴来。">游小游</sub>
-            </a>
-        </td>
-        <td>
-            <a href="https://grainrain.site/" target="_blank">
-                <img width="80px" src="https://cdn.luogu.com.cn/upload/usericon/746291.png" />
-                <br />
-                <sub title="世事漫随流水 算来一生浮梦">谷雨</sub>
             </a>
         </td>
         <td>
@@ -133,47 +119,24 @@ npm install hexo-theme-async@latest
             </a>
         </td>
         <td>
-            <a href="https://hexo.yahoo94.love" target="_blank">
-                <img width="80px" src="https://yahoo94.love/upload/2022/11/11.png" />
-                <br />
-                <sub title="再过十年，我们还是过着今天。">乌冬</sub>
-            </a>
-        </td>
-        <td>
-            <a href="https://blog.gfxgy.cn/" target="_blank">
-                <img width="80px" src="https://blog.gfxgy.cn/img/my.jpg" />
-                <br />
-                <sub title="桃之夭夭，灼灼其华。">怵.</sub>
-            </a>
-        </td>
-        <td>
-            <a href="https://www.tacg.ink/" target="_blank">
-                <img width="80px" src="https://cdn.jsdelivr.net/gh/TACGqwq/TACGstorage/Blog/TACG.jpg" />
-                <br />
-                <sub title="记录生活，找寻生活的方向">TACG</sub>
-            </a>
-        </td>
-    </tr>
-    <tr align="center">
-        <td>
             <a href="https://blog.shawn404.top/" target="_blank">
                 <img width="80px" src="https://blog.shawn404.top/img/logo.svg" />
                 <br />
                 <sub title="Strive hard and work novelty">Shawn's Blog</sub>
             </a>
         </td>
-				<td>
+        <td>
             <a href="https://dracewang.github.io/" target="_blank">
                 <img width="80px" src="https://s2.loli.net/2023/10/09/XwlqZH67cJo2NC5.jpg" />
                 <br />
                 <sub title="江湖险恶，不行就撤">Hexagon</sub>
             </a>
         </td>
-				<td>
+        <td>
             <a href="https://cyphersun.github.io/" target="_blank">
-                <img width="80px" src="https://hexo-theme-async.imalun.com/demosite/img/favicon.svg" />
+                <img width="80px" src="https://avatars.githubusercontent.com/u/80212458?v=4" />
                 <br />
-                <sub title="吾日百省，知行合一">Cypher Sun</sub>
+                <sub title="吾日百省，知行合一">CypherSun</sub>
             </a>
         </td>
       </tr>
