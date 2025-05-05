@@ -3,6 +3,16 @@
 		"large_version": "v2.2.x",
 		"children": [
 			{
+				"version": "2.2.6",
+				"date": "2025-05-05",
+				"logs": [
+					{
+						"type": "refactor",
+						"text": "兼容分类页和标签页 banner 全局配置支持"
+					}
+				]
+			},
+			{
 				"version": "2.2.5",
 				"date": "2025-03-25",
 				"logs": [
