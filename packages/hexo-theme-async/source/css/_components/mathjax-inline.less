@@ -1,15 +1,33 @@
+/* 内联公式 */
 mjx-container[jax="SVG"][display="false"] {
-    display: inline-block !important;
-  }
-  .math.inline,
-  .math.inline mjx-container {
-    display: inline-block !important;
-    vertical-align: middle;
-  }
-  mjx-container {
-    max-width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: inline-flex !important;
-  }
-  
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+/* 块级公式 */
+mjx-container[jax="SVG"][display="true"] {
+  display: block !important;
+  margin: 1em 0;
+  text-align: center;
+  padding: 12px 0;
+}
+
+/* 公共设置 */
+mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 自定义容器 */
+.math.inline,
+.math.inline mjx-container[jax="SVG"] { /* 增加属性限定 */
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+/* 代码块中的公式 */
+pre mjx-container {
+  display: inline !important;
+  padding: 0 !important;
+}
