@@ -76,5 +76,12 @@
 		"url": "https://cyphersun.github.io/",
 		"avatar": "https://avatars.githubusercontent.com/u/80212458?v=4",
 		"desc": "吾日百省，知行合一"
+	},
+	{
+		"name": "jinhongcai",
+		"url": "https://www.jinhongcai.work",
+		"avatar": "https://jinhongcai.work/img/icon.jpg",
+		"desc": "灵魂的渴望是命运的先知。",
+		"type": -2
 	}
 ]
