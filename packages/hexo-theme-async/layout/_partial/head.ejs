@@ -60,6 +60,7 @@
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="<%= url_for('css/index.css') %>?v=<%= theme.version %>" id="trm-switch-style">
+<link rel="stylesheet" href="<%= url_for('css/mathjax-inline.css') %>">
 <script>
     let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
     let catchMode = localStorage.getItem('theme-mode') || defaultMode;
